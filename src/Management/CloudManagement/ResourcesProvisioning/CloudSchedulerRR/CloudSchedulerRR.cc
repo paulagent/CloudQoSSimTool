@@ -14,7 +14,6 @@
 // 
 
 #include "CloudSchedulerRR.h"
-#include "API_OS.h"
 
 Define_Module(CloudSchedulerRR);
 
@@ -35,8 +34,6 @@ void CloudSchedulerRR::initialize(){
 
     dc_EnergyConsumed = 0.0;
     maximum_number_of_processes_per_node = par("numberOfVMperNode");
-    //read time ticks from config file.
-    quantum = par ("quantum");
     currentNodeIndex = 0;
     currentNodeType = 0;
 }
@@ -72,7 +69,7 @@ void CloudSchedulerRR::setupScheduler(){
 void CloudSchedulerRR::schedule (){
 
 
-    if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER_RR]: -------> schedule\n");
+    if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER]: -------> schedule\n");
 
        //Define ...
            vector<AbstractNode*> selectedNodes;
@@ -127,22 +124,29 @@ void CloudSchedulerRR::schedule (){
                    }
                    else if (req_vm != NULL){
 
-                      /* if (req->getOperation() == REQUEST_START_VM) {
+                       if (req->getOperation() == REQUEST_START_VM) {
                            notEnoughResources = request_start_vm (req_vm);
                            if (!notEnoughResources){
                                eraseRequest(req);
                                requestErased = true;
                            }
-                       }*/
+                           /*
+                            * else
+                            * {
+                            *
+                            * }
+                            */
 
-        else if (req->getOperation() == REQUEST_FREE_RESOURCES ){
+                       }
+
+                       else if (req->getOperation() == REQUEST_FREE_RESOURCES){
                            request_shutdown_vm(req_vm);
                            eraseRequest(req);
                            requestErased = true;
                        }
 
                    }
-       else if(req->getOperation() == REQUEST_ABANDON_SYSTEM){
+                   else if(req->getOperation() == REQUEST_ABANDON_SYSTEM){
                            // To perform management operations..
                        AbstractUser* user;
                        AbstractCloudUser* cl_user;
@@ -154,24 +158,9 @@ void CloudSchedulerRR::schedule (){
                        eraseRequest(req);
                        requestErased = true;
                    }
-  // add code for RR, the run time reach quantum, then the vm should be shutdown to give other vm chance to
-  //Todo how to get vm run time?
-       else if (quantum == req_vm->getCpuTime()){
-
-           printf("\n Method[CLOUD_SCHEDULER_RR]: -------> RR time out\n");
-           request_shutdown_vm(req_vm);
-
-           requestErased = false;
-
-
-       }
                    else {
                        throw cRuntimeError("Error: Operation unknown for CloudScheduler\n");
                    }
-
-
-
-
 
                    if (!requestErased){
                        j++;

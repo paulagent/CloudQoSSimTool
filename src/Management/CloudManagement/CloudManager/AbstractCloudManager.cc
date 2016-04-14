@@ -454,7 +454,8 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
                 //TODO--
 
             } else if (selectedNode == NULL){ // There are not a node to allocate the request!
-
+                // 1- shut down the first vm in timeoutqeue
+                // 2- assign resources to the current vm
                 // Reenqueue to wait until exists enough resources.
                 req->incrementTimesEnqueue();
                 req->setState(REQUEST_PENDING);
@@ -483,7 +484,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
                     vmName << req->getSelectionType(0).c_str() <<":u" << req->getUid() << ":p" << vmNew->getPid() << "";
                     vmNew->cModule::setName(vmName.str().c_str());
                     vmNew->setName(vmName.str().c_str());
-
+                   // vmNew-> t.start
                     nodeVL->testLinkVM (vmNew->getNumCores(), vmNew->getMemoryCapacity(), vmNew->getStorageCapacity(), vmNew->getNumNetworkIF(), vmNew->getTypeName(), vmNew->getUid(), vmNew->getPid());
 
                     linkVM (nodeVL, vmNew);

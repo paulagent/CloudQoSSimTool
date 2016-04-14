@@ -77,7 +77,6 @@ module CloudManagerScheduler like ICloudScheduler
         
         // compress the output files
         bool outputCompression = default (false);
-        int quantum = default (30);			// Quantum (in ticks)
         
         @class(AbstractCloudManager);
         @display("i=msg/job");

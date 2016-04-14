@@ -24,11 +24,7 @@ import inet.linklayer.loopback.LoopbackInterface;
 import inet.networklayer.common.InterfaceTable;
 import inet.networklayer.ipv4.RoutingTable;
 import inet.nodes.inet.NetworkLayer;
-import inet.nodes.inet.WirelessHost;
 import inet.transport.ITCP;
-import inet.transport.IUDP;
-import inet.transport.tcp.TCP;
-import inet.transport.udp.UDP;
 
 
 module NodeVL like INode
@@ -67,7 +63,7 @@ module NodeVL like INode
         // Node parameters
         int numCores;												// Number of CPU cores		
         double memorySize_MB;										// Total amount of memory of this node (in MB)
-        double memoryBlockSize_KB = default(128);
+        double memoryBlockSize_KB = default (128);
         int numStorageSystems = default(1);							// Number of Storage systems. As default, 1 storage system
         int storageSize_GB;									// Total amount of space for each storage system
         string initialState;										// state or the node  NODE_STATE_OFF | NODE_STATE_IDLE | NODE_STATE_RUNNING
@@ -94,8 +90,7 @@ module NodeVL like INode
         // Hypervisor net
         input fromVMNet[];
         output toVMNet[];
-        input fromNodeUdp[];			// Input gate from Network (Ethernet UDP)
-        output toNodeUdp[];			// Output gate to Network (Ethernet UDP)
+
 
     submodules:
 
@@ -156,6 +151,7 @@ module NodeVL like INode
             parameters:
                 @display("p=327,204");
         }
+
         osModule: OperatingSystemModule {
             parameters:
                 numFS = numFS;
@@ -175,7 +171,6 @@ module NodeVL like INode
                 toOutputMemory;
                 fromNet_TCP;
                 toNet_TCP;
-
         }
 
         cpuModule: <cpuModuleType> like ICPU_Module {
@@ -255,13 +250,7 @@ module NodeVL like INode
 
                 fromNodeNet;			// Input gate from Network (Ethernet TCP)
                 toNodeNet;			// Output gate to Network (Ethernet TCP)
-                fromNodeUdp;			// Input gate from Network (Ethernet UDP)
-                toNodeUdp;			// Output gate to Network (Ethernet UDP)
 
-        }
-
-        udp: UDP {
-            @display("p=443,204");
         }
 
     connections allowunconnected:
@@ -290,9 +279,6 @@ module NodeVL like INode
         hypervisor.toNodeNet --> tcp.appIn++;
         hypervisor.fromNodeNet <-- tcp.appOut++;
 
-        // Connections between UDP and hypervisor
-        hypervisor.toNodeUdp --> udp.appIn++;
-        hypervisor.fromNodeUdp <-- udp.appOut++;
 		// Connections between the BS and the Operative System        
         for i=0..numStorageSystems-1 {
             osModule.fromStorageSystem++ <-- hypervisor.toVMStorageServers++;
@@ -315,9 +301,6 @@ module NodeVL like INode
         // INET internals...
         tcp.ipOut --> networkLayer.transportIn++;
         tcp.ipIn <-- networkLayer.transportOut++;
-        // INET internals... for UDP
-        udp.ipOut --> networkLayer.transportIn++;
-        udp.ipIn <-- networkLayer.transportOut++;
 
         networkLayer.ifOut++ --> lo0.upperLayerIn;
         lo0.upperLayerOut --> networkLayer.ifIn++;

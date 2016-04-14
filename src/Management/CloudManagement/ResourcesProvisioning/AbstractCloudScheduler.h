@@ -14,7 +14,6 @@
 
 #include <omnetpp.h>
 #include "AbstractCloudManager.h"
-#include "icancloud_App_CPU_Message_m.h"
 
 
 

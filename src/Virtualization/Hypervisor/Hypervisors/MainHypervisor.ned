@@ -75,8 +75,7 @@ module MainHypervisor like IHypervisor
         output toVMNet[];
         input fromNodeNet;			// Input gate from Network (Ethernet TCP)
         output toNodeNet;			// Output gate to Network (Ethernet TCP)
-        input fromNodeUdp;			// Input gate from Network (Ethernet UDP)
-        output toNodeUdp;			// Output gate to Network (Ethernet UDP)
+
 
     submodules:
 
@@ -150,8 +149,6 @@ module MainHypervisor like IHypervisor
                 toNodeNet;
                 fromHStorageManager;
                 toHStorageManager;
-                fromNodeUdp;			// Input gate from Network (Ethernet UDP)
-                toNodeUdp;			// Output gate to Network (Ethernet UDP)
         }
 
     connections allowunconnected:

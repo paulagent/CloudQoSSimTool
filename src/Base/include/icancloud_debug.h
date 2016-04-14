@@ -117,15 +117,15 @@ using std::string;
 
 /************************* CPU SCHEDULERS *************************/
 
-	#define DEBUG_CPU_Scheduler_FIFO true				// Shows basic debug messages
-	#define DEBUG_MSG_CPU_Scheduler_FIFO true			// Shows all messages enterely (including all parameters)
-	#define DEBUG_CPU_Scheduler_RR true				// Shows basic debug messages
-	#define DEBUG_MSG_CPU_Scheduler_RR true			// Shows all messages enterely (including all parameters)
+	#define DEBUG_CPU_Scheduler_FIFO false				// Shows basic debug messages
+	#define DEBUG_MSG_CPU_Scheduler_FIFO false			// Shows all messages enterely (including all parameters)
+	#define DEBUG_CPU_Scheduler_RR false				// Shows basic debug messages
+	#define DEBUG_MSG_CPU_Scheduler_RR false			// Shows all messages enterely (including all parameters)
 
 /************************* CPU Cores *************************/
 
-	#define DEBUG_CPUcore true					// Shows basic debug messages
-	#define DEBUG_MSG_CPUcore true				// Shows all messages enterely (including all parameters)
+	#define DEBUG_CPUcore false					// Shows basic debug messages
+	#define DEBUG_MSG_CPUcore false				// Shows all messages enterely (including all parameters)
 
 
 /************************* BASIC FILE SYSTEM *************************/
@@ -182,12 +182,12 @@ using std::string;
 
 /************************* NETWORK SERVICES *************************/
 
-	#define DEBUG_Network_Service true				// Shows basic debug messages
-	#define DEBUG_MSG_Network_Service true			// Shows all messages enterely (including all parameters)
-	#define DEBUG_TCP_Service_Client true			// Shows basic debug messages
-	#define DEBUG_TCP_Service_MSG_Client true		// Shows all messages enterely (including all parameters)
-	#define DEBUG_TCP_Service_Server true			// Shows basic debug messages
-	#define DEBUG_TCP_Service_MSG_Server true		// Shows all messages enterely (including all parameters)
+	#define DEBUG_Network_Service false				// Shows basic debug messages
+	#define DEBUG_MSG_Network_Service false			// Shows all messages enterely (including all parameters)
+	#define DEBUG_TCP_Service_Client false			// Shows basic debug messages
+	#define DEBUG_TCP_Service_MSG_Client false		// Shows all messages enterely (including all parameters)
+	#define DEBUG_TCP_Service_Server false			// Shows basic debug messages
+	#define DEBUG_TCP_Service_MSG_Server false		// Shows all messages enterely (including all parameters)
 
 
 /************************* STORAGE MANAGERS *************************/
@@ -209,15 +209,15 @@ using std::string;
 	
 /************************* CLOUD SCHEDULER *************************/
 
-	#define DEBUG_CLOUD_SCHED true
+	#define DEBUG_CLOUD_SCHED false
 
 /************************* HYPERVISOR SCHEDULER *************************/
 
-	#define DEBUG_HYPERVISOR_BASE true
-	#define DEBUG_BASIC_HYPERVISOR true
-	#define DEBUG_WAITING_QUEUE true
-	#define DEBUG_H_NETMANAGER_BASE true
-	#define DEBUG_MSG_H_CPUMANAGER_Scheduler_FIFO true
+	#define DEBUG_HYPERVISOR_BASE false
+	#define DEBUG_BASIC_HYPERVISOR false
+	#define DEBUG_WAITING_QUEUE false
+	#define DEBUG_H_NETMANAGER_BASE false
+	#define DEBUG_MSG_H_CPUMANAGER_Scheduler_FIFO false
 
 
 

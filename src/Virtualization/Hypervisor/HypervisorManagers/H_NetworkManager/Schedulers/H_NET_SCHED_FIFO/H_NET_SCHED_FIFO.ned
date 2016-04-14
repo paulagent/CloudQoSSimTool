@@ -25,8 +25,7 @@ simple H_NET_SCHED_FIFO like IH_NETManager
         output toVMNet[];
         input fromNodeNet;			// Input gate from Network (Ethernet TCP)
         output toNodeNet;			// Output gate to Network (Ethernet TCP)
-   input fromNodeUdp;			// Input gate from Network (Ethernet UDP)
-        output toNodeUdp;			// Output gate to Network (Ethernet UDP)
+
         input fromHStorageManager;		// Input gate from Hypervisor Block Server Manager to NFS systems
         output toHStorageManager;		// Input gate from Hypervisor Block Server Manager to NFS systems
 

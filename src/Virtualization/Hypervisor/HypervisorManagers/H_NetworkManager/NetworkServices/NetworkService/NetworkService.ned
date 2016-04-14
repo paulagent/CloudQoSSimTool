@@ -20,7 +20,5 @@ simple NetworkService like INetworkService
 
         output toNetManager;								// Output gate to Service Redirector
         output toNetTCP;									// Output gate to Network (TCP)
-         input fromNodeUdp;			// Input gate from Network (Ethernet UDP)
-        output toNodeUdp;			// Output gate to Network (Ethernet UDP)
 
 }

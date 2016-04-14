@@ -30,7 +30,6 @@ moduleinterface ICloudScheduler
         int numberOfVMperNode;						// The maximum number of virtual machines into a node
         bool memorization;							// Parameter pending to test. Do not change the value
         bool outputCompression;					    // compress the output files
-        
     	
 }
 

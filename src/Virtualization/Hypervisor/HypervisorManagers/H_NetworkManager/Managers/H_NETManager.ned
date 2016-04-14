@@ -29,8 +29,6 @@ module H_NETManager like IH_NETManager
         output toVMNet[];
         input fromNodeNet;			// Input gate from Network (Ethernet TCP)
         output toNodeNet;			// Output gate to Network (Ethernet TCP)
-        input fromNodeUdp;			// Input gate from Network (Ethernet UDP)
-        output toNodeUdp;			// Output gate to Network (Ethernet UDP)
 
         input fromHStorageManager;		// Input gate from Hypervisor Storage Manager to NFS systems
         output toHStorageManager;		// Input gate from Hypervisor Storage Server Manager to NFS systems
@@ -64,11 +62,8 @@ module H_NETManager like IH_NETManager
         netManager.toHStorageManager --> toHStorageManager;
 
         // Connections between VM Network and Network Service
-        netManager.fromNodeNet <-- fromNodeNet;  //tcp
+        netManager.fromNodeNet <-- fromNodeNet;
         netManager.toNodeNet --> toNodeNet;
-        
-        netManager.fromNodeUdp <-- fromNodeUdp; //udp
-        netManager.toNodeUdp --> toNodeUdp;
 
         netManager.fromVMNet++ <-- fromVMNet++;
         netManager.toVMNet++ --> toVMNet++;

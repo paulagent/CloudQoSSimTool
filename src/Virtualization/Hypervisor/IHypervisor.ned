@@ -52,8 +52,6 @@ moduleinterface IHypervisor
         output toVMNet[];
         input  fromNodeNet;			// Input gate from Network (Ethernet TCP)
 		output toNodeNet;			// Output gate to Network (Ethernet TCP)
-		input  fromNodeUdp;			// Input gate from Network (Ethernet UDP)
-		output toNodeUdp;			// Output gate to Network (Ethernet UDP)
     
 }
 

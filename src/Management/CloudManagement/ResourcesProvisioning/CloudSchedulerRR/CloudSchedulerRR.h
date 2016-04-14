@@ -12,7 +12,7 @@
 
 #ifndef SCHEDULER_RR_H_
 #define SCHEDULER_RR_H_
-#include "API_OS.h"
+
 #include "AbstractCloudScheduler.h"
 
 class CloudSchedulerRR : public AbstractCloudScheduler{
@@ -21,7 +21,7 @@ protected:
 
     double minimum_percent_storageNode_free;
     int maximum_number_of_processes_per_node;
-    int quantum ;
+
     int currentNodeIndex;
     int currentNodeType;
 
