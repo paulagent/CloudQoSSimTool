@@ -1,0 +1,251 @@
+file 10426 1460053125                                           
+version 2
+run General-0-20160407-11:05:21-2626
+attr configname General
+attr datetime 20160407-11:05:21
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network Tcp_test
+attr processid 2626
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 23  Tcp_test.server.eth[0].queue.pauseQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 27  Tcp_test.server.eth[0].queue.dataQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 48  Tcp_test.router.eth[0].queue.pauseQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 52  Tcp_test.router.eth[0].queue.dataQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 68  Tcp_test.router.eth[1].queue.pauseQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 72  Tcp_test.router.eth[1].queue.dataQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 88  Tcp_test.router.eth[2].queue.pauseQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 92  Tcp_test.router.eth[2].queue.dataQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 121  Tcp_test.client1.eth[0].queue.pauseQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 125  Tcp_test.client1.eth[0].queue.dataQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 154  Tcp_test.client2.eth[0].queue.pauseQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 158  Tcp_test.client2.eth[0].queue.dataQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 99  Tcp_test.client1.pingApp[0]  pingTxSeq:vector  ETV
+attr interpolationmode  none
+attr title  "ping tx seq, vector"
+vector 132  Tcp_test.client2.pingApp[0]  pingTxSeq:vector  ETV
+attr interpolationmode  none
+attr title  "ping tx seq, vector"
+vector 198  Tcp_test.client1.tcp  tcpRcvQueueBytes  ETV
+vector 185  Tcp_test.client1.tcp  "advertised window"  ETV
+vector 184  Tcp_test.client1.tcp  "receive window"  ETV
+vector 187  Tcp_test.client1.tcp  "sent ack"  ETV
+vector 222  Tcp_test.client2.tcp  tcpRcvQueueBytes  ETV
+vector 209  Tcp_test.client2.tcp  "advertised window"  ETV
+vector 208  Tcp_test.client2.tcp  "receive window"  ETV
+vector 211  Tcp_test.client2.tcp  "sent ack"  ETV
+vector 101  Tcp_test.client1.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 134  Tcp_test.client2.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 115  Tcp_test.client1.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 148  Tcp_test.client2.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 122  Tcp_test.client1.eth[0].queue.dataQueue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 124  Tcp_test.client1.eth[0].queue.dataQueue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 155  Tcp_test.client2.eth[0].queue.dataQueue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 157  Tcp_test.client2.eth[0].queue.dataQueue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 111  Tcp_test.client1.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 144  Tcp_test.client2.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 106  Tcp_test.client1.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 139  Tcp_test.client2.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 54  Tcp_test.router.eth[1].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 55  Tcp_test.router.eth[1].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 74  Tcp_test.router.eth[2].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 75  Tcp_test.router.eth[2].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 63  Tcp_test.router.eth[1].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 83  Tcp_test.router.eth[2].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 29  Tcp_test.router.networkLayer.arp  sentReply:vector  ETV
+attr title  "ARP replies sent, vector"
+vector 62  Tcp_test.router.eth[1].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 82  Tcp_test.router.eth[2].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 69  Tcp_test.router.eth[1].queue.dataQueue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 71  Tcp_test.router.eth[1].queue.dataQueue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 89  Tcp_test.router.eth[2].queue.dataQueue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 91  Tcp_test.router.eth[2].queue.dataQueue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 58  Tcp_test.router.eth[1].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 78  Tcp_test.router.eth[2].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 53  Tcp_test.router.eth[1].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 73  Tcp_test.router.eth[2].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 107  Tcp_test.client1.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 108  Tcp_test.client1.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 140  Tcp_test.client2.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 141  Tcp_test.client2.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 116  Tcp_test.client1.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 149  Tcp_test.client2.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+23	8797 9 0 0 0 0 1 0 0 0 0
+27	8806 9 0 0 0 0 1 0 0 0 0
+29	8815 38 45 46 0.10000586 0.10000586 2 1 1 2 2
+48	8853 9 0 0 0 0 1 0 0 0 0
+52	8862 9 0 0 0 0 1 0 0 0 0
+53	8871 20 61 61 0.10001162 0.10001162 1 64 64 64 4096
+54	8891 40 39 95 0.10000586 0.10001758 2 64 64 128 8192
+55	8931 40 39 95 0.10000586 0.10001758 2 64 64 128 8192
+58	8971 20 57 57 0.10000586 0.10000586 1 64 64 64 4096
+62	8991 20 49 49 0.10000586 0.10000586 1 28 28 28 784
+63	9011 20 41 41 0.10000586 0.10000586 1 28 28 28 784
+68	9031 9 0 0 0 0 1 0 0 0 0
+69	9040 20 53 53 0.10000586 0.10000586 1 64 64 64 4096
+71	9060 19 53 53 0.10000586 0.10000586 1 0 0 0 0
+72	9079 47 0 53 0 0.10000586 3 0 1 1 1
+73	9126 20 62 62 0.10001162 0.10001162 1 64 64 64 4096
+74	9146 20 40 40 0.10000586 0.10000586 1 64 64 64 4096
+75	9166 20 40 40 0.10000586 0.10000586 1 64 64 64 4096
+78	9186 20 58 58 0.10000586 0.10000586 1 64 64 64 4096
+82	9206 20 50 50 0.10000586 0.10000586 1 28 28 28 784
+83	9226 20 42 42 0.10000586 0.10000586 1 28 28 28 784
+88	9246 9 0 0 0 0 1 0 0 0 0
+89	9255 20 54 54 0.10000586 0.10000586 1 64 64 64 4096
+91	9275 19 54 54 0.10000586 0.10000586 1 0 0 0 0
+92	9294 47 0 54 0 0.10000586 3 0 1 1 1
+99	9341 12 14 14 0.1 0.1 1 0 0 0 0
+101	9353 13 21 21 0.1 0.1 1 1 1 1 1
+106	9366 42 37 89 0.10000576 0.10001748 2 64 64 128 8192
+107	9408 21 63 63 0.10001172 0.10001172 1 64 64 64 4096
+108	9429 21 63 63 0.10001172 0.10001172 1 64 64 64 4096
+111	9450 56 35 93 0.1 0.10001748 3 64 94 222 17028
+115	9506 56 27 72 0.1 0.10001172 3 28 76 148 8496
+116	9562 21 65 65 0.10001172 0.10001172 1 28 28 28 784
+121	9583 10 0 0 0 0 1 0 0 0 0
+122	9593 56 31 80 0.1 0.10001172 3 64 94 222 17028
+124	9649 60 31 89 0.1 0.10001748 3 0 5.76e-06 5.76e-06 3.31776e-11
+125	9709 116 0 89 0 0.10001748 7 0 1 3 3
+132	9825 13 16 16 0.1 0.1 1 0 0 0 0
+134	9838 13 23 23 0.1 0.1 1 1 1 1 1
+139	9851 42 38 90 0.10000576 0.10001748 2 64 64 128 8192
+140	9893 21 64 64 0.10001172 0.10001172 1 64 64 64 4096
+141	9914 21 64 64 0.10001172 0.10001172 1 64 64 64 4096
+144	9935 56 36 94 0.1 0.10001748 3 64 94 222 17028
+148	9991 56 28 74 0.1 0.10001172 3 28 76 148 8496
+149	10047 21 66 66 0.10001172 0.10001172 1 28 28 28 784
+154	10068 10 0 0 0 0 1 0 0 0 0
+155	10078 56 32 82 0.1 0.10001172 3 64 94 222 17028
+157	10134 60 32 90 0.1 0.10001748 3 0 5.76e-06 5.76e-06 3.31776e-11
+158	10194 116 0 90 0 0.10001748 7 0 1 3 3
+184	10310 16 17 17 0.1 0.1 1 7504 7504 7504 56310016
+185	10326 16 17 17 0.1 0.1 1 7504 7504 7504 56310016
+187	10342 13 17 17 0.1 0.1 1 0 0 0 0
+198	10355 13 17 17 0.1 0.1 1 0 0 0 0
+208	10368 16 19 19 0.1 0.1 1 7504 7504 7504 56310016
+209	10384 16 19 19 0.1 0.1 1 7504 7504 7504 56310016
+211	10400 13 19 19 0.1 0.1 1 0 0 0 0
+222	10413 13 19 19 0.1 0.1 1 0 0 0 0

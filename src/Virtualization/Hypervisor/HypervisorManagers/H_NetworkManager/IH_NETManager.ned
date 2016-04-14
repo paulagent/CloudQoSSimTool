@@ -1,0 +1,30 @@
+//
+// Module interface that defines the behavior of a network hypervisor controller.
+//
+// @author Gabriel Gonz&aacute;lez Casta&ntilde;&eacute
+// @date 2012-10-23
+//
+
+package icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_NetworkManager;
+
+moduleinterface IH_NETManager
+{
+    parameters:
+        int storageApp_ModuleIndex;			// System storage application index
+        int connectionTimeOut;				// Time limit for connecting applications        
+		double networkOverhead;				// Percent of time that network increases as overhead per each operation.
+        
+    gates:
+
+        input fromVMNet[];
+        output toVMNet[];
+        input fromNodeNet;					// Input gate from Network (Ethernet TCP)
+        output toNodeNet;					// Output gate to Network (Ethernet TCP)
+       input fromNodeUdp;			// Input gate from Network (Ethernet UDP)
+        output toNodeUdp;			// Output gate to Network (Ethernet UDP)
+
+        input fromHStorageManager;			// Input gate from Hypervisor Block Server Manager to NFS systems
+        output toHStorageManager;			// Input gate from Hypervisor Block Server Manager to NFS systems
+
+}
+
