@@ -133,7 +133,7 @@ void CloudSchedulerRR::schedule (){
                            /*
                             * else
                             * {
-                            *
+                            * call timer
                             * }
                             */
 
