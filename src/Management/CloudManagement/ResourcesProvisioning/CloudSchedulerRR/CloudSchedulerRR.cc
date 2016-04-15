@@ -175,17 +175,17 @@ void CloudSchedulerRR::schedule (){
                while (j<AbstractCloudManager::runVM.size())
                {
                    clock_t t=clock(); // we are not sure about current time
-                   RunningVM* vm=new runningVM();
+                   RunningVM* vm;
                    vm=AbstractCloudManager::runVM.at(j);
                    if (t> vm->end_time)
                    {
                        // make new request
-                       AbstractRequest* new_req=new AbstractRequest();
+                       AbstractRequest* new_req;
                        new_req->setOperation(REQUEST_START_VM);
                        new_req->setState(REQUEST_PENDING);
                        new_req->setUid(vm->user);
                        // add new request to temp queue
-                       RequestsManagement* manager =new RequestManagement();
+                       RequestsManagement* manager;
                        manager->userSendRequest(new_req);
                        // shutdown VM
                        RequestVM* new_req_vm=new RequestVM();
@@ -198,7 +198,7 @@ void CloudSchedulerRR::schedule (){
 
 
                        // erase from vector
-                       AbstractCloudManager::runVM.erase(vm);
+                       AbstractCloudManager::runVM.erase(AbstractCloudManager::runVM.begin());
 
                    }
                    else
