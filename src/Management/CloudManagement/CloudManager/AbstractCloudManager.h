@@ -6,6 +6,8 @@
 #include "VM.h"
 #include "NodeVL.h"
 #include "RequestVM.h"
+#include "RunningVM.h"
+#include "time.h"
 
 class CfgCloud;
 class RequestVM;
@@ -34,6 +36,8 @@ protected:
     bool migrationActive;
 
     vector <RequestVM*> reqPendingToDelete;
+public:
+    vector <RunningVM*> runVM;
 
 protected:
 

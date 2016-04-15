@@ -22,7 +22,7 @@ AbstractCloudManager::~AbstractCloudManager() {
     pendingStorageRequests.clear();
     pendingRemoteStorageDeletion.clear();
     connectionsDeletion.clear();
-
+    runVM.clear();
 
 }
 
@@ -492,6 +492,18 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
                 // If the linked is incorrect
                     req->decreaseSelectionQuantity(i);
                     attendedRequest_vms.insert(attendedRequest_vms.end(), vmNew);
+                // Put VM in running VM Vector
+                // current time
+                    clock_t now = clock();
+                   // simtime_t start_time;
+                   // start_time=clock();
+
+                    RunningVM* started_VM = new RunningVM();
+                    started_VM->vmID.push_back(vmNew);
+                    started_VM->start_time= now;
+                    started_VM->end_time=now+2000000; //clocks per secs
+                    started_VM->user=vmNew->getUid();
+                    runVM.push_back(started_VM);
              }
         }
         if (!notEnoughResources) req->eraseSelectionType(i);

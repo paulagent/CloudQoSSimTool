@@ -171,6 +171,41 @@ void CloudSchedulerRR::schedule (){
                    req = getRequestByIndex(j);
 
                }
+               j=0;
+               while (j<AbstractCloudManager::runVM.size())
+               {
+                   clock_t t=clock(); // we are not sure about current time
+                   RunningVM* vm=new runningVM();
+                   vm=AbstractCloudManager::runVM.at(j);
+                   if (t> vm->end_time)
+                   {
+                       // make new request
+                       AbstractRequest* new_req=new AbstractRequest();
+                       new_req->setOperation(REQUEST_START_VM);
+                       new_req->setState(REQUEST_PENDING);
+                       new_req->setUid(vm->user);
+                       // add new request to temp queue
+                       RequestsManagement* manager =new RequestManagement();
+                       manager->userSendRequest(new_req);
+                       // shutdown VM
+                       RequestVM* new_req_vm=new RequestVM();
+                       new_req_vm->setUid(vm->user);
+                       new_req_vm->setOperation(REQUEST_FREE_RESOURCES);
+                       new_req_vm->setVectorVM(vm->vmID);
+
+                       request_shutdown_vm(new_req_vm);
+                       // save the state
+
+
+                       // erase from vector
+                       AbstractCloudManager::runVM.erase(vm);
+
+                   }
+                   else
+                   {
+                       ++j;
+                   }
+               }
 
                schedulerUnblock();
            }
