@@ -5,6 +5,9 @@
 //
 // @authors Gabriel Gonz&aacute;lez Casta&ntilde;&eacute
 // @date 2014-12-11
+// disabled print energy part by default value to false
+//@author bing gao
+//@date 2016-04-14
 
 package icancloud.src.Management.CloudManagement.ResourcesProvisioning;
 
@@ -37,28 +40,28 @@ module CloudManagerScheduler like ICloudScheduler
         double timeBetweenLogResults_s = default(1.0);
         
         // print the energy to a log file.
-        bool printEnergyToFile = default(true);     
+        bool printEnergyToFile = default(false);     
         
         // print each schedule event the consumption values of the nodes
-        bool printEnergyTrace = default(true);    	
+        bool printEnergyTrace = default(false);    	
         
     	// print Node instant consumption
-    	bool printNodePowerConsumed = default (true);
+    	bool printNodePowerConsumed = default (false);
     	
     	// print Node energy consumed
-    	bool printNodeEnergyConsumed = default (true);
+    	bool printNodeEnergyConsumed = default (false);
     	
     	// print main subsytems instant consumption
-    	bool printComponentsPowerConsumed = default (true);
+    	bool printComponentsPowerConsumed = default (false);
     	
     	// print main subsytems instant consumption
-    	bool printComponentsEnergyConsumed = default (true);     
+    	bool printComponentsEnergyConsumed = default (false);     
     	       	
     	// print all the data-center energyConsumed
-    	bool printDataCenterPowerConsumed = default (true);
+    	bool printDataCenterPowerConsumed = default (false);
     	
     	// print all the data-center instant consumption
-    	bool printDataCenterEnergyConsumed = default (true);
+    	bool printDataCenterEnergyConsumed = default (false);
 
 		// THe maximum number of virtual machines allowed to access to a data server 
         int remote_storage_VMs_per_node = default(10000);

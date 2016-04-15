@@ -74,7 +74,7 @@ protected:
 
       /*
        * This method enqueue the request at temporal requests queue if the arrival is blocked.
-       *  If it is not blockd, the request will be enqueue at requests queue.
+       *  If it is not blocked, the request will be enqueue at requests queue.
        */
       void user_request(AbstractRequest* request);
 
