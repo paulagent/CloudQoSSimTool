@@ -56,7 +56,6 @@ void UserGeneratorDay::finish(){
 void UserGeneratorDay::processSelfMessage (cMessage *msg){
 
 	SimTime nextEvent;
-
 	unsigned int i,j;
 	double k;
 	bool finalization = false;
@@ -71,18 +70,29 @@ void UserGeneratorDay::processSelfMessage (cMessage *msg){
                 for (i = 0; (int)i < quantity_user_preloaded; i++) createUser();
 
         if (strcmp (distribution.c_str(), "no_distribution") == 0){
+            printf("\n Method[UserGeneratorDay]: -------> noDistribution\n");
+            printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
+
 
             for (i = 0; (int)i < total_users; i++)
                 createUser();
+            printf("\n Method[UserGeneratorDay]: -------> noDistribution  --> user creation finished\n");
 
         } else {
+            printf("\n Method[UserGeneratorDay]: -------> Prepare to user arrivals\n");
+            printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
+            printf("\n Method[UserGeneratorDay]: total_users %d-------> \n", total_users);
 
             // Prepare to user arrival .. !!
                 userCreateGroups(time_intervals_H, total_users);
         }
 
         if (time_intervals_H != 0)
-            scheduleAt (simTime(), newHourEvent);
+        {
+           scheduleAt (simTime(), newHourEvent);
+           printf("\n Method[UserGeneratorDay]: newHourEvent %d-------> \n", newHourEvent);
+
+        }
         else
             finalizeUserGenerator(false);
 
@@ -195,7 +205,7 @@ void UserGeneratorDay::userCreateGroups(int intervals, int nusers){
        for (long int i=0; i<nExperiments; ++i) {
 
            number = selectDistribution();
-
+           printf("\n Method[userCreateGroups]: number: %d-------> \n",number);
          if ((number>=0.0)&&(number<intervals)){
              (*(p.begin() + ((long int)(round(number)))))++;
          }

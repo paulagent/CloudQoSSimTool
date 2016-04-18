@@ -238,6 +238,7 @@ void CloudSchedulerRR::schedule (){
                        ++j;
                    }
                }
+               printf("\n Method[CLOUD_SCHEDULER_RR]: -------> After our loop\n");
 
                schedulerUnblock();
            }
