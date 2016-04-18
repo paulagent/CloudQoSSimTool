@@ -1,0 +1,32 @@
+<map id="cGateManager::linkGate" name="cGateManager::linkGate">
+<area shape="rect" id="node2" href="$class_syscall_manager.html#ad5487e3ba3224613e0f3b9d205ce9aea" title="SyscallManager::initialize" alt="" coords="217,312,388,339"/>
+<area shape="rect" id="node3" href="$classc_gate_manager.html#ad566e09aa1825fb442c21cd2140c0800" title="cGateManager::newGate" alt="" coords="219,363,386,389"/>
+<area shape="rect" id="node20" href="$class_h___storage_manager___base.html#a87fbc828eebbef388a0973f4751a0b00" title="H_StorageManager_Base\l::initialize" alt="" coords="461,530,632,571"/>
+<area shape="rect" id="node25" href="$class_h___c_p_u_manager___base.html#ad4f04419cfb45be054cf3aa109b10ca1" title="H_CPUManager_Base::\linitialize" alt="" coords="221,581,384,622"/>
+<area shape="rect" id="node27" href="$class_h___memory_manager___base.html#a50e566a1668588935f5716814f58b3fe" title="H_MemoryManager_Base\l::initialize" alt="" coords="216,646,389,687"/>
+<area shape="rect" id="node29" href="$class_h___n_e_t_manager___base.html#a427fed15e8b4ef79c95b8c6c8d78a1b0" title="H_NETManager_Base::\linitialize" alt="" coords="222,711,383,753"/>
+<area shape="rect" id="node4" href="$class_syscall_manager.html#af1a72cbe7b1205160ad81d3b48b23f9c" title="SyscallManager::createProcess" alt="" coords="443,363,650,389"/>
+<area shape="rect" id="node5" href="$class_v_m_syscall_manager.html#a5fbfaf7786727f50c6bcff494af49c4e" title="VMSyscallManager::create\lProcess" alt="" coords="719,435,897,477"/>
+<area shape="rect" id="node8" href="$class_h___c_p_u_manager___base.html#a80e6d91e0950a19bc8b634f89fcf808f" title="H_CPUManager_Base::\lsetVM" alt="" coords="727,5,889,46"/>
+<area shape="rect" id="node16" href="$class_h___memory_manager___base.html#a187b7d888569f1aafcfa69c4567c6fca" title="H_MemoryManager_Base\l::setVM" alt="" coords="460,129,633,170"/>
+<area shape="rect" id="node19" href="$class_h___n_e_t_manager___base.html#a2c954f1339daed0625287f3af850307a" title="H_NETManager_Base::\lsetVM" alt="" coords="727,238,889,279"/>
+<area shape="rect" id="node22" href="$class_h___storage_manager___base.html#ab484e1b007c605cf54876f4a990194ce" title="H_StorageManager_Base\l::createStorageCell" alt="" coords="461,246,632,287"/>
+<area shape="rect" id="node23" href="$class_h___storage_manager___base.html#ae2d4f83bec60d4f9040f4ddd5e7719c0" title="H_StorageManager_Base\l::setVM" alt="" coords="723,303,893,345"/>
+<area shape="rect" id="node24" href="$class_vm_msg_controller.html#a92794c6b117e7a7f147c86d1fcf2bee0" title="VmMsgController::linkNew\lApplication" alt="" coords="457,465,636,506"/>
+<area shape="rect" id="node6" href="$class_abstract_cloud_user.html#a8640cb9030818b0d125e431d1322fb15" title="AbstractCloudUser::\lallocateJob" alt="" coords="960,435,1101,477"/>
+<area shape="rect" id="node7" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="1149,435,1291,477"/>
+<area shape="rect" id="node9" href="$class_hypervisor.html#a78a8693c1bb6049a6ebe6a0b037a7508" title="Hypervisor::setVM" alt="" coords="965,216,1096,243"/>
+<area shape="rect" id="node10" href="$class_node_v_l.html#a5b2f6d933e7dab432660828730c34a95" title="NodeVL::linkVM" alt="" coords="1161,216,1279,243"/>
+<area shape="rect" id="node11" href="$class_abstract_cloud_manager.html#a6089291642ef82d3a9ccd8a7a71b7302" title="AbstractCloudManager\l::closeVMConnections" alt="" coords="1339,209,1493,250"/>
+<area shape="rect" id="node12" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="1542,209,1703,250"/>
+<area shape="rect" id="node13" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="1775,143,1924,185"/>
+<area shape="rect" id="node14" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="1775,209,1924,250"/>
+<area shape="rect" id="node15" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="1752,275,1947,301"/>
+<area shape="rect" id="node17" href="$class_h___memory_manager___base.html#a0795a8236b996e2db0f537d39a0caebb" title="H_MemoryManager_Base\l::getNumberOfVMs" alt="" coords="721,70,895,111"/>
+<area shape="rect" id="node18" href="$class_h___m_e_m___s_c_h_e_d___f_i_f_o.html#a0b7d5da7a1ca6bb2dc4f398914ec1e5b" title="H_MEM_SCHED_FIFO::setVM" alt="" coords="704,136,912,163"/>
+<area shape="rect" id="node21" href="$class_h___s_t_o_r_a_g_e___s_c_h_e_d___f_i_f_o.html#a4f36fb9a94f3bcaebb9639d36e2b4dc0" title="H_STORAGE_SCHED_FIFO\l::initialize" alt="" coords="710,530,906,571"/>
+<area shape="rect" id="node26" href="$class_h___c_p_u___s_c_h_e_d___f_i_f_o.html#a75e62ff6a9bc66011659a3d1b7e04530" title="H_CPU_SCHED_FIFO::initialize" alt="" coords="439,596,654,623"/>
+<area shape="rect" id="node28" href="$class_h___m_e_m___s_c_h_e_d___f_i_f_o.html#aa4269f74db4561d12b83819f5143e92e" title="H_MEM_SCHED_FIFO::initialize" alt="" coords="438,653,655,680"/>
+<area shape="rect" id="node30" href="$class_h___n_e_t_manager___base.html#a6e9e10ddd9bb247e1d25f941e43102e3" title="H_NETManager_Base::\lgetNumberOfVMs" alt="" coords="466,762,627,803"/>
+<area shape="rect" id="node31" href="$class_h___n_e_t___s_c_h_e_d___f_i_f_o.html#a5d345e6a3e79629fda5d8363fb5f5685" title="H_NET_SCHED_FIFO::initialize" alt="" coords="440,711,653,737"/>
+</map>

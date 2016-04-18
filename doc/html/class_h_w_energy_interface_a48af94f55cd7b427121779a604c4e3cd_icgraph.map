@@ -1,0 +1,6 @@
+<map id="HWEnergyInterface::finish" name="HWEnergyInterface::finish">
+<area shape="rect" id="node2" href="$class_c_p_ucore.html#a4e06f577e06f830db026a4bd6c9dc441" title="CPUcore::finish" alt="" coords="220,5,335,32"/>
+<area shape="rect" id="node4" href="$class_storage_controller.html#af11d29dbe1c11b7bd22316b9d3efbcaa" title="StorageController::\lfinish" alt="" coords="212,57,343,98"/>
+<area shape="rect" id="node5" href="$class_network_service.html#a6e944c65c17cd92924e56285fba43e04" title="NetworkService::finish" alt="" coords="200,123,355,149"/>
+<area shape="rect" id="node3" href="$class_c_p_ucore.html#a4697f7c61f12c80b1f2777ec9341728b" title="CPUcore::numInitStages" alt="" coords="403,5,571,32"/>
+</map>

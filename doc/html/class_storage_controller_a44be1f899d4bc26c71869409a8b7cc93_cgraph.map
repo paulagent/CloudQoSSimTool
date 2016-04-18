@@ -1,0 +1,6 @@
+<map id="StorageController::initialize" name="StorageController::initialize">
+<area shape="rect" id="node2" href="$class_h_w_energy_interface.html#a019aa691206e18ae8c53269a1620345a" title="HWEnergyInterface::\linitialize" alt="" coords="199,5,345,46"/>
+<area shape="rect" id="node5" href="$class_h_w_energy_interface.html#ac61f27650c7af75e9d3388d90fcdfc21" title="HWEnergyInterface::\lsetNumberOfComponents" alt="" coords="185,70,359,111"/>
+<area shape="rect" id="node3" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="409,12,578,39"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="627,5,821,46"/>
+</map>

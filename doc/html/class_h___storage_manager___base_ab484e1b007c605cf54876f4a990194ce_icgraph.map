@@ -1,0 +1,10 @@
+<map id="H_StorageManager_Base::createStorageCell" name="H_StorageManager_Base::createStorageCell">
+<area shape="rect" id="node2" href="$class_h___storage_manager___base.html#ae2d4f83bec60d4f9040f4ddd5e7719c0" title="H_StorageManager_Base\l::setVM" alt="" coords="224,70,395,111"/>
+<area shape="rect" id="node3" href="$class_hypervisor.html#a78a8693c1bb6049a6ebe6a0b037a7508" title="Hypervisor::setVM" alt="" coords="443,77,573,104"/>
+<area shape="rect" id="node4" href="$class_node_v_l.html#a5b2f6d933e7dab432660828730c34a95" title="NodeVL::linkVM" alt="" coords="621,77,739,104"/>
+<area shape="rect" id="node5" href="$class_abstract_cloud_manager.html#a6089291642ef82d3a9ccd8a7a71b7302" title="AbstractCloudManager\l::closeVMConnections" alt="" coords="787,70,941,111"/>
+<area shape="rect" id="node6" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="990,70,1151,111"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="1223,5,1372,46"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="1223,70,1372,111"/>
+<area shape="rect" id="node9" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="1200,136,1395,163"/>
+</map>

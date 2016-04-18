@@ -1,0 +1,10 @@
+<map id="AbstractUser::notify_UserRequestAttendeed" name="AbstractUser::notify_UserRequestAttendeed">
+<area shape="rect" id="node2" href="$class_abstract_user.html#a2857c4576e8ce9329c19163fd6a9b19e" title="AbstractUser::startUser" alt="" coords="219,75,381,101"/>
+<area shape="rect" id="node3" href="$class_user_management.html#af10518434b29363f15277af6ca37cb10" title="UserManagement::newUser" alt="" coords="430,75,615,101"/>
+<area shape="rect" id="node4" href="$class_abstract_d_c_manager.html#a5b99a5496d1b5b1d6990d369838eaabb" title="AbstractDCManager::\lnewUser" alt="" coords="668,34,817,75"/>
+<area shape="rect" id="node8" href="$class_abstract_user_generator.html#a3d326e10cbdb84c2f3e402d2cbea6767" title="AbstractUserGenerator\l::createUser" alt="" coords="665,99,821,141"/>
+<area shape="rect" id="node5" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="873,34,1023,75"/>
+<area shape="rect" id="node6" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="1272,5,1427,46"/>
+<area shape="rect" id="node7" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="1075,34,1224,75"/>
+<area shape="rect" id="node9" href="$class_abstract_user_generator.html#a21db40646994fa324a8441c9e8b6d666" title="AbstractUserGenerator\l::processSelfMessage" alt="" coords="870,99,1026,141"/>
+</map>

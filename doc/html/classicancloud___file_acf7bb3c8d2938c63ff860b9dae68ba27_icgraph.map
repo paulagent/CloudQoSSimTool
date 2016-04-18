@@ -1,0 +1,7 @@
+<map id="icancloud_File::getTotalSectors" name="icancloud_File::getTotalSectors">
+<area shape="rect" id="node2" href="$classicancloud___file.html#ae332c11bc502a059dc1902a2ca67cb30" title="icancloud_File::updateFileSize" alt="" coords="214,56,413,83"/>
+<area shape="rect" id="node6" href="$classicancloud___file.html#a0981c1e53dd290e7da7767ec284b370e" title="icancloud_File::contents\lToString" alt="" coords="232,107,395,149"/>
+<area shape="rect" id="node3" href="$classicancloud___file.html#a92d165b7e8cf3895f2c18c3fb4d9d3ad" title="icancloud_File::addBranch" alt="" coords="475,5,650,32"/>
+<area shape="rect" id="node4" href="$classicancloud___file.html#ada29c6ef9d9e33f8a45ab0edc8868348" title="icancloud_File::addBlock" alt="" coords="713,31,879,57"/>
+<area shape="rect" id="node5" href="$classicancloud___file.html#a8dc996c2587d8dd0c4cc161ef6983ea8" title="icancloud_File::clearBranchList" alt="" coords="461,107,664,133"/>
+</map>

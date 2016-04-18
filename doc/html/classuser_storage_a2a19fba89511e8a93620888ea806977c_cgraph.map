@@ -1,0 +1,7 @@
+<map id="userStorage::initialize" name="userStorage::initialize">
+<area shape="rect" id="node2" href="$classuser_base.html#a30fec76e3c5b7f6c9bc8d9d03dc072cd" title="userBase::initialize" alt="" coords="201,37,333,64"/>
+<area shape="rect" id="node3" href="$classqueues_manager.html#a5e416310710ec4b66655b3ac672534c7" title="queuesManager::initialize" alt="" coords="382,37,551,64"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="601,12,770,39"/>
+<area shape="rect" id="node6" href="$class_job_queue.html#a53003ac28808bb4e075396eeffb8710c" title="JobQueue::clear" alt="" coords="627,63,744,89"/>
+<area shape="rect" id="node5" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="819,5,1013,46"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="AbstractSyscallManager::removeAllProcesses" name="AbstractSyscallManager::removeAllProcesses">
+<area shape="rect" id="node2" href="$class_machine.html#a310c7c1b2ad38ed929cd84e2695f113c" title="Machine::removeAllProcesses" alt="" coords="219,13,418,40"/>
+<area shape="rect" id="node5" href="$class_abstract_syscall_manager.html#a869b0d170ed1315c66fd9ae98689d97e" title="AbstractSyscallManager\l::storageDecrease" alt="" coords="237,65,401,106"/>
+<area shape="rect" id="node11" href="$class_v_m.html#acf2b11fab62f65b261079faad0bd4d68" title="VM::shutdownVM" alt="" coords="255,133,382,160"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_user.html#a3d705a05ad4d9b7b55b1934bcc845cbf" title="AbstractCloudUser::\ldeleteAllJobsVM" alt="" coords="473,6,615,47"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="676,6,817,47"/>
+<area shape="rect" id="node6" href="$class_node_v_l.html#a7ae98a532c208ee68e9aab4facbb1ba5" title="NodeVL::testLinkVM" alt="" coords="473,72,615,99"/>
+<area shape="rect" id="node7" href="$class_abstract_cloud_manager.html#ae135ac35f047a6e551e7a5df648de593" title="AbstractCloudManager\l::request_start_vm" alt="" coords="876,63,1031,105"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="1105,34,1255,75"/>
+<area shape="rect" id="node9" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="1105,99,1255,141"/>
+<area shape="rect" id="node10" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="1083,165,1277,192"/>
+<area shape="rect" id="node12" href="$class_abstract_cloud_manager.html#a168edd7dfb1a5cacf9ec9000729c2e8d" title="AbstractCloudManager\l::unlinkVM" alt="" coords="467,185,621,226"/>
+<area shape="rect" id="node13" href="$class_v_m.html#a6d1e51ba54e03ecf8096d4907da6211a" title="VM::setNodeSetName" alt="" coords="467,133,621,160"/>
+<area shape="rect" id="node14" href="$class_abstract_cloud_manager.html#a6089291642ef82d3a9ccd8a7a71b7302" title="AbstractCloudManager\l::closeVMConnections" alt="" coords="669,127,824,169"/>
+<area shape="rect" id="node15" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="873,129,1034,170"/>
+</map>

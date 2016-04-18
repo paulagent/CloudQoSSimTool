@@ -1,0 +1,9 @@
+<map id="Hypervisor::freeResources" name="Hypervisor::freeResources">
+<area shape="rect" id="node2" href="$class_node_v_l.html#aae49602b867b93b0baf5df33d2cd7e69" title="NodeVL::freeResources" alt="" coords="232,27,395,53"/>
+<area shape="rect" id="node3" href="$class_node_v_l.html#ac54a1b65f76db3e774fa8d1d6b3f86b1" title="NodeVL::unlinkVM" alt="" coords="248,77,379,104"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_manager.html#a6089291642ef82d3a9ccd8a7a71b7302" title="AbstractCloudManager\l::closeVMConnections" alt="" coords="443,70,597,111"/>
+<area shape="rect" id="node5" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="646,70,807,111"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="879,5,1028,46"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="879,70,1028,111"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="856,136,1051,163"/>
+</map>

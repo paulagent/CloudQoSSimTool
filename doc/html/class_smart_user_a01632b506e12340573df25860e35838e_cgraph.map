@@ -1,0 +1,31 @@
+<map id="SmartUser::jobHasFinished" name="SmartUser::jobHasFinished">
+<area shape="rect" id="node2" href="$class_user_job.html#aae111b3f27942eb74ab41d47ec8605b0" title="UserJob::getMachine" alt="" coords="261,197,408,224"/>
+<area shape="rect" id="node3" href="$class_machine.html#aa9c68bbbcdf04b49d8360644a1232e13" title="Machine::getNumProcesses\lRunning" alt="" coords="241,249,428,290"/>
+<area shape="rect" id="node5" href="$classqueues_manager.html#aa3777ebd71f54628f414eb97a813ff4f" title="queuesManager::getWQ_size" alt="" coords="237,315,432,341"/>
+<area shape="rect" id="node7" href="$class_abstract_cloud_user.html#ab21b9ab01a6b9846f84b6825fcda3fc8" title="AbstractCloudUser::\lshutdown_VM" alt="" coords="264,366,405,407"/>
+<area shape="rect" id="node22" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="981,551,1176,593"/>
+<area shape="rect" id="node24" href="$class_request_v_m.html#a560092eefe8762580ddc646882bfbbeb" title="RequestVM::getNumberVM" alt="" coords="726,457,909,484"/>
+<area shape="rect" id="node25" href="$class_request_v_m.html#af5a39e9a36b291a5b697f3fc0f4edcb8" title="RequestVM::getVM" alt="" coords="749,508,886,535"/>
+<area shape="rect" id="node27" href="$class_machine.html#ab02dbcb3ade7270525aa499cc9a51d59" title="Machine::getNumCores" alt="" coords="255,609,415,636"/>
+<area shape="rect" id="node29" href="$class_machine.html#a2f56e118394746c0895bf83709798811" title="Machine::getIP" alt="" coords="279,660,390,687"/>
+<area shape="rect" id="node30" href="$class_machines_map.html#a4395beb7c95115aeb8c3dac8c861fb09" title="MachinesMap::size" alt="" coords="267,711,402,737"/>
+<area shape="rect" id="node4" href="$class_abstract_syscall_manager.html#a0a9a322e95629883d0a1222d84ba30e9" title="AbstractSyscallManager\l::getNumProcessesRunning" alt="" coords="480,122,667,163"/>
+<area shape="rect" id="node6" href="$class_job_queue.html#a93487229e8dd065b592938085694ac80" title="JobQueue::size" alt="" coords="517,188,630,215"/>
+<area shape="rect" id="node8" href="$class_machine.html#a929a37c500a8a808a7e30f3508d9ebec" title="Machine::getState" alt="" coords="509,239,637,265"/>
+<area shape="rect" id="node10" href="$class_v_m.html#ab84f8bde38ac5d7107f37084c7439e1e" title="VM::setPendingOperation" alt="" coords="732,71,903,97"/>
+<area shape="rect" id="node11" href="$class_machine.html#ae0909fcea9d5301ce800ab40a7582473" title="Machine::getPid" alt="" coords="515,407,631,433"/>
+<area shape="rect" id="node12" href="$class_abstract_cloud_user.html#a55b5ec2433ede1733800da45bed06377" title="AbstractCloudUser::\lsend_request_to_manager" alt="" coords="486,341,661,382"/>
+<area shape="rect" id="node9" href="$class_abstract_syscall_manager.html#a1b1bb74aca92c46fcf2a34a2020c6517" title="AbstractSyscallManager\l::getState" alt="" coords="735,5,899,46"/>
+<area shape="rect" id="node13" href="$class_abstract_request.html#a37b1a6c4319602babb2cff3783b4e354" title="AbstractRequest::getOperation" alt="" coords="716,239,919,265"/>
+<area shape="rect" id="node14" href="$class_request_v_m.html#ad04e9f737a99bf6cf84017483667a8f9" title="RequestVM::getDifferentTypes\lQuantity" alt="" coords="716,341,919,382"/>
+<area shape="rect" id="node16" href="$class_request_v_m.html#a6e0c2a27ea3002ae0a3c449caaede429" title="RequestVM::getSelectionQuantity" alt="" coords="969,231,1189,257"/>
+<area shape="rect" id="node19" href="$class_machines_map.html#a4ee6258bfae267a59bfdb32004369b77" title="MachinesMap::getMachineById" alt="" coords="715,407,920,433"/>
+<area shape="rect" id="node23" href="$class_abstract_request.html#a7fbb51f4dcad0ccc9e6a5c451d442f0a" title="AbstractRequest::getPid" alt="" coords="735,121,900,148"/>
+<area shape="rect" id="node26" href="$class_requests_management.html#aa5b8251724c15c6dfa181689401b4d9b" title="RequestsManagement\l::userSendRequest" alt="" coords="741,173,894,214"/>
+<area shape="rect" id="node15" href="$class_request_v_m.html#a325ad3ed16a52238d77ec680964cf4f4" title="RequestVM::getSelectionType" alt="" coords="979,399,1179,425"/>
+<area shape="rect" id="node17" href="$class_request_v_m.html#af3f9c199b3811013c50293080ecb13e1" title="RequestVM::eraseSelectionType" alt="" coords="971,281,1186,308"/>
+<area shape="rect" id="node18" href="$class_request_v_m.html#adde97eaf620941912827cf2ed44de711" title="RequestVM::decreaseSelection\lQuantity" alt="" coords="975,333,1182,374"/>
+<area shape="rect" id="node20" href="$class_machines_map.html#a71574379174ff867765875ca98e91854" title="MachinesMap::getMapQuantity" alt="" coords="977,449,1180,476"/>
+<area shape="rect" id="node21" href="$class_machines_map.html#aae76fe9e577a5e8a74b01b4fee57b3fe" title="MachinesMap::getSetQuantity" alt="" coords="979,500,1178,527"/>
+<area shape="rect" id="node28" href="$classelement_type.html#ae9227bab3cdef174355ff6709ae69be7" title="elementType::getNumCores" alt="" coords="480,609,667,636"/>
+</map>

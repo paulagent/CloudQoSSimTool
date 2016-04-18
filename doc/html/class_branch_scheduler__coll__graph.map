@@ -1,0 +1,5 @@
+<map id="BranchScheduler" name="BranchScheduler">
+<area shape="rect" id="node2" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="109,187,224,213"/>
+<area shape="rect" id="node5" href="$class_s_m_s___branch.html" title="SMS_Branch" alt="" coords="249,187,348,213"/>
+<area shape="rect" id="node6" href="$class_splitting_message_system.html" title="SplittingMessageSystem" alt="" coords="218,96,384,123"/>
+</map>

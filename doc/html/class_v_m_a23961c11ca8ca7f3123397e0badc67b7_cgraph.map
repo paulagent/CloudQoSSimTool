@@ -1,0 +1,7 @@
+<map id="VM::setName" name="VM::setName">
+<area shape="rect" id="node2" href="$class_v_m.html#a4a468264332ca80b81ae0376d354a973" title="VM::changeState" alt="" coords="161,15,284,41"/>
+<area shape="rect" id="node5" href="$class_v_m.html#a4e0586c9c5e548f32cb1399fc09ab711" title="VM::isAppRunning" alt="" coords="157,67,288,93"/>
+<area shape="rect" id="node3" href="$class_machine.html#aac09df15c2480050b99f5132704ca913" title="Machine::changeState" alt="" coords="343,12,495,39"/>
+<area shape="rect" id="node4" href="$class_abstract_syscall_manager.html#a1521a2796425ffb46706a084598685b8" title="AbstractSyscallManager\l::changeState" alt="" coords="550,5,714,46"/>
+<area shape="rect" id="node6" href="$class_abstract_syscall_manager.html#a6834750c54384c39a2c2057b0eb30a34" title="AbstractSyscallManager\l::isAppRunning" alt="" coords="337,63,501,105"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="UserJob::setMachine" name="UserJob::setMachine">
+<area shape="rect" id="node2" href="$class_user_job.html#a24cac05bd664d78df2919e0e41ac8298" title="UserJob::getAppOwner" alt="" coords="201,5,359,32"/>
+<area shape="rect" id="node3" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="203,56,357,83"/>
+<area shape="rect" id="node4" href="$class_smart_user.html#a6ada9c455570130a2d96feedddfd9fe1" title="SmartUser::schedule" alt="" coords="207,107,353,133"/>
+</map>

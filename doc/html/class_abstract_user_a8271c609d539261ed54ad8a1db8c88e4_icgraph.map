@@ -1,0 +1,5 @@
+<map id="AbstractUser::initParameters" name="AbstractUser::initParameters">
+<area shape="rect" id="node2" href="$class_abstract_user.html#a51c4e001179bc3d9ca334bd73df4d7c8" title="AbstractUser::processResponse\lMessage" alt="" coords="246,5,458,46"/>
+<area shape="rect" id="node3" href="$class_abstract_user_generator.html#a3d326e10cbdb84c2f3e402d2cbea6767" title="AbstractUserGenerator\l::createUser" alt="" coords="274,70,430,111"/>
+<area shape="rect" id="node4" href="$class_abstract_user_generator.html#a21db40646994fa324a8441c9e8b6d666" title="AbstractUserGenerator\l::processSelfMessage" alt="" coords="507,70,663,111"/>
+</map>

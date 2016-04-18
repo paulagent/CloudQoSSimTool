@@ -1,0 +1,13 @@
+<map id="UserManagement" name="UserManagement">
+<area shape="rect" id="node4" href="$class_abstract_d_c_manager.html" title="AbstractDCManager" alt="" coords="399,229,539,256"/>
+<area shape="rect" id="node2" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="412,80,527,107"/>
+<area shape="rect" id="node5" href="$class_allocation_management.html" title="AllocationManagement" alt="" coords="292,304,445,331"/>
+<area shape="rect" id="node12" href="$class_data_center_scheduler_interface.html" title="DataCenterSchedulerInterface" alt="" coords="470,304,668,331"/>
+<area shape="rect" id="node6" href="$class_abstract_cloud_manager.html" title="AbstractCloudManager" alt="" coords="292,379,445,405"/>
+<area shape="rect" id="node7" href="$class_abstract_cloud_scheduler.html" title="AbstractCloudScheduler" alt="" coords="288,453,451,480"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_f_c_f_s.html" title="CloudSchedulerFCFS" alt="" coords="5,528,153,555"/>
+<area shape="rect" id="node9" href="$class_cloud_scheduler_f_c_f_s__gnup.html" title="CloudSchedulerFCFS_gnup" alt="" coords="179,528,363,555"/>
+<area shape="rect" id="node10" href="$class_cloud_scheduler_random.html" title="CloudSchedulerRandom" alt="" coords="387,528,549,555"/>
+<area shape="rect" id="node11" href="$class_cloud_scheduler_r_r.html" title="CloudSchedulerRR" alt="" coords="574,528,708,555"/>
+<area shape="rect" id="node13" href="$class_data_center_scheduler_f_i_f_o.html" title="DataCenterSchedulerFIFO" alt="" coords="481,379,657,405"/>
+</map>

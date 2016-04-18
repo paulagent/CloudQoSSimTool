@@ -1,0 +1,7 @@
+<map id="UserManagement::freeComputeResources" name="UserManagement::freeComputeResources">
+<area shape="rect" id="node2" href="$class_user_management.html#aefc461cc9c9e7d82a3221380f2fdbfaa" title="UserManagement::freeUser\lComputeEntry" alt="" coords="262,34,445,75"/>
+<area shape="rect" id="node3" href="$class_abstract_d_c_manager.html#a9d5d1603f00318de4d0f449ec1bfd5e2" title="AbstractDCManager::\lprocessRollBack" alt="" coords="493,34,643,75"/>
+<area shape="rect" id="node4" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="691,34,840,75"/>
+<area shape="rect" id="node5" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="1085,5,1240,46"/>
+<area shape="rect" id="node6" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="888,34,1037,75"/>
+</map>

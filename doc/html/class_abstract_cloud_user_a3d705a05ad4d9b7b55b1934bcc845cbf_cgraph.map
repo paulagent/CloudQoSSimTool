@@ -1,0 +1,7 @@
+<map id="AbstractCloudUser::deleteAllJobsVM" name="AbstractCloudUser::deleteAllJobsVM">
+<area shape="rect" id="node2" href="$class_machine.html#a929a37c500a8a808a7e30f3508d9ebec" title="Machine::getState" alt="" coords="231,16,359,43"/>
+<area shape="rect" id="node4" href="$class_machine.html#a310c7c1b2ad38ed929cd84e2695f113c" title="Machine::removeAllProcesses" alt="" coords="195,71,394,97"/>
+<area shape="rect" id="node3" href="$class_abstract_syscall_manager.html#a1b1bb74aca92c46fcf2a34a2020c6517" title="AbstractSyscallManager\l::getState" alt="" coords="443,5,607,46"/>
+<area shape="rect" id="node5" href="$class_abstract_syscall_manager.html#a745899a173585ad0710291a3d44c6a8a" title="AbstractSyscallManager\l::removeAllProcesses" alt="" coords="443,70,607,111"/>
+<area shape="rect" id="node6" href="$class_abstract_syscall_manager.html#a5cae955bef0e5d336ddd7d9733649255" title="AbstractSyscallManager\l::removeProcess" alt="" coords="657,70,821,111"/>
+</map>

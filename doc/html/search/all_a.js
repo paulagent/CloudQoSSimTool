@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['job',['job',['../struct_abstract_syscall_manager_1_1pending_job__t.html#a930e8cdbdbebbcaa827b2527d2632a9b',1,'AbstractSyscallManager::pendingJob_t::job()'],['../struct_abstract_user_generator_1_1job_selection.html#a94badf4bb6767214aa6eb186d670de1c',1,'AbstractUserGenerator::jobSelection::job()']]],
+  ['jobbase',['jobBase',['../classjob_base.html',1,'jobBase'],['../classuser_base.html#ae909a640c7a340d34b0ab6565b712894',1,'userBase::jobBase()']]],
+  ['jobbase_2ecc',['jobBase.cc',['../job_base_8cc.html',1,'']]],
+  ['jobbase_2eh',['jobBase.h',['../job_base_8h.html',1,'']]],
+  ['jobhasfinished',['jobHasFinished',['../class_abstract_user.html#ad8927ee988d1cb72460de420e319ad65',1,'AbstractUser::jobHasFinished()'],['../class_abstract_cloud_user.html#ae7357746a0e0ed4f534c796cca5bee1c',1,'AbstractCloudUser::jobHasFinished()'],['../class_general_user.html#a5516eb809714d1a7874643a0965ed617',1,'GeneralUser::jobHasFinished()'],['../class_smart_user.html#a01632b506e12340573df25860e35838e',1,'SmartUser::jobHasFinished()']]],
+  ['jobid',['jobID',['../struct_user_management_1_1compute_resources.html#ac1a2a3a6301aa368c35122cf907e7cf8',1,'UserManagement::computeResources::jobID()'],['../class_abstract_request.html#ab3b7f8234125947d10dbd7456397b7a1',1,'AbstractRequest::jobId()']]],
+  ['jobqueue',['JobQueue',['../class_job_queue.html',1,'JobQueue'],['../class_job_queue.html#aed770e1578fe6cf644cc707755d2a0c1',1,'JobQueue::JobQueue()']]],
+  ['jobqueue_2ecc',['JobQueue.cc',['../_job_queue_8cc.html',1,'']]],
+  ['jobqueue_2eh',['JobQueue.h',['../_job_queue_8h.html',1,'']]],
+  ['jobresources',['jobResources',['../struct_user_management_1_1tenant.html#acce06278ddf4d5427d827c8c8995c94e',1,'UserManagement::tenant']]],
+  ['jobresults',['JobResults',['../class_job_results.html',1,'JobResults'],['../classjob_base.html#a2f5363623939254a326d25a7c6f0bc07',1,'jobBase::jobResults()'],['../classqueues_manager.html#a87b998e3d034dd41238ee8685bf78308',1,'queuesManager::jobResults()'],['../class_job_results.html#a342c2e38ef7cda3bbab0208500ca9499',1,'JobResults::JobResults()']]],
+  ['jobresults_2ecc',['JobResults.cc',['../_job_results_8cc.html',1,'']]],
+  ['jobresults_2eh',['JobResults.h',['../_job_results_8h.html',1,'']]],
+  ['jobresultsset',['JobResultsSet',['../class_job_results_set.html',1,'JobResultsSet'],['../class_job_results_set.html#a8cc110dcef19bf513d9974a5c62a9fda',1,'JobResultsSet::JobResultsSet()']]],
+  ['jobresultsset_2ecc',['JobResultsSet.cc',['../_job_results_set_8cc.html',1,'']]],
+  ['jobresultsset_2eh',['JobResultsSet.h',['../_job_results_set_8h.html',1,'']]],
+  ['jobselection',['jobSelection',['../struct_abstract_user_generator_1_1job_selection.html',1,'AbstractUserGenerator']]],
+  ['jobstate',['jobState',['../classjob_base.html#add25b1468932efd458b2d9bfe0047286',1,'jobBase']]],
+  ['jumpssizes',['jumpsSizes',['../class_disk___l_i.html#af9df1710c49af6cf10607741170e7a89',1,'Disk_LI']]]
+];

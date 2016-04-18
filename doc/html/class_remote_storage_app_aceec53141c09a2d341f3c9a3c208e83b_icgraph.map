@@ -1,0 +1,4 @@
+<map id="RemoteStorageApp::setDataStorage_EstablishedConnection" name="RemoteStorageApp::setDataStorage_EstablishedConnection">
+<area shape="rect" id="node2" href="$class_remote_storage_app.html#a94a0dfaa3f4842c4bf22e793d25abc6b" title="RemoteStorageApp::getStoragePort" alt="" coords="262,12,493,39"/>
+<area shape="rect" id="node3" href="$class_syscall_manager.html#a9f3cef609d00fad76746bc8e1597dcbc" title="SyscallManager::getRemote\lStoragePort" alt="" coords="541,5,728,46"/>
+</map>

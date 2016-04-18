@@ -1,0 +1,13 @@
+<map id="AbstractMeterUnit::getComponentName" name="AbstractMeterUnit::getComponentName">
+<area shape="rect" id="node2" href="$class_energy_meter_controller.html#addabce736a77b79556e5f2939156d2fc" title="EnergyMeterController\l::getCPUName" alt="" coords="197,6,349,47"/>
+<area shape="rect" id="node7" href="$class_energy_meter_controller.html#a38280a6732748f7ae33bae99acc1dc27" title="EnergyMeterController\l::getMemoryName" alt="" coords="197,71,349,113"/>
+<area shape="rect" id="node9" href="$class_energy_meter_controller.html#a3079978adf16bb40d02bd52d80df5433" title="EnergyMeterController\l::getStorageName" alt="" coords="197,137,349,178"/>
+<area shape="rect" id="node11" href="$class_energy_meter_controller.html#a9d19fd05709fa0fa6facb2e685e242c4" title="EnergyMeterController\l::getNetworkName" alt="" coords="197,202,349,243"/>
+<area shape="rect" id="node3" href="$class_node.html#a5b14258dcacbecd60074b44f59152bb0" title="Node::getCPUName" alt="" coords="407,13,550,40"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="1003,122,1157,163"/>
+<area shape="rect" id="node5" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="608,93,757,134"/>
+<area shape="rect" id="node6" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="805,93,955,134"/>
+<area shape="rect" id="node8" href="$class_node.html#a2dbef890cbb1bc61bd91073aee7e8795" title="Node::getMemoryName" alt="" coords="398,79,559,105"/>
+<area shape="rect" id="node10" href="$class_node.html#a985a5a8f190e81b09207d5ece6ab2f2a" title="Node::getStorageName" alt="" coords="399,144,558,171"/>
+<area shape="rect" id="node12" href="$class_node.html#a4a3f3b92f0e118fc9fb9b0dd4e7e41a4" title="Node::getNetworkName" alt="" coords="397,209,560,236"/>
+</map>

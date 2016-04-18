@@ -1,0 +1,4 @@
+<map id="Vm_VirtualPort_Cell::getConnectionID" name="Vm_VirtualPort_Cell::getConnectionID">
+<area shape="rect" id="node2" href="$class_port_address_translation.html#a4b4874dceb88c96528097429aa6f2841" title="PortAddressTranslation\l::pat_closeConnection" alt="" coords="195,5,354,46"/>
+<area shape="rect" id="node3" href="$class_local_net_manager.html#a6450f60e66bf95c183c60b89276713a3" title="LocalNetManager::manage\l_close_single_connection" alt="" coords="403,5,581,46"/>
+</map>

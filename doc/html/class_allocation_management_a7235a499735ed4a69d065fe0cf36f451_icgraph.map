@@ -1,0 +1,12 @@
+<map id="AllocationManagement::searchUserVMAllocation" name="AllocationManagement::searchUserVMAllocation">
+<area shape="rect" id="node2" href="$class_allocation_management.html#ae250253042e7b37fb8970ec7cfaf57b6" title="AllocationManagement\l::updateVmManagementStructures" alt="" coords="229,103,453,145"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_f_c_f_s.html#aeb400c083508b2ec87a712b78a5c4ef7" title="CloudSchedulerFCFS\l::remoteShutdown" alt="" coords="267,201,416,242"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ab60ff1f43b37d1a85d6cbf0822ba6813" title="CloudSchedulerFCFS\l_gnup::remoteShutdown" alt="" coords="260,266,423,307"/>
+<area shape="rect" id="node10" href="$class_cloud_scheduler_r_r.html#a5d6ff9a035d0cbe4c2e5923ae45ea9fd" title="CloudSchedulerRR::remote\lShutdown" alt="" coords="250,331,433,373"/>
+<area shape="rect" id="node3" href="$class_cloud_scheduler_f_c_f_s.html#ac3b5b56db0bf0ce10537778cc7813e64" title="CloudSchedulerFCFS\l::selectStorageNodes" alt="" coords="527,5,676,46"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a197413bb407bff30cdfb1205ab737905" title="CloudSchedulerFCFS\l_gnup::selectStorageNodes" alt="" coords="510,70,693,111"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_r_r.html#acf2b22553cfa9e0eb736551b99dc77b8" title="CloudSchedulerRR::select\lStorageNodes" alt="" coords="513,135,690,177"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_f_c_f_s.html#a6d8343d43b103e0c55a81cc4b824a5d2" title="CloudSchedulerFCFS\l::shutdownNodeIfIDLE" alt="" coords="524,201,679,242"/>
+<area shape="rect" id="node9" href="$class_cloud_scheduler_f_c_f_s__gnup.html#aa63b6605f92505ac32620e6f7838287a" title="CloudSchedulerFCFS\l_gnup::shutdownNodeIfIDLE" alt="" coords="506,266,697,307"/>
+<area shape="rect" id="node11" href="$class_cloud_scheduler_r_r.html#aeec3f6bda46cd544a9d2a063be157b60" title="CloudSchedulerRR::shutdown\lNodeIfIDLE" alt="" coords="502,331,701,373"/>
+</map>

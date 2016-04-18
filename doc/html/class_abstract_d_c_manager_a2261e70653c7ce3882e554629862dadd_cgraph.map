@@ -1,0 +1,11 @@
+<map id="AbstractDCManager::finalizeDCManager" name="AbstractDCManager::finalizeDCManager">
+<area shape="rect" id="node2" href="$class_machines_map.html#a4395beb7c95115aeb8c3dac8c861fb09" title="MachinesMap::size" alt="" coords="235,5,370,32"/>
+<area shape="rect" id="node3" href="$class_machines_map.html#aae76fe9e577a5e8a74b01b4fee57b3fe" title="MachinesMap::getSetQuantity" alt="" coords="203,56,402,83"/>
+<area shape="rect" id="node4" href="$class_data_center_a_p_i.html#ad935cf91e7d7ee25397a3da579080022" title="DataCenterAPI::getNodeBy\lIndex" alt="" coords="211,107,395,149"/>
+<area shape="rect" id="node6" href="$class_abstract_node.html#a536dba8625b57d6f9190ea6ba1574cda" title="AbstractNode::isON" alt="" coords="233,173,373,200"/>
+<area shape="rect" id="node9" href="$class_machine.html#a1a5c12b04e303fc9b64539395d000957" title="Machine::turnOff" alt="" coords="243,228,362,255"/>
+<area shape="rect" id="node5" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="451,107,645,149"/>
+<area shape="rect" id="node7" href="$class_machine.html#a929a37c500a8a808a7e30f3508d9ebec" title="Machine::getState" alt="" coords="484,173,612,200"/>
+<area shape="rect" id="node8" href="$class_abstract_syscall_manager.html#a1b1bb74aca92c46fcf2a34a2020c6517" title="AbstractSyscallManager\l::getState" alt="" coords="694,166,858,207"/>
+<area shape="rect" id="node10" href="$class_abstract_syscall_manager.html#a1521a2796425ffb46706a084598685b8" title="AbstractSyscallManager\l::changeState" alt="" coords="466,225,630,266"/>
+</map>

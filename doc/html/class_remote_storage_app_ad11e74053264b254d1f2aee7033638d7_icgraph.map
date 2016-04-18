@@ -1,0 +1,5 @@
+<map id="RemoteStorageApp::create_listen" name="RemoteStorageApp::create_listen">
+<area shape="rect" id="node2" href="$class_syscall_manager.html#af5156760936005232ec6818eccdbe5e7" title="SyscallManager::createData\lStorageListen" alt="" coords="257,5,444,46"/>
+<area shape="rect" id="node3" href="$class_remote_storage_app.html#a94a0dfaa3f4842c4bf22e793d25abc6b" title="RemoteStorageApp::getStoragePort" alt="" coords="235,71,466,97"/>
+<area shape="rect" id="node4" href="$class_syscall_manager.html#a9f3cef609d00fad76746bc8e1597dcbc" title="SyscallManager::getRemote\lStoragePort" alt="" coords="515,63,701,105"/>
+</map>

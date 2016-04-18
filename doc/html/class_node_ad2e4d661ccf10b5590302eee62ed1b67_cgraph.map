@@ -1,0 +1,30 @@
+<map id="Node::turnOff" name="Node::turnOff">
+<area shape="rect" id="node2" href="$class_machine.html#a5d4d765e17f64c4d760554e9061ba75e" title="Machine::equalStates" alt="" coords="157,85,305,112"/>
+<area shape="rect" id="node6" href="$class_machine.html#aac09df15c2480050b99f5132704ca913" title="Machine::changeState" alt="" coords="591,137,743,164"/>
+<area shape="rect" id="node8" href="$class_machine.html#a929a37c500a8a808a7e30f3508d9ebec" title="Machine::getState" alt="" coords="167,192,295,219"/>
+<area shape="rect" id="node10" href="$class_energy_meter_controller.html#a5551e8bde1708fba98145525669e20e3" title="EnergyMeterController\l::switchOffPSU" alt="" coords="155,278,307,319"/>
+<area shape="rect" id="node3" href="$class_machine.html#a42e3f547d50654402c4fed9232f5f477" title="Machine::removeProcess" alt="" coords="355,81,525,108"/>
+<area shape="rect" id="node4" href="$class_abstract_syscall_manager.html#a5cae955bef0e5d336ddd7d9733649255" title="AbstractSyscallManager\l::removeProcess" alt="" coords="585,6,749,47"/>
+<area shape="rect" id="node5" href="$class_abstract_syscall_manager.html#a0a9a322e95629883d0a1222d84ba30e9" title="AbstractSyscallManager\l::getNumProcessesRunning" alt="" coords="573,71,760,113"/>
+<area shape="rect" id="node7" href="$class_abstract_syscall_manager.html#a1521a2796425ffb46706a084598685b8" title="AbstractSyscallManager\l::changeState" alt="" coords="814,130,978,171"/>
+<area shape="rect" id="node9" href="$class_abstract_syscall_manager.html#a1b1bb74aca92c46fcf2a34a2020c6517" title="AbstractSyscallManager\l::getState" alt="" coords="358,189,522,230"/>
+<area shape="rect" id="node11" href="$class_abstract_p_s_u.html#a533762c592df18d37bc2402b4da93f23" title="AbstractPSU::switchOff" alt="" coords="359,303,521,329"/>
+<area shape="rect" id="node12" href="$class_abstract_meter_unit.html#ad162c01773494de6de6ac59ab4ed718e" title="AbstractMeterUnit::\lgetNumberOfComponents" alt="" coords="809,313,983,354"/>
+<area shape="rect" id="node15" href="$class_abstract_meter_unit.html#a005355b9a2c85aa86b446bce5a5707f9" title="AbstractMeterUnit::\lgetActualState" alt="" coords="599,254,735,295"/>
+<area shape="rect" id="node17" href="$class_abstract_meter_unit.html#abb73c2bf8cd5e44e83874155d78d3dc9" title="AbstractMeterUnit::\lgetEnergyConsumed" alt="" coords="824,477,968,518"/>
+<area shape="rect" id="node24" href="$class_abstract_meter_unit.html#aa951a574f963a39b01bcf0ebb0b7b4b5" title="AbstractMeterUnit::\lgetInstantConsumption" alt="" coords="588,189,745,230"/>
+<area shape="rect" id="node25" href="$class_abstract_meter_unit.html#ae158521c3f96b6eb8f605569dd33d7e9" title="AbstractMeterUnit::\lgetConsumptionBase" alt="" coords="593,422,740,463"/>
+<area shape="rect" id="node13" href="$class_h_w_energy_interface.html#a54c83ac6da102b7cd98ba21c12ffab1d" title="HWEnergyInterface::\lgetNumberOfComponents" alt="" coords="1033,303,1207,345"/>
+<area shape="rect" id="node14" href="$class_h_w_energy_interface.html#a126eba8aa77f3e0d2326342243c7bdb3" title="HWEnergyInterface::\lloadComponent" alt="" coords="1257,303,1402,345"/>
+<area shape="rect" id="node16" href="$class_h_w_energy_interface.html#a33e03c68d9b97bcebd4d4aa08291d77f" title="HWEnergyInterface::\le_getActualState" alt="" coords="823,247,969,289"/>
+<area shape="rect" id="node18" href="$class_h_w_energy_interface.html#ae5f79f37b1ca54f1a20a503765d6c4f9" title="HWEnergyInterface::\lgetStatesVector" alt="" coords="1047,551,1193,593"/>
+<area shape="rect" id="node19" href="$class_memo_support.html#a30172ed93d7e1a5ad053a434d29f88ee" title="MemoSupport::find" alt="" coords="1054,435,1186,461"/>
+<area shape="rect" id="node20" href="$class_h_w_energy_interface.html#a40d1da0e1f1d5f7828ac0610d970bbb0" title="HWEnergyInterface::\lgetTotalVector" alt="" coords="1047,617,1193,658"/>
+<area shape="rect" id="node21" href="$class_abstract_meter_unit.html#a3f40b8e9af59a33263d411380b156e48" title="AbstractMeterUnit::\lprintStateVector" alt="" coords="1052,369,1188,410"/>
+<area shape="rect" id="node22" href="$class_h_w_energy_interface.html#a08384afe1fb425db8acda1d64715ffc0" title="HWEnergyInterface::\laccumulateConsumption" alt="" coords="1037,682,1203,723"/>
+<area shape="rect" id="node23" href="$class_h_w_energy_interface.html#a039e00b89fae2da1ccd890a499eb2c16" title="HWEnergyInterface::\lresetTotalVector" alt="" coords="1047,486,1193,527"/>
+<area shape="rect" id="node26" href="$class_h_w_energy_interface.html#a3f46f818ac9502a589b70a2c99122573" title="HWEnergyInterface::\lgetConsumptionBase" alt="" coords="823,649,969,690"/>
+<area shape="rect" id="node27" href="$class_h_w_energy_interface.html#a46039b31b514df2f6ec2ba3d96f1e7cf" title="HWEnergyInterface::\lresetComponentHistory" alt="" coords="1040,813,1200,854"/>
+<area shape="rect" id="node28" href="$class_h_w_energy_interface.html#a9a6a90d8348acb3174cb1b2c70659ddd" title="HWEnergyInterface::\lresetAllHistory" alt="" coords="1047,878,1193,919"/>
+<area shape="rect" id="node29" href="$class_h_w_energy_interface.html#ac61f27650c7af75e9d3388d90fcdfc21" title="HWEnergyInterface::\lsetNumberOfComponents" alt="" coords="1033,747,1207,789"/>
+</map>

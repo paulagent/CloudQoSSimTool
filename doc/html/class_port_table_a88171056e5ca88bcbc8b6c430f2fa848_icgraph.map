@@ -1,0 +1,4 @@
+<map id="PortTable::freePort" name="PortTable::freePort">
+<area shape="rect" id="node2" href="$class_network_manager.html#aa0d82747230fc1ff091d8f9d7ea0221d" title="NetworkManager::freePortOfVM" alt="" coords="187,12,397,39"/>
+<area shape="rect" id="node3" href="$class_local_net_manager.html#a6450f60e66bf95c183c60b89276713a3" title="LocalNetManager::manage\l_close_single_connection" alt="" coords="445,5,624,46"/>
+</map>

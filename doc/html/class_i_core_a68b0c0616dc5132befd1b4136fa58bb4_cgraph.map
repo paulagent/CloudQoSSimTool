@@ -1,0 +1,7 @@
+<map id="ICore::e_changeState" name="ICore::e_changeState">
+<area shape="rect" id="node2" href="$class_c_p_u_controller.html#a720048eaa7163f6640b966cbadb10498" title="CPUController::e_changeState" alt="" coords="203,45,405,72"/>
+<area shape="rect" id="node3" href="$class_c_p_u_controller.html#aaa2fd54718c7bcc5a2467b62b92a7924" title="CPUController::e_getActual\lState" alt="" coords="453,5,637,46"/>
+<area shape="rect" id="node5" href="$class_h_w_energy_interface.html#a7898a00beb2705014a5383f780e11e99" title="HWEnergyInterface::\le_changeState" alt="" coords="473,70,618,111"/>
+<area shape="rect" id="node4" href="$class_h_w_energy_interface.html#a33e03c68d9b97bcebd4d4aa08291d77f" title="HWEnergyInterface::\le_getActualState" alt="" coords="686,5,831,46"/>
+<area shape="rect" id="node6" href="$class_h_w_energy_interface.html#adb1fcd4ef7077a112f69d689824c92ab" title="HWEnergyInterface::\lchangeState" alt="" coords="686,70,831,111"/>
+</map>

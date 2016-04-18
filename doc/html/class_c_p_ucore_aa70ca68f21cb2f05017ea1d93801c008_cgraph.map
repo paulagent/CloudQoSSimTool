@@ -1,0 +1,12 @@
+<map id="CPUcore::changeDeviceState" name="CPUcore::changeDeviceState">
+<area shape="rect" id="node2" href="$class_c_p_ucore.html#a580d55c4a9ac3118e50ccc0724f8dc1b" title="CPUcore::changeState" alt="" coords="253,49,411,76"/>
+<area shape="rect" id="node3" href="$class_i_core.html#a86340e9ae50b1c8c8f161abcd33b14c5" title="ICore::e_getStatesSize" alt="" coords="459,21,618,48"/>
+<area shape="rect" id="node6" href="$class_i_core.html#a68b0c0616dc5132befd1b4136fa58bb4" title="ICore::e_changeState" alt="" coords="464,76,613,103"/>
+<area shape="rect" id="node4" href="$class_c_p_u_controller.html#a1e1369acbb10aa0a6669fada835a6351" title="CPUController::e_getStatesSize" alt="" coords="667,15,877,41"/>
+<area shape="rect" id="node5" href="$class_h_w_energy_interface.html#a8dbfb77fde8ade5da41e0cc9a633a1bb" title="HWEnergyInterface::\le_getStatesSize" alt="" coords="945,5,1090,46"/>
+<area shape="rect" id="node7" href="$class_c_p_u_controller.html#a720048eaa7163f6640b966cbadb10498" title="CPUController::e_changeState" alt="" coords="671,77,873,104"/>
+<area shape="rect" id="node8" href="$class_c_p_u_controller.html#aaa2fd54718c7bcc5a2467b62b92a7924" title="CPUController::e_getActual\lState" alt="" coords="925,70,1109,111"/>
+<area shape="rect" id="node10" href="$class_h_w_energy_interface.html#a7898a00beb2705014a5383f780e11e99" title="HWEnergyInterface::\le_changeState" alt="" coords="945,135,1090,177"/>
+<area shape="rect" id="node9" href="$class_h_w_energy_interface.html#a33e03c68d9b97bcebd4d4aa08291d77f" title="HWEnergyInterface::\le_getActualState" alt="" coords="1158,70,1303,111"/>
+<area shape="rect" id="node11" href="$class_h_w_energy_interface.html#adb1fcd4ef7077a112f69d689824c92ab" title="HWEnergyInterface::\lchangeState" alt="" coords="1158,135,1303,177"/>
+</map>

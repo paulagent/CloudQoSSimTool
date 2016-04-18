@@ -1,0 +1,5 @@
+<map id="Machine::getNumNetworkIF" name="Machine::getNumNetworkIF">
+<area shape="rect" id="node2" href="$class_machines_map.html#a096a432b6ba54516e33fb969d630f0ee" title="MachinesMap::increaseInstances" alt="" coords="241,12,458,39"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_user.html#a2bd801b9a9f60c39d9fe8da557b6d348" title="AbstractCloudUser::\lnotify_UserRequestAttendeed" alt="" coords="507,5,704,46"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="752,5,893,46"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="AllocationManagement::getVmAllocation" name="AllocationManagement::getVmAllocation">
+<area shape="rect" id="node2" href="$class_v_m_i_d.html#a1c84db374cb0310e405cdb8671bb3814" title="VMID::getVMID" alt="" coords="242,5,358,32"/>
+<area shape="rect" id="node3" href="$class_data_center_a_p_i.html#ad935cf91e7d7ee25397a3da579080022" title="DataCenterAPI::getNodeBy\lIndex" alt="" coords="208,57,392,98"/>
+<area shape="rect" id="node5" href="$class_v_m_i_d.html#ac8d7ecde4cdfe357c1b7030576356e9a" title="VMID::getVM" alt="" coords="249,123,351,149"/>
+<area shape="rect" id="node6" href="$class_v_m.html#a4b2694f59453f117dccb591095746579" title="VM::getNodeSetName" alt="" coords="223,173,377,200"/>
+<area shape="rect" id="node7" href="$class_v_m.html#ac59b264f0289d7fbfa4a5f95fee3e282" title="VM::getNodeName" alt="" coords="233,224,367,251"/>
+<area shape="rect" id="node4" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="440,57,635,98"/>
+</map>

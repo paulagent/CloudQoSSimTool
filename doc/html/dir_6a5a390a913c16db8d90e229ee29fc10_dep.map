@@ -1,0 +1,13 @@
+<map id="Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/StorageManagers" name="Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/StorageManagers">
+<area shape="rect" id="node2" href="dir_b8b30a2cd8f574a7e5ec8ce86726157c.html" title="NullStorageManager" alt="" coords="38,63,177,111"/>
+<area shape="rect" id="node5" href="dir_628593db0cdce5a76fb85526ae5aa762.html" title="Base" alt="" coords="152,159,224,207"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000049_000061.html" title="3" alt="" coords="159,132,167,147"/>
+<area shape="rect" id="node3" href="dir_4112f2eac77778982c5c227a34a111ce.html" title="StorageManager" alt="" coords="203,63,319,111"/>
+<area shape="rect" id="node4" href="dir_bbe0e39b316c147ac1a343f711e44071.html" title="EnergySystem" alt="" coords="134,255,241,303"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000050_000076.html" title="1" alt="" coords="220,237,228,252"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000050_000061.html" title="3" alt="" coords="220,142,228,157"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000076_000061.html" title="1" alt="" coords="185,218,193,233"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000061_000076.html" title="1" alt="" coords="183,229,191,243"/>
+<area shape="rect" id="clust2" href="dir_6a5a390a913c16db8d90e229ee29fc10.html" alt="" coords="27,52,477,121"/>
+<area shape="rect" id="clust1" href="dir_661fef4befc94e2ea122b3fd79d6ffdc.html" title="VolumeManagers" alt="" coords="16,16,488,132"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Abstract_Remote_FS::existsConnection" name="Abstract_Remote_FS::existsConnection">
+<area shape="rect" id="node2" href="$class_storage__cell__basic.html#a0e80722cf8eba1834f62ee83e8606891" title="Storage_cell_basic\l::setRemoteData" alt="" coords="211,5,343,46"/>
+<area shape="rect" id="node4" href="$class_abstract___remote___f_s.html#aa0cdb23f77cd531cc7f7946ec7c6ccf4" title="Abstract_Remote_FS\l::getNumServers" alt="" coords="203,70,351,111"/>
+<area shape="rect" id="node3" href="$class_storage__cell__basic.html#abb0179b38ce19a4f0fd664936bdf4e2f" title="Storage_cell_basic\l::processResponseMessage" alt="" coords="401,5,589,46"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Node::getInstantConsumption" name="Node::getInstantConsumption">
+<area shape="rect" id="node2" href="$class_energy_meter_controller.html#a9798b83bd407e11c03e03614cd9a8c36" title="EnergyMeterController\l::getNodeInstantConsumption" alt="" coords="251,5,447,46"/>
+<area shape="rect" id="node3" href="$class_abstract_p_s_u.html#a945d593bd4c85f010304e6b5de0bcfd2" title="AbstractPSU::getNodeConsumption" alt="" coords="497,12,730,39"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="NetworkManager::allocateVirtualIP" name="NetworkManager::allocateVirtualIP">
+<area shape="rect" id="node2" href="$class_abstract_cloud_manager.html#a6089291642ef82d3a9ccd8a7a71b7302" title="AbstractCloudManager\l::closeVMConnections" alt="" coords="229,70,384,111"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="433,70,594,111"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="665,5,815,46"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="665,70,815,111"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="643,136,837,163"/>
+</map>

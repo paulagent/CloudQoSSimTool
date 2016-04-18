@@ -1,0 +1,20 @@
+<map id="elementType::getMemorySize" name="elementType::getMemorySize">
+<area shape="rect" id="node2" href="$class_machine.html#ac6fe2d3fe1bb10e07b1482f9ffb2c93c" title="Machine::initialize" alt="" coords="291,67,418,93"/>
+<area shape="rect" id="node7" href="$class_machine.html#a80013c6babee48ed16de56832208159b" title="Machine::getMemoryCapacity" alt="" coords="257,129,453,156"/>
+<area shape="rect" id="node16" href="$class_cloud_scheduler_f_c_f_s.html#a7b759520f36b9c11077f83f6128648d2" title="CloudSchedulerFCFS\l::selectNode" alt="" coords="280,181,429,222"/>
+<area shape="rect" id="node17" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a375b883963370191aa416e12e2b4b73c" title="CloudSchedulerFCFS\l_gnup::selectNode" alt="" coords="280,246,429,287"/>
+<area shape="rect" id="node18" href="$class_cloud_scheduler_r_r.html#a782f1e46138551f1f0288f8b4d64f2fe" title="CloudSchedulerRR::selectNode" alt="" coords="251,312,459,339"/>
+<area shape="rect" id="node19" href="$class_heterogeneous_set.html#a4abf36a5800330d16e083a955947c18d" title="HeterogeneousSet::getTotal\lMemory" alt="" coords="262,363,447,405"/>
+<area shape="rect" id="node3" href="$class_abstract_node.html#a33a886e67f6c2d2fe765ea08400fad43" title="AbstractNode::initialize" alt="" coords="537,15,695,41"/>
+<area shape="rect" id="node6" href="$class_v_m.html#afbeb99d4c21cad9c047f7e3a41b5a36b" title="VM::initialize" alt="" coords="567,67,665,93"/>
+<area shape="rect" id="node4" href="$class_node.html#aae071b74f8ad790ba8304f6e9c9258e1" title="Node::initialize" alt="" coords="818,8,926,35"/>
+<area shape="rect" id="node5" href="$class_node_v_l.html#aefc437b4a3be02432e7e72fc7812fcd4" title="NodeVL::initialize" alt="" coords="1054,5,1178,32"/>
+<area shape="rect" id="node8" href="$class_abstract_cloud_manager.html#a6089291642ef82d3a9ccd8a7a71b7302" title="AbstractCloudManager\l::closeVMConnections" alt="" coords="539,122,693,163"/>
+<area shape="rect" id="node13" href="$class_machines_map.html#a096a432b6ba54516e33fb969d630f0ee" title="MachinesMap::increaseInstances" alt="" coords="507,204,725,231"/>
+<area shape="rect" id="node9" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="791,122,953,163"/>
+<area shape="rect" id="node10" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="1041,57,1191,98"/>
+<area shape="rect" id="node11" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="1041,122,1191,163"/>
+<area shape="rect" id="node12" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="1019,188,1213,215"/>
+<area shape="rect" id="node14" href="$class_abstract_cloud_user.html#a2bd801b9a9f60c39d9fe8da557b6d348" title="AbstractCloudUser::\lnotify_UserRequestAttendeed" alt="" coords="773,213,971,254"/>
+<area shape="rect" id="node15" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="1045,239,1187,281"/>
+</map>

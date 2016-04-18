@@ -1,0 +1,4 @@
+<map id="Abstract_Remote_FS::getConnectionId" name="Abstract_Remote_FS::getConnectionId">
+<area shape="rect" id="node2" href="$class_abstract_storage_cell.html#adc012fa32e50b46fb2d03a82a3e06130" title="AbstractStorageCell\l::sendRemoteRequest" alt="" coords="203,5,357,46"/>
+<area shape="rect" id="node3" href="$class_storage__cell__basic.html#abb0179b38ce19a4f0fd664936bdf4e2f" title="Storage_cell_basic\l::processResponseMessage" alt="" coords="406,5,594,46"/>
+</map>

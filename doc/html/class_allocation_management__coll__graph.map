@@ -1,0 +1,12 @@
+<map id="AllocationManagement" name="AllocationManagement">
+<area shape="rect" id="node2" href="$class_abstract_d_c_manager.html" title="AbstractDCManager" alt="" coords="1220,575,1361,602"/>
+<area shape="rect" id="node3" href="$class_data_center_a_p_i.html" title="DataCenterAPI" alt="" coords="861,603,971,630"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="401,565,516,591"/>
+<area shape="rect" id="node9" href="$class_storage_management.html" title="StorageManagement" alt="" coords="845,842,987,869"/>
+<area shape="rect" id="node13" href="$class_user_management.html" title="UserManagement" alt="" coords="853,327,979,354"/>
+<area shape="rect" id="node15" href="$class_abstract_user_generator.html" title="AbstractUserGenerator" alt="" coords="1213,169,1369,195"/>
+<area shape="rect" id="node19" href="$class_requests_management.html" title="RequestsManagement" alt="" coords="839,546,993,573"/>
+<area shape="rect" id="node23" href="$class_network_manager.html" title="NetworkManager" alt="" coords="855,719,977,746"/>
+<area shape="rect" id="node7" href="$class_machines_map.html" title="MachinesMap" alt="" coords="407,639,510,666"/>
+<area shape="rect" id="node21" href="$class_cfg_data_center.html" title="CfgDataCenter" alt="" coords="861,449,971,475"/>
+</map>

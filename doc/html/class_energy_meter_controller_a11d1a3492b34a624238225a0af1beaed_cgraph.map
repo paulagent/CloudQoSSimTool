@@ -1,0 +1,7 @@
+<map id="EnergyMeterController::registerMemorization" name="EnergyMeterController::registerMemorization">
+<area shape="rect" id="node2" href="$class_abstract_meter_unit.html#ae83472e4cbf56edf900ac199a1883cbe" title="AbstractMeterUnit::\lactiveMemorization" alt="" coords="205,38,341,79"/>
+<area shape="rect" id="node3" href="$class_abstract_meter_unit.html#a12093fc82682e37a95dc62988b0322ae" title="AbstractMeterUnit::\lactivateMeter" alt="" coords="389,5,525,46"/>
+<area shape="rect" id="node5" href="$class_abstract_meter_unit.html#a005355b9a2c85aa86b446bce5a5707f9" title="AbstractMeterUnit::\lgetActualState" alt="" coords="389,70,525,111"/>
+<area shape="rect" id="node4" href="$class_h_w_energy_interface.html#a126eba8aa77f3e0d2326342243c7bdb3" title="HWEnergyInterface::\lloadComponent" alt="" coords="574,5,719,46"/>
+<area shape="rect" id="node6" href="$class_h_w_energy_interface.html#a33e03c68d9b97bcebd4d4aa08291d77f" title="HWEnergyInterface::\le_getActualState" alt="" coords="574,70,719,111"/>
+</map>

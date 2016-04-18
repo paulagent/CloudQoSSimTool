@@ -1,0 +1,9 @@
+<map id="queuesManager::isEmpty_WQ" name="queuesManager::isEmpty_WQ">
+<area shape="rect" id="node2" href="$class_abstract_cloud_user.html#a2bd801b9a9f60c39d9fe8da557b6d348" title="AbstractCloudUser::\lnotify_UserRequestAttendeed" alt="" coords="255,5,452,46"/>
+<area shape="rect" id="node4" href="$class_general_user.html#a6e925cd06072bd816afe987314c96657" title="GeneralUser::requestAttended" alt="" coords="254,71,453,97"/>
+<area shape="rect" id="node5" href="$class_general_user.html#ac8d7fff506aa2ba1e658229f7c3d87d8" title="GeneralUser::selectJob" alt="" coords="274,121,433,148"/>
+<area shape="rect" id="node7" href="$class_smart_user.html#a6af88653c8133b26043cf4bc56fe9894" title="SmartUser::selectJob" alt="" coords="279,172,428,199"/>
+<area shape="rect" id="node8" href="$class_smart_user.html#a6ada9c455570130a2d96feedddfd9fe1" title="SmartUser::schedule" alt="" coords="506,197,651,224"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="508,5,649,46"/>
+<area shape="rect" id="node6" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="501,121,656,148"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="ApplicationCheckpoint::initialize" name="ApplicationCheckpoint::initialize">
+<area shape="rect" id="node2" href="$class_m_p_i___base.html#a907451cac9a80fecce0e36b790b6ea16" title="MPI_Base::initialize" alt="" coords="245,5,384,32"/>
+<area shape="rect" id="node7" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="1235,23,1429,65"/>
+<area shape="rect" id="node8" href="$class_m_p_i___base.html#ac2f87e3addcedf5f2adf53690ff8155a" title="MPI_Base::mpiCommunications\lToString" alt="" coords="209,107,420,149"/>
+<area shape="rect" id="node9" href="$class_job_results_set.html#a35ed592e5484935dc0f00a02ae16cec5" title="JobResultsSet::newJobResultSet" alt="" coords="205,173,424,200"/>
+<area shape="rect" id="node3" href="$class_user_job.html#aa4d12c9fe1a67635008861dc5c9ec86c" title="UserJob::initialize" alt="" coords="483,5,610,32"/>
+<area shape="rect" id="node4" href="$classjob_base.html#a765de753584cf40713de92abda82963e" title="jobBase::initialize" alt="" coords="670,5,794,32"/>
+<area shape="rect" id="node5" href="$class_a_p_i___o_s.html#a4205c37a121aaf1a15eb15b8333cf1c7" title="API_OS::initialize" alt="" coords="843,5,968,32"/>
+<area shape="rect" id="node6" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="1017,5,1186,32"/>
+<area shape="rect" id="node10" href="$class_job_results.html#ac7f3a49c043bda56a792faf41fb9678f" title="JobResults::getName" alt="" coords="472,173,621,200"/>
+</map>

@@ -1,0 +1,31 @@
+<map id="Management/CloudManagement/CloudManager/AbstractCloudManager.h" name="Management/CloudManagement/CloudManager/AbstractCloudManager.h">
+<area shape="rect" id="node2" href="$_allocation_management_8h.html" title="AllocationManagement.h" alt="" coords="875,96,1039,123"/>
+<area shape="rect" id="node6" href="$_v_m_8h.html" title="VM.h" alt="" coords="747,245,801,272"/>
+<area shape="rect" id="node34" href="$_request_v_m_8h.html" title="RequestVM.h" alt="" coords="929,469,1031,496"/>
+<area shape="rect" id="node36" href="$cfg_cloud_8h.html" title="cfgCloud.h" alt="" coords="41,320,126,347"/>
+<area shape="rect" id="node38" href="$_node_v_l_8h.html" title="NodeVL.h" alt="" coords="1079,96,1158,123"/>
+<area shape="rect" id="node48" href="$_running_v_m_8h.html" title="RunningVM.h" alt="" coords="425,171,526,197"/>
+<area shape="rect" id="node4" href="$_v_m_i_d_8h.html" title="VMID.h" alt="" coords="875,171,942,197"/>
+<area shape="rect" id="node7" href="$_machine_8h.html" title="Machine.h" alt="" coords="862,320,943,347"/>
+<area shape="rect" id="node8" href="$_element_type_8h.html" title="ElementType.h" alt="" coords="576,395,686,421"/>
+<area shape="rect" id="node29" href="$_v_m_syscall_manager_8h.html" title="VMSyscallManager.h" alt="" coords="969,320,1115,347"/>
+<area shape="rect" id="node9" href="$_abstract_syscall_manager_8h.html" title="AbstractSyscallManager.h" alt="" coords="940,395,1114,421"/>
+<area shape="rect" id="node10" href="$icancloud___base_8h.html" title="icancloud_Base.h" alt="" coords="1359,544,1485,571"/>
+<area shape="rect" id="node11" href="$icancloud__types_8h.html" title="icancloud_types.h" alt="" coords="308,619,434,645"/>
+<area shape="rect" id="node15" href="$_constants_8h.html" title="Constants.h" alt="" coords="2033,619,2126,645"/>
+<area shape="rect" id="node12" href="$icancloud__debug_8h.html" title="icancloud_debug.h" alt="" coords="2090,693,2219,720"/>
+<area shape="rect" id="node30" href="$_vm_msg_controller_8h.html" title="VmMsgController.h" alt="" coords="1292,395,1426,421"/>
+<area shape="rect" id="node31" href="$_abstract_cloud_user_8h.html" title="AbstractCloudUser.h" alt="" coords="711,395,855,421"/>
+<area shape="rect" id="node32" href="$cfg_m_p_i_8h.html" title="cfgMPI.h" alt="" coords="486,544,559,571"/>
+<area shape="rect" id="node33" href="$_machines_map_8h.html" title="MachinesMap.h" alt="" coords="631,469,746,496"/>
+<area shape="rect" id="node35" href="$_request_8h.html" title="Request.h" alt="" coords="1025,544,1106,571"/>
+<area shape="rect" id="node37" href="$cfg_data_center_8h.html" title="cfgDataCenter.h" alt="" coords="59,544,177,571"/>
+<area shape="rect" id="node39" href="$_hypervisor_8h.html" title="Hypervisor.h" alt="" coords="1701,395,1797,421"/>
+<area shape="rect" id="node45" href="$_node_8h.html" title="Node.h" alt="" coords="1101,171,1165,197"/>
+<area shape="rect" id="node40" href="$_h___c_p_u_manager___base_8h.html" title="H_CPUManager_Base.h" alt="" coords="1565,469,1731,496"/>
+<area shape="rect" id="node41" href="$_h___memory_manager___base_8h.html" title="H_MemoryManager_Base.h" alt="" coords="1757,469,1941,496"/>
+<area shape="rect" id="node42" href="$_h___n_e_t_manager___base_8h.html" title="H_NETManager_Base.h" alt="" coords="2085,469,2249,496"/>
+<area shape="rect" id="node44" href="$_h___storage_manager___base_8h.html" title="H_StorageManager_Base.h" alt="" coords="1359,469,1541,496"/>
+<area shape="rect" id="node46" href="$_abstract_node_8h.html" title="AbstractNode.h" alt="" coords="1103,245,1215,272"/>
+<area shape="rect" id="node47" href="$_energy_meter_controller_8h.html" title="EnergyMeterController.h" alt="" coords="1173,544,1335,571"/>
+</map>

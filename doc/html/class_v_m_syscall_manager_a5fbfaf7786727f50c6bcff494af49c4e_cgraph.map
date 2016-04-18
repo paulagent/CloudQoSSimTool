@@ -1,0 +1,8 @@
+<map id="VMSyscallManager::createProcess" name="VMSyscallManager::createProcess">
+<area shape="rect" id="node2" href="$classc_gate_manager.html#ad566e09aa1825fb442c21cd2140c0800" title="cGateManager::newGate" alt="" coords="467,5,634,32"/>
+<area shape="rect" id="node4" href="$class_vm_msg_controller.html#a92794c6b117e7a7f147c86d1fcf2bee0" title="VmMsgController::linkNew\lApplication" alt="" coords="232,54,411,95"/>
+<area shape="rect" id="node7" href="$classc_gate_manager.html#a9e159a922337e251394d75bfd4162f48" title="cGateManager::getGate" alt="" coords="241,120,402,147"/>
+<area shape="rect" id="node3" href="$classc_gate_manager.html#a15d49d0ee407cd043d07322c762095d7" title="cGateManager::linkGate" alt="" coords="691,5,853,32"/>
+<area shape="rect" id="node5" href="$classc_gate_manager.html#ab2a45f184a5ac8750b03015466ba1cce" title="cGateManager::connectOut" alt="" coords="459,60,642,87"/>
+<area shape="rect" id="node6" href="$classc_gate_manager.html#a59f97bc1fc8cc23f7e9f28534b2fd948" title="cGateManager::connectIn" alt="" coords="465,111,637,137"/>
+</map>

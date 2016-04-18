@@ -1,0 +1,5 @@
+<map id="cGateManager::searchGate" name="cGateManager::searchGate">
+<area shape="rect" id="node2" href="$class_syscall_manager.html#a31838de1f4186cbdccfa37d735d727d5" title="SyscallManager::removeProcess" alt="" coords="245,5,459,32"/>
+<area shape="rect" id="node3" href="$class_vm_msg_controller.html#a3a913ef0b89e7cf2d1785ed7d34703ca" title="VmMsgController::unlinkApplication" alt="" coords="237,56,467,83"/>
+<area shape="rect" id="node4" href="$class_v_m_syscall_manager.html#ad3e93b082faf8855c9093fa20f197ed0" title="VMSyscallManager::remove\lProcess" alt="" coords="515,49,701,90"/>
+</map>

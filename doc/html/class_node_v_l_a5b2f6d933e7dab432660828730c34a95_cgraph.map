@@ -1,0 +1,14 @@
+<map id="NodeVL::linkVM" name="NodeVL::linkVM">
+<area shape="rect" id="node2" href="$class_v_m_i_d.html#ac7d779232dc9af52c8c5723f4120325d" title="VMID::initialize" alt="" coords="181,95,291,122"/>
+<area shape="rect" id="node3" href="$class_hypervisor.html#a78a8693c1bb6049a6ebe6a0b037a7508" title="Hypervisor::setVM" alt="" coords="171,146,301,173"/>
+<area shape="rect" id="node4" href="$class_h___c_p_u_manager___base.html#a80e6d91e0950a19bc8b634f89fcf808f" title="H_CPUManager_Base::\lsetVM" alt="" coords="573,41,736,83"/>
+<area shape="rect" id="node9" href="$class_h___n_e_t_manager___base.html#a2c954f1339daed0625287f3af850307a" title="H_NETManager_Base::\lsetVM" alt="" coords="574,172,735,213"/>
+<area shape="rect" id="node10" href="$class_h___storage_manager___base.html#ae2d4f83bec60d4f9040f4ddd5e7719c0" title="H_StorageManager_Base\l::setVM" alt="" coords="349,267,520,308"/>
+<area shape="rect" id="node13" href="$class_h___memory_manager___base.html#a187b7d888569f1aafcfa69c4567c6fca" title="H_MemoryManager_Base\l::setVM" alt="" coords="568,107,741,148"/>
+<area shape="rect" id="node5" href="$classc_gate_manager.html#ad566e09aa1825fb442c21cd2140c0800" title="cGateManager::newGate" alt="" coords="798,114,965,141"/>
+<area shape="rect" id="node7" href="$classc_gate_manager.html#ab2a45f184a5ac8750b03015466ba1cce" title="cGateManager::connectOut" alt="" coords="790,173,973,199"/>
+<area shape="rect" id="node8" href="$classc_gate_manager.html#a59f97bc1fc8cc23f7e9f28534b2fd948" title="cGateManager::connectIn" alt="" coords="795,223,967,250"/>
+<area shape="rect" id="node6" href="$classc_gate_manager.html#a15d49d0ee407cd043d07322c762095d7" title="cGateManager::linkGate" alt="" coords="1021,114,1184,141"/>
+<area shape="rect" id="node11" href="$class_h___storage_manager___base.html#ab484e1b007c605cf54876f4a990194ce" title="H_StorageManager_Base\l::createStorageCell" alt="" coords="569,355,740,396"/>
+<area shape="rect" id="node12" href="$class_h___storage_manager___base.html#a9c5433c370bc575c188fa89a360833b0" title="H_StorageManager_Base\l::setControlStructure" alt="" coords="569,237,740,279"/>
+</map>

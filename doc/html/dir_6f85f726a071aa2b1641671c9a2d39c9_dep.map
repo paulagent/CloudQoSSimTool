@@ -1,0 +1,24 @@
+<map id="Architecture/NodeComponents/OperatingSystems" name="Architecture/NodeComponents/OperatingSystems">
+<area shape="rect" id="node2" href="dir_54d246f4b7b23ddfecedb060d735da6b.html" title="CPU_Schedulers" alt="" coords="272,111,395,159"/>
+<area shape="rect" id="node8" href="dir_628593db0cdce5a76fb85526ae5aa762.html" title="Base" alt="" coords="261,303,333,351"/>
+<area shape="rect" id="edge6-headlabel" href="dir_000037_000061.html" title="3" alt="" coords="317,281,325,296"/>
+<area shape="rect" id="node3" href="dir_e38c1d13b8c311ed4033d5d9b4d4b7c8.html" title="Storage" alt="" coords="37,111,109,159"/>
+<area shape="rect" id="node7" href="dir_bbe0e39b316c147ac1a343f711e44071.html" title="EnergySystem" alt="" coords="243,399,351,447"/>
+<area shape="rect" id="edge8-headlabel" href="dir_000040_000076.html" title="1" alt="" coords="231,375,239,390"/>
+<area shape="rect" id="edge9-headlabel" href="dir_000040_000061.html" title="24" alt="" coords="272,275,287,290"/>
+<area shape="rect" id="node4" href="dir_375aa073fcec59424adfab86126bc535.html" title="SyscallManager" alt="" coords="133,111,248,159"/>
+<area shape="rect" id="node5" href="dir_852186cdb471916d56830196f41f24c4.html" title="SystemApps" alt="" coords="111,207,208,255"/>
+<area shape="rect" id="edge11-headlabel" href="dir_000054_000056.html" title="2" alt="" coords="177,185,185,199"/>
+<area shape="rect" id="node6" href="dir_fffb5c2dfb305ba4eea42f1f183e843c.html" title="Node" alt="" coords="503,5,575,53"/>
+<area shape="rect" id="edge10-headlabel" href="dir_000054_000014.html" title="1" alt="" coords="480,17,488,31"/>
+<area shape="rect" id="edge12-headlabel" href="dir_000054_000061.html" title="1" alt="" coords="296,276,304,291"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000056_000061.html" title="2" alt="" coords="249,278,257,293"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000014_000036.html" title="1" alt="" coords="508,91,516,106"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000014_000054.html" title="1" alt="" coords="231,96,239,110"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000014_000076.html" title="1" alt="" coords="367,411,375,425"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000014_000061.html" title="1" alt="" coords="348,324,356,339"/>
+<area shape="rect" id="edge7-headlabel" href="dir_000076_000061.html" title="1" alt="" coords="294,362,302,377"/>
+<area shape="rect" id="edge13-headlabel" href="dir_000061_000076.html" title="1" alt="" coords="293,373,301,387"/>
+<area shape="rect" id="clust2" href="dir_6f85f726a071aa2b1641671c9a2d39c9.html" alt="" coords="27,100,560,265"/>
+<area shape="rect" id="clust1" href="dir_81fe3c9db349a38b2f5ab5431825e315.html" title="NodeComponents" alt="" coords="16,64,571,276"/>
+</map>

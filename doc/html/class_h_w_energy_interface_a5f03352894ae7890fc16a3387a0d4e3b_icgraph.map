@@ -1,0 +1,10 @@
+<map id="HWEnergyInterface::e_getStateTime" name="HWEnergyInterface::e_getStateTime">
+<area shape="rect" id="node2" href="$class_c_p_u_controller.html#a1e397991eff9e78aa194653a0daa7042" title="CPUController::e_getStateTime" alt="" coords="218,15,425,41"/>
+<area shape="rect" id="node4" href="$class_storage_controller.html#acd5f758691e8b3d68b9ecfeb4821fac3" title="StorageController::\le_getStateTime" alt="" coords="256,67,387,109"/>
+<area shape="rect" id="node6" href="$class_c_p_u_meter_core.html#af38c647ff1cb5ed9f315e4874ce2d845" title="CPUMeterCore::getEnergyConsumed" alt="" coords="200,133,443,160"/>
+<area shape="rect" id="node7" href="$class_memory_meter_core.html#ab00762920bd30c9321f591c018327759" title="MemoryMeterCore::getEnergy\lConsumed" alt="" coords="223,185,420,226"/>
+<area shape="rect" id="node8" href="$class_network_meter_core.html#ae1ed95b3742a8d89d069759b728d340d" title="NetworkMeterCore::getEnergy\lConsumed" alt="" coords="222,250,421,291"/>
+<area shape="rect" id="node9" href="$class_storage_meter_core.html#a981e78a564b921d56075bd8f2531d53a" title="StorageMeterCore::getEnergy\lConsumed" alt="" coords="224,315,419,357"/>
+<area shape="rect" id="node3" href="$class_c_p_u_controller.html#abc623f47f9e7f1b61917a8406b0d39b8" title="CPUController::processResponse\lMessage" alt="" coords="491,5,711,46"/>
+<area shape="rect" id="node5" href="$class_storage_controller.html#acbd2af05364d1e660b9f056e373954da" title="StorageController::\lprocessResponseMessage" alt="" coords="511,70,691,111"/>
+</map>

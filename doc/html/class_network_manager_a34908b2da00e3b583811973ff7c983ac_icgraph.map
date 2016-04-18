@@ -1,0 +1,6 @@
+<map id="NetworkManager::createNewUser" name="NetworkManager::createNewUser">
+<area shape="rect" id="node2" href="$class_abstract_d_c_manager.html#a5b99a5496d1b5b1d6990d369838eaabb" title="AbstractDCManager::\lnewUser" alt="" coords="275,34,424,75"/>
+<area shape="rect" id="node3" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="472,34,621,75"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="867,5,1021,46"/>
+<area shape="rect" id="node5" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="669,34,819,75"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="AllocationManagement::deleteVMfromStorageNodes" name="AllocationManagement::deleteVMfromStorageNodes">
+<area shape="rect" id="node2" href="$class_cloud_scheduler_f_c_f_s.html#aeb400c083508b2ec87a712b78a5c4ef7" title="CloudSchedulerFCFS\l::remoteShutdown" alt="" coords="265,5,415,46"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ab60ff1f43b37d1a85d6cbf0822ba6813" title="CloudSchedulerFCFS\l_gnup::remoteShutdown" alt="" coords="259,70,421,111"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_r_r.html#a5d6ff9a035d0cbe4c2e5923ae45ea9fd" title="CloudSchedulerRR::remote\lShutdown" alt="" coords="249,135,431,177"/>
+<area shape="rect" id="node3" href="$class_cloud_scheduler_f_c_f_s.html#a6d8343d43b103e0c55a81cc4b824a5d2" title="CloudSchedulerFCFS\l::shutdownNodeIfIDLE" alt="" coords="503,5,657,46"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s__gnup.html#aa63b6605f92505ac32620e6f7838287a" title="CloudSchedulerFCFS\l_gnup::shutdownNodeIfIDLE" alt="" coords="485,70,675,111"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_r_r.html#aeec3f6bda46cd544a9d2a063be157b60" title="CloudSchedulerRR::shutdown\lNodeIfIDLE" alt="" coords="481,135,679,177"/>
+</map>

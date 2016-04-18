@@ -1,0 +1,6 @@
+<map id="AbstractDCManager::freeStorageBook" name="AbstractDCManager::freeStorageBook">
+<area shape="rect" id="node2" href="$class_data_center_a_p_i.html#ad935cf91e7d7ee25397a3da579080022" title="DataCenterAPI::getNodeBy\lIndex" alt="" coords="203,7,387,49"/>
+<area shape="rect" id="node4" href="$class_machine.html#a8cd8160fb7c38b7ed00c85cda2fec3fa" title="Machine::getFreeStorage" alt="" coords="211,75,379,101"/>
+<area shape="rect" id="node3" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="435,5,629,46"/>
+<area shape="rect" id="node5" href="$class_abstract_syscall_manager.html#a6b19825b84794c578a84a90416b7a759" title="AbstractSyscallManager\l::getFreeStorage" alt="" coords="450,70,614,111"/>
+</map>

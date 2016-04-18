@@ -1,0 +1,18 @@
+<map id="AbstractPSU::getNodeSubsystemsConsumption" name="AbstractPSU::getNodeSubsystemsConsumption">
+<area shape="rect" id="node2" href="$class_energy_meter_controller.html#a7bb96a70486d87ff7468f97ba84bbfbb" title="EnergyMeterController\l::getNodeSubsystemsConsumption" alt="" coords="283,26,512,67"/>
+<area shape="rect" id="node12" href="$class_abstract_p_s_u.html#a1840165c9b5fae92e6e36b2ed44b9040" title="AbstractPSU::handleMessage" alt="" coords="298,92,497,119"/>
+<area shape="rect" id="node13" href="$class_abstract_p_s_u.html#a3d43b929fdaef3a8aa269840494000e4" title="AbstractPSU::getEnergyLoss" alt="" coords="300,143,495,169"/>
+<area shape="rect" id="node16" href="$class_main_p_s_u.html#ac400035b2732dc0fe4c90584ef54b60d" title="MainPSU::getConsumptionLoss" alt="" coords="293,193,502,220"/>
+<area shape="rect" id="node17" href="$class_main_p_s_u.html#aa5c9b1f1ddfad6efbea9a282e94af70b" title="MainPSU::getNodeConsumption" alt="" coords="291,244,503,271"/>
+<area shape="rect" id="node3" href="$class_node.html#a3fe95d3740a9e1327d83c08c2d98aaa7" title="Node::getSubsystemsConsumption" alt="" coords="560,84,789,111"/>
+<area shape="rect" id="node4" href="$class_energy_meter_controller.html#a616eae9970f6a0aabf07c322dcebc5e8" title="EnergyMeterController\l::getCurrentStorageState" alt="" coords="838,70,1005,111"/>
+<area shape="rect" id="node5" href="$class_node.html#a43bfbaa1ffd924f430e05916f4db40a7" title="Node::getStorageInstantConsumption" alt="" coords="1054,77,1295,104"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_f_c_f_s.html#a3e0afe92ac7e1ae55a6242d212a975f7" title="CloudSchedulerFCFS\l::printEnergyValues" alt="" coords="1373,135,1523,177"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a552ad67083215247602ed5a946143901" title="CloudSchedulerFCFS\l_gnup::printEnergyValues" alt="" coords="1363,70,1533,111"/>
+<area shape="rect" id="node10" href="$class_cloud_scheduler_r_r.html#a2c153a82274f9112a7508c1e88ee16a5" title="CloudSchedulerRR::printEnergy\lValues" alt="" coords="1344,5,1552,46"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_f_c_f_s.html#a6d8343d43b103e0c55a81cc4b824a5d2" title="CloudSchedulerFCFS\l::shutdownNodeIfIDLE" alt="" coords="1623,135,1777,177"/>
+<area shape="rect" id="node9" href="$class_cloud_scheduler_f_c_f_s__gnup.html#aa63b6605f92505ac32620e6f7838287a" title="CloudSchedulerFCFS\l_gnup::shutdownNodeIfIDLE" alt="" coords="1605,70,1795,111"/>
+<area shape="rect" id="node11" href="$class_cloud_scheduler_r_r.html#aeec3f6bda46cd544a9d2a063be157b60" title="CloudSchedulerRR::shutdown\lNodeIfIDLE" alt="" coords="1601,5,1799,46"/>
+<area shape="rect" id="node14" href="$class_energy_meter_controller.html#a1cb2f98065c63aa297a096deaf8ceb72" title="EnergyMeterController\l::getPSUEnergyLoss" alt="" coords="599,135,751,177"/>
+<area shape="rect" id="node15" href="$class_node.html#a42eba80310a3d668bed82c6d220c3616" title="Node::getPSUEnergyLoss" alt="" coords="1087,143,1263,169"/>
+</map>

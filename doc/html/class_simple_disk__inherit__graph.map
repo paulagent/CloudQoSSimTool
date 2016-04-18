@@ -1,0 +1,5 @@
+<map id="SimpleDisk" name="SimpleDisk">
+<area shape="rect" id="node2" href="$class_i_storage_device.html" title="IStorageDevice" alt="" coords="17,229,128,256"/>
+<area shape="rect" id="node3" href="$class_h_w_energy_interface.html" title="HWEnergyInterface" alt="" coords="5,155,141,181"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="16,80,131,107"/>
+</map>

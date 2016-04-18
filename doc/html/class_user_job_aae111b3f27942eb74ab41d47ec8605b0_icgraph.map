@@ -1,0 +1,13 @@
+<map id="UserJob::getMachine" name="UserJob::getMachine">
+<area shape="rect" id="node2" href="$class_abstract_cloud_user.html#a8640cb9030818b0d125e431d1322fb15" title="AbstractCloudUser::\lallocateJob" alt="" coords="464,70,605,111"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_user.html#a0083e72e6db0e43c755f0370dd8c143a" title="AbstractCloudUser::\lstart_up_job_execution" alt="" coords="219,129,375,170"/>
+<area shape="rect" id="node5" href="$class_abstract_cloud_user.html#aa4013a707e23684ced34698e584121e8" title="AbstractCloudUser::\lexecutePendingJobs" alt="" coords="463,187,606,229"/>
+<area shape="rect" id="node9" href="$class_abstract_cloud_user.html#a94b32e34be60793156ebdb366d358b93" title="AbstractCloudUser::\lnotify_UserJobHasFinished" alt="" coords="443,5,626,46"/>
+<area shape="rect" id="node10" href="$class_general_user.html#a5516eb809714d1a7874643a0965ed617" title="GeneralUser::jobHasFinished" alt="" coords="201,245,394,272"/>
+<area shape="rect" id="node11" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="220,296,375,323"/>
+<area shape="rect" id="node12" href="$class_smart_user.html#a01632b506e12340573df25860e35838e" title="SmartUser::jobHasFinished" alt="" coords="206,347,389,373"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="704,70,845,111"/>
+<area shape="rect" id="node6" href="$class_abstract_cloud_user.html#af610b90ac259bb4034c3234cc0d74e2f" title="AbstractCloudUser::\lprocessSelfMessage" alt="" coords="703,187,847,229"/>
+<area shape="rect" id="node7" href="$class_general_user.html#a6e925cd06072bd816afe987314c96657" title="GeneralUser::requestAttended" alt="" coords="675,253,874,280"/>
+<area shape="rect" id="node8" href="$class_smart_user.html#abbd4fcf7b2b6fae50ba128e37e18c656" title="SmartUser::requestAttended" alt="" coords="681,136,869,163"/>
+</map>

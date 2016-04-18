@@ -1,0 +1,8 @@
+<map id="Node::getMemoryInstantConsumption" name="Node::getMemoryInstantConsumption">
+<area shape="rect" id="node2" href="$class_cloud_scheduler_f_c_f_s.html#a3e0afe92ac7e1ae55a6242d212a975f7" title="CloudSchedulerFCFS\l::printEnergyValues" alt="" coords="325,5,475,46"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a552ad67083215247602ed5a946143901" title="CloudSchedulerFCFS\l_gnup::printEnergyValues" alt="" coords="315,70,485,111"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_r_r.html#a2c153a82274f9112a7508c1e88ee16a5" title="CloudSchedulerRR::printEnergy\lValues" alt="" coords="296,135,504,177"/>
+<area shape="rect" id="node3" href="$class_cloud_scheduler_f_c_f_s.html#a6d8343d43b103e0c55a81cc4b824a5d2" title="CloudSchedulerFCFS\l::shutdownNodeIfIDLE" alt="" coords="575,5,729,46"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s__gnup.html#aa63b6605f92505ac32620e6f7838287a" title="CloudSchedulerFCFS\l_gnup::shutdownNodeIfIDLE" alt="" coords="557,70,747,111"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_r_r.html#aeec3f6bda46cd544a9d2a063be157b60" title="CloudSchedulerRR::shutdown\lNodeIfIDLE" alt="" coords="553,135,751,177"/>
+</map>

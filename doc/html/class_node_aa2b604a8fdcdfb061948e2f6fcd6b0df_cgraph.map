@@ -1,0 +1,12 @@
+<map id="Node::turnOn" name="Node::turnOn">
+<area shape="rect" id="node2" href="$class_machine.html#a5d4d765e17f64c4d760554e9061ba75e" title="Machine::equalStates" alt="" coords="157,83,305,109"/>
+<area shape="rect" id="node6" href="$class_machine.html#aac09df15c2480050b99f5132704ca913" title="Machine::changeState" alt="" coords="591,136,743,163"/>
+<area shape="rect" id="node8" href="$class_machine.html#a929a37c500a8a808a7e30f3508d9ebec" title="Machine::getState" alt="" coords="167,187,295,213"/>
+<area shape="rect" id="node10" href="$class_energy_meter_controller.html#af9c3a0e107063db27d9ccd51eff31b64" title="EnergyMeterController\l::switchOnPSU" alt="" coords="155,242,307,283"/>
+<area shape="rect" id="node3" href="$class_machine.html#a42e3f547d50654402c4fed9232f5f477" title="Machine::removeProcess" alt="" coords="355,79,525,105"/>
+<area shape="rect" id="node4" href="$class_abstract_syscall_manager.html#a5cae955bef0e5d336ddd7d9733649255" title="AbstractSyscallManager\l::removeProcess" alt="" coords="585,5,749,46"/>
+<area shape="rect" id="node5" href="$class_abstract_syscall_manager.html#a0a9a322e95629883d0a1222d84ba30e9" title="AbstractSyscallManager\l::getNumProcessesRunning" alt="" coords="573,70,760,111"/>
+<area shape="rect" id="node7" href="$class_abstract_syscall_manager.html#a1521a2796425ffb46706a084598685b8" title="AbstractSyscallManager\l::changeState" alt="" coords="809,129,973,170"/>
+<area shape="rect" id="node9" href="$class_abstract_syscall_manager.html#a1b1bb74aca92c46fcf2a34a2020c6517" title="AbstractSyscallManager\l::getState" alt="" coords="358,186,522,227"/>
+<area shape="rect" id="node11" href="$class_abstract_p_s_u.html#a6fc670d6f189d0a2ea92836318b2d8d7" title="AbstractPSU::switchOn" alt="" coords="359,252,521,279"/>
+</map>

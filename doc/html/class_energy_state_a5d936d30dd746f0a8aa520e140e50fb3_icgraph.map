@@ -1,0 +1,5 @@
+<map id="EnergyState::getState" name="EnergyState::getState">
+<area shape="rect" id="node2" href="$class_energy_meter_states.html#ac2733e45f0c8ff29b7f2dff4302d1a38" title="EnergyMeterStates::\lsetNewState" alt="" coords="210,5,353,46"/>
+<area shape="rect" id="node3" href="$class_energy_meter_states.html#ac1295f6fd06cd95e1af0eeb7323f6594" title="EnergyMeterStates::\lgetConsumptionValue" alt="" coords="206,70,357,111"/>
+<area shape="rect" id="node4" href="$class_energy_meter_states.html#a2873ef00f3904e7ba436e8f72c49e777" title="EnergyMeterStates::\lloadComponent" alt="" coords="210,135,353,177"/>
+</map>

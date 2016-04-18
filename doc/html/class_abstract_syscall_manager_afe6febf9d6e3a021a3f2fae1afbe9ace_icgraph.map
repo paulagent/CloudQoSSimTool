@@ -1,0 +1,4 @@
+<map id="AbstractSyscallManager::resetSystem" name="AbstractSyscallManager::resetSystem">
+<area shape="rect" id="node2" href="$class_syscall_manager.html#aa13f1cd99f584d467d1a790f924e3463" title="SyscallManager::changeState" alt="" coords="219,12,415,39"/>
+<area shape="rect" id="node3" href="$class_syscall_manager.html#a3f0c903dcc4fbc9348169300662136f8" title="SyscallManager::getState" alt="" coords="465,12,637,39"/>
+</map>

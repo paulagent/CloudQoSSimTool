@@ -1,0 +1,20 @@
+<map id="CPUcore::numInitStages" name="CPUcore::numInitStages">
+<area shape="rect" id="node2" href="$class_h_w_energy_interface.html#a019aa691206e18ae8c53269a1620345a" title="HWEnergyInterface::\linitialize" alt="" coords="249,17,394,58"/>
+<area shape="rect" id="node5" href="$class_c_p_ucore.html#a4e06f577e06f830db026a4bd6c9dc441" title="CPUcore::finish" alt="" coords="264,93,379,120"/>
+<area shape="rect" id="node9" href="$class_c_p_ucore.html#aa70ca68f21cb2f05017ea1d93801c008" title="CPUcore::changeDeviceState" alt="" coords="222,144,421,171"/>
+<area shape="rect" id="node10" href="$class_c_p_ucore.html#a580d55c4a9ac3118e50ccc0724f8dc1b" title="CPUcore::changeState" alt="" coords="481,195,639,221"/>
+<area shape="rect" id="node3" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="475,12,645,39"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="699,5,893,46"/>
+<area shape="rect" id="node6" href="$class_h_w_energy_interface.html#a48af94f55cd7b427121779a604c4e3cd" title="HWEnergyInterface::\lfinish" alt="" coords="487,63,633,105"/>
+<area shape="rect" id="node8" href="$classicancloud___base.html#af7a4fef53d5de8fe2b98a3ba8179c374" title="icancloud_Base::showError\lMessage" alt="" coords="469,129,651,170"/>
+<area shape="rect" id="node7" href="$classicancloud___base.html#a4001d96e9800634c359328b29438ec50" title="icancloud_Base::finish" alt="" coords="719,71,873,97"/>
+<area shape="rect" id="node11" href="$class_i_core.html#a86340e9ae50b1c8c8f161abcd33b14c5" title="ICore::e_getStatesSize" alt="" coords="717,163,875,189"/>
+<area shape="rect" id="node14" href="$class_i_core.html#a68b0c0616dc5132befd1b4136fa58bb4" title="ICore::e_changeState" alt="" coords="721,220,871,247"/>
+<area shape="rect" id="node12" href="$class_c_p_u_controller.html#a1e1369acbb10aa0a6669fada835a6351" title="CPUController::e_getStatesSize" alt="" coords="941,163,1152,189"/>
+<area shape="rect" id="node13" href="$class_h_w_energy_interface.html#a8dbfb77fde8ade5da41e0cc9a633a1bb" title="HWEnergyInterface::\le_getStatesSize" alt="" coords="1219,147,1365,189"/>
+<area shape="rect" id="node15" href="$class_c_p_u_controller.html#a720048eaa7163f6640b966cbadb10498" title="CPUController::e_changeState" alt="" coords="945,220,1148,247"/>
+<area shape="rect" id="node16" href="$class_c_p_u_controller.html#aaa2fd54718c7bcc5a2467b62b92a7924" title="CPUController::e_getActual\lState" alt="" coords="1200,213,1384,254"/>
+<area shape="rect" id="node18" href="$class_h_w_energy_interface.html#a7898a00beb2705014a5383f780e11e99" title="HWEnergyInterface::\le_changeState" alt="" coords="1219,278,1365,319"/>
+<area shape="rect" id="node17" href="$class_h_w_energy_interface.html#a33e03c68d9b97bcebd4d4aa08291d77f" title="HWEnergyInterface::\le_getActualState" alt="" coords="1433,213,1578,254"/>
+<area shape="rect" id="node19" href="$class_h_w_energy_interface.html#adb1fcd4ef7077a112f69d689824c92ab" title="HWEnergyInterface::\lchangeState" alt="" coords="1433,278,1578,319"/>
+</map>

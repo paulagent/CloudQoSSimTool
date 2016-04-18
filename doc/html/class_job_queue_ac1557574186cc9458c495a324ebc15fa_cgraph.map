@@ -1,0 +1,8 @@
+<map id="JobQueue::get_queue_size" name="JobQueue::get_queue_size">
+<area shape="rect" id="node2" href="$class_job_queue.html#a55b3ca465f5bb22e2da75d11d8ad45c7" title="JobQueue::insert_job" alt="" coords="477,83,622,110"/>
+<area shape="rect" id="node3" href="$class_job_queue.html#ab021a049c153d690001403ac3354b44e" title="JobQueue::getJob" alt="" coords="485,32,613,59"/>
+<area shape="rect" id="node4" href="$class_job_queue.html#a3c6bfa9795726c805aca32959a3639e4" title="JobQueue::removeJob" alt="" coords="473,159,626,186"/>
+<area shape="rect" id="node5" href="$class_job_queue.html#a460180e98a2a308cf2899a42af80cca3" title="JobQueue::move_job\l_from_to" alt="" coords="257,236,402,277"/>
+<area shape="rect" id="node6" href="$class_job_queue.html#a483689f1b25b76d075a843b3a6506711" title="JobQueue::move_to_qDst" alt="" coords="242,32,417,59"/>
+<area shape="rect" id="node7" href="$class_job_queue.html#a5ab90c6a24f91a517723da7f8c19df88" title="JobQueue::move_from_qSrc" alt="" coords="235,83,423,110"/>
+</map>

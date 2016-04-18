@@ -1,0 +1,11 @@
+<map id="icancloud_Base::handleMessage" name="icancloud_Base::handleMessage">
+<area shape="rect" id="node2" href="$classicancloud___base.html#a91b0df9e4321b691f64692a10a480f6c" title="icancloud_Base::processSelf\lMessage" alt="" coords="285,5,475,46"/>
+<area shape="rect" id="node3" href="$classicancloud___base.html#a081e7b2dd21bc3498ffeeadb8348c252" title="icancloud_Base::updateMessage\lTrace" alt="" coords="273,70,487,111"/>
+<area shape="rect" id="node6" href="$classicancloud___base.html#a015a4ac08e4ac1fc910598748a10512f" title="icancloud_Base::processCurrent\lRequestMessage" alt="" coords="275,135,485,177"/>
+<area shape="rect" id="node9" href="$classicancloud___base.html#aef912129ef357133d2ba29ffc66559a2" title="icancloud_Base::processResponse\lMessage" alt="" coords="267,201,493,242"/>
+<area shape="rect" id="node10" href="$classicancloud___base.html#af7a4fef53d5de8fe2b98a3ba8179c374" title="icancloud_Base::showError\lMessage" alt="" coords="289,266,471,307"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html#a1a6fff0a2b509bca7e49624e132d9710" title="icancloud_Base::getOutGate" alt="" coords="556,19,745,45"/>
+<area shape="rect" id="node5" href="$classicancloud___message.html#a6a2de8ec642ca0f59c240892f59f2e80" title="icancloud_Message::\laddModuleToTrace" alt="" coords="578,70,723,111"/>
+<area shape="rect" id="node7" href="$classicancloud___base.html#a70c9be3bce03393123f7ffccf9923fbe" title="icancloud_Base::isPending\lRequest" alt="" coords="561,135,740,177"/>
+<area shape="rect" id="node8" href="$classicancloud___base.html#aae4c74ca325f76d7e99f7f0ee7721540" title="icancloud_Base::processRequest\lMessage" alt="" coords="542,201,759,242"/>
+</map>

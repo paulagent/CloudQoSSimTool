@@ -1,0 +1,10 @@
+<map id="Node::getPSUEnergyLoss" name="Node::getPSUEnergyLoss">
+<area shape="rect" id="node2" href="$class_energy_meter_controller.html#a1cb2f98065c63aa297a096deaf8ceb72" title="EnergyMeterController\l::getPSUEnergyLoss" alt="" coords="229,38,381,79"/>
+<area shape="rect" id="node3" href="$class_abstract_p_s_u.html#a3d43b929fdaef3a8aa269840494000e4" title="AbstractPSU::getEnergyLoss" alt="" coords="429,45,624,72"/>
+<area shape="rect" id="node4" href="$class_abstract_p_s_u.html#a044125c09063636ede486b69e726ac09" title="AbstractPSU::getNodeSubsystems\lConsumption" alt="" coords="672,38,901,79"/>
+<area shape="rect" id="node5" href="$class_abstract_meter_unit.html#ad162c01773494de6de6ac59ab4ed718e" title="AbstractMeterUnit::\lgetNumberOfComponents" alt="" coords="950,5,1125,46"/>
+<area shape="rect" id="node8" href="$class_abstract_meter_unit.html#a005355b9a2c85aa86b446bce5a5707f9" title="AbstractMeterUnit::\lgetActualState" alt="" coords="969,70,1105,111"/>
+<area shape="rect" id="node6" href="$class_h_w_energy_interface.html#a54c83ac6da102b7cd98ba21c12ffab1d" title="HWEnergyInterface::\lgetNumberOfComponents" alt="" coords="1174,5,1349,46"/>
+<area shape="rect" id="node7" href="$class_h_w_energy_interface.html#a126eba8aa77f3e0d2326342243c7bdb3" title="HWEnergyInterface::\lloadComponent" alt="" coords="1398,5,1543,46"/>
+<area shape="rect" id="node9" href="$class_h_w_energy_interface.html#a33e03c68d9b97bcebd4d4aa08291d77f" title="HWEnergyInterface::\le_getActualState" alt="" coords="1189,70,1334,111"/>
+</map>

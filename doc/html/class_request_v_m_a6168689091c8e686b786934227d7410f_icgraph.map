@@ -1,0 +1,6 @@
+<map id="RequestVM::compareReq" name="RequestVM::compareReq">
+<area shape="rect" id="node2" href="$class_request_v_m.html#a299232d5ffbcb14b584a0f3f7a514715" title="RequestVM::getSingleRequestType" alt="" coords="227,77,458,104"/>
+<area shape="rect" id="node3" href="$class_cloud_scheduler_f_c_f_s.html#a7b759520f36b9c11077f83f6128648d2" title="CloudSchedulerFCFS\l::selectNode" alt="" coords="536,5,685,46"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a375b883963370191aa416e12e2b4b73c" title="CloudSchedulerFCFS\l_gnup::selectNode" alt="" coords="536,70,685,111"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_r_r.html#a782f1e46138551f1f0288f8b4d64f2fe" title="CloudSchedulerRR::selectNode" alt="" coords="507,136,715,163"/>
+</map>

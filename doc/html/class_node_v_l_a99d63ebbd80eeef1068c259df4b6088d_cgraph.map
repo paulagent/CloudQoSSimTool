@@ -1,0 +1,8 @@
+<map id="NodeVL::setVMInstance" name="NodeVL::setVMInstance">
+<area shape="rect" id="node2" href="$class_machine.html#ae0909fcea9d5301ce800ab40a7582473" title="Machine::getPid" alt="" coords="237,5,353,32"/>
+<area shape="rect" id="node3" href="$class_v_m.html#a61d7bc3593ddb11fc22517a867e1851c" title="VM::getUid" alt="" coords="251,56,339,83"/>
+<area shape="rect" id="node4" href="$class_machine.html#a929a37c500a8a808a7e30f3508d9ebec" title="Machine::getState" alt="" coords="231,107,359,133"/>
+<area shape="rect" id="node6" href="$class_machine.html#aac09df15c2480050b99f5132704ca913" title="Machine::changeState" alt="" coords="219,161,371,188"/>
+<area shape="rect" id="node5" href="$class_abstract_syscall_manager.html#a1b1bb74aca92c46fcf2a34a2020c6517" title="AbstractSyscallManager\l::getState" alt="" coords="419,95,583,137"/>
+<area shape="rect" id="node7" href="$class_abstract_syscall_manager.html#a1521a2796425ffb46706a084598685b8" title="AbstractSyscallManager\l::changeState" alt="" coords="419,161,583,202"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="MPI_Base::initialize" name="MPI_Base::initialize">
+<area shape="rect" id="node2" href="$class_application_checkpoint.html#a8614115da8f448c96a96066c01863371" title="ApplicationCheckpoint\l::initialize" alt="" coords="201,5,353,46"/>
+<area shape="rect" id="node3" href="$class_application_h_p_c.html#a8c61708b1f8d091c23dbe72f14286cd6" title="ApplicationHPC::initialize" alt="" coords="192,71,363,97"/>
+<area shape="rect" id="node4" href="$class_application_h_t_c.html#abcfff348a53ec108c30ad269d0721d6e" title="ApplicationHTC::initialize" alt="" coords="193,121,362,148"/>
+</map>

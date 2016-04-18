@@ -1,0 +1,6 @@
+<map id="SyscallManager::initialize" name="SyscallManager::initialize">
+<area shape="rect" id="node2" href="$class_abstract_syscall_manager.html#a247ff9053efa537b793525de983cc471" title="AbstractSyscallManager\l::initialize" alt="" coords="225,5,389,46"/>
+<area shape="rect" id="node5" href="$classc_gate_manager.html#a15d49d0ee407cd043d07322c762095d7" title="cGateManager::linkGate" alt="" coords="225,71,388,97"/>
+<area shape="rect" id="node3" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="438,12,607,39"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="656,5,851,46"/>
+</map>

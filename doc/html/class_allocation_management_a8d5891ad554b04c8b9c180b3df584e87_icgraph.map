@@ -1,0 +1,6 @@
+<map id="AllocationManagement::setStorageNode" name="AllocationManagement::setStorageNode">
+<area shape="rect" id="node2" href="$class_allocation_management.html#a7d11052bc5e2534bb944ca89668ed0f2" title="AllocationManagement\l::setupStorageNodes" alt="" coords="208,70,363,111"/>
+<area shape="rect" id="node3" href="$class_cloud_scheduler_f_c_f_s.html#a5336088da76c3353eca1e97e1900c170" title="CloudSchedulerFCFS\l::setupScheduler" alt="" coords="452,5,601,46"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a7c7ca1f7fc5bf9b14fe4615744a78a00" title="CloudSchedulerFCFS\l_gnup::setupScheduler" alt="" coords="449,70,604,111"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_r_r.html#aa3c0a35d4c2746540ab1689f23d2b829" title="CloudSchedulerRR::setupScheduler" alt="" coords="411,136,643,163"/>
+</map>

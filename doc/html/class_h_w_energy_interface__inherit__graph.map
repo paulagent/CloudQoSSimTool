@@ -1,0 +1,13 @@
+<map id="HWEnergyInterface" name="HWEnergyInterface">
+<area shape="rect" id="node4" href="$class_c_p_u_controller.html" title="CPUController" alt="" coords="549,5,656,32"/>
+<area shape="rect" id="node5" href="$class_i_core.html" title="ICore" alt="" coords="575,56,630,83"/>
+<area shape="rect" id="node7" href="$class_i_storage_device.html" title="IStorageDevice" alt="" coords="547,107,659,133"/>
+<area shape="rect" id="node10" href="$class_network_service.html" title="NetworkService" alt="" coords="545,157,660,184"/>
+<area shape="rect" id="node11" href="$class_r_a_mmemory.html" title="RAMmemory" alt="" coords="553,208,652,235"/>
+<area shape="rect" id="node12" href="$class_r_a_m_memory___block_model.html" title="RAMMemory_BlockModel" alt="" coords="515,259,690,285"/>
+<area shape="rect" id="node13" href="$class_storage_controller.html" title="StorageController" alt="" coords="541,309,664,336"/>
+<area shape="rect" id="node2" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="165,157,280,184"/>
+<area shape="rect" id="node6" href="$class_c_p_ucore.html" title="CPUcore" alt="" coords="746,56,822,83"/>
+<area shape="rect" id="node8" href="$class_disk___l_i.html" title="Disk_LI" alt="" coords="751,107,817,133"/>
+<area shape="rect" id="node9" href="$class_simple_disk.html" title="SimpleDisk" alt="" coords="739,157,829,184"/>
+</map>

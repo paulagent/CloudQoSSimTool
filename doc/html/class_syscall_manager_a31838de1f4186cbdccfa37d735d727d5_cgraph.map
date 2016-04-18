@@ -1,0 +1,5 @@
+<map id="SyscallManager::removeProcess" name="SyscallManager::removeProcess">
+<area shape="rect" id="node2" href="$class_abstract_syscall_manager.html#a4bd9be0ab646391f13dfb7e18f94a3f3" title="AbstractSyscallManager\l::deleteJobFromStructures" alt="" coords="273,5,449,46"/>
+<area shape="rect" id="node3" href="$classc_gate_manager.html#afee8a6956b00032a93fe0ee3b6d1e260" title="cGateManager::searchGate" alt="" coords="270,71,453,97"/>
+<area shape="rect" id="node4" href="$classc_gate_manager.html#aaea1371f08ab95bf8dcb281d88f88bde" title="cGateManager::freeGate" alt="" coords="279,121,444,148"/>
+</map>

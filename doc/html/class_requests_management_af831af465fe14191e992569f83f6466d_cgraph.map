@@ -1,0 +1,8 @@
+<map id="RequestsManagement::eraseExecutingRequest" name="RequestsManagement::eraseExecutingRequest">
+<area shape="rect" id="node2" href="$class_requests_management.html#ad16d56d1c59aa89a745dafd9233c553b" title="RequestsManagement\l::~RequestsManagement" alt="" coords="225,5,394,46"/>
+<area shape="rect" id="node3" href="$class_requests_management.html#a8ed5fc799fe92b1100ceecbf1ef747a9" title="RequestsManagement\l::initialize" alt="" coords="233,70,386,111"/>
+<area shape="rect" id="node6" href="$class_requests_management.html#ae5ad5789dc8ff324bf9eea2bd6691094" title="RequestsManagement\l::finish" alt="" coords="233,135,386,177"/>
+<area shape="rect" id="node7" href="$class_requests_management.html#aa5b8251724c15c6dfa181689401b4d9b" title="RequestsManagement\l::userSendRequest" alt="" coords="233,201,386,242"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="443,111,613,137"/>
+<area shape="rect" id="node5" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="661,103,856,145"/>
+</map>

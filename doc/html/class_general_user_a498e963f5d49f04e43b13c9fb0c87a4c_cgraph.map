@@ -1,0 +1,9 @@
+<map id="GeneralUser::selectResourcesJob" name="GeneralUser::selectResourcesJob">
+<area shape="rect" id="node2" href="$class_machines_map.html#a4395beb7c95115aeb8c3dac8c861fb09" title="MachinesMap::size" alt="" coords="310,5,445,32"/>
+<area shape="rect" id="node3" href="$class_machines_map.html#aae76fe9e577a5e8a74b01b4fee57b3fe" title="MachinesMap::getSetQuantity" alt="" coords="278,56,477,83"/>
+<area shape="rect" id="node4" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="280,107,475,149"/>
+<area shape="rect" id="node5" href="$class_v_m.html#a03fafa954984360ae328bf94d51e32be" title="VM::getPendingOperation" alt="" coords="292,173,463,200"/>
+<area shape="rect" id="node6" href="$class_machine.html#a929a37c500a8a808a7e30f3508d9ebec" title="Machine::getState" alt="" coords="313,224,441,251"/>
+<area shape="rect" id="node8" href="$class_request_v_m.html#a6ada86f98b7b43181c458cca3ed54d7b" title="RequestVM::setVectorVM" alt="" coords="290,275,465,301"/>
+<area shape="rect" id="node7" href="$class_abstract_syscall_manager.html#a1b1bb74aca92c46fcf2a34a2020c6517" title="AbstractSyscallManager\l::getState" alt="" coords="526,217,690,258"/>
+</map>

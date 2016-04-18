@@ -1,0 +1,6 @@
+<map id="CfgDataCenter::getNodeType" name="CfgDataCenter::getNodeType">
+<area shape="rect" id="node2" href="$class_cfg_data_center.html#a8b799c07bfe266c291391b2497071954" title="CfgDataCenter::getNumber\lOfNodeTypes" alt="" coords="251,5,434,46"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="877,13,1032,54"/>
+<area shape="rect" id="node4" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="483,46,632,87"/>
+<area shape="rect" id="node5" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="680,71,829,113"/>
+</map>

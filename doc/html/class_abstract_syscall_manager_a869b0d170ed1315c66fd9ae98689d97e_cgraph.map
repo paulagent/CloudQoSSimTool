@@ -1,0 +1,9 @@
+<map id="AbstractSyscallManager::storageDecrease" name="AbstractSyscallManager::storageDecrease">
+<area shape="rect" id="node2" href="$class_abstract_syscall_manager.html#a8682febe087a1e15df9c671dcd734673" title="AbstractSyscallManager\l::searchUserId" alt="" coords="225,5,389,46"/>
+<area shape="rect" id="node3" href="$class_abstract_syscall_manager.html#a5cae955bef0e5d336ddd7d9733649255" title="AbstractSyscallManager\l::removeProcess" alt="" coords="443,93,607,134"/>
+<area shape="rect" id="node4" href="$class_abstract_syscall_manager.html#a745899a173585ad0710291a3d44c6a8a" title="AbstractSyscallManager\l::removeAllProcesses" alt="" coords="225,122,389,163"/>
+<area shape="rect" id="node5" href="$class_abstract_syscall_manager.html#abc3ebe810070a492277546e957c95e55" title="AbstractSyscallManager\l::setManager" alt="" coords="225,187,389,229"/>
+<area shape="rect" id="node6" href="$class_abstract_syscall_manager.html#a8349fcfc0a0c53e1e12cbc35af852e36" title="AbstractSyscallManager\l::allocateJob" alt="" coords="225,253,389,294"/>
+<area shape="rect" id="node7" href="$class_abstract_syscall_manager.html#a6834750c54384c39a2c2057b0eb30a34" title="AbstractSyscallManager\l::isAppRunning" alt="" coords="225,318,389,359"/>
+<area shape="rect" id="node8" href="$class_abstract_syscall_manager.html#a4bd9be0ab646391f13dfb7e18f94a3f3" title="AbstractSyscallManager\l::deleteJobFromStructures" alt="" coords="219,383,395,425"/>
+</map>

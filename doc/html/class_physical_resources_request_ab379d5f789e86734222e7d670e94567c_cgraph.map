@@ -1,0 +1,7 @@
+<map id="PhysicalResourcesRequest::PhysicalResourcesRequest" name="PhysicalResourcesRequest::PhysicalResourcesRequest">
+<area shape="rect" id="node2" href="$class_abstract_request.html#a37b1a6c4319602babb2cff3783b4e354" title="AbstractRequest::getOperation" alt="" coords="245,5,448,32"/>
+<area shape="rect" id="node3" href="$class_abstract_request.html#a456fbecf8d0084f2560349415941b4a6" title="AbstractRequest::getTimes\lEnqueue" alt="" coords="255,57,438,98"/>
+<area shape="rect" id="node4" href="$class_abstract_request.html#afec21c9951a45991bdfb29c8aabc252f" title="AbstractRequest::getState" alt="" coords="258,123,435,149"/>
+<area shape="rect" id="node5" href="$class_abstract_request.html#a289694e1c3c6369f9f9462ce045634a1" title="AbstractRequest::getUid" alt="" coords="263,173,430,200"/>
+<area shape="rect" id="node6" href="$class_abstract_request.html#a7fbb51f4dcad0ccc9e6a5c451d442f0a" title="AbstractRequest::getPid" alt="" coords="264,224,429,251"/>
+</map>

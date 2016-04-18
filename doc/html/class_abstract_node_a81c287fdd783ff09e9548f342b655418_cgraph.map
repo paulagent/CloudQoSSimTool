@@ -1,0 +1,7 @@
+<map id="AbstractNode::freeResources" name="AbstractNode::freeResources">
+<area shape="rect" id="node2" href="$class_machine.html#aa9c68bbbcdf04b49d8360644a1232e13" title="Machine::getNumProcesses\lRunning" alt="" coords="251,7,437,49"/>
+<area shape="rect" id="node4" href="$class_machine.html#aac09df15c2480050b99f5132704ca913" title="Machine::changeState" alt="" coords="268,75,420,101"/>
+<area shape="rect" id="node6" href="$class_abstract_node.html#ab64b7ac92c7d971d976fb2751e34727c" title="AbstractNode::notifyManager" alt="" coords="248,125,440,152"/>
+<area shape="rect" id="node3" href="$class_abstract_syscall_manager.html#a0a9a322e95629883d0a1222d84ba30e9" title="AbstractSyscallManager\l::getNumProcessesRunning" alt="" coords="488,5,675,46"/>
+<area shape="rect" id="node5" href="$class_abstract_syscall_manager.html#a1521a2796425ffb46706a084598685b8" title="AbstractSyscallManager\l::changeState" alt="" coords="499,70,663,111"/>
+</map>

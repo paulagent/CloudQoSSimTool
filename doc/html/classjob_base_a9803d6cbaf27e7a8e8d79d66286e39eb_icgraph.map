@@ -1,0 +1,7 @@
+<map id="jobBase::setCommId" name="jobBase::setCommId">
+<area shape="rect" id="node2" href="$classuser_storage.html#a61c3ac39e4b4f7f91b1045b73094a037" title="userStorage::createFSforJob" alt="" coords="200,71,389,97"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_user.html#a6c98b369409d6a89d1feda03f7076ab1" title="AbstractCloudUser::\lcreateFSforJob" alt="" coords="437,63,579,105"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="633,5,775,46"/>
+<area shape="rect" id="node5" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="627,71,781,97"/>
+<area shape="rect" id="node6" href="$class_smart_user.html#a6ada9c455570130a2d96feedddfd9fe1" title="SmartUser::schedule" alt="" coords="631,121,777,148"/>
+</map>

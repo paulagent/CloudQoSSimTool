@@ -1,0 +1,8 @@
+<map id="CfgCloud::getNumberOfVMTypes" name="CfgCloud::getNumberOfVMTypes">
+<area shape="rect" id="node2" href="$class_cfg_cloud.html#a0536fb9f129bedee9c9dba255228b10d" title="CfgCloud::getIndexForVM" alt="" coords="273,5,447,32"/>
+<area shape="rect" id="node3" href="$class_cfg_cloud.html#a5092161b6ebab8b0c1df91f00f442eb0" title="CfgCloud::getVMType" alt="" coords="284,56,436,83"/>
+<area shape="rect" id="node4" href="$class_cfg_cloud.html#a08e0ccf895a175ce3f0d413f77559244" title="CfgCloud::getNumCores" alt="" coords="277,107,443,133"/>
+<area shape="rect" id="node5" href="$class_cfg_cloud.html#a060c83f7305157ab3ba20b3db8791061" title="CfgCloud::getMemorySize" alt="" coords="272,157,448,184"/>
+<area shape="rect" id="node6" href="$class_cfg_cloud.html#a59f46dcfa5ce74a61f4d11201c943bf9" title="CfgCloud::getStorageSize" alt="" coords="273,208,447,235"/>
+<area shape="rect" id="node7" href="$class_cfg_cloud.html#a4d8933cd185dc7e6f1e8f6adc28a1c3a" title="CfgCloud::printVms" alt="" coords="291,259,429,285"/>
+</map>

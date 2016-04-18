@@ -1,0 +1,6 @@
+<map id="DataCenterSchedulerFIFO::shutdownNodeIfIDLE" name="DataCenterSchedulerFIFO::shutdownNodeIfIDLE">
+<area shape="rect" id="node2" href="$class_data_center_scheduler_f_i_f_o.html#aa5188043a614417576407f128cbd3e2d" title="DataCenterSchedulerFIFO\l::remoteShutdown" alt="" coords="233,5,410,46"/>
+<area shape="rect" id="node3" href="$class_data_center_scheduler_f_i_f_o.html#ad9d972080aaa8e8d0e15ddff984eb27a" title="DataCenterSchedulerFIFO\l::freeResources" alt="" coords="233,70,410,111"/>
+<area shape="rect" id="node4" href="$class_data_center_scheduler_f_i_f_o.html#a998ed1c994ad1420418fb1d93d6718b2" title="DataCenterSchedulerFIFO\l::printEnergyValues" alt="" coords="233,135,410,177"/>
+<area shape="rect" id="node5" href="$class_data_center_scheduler_f_i_f_o.html#a54226e74a552e7669cd988f45b256077" title="DataCenterSchedulerFIFO\l::finalizeManager" alt="" coords="233,201,410,242"/>
+</map>

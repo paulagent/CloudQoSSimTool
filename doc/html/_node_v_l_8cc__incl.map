@@ -1,0 +1,33 @@
+<map id="Architecture/Node/NodeVL/NodeVL.cc" name="Architecture/Node/NodeVL/NodeVL.cc">
+<area shape="rect" id="node2" href="$_node_v_l_8h.html" title="NodeVL.h" alt="" coords="2647,96,2725,123"/>
+<area shape="rect" id="node3" href="$_v_m_i_d_8h.html" title="VMID.h" alt="" coords="3303,320,3369,347"/>
+<area shape="rect" id="node9" href="$_vm_msg_controller_8h.html" title="VmMsgController.h" alt="" coords="1702,544,1836,571"/>
+<area shape="rect" id="node35" href="$_hypervisor_8h.html" title="Hypervisor.h" alt="" coords="2576,469,2672,496"/>
+<area shape="rect" id="node41" href="$_node_8h.html" title="Node.h" alt="" coords="2723,320,2787,347"/>
+<area shape="rect" id="node45" href="$_abstract_cloud_manager_8h.html" title="AbstractCloudManager.h" alt="" coords="2791,171,2957,197"/>
+<area shape="rect" id="node5" href="$_v_m_8h.html" title="VM.h" alt="" coords="3183,395,3236,421"/>
+<area shape="rect" id="node6" href="$_machine_8h.html" title="Machine.h" alt="" coords="3148,469,3229,496"/>
+<area shape="rect" id="node7" href="$_element_type_8h.html" title="ElementType.h" alt="" coords="3115,544,3225,571"/>
+<area shape="rect" id="node8" href="$_v_m_syscall_manager_8h.html" title="VMSyscallManager.h" alt="" coords="2079,469,2225,496"/>
+<area shape="rect" id="node10" href="$icancloud___base_8h.html" title="icancloud_Base.h" alt="" coords="1701,619,1827,645"/>
+<area shape="rect" id="node11" href="$icancloud__types_8h.html" title="icancloud_types.h" alt="" coords="2575,701,2701,728"/>
+<area shape="rect" id="node13" href="$icancloud___app___i_o___message_8h.html" title="icancloud_App_IO_Message.h" alt="" coords="855,701,1053,728"/>
+<area shape="rect" id="node14" href="$icancloud___app___c_p_u___message_8h.html" title="icancloud_App_CPU_Message.h" alt="" coords="1078,701,1292,728"/>
+<area shape="rect" id="node15" href="$icancloud___app___m_e_m___message_8h.html" title="icancloud_App_MEM_Message.h" alt="" coords="1317,701,1533,728"/>
+<area shape="rect" id="node16" href="$icancloud___app___n_e_t___message_8h.html" title="icancloud_App_NET_Message.h" alt="" coords="1658,701,1869,728"/>
+<area shape="rect" id="node17" href="$icancloud___m_p_i___message_8h.html" title="icancloud_MPI_Message.h" alt="" coords="1895,701,2073,728"/>
+<area shape="rect" id="node18" href="$icancloud___migration___message_8h.html" title="icancloud_Migration\l_Message.h" alt="" coords="2098,694,2235,735"/>
+<area shape="rect" id="node19" href="$icancloud___block_list___message_8h.html" title="icancloud_BlockList\l_Message.h" alt="" coords="2260,694,2399,735"/>
+<area shape="rect" id="node20" href="$c_gate_manager_8h.html" title="cGateManager.h" alt="" coords="611,701,729,728"/>
+<area shape="rect" id="node34" href="$_constants_8h.html" title="Constants.h" alt="" coords="2828,701,2921,728"/>
+<area shape="rect" id="node36" href="$_h___c_p_u_manager___base_8h.html" title="H_CPUManager_Base.h" alt="" coords="2275,544,2441,571"/>
+<area shape="rect" id="node37" href="$_h___memory_manager___base_8h.html" title="H_MemoryManager_Base.h" alt="" coords="2780,544,2964,571"/>
+<area shape="rect" id="node38" href="$_h___n_e_t_manager___base_8h.html" title="H_NETManager_Base.h" alt="" coords="2537,544,2700,571"/>
+<area shape="rect" id="node40" href="$_h___storage_manager___base_8h.html" title="H_StorageManager_Base.h" alt="" coords="1926,544,2108,571"/>
+<area shape="rect" id="node42" href="$_abstract_node_8h.html" title="AbstractNode.h" alt="" coords="2818,395,2931,421"/>
+<area shape="rect" id="node43" href="$_energy_meter_controller_8h.html" title="EnergyMeterController.h" alt="" coords="424,701,587,728"/>
+<area shape="rect" id="node46" href="$_allocation_management_8h.html" title="AllocationManagement.h" alt="" coords="2857,245,3021,272"/>
+<area shape="rect" id="node47" href="$cfg_cloud_8h.html" title="cfgCloud.h" alt="" coords="3047,245,3132,272"/>
+<area shape="rect" id="node48" href="$_request_v_m_8h.html" title="RequestVM.h" alt="" coords="3175,320,3277,347"/>
+<area shape="rect" id="node49" href="$_running_v_m_8h.html" title="RunningVM.h" alt="" coords="2999,320,3100,347"/>
+</map>

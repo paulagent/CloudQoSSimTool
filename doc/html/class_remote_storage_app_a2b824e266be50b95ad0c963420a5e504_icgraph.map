@@ -1,0 +1,15 @@
+<map id="RemoteStorageApp::closeConnection" name="RemoteStorageApp::closeConnection">
+<area shape="rect" id="node2" href="$class_syscall_manager.html#a23babb898c519d62471f4584872cc72d" title="SyscallManager::closeConnection" alt="" coords="297,140,517,167"/>
+<area shape="rect" id="node3" href="$class_abstract_node.html#a3f08d6722b3cf63f163dc2e37375bc23" title="AbstractNode::closeConnections" alt="" coords="566,140,781,167"/>
+<area shape="rect" id="node4" href="$class_abstract_node.html#ad2f386a4af2cc8734d218794ddf5cb2c" title="AbstractNode::setLocalFiles" alt="" coords="829,109,1016,136"/>
+<area shape="rect" id="node13" href="$class_abstract_cloud_manager.html#a6089291642ef82d3a9ccd8a7a71b7302" title="AbstractCloudManager\l::closeVMConnections" alt="" coords="845,162,1000,203"/>
+<area shape="rect" id="node5" href="$class_storage_management.html#a6cb83eeac33e28dfd47ba9af13c85519" title="StorageManagement::\lmanageStorageRequest" alt="" coords="1064,101,1227,142"/>
+<area shape="rect" id="node6" href="$class_abstract_d_c_manager.html#a6776bee156d70c61e2a61e06270da927" title="AbstractDCManager::\luserStorageRequest" alt="" coords="1281,99,1431,141"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="1508,217,1657,258"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="1508,99,1657,141"/>
+<area shape="rect" id="node9" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="1485,165,1680,192"/>
+<area shape="rect" id="node10" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="1508,34,1657,75"/>
+<area shape="rect" id="node11" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="1925,5,2080,46"/>
+<area shape="rect" id="node12" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="1728,34,1877,75"/>
+<area shape="rect" id="node14" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="1275,165,1437,206"/>
+</map>

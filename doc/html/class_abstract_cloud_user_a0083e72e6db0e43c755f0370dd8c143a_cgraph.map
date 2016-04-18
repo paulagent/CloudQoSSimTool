@@ -1,0 +1,13 @@
+<map id="AbstractCloudUser::start_up_job_execution" name="AbstractCloudUser::start_up_job_execution">
+<area shape="rect" id="node2" href="$class_job_queue.html#ab021a049c153d690001403ac3354b44e" title="JobQueue::getJob" alt="" coords="456,5,584,32"/>
+<area shape="rect" id="node3" href="$class_job_queue.html#a483689f1b25b76d075a843b3a6506711" title="JobQueue::move_to_qDst" alt="" coords="213,60,387,87"/>
+<area shape="rect" id="node6" href="$class_user_job.html#aae111b3f27942eb74ab41d47ec8605b0" title="UserJob::getMachine" alt="" coords="227,115,373,141"/>
+<area shape="rect" id="node7" href="$classjob_base.html#a0122db20432ddd4ba69e076cab366ba7" title="jobBase::setJob_startTime" alt="" coords="211,165,389,192"/>
+<area shape="rect" id="node9" href="$class_machine.html#aac09df15c2480050b99f5132704ca913" title="Machine::changeState" alt="" coords="224,224,376,251"/>
+<area shape="rect" id="node11" href="$class_user_job.html#aecbf0fb8e36f3cc1e03dd2bcf18ee064" title="UserJob::startExecution" alt="" coords="219,279,381,305"/>
+<area shape="rect" id="node4" href="$class_job_queue.html#a55b3ca465f5bb22e2da75d11d8ad45c7" title="JobQueue::insert_job" alt="" coords="447,56,593,83"/>
+<area shape="rect" id="node5" href="$class_job_queue.html#a3c6bfa9795726c805aca32959a3639e4" title="JobQueue::removeJob" alt="" coords="443,107,597,133"/>
+<area shape="rect" id="node8" href="$class_job_results_set.html#ac50d8446fbddba2d35d78230bfb4cbdf" title="JobResultsSet::setJob\l_startTime" alt="" coords="443,158,597,199"/>
+<area shape="rect" id="node10" href="$class_abstract_syscall_manager.html#a1521a2796425ffb46706a084598685b8" title="AbstractSyscallManager\l::changeState" alt="" coords="438,223,602,265"/>
+<area shape="rect" id="node12" href="$class_a_p_i___o_s.html#a91948694e9fb9d7c2541f13fde3bb855" title="API_OS::startExecution" alt="" coords="439,289,601,316"/>
+</map>

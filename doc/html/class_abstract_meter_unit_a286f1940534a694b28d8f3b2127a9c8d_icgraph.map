@@ -1,0 +1,6 @@
+<map id="AbstractMeterUnit::initialize" name="AbstractMeterUnit::initialize">
+<area shape="rect" id="node2" href="$class_c_p_u_meter_core.html#a20d9234da86a3fc439ab1e8c409030db" title="CPUMeterCore::initialize" alt="" coords="199,5,366,32"/>
+<area shape="rect" id="node3" href="$class_memory_meter_core.html#a1beb43e304bbe841e6405dc1c1885170" title="MemoryMeterCore::initialize" alt="" coords="190,56,375,83"/>
+<area shape="rect" id="node4" href="$class_network_meter_core.html#adb0024bd85f1f0a86a4f262f54718e19" title="NetworkMeterCore::initialize" alt="" coords="189,107,376,133"/>
+<area shape="rect" id="node5" href="$class_storage_meter_core.html#aa7af5adbc074c72d1810700ce1ec3ed7" title="StorageMeterCore::initialize" alt="" coords="191,157,374,184"/>
+</map>

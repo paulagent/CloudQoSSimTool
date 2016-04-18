@@ -1,0 +1,34 @@
+<map id="Machine::getIP" name="Machine::getIP">
+<area shape="rect" id="node2" href="$class_node_v_l.html#a7ae98a532c208ee68e9aab4facbb1ba5" title="NodeVL::testLinkVM" alt="" coords="418,77,561,104"/>
+<area shape="rect" id="node7" href="$class_abstract_cloud_manager.html#a6089291642ef82d3a9ccd8a7a71b7302" title="AbstractCloudManager\l::closeVMConnections" alt="" coords="180,10,335,51"/>
+<area shape="rect" id="node9" href="$class_abstract_d_c_manager.html#a14104880676e212cf1e98813e0a8e830" title="AbstractDCManager::\lbookStorageResources" alt="" coords="410,194,569,235"/>
+<area shape="rect" id="node13" href="$class_data_center_a_p_i.html#a48a1107399011f50981f1095e7dc5ae2" title="DataCenterAPI::getNodeIp" alt="" coords="168,245,347,272"/>
+<area shape="rect" id="node28" href="$class_storage_management.html#ab5003808dfac733bc532dcdf7f1b30e8" title="StorageManagement::\lcreateConnectionToStorage" alt="" coords="165,129,349,170"/>
+<area shape="rect" id="node31" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="180,296,335,323"/>
+<area shape="rect" id="node32" href="$class_smart_user.html#a01632b506e12340573df25860e35838e" title="SmartUser::jobHasFinished" alt="" coords="166,347,349,373"/>
+<area shape="rect" id="node33" href="$class_smart_user.html#a6ada9c455570130a2d96feedddfd9fe1" title="SmartUser::schedule" alt="" coords="185,397,330,424"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_manager.html#ae135ac35f047a6e551e7a5df648de593" title="AbstractCloudManager\l::request_start_vm" alt="" coords="656,70,811,111"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="927,5,1076,46"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="927,70,1076,111"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="904,136,1099,163"/>
+<area shape="rect" id="node8" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="653,5,814,46"/>
+<area shape="rect" id="node10" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="927,191,1076,233"/>
+<area shape="rect" id="node11" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="1363,162,1517,203"/>
+<area shape="rect" id="node12" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="1165,191,1315,233"/>
+<area shape="rect" id="node14" href="$class_data_center_a_p_i.html#a846bbe7488c0c07efbd6b938bcea92a2" title="DataCenterAPI::getStorage\lMapSize" alt="" coords="398,417,581,458"/>
+<area shape="rect" id="node15" href="$class_allocation_management.html#a7d11052bc5e2534bb944ca89668ed0f2" title="AllocationManagement\l::setupStorageNodes" alt="" coords="656,514,811,555"/>
+<area shape="rect" id="node19" href="$class_cloud_scheduler_f_c_f_s.html#a3e0afe92ac7e1ae55a6242d212a975f7" title="CloudSchedulerFCFS\l::printEnergyValues" alt="" coords="659,645,808,686"/>
+<area shape="rect" id="node21" href="$class_cloud_scheduler_f_c_f_s.html#a8a41f64431d09aa89ee7466b6c9b524f" title="CloudSchedulerFCFS\l::finalizeScheduler" alt="" coords="659,579,808,621"/>
+<area shape="rect" id="node22" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a552ad67083215247602ed5a946143901" title="CloudSchedulerFCFS\l_gnup::printEnergyValues" alt="" coords="648,449,819,490"/>
+<area shape="rect" id="node24" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a42845aa72867ad26e070097298b25c93" title="CloudSchedulerFCFS\l_gnup::finalizeScheduler" alt="" coords="651,383,815,425"/>
+<area shape="rect" id="node25" href="$class_cloud_scheduler_r_r.html#a2c153a82274f9112a7508c1e88ee16a5" title="CloudSchedulerRR::printEnergy\lValues" alt="" coords="629,253,837,294"/>
+<area shape="rect" id="node27" href="$class_cloud_scheduler_r_r.html#a5ca719af2c342d21d7ff2a0c0d8fb9d5" title="CloudSchedulerRR::finalize\lScheduler" alt="" coords="642,318,825,359"/>
+<area shape="rect" id="node16" href="$class_cloud_scheduler_f_c_f_s.html#a5336088da76c3353eca1e97e1900c170" title="CloudSchedulerFCFS\l::setupScheduler" alt="" coords="927,573,1076,614"/>
+<area shape="rect" id="node17" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a7c7ca1f7fc5bf9b14fe4615744a78a00" title="CloudSchedulerFCFS\l_gnup::setupScheduler" alt="" coords="924,455,1079,497"/>
+<area shape="rect" id="node18" href="$class_cloud_scheduler_r_r.html#aa3c0a35d4c2746540ab1689f23d2b829" title="CloudSchedulerRR::setupScheduler" alt="" coords="885,521,1117,548"/>
+<area shape="rect" id="node20" href="$class_cloud_scheduler_f_c_f_s.html#a6d8343d43b103e0c55a81cc4b824a5d2" title="CloudSchedulerFCFS\l::shutdownNodeIfIDLE" alt="" coords="924,642,1079,683"/>
+<area shape="rect" id="node23" href="$class_cloud_scheduler_f_c_f_s__gnup.html#aa63b6605f92505ac32620e6f7838287a" title="CloudSchedulerFCFS\l_gnup::shutdownNodeIfIDLE" alt="" coords="906,387,1097,429"/>
+<area shape="rect" id="node26" href="$class_cloud_scheduler_r_r.html#aeec3f6bda46cd544a9d2a063be157b60" title="CloudSchedulerRR::shutdown\lNodeIfIDLE" alt="" coords="902,286,1101,327"/>
+<area shape="rect" id="node29" href="$class_storage_management.html#a6cb83eeac33e28dfd47ba9af13c85519" title="StorageManagement::\lmanageStorageRequest" alt="" coords="408,129,571,170"/>
+<area shape="rect" id="node30" href="$class_abstract_d_c_manager.html#a6776bee156d70c61e2a61e06270da927" title="AbstractDCManager::\luserStorageRequest" alt="" coords="659,135,808,177"/>
+</map>

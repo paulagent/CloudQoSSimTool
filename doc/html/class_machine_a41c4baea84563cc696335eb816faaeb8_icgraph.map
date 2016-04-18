@@ -1,0 +1,9 @@
+<map id="Machine::getElementType" name="Machine::getElementType">
+<area shape="rect" id="node2" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="675,227,829,269"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_manager.html#ae135ac35f047a6e551e7a5df648de593" title="AbstractCloudManager\l::request_start_vm" alt="" coords="229,118,384,159"/>
+<area shape="rect" id="node7" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="232,257,381,298"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="455,53,604,94"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="455,118,604,159"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="432,184,627,211"/>
+<area shape="rect" id="node8" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="455,286,604,327"/>
+</map>

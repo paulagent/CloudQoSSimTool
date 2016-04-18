@@ -1,0 +1,19 @@
+<map id="AbstractRequest::setState" name="AbstractRequest::setState">
+<area shape="rect" id="node2" href="$class_physical_resources_request.html#ae7b71fd4fd7f3d4dc311f4dc2b171bf3" title="PhysicalResourcesRequest\l::PhysicalResourcesRequest" alt="" coords="233,5,425,46"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_manager.html#ae135ac35f047a6e551e7a5df648de593" title="AbstractCloudManager\l::request_start_vm" alt="" coords="252,70,407,111"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="484,136,679,163"/>
+<area shape="rect" id="node7" href="$classuser_storage.html#acdc0d4c89d7936748118c44fe2574f35" title="userStorage::generateStorage\lRequests" alt="" coords="232,187,427,229"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="507,5,656,46"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="507,70,656,111"/>
+<area shape="rect" id="node8" href="$classuser_storage.html#a61c3ac39e4b4f7f91b1045b73094a037" title="userStorage::createFSforJob" alt="" coords="487,191,676,217"/>
+<area shape="rect" id="node13" href="$classuser_storage.html#a265c72fc19adf45022af89c134ba88c5" title="userStorage::hasPendingStorage\lRequests" alt="" coords="475,246,688,287"/>
+<area shape="rect" id="node9" href="$class_abstract_cloud_user.html#a6c98b369409d6a89d1feda03f7076ab1" title="AbstractCloudUser::\lcreateFSforJob" alt="" coords="753,179,895,221"/>
+<area shape="rect" id="node10" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="977,111,1119,153"/>
+<area shape="rect" id="node11" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="971,177,1125,204"/>
+<area shape="rect" id="node12" href="$class_smart_user.html#a6ada9c455570130a2d96feedddfd9fe1" title="SmartUser::schedule" alt="" coords="975,228,1121,255"/>
+<area shape="rect" id="node14" href="$class_abstract_user.html#a913b227df55c67db628475e6d5dd6b0d" title="AbstractUser::hasPending\lRequests" alt="" coords="737,254,911,295"/>
+<area shape="rect" id="node15" href="$class_abstract_user.html#a09377586bac647d163bd76dca83c04a3" title="AbstractUser::finalizeUser" alt="" coords="960,279,1136,305"/>
+<area shape="rect" id="node16" href="$class_abstract_cloud_user.html#a86abdfa4bf45d42beda70b5df8b8d06f" title="AbstractCloudUser::\lfinalizeUser" alt="" coords="1184,271,1325,313"/>
+<area shape="rect" id="node17" href="$class_general_user.html#a6e925cd06072bd816afe987314c96657" title="GeneralUser::requestAttended" alt="" coords="1374,253,1573,280"/>
+<area shape="rect" id="node18" href="$class_smart_user.html#abbd4fcf7b2b6fae50ba128e37e18c656" title="SmartUser::requestAttended" alt="" coords="1379,304,1567,331"/>
+</map>

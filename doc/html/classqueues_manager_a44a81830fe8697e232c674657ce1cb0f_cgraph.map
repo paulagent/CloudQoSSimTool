@@ -1,0 +1,5 @@
+<map id="queuesManager::isEmpty_WQ" name="queuesManager::isEmpty_WQ">
+<area shape="rect" id="node2" href="$class_job_queue.html#aacba471db0880d909b29a20a5ccc7710" title="JobQueue::isEmpty" alt="" coords="254,12,391,39"/>
+<area shape="rect" id="node3" href="$class_job_queue.html#ab20b25c0aa29ca564896f53dbbd5cb63" title="JobQueue::get_index\l_of_job" alt="" coords="441,5,586,46"/>
+<area shape="rect" id="node4" href="$class_job_queue.html#ab021a049c153d690001403ac3354b44e" title="JobQueue::getJob" alt="" coords="635,12,763,39"/>
+</map>

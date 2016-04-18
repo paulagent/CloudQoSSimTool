@@ -1,0 +1,12 @@
+<map id="AbstractUserGenerator::selectDistribution" name="AbstractUserGenerator::selectDistribution">
+<area shape="rect" id="node2" href="$classjob_base.html#a103c163cad1221bf48b4aa02d722e09c" title="jobBase::setAppType" alt="" coords="225,5,372,32"/>
+<area shape="rect" id="node3" href="$classjob_base.html#a9f6616a770b1712774d98d998fa5ff66" title="jobBase::setOriginalName" alt="" coords="211,56,386,83"/>
+<area shape="rect" id="node4" href="$classjob_base.html#a9bab534d5e11439b5e560c8feb2725c8" title="jobBase::getAppType" alt="" coords="225,107,372,133"/>
+<area shape="rect" id="node5" href="$class_user_job.html#ae27bb77b0daab4b01829f101ee55745b" title="UserJob::setUpUser" alt="" coords="227,157,370,184"/>
+<area shape="rect" id="node6" href="$classjob_base.html#a72f1ebe9015c71fe549b3e9c19a7fa2e" title="jobBase::getPreloadSize" alt="" coords="216,208,381,235"/>
+<area shape="rect" id="node7" href="$classjob_base.html#ad4482c5ef4a71c13f9803837241b93b5" title="jobBase::setPreloadFile" alt="" coords="219,259,379,285"/>
+<area shape="rect" id="node8" href="$classjob_base.html#aadf15245fe1c5ba562da314c4583d259" title="jobBase::getPreloadFile" alt="" coords="219,309,379,336"/>
+<area shape="rect" id="node9" href="$classjob_base.html#ac77340a79e7d39543e68cef4269981db" title="jobBase::getFSSize" alt="" coords="229,360,368,387"/>
+<area shape="rect" id="node10" href="$classjob_base.html#ac37584e93580eb38713ca7bad85c00a3" title="jobBase::setFSElement" alt="" coords="219,411,379,437"/>
+<area shape="rect" id="node11" href="$classjob_base.html#a008aeda8672658c1ede61336865873a4" title="jobBase::getFSElement" alt="" coords="219,461,379,488"/>
+</map>

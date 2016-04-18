@@ -1,0 +1,12 @@
+<map id="cGateManager::getGate" name="cGateManager::getGate">
+<area shape="rect" id="node2" href="$class_v_m_syscall_manager.html#a7430f7a0ed86ac7dacce67bd176bf024" title="VMSyscallManager::process\lRequestMessage" alt="" coords="249,5,439,46"/>
+<area shape="rect" id="node3" href="$class_v_m_syscall_manager.html#a5fbfaf7786727f50c6bcff494af49c4e" title="VMSyscallManager::create\lProcess" alt="" coords="255,70,433,111"/>
+<area shape="rect" id="node6" href="$class_h___memory_manager___base.html#a8ddc64ac0f9903c52f44ab8731992d5f" title="H_MemoryManager_Base\l::sendMemoryMessage" alt="" coords="257,135,431,177"/>
+<area shape="rect" id="node8" href="$class_h___m_e_m___s_c_h_e_d___f_i_f_o.html#a429ef55539972258b095fe6234e9ca80" title="H_MEM_SCHED_FIFO::scheduling\lMemory" alt="" coords="520,198,752,239"/>
+<area shape="rect" id="node9" href="$class_h___n_e_t___s_c_h_e_d___f_i_f_o.html#aa86221e801c2e3ec592ba7f2b687d544" title="H_NET_SCHED_FIFO::schedulingNET" alt="" coords="217,252,471,279"/>
+<area shape="rect" id="node10" href="$class_h___storage_manager___base.html#aeab4e3199ab6262c3f68567b7a4bcac2" title="H_StorageManager_Base\l::setRemoteStorage" alt="" coords="259,303,429,345"/>
+<area shape="rect" id="node11" href="$class_vm_msg_controller.html#ac28f5f6df1fb315c010dad266888339e" title="VmMsgController::getOutGate" alt="" coords="245,369,443,396"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_user.html#a8640cb9030818b0d125e431d1322fb15" title="AbstractCloudUser::\lallocateJob" alt="" coords="565,67,707,109"/>
+<area shape="rect" id="node5" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="800,67,941,109"/>
+<area shape="rect" id="node7" href="$class_h___memory_manager___base.html#a0795a8236b996e2db0f537d39a0caebb" title="H_MemoryManager_Base\l::getNumberOfVMs" alt="" coords="549,133,723,174"/>
+</map>

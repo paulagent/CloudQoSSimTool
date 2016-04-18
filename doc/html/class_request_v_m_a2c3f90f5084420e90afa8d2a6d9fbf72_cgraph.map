@@ -1,0 +1,14 @@
+<map id="RequestVM::dup" name="RequestVM::dup">
+<area shape="rect" id="node2" href="$class_request_v_m.html#a5a69b0103b9b4aedfe399efed6b18b7c" title="RequestVM::RequestVM" alt="" coords="200,5,368,32"/>
+<area shape="rect" id="node3" href="$class_abstract_request.html#a37b1a6c4319602babb2cff3783b4e354" title="AbstractRequest::getOperation" alt="" coords="183,56,385,83"/>
+<area shape="rect" id="node4" href="$class_abstract_request.html#a6a13b6a1fa42e0111170d1d831c553bc" title="AbstractRequest::getSPid" alt="" coords="197,107,371,133"/>
+<area shape="rect" id="node5" href="$class_abstract_request.html#a289694e1c3c6369f9f9462ce045634a1" title="AbstractRequest::getUid" alt="" coords="201,157,367,184"/>
+<area shape="rect" id="node6" href="$class_abstract_request.html#a7fbb51f4dcad0ccc9e6a5c451d442f0a" title="AbstractRequest::getPid" alt="" coords="201,208,367,235"/>
+<area shape="rect" id="node7" href="$class_request_v_m.html#a6ada86f98b7b43181c458cca3ed54d7b" title="RequestVM::setVectorVM" alt="" coords="197,259,371,285"/>
+<area shape="rect" id="node8" href="$class_request_v_m.html#aac04f8225866f102a990170b6c730888" title="RequestVM::setConnection" alt="" coords="193,309,375,336"/>
+<area shape="rect" id="node9" href="$class_request_v_m.html#a5b20761e3101214be348219607723fd1" title="RequestVM::getConnection" alt="" coords="193,360,375,387"/>
+<area shape="rect" id="node10" href="$class_request_v_m.html#aaf7c8c3191f1abdc213c94020efb2db8" title="RequestVM::setNewSelection" alt="" coords="185,411,383,437"/>
+<area shape="rect" id="node12" href="$class_request_v_m.html#a325ad3ed16a52238d77ec680964cf4f4" title="RequestVM::getSelectionType" alt="" coords="184,461,384,488"/>
+<area shape="rect" id="node13" href="$class_request_v_m.html#a6e0c2a27ea3002ae0a3c449caaede429" title="RequestVM::getSelectionQuantity" alt="" coords="174,512,394,539"/>
+<area shape="rect" id="node11" href="$classelement_type.html#ac040ab1d62b0c8160df57a9342855a7b" title="elementType::setType" alt="" coords="443,411,595,437"/>
+</map>

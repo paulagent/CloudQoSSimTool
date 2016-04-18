@@ -1,0 +1,8 @@
+<map id="UserJob::initialize" name="UserJob::initialize">
+<area shape="rect" id="node2" href="$class_c_p_u___intensive.html#a918096b3bff63deefec99f627933584b" title="CPU_Intensive::initialize" alt="" coords="182,5,349,32"/>
+<area shape="rect" id="node3" href="$class_server_application.html#aa1d84fa0da8cde4474990a2a44c0be4d" title="ServerApplication::\linitialize" alt="" coords="199,57,331,98"/>
+<area shape="rect" id="node4" href="$class_m_p_i___base.html#a907451cac9a80fecce0e36b790b6ea16" title="MPI_Base::initialize" alt="" coords="196,123,335,149"/>
+<area shape="rect" id="node5" href="$class_application_checkpoint.html#a8614115da8f448c96a96066c01863371" title="ApplicationCheckpoint\l::initialize" alt="" coords="407,57,559,98"/>
+<area shape="rect" id="node6" href="$class_application_h_p_c.html#a8c61708b1f8d091c23dbe72f14286cd6" title="ApplicationHPC::initialize" alt="" coords="397,123,568,149"/>
+<area shape="rect" id="node7" href="$class_application_h_t_c.html#abcfff348a53ec108c30ad269d0721d6e" title="ApplicationHTC::initialize" alt="" coords="398,173,567,200"/>
+</map>

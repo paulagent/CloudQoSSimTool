@@ -1,0 +1,5 @@
+<map id="icancloud_File::clearBranchList" name="icancloud_File::clearBranchList">
+<area shape="rect" id="node2" href="$classicancloud___file.html#ae332c11bc502a059dc1902a2ca67cb30" title="icancloud_File::updateFileSize" alt="" coords="257,35,455,61"/>
+<area shape="rect" id="node3" href="$classicancloud___file.html#a27ea504520e8a7f114276b20458bed6d" title="icancloud_File::setFileSize" alt="" coords="504,5,683,32"/>
+<area shape="rect" id="node4" href="$classicancloud___file.html#acf7bb3c8d2938c63ff860b9dae68ba27" title="icancloud_File::getTotal\lSectors" alt="" coords="513,57,673,98"/>
+</map>

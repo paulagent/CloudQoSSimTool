@@ -1,0 +1,26 @@
+<map id="Storage_cell_basic::setRemoteData" name="Storage_cell_basic::setRemoteData">
+<area shape="rect" id="node2" href="$class_abstract_storage_cell.html#aa622f91afe1286fbfd46557b5eb41d9f" title="AbstractStorageCell\l::getRemoteCellPosition" alt="" coords="210,89,374,130"/>
+<area shape="rect" id="node3" href="$class_abstract_storage_cell.html#ad69c3e932c311546323d475cbe8cb5ca" title="AbstractStorageCell\l::getRemoteStorage_byPosition" alt="" coords="189,154,395,195"/>
+<area shape="rect" id="node5" href="$class_abstract___remote___f_s.html#a3d6a8f4deaffc06b3344e41be7f2db30" title="Abstract_Remote_FS\l::existsConnection" alt="" coords="218,219,366,261"/>
+<area shape="rect" id="node6" href="$class_abstract_storage_cell.html#a2c91fe1240c48a0c82f558d1e15b010c" title="AbstractStorageCell\l::active_remote_storage" alt="" coords="211,285,373,326"/>
+<area shape="rect" id="node14" href="$classicancloud___base.html#a84d8d06391fb26ccc81ebbeff5e491e0" title="icancloud_Base::sendResponse\lMessage" alt="" coords="187,350,397,391"/>
+<area shape="rect" id="node20" href="$class_abstract___remote___f_s.html#a19f76433109e4908c916473d9c4b9bd4" title="Abstract_Remote_FS\l::setNumServersForFS" alt="" coords="213,415,371,457"/>
+<area shape="rect" id="node21" href="$class_abstract___remote___f_s.html#ad19fd5b699d4ba194bf5c957d2fbaceb" title="Abstract_Remote_FS\l::setCellID" alt="" coords="218,481,366,522"/>
+<area shape="rect" id="node22" href="$class_abstract___remote___f_s.html#ae5590326525f595522f29e64308ba4c3" title="Abstract_Remote_FS\l::setConnection" alt="" coords="218,546,366,587"/>
+<area shape="rect" id="node23" href="$class_abstract___remote___f_s.html#a6efd8aefedae5c38c5a2833a6e7bc817" title="Abstract_Remote_FS\l::setDataSize_KB" alt="" coords="218,611,366,653"/>
+<area shape="rect" id="node24" href="$class_abstract_storage_cell.html#a8c1860fd944778949b746f713e5ef5b9" title="AbstractStorageCell\l::get_nfs_requestSize_KB" alt="" coords="205,677,379,718"/>
+<area shape="rect" id="node25" href="$class_abstract_storage_cell.html#a095a5e5a05759e3b218b2da84a42c59c" title="AbstractStorageCell\l::insert_remote_storage_cells" alt="" coords="195,742,389,783"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html#af7a4fef53d5de8fe2b98a3ba8179c374" title="icancloud_Base::showError\lMessage" alt="" coords="460,5,641,46"/>
+<area shape="rect" id="node7" href="$class_abstract_storage_cell.html#a2a92254d19b21ed673fa078e3f2b9af6" title="AbstractStorageCell\l::getRemoteStorage" alt="" coords="481,70,620,111"/>
+<area shape="rect" id="node8" href="$class_abstract___remote___f_s.html#a8b649ee7ab6deb1df9c654d493362cdd" title="Abstract_Remote_FS\l::getServerCellPosition" alt="" coords="735,99,891,141"/>
+<area shape="rect" id="node10" href="$class_abstract___remote___f_s.html#a2358fcbddd86cf891abac938f6980d3c" title="Abstract_Remote_FS\l::setConnectionId" alt="" coords="477,187,625,229"/>
+<area shape="rect" id="node11" href="$class_abstract_storage_cell.html#a95cebc8908d97cc6197b88895f297709" title="AbstractStorageCell\l::dec_num_waiting_connections" alt="" coords="447,253,655,294"/>
+<area shape="rect" id="node12" href="$class_abstract___remote___f_s.html#a66d728014f23f1de99f77449b4b0e259" title="Abstract_Remote_FS\l::activeCell" alt="" coords="477,318,625,359"/>
+<area shape="rect" id="node13" href="$class_abstract___remote___f_s.html#adb79c1dca766c8dc211992015d949740" title="Abstract_Remote_FS\l::initializeCell" alt="" coords="477,383,625,425"/>
+<area shape="rect" id="node9" href="$class_abstract___remote___f_s.html#aa8776b9e6fdd1c854a399df09e8c70ff" title="Abstract_Remote_FS\l::equalCell" alt="" coords="971,99,1119,141"/>
+<area shape="rect" id="node15" href="$classicancloud___message.html#a351f06d13718a90570e745ce9a9c03a2" title="icancloud_Message::\lgetLastGateId" alt="" coords="478,449,623,490"/>
+<area shape="rect" id="node16" href="$classicancloud___message.html#a0c77cf91e298b8aeb7fb375f0d7a18c8" title="icancloud_Message::\lremoveLastModuleFromTrace" alt="" coords="453,514,648,555"/>
+<area shape="rect" id="node17" href="$classicancloud___base.html#a015a4ac08e4ac1fc910598748a10512f" title="icancloud_Base::processCurrent\lRequestMessage" alt="" coords="445,579,656,621"/>
+<area shape="rect" id="node18" href="$classicancloud___base.html#a70c9be3bce03393123f7ffccf9923fbe" title="icancloud_Base::isPending\lRequest" alt="" coords="724,546,903,587"/>
+<area shape="rect" id="node19" href="$classicancloud___base.html#aae4c74ca325f76d7e99f7f0ee7721540" title="icancloud_Base::processRequest\lMessage" alt="" coords="705,611,922,653"/>
+</map>

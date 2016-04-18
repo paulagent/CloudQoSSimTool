@@ -1,0 +1,12 @@
+<map id="queuesManager::initialize" name="queuesManager::initialize">
+<area shape="rect" id="node2" href="$classuser_base.html#a30fec76e3c5b7f6c9bc8d9d03dc072cd" title="userBase::initialize" alt="" coords="225,81,357,108"/>
+<area shape="rect" id="node3" href="$classuser_storage.html#a2a19fba89511e8a93620888ea806977c" title="userStorage::initialize" alt="" coords="405,81,552,108"/>
+<area shape="rect" id="node4" href="$class_abstract_user.html#a7ffa420ec8bb455c12afa9c6e0cfaa12" title="AbstractUser::initialize" alt="" coords="600,53,755,80"/>
+<area shape="rect" id="node8" href="$class_abstract_user.html#a5445faf737e4a2bb1f03ca8ff750bda4" title="AbstractUser::finish" alt="" coords="608,108,747,135"/>
+<area shape="rect" id="node5" href="$class_abstract_cloud_user.html#abe7ec0f3358bfe5d21d151712160e485" title="AbstractCloudUser::\linitialize" alt="" coords="803,42,944,83"/>
+<area shape="rect" id="node6" href="$class_general_user.html#a2dcedd37db86d878ce596af0853214ef" title="GeneralUser::initialize" alt="" coords="993,5,1143,32"/>
+<area shape="rect" id="node7" href="$class_smart_user.html#a780a9e5296c94cdd3231413ffa9ba241" title="SmartUser::initialize" alt="" coords="998,56,1138,83"/>
+<area shape="rect" id="node9" href="$class_abstract_cloud_user.html#ad49727f295e37a4a1fb3461739952496" title="AbstractCloudUser::\lfinish" alt="" coords="803,107,944,149"/>
+<area shape="rect" id="node10" href="$class_general_user.html#afde95be04503e4d900a62ebc91240304" title="GeneralUser::finish" alt="" coords="1001,111,1135,137"/>
+<area shape="rect" id="node11" href="$class_smart_user.html#a52c71563cf7a99f901d5f3287f4ad975" title="SmartUser::finish" alt="" coords="1006,161,1130,188"/>
+</map>

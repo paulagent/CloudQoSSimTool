@@ -1,0 +1,8 @@
+<map id="userStorage" name="userStorage">
+<area shape="rect" id="node2" href="$classuser_base.html" title="userBase" alt="" coords="1056,239,1133,265"/>
+<area shape="rect" id="node3" href="$classqueues_manager.html" title="queuesManager" alt="" coords="701,188,816,215"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="319,159,433,185"/>
+<area shape="rect" id="node12" href="$class_requests_management.html" title="RequestsManagement" alt="" coords="682,137,835,164"/>
+<area shape="rect" id="node8" href="$class_job_queue.html" title="JobQueue" alt="" coords="335,356,417,383"/>
+<area shape="rect" id="node11" href="$class_cfg_m_p_i.html" title="CfgMPI" alt="" coords="725,289,792,316"/>
+</map>

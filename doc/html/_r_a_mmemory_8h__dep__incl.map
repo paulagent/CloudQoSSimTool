@@ -1,0 +1,5 @@
+<map id="Architecture/NodeComponents/Hardware/Memories/MainMemories/RAMmemory/RAMmemory.h" name="Architecture/NodeComponents/Hardware/Memories/MainMemories/RAMmemory/RAMmemory.h">
+<area shape="rect" id="node2" href="$_r_a_mmemory_8cc.html" title="Architecture/NodeComponents\l/Hardware/Memories/MainMemories\l/RAMmemory/RAMmemory.cc" alt="" coords="5,117,237,173"/>
+<area shape="rect" id="node3" href="$_memory_meter_core_8h.html" title="EnergySystem/EnergyMeter\l/EnergyMeterUnit/ComponentsMeter\l/MemoryMeter/MemoryMeterCore\l/MemoryMeterCore.h" alt="" coords="261,110,495,181"/>
+<area shape="rect" id="node4" href="$_memory_meter_core_8cc.html" title="EnergySystem/EnergyMeter\l/EnergyMeterUnit/ComponentsMeter\l/MemoryMeter/MemoryMeterCore\l/MemoryMeterCore.cc" alt="" coords="261,230,495,301"/>
+</map>

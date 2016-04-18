@@ -1,0 +1,6 @@
+<map id="NodeVL::getNumOfLinkedVMs" name="NodeVL::getNumOfLinkedVMs">
+<area shape="rect" id="node2" href="$class_node_v_l.html#aae49602b867b93b0baf5df33d2cd7e69" title="NodeVL::freeResources" alt="" coords="279,5,441,32"/>
+<area shape="rect" id="node3" href="$class_cloud_scheduler_f_c_f_s.html#a7b759520f36b9c11077f83f6128648d2" title="CloudSchedulerFCFS\l::selectNode" alt="" coords="285,57,435,98"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a375b883963370191aa416e12e2b4b73c" title="CloudSchedulerFCFS\l_gnup::selectNode" alt="" coords="285,122,435,163"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_r_r.html#a782f1e46138551f1f0288f8b4d64f2fe" title="CloudSchedulerRR::selectNode" alt="" coords="256,188,464,215"/>
+</map>

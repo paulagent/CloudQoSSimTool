@@ -1,0 +1,5 @@
+<map id="LocalNetManager" name="LocalNetManager">
+<area shape="rect" id="node2" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="287,121,401,148"/>
+<area shape="rect" id="node8" href="$class_network_manager.html" title="NetworkManager" alt="" coords="590,189,711,216"/>
+<area shape="rect" id="node5" href="$class_port_address_translation.html" title="PortAddressTranslation" alt="" coords="571,71,730,97"/>
+</map>

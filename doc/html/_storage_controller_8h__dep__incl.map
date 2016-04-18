@@ -1,0 +1,9 @@
+<map id="Architecture/NodeComponents/Hardware/Storage/StorageController/StorageController.h" name="Architecture/NodeComponents/Hardware/Storage/StorageController/StorageController.h">
+<area shape="rect" id="node2" href="$_i_storage_device_8h.html" title="Architecture/NodeComponents\l/Hardware/Storage/Devices\l/IStorageDevice.h" alt="" coords="238,109,439,165"/>
+<area shape="rect" id="node8" href="$_storage_controller_8cc.html" title="Architecture/NodeComponents\l/Hardware/Storage/StorageController\l/StorageController.cc" alt="" coords="463,109,699,165"/>
+<area shape="rect" id="node3" href="$_disk___l_i_8h.html" title="Architecture/NodeComponents\l/Hardware/Storage/Devices\l/Disks/Disk_LI/Disk_LI.h" alt="" coords="5,213,205,269"/>
+<area shape="rect" id="node5" href="$_simple_disk_8h.html" title="Architecture/NodeComponents\l/Hardware/Storage/Devices\l/Disks/SimpleDisk/SimpleDisk.h" alt="" coords="232,213,445,269"/>
+<area shape="rect" id="node7" href="$_i_storage_device_8cc.html" title="Architecture/NodeComponents\l/Hardware/Storage/Devices\l/IStorageDevice.cc" alt="" coords="470,213,671,269"/>
+<area shape="rect" id="node4" href="$_disk___l_i_8cc.html" title="Architecture/NodeComponents\l/Hardware/Storage/Devices\l/Disks/Disk_LI/Disk_LI.cc" alt="" coords="5,317,205,373"/>
+<area shape="rect" id="node6" href="$_simple_disk_8cc.html" title="Architecture/NodeComponents\l/Hardware/Storage/Devices\l/Disks/SimpleDisk/SimpleDisk.cc" alt="" coords="230,317,449,373"/>
+</map>

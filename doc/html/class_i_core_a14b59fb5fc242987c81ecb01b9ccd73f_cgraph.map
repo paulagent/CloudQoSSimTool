@@ -1,0 +1,6 @@
+<map id="ICore::initialize" name="ICore::initialize">
+<area shape="rect" id="node2" href="$class_h_w_energy_interface.html#a019aa691206e18ae8c53269a1620345a" title="HWEnergyInterface::\linitialize" alt="" coords="183,5,329,46"/>
+<area shape="rect" id="node5" href="$class_c_p_u_controller.html#a1b7b4714dff2027827e3102c157a4fcf" title="CPUController::registerCore" alt="" coords="163,71,349,97"/>
+<area shape="rect" id="node3" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="398,12,567,39"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="616,5,811,46"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="StorageController::registerDevice" name="StorageController::registerDevice">
+<area shape="rect" id="node2" href="$class_i_storage_device.html#a4a09f71d9b433b116774e7ea61678c20" title="IStorageDevice::initialize" alt="" coords="191,5,358,32"/>
+<area shape="rect" id="node3" href="$class_storage_controller.html#acbd2af05364d1e660b9f056e373954da" title="StorageController::\lprocessResponseMessage" alt="" coords="185,57,365,98"/>
+</map>

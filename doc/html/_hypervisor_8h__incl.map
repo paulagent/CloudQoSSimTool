@@ -1,0 +1,33 @@
+<map id="Virtualization/Hypervisor/Hypervisors/Hypervisor.h" name="Virtualization/Hypervisor/Hypervisors/Hypervisor.h">
+<area shape="rect" id="node2" href="$_node_v_l_8h.html" title="NodeVL.h" alt="" coords="643,96,721,123"/>
+<area shape="rect" id="node45" href="$_h___c_p_u_manager___base_8h.html" title="H_CPUManager_Base.h" alt="" coords="1765,96,1931,123"/>
+<area shape="rect" id="node46" href="$_h___memory_manager___base_8h.html" title="H_MemoryManager_Base.h" alt="" coords="3621,171,3805,197"/>
+<area shape="rect" id="node47" href="$_h___n_e_t_manager___base_8h.html" title="H_NETManager_Base.h" alt="" coords="3433,171,3596,197"/>
+<area shape="rect" id="node49" href="$_h___storage_manager___base_8h.html" title="H_StorageManager_Base.h" alt="" coords="1955,96,2137,123"/>
+<area shape="rect" id="node3" href="$_v_m_i_d_8h.html" title="VMID.h" alt="" coords="5,328,72,355"/>
+<area shape="rect" id="node7" href="$_vm_msg_controller_8h.html" title="VmMsgController.h" alt="" coords="1243,171,1377,197"/>
+<area shape="rect" id="node34" href="$_node_8h.html" title="Node.h" alt="" coords="360,245,424,272"/>
+<area shape="rect" id="node39" href="$_abstract_cloud_manager_8h.html" title="AbstractCloudManager.h" alt="" coords="599,171,765,197"/>
+<area shape="rect" id="node5" href="$_v_m_8h.html" title="VM.h" alt="" coords="541,411,595,437"/>
+<area shape="rect" id="node6" href="$_element_type_8h.html" title="ElementType.h" alt="" coords="513,485,623,512"/>
+<area shape="rect" id="node8" href="$icancloud___base_8h.html" title="icancloud_Base.h" alt="" coords="1825,245,1951,272"/>
+<area shape="rect" id="node9" href="$icancloud__types_8h.html" title="icancloud_types.h" alt="" coords="3651,328,3777,355"/>
+<area shape="rect" id="node12" href="$icancloud___app___i_o___message_8h.html" title="icancloud_App_IO_Message.h" alt="" coords="2077,328,2275,355"/>
+<area shape="rect" id="node13" href="$icancloud___app___c_p_u___message_8h.html" title="icancloud_App_CPU_Message.h" alt="" coords="2299,328,2513,355"/>
+<area shape="rect" id="node14" href="$icancloud___app___m_e_m___message_8h.html" title="icancloud_App_MEM_Message.h" alt="" coords="2539,328,2755,355"/>
+<area shape="rect" id="node15" href="$icancloud___app___n_e_t___message_8h.html" title="icancloud_App_NET_Message.h" alt="" coords="2779,328,2991,355"/>
+<area shape="rect" id="node16" href="$icancloud___m_p_i___message_8h.html" title="icancloud_MPI_Message.h" alt="" coords="3016,328,3195,355"/>
+<area shape="rect" id="node17" href="$icancloud___migration___message_8h.html" title="icancloud_Migration\l_Message.h" alt="" coords="3219,321,3356,362"/>
+<area shape="rect" id="node18" href="$icancloud___block_list___message_8h.html" title="icancloud_BlockList\l_Message.h" alt="" coords="1315,321,1453,362"/>
+<area shape="rect" id="node19" href="$c_gate_manager_8h.html" title="cGateManager.h" alt="" coords="1529,328,1647,355"/>
+<area shape="rect" id="node33" href="$_constants_8h.html" title="Constants.h" alt="" coords="3483,328,3576,355"/>
+<area shape="rect" id="node10" href="$icancloud__debug_8h.html" title="icancloud_debug.h" alt="" coords="3700,411,3829,437"/>
+<area shape="rect" id="node35" href="$_abstract_node_8h.html" title="AbstractNode.h" alt="" coords="323,328,436,355"/>
+<area shape="rect" id="node36" href="$_energy_meter_controller_8h.html" title="EnergyMeterController.h" alt="" coords="1128,328,1291,355"/>
+<area shape="rect" id="node40" href="$_allocation_management_8h.html" title="AllocationManagement.h" alt="" coords="89,245,253,272"/>
+<area shape="rect" id="node41" href="$cfg_cloud_8h.html" title="cfgCloud.h" alt="" coords="640,245,725,272"/>
+<area shape="rect" id="node42" href="$_request_v_m_8h.html" title="RequestVM.h" alt="" coords="513,245,615,272"/>
+<area shape="rect" id="node43" href="$_running_v_m_8h.html" title="RunningVM.h" alt="" coords="699,328,800,355"/>
+<area shape="rect" id="node48" href="$_local_net_manager_8h.html" title="LocalNetManager.h" alt="" coords="3483,245,3617,272"/>
+<area shape="rect" id="node50" href="$_abstract_storage_cell_8h.html" title="AbstractStorageCell.h" alt="" coords="1967,171,2117,197"/>
+</map>

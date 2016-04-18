@@ -1,0 +1,4 @@
+<map id="queuesManager::move_WQ" name="queuesManager::move_WQ">
+<area shape="rect" id="node2" href="$class_job_queue.html#a460180e98a2a308cf2899a42af80cca3" title="JobQueue::move_job\l_from_to" alt="" coords="238,5,383,46"/>
+<area shape="rect" id="node3" href="$class_job_queue.html#a3c6bfa9795726c805aca32959a3639e4" title="JobQueue::removeJob" alt="" coords="433,12,586,39"/>
+</map>

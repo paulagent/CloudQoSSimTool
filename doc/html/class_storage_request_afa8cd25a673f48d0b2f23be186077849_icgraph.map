@@ -1,0 +1,7 @@
+<map id="StorageRequest::getConnectionSize" name="StorageRequest::getConnectionSize">
+<area shape="rect" id="node2" href="$class_physical_resources_request.html#ae7b71fd4fd7f3d4dc311f4dc2b171bf3" title="PhysicalResourcesRequest\l::PhysicalResourcesRequest" alt="" coords="292,5,484,46"/>
+<area shape="rect" id="node3" href="$class_storage_request.html#a5b85fa05c094145441d50b609b5341a2" title="StorageRequest::compareReq" alt="" coords="289,71,487,97"/>
+<area shape="rect" id="node5" href="$class_abstract_cloud_user.html#a2bd801b9a9f60c39d9fe8da557b6d348" title="AbstractCloudUser::\lnotify_UserRequestAttendeed" alt="" coords="289,123,487,165"/>
+<area shape="rect" id="node4" href="$class_physical_resources_request.html#a3e85f68b6b739462c52cba18db1d2cac" title="PhysicalResourcesRequest\l::compareReq" alt="" coords="536,61,720,102"/>
+<area shape="rect" id="node6" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="557,126,699,167"/>
+</map>

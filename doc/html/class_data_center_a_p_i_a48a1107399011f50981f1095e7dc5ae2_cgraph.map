@@ -1,0 +1,4 @@
+<map id="DataCenterAPI::getNodeIp" name="DataCenterAPI::getNodeIp">
+<area shape="rect" id="node2" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="232,5,427,46"/>
+<area shape="rect" id="node3" href="$class_machine.html#a2f56e118394746c0895bf83709798811" title="Machine::getIP" alt="" coords="274,71,385,97"/>
+</map>

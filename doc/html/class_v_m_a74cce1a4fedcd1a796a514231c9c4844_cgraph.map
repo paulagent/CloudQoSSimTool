@@ -1,0 +1,4 @@
+<map id="VM::setManager" name="VM::setManager">
+<area shape="rect" id="node2" href="$class_machine.html#af38193d015a8e859914bea0a6cee93b9" title="Machine::setManager" alt="" coords="183,5,329,32"/>
+<area shape="rect" id="node3" href="$class_abstract_syscall_manager.html#abc3ebe810070a492277546e957c95e55" title="AbstractSyscallManager\l::setManager" alt="" coords="174,57,338,98"/>
+</map>

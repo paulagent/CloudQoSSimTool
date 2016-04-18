@@ -1,0 +1,11 @@
+<map id="VM::shutdownVM" name="VM::shutdownVM">
+<area shape="rect" id="node2" href="$class_machine.html#a5d4d765e17f64c4d760554e9061ba75e" title="Machine::equalStates" alt="" coords="182,77,330,104"/>
+<area shape="rect" id="node6" href="$class_machine.html#aac09df15c2480050b99f5132704ca913" title="Machine::changeState" alt="" coords="615,136,767,163"/>
+<area shape="rect" id="node8" href="$class_machine.html#a929a37c500a8a808a7e30f3508d9ebec" title="Machine::getState" alt="" coords="192,183,320,209"/>
+<area shape="rect" id="node10" href="$class_abstract_syscall_manager.html#a745899a173585ad0710291a3d44c6a8a" title="AbstractSyscallManager\l::removeAllProcesses" alt="" coords="382,9,546,50"/>
+<area shape="rect" id="node3" href="$class_machine.html#a42e3f547d50654402c4fed9232f5f477" title="Machine::removeProcess" alt="" coords="379,77,549,104"/>
+<area shape="rect" id="node4" href="$class_abstract_syscall_manager.html#a5cae955bef0e5d336ddd7d9733649255" title="AbstractSyscallManager\l::removeProcess" alt="" coords="609,5,773,46"/>
+<area shape="rect" id="node5" href="$class_abstract_syscall_manager.html#a0a9a322e95629883d0a1222d84ba30e9" title="AbstractSyscallManager\l::getNumProcessesRunning" alt="" coords="597,70,784,111"/>
+<area shape="rect" id="node7" href="$class_abstract_syscall_manager.html#a1521a2796425ffb46706a084598685b8" title="AbstractSyscallManager\l::changeState" alt="" coords="833,129,997,170"/>
+<area shape="rect" id="node9" href="$class_abstract_syscall_manager.html#a1b1bb74aca92c46fcf2a34a2020c6517" title="AbstractSyscallManager\l::getState" alt="" coords="382,179,546,221"/>
+</map>

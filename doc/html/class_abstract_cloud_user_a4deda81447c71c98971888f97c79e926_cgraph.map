@@ -1,0 +1,6 @@
+<map id="AbstractCloudUser::eraseVMFromControlVector" name="AbstractCloudUser::eraseVMFromControlVector">
+<area shape="rect" id="node2" href="$class_machine.html#a81a5acbae0483ddf028038424d0080aa" title="Machine::getTypeName" alt="" coords="247,5,409,32"/>
+<area shape="rect" id="node4" href="$class_machine.html#ae0909fcea9d5301ce800ab40a7582473" title="Machine::getPid" alt="" coords="270,56,386,83"/>
+<area shape="rect" id="node5" href="$classicancloud___base.html#af7a4fef53d5de8fe2b98a3ba8179c374" title="icancloud_Base::showError\lMessage" alt="" coords="237,107,419,149"/>
+<area shape="rect" id="node3" href="$classelement_type.html#af325335e4afbe024ec32047afcc9ed06" title="elementType::getType" alt="" coords="467,5,619,32"/>
+</map>

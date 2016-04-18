@@ -1,0 +1,33 @@
+<map id="AbstractDCManager::userStorageRequest" name="AbstractDCManager::userStorageRequest">
+<area shape="rect" id="node2" href="$class_abstract_request.html#a37b1a6c4319602babb2cff3783b4e354" title="AbstractRequest::getOperation" alt="" coords="443,155,645,181"/>
+<area shape="rect" id="node3" href="$class_storage_request.html#a2bd8a029ff97af8f7e77625d149eae14" title="StorageRequest::getPreload\lFilesSet" alt="" coords="709,610,896,651"/>
+<area shape="rect" id="node4" href="$class_storage_request.html#a18703690a39b4da8734f6248513e8181" title="StorageRequest::getFSSet" alt="" coords="713,676,892,703"/>
+<area shape="rect" id="node5" href="$class_storage_request.html#a4add005c275f1618d83fe76bb8d06421" title="StorageRequest::getConnection" alt="" coords="699,123,907,149"/>
+<area shape="rect" id="node6" href="$class_abstract_d_c_manager.html#a76e97fef62ba43caaaf7e5e50b1cb42a" title="AbstractDCManager::\lselectStorageNodes" alt="" coords="224,779,373,821"/>
+<area shape="rect" id="node7" href="$class_abstract_node.html#ab322ebce2bd23912fc5bcf6d3b774459" title="AbstractNode::isOFF" alt="" coords="225,845,372,872"/>
+<area shape="rect" id="node10" href="$class_machine.html#a0ffdec81eedf0115d201f320e8e87f60" title="Machine::turnOn" alt="" coords="239,896,358,923"/>
+<area shape="rect" id="node12" href="$classicancloud___base.html#a79bc49c379f5927058af0c2a2a668af2" title="icancloud_Base::showDebug\lMessage" alt="" coords="203,947,394,989"/>
+<area shape="rect" id="node15" href="$class_storage_management.html#a6cb83eeac33e28dfd47ba9af13c85519" title="StorageManagement::\lmanageStorageRequest" alt="" coords="217,442,380,483"/>
+<area shape="rect" id="node8" href="$class_machine.html#a929a37c500a8a808a7e30f3508d9ebec" title="Machine::getState" alt="" coords="480,837,608,864"/>
+<area shape="rect" id="node9" href="$class_abstract_syscall_manager.html#a1b1bb74aca92c46fcf2a34a2020c6517" title="AbstractSyscallManager\l::getState" alt="" coords="721,830,885,871"/>
+<area shape="rect" id="node11" href="$class_abstract_syscall_manager.html#a1521a2796425ffb46706a084598685b8" title="AbstractSyscallManager\l::changeState" alt="" coords="462,889,626,930"/>
+<area shape="rect" id="node13" href="$classicancloud___base.html#a6667b234e21ffbc0841d1d03d71f6f93" title="icancloud_Base::getHostName" alt="" coords="443,955,645,981"/>
+<area shape="rect" id="node14" href="$classicancloud___base.html#af7a4fef53d5de8fe2b98a3ba8179c374" title="icancloud_Base::showError\lMessage" alt="" coords="712,947,893,989"/>
+<area shape="rect" id="node16" href="$class_abstract_request.html#a289694e1c3c6369f9f9462ce045634a1" title="AbstractRequest::getUid" alt="" coords="719,457,886,484"/>
+<area shape="rect" id="node17" href="$class_abstract_request.html#a7fbb51f4dcad0ccc9e6a5c451d442f0a" title="AbstractRequest::getPid" alt="" coords="720,508,885,535"/>
+<area shape="rect" id="node18" href="$class_abstract_request.html#a6a13b6a1fa42e0111170d1d831c553bc" title="AbstractRequest::getSPid" alt="" coords="715,559,890,585"/>
+<area shape="rect" id="node19" href="$class_abstract_node.html#ad2f386a4af2cc8734d218794ddf5cb2c" title="AbstractNode::setLocalFiles" alt="" coords="451,205,637,232"/>
+<area shape="rect" id="node24" href="$class_storage_management.html#ab5003808dfac733bc532dcdf7f1b30e8" title="StorageManagement::\lcreateConnectionToStorage" alt="" coords="452,358,636,399"/>
+<area shape="rect" id="node20" href="$class_abstract_syscall_manager.html#ac33ad3650a0a41d689cb621e61ee9b3c" title="AbstractSyscallManager\l::createLocalFiles" alt="" coords="721,57,885,98"/>
+<area shape="rect" id="node21" href="$class_abstract_node.html#a3f08d6722b3cf63f163dc2e37375bc23" title="AbstractNode::closeConnections" alt="" coords="695,5,910,32"/>
+<area shape="rect" id="node22" href="$class_syscall_manager.html#a23babb898c519d62471f4584872cc72d" title="SyscallManager::closeConnection" alt="" coords="961,5,1181,32"/>
+<area shape="rect" id="node23" href="$class_remote_storage_app.html#a2b824e266be50b95ad0c963420a5e504" title="RemoteStorageApp::closeConnection" alt="" coords="1230,5,1471,32"/>
+<area shape="rect" id="node25" href="$class_abstract_node.html#a6130405c20c1063ad5db18efee1220cb" title="AbstractNode::setRemoteFiles" alt="" coords="701,224,904,251"/>
+<area shape="rect" id="node27" href="$class_machine.html#a2f56e118394746c0895bf83709798811" title="Machine::getIP" alt="" coords="747,275,858,301"/>
+<area shape="rect" id="node28" href="$class_abstract_node.html#ad32dec5a7ec6282ab010c006f1866bc1" title="AbstractNode::createData\lStorageListen" alt="" coords="715,326,890,367"/>
+<area shape="rect" id="node30" href="$class_abstract_node.html#a511f8d1cb1090aabffa159020bdd0070" title="AbstractNode::connectToRemote\lStorage" alt="" coords="694,391,911,433"/>
+<area shape="rect" id="node32" href="$class_storage_request.html#ae220bdb3b6706475d8515869430f8dd9" title="StorageRequest::getFsType" alt="" coords="709,173,896,200"/>
+<area shape="rect" id="node26" href="$class_abstract_syscall_manager.html#af02a6a7bcef3c93f11fd81ba8149dd1c" title="AbstractSyscallManager\l::setRemoteFiles" alt="" coords="989,217,1153,258"/>
+<area shape="rect" id="node29" href="$class_abstract_syscall_manager.html#a11676f06fd90da6474ea938501d21e22" title="AbstractSyscallManager\l::createDataStorageListen" alt="" coords="983,326,1158,367"/>
+<area shape="rect" id="node31" href="$class_abstract_syscall_manager.html#aeeda65a6dfd402d60183ea6d4e8d9b8b" title="AbstractSyscallManager\l::connectToRemoteStorage" alt="" coords="979,391,1162,433"/>
+</map>

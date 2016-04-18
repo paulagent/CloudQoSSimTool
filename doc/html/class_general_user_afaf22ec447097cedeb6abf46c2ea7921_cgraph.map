@@ -1,0 +1,6 @@
+<map id="GeneralUser::selectVMs_ToStartUp" name="GeneralUser::selectVMs_ToStartUp">
+<area shape="rect" id="node2" href="$classqueues_manager.html#aa3777ebd71f54628f414eb97a813ff4f" title="queuesManager::getWQ_size" alt="" coords="221,5,416,32"/>
+<area shape="rect" id="node4" href="$class_request_v_m.html#aaf7c8c3191f1abdc213c94020efb2db8" title="RequestVM::setNewSelection" alt="" coords="219,56,418,83"/>
+<area shape="rect" id="node3" href="$class_job_queue.html#a93487229e8dd065b592938085694ac80" title="JobQueue::size" alt="" coords="486,5,599,32"/>
+<area shape="rect" id="node5" href="$classelement_type.html#ac040ab1d62b0c8160df57a9342855a7b" title="elementType::setType" alt="" coords="467,56,619,83"/>
+</map>

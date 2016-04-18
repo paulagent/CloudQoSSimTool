@@ -1,0 +1,6 @@
+<map id="elementType::getNumNetIF" name="elementType::getNumNetIF">
+<area shape="rect" id="node2" href="$class_machine.html#a99603d5e3251f6758605de14e3532cf3" title="Machine::getNumNetworkIF" alt="" coords="237,12,424,39"/>
+<area shape="rect" id="node3" href="$class_machines_map.html#a096a432b6ba54516e33fb969d630f0ee" title="MachinesMap::increaseInstances" alt="" coords="473,12,690,39"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_user.html#a2bd801b9a9f60c39d9fe8da557b6d348" title="AbstractCloudUser::\lnotify_UserRequestAttendeed" alt="" coords="739,5,936,46"/>
+<area shape="rect" id="node5" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="984,5,1125,46"/>
+</map>

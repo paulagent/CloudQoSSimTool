@@ -1,0 +1,7 @@
+<map id="ApplicationCheckpoint::nextIteration" name="ApplicationCheckpoint::nextIteration">
+<area shape="rect" id="node2" href="$class_application_checkpoint.html#ac5ef46d8c51b68fd84c6fe8f54e4348e" title="ApplicationCheckpoint\l::calculateNextState" alt="" coords="205,38,357,79"/>
+<area shape="rect" id="node3" href="$classicancloud___base.html#a79bc49c379f5927058af0c2a2a668af2" title="icancloud_Base::showDebug\lMessage" alt="" coords="406,5,597,46"/>
+<area shape="rect" id="node6" href="$class_a_p_i___o_s.html#a8160b91d5190a7cbf2d78155d7aaaf31" title="API_OS::icancloud_request\l_create" alt="" coords="410,70,593,111"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html#a6667b234e21ffbc0841d1d03d71f6f93" title="icancloud_Base::getHostName" alt="" coords="645,12,848,39"/>
+<area shape="rect" id="node5" href="$classicancloud___base.html#af7a4fef53d5de8fe2b98a3ba8179c374" title="icancloud_Base::showError\lMessage" alt="" coords="896,5,1077,46"/>
+</map>

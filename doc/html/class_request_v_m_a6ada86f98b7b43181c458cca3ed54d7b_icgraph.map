@@ -1,0 +1,18 @@
+<map id="RequestVM::setVectorVM" name="RequestVM::setVectorVM">
+<area shape="rect" id="node2" href="$class_request_v_m.html#a2c3f90f5084420e90afa8d2a6d9fbf72" title="RequestVM::dup" alt="" coords="281,228,401,255"/>
+<area shape="rect" id="node10" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="788,319,983,345"/>
+<area shape="rect" id="node12" href="$class_abstract_cloud_user.html#a2bd801b9a9f60c39d9fe8da557b6d348" title="AbstractCloudUser::\lnotify_UserRequestAttendeed" alt="" coords="243,370,440,411"/>
+<area shape="rect" id="node14" href="$class_general_user.html#a498e963f5d49f04e43b13c9fb0c87a4c" title="GeneralUser::selectResourcesJob" alt="" coords="230,436,453,463"/>
+<area shape="rect" id="node16" href="$class_smart_user.html#a5e6d29105acb5b947d824e610bd06faf" title="SmartUser::selectResourcesJob" alt="" coords="235,487,447,513"/>
+<area shape="rect" id="node3" href="$class_request_v_m.html#a299232d5ffbcb14b584a0f3f7a514715" title="RequestVM::getSingleRequestType" alt="" coords="502,107,733,133"/>
+<area shape="rect" id="node7" href="$class_abstract_cloud_manager.html#ae135ac35f047a6e551e7a5df648de593" title="AbstractCloudManager\l::request_start_vm" alt="" coords="540,187,695,229"/>
+<area shape="rect" id="node11" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="537,253,698,294"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s.html#a7b759520f36b9c11077f83f6128648d2" title="CloudSchedulerFCFS\l::selectNode" alt="" coords="811,5,960,46"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a375b883963370191aa416e12e2b4b73c" title="CloudSchedulerFCFS\l_gnup::selectNode" alt="" coords="811,70,960,111"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_r_r.html#a782f1e46138551f1f0288f8b4d64f2fe" title="CloudSchedulerRR::selectNode" alt="" coords="781,136,989,163"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="811,253,960,294"/>
+<area shape="rect" id="node9" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="811,187,960,229"/>
+<area shape="rect" id="node13" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="547,370,688,411"/>
+<area shape="rect" id="node15" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="540,436,695,463"/>
+<area shape="rect" id="node17" href="$class_smart_user.html#a6ada9c455570130a2d96feedddfd9fe1" title="SmartUser::schedule" alt="" coords="545,487,690,513"/>
+</map>

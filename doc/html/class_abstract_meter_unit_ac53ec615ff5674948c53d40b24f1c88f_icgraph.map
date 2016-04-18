@@ -1,0 +1,14 @@
+<map id="AbstractMeterUnit::postEnergyConsumedCalculus" name="AbstractMeterUnit::postEnergyConsumedCalculus">
+<area shape="rect" id="node2" href="$class_abstract_meter_unit.html#ad5667101df6fff5e9f9abe36ae68eee2" title="AbstractMeterUnit::\lloadMemo" alt="" coords="309,67,445,109"/>
+<area shape="rect" id="node10" href="$class_c_p_u_meter_core.html#af38c647ff1cb5ed9f315e4874ce2d845" title="CPUMeterCore::getEnergyConsumed" alt="" coords="256,133,499,160"/>
+<area shape="rect" id="node11" href="$class_memory_meter_core.html#ab00762920bd30c9321f591c018327759" title="MemoryMeterCore::getEnergy\lConsumed" alt="" coords="279,185,476,226"/>
+<area shape="rect" id="node12" href="$class_network_meter_core.html#ae1ed95b3742a8d89d069759b728d340d" title="NetworkMeterCore::getEnergy\lConsumed" alt="" coords="278,250,477,291"/>
+<area shape="rect" id="node13" href="$class_storage_meter_core.html#a981e78a564b921d56075bd8f2531d53a" title="StorageMeterCore::getEnergy\lConsumed" alt="" coords="280,315,475,357"/>
+<area shape="rect" id="node3" href="$class_energy_meter_controller.html#a375bbfc0b0037ecc6889aa64d809799b" title="EnergyMeterController\l::loadMemo" alt="" coords="547,67,699,109"/>
+<area shape="rect" id="node4" href="$class_node.html#ae84aeeadff61a38666e597b592cd9c2d" title="Node::loadMemo" alt="" coords="762,45,883,72"/>
+<area shape="rect" id="node8" href="$class_energy_meter_controller.html#a65b8b5f66e757620ab92486d76e6a4f0" title="EnergyMeterController\l::resetNodeEnergy" alt="" coords="747,97,899,138"/>
+<area shape="rect" id="node5" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="1365,5,1520,46"/>
+<area shape="rect" id="node6" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="959,38,1108,79"/>
+<area shape="rect" id="node7" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="1168,63,1317,105"/>
+<area shape="rect" id="node9" href="$class_node.html#a3a1aa25dd59b859067fdc3ca6d7329cd" title="Node::resetEnergyHistory" alt="" coords="947,104,1120,131"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="CloudSchedulerRR::remoteShutdown" name="CloudSchedulerRR::remoteShutdown">
+<area shape="rect" id="node2" href="$class_allocation_management.html#a7235a499735ed4a69d065fe0cf36f451" title="AllocationManagement\l::searchUserVMAllocation" alt="" coords="247,5,422,46"/>
+<area shape="rect" id="node3" href="$class_abstract_request.html#a289694e1c3c6369f9f9462ce045634a1" title="AbstractRequest::getUid" alt="" coords="251,71,418,97"/>
+<area shape="rect" id="node4" href="$class_allocation_management.html#ae000f420bc8533253feb1223aefde297" title="AllocationManagement\l::deleteVMfromStorageNodes" alt="" coords="237,122,432,163"/>
+<area shape="rect" id="node6" href="$class_abstract_request.html#a7fbb51f4dcad0ccc9e6a5c451d442f0a" title="AbstractRequest::getPid" alt="" coords="252,188,417,215"/>
+<area shape="rect" id="node5" href="$class_v_m_i_d.html#a1c84db374cb0310e405cdb8671bb3814" title="VMID::getVMID" alt="" coords="481,129,597,156"/>
+</map>

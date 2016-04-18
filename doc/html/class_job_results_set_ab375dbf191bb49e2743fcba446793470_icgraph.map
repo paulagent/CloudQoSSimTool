@@ -1,0 +1,6 @@
+<map id="JobResultsSet::setMachineType" name="JobResultsSet::setMachineType">
+<area shape="rect" id="node2" href="$class_user_job.html#a8e290c294b4a9a78a30bf1a30c6bac72" title="UserJob::setMachine" alt="" coords="267,56,413,83"/>
+<area shape="rect" id="node3" href="$class_user_job.html#a24cac05bd664d78df2919e0e41ac8298" title="UserJob::getAppOwner" alt="" coords="462,5,621,32"/>
+<area shape="rect" id="node4" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="464,56,619,83"/>
+<area shape="rect" id="node5" href="$class_smart_user.html#a6ada9c455570130a2d96feedddfd9fe1" title="SmartUser::schedule" alt="" coords="469,107,614,133"/>
+</map>

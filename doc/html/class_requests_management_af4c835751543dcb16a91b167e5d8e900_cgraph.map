@@ -1,0 +1,5 @@
+<map id="RequestsManagement::eraseRequest" name="RequestsManagement::eraseRequest">
+<area shape="rect" id="node2" href="$class_abstract_request.html#ac86a35b0fc3cdfc0b724584a82a22585" title="AbstractRequest::compareReq" alt="" coords="208,5,411,32"/>
+<area shape="rect" id="node3" href="$class_abstract_request.html#a37b1a6c4319602babb2cff3783b4e354" title="AbstractRequest::getOperation" alt="" coords="208,56,411,83"/>
+<area shape="rect" id="node4" href="$class_requests_management.html#acfbe9080012f7f4c4562a79e5a33c50c" title="RequestsManagement\l::insertExecutingRequest" alt="" coords="225,107,394,149"/>
+</map>

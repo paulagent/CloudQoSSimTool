@@ -1,0 +1,10 @@
+<map id="MPI_Call::copyMPICall" name="MPI_Call::copyMPICall">
+<area shape="rect" id="node2" href="$class_m_p_i___call.html#addbfcdde7b741292c10753335ddf0471" title="MPI_Call::setCall" alt="" coords="243,5,368,32"/>
+<area shape="rect" id="node3" href="$class_m_p_i___call.html#aea8da26f9944bdd8eb4115b92b7e18d5" title="MPI_Call::setSender" alt="" coords="234,56,377,83"/>
+<area shape="rect" id="node4" href="$class_m_p_i___call.html#a8e7993ff0da20e5411492e0bfccf2b85" title="MPI_Call::setReceiver" alt="" coords="228,107,383,133"/>
+<area shape="rect" id="node5" href="$class_m_p_i___call.html#a12587753748ec8ffa78022ba81185ac2" title="MPI_Call::setRoot" alt="" coords="240,157,371,184"/>
+<area shape="rect" id="node6" href="$class_m_p_i___call.html#a7986930681d8e132988fa8eef62fbef4" title="MPI_Call::setFileName" alt="" coords="226,208,385,235"/>
+<area shape="rect" id="node7" href="$class_m_p_i___call.html#acfb27252b067b3ce9a4334333f459952" title="MPI_Call::setOffset" alt="" coords="236,259,375,285"/>
+<area shape="rect" id="node8" href="$class_m_p_i___call.html#a318d7908b500a9dbd5355dc97c042086" title="MPI_Call::setBufferSize" alt="" coords="224,309,387,336"/>
+<area shape="rect" id="node9" href="$class_m_p_i___call.html#a985537b975b73b113d3a14915f0bb7de" title="MPI_Call::setPendingACKs" alt="" coords="213,360,397,387"/>
+</map>

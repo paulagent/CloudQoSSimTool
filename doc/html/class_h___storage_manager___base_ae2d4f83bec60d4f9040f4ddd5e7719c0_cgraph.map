@@ -1,0 +1,8 @@
+<map id="H_StorageManager_Base::setVM" name="H_StorageManager_Base::setVM">
+<area shape="rect" id="node2" href="$class_h___storage_manager___base.html#ab484e1b007c605cf54876f4a990194ce" title="H_StorageManager_Base\l::createStorageCell" alt="" coords="224,93,395,134"/>
+<area shape="rect" id="node3" href="$classc_gate_manager.html#ad566e09aa1825fb442c21cd2140c0800" title="cGateManager::newGate" alt="" coords="451,5,618,32"/>
+<area shape="rect" id="node5" href="$classc_gate_manager.html#ab2a45f184a5ac8750b03015466ba1cce" title="cGateManager::connectOut" alt="" coords="443,85,626,112"/>
+<area shape="rect" id="node6" href="$classc_gate_manager.html#a59f97bc1fc8cc23f7e9f28534b2fd948" title="cGateManager::connectIn" alt="" coords="449,140,621,167"/>
+<area shape="rect" id="node7" href="$class_h___storage_manager___base.html#a9c5433c370bc575c188fa89a360833b0" title="H_StorageManager_Base\l::setControlStructure" alt="" coords="224,210,395,251"/>
+<area shape="rect" id="node4" href="$classc_gate_manager.html#a15d49d0ee407cd043d07322c762095d7" title="cGateManager::linkGate" alt="" coords="675,5,837,32"/>
+</map>

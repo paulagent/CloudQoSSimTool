@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['c0_5foperatingstate',['C0_OperatingState',['../_c_p_ucore_8h.html#ac6ba40abb3228391a788b50516f6964b',1,'C0_OperatingState():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#ac6ba40abb3228391a788b50516f6964b',1,'C0_OperatingState():&#160;EnergyStatesDefinitions.h']]],
+  ['c0_5fp0',['C0_P0',['../_c_p_ucore_8h.html#a5bca4156229ca3a6ebe26d130360063c',1,'C0_P0():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#a5bca4156229ca3a6ebe26d130360063c',1,'C0_P0():&#160;EnergyStatesDefinitions.h']]],
+  ['c0_5fp1',['C0_P1',['../_c_p_ucore_8h.html#a7cd8ecb26725bbef35734969c0b7e66e',1,'C0_P1():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#a7cd8ecb26725bbef35734969c0b7e66e',1,'C0_P1():&#160;EnergyStatesDefinitions.h']]],
+  ['c0_5fp10',['C0_P10',['../_c_p_ucore_8h.html#a9cc6e4c8bfa87013c1bf1f730fc044e1',1,'C0_P10():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#a9cc6e4c8bfa87013c1bf1f730fc044e1',1,'C0_P10():&#160;EnergyStatesDefinitions.h']]],
+  ['c0_5fp11',['C0_P11',['../_c_p_ucore_8h.html#ab83167566f4173520fcd46f64994317e',1,'C0_P11():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#ab83167566f4173520fcd46f64994317e',1,'C0_P11():&#160;EnergyStatesDefinitions.h']]],
+  ['c0_5fp2',['C0_P2',['../_c_p_ucore_8h.html#a40a2b37148a68181fd4d53128db6e7af',1,'C0_P2():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#a40a2b37148a68181fd4d53128db6e7af',1,'C0_P2():&#160;EnergyStatesDefinitions.h']]],
+  ['c0_5fp3',['C0_P3',['../_c_p_ucore_8h.html#a30c49a8334654b4bc931e3431ff63629',1,'C0_P3():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#a30c49a8334654b4bc931e3431ff63629',1,'C0_P3():&#160;EnergyStatesDefinitions.h']]],
+  ['c0_5fp4',['C0_P4',['../_c_p_ucore_8h.html#ab8ffdfd24264f7f7af7ea9828d8f6f36',1,'C0_P4():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#ab8ffdfd24264f7f7af7ea9828d8f6f36',1,'C0_P4():&#160;EnergyStatesDefinitions.h']]],
+  ['c0_5fp5',['C0_P5',['../_c_p_ucore_8h.html#a87b7674577ad5a61ebe42e0e3f40ebeb',1,'C0_P5():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#a87b7674577ad5a61ebe42e0e3f40ebeb',1,'C0_P5():&#160;EnergyStatesDefinitions.h']]],
+  ['c0_5fp6',['C0_P6',['../_c_p_ucore_8h.html#af55cf62125557188f9dea7703b082bbb',1,'C0_P6():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#af55cf62125557188f9dea7703b082bbb',1,'C0_P6():&#160;EnergyStatesDefinitions.h']]],
+  ['c0_5fp7',['C0_P7',['../_c_p_ucore_8h.html#ad4ca9540ca8cb567328c64b498827630',1,'C0_P7():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#ad4ca9540ca8cb567328c64b498827630',1,'C0_P7():&#160;EnergyStatesDefinitions.h']]],
+  ['c0_5fp8',['C0_P8',['../_c_p_ucore_8h.html#a1f468af1686d2e5e0c3a472cc000ea7c',1,'C0_P8():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#a1f468af1686d2e5e0c3a472cc000ea7c',1,'C0_P8():&#160;EnergyStatesDefinitions.h']]],
+  ['c0_5fp9',['C0_P9',['../_c_p_ucore_8h.html#adff3cb6d9a196c8bfb2b035da8bcdbdb',1,'C0_P9():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#adff3cb6d9a196c8bfb2b035da8bcdbdb',1,'C0_P9():&#160;EnergyStatesDefinitions.h']]],
+  ['c1_5fhalt',['C1_Halt',['../_c_p_ucore_8h.html#a6bbc98b3518adf9d5634b668fc4c6cb4',1,'C1_Halt():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#a6bbc98b3518adf9d5634b668fc4c6cb4',1,'C1_Halt():&#160;EnergyStatesDefinitions.h']]],
+  ['c2_5fstopgrant',['C2_StopGrant',['../_c_p_ucore_8h.html#acb7aa409571e6273f1394126d3355b80',1,'C2_StopGrant():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#acb7aa409571e6273f1394126d3355b80',1,'C2_StopGrant():&#160;EnergyStatesDefinitions.h']]],
+  ['c3_5fsleep',['C3_Sleep',['../_c_p_ucore_8h.html#af0c666775af82cefbcb54323e52c6945',1,'C3_Sleep():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#af0c666775af82cefbcb54323e52c6945',1,'C3_Sleep():&#160;EnergyStatesDefinitions.h']]],
+  ['c4_5fdeepersleep',['C4_DeeperSleep',['../_c_p_ucore_8h.html#aa53a644c4d1d81803c32c78733d37c5d',1,'C4_DeeperSleep():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#aa53a644c4d1d81803c32c78733d37c5d',1,'C4_DeeperSleep():&#160;EnergyStatesDefinitions.h']]],
+  ['c5_5fenhanceddeepersleep',['C5_EnhancedDeeperSleep',['../_c_p_ucore_8h.html#ac1bccecb724dc417a5746322aeb7e27e',1,'C5_EnhancedDeeperSleep():&#160;CPUcore.h'],['../_energy_states_definitions_8h.html#ac1bccecb724dc417a5746322aeb7e27e',1,'C5_EnhancedDeeperSleep():&#160;EnergyStatesDefinitions.h']]],
+  ['c6_5fdeeppowerdown',['C6_DeepPowerDown',['../_energy_states_definitions_8h.html#ace89c298eca21af44ec770751cda8a6b',1,'EnergyStatesDefinitions.h']]],
+  ['check_5fmemory_5fhpc_5fapp',['CHECK_MEMORY_HPC_APP',['../_application_h_p_c_8cc.html#af67ff594237ceebca2ff94c2d406c8bd',1,'ApplicationHPC.cc']]]
+];

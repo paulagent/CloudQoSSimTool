@@ -1,0 +1,12 @@
+<map id="VMID::initialize" name="VMID::initialize">
+<area shape="rect" id="node2" href="$class_node_v_l.html#a5b2f6d933e7dab432660828730c34a95" title="NodeVL::linkVM" alt="" coords="219,96,336,123"/>
+<area shape="rect" id="node8" href="$class_allocation_management.html#ae250253042e7b37fb8970ec7cfaf57b6" title="AllocationManagement\l::updateVmManagementStructures" alt="" coords="165,183,389,225"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_manager.html#a6089291642ef82d3a9ccd8a7a71b7302" title="AbstractCloudManager\l::closeVMConnections" alt="" coords="452,70,607,111"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="670,70,831,111"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="903,5,1052,46"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="903,70,1052,111"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="880,136,1075,163"/>
+<area shape="rect" id="node9" href="$class_cloud_scheduler_f_c_f_s.html#ac3b5b56db0bf0ce10537778cc7813e64" title="CloudSchedulerFCFS\l::selectStorageNodes" alt="" coords="455,135,604,177"/>
+<area shape="rect" id="node10" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a197413bb407bff30cdfb1205ab737905" title="CloudSchedulerFCFS\l_gnup::selectStorageNodes" alt="" coords="438,201,621,242"/>
+<area shape="rect" id="node11" href="$class_cloud_scheduler_r_r.html#acf2b22553cfa9e0eb736551b99dc77b8" title="CloudSchedulerRR::select\lStorageNodes" alt="" coords="441,266,618,307"/>
+</map>

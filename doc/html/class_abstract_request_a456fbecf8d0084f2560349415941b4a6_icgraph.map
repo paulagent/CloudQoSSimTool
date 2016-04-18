@@ -1,0 +1,11 @@
+<map id="AbstractRequest::getTimesEnqueue" name="AbstractRequest::getTimesEnqueue">
+<area shape="rect" id="node2" href="$class_physical_resources_request.html#a1c54d30cef98f9d6f6d21a7274142864" title="PhysicalResourcesRequest\l::PhysicalResourcesRequest" alt="" coords="241,5,433,46"/>
+<area shape="rect" id="node3" href="$class_physical_resources_request.html#a3e85f68b6b739462c52cba18db1d2cac" title="PhysicalResourcesRequest\l::compareReq" alt="" coords="509,110,693,151"/>
+<area shape="rect" id="node4" href="$class_request_base.html#adbecc5a85d825b7122edbb99afd7ed99" title="RequestBase::compareReq" alt="" coords="246,121,429,148"/>
+<area shape="rect" id="node5" href="$class_request_v_m.html#a6168689091c8e686b786934227d7410f" title="RequestVM::compareReq" alt="" coords="251,223,424,249"/>
+<area shape="rect" id="node10" href="$class_storage_request.html#a5b85fa05c094145441d50b609b5341a2" title="StorageRequest::compareReq" alt="" coords="238,172,437,199"/>
+<area shape="rect" id="node6" href="$class_request_v_m.html#a299232d5ffbcb14b584a0f3f7a514715" title="RequestVM::getSingleRequestType" alt="" coords="486,223,717,249"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_f_c_f_s.html#a7b759520f36b9c11077f83f6128648d2" title="CloudSchedulerFCFS\l::selectNode" alt="" coords="795,150,944,191"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a375b883963370191aa416e12e2b4b73c" title="CloudSchedulerFCFS\l_gnup::selectNode" alt="" coords="795,215,944,257"/>
+<area shape="rect" id="node9" href="$class_cloud_scheduler_r_r.html#a782f1e46138551f1f0288f8b4d64f2fe" title="CloudSchedulerRR::selectNode" alt="" coords="765,281,973,308"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="Node::turnOff" name="Node::turnOff">
+<area shape="rect" id="node2" href="$class_node.html#adb9107b40d547e3ffe0323e26ec1e6ff" title="Node::initNode" alt="" coords="159,144,268,171"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="979,86,1133,127"/>
+<area shape="rect" id="node5" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="536,170,685,211"/>
+<area shape="rect" id="node15" href="$class_node_v_l.html#ade3256daccaabb126968c4932e54b8ee" title="NodeVL::turnOff" alt="" coords="155,296,272,323"/>
+<area shape="rect" id="node3" href="$class_node.html#ae84aeeadff61a38666e597b592cd9c2d" title="Node::loadMemo" alt="" coords="322,93,443,120"/>
+<area shape="rect" id="node7" href="$class_node_v_l.html#ae69457c81e402274cfc291ec1957f2ea" title="NodeVL::initNode" alt="" coords="320,195,445,221"/>
+<area shape="rect" id="node6" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="779,195,928,237"/>
+<area shape="rect" id="node8" href="$class_node_v_l.html#a010e2f890c0789df29021fae49f76f2c" title="NodeVL::getNumProcessesRunning" alt="" coords="494,283,727,309"/>
+<area shape="rect" id="node9" href="$class_node_v_l.html#a7ae98a532c208ee68e9aab4facbb1ba5" title="NodeVL::testLinkVM" alt="" coords="782,333,925,360"/>
+<area shape="rect" id="node14" href="$class_abstract_cloud_manager.html#a168edd7dfb1a5cacf9ec9000729c2e8d" title="AbstractCloudManager\l::unlinkVM" alt="" coords="776,267,931,309"/>
+<area shape="rect" id="node10" href="$class_abstract_cloud_manager.html#ae135ac35f047a6e551e7a5df648de593" title="AbstractCloudManager\l::request_start_vm" alt="" coords="979,326,1133,367"/>
+<area shape="rect" id="node11" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="1204,261,1353,302"/>
+<area shape="rect" id="node12" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="1204,326,1353,367"/>
+<area shape="rect" id="node13" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="1181,392,1376,419"/>
+</map>

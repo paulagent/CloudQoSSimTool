@@ -1,0 +1,12 @@
+<map id="StorageRequest::dup" name="StorageRequest::dup">
+<area shape="rect" id="node2" href="$class_storage_request.html#add3d31c657a8e49196b3f41044056bbe" title="StorageRequest::StorageRequest" alt="" coords="200,5,419,32"/>
+<area shape="rect" id="node3" href="$class_abstract_request.html#a37b1a6c4319602babb2cff3783b4e354" title="AbstractRequest::getOperation" alt="" coords="208,56,411,83"/>
+<area shape="rect" id="node4" href="$class_storage_request.html#ae220bdb3b6706475d8515869430f8dd9" title="StorageRequest::getFsType" alt="" coords="216,107,403,133"/>
+<area shape="rect" id="node5" href="$class_abstract_request.html#a6a13b6a1fa42e0111170d1d831c553bc" title="AbstractRequest::getSPid" alt="" coords="222,157,397,184"/>
+<area shape="rect" id="node6" href="$class_abstract_request.html#a289694e1c3c6369f9f9462ce045634a1" title="AbstractRequest::getUid" alt="" coords="226,208,393,235"/>
+<area shape="rect" id="node7" href="$class_abstract_request.html#a7fbb51f4dcad0ccc9e6a5c451d442f0a" title="AbstractRequest::getPid" alt="" coords="227,259,392,285"/>
+<area shape="rect" id="node8" href="$class_storage_request.html#aff47246828a85383b11780ec8070ccdb" title="StorageRequest::setPreloadSet" alt="" coords="206,309,413,336"/>
+<area shape="rect" id="node9" href="$class_storage_request.html#a1c4d9bd03e883899dc531ae055a2630b" title="StorageRequest::setFSPathSet" alt="" coords="206,360,413,387"/>
+<area shape="rect" id="node10" href="$class_storage_request.html#a06505b14f925fd5a49c8a0169f522596" title="StorageRequest::setConnection\lVector" alt="" coords="205,411,413,453"/>
+<area shape="rect" id="node11" href="$class_storage_request.html#aead0226cec400259e1f47e662cbf3be0" title="StorageRequest::getConnections" alt="" coords="202,477,417,504"/>
+</map>

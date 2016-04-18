@@ -1,0 +1,5 @@
+<map id="AbstractCloudUser::startVMs" name="AbstractCloudUser::startVMs">
+<area shape="rect" id="node2" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="223,5,364,46"/>
+<area shape="rect" id="node3" href="$class_general_user.html#a541aa46145f02f407591f7ba19cae819" title="GeneralUser::userInitialization" alt="" coords="195,71,392,97"/>
+<area shape="rect" id="node4" href="$class_smart_user.html#ad14bd8b4c0bd003c0a9620bb4a6b6dfb" title="SmartUser::userInitialization" alt="" coords="200,121,387,148"/>
+</map>

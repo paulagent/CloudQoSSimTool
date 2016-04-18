@@ -1,0 +1,7 @@
+<map id="MPI_Base::initialize" name="MPI_Base::initialize">
+<area shape="rect" id="node2" href="$class_user_job.html#aa4d12c9fe1a67635008861dc5c9ec86c" title="UserJob::initialize" alt="" coords="193,12,319,39"/>
+<area shape="rect" id="node3" href="$classjob_base.html#a765de753584cf40713de92abda82963e" title="jobBase::initialize" alt="" coords="369,12,493,39"/>
+<area shape="rect" id="node4" href="$class_a_p_i___o_s.html#a4205c37a121aaf1a15eb15b8333cf1c7" title="API_OS::initialize" alt="" coords="541,12,667,39"/>
+<area shape="rect" id="node5" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="715,12,885,39"/>
+<area shape="rect" id="node6" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="933,5,1128,46"/>
+</map>

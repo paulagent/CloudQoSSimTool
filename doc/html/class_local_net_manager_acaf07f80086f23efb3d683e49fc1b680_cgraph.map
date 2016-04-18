@@ -1,0 +1,5 @@
+<map id="LocalNetManager::manage_close_connections" name="LocalNetManager::manage_close_connections">
+<area shape="rect" id="node2" href="$class_network_manager.html#a18043157668dcff3edfa0d24bb42459f" title="NetworkManager::deleteVirtual\lIP_by_VMID" alt="" coords="247,5,449,46"/>
+<area shape="rect" id="node3" href="$class_network_manager.html#a47b9622e204911dab1c3d3dd3e2d520a" title="NetworkManager::freeAllPortsOfVM" alt="" coords="233,71,463,97"/>
+<area shape="rect" id="node4" href="$class_port_table.html#adb19dbf1f3466ce73dbbf19bedab57cc" title="PortTable::freeVMPorts" alt="" coords="513,71,671,97"/>
+</map>

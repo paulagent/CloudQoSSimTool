@@ -1,0 +1,6 @@
+<map id="VMSyscallManager::removeProcess" name="VMSyscallManager::removeProcess">
+<area shape="rect" id="node2" href="$class_abstract_syscall_manager.html#a4bd9be0ab646391f13dfb7e18f94a3f3" title="AbstractSyscallManager\l::deleteJobFromStructures" alt="" coords="267,5,443,46"/>
+<area shape="rect" id="node3" href="$class_vm_msg_controller.html#a3a913ef0b89e7cf2d1785ed7d34703ca" title="VmMsgController::unlinkApplication" alt="" coords="240,71,469,97"/>
+<area shape="rect" id="node5" href="$classc_gate_manager.html#aaea1371f08ab95bf8dcb281d88f88bde" title="cGateManager::freeGate" alt="" coords="527,121,692,148"/>
+<area shape="rect" id="node4" href="$classc_gate_manager.html#afee8a6956b00032a93fe0ee3b6d1e260" title="cGateManager::searchGate" alt="" coords="518,71,701,97"/>
+</map>

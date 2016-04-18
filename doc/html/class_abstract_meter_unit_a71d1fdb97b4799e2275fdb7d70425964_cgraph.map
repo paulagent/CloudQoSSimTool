@@ -1,0 +1,4 @@
+<map id="AbstractMeterUnit::resetAccumulatedEnergy" name="AbstractMeterUnit::resetAccumulatedEnergy">
+<area shape="rect" id="node2" href="$class_h_w_energy_interface.html#a46039b31b514df2f6ec2ba3d96f1e7cf" title="HWEnergyInterface::\lresetComponentHistory" alt="" coords="221,5,381,46"/>
+<area shape="rect" id="node3" href="$class_h_w_energy_interface.html#a9a6a90d8348acb3174cb1b2c70659ddd" title="HWEnergyInterface::\lresetAllHistory" alt="" coords="229,70,374,111"/>
+</map>

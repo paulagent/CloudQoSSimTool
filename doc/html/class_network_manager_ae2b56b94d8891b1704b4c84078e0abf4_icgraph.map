@@ -1,0 +1,4 @@
+<map id="NetworkManager::searchNodeIP" name="NetworkManager::searchNodeIP">
+<area shape="rect" id="node2" href="$class_local_net_manager.html#a5a78518e3780e9c734860004a850a8dc" title="LocalNetManager::manage\l_createConnection" alt="" coords="267,5,445,46"/>
+<area shape="rect" id="node3" href="$class_local_net_manager.html#a0c429ac1124169ce26bec30f00ce2741" title="LocalNetManager::manage\l_sendMessage" alt="" coords="267,70,445,111"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="UserJob" name="UserJob">
+<area shape="rect" id="node2" href="$classjob_base.html" title="jobBase" alt="" coords="1087,451,1156,477"/>
+<area shape="rect" id="node3" href="$class_a_p_i___o_s.html" title="API_OS" alt="" coords="750,364,821,391"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="332,307,447,333"/>
+<area shape="rect" id="node14" href="$classqueues_manager.html" title="queuesManager" alt="" coords="728,941,843,968"/>
+<area shape="rect" id="node19" href="$class_requests_management.html" title="RequestsManagement" alt="" coords="709,700,862,727"/>
+<area shape="rect" id="node22" href="$class_machine.html" title="Machine" alt="" coords="1086,219,1157,245"/>
+<area shape="rect" id="node23" href="$class_abstract_syscall_manager.html" title="AbstractSyscallManager" alt="" coords="703,88,867,115"/>
+<area shape="rect" id="node11" href="$class_abstract_user.html" title="AbstractUser" alt="" coords="1544,576,1643,603"/>
+<area shape="rect" id="node13" href="$classuser_base.html" title="userBase" alt="" coords="1083,813,1160,840"/>
+<area shape="rect" id="node9" href="$class_job_results_set.html" title="JobResultsSet" alt="" coords="731,415,839,441"/>
+<area shape="rect" id="node12" href="$classuser_storage.html" title="userStorage" alt="" coords="1369,977,1461,1004"/>
+<area shape="rect" id="node16" href="$class_job_queue.html" title="JobQueue" alt="" coords="349,944,430,971"/>
+<area shape="rect" id="node18" href="$class_cfg_m_p_i.html" title="CfgMPI" alt="" coords="752,992,819,1019"/>
+<area shape="rect" id="node24" href="$classc_gate_manager.html" title="cGateManager" alt="" coords="336,72,443,99"/>
+<area shape="rect" id="node27" href="$classelement_type.html" title="elementType" alt="" coords="737,139,834,165"/>
+</map>

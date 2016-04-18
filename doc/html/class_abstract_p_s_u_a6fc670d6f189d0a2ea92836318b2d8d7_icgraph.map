@@ -1,0 +1,32 @@
+<map id="AbstractPSU::switchOn" name="AbstractPSU::switchOn">
+<area shape="rect" id="node2" href="$class_energy_meter_controller.html#af9c3a0e107063db27d9ccd51eff31b64" title="EnergyMeterController\l::switchOnPSU" alt="" coords="239,483,391,525"/>
+<area shape="rect" id="node20" href="$class_abstract_p_s_u.html#acfd024b1a1eb3331f6b2190717a884b8" title="AbstractPSU::getNodeEnergy\lConsumed" alt="" coords="216,549,413,590"/>
+<area shape="rect" id="node3" href="$class_node.html#aa2b604a8fdcdfb061948e2f6fcd6b0df" title="Node::turnOn" alt="" coords="503,321,603,348"/>
+<area shape="rect" id="node18" href="$class_energy_meter_controller.html#a65b8b5f66e757620ab92486d76e6a4f0" title="EnergyMeterController\l::resetNodeEnergy" alt="" coords="477,483,629,525"/>
+<area shape="rect" id="node4" href="$class_node.html#adb9107b40d547e3ffe0323e26ec1e6ff" title="Node::initNode" alt="" coords="725,321,835,348"/>
+<area shape="rect" id="node6" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="1736,339,1891,381"/>
+<area shape="rect" id="node7" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="1248,398,1397,439"/>
+<area shape="rect" id="node17" href="$class_node_v_l.html#a7dd2d060d19a0b47ad5c7f28b03beb82" title="NodeVL::turnOn" alt="" coords="722,140,838,167"/>
+<area shape="rect" id="node5" href="$class_node.html#ae84aeeadff61a38666e597b592cd9c2d" title="Node::loadMemo" alt="" coords="975,347,1097,373"/>
+<area shape="rect" id="node9" href="$class_node_v_l.html#ae69457c81e402274cfc291ec1957f2ea" title="NodeVL::initNode" alt="" coords="973,245,1099,272"/>
+<area shape="rect" id="node8" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="1513,449,1663,490"/>
+<area shape="rect" id="node10" href="$class_node_v_l.html#a010e2f890c0789df29021fae49f76f2c" title="NodeVL::getNumProcessesRunning" alt="" coords="1206,137,1439,164"/>
+<area shape="rect" id="node11" href="$class_node_v_l.html#a7ae98a532c208ee68e9aab4facbb1ba5" title="NodeVL::testLinkVM" alt="" coords="1517,77,1659,104"/>
+<area shape="rect" id="node16" href="$class_abstract_cloud_manager.html#a168edd7dfb1a5cacf9ec9000729c2e8d" title="AbstractCloudManager\l::unlinkVM" alt="" coords="1511,129,1665,170"/>
+<area shape="rect" id="node12" href="$class_abstract_cloud_manager.html#ae135ac35f047a6e551e7a5df648de593" title="AbstractCloudManager\l::request_start_vm" alt="" coords="1736,70,1891,111"/>
+<area shape="rect" id="node13" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="1961,5,2111,46"/>
+<area shape="rect" id="node14" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="1961,70,2111,111"/>
+<area shape="rect" id="node15" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="1939,136,2133,163"/>
+<area shape="rect" id="node19" href="$class_node.html#a3a1aa25dd59b859067fdc3ca6d7329cd" title="Node::resetEnergyHistory" alt="" coords="693,499,867,525"/>
+<area shape="rect" id="node21" href="$class_energy_meter_controller.html#a546aabdf20a6a4b72b80477186ff94d6" title="EnergyMeterController\l::getNodeEnergyConsumed" alt="" coords="462,549,645,590"/>
+<area shape="rect" id="node22" href="$class_node.html#a283f6ba55c786d9ef89fb05e07cd48b6" title="Node::getEnergyConsumed" alt="" coords="945,549,1127,576"/>
+<area shape="rect" id="node30" href="$class_energy_meter_controller.html#a616eae9970f6a0aabf07c322dcebc5e8" title="EnergyMeterController\l::getCurrentStorageState" alt="" coords="697,601,863,642"/>
+<area shape="rect" id="node23" href="$class_cloud_scheduler_f_c_f_s.html#a3e0afe92ac7e1ae55a6242d212a975f7" title="CloudSchedulerFCFS\l::printEnergyValues" alt="" coords="1248,662,1397,703"/>
+<area shape="rect" id="node25" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a552ad67083215247602ed5a946143901" title="CloudSchedulerFCFS\l_gnup::printEnergyValues" alt="" coords="1237,531,1408,573"/>
+<area shape="rect" id="node27" href="$class_cloud_scheduler_r_r.html#a2c153a82274f9112a7508c1e88ee16a5" title="CloudSchedulerRR::printEnergy\lValues" alt="" coords="1219,597,1427,638"/>
+<area shape="rect" id="node29" href="$class_abstract_d_c_manager.html#ae3075f6e30c9e4572648d370d679e3a8" title="AbstractDCManager::\lgetEnergyConsumed" alt="" coords="1248,465,1397,506"/>
+<area shape="rect" id="node24" href="$class_cloud_scheduler_f_c_f_s.html#a6d8343d43b103e0c55a81cc4b824a5d2" title="CloudSchedulerFCFS\l::shutdownNodeIfIDLE" alt="" coords="1511,662,1665,703"/>
+<area shape="rect" id="node26" href="$class_cloud_scheduler_f_c_f_s__gnup.html#aa63b6605f92505ac32620e6f7838287a" title="CloudSchedulerFCFS\l_gnup::shutdownNodeIfIDLE" alt="" coords="1493,531,1683,573"/>
+<area shape="rect" id="node28" href="$class_cloud_scheduler_r_r.html#aeec3f6bda46cd544a9d2a063be157b60" title="CloudSchedulerRR::shutdown\lNodeIfIDLE" alt="" coords="1489,597,1687,638"/>
+<area shape="rect" id="node31" href="$class_node.html#a43bfbaa1ffd924f430e05916f4db40a7" title="Node::getStorageInstantConsumption" alt="" coords="915,607,1157,633"/>
+</map>

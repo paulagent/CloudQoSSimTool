@@ -1,0 +1,14 @@
+<map id="NodeVL::unlinkVM" name="NodeVL::unlinkVM">
+<area shape="rect" id="node2" href="$class_abstract_syscall_manager.html#acf745f5feba3a6f866bdaf8f437688c0" title="AbstractSyscallManager\l::memIncrease" alt="" coords="191,45,355,86"/>
+<area shape="rect" id="node3" href="$class_abstract_syscall_manager.html#abcc1643a87b61434a7d116127cb35256" title="AbstractSyscallManager\l::storageIncrease" alt="" coords="191,110,355,151"/>
+<area shape="rect" id="node4" href="$class_hypervisor.html#ae663d39052762aa8efbd5b8f5f78d352" title="Hypervisor::freeResources" alt="" coords="184,176,363,203"/>
+<area shape="rect" id="node10" href="$class_machine.html#a929a37c500a8a808a7e30f3508d9ebec" title="Machine::getState" alt="" coords="209,233,337,260"/>
+<area shape="rect" id="node12" href="$class_machine.html#aac09df15c2480050b99f5132704ca913" title="Machine::changeState" alt="" coords="197,299,349,325"/>
+<area shape="rect" id="node5" href="$class_h___c_p_u_manager___base.html#a2a9895c050d8e804879c3c8bbd12df4b" title="H_CPUManager_Base::\lfreeVM" alt="" coords="416,5,579,46"/>
+<area shape="rect" id="node7" href="$class_h___memory_manager___base.html#ad23c5f8c66d074a07ffc909fd3971e1d" title="H_MemoryManager_Base\l::freeVM" alt="" coords="411,70,584,111"/>
+<area shape="rect" id="node8" href="$class_h___n_e_t_manager___base.html#ac71d55fa0be7bbf51dd5efa7b39d79bc" title="H_NETManager_Base::\lfreeVM" alt="" coords="417,135,578,177"/>
+<area shape="rect" id="node9" href="$class_h___storage_manager___base.html#afe6845e05dd7bef315d1d118dd3f934c" title="H_StorageManager_Base\l::freeVM" alt="" coords="412,201,583,242"/>
+<area shape="rect" id="node6" href="$classc_gate_manager.html#aaea1371f08ab95bf8dcb281d88f88bde" title="cGateManager::freeGate" alt="" coords="632,111,797,137"/>
+<area shape="rect" id="node11" href="$class_abstract_syscall_manager.html#a1b1bb74aca92c46fcf2a34a2020c6517" title="AbstractSyscallManager\l::getState" alt="" coords="415,266,579,307"/>
+<area shape="rect" id="node13" href="$class_abstract_syscall_manager.html#a1521a2796425ffb46706a084598685b8" title="AbstractSyscallManager\l::changeState" alt="" coords="415,331,579,373"/>
+</map>

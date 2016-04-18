@@ -1,0 +1,20 @@
+<map id="ApplicationHPC" name="ApplicationHPC">
+<area shape="rect" id="node2" href="$class_m_p_i___base.html" title="MPI_Base" alt="" coords="2109,1013,2192,1040"/>
+<area shape="rect" id="node3" href="$class_user_job.html" title="UserJob" alt="" coords="1834,700,1905,727"/>
+<area shape="rect" id="node4" href="$classjob_base.html" title="jobBase" alt="" coords="1087,579,1156,605"/>
+<area shape="rect" id="node5" href="$class_a_p_i___o_s.html" title="API_OS" alt="" coords="750,584,821,611"/>
+<area shape="rect" id="node6" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="332,400,447,427"/>
+<area shape="rect" id="node16" href="$classqueues_manager.html" title="queuesManager" alt="" coords="728,900,843,927"/>
+<area shape="rect" id="node21" href="$class_requests_management.html" title="RequestsManagement" alt="" coords="709,736,862,763"/>
+<area shape="rect" id="node24" href="$class_machine.html" title="Machine" alt="" coords="1086,344,1157,371"/>
+<area shape="rect" id="node25" href="$class_abstract_syscall_manager.html" title="AbstractSyscallManager" alt="" coords="703,217,867,244"/>
+<area shape="rect" id="node13" href="$class_abstract_user.html" title="AbstractUser" alt="" coords="1581,855,1680,881"/>
+<area shape="rect" id="node15" href="$classuser_base.html" title="userBase" alt="" coords="1083,855,1160,881"/>
+<area shape="rect" id="node31" href="$class_m_p_i___call.html" title="MPI_Call" alt="" coords="557,52,633,79"/>
+<area shape="rect" id="node11" href="$class_job_results_set.html" title="JobResultsSet" alt="" coords="731,533,839,560"/>
+<area shape="rect" id="node14" href="$classuser_storage.html" title="userStorage" alt="" coords="1381,855,1473,881"/>
+<area shape="rect" id="node18" href="$class_job_queue.html" title="JobQueue" alt="" coords="349,1012,430,1039"/>
+<area shape="rect" id="node20" href="$class_cfg_m_p_i.html" title="CfgMPI" alt="" coords="752,1129,819,1156"/>
+<area shape="rect" id="node26" href="$classc_gate_manager.html" title="cGateManager" alt="" coords="336,223,443,249"/>
+<area shape="rect" id="node29" href="$classelement_type.html" title="elementType" alt="" coords="737,432,834,459"/>
+</map>

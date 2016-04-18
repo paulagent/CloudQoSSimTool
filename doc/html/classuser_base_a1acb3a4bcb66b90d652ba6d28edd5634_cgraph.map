@@ -1,0 +1,5 @@
+<map id="userBase::abandonSystem" name="userBase::abandonSystem">
+<area shape="rect" id="node2" href="$class_abstract_request.html#afdd685f96dc56df3a559542c90c7041e" title="AbstractRequest::setOperation" alt="" coords="232,5,435,32"/>
+<area shape="rect" id="node3" href="$class_abstract_request.html#a64599ae94aeae170e648ac707922b12e" title="AbstractRequest::setUid" alt="" coords="250,56,417,83"/>
+<area shape="rect" id="node4" href="$class_requests_management.html#aa5b8251724c15c6dfa181689401b4d9b" title="RequestsManagement\l::userSendRequest" alt="" coords="257,107,410,149"/>
+</map>

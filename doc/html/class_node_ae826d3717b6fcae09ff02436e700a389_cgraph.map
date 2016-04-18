@@ -1,0 +1,4 @@
+<map id="Node::getPSUConsumptionLoss" name="Node::getPSUConsumptionLoss">
+<area shape="rect" id="node2" href="$class_energy_meter_controller.html#a5262d64ae594755c73b92d4416885092" title="EnergyMeterController\l::getPSUConsumptionLoss" alt="" coords="267,5,448,46"/>
+<area shape="rect" id="node3" href="$class_abstract_p_s_u.html#affa145c8870b4a40b41356020223f33f" title="AbstractPSU::getConsumptionLoss" alt="" coords="497,12,727,39"/>
+</map>

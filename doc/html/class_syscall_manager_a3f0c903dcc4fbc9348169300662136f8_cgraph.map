@@ -1,0 +1,6 @@
+<map id="SyscallManager::getState" name="SyscallManager::getState">
+<area shape="rect" id="node2" href="$class_states_application.html#a5d2bbc165da568f0b257175f8e97da5b" title="StatesApplication::\lgetState" alt="" coords="259,5,391,46"/>
+<area shape="rect" id="node3" href="$class_syscall_manager.html#aa13f1cd99f584d467d1a790f924e3463" title="SyscallManager::changeState" alt="" coords="227,71,423,97"/>
+<area shape="rect" id="node4" href="$class_abstract_syscall_manager.html#afe6febf9d6e3a021a3f2fae1afbe9ace" title="AbstractSyscallManager\l::resetSystem" alt="" coords="473,30,637,71"/>
+<area shape="rect" id="node5" href="$class_states_application.html#adac7b17f59c8f2544c2404f6969f3eda" title="StatesApplication::\lchangeState" alt="" coords="489,95,621,137"/>
+</map>

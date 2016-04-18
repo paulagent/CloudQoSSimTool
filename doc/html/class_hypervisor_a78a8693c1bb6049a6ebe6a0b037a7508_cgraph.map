@@ -1,0 +1,12 @@
+<map id="Hypervisor::setVM" name="Hypervisor::setVM">
+<area shape="rect" id="node2" href="$class_h___c_p_u_manager___base.html#a80e6d91e0950a19bc8b634f89fcf808f" title="H_CPUManager_Base::\lsetVM" alt="" coords="408,41,571,83"/>
+<area shape="rect" id="node7" href="$class_h___n_e_t_manager___base.html#a2c954f1339daed0625287f3af850307a" title="H_NETManager_Base::\lsetVM" alt="" coords="409,172,570,213"/>
+<area shape="rect" id="node8" href="$class_h___storage_manager___base.html#ae2d4f83bec60d4f9040f4ddd5e7719c0" title="H_StorageManager_Base\l::setVM" alt="" coords="184,267,355,308"/>
+<area shape="rect" id="node11" href="$class_h___memory_manager___base.html#a187b7d888569f1aafcfa69c4567c6fca" title="H_MemoryManager_Base\l::setVM" alt="" coords="403,107,576,148"/>
+<area shape="rect" id="node3" href="$classc_gate_manager.html#ad566e09aa1825fb442c21cd2140c0800" title="cGateManager::newGate" alt="" coords="633,114,799,141"/>
+<area shape="rect" id="node5" href="$classc_gate_manager.html#ab2a45f184a5ac8750b03015466ba1cce" title="cGateManager::connectOut" alt="" coords="625,173,807,199"/>
+<area shape="rect" id="node6" href="$classc_gate_manager.html#a59f97bc1fc8cc23f7e9f28534b2fd948" title="cGateManager::connectIn" alt="" coords="630,223,802,250"/>
+<area shape="rect" id="node4" href="$classc_gate_manager.html#a15d49d0ee407cd043d07322c762095d7" title="cGateManager::linkGate" alt="" coords="856,114,1019,141"/>
+<area shape="rect" id="node9" href="$class_h___storage_manager___base.html#ab484e1b007c605cf54876f4a990194ce" title="H_StorageManager_Base\l::createStorageCell" alt="" coords="404,355,575,396"/>
+<area shape="rect" id="node10" href="$class_h___storage_manager___base.html#a9c5433c370bc575c188fa89a360833b0" title="H_StorageManager_Base\l::setControlStructure" alt="" coords="404,237,575,279"/>
+</map>

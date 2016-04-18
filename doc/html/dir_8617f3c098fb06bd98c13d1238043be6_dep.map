@@ -1,0 +1,5 @@
+<map id="Virtualization/Hypervisor/HypervisorManagers/H_CPUManager/Schedulers" name="Virtualization/Hypervisor/HypervisorManagers/H_CPUManager/Schedulers">
+<area shape="rect" id="node2" href="dir_26762e7b0bff4ed1e46e7f5ede51f576.html" title="H_CPU_SCHED_FIFO" alt="" coords="37,63,196,111"/>
+<area shape="rect" id="clust2" href="dir_8617f3c098fb06bd98c13d1238043be6.html" alt="" coords="27,52,320,121"/>
+<area shape="rect" id="clust1" href="dir_3d98f25e8bd305a4e80142a8bab214d6.html" title="H_CPUManager" alt="" coords="16,16,331,132"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="AbstractCloudManager::initialize" name="AbstractCloudManager::initialize">
+<area shape="rect" id="node2" href="$class_network_manager.html#a05edf1fb3ad97a23ec0fdc0a89f62a0a" title="NetworkManager::setIPBasis" alt="" coords="209,5,402,32"/>
+<area shape="rect" id="node3" href="$class_cfg_cloud.html#aae6d74e29a13cb8548708e40bbf95c3e" title="CfgCloud::setVMType" alt="" coords="229,56,381,83"/>
+<area shape="rect" id="node4" href="$class_cfg_data_center.html#aed900a2597c96b50ebcd348af2cfb8a3" title="CfgDataCenter::setNodeType" alt="" coords="451,99,647,125"/>
+<area shape="rect" id="node5" href="$class_cfg_data_center.html#ad5eed4555102d524a6884808badc1306" title="CfgDataCenter::setStorage\lNodeType" alt="" coords="459,150,640,191"/>
+<area shape="rect" id="node6" href="$class_abstract_d_c_manager.html#ac59ba412da6525eed8367638db55c936" title="AbstractDCManager::\linitialize" alt="" coords="231,209,380,250"/>
+<area shape="rect" id="node7" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="697,267,866,293"/>
+<area shape="rect" id="node9" href="$class_user_management.html#ac247f8cfdce695c129671660790843d0" title="UserManagement::initialize" alt="" coords="459,267,639,293"/>
+<area shape="rect" id="node10" href="$class_storage_management.html#ae228b883ed4958743e2f19bb5798bcc3" title="StorageManagement::\linitialize" alt="" coords="474,318,625,359"/>
+<area shape="rect" id="node8" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="915,259,1109,301"/>
+</map>

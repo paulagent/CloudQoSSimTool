@@ -1,0 +1,16 @@
+<map id="JobQueue::clear" name="JobQueue::clear">
+<area shape="rect" id="node2" href="$class_abstract_user.html#a7ffa420ec8bb455c12afa9c6e0cfaa12" title="AbstractUser::initialize" alt="" coords="765,42,920,68"/>
+<area shape="rect" id="node6" href="$classqueues_manager.html#a6e9fc9858adafe4f141b25ae57f8a9b4" title="queuesManager::finish" alt="" coords="179,42,333,68"/>
+<area shape="rect" id="node7" href="$classuser_base.html#a8104983c59ffe96c6ee5d5c21b40ea40" title="userBase::finish" alt="" coords="398,67,514,94"/>
+<area shape="rect" id="node9" href="$classqueues_manager.html#a5e416310710ec4b66655b3ac672534c7" title="queuesManager::initialize" alt="" coords="171,143,341,170"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_user.html#abe7ec0f3358bfe5d21d151712160e485" title="AbstractCloudUser::\linitialize" alt="" coords="968,34,1109,76"/>
+<area shape="rect" id="node4" href="$class_general_user.html#a2dcedd37db86d878ce596af0853214ef" title="GeneralUser::initialize" alt="" coords="1158,7,1309,34"/>
+<area shape="rect" id="node5" href="$class_smart_user.html#a780a9e5296c94cdd3231413ffa9ba241" title="SmartUser::initialize" alt="" coords="1163,58,1303,84"/>
+<area shape="rect" id="node8" href="$classuser_storage.html#a2c8a4f06b3850812639c0ecd66bb8f6e" title="userStorage::finish" alt="" coords="579,67,709,94"/>
+<area shape="rect" id="node10" href="$classuser_base.html#a30fec76e3c5b7f6c9bc8d9d03dc072cd" title="userBase::initialize" alt="" coords="390,130,522,156"/>
+<area shape="rect" id="node11" href="$classuser_storage.html#a2a19fba89511e8a93620888ea806977c" title="userStorage::initialize" alt="" coords="571,124,717,151"/>
+<area shape="rect" id="node12" href="$class_abstract_user.html#a5445faf737e4a2bb1f03ca8ff750bda4" title="AbstractUser::finish" alt="" coords="773,124,912,151"/>
+<area shape="rect" id="node13" href="$class_abstract_cloud_user.html#ad49727f295e37a4a1fb3461739952496" title="AbstractCloudUser::\lfinish" alt="" coords="968,117,1109,158"/>
+<area shape="rect" id="node14" href="$class_general_user.html#afde95be04503e4d900a62ebc91240304" title="GeneralUser::finish" alt="" coords="1166,116,1301,143"/>
+<area shape="rect" id="node15" href="$class_smart_user.html#a52c71563cf7a99f901d5f3287f4ad975" title="SmartUser::finish" alt="" coords="1171,167,1295,194"/>
+</map>

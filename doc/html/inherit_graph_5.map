@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_abstract_request.html" title="AbstractRequest" alt="" coords="5,81,125,108"/>
+<area shape="rect" id="node2" href="$class_physical_resources_request.html" title="PhysicalResourcesRequest" alt="" coords="173,5,357,32"/>
+<area shape="rect" id="node3" href="$class_request_base.html" title="RequestBase" alt="" coords="215,56,316,83"/>
+<area shape="rect" id="node4" href="$class_request_v_m.html" title="RequestVM" alt="" coords="220,107,311,133"/>
+<area shape="rect" id="node5" href="$class_storage_request.html" title="StorageRequest" alt="" coords="207,157,323,184"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="VM::getLogState" name="VM::getLogState">
+<area shape="rect" id="node2" href="$class_v_m.html#a74cce1a4fedcd1a796a514231c9c4844" title="VM::setManager" alt="" coords="174,35,293,61"/>
+<area shape="rect" id="node3" href="$class_machine.html#af38193d015a8e859914bea0a6cee93b9" title="Machine::setManager" alt="" coords="351,5,497,32"/>
+<area shape="rect" id="node4" href="$class_abstract_syscall_manager.html#abc3ebe810070a492277546e957c95e55" title="AbstractSyscallManager\l::setManager" alt="" coords="342,57,506,98"/>
+</map>

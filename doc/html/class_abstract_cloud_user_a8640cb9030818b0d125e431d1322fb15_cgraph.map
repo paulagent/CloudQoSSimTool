@@ -1,0 +1,10 @@
+<map id="AbstractCloudUser::allocateJob" name="AbstractCloudUser::allocateJob">
+<area shape="rect" id="node2" href="$class_user_job.html#aae111b3f27942eb74ab41d47ec8605b0" title="UserJob::getMachine" alt="" coords="211,5,357,32"/>
+<area shape="rect" id="node3" href="$class_v_m_syscall_manager.html#a5fbfaf7786727f50c6bcff494af49c4e" title="VMSyscallManager::create\lProcess" alt="" coords="195,57,373,98"/>
+<area shape="rect" id="node4" href="$classc_gate_manager.html#ad566e09aa1825fb442c21cd2140c0800" title="cGateManager::newGate" alt="" coords="657,8,823,35"/>
+<area shape="rect" id="node6" href="$class_vm_msg_controller.html#a92794c6b117e7a7f147c86d1fcf2bee0" title="VmMsgController::linkNew\lApplication" alt="" coords="421,57,600,98"/>
+<area shape="rect" id="node9" href="$classc_gate_manager.html#a9e159a922337e251394d75bfd4162f48" title="cGateManager::getGate" alt="" coords="430,123,591,149"/>
+<area shape="rect" id="node5" href="$classc_gate_manager.html#a15d49d0ee407cd043d07322c762095d7" title="cGateManager::linkGate" alt="" coords="880,8,1043,35"/>
+<area shape="rect" id="node7" href="$classc_gate_manager.html#ab2a45f184a5ac8750b03015466ba1cce" title="cGateManager::connectOut" alt="" coords="649,63,831,89"/>
+<area shape="rect" id="node8" href="$classc_gate_manager.html#a59f97bc1fc8cc23f7e9f28534b2fd948" title="cGateManager::connectIn" alt="" coords="654,113,826,140"/>
+</map>

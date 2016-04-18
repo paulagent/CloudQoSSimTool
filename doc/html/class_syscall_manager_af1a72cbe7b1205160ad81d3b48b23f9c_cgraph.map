@@ -1,0 +1,6 @@
+<map id="SyscallManager::createProcess" name="SyscallManager::createProcess">
+<area shape="rect" id="node2" href="$classc_gate_manager.html#ad566e09aa1825fb442c21cd2140c0800" title="cGateManager::newGate" alt="" coords="270,5,437,32"/>
+<area shape="rect" id="node4" href="$classc_gate_manager.html#a59f97bc1fc8cc23f7e9f28534b2fd948" title="cGateManager::connectIn" alt="" coords="267,56,439,83"/>
+<area shape="rect" id="node5" href="$classc_gate_manager.html#ab2a45f184a5ac8750b03015466ba1cce" title="cGateManager::connectOut" alt="" coords="262,107,445,133"/>
+<area shape="rect" id="node3" href="$classc_gate_manager.html#a15d49d0ee407cd043d07322c762095d7" title="cGateManager::linkGate" alt="" coords="493,5,656,32"/>
+</map>

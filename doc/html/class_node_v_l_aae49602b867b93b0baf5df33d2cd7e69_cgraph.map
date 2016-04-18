@@ -1,0 +1,15 @@
+<map id="NodeVL::freeResources" name="NodeVL::freeResources">
+<area shape="rect" id="node2" href="$class_hypervisor.html#ae663d39052762aa8efbd5b8f5f78d352" title="Hypervisor::freeResources" alt="" coords="228,143,407,169"/>
+<area shape="rect" id="node8" href="$class_node_v_l.html#a4e42202739d3bacd4615085e2ea03293" title="NodeVL::getNumOfLinkedVMs" alt="" coords="216,216,419,243"/>
+<area shape="rect" id="node9" href="$class_abstract_node.html#a81c287fdd783ff09e9548f342b655418" title="AbstractNode::freeResources" alt="" coords="220,311,415,337"/>
+<area shape="rect" id="node3" href="$class_h___c_p_u_manager___base.html#a2a9895c050d8e804879c3c8bbd12df4b" title="H_CPUManager_Base::\lfreeVM" alt="" coords="481,5,644,46"/>
+<area shape="rect" id="node5" href="$class_h___memory_manager___base.html#ad23c5f8c66d074a07ffc909fd3971e1d" title="H_MemoryManager_Base\l::freeVM" alt="" coords="476,70,649,111"/>
+<area shape="rect" id="node6" href="$class_h___n_e_t_manager___base.html#ac71d55fa0be7bbf51dd5efa7b39d79bc" title="H_NETManager_Base::\lfreeVM" alt="" coords="482,135,643,177"/>
+<area shape="rect" id="node7" href="$class_h___storage_manager___base.html#afe6845e05dd7bef315d1d118dd3f934c" title="H_StorageManager_Base\l::freeVM" alt="" coords="477,201,648,242"/>
+<area shape="rect" id="node4" href="$classc_gate_manager.html#aaea1371f08ab95bf8dcb281d88f88bde" title="cGateManager::freeGate" alt="" coords="717,111,883,137"/>
+<area shape="rect" id="node10" href="$class_machine.html#aa9c68bbbcdf04b49d8360644a1232e13" title="Machine::getNumProcesses\lRunning" alt="" coords="469,266,656,307"/>
+<area shape="rect" id="node12" href="$class_machine.html#aac09df15c2480050b99f5132704ca913" title="Machine::changeState" alt="" coords="487,332,639,359"/>
+<area shape="rect" id="node14" href="$class_abstract_node.html#ab64b7ac92c7d971d976fb2751e34727c" title="AbstractNode::notifyManager" alt="" coords="467,383,659,409"/>
+<area shape="rect" id="node11" href="$class_abstract_syscall_manager.html#a0a9a322e95629883d0a1222d84ba30e9" title="AbstractSyscallManager\l::getNumProcessesRunning" alt="" coords="707,262,893,303"/>
+<area shape="rect" id="node13" href="$class_abstract_syscall_manager.html#a1521a2796425ffb46706a084598685b8" title="AbstractSyscallManager\l::changeState" alt="" coords="718,327,882,369"/>
+</map>

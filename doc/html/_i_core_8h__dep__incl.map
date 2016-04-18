@@ -1,0 +1,9 @@
+<map id="Architecture/NodeComponents/Hardware/CPUs/CPUcores/ICore.h" name="Architecture/NodeComponents/Hardware/CPUs/CPUcores/ICore.h">
+<area shape="rect" id="node2" href="$_c_p_u_controller_8h.html" title="Architecture/NodeComponents\l/Hardware/CPUs/CPUController\l/CPUController.h" alt="" coords="279,109,488,165"/>
+<area shape="rect" id="node6" href="$_c_p_ucore_8h.html" title="Architecture/NodeComponents\l/Hardware/CPUs/CPUcores\l/CPUcore/CPUcore.h" alt="" coords="514,109,715,165"/>
+<area shape="rect" id="node8" href="$_i_core_8cc.html" title="Architecture/NodeComponents\l/Hardware/CPUs/CPUcores\l/ICore.cc" alt="" coords="739,109,940,165"/>
+<area shape="rect" id="node3" href="$_c_p_u_controller_8cc.html" title="Architecture/NodeComponents\l/Hardware/CPUs/CPUController\l/CPUController.cc" alt="" coords="5,213,215,269"/>
+<area shape="rect" id="node4" href="$_c_p_u_meter_core_8h.html" title="EnergySystem/EnergyMeter\l/EnergyMeterUnit/ComponentsMeter\l/CPUMeter/CPUMeterCore/CPUMeterCore.h" alt="" coords="241,213,527,269"/>
+<area shape="rect" id="node5" href="$_c_p_u_meter_core_8cc.html" title="EnergySystem/EnergyMeter\l/EnergyMeterUnit/ComponentsMeter\l/CPUMeter/CPUMeterCore/CPUMeterCore.cc" alt="" coords="237,317,531,373"/>
+<area shape="rect" id="node7" href="$_c_p_ucore_8cc.html" title="Architecture/NodeComponents\l/Hardware/CPUs/CPUcores\l/CPUcore/CPUcore.cc" alt="" coords="551,213,752,269"/>
+</map>

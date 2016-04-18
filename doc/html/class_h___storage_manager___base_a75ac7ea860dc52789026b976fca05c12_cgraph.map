@@ -1,0 +1,8 @@
+<map id="H_StorageManager_Base::processSelfMessage" name="H_StorageManager_Base::processSelfMessage">
+<area shape="rect" id="node2" href="$classicancloud___base.html#a84d8d06391fb26ccc81ebbeff5e491e0" title="icancloud_Base::sendResponse\lMessage" alt="" coords="225,70,434,111"/>
+<area shape="rect" id="node3" href="$classicancloud___message.html#a351f06d13718a90570e745ce9a9c03a2" title="icancloud_Message::\lgetLastGateId" alt="" coords="515,5,661,46"/>
+<area shape="rect" id="node4" href="$classicancloud___message.html#a0c77cf91e298b8aeb7fb375f0d7a18c8" title="icancloud_Message::\lremoveLastModuleFromTrace" alt="" coords="491,70,685,111"/>
+<area shape="rect" id="node5" href="$classicancloud___base.html#a015a4ac08e4ac1fc910598748a10512f" title="icancloud_Base::processCurrent\lRequestMessage" alt="" coords="483,135,693,177"/>
+<area shape="rect" id="node6" href="$classicancloud___base.html#a70c9be3bce03393123f7ffccf9923fbe" title="icancloud_Base::isPending\lRequest" alt="" coords="761,102,940,143"/>
+<area shape="rect" id="node7" href="$classicancloud___base.html#aae4c74ca325f76d7e99f7f0ee7721540" title="icancloud_Base::processRequest\lMessage" alt="" coords="742,167,959,209"/>
+</map>

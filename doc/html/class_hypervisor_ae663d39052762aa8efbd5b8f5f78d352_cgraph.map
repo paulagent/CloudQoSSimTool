@@ -1,0 +1,7 @@
+<map id="Hypervisor::freeResources" name="Hypervisor::freeResources">
+<area shape="rect" id="node2" href="$class_h___c_p_u_manager___base.html#a2a9895c050d8e804879c3c8bbd12df4b" title="H_CPUManager_Base::\lfreeVM" alt="" coords="237,5,400,46"/>
+<area shape="rect" id="node4" href="$class_h___memory_manager___base.html#ad23c5f8c66d074a07ffc909fd3971e1d" title="H_MemoryManager_Base\l::freeVM" alt="" coords="232,70,405,111"/>
+<area shape="rect" id="node5" href="$class_h___n_e_t_manager___base.html#ac71d55fa0be7bbf51dd5efa7b39d79bc" title="H_NETManager_Base::\lfreeVM" alt="" coords="238,135,399,177"/>
+<area shape="rect" id="node6" href="$class_h___storage_manager___base.html#afe6845e05dd7bef315d1d118dd3f934c" title="H_StorageManager_Base\l::freeVM" alt="" coords="233,201,404,242"/>
+<area shape="rect" id="node3" href="$classc_gate_manager.html#aaea1371f08ab95bf8dcb281d88f88bde" title="cGateManager::freeGate" alt="" coords="453,111,619,137"/>
+</map>

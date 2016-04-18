@@ -1,0 +1,6 @@
+<map id="AbstractUser::userFinalization" name="AbstractUser::userFinalization">
+<area shape="rect" id="node2" href="$class_abstract_user.html#a09377586bac647d163bd76dca83c04a3" title="AbstractUser::finalizeUser" alt="" coords="253,31,429,57"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_user.html#a86abdfa4bf45d42beda70b5df8b8d06f" title="AbstractCloudUser::\lfinalizeUser" alt="" coords="477,23,619,65"/>
+<area shape="rect" id="node4" href="$class_general_user.html#a6e925cd06072bd816afe987314c96657" title="GeneralUser::requestAttended" alt="" coords="667,5,866,32"/>
+<area shape="rect" id="node5" href="$class_smart_user.html#abbd4fcf7b2b6fae50ba128e37e18c656" title="SmartUser::requestAttended" alt="" coords="673,56,861,83"/>
+</map>

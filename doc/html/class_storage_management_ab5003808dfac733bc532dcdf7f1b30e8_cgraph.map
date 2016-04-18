@@ -1,0 +1,16 @@
+<map id="StorageManagement::createConnectionToStorage" name="StorageManagement::createConnectionToStorage">
+<area shape="rect" id="node2" href="$class_abstract_request.html#a289694e1c3c6369f9f9462ce045634a1" title="AbstractRequest::getUid" alt="" coords="263,5,430,32"/>
+<area shape="rect" id="node3" href="$class_storage_request.html#a4add005c275f1618d83fe76bb8d06421" title="StorageRequest::getConnection" alt="" coords="243,56,451,83"/>
+<area shape="rect" id="node4" href="$class_abstract_node.html#a6130405c20c1063ad5db18efee1220cb" title="AbstractNode::setRemoteFiles" alt="" coords="245,107,448,133"/>
+<area shape="rect" id="node6" href="$class_abstract_request.html#a7fbb51f4dcad0ccc9e6a5c451d442f0a" title="AbstractRequest::getPid" alt="" coords="264,157,429,184"/>
+<area shape="rect" id="node7" href="$class_abstract_request.html#a6a13b6a1fa42e0111170d1d831c553bc" title="AbstractRequest::getSPid" alt="" coords="259,208,434,235"/>
+<area shape="rect" id="node8" href="$class_machine.html#a2f56e118394746c0895bf83709798811" title="Machine::getIP" alt="" coords="291,259,402,285"/>
+<area shape="rect" id="node9" href="$class_storage_request.html#a2bd8a029ff97af8f7e77625d149eae14" title="StorageRequest::getPreload\lFilesSet" alt="" coords="253,310,440,351"/>
+<area shape="rect" id="node10" href="$class_storage_request.html#a18703690a39b4da8734f6248513e8181" title="StorageRequest::getFSSet" alt="" coords="257,376,436,403"/>
+<area shape="rect" id="node11" href="$class_abstract_node.html#ad32dec5a7ec6282ab010c006f1866bc1" title="AbstractNode::createData\lStorageListen" alt="" coords="259,427,434,469"/>
+<area shape="rect" id="node13" href="$class_abstract_node.html#a511f8d1cb1090aabffa159020bdd0070" title="AbstractNode::connectToRemote\lStorage" alt="" coords="238,493,455,534"/>
+<area shape="rect" id="node15" href="$class_storage_request.html#ae220bdb3b6706475d8515869430f8dd9" title="StorageRequest::getFsType" alt="" coords="253,559,440,585"/>
+<area shape="rect" id="node5" href="$class_abstract_syscall_manager.html#af02a6a7bcef3c93f11fd81ba8149dd1c" title="AbstractSyscallManager\l::setRemoteFiles" alt="" coords="514,99,678,141"/>
+<area shape="rect" id="node12" href="$class_abstract_syscall_manager.html#a11676f06fd90da6474ea938501d21e22" title="AbstractSyscallManager\l::createDataStorageListen" alt="" coords="509,427,683,469"/>
+<area shape="rect" id="node14" href="$class_abstract_syscall_manager.html#aeeda65a6dfd402d60183ea6d4e8d9b8b" title="AbstractSyscallManager\l::connectToRemoteStorage" alt="" coords="505,493,687,534"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="AllocationManagement::nodeAllocation" name="AllocationManagement::nodeAllocation">
+<area shape="rect" id="node3" href="$class_abstract_node.html" title="AbstractNode" alt="" coords="1010,248,1113,275"/>
+<area shape="rect" id="node4" href="$class_machine.html" title="Machine" alt="" coords="878,248,949,275"/>
+<area shape="rect" id="node5" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="308,205,423,232"/>
+<area shape="rect" id="node8" href="$class_abstract_syscall_manager.html" title="AbstractSyscallManager" alt="" coords="635,119,799,145"/>
+<area shape="rect" id="node9" href="$classc_gate_manager.html" title="cGateManager" alt="" coords="312,5,419,32"/>
+<area shape="rect" id="node12" href="$classelement_type.html" title="elementType" alt="" coords="669,360,766,387"/>
+</map>

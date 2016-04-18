@@ -1,0 +1,11 @@
+<map id="AbstractCloudUser" name="AbstractCloudUser">
+<area shape="rect" id="node2" href="$class_abstract_user.html" title="AbstractUser" alt="" coords="1705,443,1804,469"/>
+<area shape="rect" id="node3" href="$classuser_storage.html" title="userStorage" alt="" coords="1393,112,1485,139"/>
+<area shape="rect" id="node4" href="$classuser_base.html" title="userBase" alt="" coords="1056,292,1133,319"/>
+<area shape="rect" id="node5" href="$classqueues_manager.html" title="queuesManager" alt="" coords="701,292,816,319"/>
+<area shape="rect" id="node6" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="319,369,433,396"/>
+<area shape="rect" id="node14" href="$class_requests_management.html" title="RequestsManagement" alt="" coords="682,343,835,369"/>
+<area shape="rect" id="node10" href="$class_job_queue.html" title="JobQueue" alt="" coords="335,117,417,144"/>
+<area shape="rect" id="node13" href="$class_cfg_m_p_i.html" title="CfgMPI" alt="" coords="725,444,792,471"/>
+<area shape="rect" id="node21" href="$class_machines_map.html" title="MachinesMap" alt="" coords="1703,687,1806,713"/>
+</map>

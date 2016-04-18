@@ -1,0 +1,14 @@
+<map id="ICCLog::Append" name="ICCLog::Append">
+<area shape="rect" id="node2" href="$class_cloud_scheduler_f_c_f_s.html#a3e0afe92ac7e1ae55a6242d212a975f7" title="CloudSchedulerFCFS\l::printEnergyValues" alt="" coords="203,5,352,46"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s.html#a8a41f64431d09aa89ee7466b6c9b524f" title="CloudSchedulerFCFS\l::finalizeScheduler" alt="" coords="203,70,352,111"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a552ad67083215247602ed5a946143901" title="CloudSchedulerFCFS\l_gnup::printEnergyValues" alt="" coords="192,135,363,177"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a42845aa72867ad26e070097298b25c93" title="CloudSchedulerFCFS\l_gnup::finalizeScheduler" alt="" coords="195,201,359,242"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_r_r.html#a2c153a82274f9112a7508c1e88ee16a5" title="CloudSchedulerRR::printEnergy\lValues" alt="" coords="173,266,381,307"/>
+<area shape="rect" id="node10" href="$class_cloud_scheduler_r_r.html#a5ca719af2c342d21d7ff2a0c0d8fb9d5" title="CloudSchedulerRR::finalize\lScheduler" alt="" coords="186,331,369,373"/>
+<area shape="rect" id="node11" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="203,397,352,438"/>
+<area shape="rect" id="node3" href="$class_cloud_scheduler_f_c_f_s.html#a6d8343d43b103e0c55a81cc4b824a5d2" title="CloudSchedulerFCFS\l::shutdownNodeIfIDLE" alt="" coords="452,38,607,79"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_f_c_f_s__gnup.html#aa63b6605f92505ac32620e6f7838287a" title="CloudSchedulerFCFS\l_gnup::shutdownNodeIfIDLE" alt="" coords="434,198,625,239"/>
+<area shape="rect" id="node9" href="$class_cloud_scheduler_r_r.html#aeec3f6bda46cd544a9d2a063be157b60" title="CloudSchedulerRR::shutdown\lNodeIfIDLE" alt="" coords="430,270,629,311"/>
+<area shape="rect" id="node12" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="677,367,832,409"/>
+<area shape="rect" id="node13" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="455,397,604,438"/>
+</map>

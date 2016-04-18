@@ -1,0 +1,5 @@
+<map id="AllocationManagement::getStorageNodesSize" name="AllocationManagement::getStorageNodesSize">
+<area shape="rect" id="node2" href="$class_cloud_scheduler_f_c_f_s.html#ac3b5b56db0bf0ce10537778cc7813e64" title="CloudSchedulerFCFS\l::selectStorageNodes" alt="" coords="228,5,377,46"/>
+<area shape="rect" id="node3" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a197413bb407bff30cdfb1205ab737905" title="CloudSchedulerFCFS\l_gnup::selectStorageNodes" alt="" coords="211,70,394,111"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_r_r.html#acf2b22553cfa9e0eb736551b99dc77b8" title="CloudSchedulerRR::select\lStorageNodes" alt="" coords="214,135,391,177"/>
+</map>

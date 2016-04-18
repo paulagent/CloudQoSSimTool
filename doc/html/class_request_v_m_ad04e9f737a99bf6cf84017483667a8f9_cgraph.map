@@ -1,0 +1,6 @@
+<map id="RequestVM::getDifferentTypesQuantity" name="RequestVM::getDifferentTypesQuantity">
+<area shape="rect" id="node2" href="$class_request_v_m.html#a325ad3ed16a52238d77ec680964cf4f4" title="RequestVM::getSelectionType" alt="" coords="267,5,467,32"/>
+<area shape="rect" id="node3" href="$class_request_v_m.html#a6e0c2a27ea3002ae0a3c449caaede429" title="RequestVM::getSelectionQuantity" alt="" coords="257,56,477,83"/>
+<area shape="rect" id="node4" href="$class_request_v_m.html#af3f9c199b3811013c50293080ecb13e1" title="RequestVM::eraseSelectionType" alt="" coords="259,107,474,133"/>
+<area shape="rect" id="node5" href="$class_request_v_m.html#adde97eaf620941912827cf2ed44de711" title="RequestVM::decreaseSelection\lQuantity" alt="" coords="263,158,470,199"/>
+</map>

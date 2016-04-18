@@ -1,0 +1,20 @@
+<map id="JobResultsSet::dup" name="JobResultsSet::dup">
+<area shape="rect" id="node2" href="$class_job_results_set.html#a8cc110dcef19bf513d9974a5c62a9fda" title="JobResultsSet::JobResultsSet" alt="" coords="197,5,400,32"/>
+<area shape="rect" id="node3" href="$class_job_results_set.html#a4b94049d2d0cab4e0842c007301e301a" title="JobResultsSet::getJobResultSet" alt="" coords="192,157,405,184"/>
+<area shape="rect" id="node5" href="$class_job_results.html#ac7f3a49c043bda56a792faf41fb9678f" title="JobResults::getName" alt="" coords="723,107,872,133"/>
+<area shape="rect" id="node7" href="$class_job_results.html#a3f0b72052d24dc0904702b5d1f78a6e9" title="JobResults::dup" alt="" coords="240,284,357,311"/>
+<area shape="rect" id="node11" href="$class_job_results.html#a2d10c86b77c820a93d3191250716683f" title="JobResults::getValue" alt="" coords="489,411,636,437"/>
+<area shape="rect" id="node12" href="$class_job_results.html#ad5dbaf82e60fef1da242e236d5842da0" title="JobResults::getValuesSize" alt="" coords="209,385,389,412"/>
+<area shape="rect" id="node13" href="$class_job_results_set.html#a2eed921c2a4ad4ce90daa4b57ece8b6e" title="JobResultsSet::getJobID" alt="" coords="214,436,383,463"/>
+<area shape="rect" id="node16" href="$class_job_results_set.html#a4cbfb9e2eb0c4f432bbe0e27ea1be7ff" title="JobResultsSet::getMachineType" alt="" coords="193,233,405,260"/>
+<area shape="rect" id="node18" href="$class_job_results_set.html#afc13390cb9b5aa6fdea677d9ea12c929" title="JobResultsSet::getJob\l_startTime" alt="" coords="221,487,376,529"/>
+<area shape="rect" id="node19" href="$class_job_results_set.html#a6e740cf0ab5466d35f75232c538a446a" title="JobResultsSet::getJob\l_endTime" alt="" coords="221,553,376,594"/>
+<area shape="rect" id="node4" href="$class_job_results_set.html#a35ed592e5484935dc0f00a02ae16cec5" title="JobResultsSet::newJobResultSet" alt="" coords="453,157,672,184"/>
+<area shape="rect" id="node6" href="$class_job_results_set.html#a59a54120806a0b6bb22e078dd243e778" title="JobResultsSet::setJobResult" alt="" coords="466,107,659,133"/>
+<area shape="rect" id="node8" href="$class_job_results.html#a342c2e38ef7cda3bbab0208500ca9499" title="JobResults::JobResults" alt="" coords="481,309,644,336"/>
+<area shape="rect" id="node9" href="$class_job_results.html#a679b661c7fe2dabb8a4bb4741b9d132a" title="JobResults::setName" alt="" coords="723,233,872,260"/>
+<area shape="rect" id="node10" href="$class_job_results.html#ae513b68a24db2de83b92211835eee43c" title="JobResults::setValue" alt="" coords="724,323,871,349"/>
+<area shape="rect" id="node14" href="$class_job_results_set.html#aad5420f73226392ee74045eb75bd263a" title="JobResultsSet::setJob\l_startTime" alt="" coords="485,462,640,503"/>
+<area shape="rect" id="node15" href="$class_job_results_set.html#ac23c8fc2b0d55f7f33f79c62416f9f7a" title="JobResultsSet::setJob\l_endTime" alt="" coords="720,462,875,503"/>
+<area shape="rect" id="node17" href="$class_job_results_set.html#a55ac9f7df811fcea1725bb74ecaa6641" title="JobResultsSet::toString" alt="" coords="482,208,643,235"/>
+</map>

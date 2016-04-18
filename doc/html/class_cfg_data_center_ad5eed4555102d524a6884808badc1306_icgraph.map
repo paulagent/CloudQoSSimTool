@@ -1,0 +1,11 @@
+<map id="CfgDataCenter::setStorageNodeType" name="CfgDataCenter::setStorageNodeType">
+<area shape="rect" id="node2" href="$class_abstract_cloud_manager.html#a800c9c493653104f1be7c57aa73e5f42" title="AbstractCloudManager\l::initialize" alt="" coords="432,79,587,121"/>
+<area shape="rect" id="node6" href="$class_abstract_d_c_manager.html#ac59ba412da6525eed8367638db55c936" title="AbstractDCManager::\linitialize" alt="" coords="235,143,384,185"/>
+<area shape="rect" id="node3" href="$class_cloud_scheduler_f_c_f_s.html#a376eb82de6698a6498b00521af233e82" title="CloudSchedulerFCFS\l::initialize" alt="" coords="655,5,804,46"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s__gnup.html#aa95176723fe3b2e7b77a6933107e8cfa" title="CloudSchedulerFCFS\l_gnup::initialize" alt="" coords="655,70,804,111"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_r_r.html#aaae099d4346461105c523a11c48cb930" title="CloudSchedulerRR::initialize" alt="" coords="635,136,824,163"/>
+<area shape="rect" id="node7" href="$class_allocation_management.html#a365381b213c267bfecaa9a32abb08098" title="AllocationManagement\l::initialize" alt="" coords="432,145,587,186"/>
+<area shape="rect" id="node8" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="435,219,584,261"/>
+<area shape="rect" id="node9" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="872,209,1027,250"/>
+<area shape="rect" id="node10" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="655,238,804,279"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Machine::removeProcess" name="Machine::removeProcess">
+<area shape="rect" id="node2" href="$class_abstract_syscall_manager.html#a5cae955bef0e5d336ddd7d9733649255" title="AbstractSyscallManager\l::removeProcess" alt="" coords="235,5,399,46"/>
+<area shape="rect" id="node3" href="$class_abstract_syscall_manager.html#a0a9a322e95629883d0a1222d84ba30e9" title="AbstractSyscallManager\l::getNumProcessesRunning" alt="" coords="224,70,411,111"/>
+<area shape="rect" id="node4" href="$class_machine.html#aac09df15c2480050b99f5132704ca913" title="Machine::changeState" alt="" coords="241,136,393,163"/>
+<area shape="rect" id="node5" href="$class_abstract_syscall_manager.html#a1521a2796425ffb46706a084598685b8" title="AbstractSyscallManager\l::changeState" alt="" coords="459,129,623,170"/>
+</map>

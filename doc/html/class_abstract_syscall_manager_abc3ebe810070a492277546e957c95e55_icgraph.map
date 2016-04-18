@@ -1,0 +1,14 @@
+<map id="AbstractSyscallManager::setManager" name="AbstractSyscallManager::setManager">
+<area shape="rect" id="node2" href="$class_abstract_syscall_manager.html#a869b0d170ed1315c66fd9ae98689d97e" title="AbstractSyscallManager\l::storageDecrease" alt="" coords="219,75,383,117"/>
+<area shape="rect" id="node8" href="$class_v_m.html#a74cce1a4fedcd1a796a514231c9c4844" title="VM::setManager" alt="" coords="242,143,361,169"/>
+<area shape="rect" id="node3" href="$class_node_v_l.html#a7ae98a532c208ee68e9aab4facbb1ba5" title="NodeVL::testLinkVM" alt="" coords="459,80,602,107"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_manager.html#ae135ac35f047a6e551e7a5df648de593" title="AbstractCloudManager\l::request_start_vm" alt="" coords="697,70,852,111"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="943,5,1092,46"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="943,70,1092,111"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="920,136,1115,163"/>
+<area shape="rect" id="node9" href="$class_abstract_cloud_user.html#a2bd801b9a9f60c39d9fe8da557b6d348" title="AbstractCloudUser::\lnotify_UserRequestAttendeed" alt="" coords="432,135,629,177"/>
+<area shape="rect" id="node11" href="$class_v_m.html#a905436f2fbd04561f7eaf947ba7099aa" title="VM::getLogState" alt="" coords="471,201,591,228"/>
+<area shape="rect" id="node10" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="704,135,845,177"/>
+<area shape="rect" id="node12" href="$class_general_user.html#a0e9539a35a7e27e6ddca7442da6d58f5" title="GeneralUser::userFinalization" alt="" coords="677,201,872,228"/>
+<area shape="rect" id="node13" href="$class_smart_user.html#a984c804987c2bfee8d3c232370e9ee79" title="SmartUser::userFinalization" alt="" coords="683,252,867,279"/>
+</map>

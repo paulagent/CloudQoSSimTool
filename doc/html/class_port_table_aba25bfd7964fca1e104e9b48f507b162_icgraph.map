@@ -1,0 +1,5 @@
+<map id="PortTable::registerPort" name="PortTable::registerPort">
+<area shape="rect" id="node2" href="$class_network_manager.html#ac4892de69560ccbd71ad986d89305135" title="NetworkManager::registerPort" alt="" coords="209,45,405,72"/>
+<area shape="rect" id="node3" href="$class_local_net_manager.html#a0afa9dca2f94a7b9ae9c6bfa63751ccc" title="LocalNetManager::manage\l_listen" alt="" coords="461,5,640,46"/>
+<area shape="rect" id="node4" href="$class_local_net_manager.html#abf780f6b38fd3f80365145cf5ba2b4a6" title="LocalNetManager::connection\lStablished" alt="" coords="453,70,648,111"/>
+</map>

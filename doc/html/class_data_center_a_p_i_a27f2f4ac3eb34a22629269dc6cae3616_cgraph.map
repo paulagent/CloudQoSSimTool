@@ -1,0 +1,5 @@
+<map id="DataCenterAPI::getNumberOfProcesses" name="DataCenterAPI::getNumberOfProcesses">
+<area shape="rect" id="node2" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="237,5,432,46"/>
+<area shape="rect" id="node3" href="$class_machine.html#aa9c68bbbcdf04b49d8360644a1232e13" title="Machine::getNumProcesses\lRunning" alt="" coords="241,70,428,111"/>
+<area shape="rect" id="node4" href="$class_abstract_syscall_manager.html#a0a9a322e95629883d0a1222d84ba30e9" title="AbstractSyscallManager\l::getNumProcessesRunning" alt="" coords="480,70,667,111"/>
+</map>

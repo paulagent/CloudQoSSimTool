@@ -1,0 +1,10 @@
+<map id="userStorage::initialize" name="userStorage::initialize">
+<area shape="rect" id="node2" href="$class_abstract_user.html#a7ffa420ec8bb455c12afa9c6e0cfaa12" title="AbstractUser::initialize" alt="" coords="200,53,355,80"/>
+<area shape="rect" id="node6" href="$class_abstract_user.html#a5445faf737e4a2bb1f03ca8ff750bda4" title="AbstractUser::finish" alt="" coords="208,108,347,135"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_user.html#abe7ec0f3358bfe5d21d151712160e485" title="AbstractCloudUser::\linitialize" alt="" coords="403,42,544,83"/>
+<area shape="rect" id="node4" href="$class_general_user.html#a2dcedd37db86d878ce596af0853214ef" title="GeneralUser::initialize" alt="" coords="593,5,743,32"/>
+<area shape="rect" id="node5" href="$class_smart_user.html#a780a9e5296c94cdd3231413ffa9ba241" title="SmartUser::initialize" alt="" coords="598,56,738,83"/>
+<area shape="rect" id="node7" href="$class_abstract_cloud_user.html#ad49727f295e37a4a1fb3461739952496" title="AbstractCloudUser::\lfinish" alt="" coords="403,107,544,149"/>
+<area shape="rect" id="node8" href="$class_general_user.html#afde95be04503e4d900a62ebc91240304" title="GeneralUser::finish" alt="" coords="601,111,735,137"/>
+<area shape="rect" id="node9" href="$class_smart_user.html#a52c71563cf7a99f901d5f3287f4ad975" title="SmartUser::finish" alt="" coords="606,161,730,188"/>
+</map>

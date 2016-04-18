@@ -1,0 +1,11 @@
+<map id="Node::getNICEnergyConsumed" name="Node::getNICEnergyConsumed">
+<area shape="rect" id="node2" href="$class_cloud_scheduler_f_c_f_s.html#a3e0afe92ac7e1ae55a6242d212a975f7" title="CloudSchedulerFCFS\l::printEnergyValues" alt="" coords="291,5,440,46"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s.html#a8a41f64431d09aa89ee7466b6c9b524f" title="CloudSchedulerFCFS\l::finalizeScheduler" alt="" coords="291,70,440,111"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a552ad67083215247602ed5a946143901" title="CloudSchedulerFCFS\l_gnup::printEnergyValues" alt="" coords="280,135,451,177"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a42845aa72867ad26e070097298b25c93" title="CloudSchedulerFCFS\l_gnup::finalizeScheduler" alt="" coords="283,201,447,242"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_r_r.html#a2c153a82274f9112a7508c1e88ee16a5" title="CloudSchedulerRR::printEnergy\lValues" alt="" coords="261,266,469,307"/>
+<area shape="rect" id="node10" href="$class_cloud_scheduler_r_r.html#a5ca719af2c342d21d7ff2a0c0d8fb9d5" title="CloudSchedulerRR::finalize\lScheduler" alt="" coords="274,331,457,373"/>
+<area shape="rect" id="node3" href="$class_cloud_scheduler_f_c_f_s.html#a6d8343d43b103e0c55a81cc4b824a5d2" title="CloudSchedulerFCFS\l::shutdownNodeIfIDLE" alt="" coords="540,38,695,79"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_f_c_f_s__gnup.html#aa63b6605f92505ac32620e6f7838287a" title="CloudSchedulerFCFS\l_gnup::shutdownNodeIfIDLE" alt="" coords="522,185,713,226"/>
+<area shape="rect" id="node9" href="$class_cloud_scheduler_r_r.html#aeec3f6bda46cd544a9d2a063be157b60" title="CloudSchedulerRR::shutdown\lNodeIfIDLE" alt="" coords="518,282,717,323"/>
+</map>

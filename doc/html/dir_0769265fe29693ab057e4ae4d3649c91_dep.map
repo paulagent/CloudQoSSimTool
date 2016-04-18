@@ -1,0 +1,7 @@
+<map id="EnergySystem/PSU" name="EnergySystem/PSU">
+<area shape="rect" id="node3" href="dir_630d0eea5782093619f2fb016ec70d48.html" title="EnergyMeter" alt="" coords="129,159,225,207"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000091_000077.html" title="1" alt="" coords="182,133,190,148"/>
+<area shape="rect" id="node2" href="dir_5ba968abd0b91af750f6653d11200733.html" title="MainPSU" alt="" coords="38,63,116,111"/>
+<area shape="rect" id="clust2" href="dir_0769265fe29693ab057e4ae4d3649c91.html" alt="" coords="27,52,224,121"/>
+<area shape="rect" id="clust1" href="dir_bbe0e39b316c147ac1a343f711e44071.html" title="EnergySystem" alt="" coords="16,16,235,132"/>
+</map>

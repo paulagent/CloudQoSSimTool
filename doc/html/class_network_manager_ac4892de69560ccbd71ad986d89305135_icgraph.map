@@ -1,0 +1,4 @@
+<map id="NetworkManager::registerPort" name="NetworkManager::registerPort">
+<area shape="rect" id="node2" href="$class_local_net_manager.html#a0afa9dca2f94a7b9ae9c6bfa63751ccc" title="LocalNetManager::manage\l_listen" alt="" coords="259,5,437,46"/>
+<area shape="rect" id="node3" href="$class_local_net_manager.html#abf780f6b38fd3f80365145cf5ba2b4a6" title="LocalNetManager::connection\lStablished" alt="" coords="251,70,445,111"/>
+</map>

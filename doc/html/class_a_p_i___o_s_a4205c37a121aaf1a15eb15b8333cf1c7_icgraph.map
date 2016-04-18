@@ -1,0 +1,10 @@
+<map id="API_OS::initialize" name="API_OS::initialize">
+<area shape="rect" id="node2" href="$classjob_base.html#a765de753584cf40713de92abda82963e" title="jobBase::initialize" alt="" coords="179,64,303,91"/>
+<area shape="rect" id="node3" href="$class_user_job.html#aa4d12c9fe1a67635008861dc5c9ec86c" title="UserJob::initialize" alt="" coords="353,64,479,91"/>
+<area shape="rect" id="node4" href="$class_c_p_u___intensive.html#a918096b3bff63deefec99f627933584b" title="CPU_Intensive::initialize" alt="" coords="529,5,695,32"/>
+<area shape="rect" id="node5" href="$class_server_application.html#aa1d84fa0da8cde4474990a2a44c0be4d" title="ServerApplication::\linitialize" alt="" coords="546,57,678,98"/>
+<area shape="rect" id="node6" href="$class_m_p_i___base.html#a907451cac9a80fecce0e36b790b6ea16" title="MPI_Base::initialize" alt="" coords="543,123,681,149"/>
+<area shape="rect" id="node7" href="$class_application_checkpoint.html#a8614115da8f448c96a96066c01863371" title="ApplicationCheckpoint\l::initialize" alt="" coords="753,57,905,98"/>
+<area shape="rect" id="node8" href="$class_application_h_p_c.html#a8c61708b1f8d091c23dbe72f14286cd6" title="ApplicationHPC::initialize" alt="" coords="744,123,915,149"/>
+<area shape="rect" id="node9" href="$class_application_h_t_c.html#abcfff348a53ec108c30ad269d0721d6e" title="ApplicationHTC::initialize" alt="" coords="745,173,914,200"/>
+</map>

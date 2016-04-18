@@ -1,0 +1,5 @@
+<map id="AbstractCloudUser::checkAllVMShutdown" name="AbstractCloudUser::checkAllVMShutdown">
+<area shape="rect" id="node2" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="235,5,376,46"/>
+<area shape="rect" id="node3" href="$class_general_user.html#a6e925cd06072bd816afe987314c96657" title="GeneralUser::requestAttended" alt="" coords="206,71,405,97"/>
+<area shape="rect" id="node4" href="$class_smart_user.html#abbd4fcf7b2b6fae50ba128e37e18c656" title="SmartUser::requestAttended" alt="" coords="211,121,399,148"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="PortAddressTranslation::pat_connectionStablished" name="PortAddressTranslation::pat_connectionStablished">
+<area shape="rect" id="node2" href="$class_local_net_manager.html#abf780f6b38fd3f80365145cf5ba2b4a6" title="LocalNetManager::connection\lStablished" alt="" coords="232,5,427,46"/>
+<area shape="rect" id="node3" href="$class_port_address_translation.html#a4f52609d2799263fc85e250013459a1d" title="PortAddressTranslation\l::portForwarding" alt="" coords="250,70,409,111"/>
+</map>

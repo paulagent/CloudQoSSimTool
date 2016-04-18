@@ -1,0 +1,4 @@
+<map id="RAMmemory::getMemoryOccupation" name="RAMmemory::getMemoryOccupation">
+<area shape="rect" id="node2" href="$class_memory_meter_core.html#ab9134011f927b95e29a2c5e50bcc91c3" title="MemoryMeterCore::getInstant\lConsumption" alt="" coords="294,5,490,46"/>
+<area shape="rect" id="node3" href="$class_memory_meter_core.html#ab00762920bd30c9321f591c018327759" title="MemoryMeterCore::getEnergy\lConsumed" alt="" coords="293,70,491,111"/>
+</map>

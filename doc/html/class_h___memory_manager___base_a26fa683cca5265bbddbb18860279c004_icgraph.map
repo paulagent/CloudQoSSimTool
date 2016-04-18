@@ -1,0 +1,5 @@
+<map id="H_MemoryManager_Base::getVMGateIdx" name="H_MemoryManager_Base::getVMGateIdx">
+<area shape="rect" id="node2" href="$class_h___memory_manager___base.html#a8ddc64ac0f9903c52f44ab8731992d5f" title="H_MemoryManager_Base\l::sendMemoryMessage" alt="" coords="227,63,400,105"/>
+<area shape="rect" id="node3" href="$class_h___memory_manager___base.html#a0795a8236b996e2db0f537d39a0caebb" title="H_MemoryManager_Base\l::getNumberOfVMs" alt="" coords="477,5,651,46"/>
+<area shape="rect" id="node4" href="$class_h___m_e_m___s_c_h_e_d___f_i_f_o.html#a429ef55539972258b095fe6234e9ca80" title="H_MEM_SCHED_FIFO::scheduling\lMemory" alt="" coords="448,70,680,111"/>
+</map>

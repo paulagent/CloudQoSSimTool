@@ -1,0 +1,10 @@
+<map id="UserManagement::tenant" name="UserManagement::tenant">
+<area shape="rect" id="node2" href="$class_abstract_user.html" title="AbstractUser" alt="" coords="1523,499,1621,525"/>
+<area shape="rect" id="node3" href="$classuser_storage.html" title="userStorage" alt="" coords="1342,439,1434,465"/>
+<area shape="rect" id="node4" href="$classuser_base.html" title="userBase" alt="" coords="1056,235,1133,261"/>
+<area shape="rect" id="node5" href="$classqueues_manager.html" title="queuesManager" alt="" coords="701,235,816,261"/>
+<area shape="rect" id="node6" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="319,219,433,245"/>
+<area shape="rect" id="node14" href="$class_requests_management.html" title="RequestsManagement" alt="" coords="682,184,835,211"/>
+<area shape="rect" id="node10" href="$class_job_queue.html" title="JobQueue" alt="" coords="335,433,417,460"/>
+<area shape="rect" id="node13" href="$class_cfg_m_p_i.html" title="CfgMPI" alt="" coords="725,336,792,363"/>
+</map>

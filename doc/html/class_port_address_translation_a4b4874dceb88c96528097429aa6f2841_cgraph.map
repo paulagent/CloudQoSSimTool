@@ -1,0 +1,5 @@
+<map id="PortAddressTranslation::pat_closeConnection" name="PortAddressTranslation::pat_closeConnection">
+<area shape="rect" id="node2" href="$class_vm___virtual_port___cell.html#a225d1b5bdd87ff5b309f3a9554df43fd" title="Vm_VirtualPort_Cell\l::getConnectionID" alt="" coords="239,5,379,46"/>
+<area shape="rect" id="node3" href="$class_vm___virtual_port___cell.html#abe8ee63ce365ba5fcf2b0aabd1d37ae7" title="Vm_VirtualPort_Cell\l::deletePort_byConnectionID" alt="" coords="214,70,405,111"/>
+<area shape="rect" id="node4" href="$class_vm___virtual_port___cell.html#ab777caffeee7329d725fec2848f61303" title="Vm_VirtualPort_Cell\l::getRealPort" alt="" coords="239,135,379,177"/>
+</map>

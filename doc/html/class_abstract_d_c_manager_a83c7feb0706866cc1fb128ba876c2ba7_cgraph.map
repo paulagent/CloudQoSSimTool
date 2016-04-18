@@ -1,0 +1,6 @@
+<map id="AbstractDCManager::bookComputeResources" name="AbstractDCManager::bookComputeResources">
+<area shape="rect" id="node2" href="$class_data_center_a_p_i.html#ad935cf91e7d7ee25397a3da579080022" title="DataCenterAPI::getNodeBy\lIndex" alt="" coords="221,5,405,46"/>
+<area shape="rect" id="node4" href="$class_machine.html#ab02dbcb3ade7270525aa499cc9a51d59" title="Machine::getNumCores" alt="" coords="233,71,393,97"/>
+<area shape="rect" id="node3" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="453,5,648,46"/>
+<area shape="rect" id="node5" href="$classelement_type.html#ae9227bab3cdef174355ff6709ae69be7" title="elementType::getNumCores" alt="" coords="457,71,644,97"/>
+</map>

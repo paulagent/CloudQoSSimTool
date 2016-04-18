@@ -1,0 +1,9 @@
+<map id="HWEnergyInterface::e_getStatesSize" name="HWEnergyInterface::e_getStatesSize">
+<area shape="rect" id="node2" href="$class_c_p_u_controller.html#a1e1369acbb10aa0a6669fada835a6351" title="CPUController::e_getStatesSize" alt="" coords="200,41,411,68"/>
+<area shape="rect" id="node3" href="$class_c_p_u_controller.html#abc623f47f9e7f1b61917a8406b0d39b8" title="CPUController::processResponse\lMessage" alt="" coords="459,5,679,46"/>
+<area shape="rect" id="node4" href="$class_i_core.html#a86340e9ae50b1c8c8f161abcd33b14c5" title="ICore::e_getStatesSize" alt="" coords="490,71,649,97"/>
+<area shape="rect" id="node5" href="$class_c_p_ucore.html#a580d55c4a9ac3118e50ccc0724f8dc1b" title="CPUcore::changeState" alt="" coords="728,45,885,72"/>
+<area shape="rect" id="node8" href="$class_i_core.html#ab3890b01dfa2b9e338e2cc36187ef4d5" title="ICore::numInitStages" alt="" coords="733,96,880,123"/>
+<area shape="rect" id="node6" href="$class_c_p_ucore.html#aa70ca68f21cb2f05017ea1d93801c008" title="CPUcore::changeDeviceState" alt="" coords="934,20,1133,47"/>
+<area shape="rect" id="node7" href="$class_c_p_ucore.html#a4697f7c61f12c80b1f2777ec9341728b" title="CPUcore::numInitStages" alt="" coords="1181,45,1349,72"/>
+</map>

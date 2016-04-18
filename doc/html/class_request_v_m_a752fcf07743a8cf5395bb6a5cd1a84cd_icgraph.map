@@ -1,0 +1,6 @@
+<map id="RequestVM::cleanSelectionType" name="RequestVM::cleanSelectionType">
+<area shape="rect" id="node2" href="$class_abstract_cloud_manager.html#ae135ac35f047a6e551e7a5df648de593" title="AbstractCloudManager\l::request_start_vm" alt="" coords="267,70,421,111"/>
+<area shape="rect" id="node3" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="492,5,641,46"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="492,70,641,111"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="469,136,664,163"/>
+</map>

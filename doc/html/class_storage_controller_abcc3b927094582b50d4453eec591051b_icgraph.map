@@ -1,0 +1,5 @@
+<map id="StorageController::e_changeState" name="StorageController::e_changeState">
+<area shape="rect" id="node2" href="$class_i_storage_device.html#a5bbc0bdcd70f603bfe7c7e82a3d461a6" title="IStorageDevice::e_change\lState" alt="" coords="187,5,363,46"/>
+<area shape="rect" id="node4" href="$class_storage_controller.html#acbd2af05364d1e660b9f056e373954da" title="StorageController::\lprocessResponseMessage" alt="" coords="185,70,365,111"/>
+<area shape="rect" id="node3" href="$class_i_storage_device.html#afd4eb2c317ebc188cd41ca4120c23d2b" title="IStorageDevice::numInitStages" alt="" coords="414,12,618,39"/>
+</map>

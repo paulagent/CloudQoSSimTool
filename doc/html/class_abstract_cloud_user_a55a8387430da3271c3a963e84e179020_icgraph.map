@@ -1,0 +1,9 @@
+<map id="AbstractCloudUser::vmHasStorageRequests" name="AbstractCloudUser::vmHasStorageRequests">
+<area shape="rect" id="node2" href="$class_abstract_cloud_user.html#aa4013a707e23684ced34698e584121e8" title="AbstractCloudUser::\lexecutePendingJobs" alt="" coords="246,70,389,111"/>
+<area shape="rect" id="node7" href="$class_abstract_cloud_user.html#a2bd801b9a9f60c39d9fe8da557b6d348" title="AbstractCloudUser::\lnotify_UserRequestAttendeed" alt="" coords="219,5,416,46"/>
+<area shape="rect" id="node8" href="$class_abstract_cloud_user.html#a9ae861b649d7ba01f3aa96429a6abd90" title="AbstractCloudUser::\lnotify_UserRequestError" alt="" coords="234,135,401,177"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_user.html#af610b90ac259bb4034c3234cc0d74e2f" title="AbstractCloudUser::\lprocessSelfMessage" alt="" coords="492,70,636,111"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="493,5,635,46"/>
+<area shape="rect" id="node5" href="$class_general_user.html#a6e925cd06072bd816afe987314c96657" title="GeneralUser::requestAttended" alt="" coords="465,136,663,163"/>
+<area shape="rect" id="node6" href="$class_smart_user.html#abbd4fcf7b2b6fae50ba128e37e18c656" title="SmartUser::requestAttended" alt="" coords="470,187,658,213"/>
+</map>

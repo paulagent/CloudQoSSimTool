@@ -1,0 +1,14 @@
+<map id="LocalNetManager::manage_close_single_connection" name="LocalNetManager::manage_close_single_connection">
+<area shape="rect" id="node2" href="$class_port_address_translation.html#a4b4874dceb88c96528097429aa6f2841" title="PortAddressTranslation\l::pat_closeConnection" alt="" coords="258,103,417,145"/>
+<area shape="rect" id="node6" href="$class_network_manager.html#aa0d82747230fc1ff091d8f9d7ea0221d" title="NetworkManager::freePortOfVM" alt="" coords="233,201,442,228"/>
+<area shape="rect" id="node8" href="$class_port_address_translation.html#a79947df7bb002fd1c603b0797c34f23d" title="PortAddressTranslation\l::pat_closeVM" alt="" coords="258,350,417,391"/>
+<area shape="rect" id="node3" href="$class_vm___virtual_port___cell.html#a225d1b5bdd87ff5b309f3a9554df43fd" title="Vm_VirtualPort_Cell\l::getConnectionID" alt="" coords="517,5,657,46"/>
+<area shape="rect" id="node4" href="$class_vm___virtual_port___cell.html#abe8ee63ce365ba5fcf2b0aabd1d37ae7" title="Vm_VirtualPort_Cell\l::deletePort_byConnectionID" alt="" coords="491,70,682,111"/>
+<area shape="rect" id="node5" href="$class_vm___virtual_port___cell.html#ab777caffeee7329d725fec2848f61303" title="Vm_VirtualPort_Cell\l::getRealPort" alt="" coords="517,135,657,177"/>
+<area shape="rect" id="node7" href="$class_port_table.html#a88171056e5ca88bcbc8b6c430f2fa848" title="PortTable::freePort" alt="" coords="521,201,653,228"/>
+<area shape="rect" id="node9" href="$class_user___virtual_port___cell.html#abe74ec85522c3982aa8462a35e0736af" title="User_VirtualPort_Cell\l::searchVM" alt="" coords="513,253,661,294"/>
+<area shape="rect" id="node10" href="$class_vm___virtual_port___cell.html#a41182eba6b4238eeb614e891233c48ae" title="Vm_VirtualPort_Cell\l::getAllRPorts" alt="" coords="517,318,657,359"/>
+<area shape="rect" id="node11" href="$class_vm___virtual_port___cell.html#a39234605f1df2a029dac31a8fbf35a5a" title="Vm_VirtualPort_Cell\l::getAllConnectionIDs" alt="" coords="511,383,662,425"/>
+<area shape="rect" id="node12" href="$class_user___virtual_port___cell.html#ab290868966d8ffee1c8eb121bf53af88" title="User_VirtualPort_Cell\l::eraseVM" alt="" coords="513,449,661,490"/>
+<area shape="rect" id="node13" href="$class_user___virtual_port___cell.html#a8ba07f1118b8f3c112317927bc5dc97e" title="User_VirtualPort_Cell\l::getVM_Size" alt="" coords="513,514,661,555"/>
+</map>

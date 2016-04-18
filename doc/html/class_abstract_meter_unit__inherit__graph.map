@@ -1,0 +1,6 @@
+<map id="AbstractMeterUnit" name="AbstractMeterUnit">
+<area shape="rect" id="node3" href="$class_c_p_u_meter_core.html" title="CPUMeterCore" alt="" coords="5,155,116,181"/>
+<area shape="rect" id="node4" href="$class_memory_meter_core.html" title="MemoryMeterCore" alt="" coords="141,155,271,181"/>
+<area shape="rect" id="node5" href="$class_network_meter_core.html" title="NetworkMeterCore" alt="" coords="297,155,428,181"/>
+<area shape="rect" id="node6" href="$class_storage_meter_core.html" title="StorageMeterCore" alt="" coords="453,155,581,181"/>
+</map>

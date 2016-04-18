@@ -1,0 +1,32 @@
+<map id="Management/DataCenterManagement/AbstractDCManager.cc" name="Management/DataCenterManagement/AbstractDCManager.cc">
+<area shape="rect" id="node2" href="$_abstract_d_c_manager_8h.html" title="AbstractDCManager.h" alt="" coords="920,96,1072,123"/>
+<area shape="rect" id="node4" href="$_network_manager_8h.html" title="NetworkManager.h" alt="" coords="534,245,665,272"/>
+<area shape="rect" id="node37" href="$_data_center_a_p_i_8h.html" title="DataCenterAPI.h" alt="" coords="1427,245,1549,272"/>
+<area shape="rect" id="node40" href="$_storage_management_8h.html" title="StorageManagement.h" alt="" coords="1249,245,1401,272"/>
+<area shape="rect" id="node42" href="$_requests_management_8h.html" title="RequestsManagement.h" alt="" coords="1009,245,1172,272"/>
+<area shape="rect" id="node43" href="$_user_management_8h.html" title="UserManagement.h" alt="" coords="855,171,989,197"/>
+<area shape="rect" id="node45" href="$cfg_data_center_8h.html" title="cfgDataCenter.h" alt="" coords="145,403,263,429"/>
+<area shape="rect" id="node46" href="$_node_8h.html" title="Node.h" alt="" coords="2425,245,2489,272"/>
+<area shape="rect" id="node5" href="$_virtual_i_p_cell_8h.html" title="VirtualIPCell.h" alt="" coords="280,320,387,347"/>
+<area shape="rect" id="node10" href="$icancloud___base_8h.html" title="icancloud_Base.h" alt="" coords="1281,320,1407,347"/>
+<area shape="rect" id="node36" href="$_port_table_8h.html" title="PortTable.h" alt="" coords="403,403,492,429"/>
+<area shape="rect" id="node6" href="$_virtual_i_ps_8h.html" title="VirtualIPs.h" alt="" coords="288,403,379,429"/>
+<area shape="rect" id="node11" href="$icancloud__types_8h.html" title="icancloud_types.h" alt="" coords="207,485,333,512"/>
+<area shape="rect" id="node14" href="$icancloud___app___i_o___message_8h.html" title="icancloud_App_IO_Message.h" alt="" coords="1261,403,1459,429"/>
+<area shape="rect" id="node15" href="$icancloud___app___c_p_u___message_8h.html" title="icancloud_App_CPU_Message.h" alt="" coords="1483,403,1697,429"/>
+<area shape="rect" id="node16" href="$icancloud___app___m_e_m___message_8h.html" title="icancloud_App_MEM_Message.h" alt="" coords="1723,403,1939,429"/>
+<area shape="rect" id="node17" href="$icancloud___app___n_e_t___message_8h.html" title="icancloud_App_NET_Message.h" alt="" coords="2207,403,2419,429"/>
+<area shape="rect" id="node18" href="$icancloud___m_p_i___message_8h.html" title="icancloud_MPI_Message.h" alt="" coords="2444,403,2623,429"/>
+<area shape="rect" id="node19" href="$icancloud___migration___message_8h.html" title="icancloud_Migration\l_Message.h" alt="" coords="2647,395,2784,437"/>
+<area shape="rect" id="node20" href="$icancloud___block_list___message_8h.html" title="icancloud_BlockList\l_Message.h" alt="" coords="2809,395,2948,437"/>
+<area shape="rect" id="node21" href="$c_gate_manager_8h.html" title="cGateManager.h" alt="" coords="2014,403,2132,429"/>
+<area shape="rect" id="node33" href="$_constants_8h.html" title="Constants.h" alt="" coords="511,485,604,512"/>
+<area shape="rect" id="node34" href="$_i_c_c_log_8h.html" title="ICCLog.h" alt="" coords="849,403,927,429"/>
+<area shape="rect" id="node35" href="$_memoization__uthash_8h.html" title="Memoization_uthash.h" alt="" coords="619,403,772,429"/>
+<area shape="rect" id="node38" href="$_machines_map_8h.html" title="MachinesMap.h" alt="" coords="1569,320,1684,347"/>
+<area shape="rect" id="node39" href="$_abstract_node_8h.html" title="AbstractNode.h" alt="" coords="1431,320,1544,347"/>
+<area shape="rect" id="node41" href="$_request_8h.html" title="Request.h" alt="" coords="1003,403,1084,429"/>
+<area shape="rect" id="node44" href="$_abstract_user_generator_8h.html" title="AbstractUserGenerator.h" alt="" coords="818,245,984,272"/>
+<area shape="rect" id="node47" href="$_energy_meter_controller_8h.html" title="EnergyMeterController.h" alt="" coords="2972,403,3135,429"/>
+<area shape="rect" id="node49" href="$_element_type_8h.html" title="ElementType.h" alt="" coords="2583,320,2693,347"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter" name="EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter">
+<area shape="rect" id="node2" href="dir_30f33d4570da9bf380ace93e93637c4e.html" title="CPUMeter" alt="" coords="417,63,500,111"/>
+<area shape="rect" id="node6" href="dir_98e5f461aea88ebfa81ac745da96d3e0.html" title="Architecture" alt="" coords="354,159,445,207"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000081_000012.html" title="1" alt="" coords="427,140,435,155"/>
+<area shape="rect" id="node3" href="dir_56bd7b65a3dfc3427a7f39843eda8297.html" title="MemoryMeter" alt="" coords="290,63,392,111"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000083_000012.html" title="1" alt="" coords="379,131,387,146"/>
+<area shape="rect" id="node4" href="dir_611ec6ea12c96a40797795bc2464fa85.html" title="NetworkMeter" alt="" coords="161,63,265,111"/>
+<area shape="rect" id="node5" href="dir_0d89a1ddecf9fb1822560c7119b8f563.html" title="StorageMeter" alt="" coords="37,63,136,111"/>
+<area shape="rect" id="clust2" href="dir_71d8a6647a1cbd55629f9e3acf9d322d.html" alt="" coords="27,52,664,121"/>
+<area shape="rect" id="clust1" href="dir_7de35672e8ba74ea2ca4ab7cd2f0bffc.html" title="EnergyMeterUnit" alt="" coords="16,16,675,132"/>
+</map>

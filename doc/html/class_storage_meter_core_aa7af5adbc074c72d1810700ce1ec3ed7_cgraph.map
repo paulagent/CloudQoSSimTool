@@ -1,0 +1,4 @@
+<map id="StorageMeterCore::initialize" name="StorageMeterCore::initialize">
+<area shape="rect" id="node2" href="$class_abstract_meter_unit.html#a286f1940534a694b28d8f3b2127a9c8d" title="AbstractMeterUnit::\linitialize" alt="" coords="237,5,373,46"/>
+<area shape="rect" id="node3" href="$class_energy_state.html#a02c729b0649d3ebd12ce3eb19c539b53" title="EnergyState::setState" alt="" coords="422,12,573,39"/>
+</map>

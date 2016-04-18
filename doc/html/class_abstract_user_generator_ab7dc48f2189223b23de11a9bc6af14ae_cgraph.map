@@ -1,0 +1,9 @@
+<map id="AbstractUserGenerator::initialize" name="AbstractUserGenerator::initialize">
+<area shape="rect" id="node2" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="214,12,383,39"/>
+<area shape="rect" id="node4" href="$classjob_base.html#a9f6616a770b1712774d98d998fa5ff66" title="jobBase::setOriginalName" alt="" coords="211,63,386,89"/>
+<area shape="rect" id="node5" href="$classjob_base.html#a103c163cad1221bf48b4aa02d722e09c" title="jobBase::setAppType" alt="" coords="225,113,372,140"/>
+<area shape="rect" id="node6" href="$classjob_base.html#ae99ed4856395930cb37fccef96892661" title="jobBase::setNumCopies" alt="" coords="217,164,381,191"/>
+<area shape="rect" id="node7" href="$classjob_base.html#ac37584e93580eb38713ca7bad85c00a3" title="jobBase::setFSElement" alt="" coords="219,215,379,241"/>
+<area shape="rect" id="node8" href="$classjob_base.html#ad4482c5ef4a71c13f9803837241b93b5" title="jobBase::setPreloadFile" alt="" coords="219,265,379,292"/>
+<area shape="rect" id="node3" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="435,5,629,46"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="AbstractRequest" name="AbstractRequest">
+<area shape="rect" id="node2" href="$class_physical_resources_request.html" title="PhysicalResourcesRequest" alt="" coords="5,80,189,107"/>
+<area shape="rect" id="node3" href="$class_request_base.html" title="RequestBase" alt="" coords="213,80,315,107"/>
+<area shape="rect" id="node4" href="$class_request_v_m.html" title="RequestVM" alt="" coords="339,80,429,107"/>
+<area shape="rect" id="node5" href="$class_storage_request.html" title="StorageRequest" alt="" coords="454,80,569,107"/>
+</map>

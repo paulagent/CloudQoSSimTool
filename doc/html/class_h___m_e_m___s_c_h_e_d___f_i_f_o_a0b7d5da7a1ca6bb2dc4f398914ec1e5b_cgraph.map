@@ -1,0 +1,7 @@
+<map id="H_MEM_SCHED_FIFO::setVM" name="H_MEM_SCHED_FIFO::setVM">
+<area shape="rect" id="node2" href="$class_h___memory_manager___base.html#a187b7d888569f1aafcfa69c4567c6fca" title="H_MemoryManager_Base\l::setVM" alt="" coords="261,49,435,90"/>
+<area shape="rect" id="node3" href="$classc_gate_manager.html#ad566e09aa1825fb442c21cd2140c0800" title="cGateManager::newGate" alt="" coords="491,5,658,32"/>
+<area shape="rect" id="node5" href="$classc_gate_manager.html#ab2a45f184a5ac8750b03015466ba1cce" title="cGateManager::connectOut" alt="" coords="483,56,666,83"/>
+<area shape="rect" id="node6" href="$classc_gate_manager.html#a59f97bc1fc8cc23f7e9f28534b2fd948" title="cGateManager::connectIn" alt="" coords="489,107,661,133"/>
+<area shape="rect" id="node4" href="$classc_gate_manager.html#a15d49d0ee407cd043d07322c762095d7" title="cGateManager::linkGate" alt="" coords="715,5,877,32"/>
+</map>

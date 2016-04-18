@@ -1,0 +1,4 @@
+<map id="PortAddressTranslation::pat_arrivesIncomingConnection" name="PortAddressTranslation::pat_arrivesIncomingConnection">
+<area shape="rect" id="node2" href="$class_vm___virtual_port___cell.html#a713af7ea37409473e8733d9ec37ec620" title="Vm_VirtualPort_Cell\l::setConnectionID" alt="" coords="267,5,407,46"/>
+<area shape="rect" id="node3" href="$class_vm___virtual_port___cell.html#ab777caffeee7329d725fec2848f61303" title="Vm_VirtualPort_Cell\l::getRealPort" alt="" coords="267,70,407,111"/>
+</map>

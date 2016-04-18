@@ -1,0 +1,10 @@
+<map id="HWEnergyInterface::e_getConsumptionValue" name="HWEnergyInterface::e_getConsumptionValue">
+<area shape="rect" id="node2" href="$class_c_p_u_meter_core.html#a78166bc57bb7421bee3dcf620478aadb" title="CPUMeterCore::getInstant\lConsumption" alt="" coords="251,5,429,46"/>
+<area shape="rect" id="node3" href="$class_c_p_u_meter_core.html#af38c647ff1cb5ed9f315e4874ce2d845" title="CPUMeterCore::getEnergyConsumed" alt="" coords="219,71,461,97"/>
+<area shape="rect" id="node4" href="$class_memory_meter_core.html#ab9134011f927b95e29a2c5e50bcc91c3" title="MemoryMeterCore::getInstant\lConsumption" alt="" coords="242,122,438,163"/>
+<area shape="rect" id="node5" href="$class_memory_meter_core.html#ab00762920bd30c9321f591c018327759" title="MemoryMeterCore::getEnergy\lConsumed" alt="" coords="241,187,439,229"/>
+<area shape="rect" id="node6" href="$class_network_meter_core.html#af6f9f15cc4ab48fadd4002441aa363f2" title="NetworkMeterCore::getInstant\lConsumption" alt="" coords="241,253,439,294"/>
+<area shape="rect" id="node7" href="$class_network_meter_core.html#ae1ed95b3742a8d89d069759b728d340d" title="NetworkMeterCore::getEnergy\lConsumed" alt="" coords="241,318,439,359"/>
+<area shape="rect" id="node8" href="$class_storage_meter_core.html#a4933ac9f9db87e78da19a95ac89621ec" title="StorageMeterCore::getInstant\lConsumption" alt="" coords="243,383,437,425"/>
+<area shape="rect" id="node9" href="$class_storage_meter_core.html#a981e78a564b921d56075bd8f2531d53a" title="StorageMeterCore::getEnergy\lConsumed" alt="" coords="243,449,437,490"/>
+</map>

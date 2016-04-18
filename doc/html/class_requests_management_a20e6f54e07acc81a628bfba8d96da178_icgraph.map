@@ -1,0 +1,7 @@
+<map id="RequestsManagement::blockArrivalRequests" name="RequestsManagement::blockArrivalRequests">
+<area shape="rect" id="node2" href="$class_requests_management.html#ab83496bd48d4cff6b1c9624323d871f1" title="RequestsManagement\l::schedulerBlock" alt="" coords="209,34,362,75"/>
+<area shape="rect" id="node6" href="$class_requests_management.html#ad5910abd40dd8f6a26b0cf8f9cbd158c" title="RequestsManagement\l::schedulerUnblock" alt="" coords="209,99,362,141"/>
+<area shape="rect" id="node3" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="433,5,583,46"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="433,70,583,111"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="411,136,605,163"/>
+</map>

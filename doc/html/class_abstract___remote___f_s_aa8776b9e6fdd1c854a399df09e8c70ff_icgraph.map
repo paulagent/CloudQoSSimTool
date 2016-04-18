@@ -1,0 +1,9 @@
+<map id="Abstract_Remote_FS::equalCell" name="Abstract_Remote_FS::equalCell">
+<area shape="rect" id="node2" href="$class_abstract___remote___f_s.html#a8b649ee7ab6deb1df9c654d493362cdd" title="Abstract_Remote_FS\l::getServerCellPosition" alt="" coords="203,122,359,163"/>
+<area shape="rect" id="node8" href="$class_abstract___remote___f_s.html#aa0cdb23f77cd531cc7f7946ec7c6ccf4" title="Abstract_Remote_FS\l::getNumServers" alt="" coords="409,181,557,222"/>
+<area shape="rect" id="node3" href="$class_abstract_storage_cell.html#a2c91fe1240c48a0c82f558d1e15b010c" title="AbstractStorageCell\l::active_remote_storage" alt="" coords="605,5,768,46"/>
+<area shape="rect" id="node6" href="$class_abstract_storage_cell.html#a2a92254d19b21ed673fa078e3f2b9af6" title="AbstractStorageCell\l::getRemoteStorage" alt="" coords="413,63,552,105"/>
+<area shape="rect" id="node7" href="$class_abstract_storage_cell.html#adc012fa32e50b46fb2d03a82a3e06130" title="AbstractStorageCell\l::sendRemoteRequest" alt="" coords="610,122,763,163"/>
+<area shape="rect" id="node4" href="$class_storage__cell__basic.html#a0e80722cf8eba1834f62ee83e8606891" title="Storage_cell_basic\l::setRemoteData" alt="" coords="817,5,949,46"/>
+<area shape="rect" id="node5" href="$class_storage__cell__basic.html#abb0179b38ce19a4f0fd664936bdf4e2f" title="Storage_cell_basic\l::processResponseMessage" alt="" coords="998,63,1186,105"/>
+</map>

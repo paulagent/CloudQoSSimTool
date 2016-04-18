@@ -1,0 +1,4 @@
+<map id="CPUController::registerCore" name="CPUController::registerCore">
+<area shape="rect" id="node2" href="$class_c_p_u_controller.html#abc623f47f9e7f1b61917a8406b0d39b8" title="CPUController::processResponse\lMessage" alt="" coords="241,5,461,46"/>
+<area shape="rect" id="node3" href="$class_i_core.html#a14b59fb5fc242987c81ecb01b9ccd73f" title="ICore::initialize" alt="" coords="296,71,405,97"/>
+</map>

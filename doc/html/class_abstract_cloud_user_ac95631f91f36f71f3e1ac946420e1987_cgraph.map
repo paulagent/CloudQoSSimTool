@@ -1,0 +1,5 @@
+<map id="AbstractCloudUser::checkAllVMShutdown" name="AbstractCloudUser::checkAllVMShutdown">
+<area shape="rect" id="node2" href="$class_machines_map.html#a4395beb7c95115aeb8c3dac8c861fb09" title="MachinesMap::size" alt="" coords="251,5,386,32"/>
+<area shape="rect" id="node3" href="$class_machines_map.html#a49a2125748cb39c549c7b19820af7b27" title="MachinesMap::countOFFMachines" alt="" coords="206,56,431,83"/>
+<area shape="rect" id="node4" href="$class_machines_map.html#aae76fe9e577a5e8a74b01b4fee57b3fe" title="MachinesMap::getSetQuantity" alt="" coords="219,107,418,133"/>
+</map>

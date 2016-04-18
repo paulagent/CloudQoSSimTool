@@ -1,0 +1,17 @@
+<map id="JobResultsSet::toString" name="JobResultsSet::toString">
+<area shape="rect" id="node2" href="$class_job_results_set.html#a4cbfb9e2eb0c4f432bbe0e27ea1be7ff" title="JobResultsSet::getMachineType" alt="" coords="217,117,429,144"/>
+<area shape="rect" id="node3" href="$class_job_results_set.html#a5d687e576dd4c35eb09edfb464db79a0" title="JobResultsSet::dup" alt="" coords="478,117,615,144"/>
+<area shape="rect" id="node4" href="$class_abstract_user.html#a862261d945329b68d25e617ea1659acc" title="AbstractUser::notify\l_UserJobHasFinished" alt="" coords="681,70,831,111"/>
+<area shape="rect" id="node15" href="$class_abstract_cloud_user.html#a94b32e34be60793156ebdb366d358b93" title="AbstractCloudUser::\lnotify_UserJobHasFinished" alt="" coords="665,149,847,190"/>
+<area shape="rect" id="node5" href="$class_c_p_u___intensive.html#a5737d6bbe6a32e3d7d83e996c7761703" title="CPU_Intensive::changeState" alt="" coords="896,5,1088,32"/>
+<area shape="rect" id="node6" href="$class_server_application.html#ac48f34152e0febc0018c2ee677afd006" title="ServerApplication::\lchangeState" alt="" coords="926,57,1058,98"/>
+<area shape="rect" id="node7" href="$class_abstract_user.html#a2857c4576e8ce9329c19163fd6a9b19e" title="AbstractUser::startUser" alt="" coords="911,123,1073,149"/>
+<area shape="rect" id="node8" href="$class_user_management.html#af10518434b29363f15277af6ca37cb10" title="UserManagement::newUser" alt="" coords="1137,123,1322,149"/>
+<area shape="rect" id="node9" href="$class_abstract_d_c_manager.html#a5b99a5496d1b5b1d6990d369838eaabb" title="AbstractDCManager::\lnewUser" alt="" coords="1375,82,1524,123"/>
+<area shape="rect" id="node13" href="$class_abstract_user_generator.html#a3d326e10cbdb84c2f3e402d2cbea6767" title="AbstractUserGenerator\l::createUser" alt="" coords="1371,147,1527,189"/>
+<area shape="rect" id="node10" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="1580,82,1729,123"/>
+<area shape="rect" id="node11" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="1979,53,2133,94"/>
+<area shape="rect" id="node12" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="1781,82,1931,123"/>
+<area shape="rect" id="node14" href="$class_abstract_user_generator.html#a21db40646994fa324a8441c9e8b6d666" title="AbstractUserGenerator\l::processSelfMessage" alt="" coords="1577,147,1733,189"/>
+<area shape="rect" id="node16" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="921,174,1063,215"/>
+</map>

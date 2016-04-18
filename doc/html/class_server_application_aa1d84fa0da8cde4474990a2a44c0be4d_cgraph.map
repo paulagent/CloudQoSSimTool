@@ -1,0 +1,9 @@
+<map id="ServerApplication::initialize" name="ServerApplication::initialize">
+<area shape="rect" id="node2" href="$class_user_job.html#aa4d12c9fe1a67635008861dc5c9ec86c" title="UserJob::initialize" alt="" coords="233,12,359,39"/>
+<area shape="rect" id="node7" href="$class_job_results_set.html#a35ed592e5484935dc0f00a02ae16cec5" title="JobResultsSet::newJobResultSet" alt="" coords="187,63,405,89"/>
+<area shape="rect" id="node3" href="$classjob_base.html#a765de753584cf40713de92abda82963e" title="jobBase::initialize" alt="" coords="466,12,590,39"/>
+<area shape="rect" id="node4" href="$class_a_p_i___o_s.html#a4205c37a121aaf1a15eb15b8333cf1c7" title="API_OS::initialize" alt="" coords="651,12,776,39"/>
+<area shape="rect" id="node5" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="825,12,994,39"/>
+<area shape="rect" id="node6" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="1043,5,1237,46"/>
+<area shape="rect" id="node8" href="$class_job_results.html#ac7f3a49c043bda56a792faf41fb9678f" title="JobResults::getName" alt="" coords="453,63,603,89"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="NodeVL::initialize" name="NodeVL::initialize">
+<area shape="rect" id="node2" href="$class_node.html#aae071b74f8ad790ba8304f6e9c9258e1" title="Node::initialize" alt="" coords="179,261,287,288"/>
+<area shape="rect" id="node3" href="$class_abstract_node.html#a33a886e67f6c2d2fe765ea08400fad43" title="AbstractNode::initialize" alt="" coords="336,261,493,288"/>
+<area shape="rect" id="node4" href="$class_machine.html#ac6fe2d3fe1bb10e07b1482f9ffb2c93c" title="Machine::initialize" alt="" coords="542,261,669,288"/>
+<area shape="rect" id="node5" href="$classelement_type.html#a886597158975f743e148d722e6b531c6" title="elementType::setDiskSize" alt="" coords="728,5,904,32"/>
+<area shape="rect" id="node6" href="$classelement_type.html#abf092512897074870d4a63a5ae1a6af8" title="elementType::setMemorySize" alt="" coords="718,56,914,83"/>
+<area shape="rect" id="node7" href="$class_abstract_syscall_manager.html#ab2c89f55bda555df091b5a408ef3b6c4" title="AbstractSyscallManager\l::setFreeMemory" alt="" coords="734,107,898,149"/>
+<area shape="rect" id="node8" href="$classelement_type.html#a1003d8c3dab34fcc74d0ca48ef1b5ac1" title="elementType::getMemorySize" alt="" coords="718,173,914,200"/>
+<area shape="rect" id="node9" href="$class_abstract_syscall_manager.html#a4bad1ea627460b9bd0f1ec6824061179" title="AbstractSyscallManager\l::setFreeStorage" alt="" coords="734,225,898,266"/>
+<area shape="rect" id="node10" href="$classelement_type.html#abdc945e77830053a83ab70ae5b0b0744" title="elementType::getStorageSize" alt="" coords="719,291,913,317"/>
+<area shape="rect" id="node11" href="$classelement_type.html#a2491536e8117fdab9feb7ed7d8a72740" title="elementType::setNumCores" alt="" coords="723,341,909,368"/>
+<area shape="rect" id="node12" href="$classelement_type.html#abe197074b34c6cde5ef72f814a40e015" title="elementType::setNumStorage\lDevices" alt="" coords="718,393,914,434"/>
+<area shape="rect" id="node13" href="$classelement_type.html#ac040ab1d62b0c8160df57a9342855a7b" title="elementType::setType" alt="" coords="740,459,892,485"/>
+<area shape="rect" id="node14" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="731,509,901,536"/>
+<area shape="rect" id="node15" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="963,502,1157,543"/>
+</map>

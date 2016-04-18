@@ -1,0 +1,6 @@
+<map id="userStorage::createFSforJob" name="userStorage::createFSforJob">
+<area shape="rect" id="node2" href="$class_abstract_cloud_user.html#a6c98b369409d6a89d1feda03f7076ab1" title="AbstractCloudUser::\lcreateFSforJob" alt="" coords="243,63,384,105"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="439,5,580,46"/>
+<area shape="rect" id="node4" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="432,71,587,97"/>
+<area shape="rect" id="node5" href="$class_smart_user.html#a6ada9c455570130a2d96feedddfd9fe1" title="SmartUser::schedule" alt="" coords="437,121,582,148"/>
+</map>

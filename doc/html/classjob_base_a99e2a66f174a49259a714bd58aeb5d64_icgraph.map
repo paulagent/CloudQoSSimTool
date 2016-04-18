@@ -1,0 +1,5 @@
+<map id="jobBase::getOriginalName" name="jobBase::getOriginalName">
+<area shape="rect" id="node2" href="$class_user_job.html#a5d2f804e284aa9015a3cbd8940dcc27e" title="UserJob::cloneJob" alt="" coords="229,5,360,32"/>
+<area shape="rect" id="node3" href="$class_smart_user.html#a6af88653c8133b26043cf4bc56fe9894" title="SmartUser::selectJob" alt="" coords="408,5,557,32"/>
+<area shape="rect" id="node4" href="$class_smart_user.html#a6ada9c455570130a2d96feedddfd9fe1" title="SmartUser::schedule" alt="" coords="606,5,751,32"/>
+</map>

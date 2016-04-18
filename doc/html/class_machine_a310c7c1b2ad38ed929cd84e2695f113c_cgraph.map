@@ -1,0 +1,4 @@
+<map id="Machine::removeAllProcesses" name="Machine::removeAllProcesses">
+<area shape="rect" id="node2" href="$class_abstract_syscall_manager.html#a745899a173585ad0710291a3d44c6a8a" title="AbstractSyscallManager\l::removeAllProcesses" alt="" coords="254,5,418,46"/>
+<area shape="rect" id="node3" href="$class_abstract_syscall_manager.html#a5cae955bef0e5d336ddd7d9733649255" title="AbstractSyscallManager\l::removeProcess" alt="" coords="467,5,631,46"/>
+</map>

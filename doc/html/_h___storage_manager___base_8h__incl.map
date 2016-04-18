@@ -1,0 +1,19 @@
+<map id="Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h" name="Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h">
+<area shape="rect" id="node2" href="$icancloud___base_8h.html" title="icancloud_Base.h" alt="" coords="1589,184,1715,211"/>
+<area shape="rect" id="node49" href="$_abstract_storage_cell_8h.html" title="AbstractStorageCell.h" alt="" coords="953,109,1103,136"/>
+<area shape="rect" id="node3" href="$icancloud__types_8h.html" title="icancloud_types.h" alt="" coords="595,267,721,293"/>
+<area shape="rect" id="node8" href="$icancloud___app___i_o___message_8h.html" title="icancloud_App_IO_Message.h" alt="" coords="133,267,331,293"/>
+<area shape="rect" id="node10" href="$icancloud___app___c_p_u___message_8h.html" title="icancloud_App_CPU_Message.h" alt="" coords="3059,267,3273,293"/>
+<area shape="rect" id="node12" href="$icancloud___app___m_e_m___message_8h.html" title="icancloud_App_MEM_Message.h" alt="" coords="3309,267,3525,293"/>
+<area shape="rect" id="node14" href="$icancloud___app___n_e_t___message_8h.html" title="icancloud_App_NET_Message.h" alt="" coords="3565,267,3776,293"/>
+<area shape="rect" id="node16" href="$icancloud___m_p_i___message_8h.html" title="icancloud_MPI_Message.h" alt="" coords="3813,267,3992,293"/>
+<area shape="rect" id="node18" href="$icancloud___migration___message_8h.html" title="icancloud_Migration\l_Message.h" alt="" coords="4029,259,4165,301"/>
+<area shape="rect" id="node21" href="$icancloud___block_list___message_8h.html" title="icancloud_BlockList\l_Message.h" alt="" coords="356,259,495,301"/>
+<area shape="rect" id="node23" href="$c_gate_manager_8h.html" title="cGateManager.h" alt="" coords="1441,267,1559,293"/>
+<area shape="rect" id="node38" href="$_constants_8h.html" title="Constants.h" alt="" coords="1791,267,1884,293"/>
+<area shape="rect" id="node39" href="$_i_c_c_log_8h.html" title="ICCLog.h" alt="" coords="2629,267,2707,293"/>
+<area shape="rect" id="node44" href="$_memoization__uthash_8h.html" title="Memoization_uthash.h" alt="" coords="2198,267,2351,293"/>
+<area shape="rect" id="node4" href="$icancloud__debug_8h.html" title="icancloud_debug.h" alt="" coords="593,357,723,384"/>
+<area shape="rect" id="node47" href="$uthash_8h.html" title="uthash.h" alt="" coords="2513,357,2585,384"/>
+<area shape="rect" id="node50" href="$_abstract___remote___f_s_8h.html" title="Abstract_Remote_FS.h" alt="" coords="779,184,937,211"/>
+</map>

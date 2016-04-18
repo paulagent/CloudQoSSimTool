@@ -1,0 +1,4 @@
+<map id="AbstractNode::closeConnections" name="AbstractNode::closeConnections">
+<area shape="rect" id="node2" href="$class_syscall_manager.html#a23babb898c519d62471f4584872cc72d" title="SyscallManager::closeConnection" alt="" coords="270,5,490,32"/>
+<area shape="rect" id="node3" href="$class_remote_storage_app.html#a2b824e266be50b95ad0c963420a5e504" title="RemoteStorageApp::closeConnection" alt="" coords="539,5,781,32"/>
+</map>

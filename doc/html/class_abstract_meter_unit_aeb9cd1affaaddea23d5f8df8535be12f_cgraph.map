@@ -1,0 +1,14 @@
+<map id="AbstractMeterUnit::getEnergyAccumulated_and_reset" name="AbstractMeterUnit::getEnergyAccumulated_and_reset">
+<area shape="rect" id="node2" href="$class_abstract_meter_unit.html#abb73c2bf8cd5e44e83874155d78d3dc9" title="AbstractMeterUnit::\lgetEnergyConsumed" alt="" coords="223,221,367,262"/>
+<area shape="rect" id="node11" href="$class_abstract_meter_unit.html#a71d1fdb97b4799e2275fdb7d70425964" title="AbstractMeterUnit::\lresetAccumulatedEnergy" alt="" coords="211,449,379,490"/>
+<area shape="rect" id="node3" href="$class_h_w_energy_interface.html#ae5f79f37b1ca54f1a20a503765d6c4f9" title="HWEnergyInterface::\lgetStatesVector" alt="" coords="442,5,587,46"/>
+<area shape="rect" id="node4" href="$class_memo_support.html#a30172ed93d7e1a5ad053a434d29f88ee" title="MemoSupport::find" alt="" coords="449,71,581,97"/>
+<area shape="rect" id="node5" href="$class_h_w_energy_interface.html#a54c83ac6da102b7cd98ba21c12ffab1d" title="HWEnergyInterface::\lgetNumberOfComponents" alt="" coords="427,122,602,163"/>
+<area shape="rect" id="node7" href="$class_h_w_energy_interface.html#a40d1da0e1f1d5f7828ac0610d970bbb0" title="HWEnergyInterface::\lgetTotalVector" alt="" coords="442,187,587,229"/>
+<area shape="rect" id="node8" href="$class_abstract_meter_unit.html#a3f40b8e9af59a33263d411380b156e48" title="AbstractMeterUnit::\lprintStateVector" alt="" coords="447,253,583,294"/>
+<area shape="rect" id="node9" href="$class_h_w_energy_interface.html#a08384afe1fb425db8acda1d64715ffc0" title="HWEnergyInterface::\laccumulateConsumption" alt="" coords="431,318,598,359"/>
+<area shape="rect" id="node10" href="$class_h_w_energy_interface.html#a039e00b89fae2da1ccd890a499eb2c16" title="HWEnergyInterface::\lresetTotalVector" alt="" coords="442,383,587,425"/>
+<area shape="rect" id="node6" href="$class_h_w_energy_interface.html#a126eba8aa77f3e0d2326342243c7bdb3" title="HWEnergyInterface::\lloadComponent" alt="" coords="651,122,797,163"/>
+<area shape="rect" id="node12" href="$class_h_w_energy_interface.html#a46039b31b514df2f6ec2ba3d96f1e7cf" title="HWEnergyInterface::\lresetComponentHistory" alt="" coords="435,449,595,490"/>
+<area shape="rect" id="node13" href="$class_h_w_energy_interface.html#a9a6a90d8348acb3174cb1b2c70659ddd" title="HWEnergyInterface::\lresetAllHistory" alt="" coords="442,514,587,555"/>
+</map>

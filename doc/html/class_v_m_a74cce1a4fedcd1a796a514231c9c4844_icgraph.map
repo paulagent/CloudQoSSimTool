@@ -1,0 +1,7 @@
+<map id="VM::setManager" name="VM::setManager">
+<area shape="rect" id="node2" href="$class_abstract_cloud_user.html#a2bd801b9a9f60c39d9fe8da557b6d348" title="AbstractCloudUser::\lnotify_UserRequestAttendeed" alt="" coords="173,5,371,46"/>
+<area shape="rect" id="node4" href="$class_v_m.html#a905436f2fbd04561f7eaf947ba7099aa" title="VM::getLogState" alt="" coords="212,71,332,97"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="445,5,587,46"/>
+<area shape="rect" id="node5" href="$class_general_user.html#a0e9539a35a7e27e6ddca7442da6d58f5" title="GeneralUser::userFinalization" alt="" coords="419,71,613,97"/>
+<area shape="rect" id="node6" href="$class_smart_user.html#a984c804987c2bfee8d3c232370e9ee79" title="SmartUser::userFinalization" alt="" coords="424,121,608,148"/>
+</map>

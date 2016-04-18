@@ -1,0 +1,12 @@
+<map id="H_MemoryManager_Base::freeVM" name="H_MemoryManager_Base::freeVM">
+<area shape="rect" id="node2" href="$class_h___memory_manager___base.html#a0795a8236b996e2db0f537d39a0caebb" title="H_MemoryManager_Base\l::getNumberOfVMs" alt="" coords="247,5,420,46"/>
+<area shape="rect" id="node3" href="$class_h___m_e_m___s_c_h_e_d___f_i_f_o.html#a7c9f28500c71f92cb71ae2fa00f32f9e" title="H_MEM_SCHED_FIFO::freeVM" alt="" coords="227,71,439,97"/>
+<area shape="rect" id="node4" href="$class_hypervisor.html#ae663d39052762aa8efbd5b8f5f78d352" title="Hypervisor::freeResources" alt="" coords="244,121,423,148"/>
+<area shape="rect" id="node5" href="$class_node_v_l.html#aae49602b867b93b0baf5df33d2cd7e69" title="NodeVL::freeResources" alt="" coords="488,96,651,123"/>
+<area shape="rect" id="node6" href="$class_node_v_l.html#ac54a1b65f76db3e774fa8d1d6b3f86b1" title="NodeVL::unlinkVM" alt="" coords="504,147,635,173"/>
+<area shape="rect" id="node7" href="$class_abstract_cloud_manager.html#a6089291642ef82d3a9ccd8a7a71b7302" title="AbstractCloudManager\l::closeVMConnections" alt="" coords="699,139,853,181"/>
+<area shape="rect" id="node8" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="902,139,1063,181"/>
+<area shape="rect" id="node9" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="1135,74,1284,115"/>
+<area shape="rect" id="node10" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="1135,139,1284,181"/>
+<area shape="rect" id="node11" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="1112,205,1307,232"/>
+</map>

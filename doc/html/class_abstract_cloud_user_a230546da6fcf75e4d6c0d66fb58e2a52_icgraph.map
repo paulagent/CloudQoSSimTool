@@ -1,0 +1,6 @@
+<map id="AbstractCloudUser::deleteAllVMs" name="AbstractCloudUser::deleteAllVMs">
+<area shape="rect" id="node2" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="217,5,367,46"/>
+<area shape="rect" id="node3" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="217,70,367,111"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="195,136,389,163"/>
+<area shape="rect" id="node5" href="$class_abstract_cloud_user.html#a9ae861b649d7ba01f3aa96429a6abd90" title="AbstractCloudUser::\lnotify_UserRequestError" alt="" coords="209,187,375,229"/>
+</map>

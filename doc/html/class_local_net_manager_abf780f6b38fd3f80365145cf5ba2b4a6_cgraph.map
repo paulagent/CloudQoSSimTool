@@ -1,0 +1,7 @@
+<map id="LocalNetManager::connectionStablished" name="LocalNetManager::connectionStablished">
+<area shape="rect" id="node2" href="$class_port_address_translation.html#a4b2730df0b230150b1362fd07e842043" title="PortAddressTranslation\l::pat_connectionStablished" alt="" coords="257,70,436,111"/>
+<area shape="rect" id="node5" href="$class_network_manager.html#ac4892de69560ccbd71ad986d89305135" title="NetworkManager::registerPort" alt="" coords="249,136,445,163"/>
+<area shape="rect" id="node3" href="$class_vm___virtual_port___cell.html#a4a73d48f0f13654176174846fc18f82f" title="Vm_VirtualPort_Cell\l::setPort" alt="" coords="501,5,641,46"/>
+<area shape="rect" id="node4" href="$class_vm___virtual_port___cell.html#a713af7ea37409473e8733d9ec37ec620" title="Vm_VirtualPort_Cell\l::setConnectionID" alt="" coords="501,70,641,111"/>
+<area shape="rect" id="node6" href="$class_port_table.html#aba25bfd7964fca1e104e9b48f507b162" title="PortTable::registerPort" alt="" coords="494,136,647,163"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="Virtualization/Hypervisor/HypervisorManagers/H_CPUManager/H_CPUManager_Base.h" name="Virtualization/Hypervisor/HypervisorManagers/H_CPUManager/H_CPUManager_Base.h">
+<area shape="rect" id="node2" href="$icancloud___base_8h.html" title="icancloud_Base.h" alt="" coords="1400,109,1525,136"/>
+<area shape="rect" id="node3" href="$icancloud__types_8h.html" title="icancloud_types.h" alt="" coords="157,192,283,219"/>
+<area shape="rect" id="node8" href="$icancloud___app___i_o___message_8h.html" title="icancloud_App_IO_Message.h" alt="" coords="2539,192,2737,219"/>
+<area shape="rect" id="node10" href="$icancloud___app___c_p_u___message_8h.html" title="icancloud_App_CPU_Message.h" alt="" coords="2771,192,2985,219"/>
+<area shape="rect" id="node12" href="$icancloud___app___m_e_m___message_8h.html" title="icancloud_App_MEM_Message.h" alt="" coords="3029,192,3245,219"/>
+<area shape="rect" id="node14" href="$icancloud___app___n_e_t___message_8h.html" title="icancloud_App_NET_Message.h" alt="" coords="3309,192,3520,219"/>
+<area shape="rect" id="node16" href="$icancloud___m_p_i___message_8h.html" title="icancloud_MPI_Message.h" alt="" coords="3621,192,3800,219"/>
+<area shape="rect" id="node18" href="$icancloud___migration___message_8h.html" title="icancloud_Migration\l_Message.h" alt="" coords="3978,185,4115,226"/>
+<area shape="rect" id="node21" href="$icancloud___block_list___message_8h.html" title="icancloud_BlockList\l_Message.h" alt="" coords="4140,185,4279,226"/>
+<area shape="rect" id="node23" href="$c_gate_manager_8h.html" title="cGateManager.h" alt="" coords="946,192,1064,219"/>
+<area shape="rect" id="node38" href="$_constants_8h.html" title="Constants.h" alt="" coords="4303,192,4396,219"/>
+<area shape="rect" id="node39" href="$_i_c_c_log_8h.html" title="ICCLog.h" alt="" coords="2431,192,2509,219"/>
+<area shape="rect" id="node44" href="$_memoization__uthash_8h.html" title="Memoization_uthash.h" alt="" coords="1751,192,1904,219"/>
+<area shape="rect" id="node4" href="$icancloud__debug_8h.html" title="icancloud_debug.h" alt="" coords="36,283,165,309"/>
+<area shape="rect" id="node47" href="$uthash_8h.html" title="uthash.h" alt="" coords="1921,283,1993,309"/>
+</map>

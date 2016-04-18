@@ -1,0 +1,23 @@
+<map id="PhysicalResourcesRequest::compareReq" name="PhysicalResourcesRequest::compareReq">
+<area shape="rect" id="node2" href="$class_abstract_request.html#a37b1a6c4319602babb2cff3783b4e354" title="AbstractRequest::getOperation" alt="" coords="501,5,704,32"/>
+<area shape="rect" id="node3" href="$class_abstract_request.html#a456fbecf8d0084f2560349415941b4a6" title="AbstractRequest::getTimes\lEnqueue" alt="" coords="511,57,694,98"/>
+<area shape="rect" id="node4" href="$class_abstract_request.html#afec21c9951a45991bdfb29c8aabc252f" title="AbstractRequest::getState" alt="" coords="514,123,691,149"/>
+<area shape="rect" id="node5" href="$class_physical_resources_request.html#a0ab8f19be84a79b40e39eb9d8f996c18" title="PhysicalResourcesRequest\l::getSet" alt="" coords="245,478,429,519"/>
+<area shape="rect" id="node6" href="$class_abstract_request.html#a6a13b6a1fa42e0111170d1d831c553bc" title="AbstractRequest::getSPid" alt="" coords="515,173,690,200"/>
+<area shape="rect" id="node7" href="$class_physical_resources_request.html#afb4b8dc0b142589a756f86dcc0fdae19" title="PhysicalResourcesRequest\l::getIndex" alt="" coords="245,543,429,585"/>
+<area shape="rect" id="node8" href="$class_physical_resources_request.html#ab4faf519df8c3519212c2cb2d6b62e55" title="PhysicalResourcesRequest\l::getCores" alt="" coords="245,609,429,650"/>
+<area shape="rect" id="node9" href="$class_physical_resources_request.html#af0a31331b2294ea9b3dae9e6fcb51075" title="PhysicalResourcesRequest\l::getMemory" alt="" coords="245,674,429,715"/>
+<area shape="rect" id="node10" href="$class_physical_resources_request.html#ab50348f84ac6ac302d3fbe1662640b02" title="PhysicalResourcesRequest\l::getStorage" alt="" coords="245,739,429,781"/>
+<area shape="rect" id="node11" href="$class_physical_resources_request.html#a69a67a205459626e099143f8e86434e8" title="PhysicalResourcesRequest\l::getMessageID" alt="" coords="245,805,429,846"/>
+<area shape="rect" id="node12" href="$class_abstract_request.html#a7fbb51f4dcad0ccc9e6a5c451d442f0a" title="AbstractRequest::getPid" alt="" coords="520,477,685,504"/>
+<area shape="rect" id="node13" href="$class_abstract_request.html#a289694e1c3c6369f9f9462ce045634a1" title="AbstractRequest::getUid" alt="" coords="519,528,686,555"/>
+<area shape="rect" id="node14" href="$class_abstract_request.html#a3717b527f0951adea60938cd1d3786d6" title="AbstractRequest::getIp" alt="" coords="524,579,681,605"/>
+<area shape="rect" id="node15" href="$class_physical_resources_request.html#ad48765911dd9d2dcc2763d2e9752d689" title="PhysicalResourcesRequest\l::getStorageRequestsSize" alt="" coords="245,870,429,911"/>
+<area shape="rect" id="node16" href="$class_physical_resources_request.html#a8f12f3f32127972cac5032bb14e723f7" title="PhysicalResourcesRequest\l::getStorageRequest" alt="" coords="245,935,429,977"/>
+<area shape="rect" id="node17" href="$class_storage_request.html#a5b85fa05c094145441d50b609b5341a2" title="StorageRequest::compareReq" alt="" coords="238,275,437,301"/>
+<area shape="rect" id="node18" href="$class_storage_request.html#afa8cd25a673f48d0b2f23be186077849" title="StorageRequest::getConnectionSize" alt="" coords="485,275,720,301"/>
+<area shape="rect" id="node19" href="$class_storage_request.html#a75c87ecd73d7c11f5b6fd3a44e0a8341" title="StorageRequest::getFSPathsSize" alt="" coords="493,325,712,352"/>
+<area shape="rect" id="node20" href="$class_storage_request.html#ad5fbf00d0cfc293fb9f20aafe969de0b" title="StorageRequest::getNodeSetId" alt="" coords="501,376,705,403"/>
+<area shape="rect" id="node21" href="$class_storage_request.html#af7af26a472182d9b7d77b4c880fc225f" title="StorageRequest::getNodeId" alt="" coords="511,427,695,453"/>
+<area shape="rect" id="node22" href="$class_storage_request.html#aeb48be56794689faef17b545c014c832" title="StorageRequest::getPreloadSize" alt="" coords="497,224,709,251"/>
+</map>

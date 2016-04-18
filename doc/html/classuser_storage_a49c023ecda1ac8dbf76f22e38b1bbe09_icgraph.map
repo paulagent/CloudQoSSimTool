@@ -1,0 +1,14 @@
+<map id="userStorage::getLocalFSPaths" name="userStorage::getLocalFSPaths">
+<area shape="rect" id="node2" href="$classuser_storage.html#acdc0d4c89d7936748118c44fe2574f35" title="userStorage::generateStorage\lRequests" alt="" coords="253,95,448,137"/>
+<area shape="rect" id="node8" href="$classuser_storage.html#a265c72fc19adf45022af89c134ba88c5" title="userStorage::hasPendingStorage\lRequests" alt="" coords="496,154,709,195"/>
+<area shape="rect" id="node3" href="$classuser_storage.html#a61c3ac39e4b4f7f91b1045b73094a037" title="userStorage::createFSforJob" alt="" coords="508,100,697,127"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_user.html#a6c98b369409d6a89d1feda03f7076ab1" title="AbstractCloudUser::\lcreateFSforJob" alt="" coords="775,73,916,114"/>
+<area shape="rect" id="node5" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="999,5,1140,46"/>
+<area shape="rect" id="node6" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="992,71,1147,97"/>
+<area shape="rect" id="node7" href="$class_smart_user.html#a6ada9c455570130a2d96feedddfd9fe1" title="SmartUser::schedule" alt="" coords="997,121,1142,148"/>
+<area shape="rect" id="node9" href="$class_abstract_user.html#a913b227df55c67db628475e6d5dd6b0d" title="AbstractUser::hasPending\lRequests" alt="" coords="758,155,933,197"/>
+<area shape="rect" id="node10" href="$class_abstract_user.html#a09377586bac647d163bd76dca83c04a3" title="AbstractUser::finalizeUser" alt="" coords="981,172,1157,199"/>
+<area shape="rect" id="node11" href="$class_abstract_cloud_user.html#a86abdfa4bf45d42beda70b5df8b8d06f" title="AbstractCloudUser::\lfinalizeUser" alt="" coords="1205,165,1347,206"/>
+<area shape="rect" id="node12" href="$class_general_user.html#a6e925cd06072bd816afe987314c96657" title="GeneralUser::requestAttended" alt="" coords="1395,147,1594,173"/>
+<area shape="rect" id="node13" href="$class_smart_user.html#abbd4fcf7b2b6fae50ba128e37e18c656" title="SmartUser::requestAttended" alt="" coords="1401,197,1589,224"/>
+</map>

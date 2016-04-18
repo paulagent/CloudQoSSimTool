@@ -1,0 +1,5 @@
+<map id="AbstractCloudUser::searchVmByPid" name="AbstractCloudUser::searchVmByPid">
+<area shape="rect" id="node2" href="$class_machines_map.html#a71574379174ff867765875ca98e91854" title="MachinesMap::getMapQuantity" alt="" coords="195,5,397,32"/>
+<area shape="rect" id="node3" href="$class_machines_map.html#aae76fe9e577a5e8a74b01b4fee57b3fe" title="MachinesMap::getSetQuantity" alt="" coords="197,56,395,83"/>
+<area shape="rect" id="node4" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="199,107,393,149"/>
+</map>

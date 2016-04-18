@@ -1,0 +1,17 @@
+<map id="H_NETManager_Base::getNumberOfVMs" name="H_NETManager_Base::getNumberOfVMs">
+<area shape="rect" id="node2" href="$class_h___n_e_t_manager___base.html#aee544c86312ad11e63b5f0475e0d3bc0" title="H_NETManager_Base::\l~H_NETManager_Base" alt="" coords="226,5,387,46"/>
+<area shape="rect" id="node3" href="$class_h___n_e_t_manager___base.html#a427fed15e8b4ef79c95b8c6c8d78a1b0" title="H_NETManager_Base::\linitialize" alt="" coords="226,70,387,111"/>
+<area shape="rect" id="node7" href="$class_h___n_e_t_manager___base.html#adaba8d26bd6a1b1cd75a6c234bdbedbd" title="H_NETManager_Base::\lfinish" alt="" coords="226,135,387,177"/>
+<area shape="rect" id="node9" href="$class_h___n_e_t_manager___base.html#a5e3bf2bd6de011f1f4c6156ea70d3ed1" title="H_NETManager_Base::\lprocessSelfMessage" alt="" coords="226,201,387,242"/>
+<area shape="rect" id="node10" href="$class_h___n_e_t_manager___base.html#a3b339564c034950ef9bdb45a82d5a819" title="H_NETManager_Base::\lprocessRequestMessage" alt="" coords="221,266,392,307"/>
+<area shape="rect" id="node11" href="$class_h___n_e_t_manager___base.html#a4e85349db893b6f20923bf1bc0e05043" title="H_NETManager_Base::\lgetOutGate" alt="" coords="226,331,387,373"/>
+<area shape="rect" id="node12" href="$class_h___n_e_t_manager___base.html#a09d0496014baec423df1ba33a9dfb481" title="H_NETManager_Base::\lprocessResponseMessage" alt="" coords="217,397,397,438"/>
+<area shape="rect" id="node13" href="$class_h___n_e_t_manager___base.html#a0995c8c5fedc2279788ec0867b8e922f" title="H_NETManager_Base::\lenqueuePendingMessage" alt="" coords="221,462,392,503"/>
+<area shape="rect" id="node14" href="$class_h___n_e_t_manager___base.html#a0cb3b62f2d2637e9638b3bb6fec44151" title="H_NETManager_Base::\lcheckPendingMessages" alt="" coords="225,527,389,569"/>
+<area shape="rect" id="node15" href="$class_h___n_e_t_manager___base.html#a7c8df4fd8a8d3cd19edaffaee5193166" title="H_NETManager_Base::\lgetGateByID" alt="" coords="226,593,387,634"/>
+<area shape="rect" id="node16" href="$class_h___n_e_t_manager___base.html#acb4fb31ede292ff6d319c40eb13b2db2" title="H_NETManager_Base::\lgetGateByVIP" alt="" coords="226,658,387,699"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="446,35,615,61"/>
+<area shape="rect" id="node6" href="$classc_gate_manager.html#a15d49d0ee407cd043d07322c762095d7" title="cGateManager::linkGate" alt="" coords="449,85,612,112"/>
+<area shape="rect" id="node5" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="664,27,859,69"/>
+<area shape="rect" id="node8" href="$classicancloud___base.html#a4001d96e9800634c359328b29438ec50" title="icancloud_Base::finish" alt="" coords="454,143,607,169"/>
+</map>

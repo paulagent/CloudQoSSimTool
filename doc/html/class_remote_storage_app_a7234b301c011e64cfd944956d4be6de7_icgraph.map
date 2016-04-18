@@ -1,0 +1,5 @@
+<map id="RemoteStorageApp::connect_to_storage_node" name="RemoteStorageApp::connect_to_storage_node">
+<area shape="rect" id="node2" href="$class_syscall_manager.html#aab8a8aeecc22370bfb45ae7d4108e57c" title="SyscallManager::connectTo\lRemoteStorage" alt="" coords="269,5,453,46"/>
+<area shape="rect" id="node3" href="$class_remote_storage_app.html#a94a0dfaa3f4842c4bf22e793d25abc6b" title="RemoteStorageApp::getStoragePort" alt="" coords="246,71,477,97"/>
+<area shape="rect" id="node4" href="$class_syscall_manager.html#a9f3cef609d00fad76746bc8e1597dcbc" title="SyscallManager::getRemote\lStoragePort" alt="" coords="525,63,712,105"/>
+</map>

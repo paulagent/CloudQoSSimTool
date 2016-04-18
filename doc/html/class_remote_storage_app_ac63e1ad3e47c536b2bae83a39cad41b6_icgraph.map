@@ -1,0 +1,6 @@
+<map id="RemoteStorageApp::createFilesToPreload" name="RemoteStorageApp::createFilesToPreload">
+<area shape="rect" id="node2" href="$class_syscall_manager.html#a8ee6883fd0f2382d11942572015cf6b7" title="SyscallManager::setRemote\lFiles" alt="" coords="257,5,444,46"/>
+<area shape="rect" id="node3" href="$class_syscall_manager.html#ad3dd5f9ab6360468b746125f29744e4d" title="SyscallManager::createLocal\lFiles" alt="" coords="255,70,446,111"/>
+<area shape="rect" id="node4" href="$class_remote_storage_app.html#a94a0dfaa3f4842c4bf22e793d25abc6b" title="RemoteStorageApp::getStoragePort" alt="" coords="235,136,466,163"/>
+<area shape="rect" id="node5" href="$class_syscall_manager.html#a9f3cef609d00fad76746bc8e1597dcbc" title="SyscallManager::getRemote\lStoragePort" alt="" coords="515,129,701,170"/>
+</map>

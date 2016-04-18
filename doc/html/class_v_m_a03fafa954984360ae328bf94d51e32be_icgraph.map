@@ -1,0 +1,6 @@
+<map id="VM::getPendingOperation" name="VM::getPendingOperation">
+<area shape="rect" id="node2" href="$class_general_user.html#a498e963f5d49f04e43b13c9fb0c87a4c" title="GeneralUser::selectResourcesJob" alt="" coords="225,5,447,32"/>
+<area shape="rect" id="node3" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="496,31,651,57"/>
+<area shape="rect" id="node4" href="$class_smart_user.html#a5e6d29105acb5b947d824e610bd06faf" title="SmartUser::selectResourcesJob" alt="" coords="230,107,442,133"/>
+<area shape="rect" id="node5" href="$class_smart_user.html#a6ada9c455570130a2d96feedddfd9fe1" title="SmartUser::schedule" alt="" coords="501,107,646,133"/>
+</map>

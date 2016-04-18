@@ -1,0 +1,6 @@
+<map id="Vm_VirtualPort_Cell::setConnectionID" name="Vm_VirtualPort_Cell::setConnectionID">
+<area shape="rect" id="node2" href="$class_port_address_translation.html#a5b0f1ac0ad5cb99834845313a9f232e2" title="PortAddressTranslation\l::pat_arrivesIncomingConnection" alt="" coords="195,5,408,46"/>
+<area shape="rect" id="node3" href="$class_port_address_translation.html#a4b2730df0b230150b1362fd07e842043" title="PortAddressTranslation\l::pat_connectionStablished" alt="" coords="212,70,391,111"/>
+<area shape="rect" id="node4" href="$class_local_net_manager.html#abf780f6b38fd3f80365145cf5ba2b4a6" title="LocalNetManager::connection\lStablished" alt="" coords="456,37,651,78"/>
+<area shape="rect" id="node5" href="$class_port_address_translation.html#a4f52609d2799263fc85e250013459a1d" title="PortAddressTranslation\l::portForwarding" alt="" coords="474,102,633,143"/>
+</map>

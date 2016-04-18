@@ -1,0 +1,15 @@
+<map id="icancloud_Base::divide" name="icancloud_Base::divide">
+<area shape="rect" id="node2" href="$classuser_storage.html#aa6f9d80aa119d1a7177c5892cb9c4066" title="userStorage::filterPreload\lFilesByFS" alt="" coords="211,125,381,166"/>
+<area shape="rect" id="node3" href="$classuser_storage.html#acdc0d4c89d7936748118c44fe2574f35" title="userStorage::generateStorage\lRequests" alt="" coords="429,95,624,137"/>
+<area shape="rect" id="node9" href="$classuser_storage.html#a265c72fc19adf45022af89c134ba88c5" title="userStorage::hasPendingStorage\lRequests" alt="" coords="672,154,885,195"/>
+<area shape="rect" id="node4" href="$classuser_storage.html#a61c3ac39e4b4f7f91b1045b73094a037" title="userStorage::createFSforJob" alt="" coords="684,100,873,127"/>
+<area shape="rect" id="node5" href="$class_abstract_cloud_user.html#a6c98b369409d6a89d1feda03f7076ab1" title="AbstractCloudUser::\lcreateFSforJob" alt="" coords="951,73,1092,114"/>
+<area shape="rect" id="node6" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="1175,5,1316,46"/>
+<area shape="rect" id="node7" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="1168,71,1323,97"/>
+<area shape="rect" id="node8" href="$class_smart_user.html#a6ada9c455570130a2d96feedddfd9fe1" title="SmartUser::schedule" alt="" coords="1173,121,1318,148"/>
+<area shape="rect" id="node10" href="$class_abstract_user.html#a913b227df55c67db628475e6d5dd6b0d" title="AbstractUser::hasPending\lRequests" alt="" coords="934,155,1109,197"/>
+<area shape="rect" id="node11" href="$class_abstract_user.html#a09377586bac647d163bd76dca83c04a3" title="AbstractUser::finalizeUser" alt="" coords="1157,172,1333,199"/>
+<area shape="rect" id="node12" href="$class_abstract_cloud_user.html#a86abdfa4bf45d42beda70b5df8b8d06f" title="AbstractCloudUser::\lfinalizeUser" alt="" coords="1381,165,1523,206"/>
+<area shape="rect" id="node13" href="$class_general_user.html#a6e925cd06072bd816afe987314c96657" title="GeneralUser::requestAttended" alt="" coords="1571,147,1770,173"/>
+<area shape="rect" id="node14" href="$class_smart_user.html#abbd4fcf7b2b6fae50ba128e37e18c656" title="SmartUser::requestAttended" alt="" coords="1577,197,1765,224"/>
+</map>

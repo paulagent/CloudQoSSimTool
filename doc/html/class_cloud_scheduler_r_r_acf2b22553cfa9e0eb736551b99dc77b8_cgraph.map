@@ -1,0 +1,14 @@
+<map id="CloudSchedulerRR::selectStorageNodes" name="CloudSchedulerRR::selectStorageNodes">
+<area shape="rect" id="node2" href="$class_storage_request.html#ae220bdb3b6706475d8515869430f8dd9" title="StorageRequest::getFsType" alt="" coords="251,5,437,32"/>
+<area shape="rect" id="node3" href="$class_allocation_management.html#a35cef0a4dee106f1be7d6a9813088e7f" title="AllocationManagement\l::getStorageNodesSize" alt="" coords="265,57,423,98"/>
+<area shape="rect" id="node4" href="$class_allocation_management.html#a5f2ac46607a8d7d1eab891688d6ea477" title="AllocationManagement\l::getStorageNode" alt="" coords="267,122,421,163"/>
+<area shape="rect" id="node5" href="$class_machine.html#a8cd8160fb7c38b7ed00c85cda2fec3fa" title="Machine::getFreeStorage" alt="" coords="260,188,428,215"/>
+<area shape="rect" id="node7" href="$class_machine.html#a6a5c423a9521ce86fb4cbc3c61abd5a2" title="Machine::getStorageCapacity" alt="" coords="247,239,441,265"/>
+<area shape="rect" id="node9" href="$class_allocation_management.html#ae250253042e7b37fb8970ec7cfaf57b6" title="AllocationManagement\l::updateVmManagementStructures" alt="" coords="232,290,456,331"/>
+<area shape="rect" id="node12" href="$class_abstract_request.html#a7fbb51f4dcad0ccc9e6a5c451d442f0a" title="AbstractRequest::getPid" alt="" coords="261,356,427,383"/>
+<area shape="rect" id="node13" href="$class_abstract_request.html#a289694e1c3c6369f9f9462ce045634a1" title="AbstractRequest::getUid" alt="" coords="261,407,427,433"/>
+<area shape="rect" id="node6" href="$class_abstract_syscall_manager.html#a6b19825b84794c578a84a90416b7a759" title="AbstractSyscallManager\l::getFreeStorage" alt="" coords="519,173,683,214"/>
+<area shape="rect" id="node8" href="$classelement_type.html#abdc945e77830053a83ab70ae5b0b0744" title="elementType::getStorageSize" alt="" coords="504,239,699,265"/>
+<area shape="rect" id="node10" href="$class_allocation_management.html#a7235a499735ed4a69d065fe0cf36f451" title="AllocationManagement\l::searchUserVMAllocation" alt="" coords="514,290,689,331"/>
+<area shape="rect" id="node11" href="$class_v_m_i_d.html#ac7d779232dc9af52c8c5723f4120325d" title="VMID::initialize" alt="" coords="546,356,657,383"/>
+</map>

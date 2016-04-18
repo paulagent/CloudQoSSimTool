@@ -1,0 +1,6 @@
+<map id="HWEnergyInterface::e_getStateName" name="HWEnergyInterface::e_getStateName">
+<area shape="rect" id="node2" href="$class_c_p_u_controller.html#ada33d2fb4dd337c542a1b1ac7c8ed310" title="CPUController::e_getStateName" alt="" coords="200,15,413,41"/>
+<area shape="rect" id="node4" href="$class_storage_controller.html#a11918957ddd1388d31689a126c1b5927" title="StorageController::\le_getStateName" alt="" coords="241,67,372,109"/>
+<area shape="rect" id="node3" href="$class_c_p_u_controller.html#abc623f47f9e7f1b61917a8406b0d39b8" title="CPUController::processResponse\lMessage" alt="" coords="462,5,682,46"/>
+<area shape="rect" id="node5" href="$class_storage_controller.html#acbd2af05364d1e660b9f056e373954da" title="StorageController::\lprocessResponseMessage" alt="" coords="482,70,662,111"/>
+</map>

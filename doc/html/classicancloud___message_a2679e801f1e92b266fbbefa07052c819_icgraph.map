@@ -1,0 +1,5 @@
+<map id="icancloud_Message::getCurrentRequest" name="icancloud_Message::getCurrentRequest">
+<area shape="rect" id="node2" href="$class_splitting_message_system.html#a698f038814ba15956f1c50004912ab57" title="SplittingMessageSystem\l::arrivesSubRequest" alt="" coords="201,38,367,79"/>
+<area shape="rect" id="node3" href="$class_n_f_s___storage___cell.html#ac894334453004fc516ed2777945daea7" title="NFS_Storage_Cell::arrives\lSubRequest" alt="" coords="416,5,595,46"/>
+<area shape="rect" id="node4" href="$class_p_f_s___storage___cell.html#ae82f44f523dd790bda2ebea9f93e969c" title="PFS_Storage_Cell::arrives\lSubRequest" alt="" coords="417,70,594,111"/>
+</map>

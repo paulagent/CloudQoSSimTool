@@ -1,0 +1,6 @@
+<map id="UserJob::getAppOwner" name="UserJob::getAppOwner">
+<area shape="rect" id="node2" href="$class_user_job.html#a8e290c294b4a9a78a30bf1a30c6bac72" title="UserJob::setMachine" alt="" coords="213,31,360,57"/>
+<area shape="rect" id="node3" href="$class_job_results_set.html#ab375dbf191bb49e2743fcba446793470" title="JobResultsSet::setMachineType" alt="" coords="409,5,621,32"/>
+<area shape="rect" id="node4" href="$class_machine.html#a81a5acbae0483ddf028038424d0080aa" title="Machine::getTypeName" alt="" coords="434,56,595,83"/>
+<area shape="rect" id="node5" href="$classelement_type.html#af325335e4afbe024ec32047afcc9ed06" title="elementType::getType" alt="" coords="669,56,821,83"/>
+</map>

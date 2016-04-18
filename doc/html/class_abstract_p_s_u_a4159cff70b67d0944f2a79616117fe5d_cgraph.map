@@ -1,0 +1,4 @@
+<map id="AbstractPSU::resetNodeEnergyConsumed" name="AbstractPSU::resetNodeEnergyConsumed">
+<area shape="rect" id="node2" href="$class_abstract_meter_unit.html#a2a7ed4552f88dc8953bc36c588143183" title="AbstractMeterUnit::\lresetConsumptionHistory" alt="" coords="261,5,432,46"/>
+<area shape="rect" id="node3" href="$class_h_w_energy_interface.html#a9a6a90d8348acb3174cb1b2c70659ddd" title="HWEnergyInterface::\lresetAllHistory" alt="" coords="481,5,626,46"/>
+</map>

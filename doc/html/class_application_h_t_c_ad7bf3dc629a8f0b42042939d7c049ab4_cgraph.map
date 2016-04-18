@@ -1,0 +1,10 @@
+<map id="ApplicationHTC::continueExecution" name="ApplicationHTC::continueExecution">
+<area shape="rect" id="node2" href="$classicancloud___base.html#a79bc49c379f5927058af0c2a2a668af2" title="icancloud_Base::showDebug\lMessage" alt="" coords="238,5,429,46"/>
+<area shape="rect" id="node5" href="$class_a_p_i___o_s.html#a8160b91d5190a7cbf2d78155d7aaaf31" title="API_OS::icancloud_request\l_create" alt="" coords="242,70,425,111"/>
+<area shape="rect" id="node6" href="$class_a_p_i___o_s.html#ac10df50ae63911ce866c52ba3175f9d3" title="API_OS::icancloud_request_open" alt="" coords="224,136,443,163"/>
+<area shape="rect" id="node7" href="$class_a_p_i___o_s.html#a91a0616165a3842200981f9e8b59880a" title="API_OS::icancloud_request_read" alt="" coords="226,187,441,213"/>
+<area shape="rect" id="node8" href="$class_a_p_i___o_s.html#af2e16ee29cc7ede3b98c1c91ce1559e2" title="API_OS::icancloud_request_cpu" alt="" coords="228,237,439,264"/>
+<area shape="rect" id="node9" href="$class_a_p_i___o_s.html#a552e5d550f6e3910f489b6fa7db7d49b" title="API_OS::icancloud_request\l_write" alt="" coords="242,289,425,330"/>
+<area shape="rect" id="node3" href="$classicancloud___base.html#a6667b234e21ffbc0841d1d03d71f6f93" title="icancloud_Base::getHostName" alt="" coords="491,12,693,39"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html#af7a4fef53d5de8fe2b98a3ba8179c374" title="icancloud_Base::showError\lMessage" alt="" coords="741,5,923,46"/>
+</map>

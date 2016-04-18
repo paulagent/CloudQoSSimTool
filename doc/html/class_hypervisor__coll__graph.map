@@ -1,0 +1,11 @@
+<map id="Hypervisor" name="Hypervisor">
+<area shape="rect" id="node4" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="287,545,401,572"/>
+<area shape="rect" id="node3" href="$class_h___memory_manager___base.html" title="H_MemoryManager_Base" alt="" coords="1251,135,1424,161"/>
+<area shape="rect" id="node8" href="$class_h___storage_manager___base.html" title="H_StorageManager_Base" alt="" coords="1252,229,1423,256"/>
+<area shape="rect" id="node11" href="$class_h___n_e_t_manager___base.html" title="H_NETManager_Base" alt="" coords="1261,609,1414,636"/>
+<area shape="rect" id="node15" href="$class_local_net_manager.html" title="LocalNetManager" alt="" coords="905,869,1029,896"/>
+<area shape="rect" id="node19" href="$class_network_manager.html" title="NetworkManager" alt="" coords="590,792,711,819"/>
+<area shape="rect" id="node22" href="$class_h___c_p_u_manager___base.html" title="H_CPUManager_Base" alt="" coords="1260,837,1415,864"/>
+<area shape="rect" id="node6" href="$classc_gate_manager.html" title="cGateManager" alt="" coords="913,443,1020,469"/>
+<area shape="rect" id="node16" href="$class_port_address_translation.html" title="PortAddressTranslation" alt="" coords="571,912,730,939"/>
+</map>

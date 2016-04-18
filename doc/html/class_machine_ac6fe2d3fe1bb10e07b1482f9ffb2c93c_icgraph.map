@@ -1,0 +1,6 @@
+<map id="Machine::initialize" name="Machine::initialize">
+<area shape="rect" id="node2" href="$class_abstract_node.html#a33a886e67f6c2d2fe765ea08400fad43" title="AbstractNode::initialize" alt="" coords="181,5,339,32"/>
+<area shape="rect" id="node5" href="$class_v_m.html#afbeb99d4c21cad9c047f7e3a41b5a36b" title="VM::initialize" alt="" coords="211,56,309,83"/>
+<area shape="rect" id="node3" href="$class_node.html#aae071b74f8ad790ba8304f6e9c9258e1" title="Node::initialize" alt="" coords="387,5,495,32"/>
+<area shape="rect" id="node4" href="$class_node_v_l.html#aefc437b4a3be02432e7e72fc7812fcd4" title="NodeVL::initialize" alt="" coords="545,5,669,32"/>
+</map>

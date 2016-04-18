@@ -1,0 +1,7 @@
+<map id="MPI_Base::synchronize" name="MPI_Base::synchronize">
+<area shape="rect" id="node2" href="$class_m_p_i___base.html#a38a98e8f6ac16e242cfcab9665cd4b39" title="MPI_Base::processMPICall\lRequest" alt="" coords="216,7,400,49"/>
+<area shape="rect" id="node4" href="$class_m_p_i___base.html#a652a98ad0d7908e6e389163509c12f57" title="MPI_Base::mpi_recv" alt="" coords="236,75,380,101"/>
+<area shape="rect" id="node6" href="$class_m_p_i___base.html#ad3e1669354586b5b8c4cc50a62fab334" title="MPI_Base::mpi_irecv" alt="" coords="235,125,381,152"/>
+<area shape="rect" id="node3" href="$class_m_p_i___base.html#a984b13aab9f9071630c38ddd3d20ea0e" title="MPI_Base::processRequest\lMessage" alt="" coords="448,5,635,46"/>
+<area shape="rect" id="node5" href="$class_application_h_p_c.html#a7f769cc87279a70c71473664b90d9a86" title="ApplicationHPC::continue\lExecution" alt="" coords="455,70,627,111"/>
+</map>

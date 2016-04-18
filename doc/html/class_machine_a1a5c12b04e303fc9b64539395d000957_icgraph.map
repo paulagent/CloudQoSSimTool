@@ -1,0 +1,8 @@
+<map id="Machine::turnOff" name="Machine::turnOff">
+<area shape="rect" id="node2" href="$class_abstract_cloud_manager.html#a168edd7dfb1a5cacf9ec9000729c2e8d" title="AbstractCloudManager\l::unlinkVM" alt="" coords="173,5,328,46"/>
+<area shape="rect" id="node3" href="$class_abstract_d_c_manager.html#a2261e70653c7ce3882e554629862dadd" title="AbstractDCManager::\lfinalizeDCManager" alt="" coords="176,70,325,111"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_manager.html#a237f4934617f61b536f30f0e772fb6d9" title="AbstractCloudManager\l::finalizeManager" alt="" coords="376,37,531,78"/>
+<area shape="rect" id="node5" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="379,102,528,143"/>
+<area shape="rect" id="node6" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="776,73,931,114"/>
+<area shape="rect" id="node7" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="579,102,728,143"/>
+</map>

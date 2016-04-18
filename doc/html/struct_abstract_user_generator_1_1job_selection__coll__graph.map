@@ -1,0 +1,18 @@
+<map id="AbstractUserGenerator::jobSelection" name="AbstractUserGenerator::jobSelection">
+<area shape="rect" id="node4" href="$classjob_base.html" title="jobBase" alt="" coords="1087,671,1156,697"/>
+<area shape="rect" id="node5" href="$class_a_p_i___o_s.html" title="API_OS" alt="" coords="750,728,821,755"/>
+<area shape="rect" id="node6" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="332,833,447,860"/>
+<area shape="rect" id="node12" href="$class_abstract_user.html" title="AbstractUser" alt="" coords="1544,592,1643,619"/>
+<area shape="rect" id="node14" href="$classuser_base.html" title="userBase" alt="" coords="1083,348,1160,375"/>
+<area shape="rect" id="node23" href="$class_machine.html" title="Machine" alt="" coords="1086,917,1157,944"/>
+<area shape="rect" id="node3" href="$class_user_job.html" title="UserJob" alt="" coords="1739,625,1810,652"/>
+<area shape="rect" id="node15" href="$classqueues_manager.html" title="queuesManager" alt="" coords="728,341,843,368"/>
+<area shape="rect" id="node20" href="$class_requests_management.html" title="RequestsManagement" alt="" coords="709,392,862,419"/>
+<area shape="rect" id="node24" href="$class_abstract_syscall_manager.html" title="AbstractSyscallManager" alt="" coords="703,1048,867,1075"/>
+<area shape="rect" id="node10" href="$class_job_results_set.html" title="JobResultsSet" alt="" coords="731,779,839,805"/>
+<area shape="rect" id="node13" href="$classuser_storage.html" title="userStorage" alt="" coords="1369,381,1461,408"/>
+<area shape="rect" id="node17" href="$class_job_queue.html" title="JobQueue" alt="" coords="349,116,430,143"/>
+<area shape="rect" id="node19" href="$class_cfg_m_p_i.html" title="CfgMPI" alt="" coords="752,443,819,469"/>
+<area shape="rect" id="node25" href="$classc_gate_manager.html" title="cGateManager" alt="" coords="336,1108,443,1135"/>
+<area shape="rect" id="node28" href="$classelement_type.html" title="elementType" alt="" coords="737,943,834,969"/>
+</map>

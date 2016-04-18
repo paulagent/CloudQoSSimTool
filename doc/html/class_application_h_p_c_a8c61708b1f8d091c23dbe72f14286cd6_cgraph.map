@@ -1,0 +1,8 @@
+<map id="ApplicationHPC::initialize" name="ApplicationHPC::initialize">
+<area shape="rect" id="node2" href="$class_m_p_i___base.html#a907451cac9a80fecce0e36b790b6ea16" title="MPI_Base::initialize" alt="" coords="224,12,363,39"/>
+<area shape="rect" id="node3" href="$class_user_job.html#aa4d12c9fe1a67635008861dc5c9ec86c" title="UserJob::initialize" alt="" coords="411,12,538,39"/>
+<area shape="rect" id="node4" href="$classjob_base.html#a765de753584cf40713de92abda82963e" title="jobBase::initialize" alt="" coords="587,12,711,39"/>
+<area shape="rect" id="node5" href="$class_a_p_i___o_s.html#a4205c37a121aaf1a15eb15b8333cf1c7" title="API_OS::initialize" alt="" coords="760,12,885,39"/>
+<area shape="rect" id="node6" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="934,12,1103,39"/>
+<area shape="rect" id="node7" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="1152,5,1347,46"/>
+</map>

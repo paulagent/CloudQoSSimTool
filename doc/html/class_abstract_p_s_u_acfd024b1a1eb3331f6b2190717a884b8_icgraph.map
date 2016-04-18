@@ -1,0 +1,16 @@
+<map id="AbstractPSU::getNodeEnergyConsumed" name="AbstractPSU::getNodeEnergyConsumed">
+<area shape="rect" id="node2" href="$class_energy_meter_controller.html#a546aabdf20a6a4b72b80477186ff94d6" title="EnergyMeterController\l::getNodeEnergyConsumed" alt="" coords="251,99,434,141"/>
+<area shape="rect" id="node3" href="$class_node.html#a283f6ba55c786d9ef89fb05e07cd48b6" title="Node::getEnergyConsumed" alt="" coords="729,136,911,163"/>
+<area shape="rect" id="node14" href="$class_energy_meter_controller.html#a616eae9970f6a0aabf07c322dcebc5e8" title="EnergyMeterController\l::getCurrentStorageState" alt="" coords="483,70,650,111"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s.html#a3e0afe92ac7e1ae55a6242d212a975f7" title="CloudSchedulerFCFS\l::printEnergyValues" alt="" coords="1019,5,1168,46"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a552ad67083215247602ed5a946143901" title="CloudSchedulerFCFS\l_gnup::printEnergyValues" alt="" coords="1008,70,1179,111"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_r_r.html#a2c153a82274f9112a7508c1e88ee16a5" title="CloudSchedulerRR::printEnergy\lValues" alt="" coords="989,135,1197,177"/>
+<area shape="rect" id="node10" href="$class_abstract_d_c_manager.html#ae3075f6e30c9e4572648d370d679e3a8" title="AbstractDCManager::\lgetEnergyConsumed" alt="" coords="1019,201,1168,242"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s.html#a6d8343d43b103e0c55a81cc4b824a5d2" title="CloudSchedulerFCFS\l::shutdownNodeIfIDLE" alt="" coords="1268,5,1423,46"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_f_c_f_s__gnup.html#aa63b6605f92505ac32620e6f7838287a" title="CloudSchedulerFCFS\l_gnup::shutdownNodeIfIDLE" alt="" coords="1250,70,1441,111"/>
+<area shape="rect" id="node9" href="$class_cloud_scheduler_r_r.html#aeec3f6bda46cd544a9d2a063be157b60" title="CloudSchedulerRR::shutdown\lNodeIfIDLE" alt="" coords="1246,135,1445,177"/>
+<area shape="rect" id="node11" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="1271,201,1420,242"/>
+<area shape="rect" id="node12" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="1691,171,1845,213"/>
+<area shape="rect" id="node13" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="1493,201,1643,242"/>
+<area shape="rect" id="node15" href="$class_node.html#a43bfbaa1ffd924f430e05916f4db40a7" title="Node::getStorageInstantConsumption" alt="" coords="699,77,941,104"/>
+</map>

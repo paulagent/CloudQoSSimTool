@@ -1,0 +1,6 @@
+<map id="IStorageDevice::initialize" name="IStorageDevice::initialize">
+<area shape="rect" id="node2" href="$class_h_w_energy_interface.html#a019aa691206e18ae8c53269a1620345a" title="HWEnergyInterface::\linitialize" alt="" coords="222,5,367,46"/>
+<area shape="rect" id="node5" href="$class_storage_controller.html#ab93c6fbec0732e50f037b99cd7484646" title="StorageController::\lregisterDevice" alt="" coords="229,70,360,111"/>
+<area shape="rect" id="node3" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="417,12,586,39"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="635,5,829,46"/>
+</map>

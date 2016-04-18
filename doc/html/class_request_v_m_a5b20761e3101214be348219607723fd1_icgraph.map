@@ -1,0 +1,12 @@
+<map id="RequestVM::getConnection" name="RequestVM::getConnection">
+<area shape="rect" id="node2" href="$class_request_v_m.html#a2c3f90f5084420e90afa8d2a6d9fbf72" title="RequestVM::dup" alt="" coords="237,195,357,221"/>
+<area shape="rect" id="node3" href="$class_request_v_m.html#a299232d5ffbcb14b584a0f3f7a514715" title="RequestVM::getSingleRequestType" alt="" coords="406,107,637,133"/>
+<area shape="rect" id="node7" href="$class_abstract_cloud_manager.html#ae135ac35f047a6e551e7a5df648de593" title="AbstractCloudManager\l::request_start_vm" alt="" coords="444,253,599,294"/>
+<area shape="rect" id="node11" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="441,187,602,229"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s.html#a7b759520f36b9c11077f83f6128648d2" title="CloudSchedulerFCFS\l::selectNode" alt="" coords="715,5,864,46"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s__gnup.html#a375b883963370191aa416e12e2b4b73c" title="CloudSchedulerFCFS\l_gnup::selectNode" alt="" coords="715,70,864,111"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_r_r.html#a782f1e46138551f1f0288f8b4d64f2fe" title="CloudSchedulerRR::selectNode" alt="" coords="685,136,893,163"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="715,187,864,229"/>
+<area shape="rect" id="node9" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="715,253,864,294"/>
+<area shape="rect" id="node10" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="692,319,887,345"/>
+</map>

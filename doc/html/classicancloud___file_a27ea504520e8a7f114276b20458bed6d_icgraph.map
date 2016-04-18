@@ -1,0 +1,7 @@
+<map id="icancloud_File::setFileSize" name="icancloud_File::setFileSize">
+<area shape="rect" id="node2" href="$class_node___file_system.html#ada6c78c1d3f633e9115e3decbaf98da4" title="Node_FileSystem::load\l_UserPreloadFiles" alt="" coords="253,5,411,46"/>
+<area shape="rect" id="node3" href="$classicancloud___file.html#ae332c11bc502a059dc1902a2ca67cb30" title="icancloud_File::updateFileSize" alt="" coords="233,71,431,97"/>
+<area shape="rect" id="node4" href="$classicancloud___file.html#a92d165b7e8cf3895f2c18c3fb4d9d3ad" title="icancloud_File::addBranch" alt="" coords="494,20,669,47"/>
+<area shape="rect" id="node5" href="$classicancloud___file.html#ada29c6ef9d9e33f8a45ab0edc8868348" title="icancloud_File::addBlock" alt="" coords="731,45,898,72"/>
+<area shape="rect" id="node6" href="$classicancloud___file.html#a8dc996c2587d8dd0c4cc161ef6983ea8" title="icancloud_File::clearBranchList" alt="" coords="480,121,683,148"/>
+</map>

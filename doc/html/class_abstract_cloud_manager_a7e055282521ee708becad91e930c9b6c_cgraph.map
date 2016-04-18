@@ -1,0 +1,6 @@
+<map id="AbstractCloudManager::linkVM" name="AbstractCloudManager::linkVM">
+<area shape="rect" id="node2" href="$class_v_m.html#a4a468264332ca80b81ae0376d354a973" title="VM::changeState" alt="" coords="232,12,355,39"/>
+<area shape="rect" id="node5" href="$class_v_m.html#ab84f8bde38ac5d7107f37084c7439e1e" title="VM::setPendingOperation" alt="" coords="208,63,379,89"/>
+<area shape="rect" id="node3" href="$class_machine.html#aac09df15c2480050b99f5132704ca913" title="Machine::changeState" alt="" coords="427,12,579,39"/>
+<area shape="rect" id="node4" href="$class_abstract_syscall_manager.html#a1521a2796425ffb46706a084598685b8" title="AbstractSyscallManager\l::changeState" alt="" coords="627,5,791,46"/>
+</map>

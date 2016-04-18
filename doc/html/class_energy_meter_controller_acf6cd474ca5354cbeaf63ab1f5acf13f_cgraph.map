@@ -1,0 +1,11 @@
+<map id="EnergyMeterController::getNICEnergyConsumed" name="EnergyMeterController::getNICEnergyConsumed">
+<area shape="rect" id="node2" href="$class_abstract_meter_unit.html#abb73c2bf8cd5e44e83874155d78d3dc9" title="AbstractMeterUnit::\lgetEnergyConsumed" alt="" coords="229,187,373,229"/>
+<area shape="rect" id="node3" href="$class_h_w_energy_interface.html#ae5f79f37b1ca54f1a20a503765d6c4f9" title="HWEnergyInterface::\lgetStatesVector" alt="" coords="437,5,582,46"/>
+<area shape="rect" id="node4" href="$class_memo_support.html#a30172ed93d7e1a5ad053a434d29f88ee" title="MemoSupport::find" alt="" coords="443,71,575,97"/>
+<area shape="rect" id="node5" href="$class_h_w_energy_interface.html#a54c83ac6da102b7cd98ba21c12ffab1d" title="HWEnergyInterface::\lgetNumberOfComponents" alt="" coords="422,122,597,163"/>
+<area shape="rect" id="node7" href="$class_h_w_energy_interface.html#a40d1da0e1f1d5f7828ac0610d970bbb0" title="HWEnergyInterface::\lgetTotalVector" alt="" coords="437,187,582,229"/>
+<area shape="rect" id="node8" href="$class_abstract_meter_unit.html#a3f40b8e9af59a33263d411380b156e48" title="AbstractMeterUnit::\lprintStateVector" alt="" coords="441,253,577,294"/>
+<area shape="rect" id="node9" href="$class_h_w_energy_interface.html#a08384afe1fb425db8acda1d64715ffc0" title="HWEnergyInterface::\laccumulateConsumption" alt="" coords="426,318,593,359"/>
+<area shape="rect" id="node10" href="$class_h_w_energy_interface.html#a039e00b89fae2da1ccd890a499eb2c16" title="HWEnergyInterface::\lresetTotalVector" alt="" coords="437,383,582,425"/>
+<area shape="rect" id="node6" href="$class_h_w_energy_interface.html#a126eba8aa77f3e0d2326342243c7bdb3" title="HWEnergyInterface::\lloadComponent" alt="" coords="646,122,791,163"/>
+</map>

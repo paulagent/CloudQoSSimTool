@@ -1,0 +1,7 @@
+<map id="AbstractUser::notify_UserRequestAttendeed" name="AbstractUser::notify_UserRequestAttendeed">
+<area shape="rect" id="node2" href="$class_abstract_request.html#a37b1a6c4319602babb2cff3783b4e354" title="AbstractRequest::getOperation" alt="" coords="219,5,421,32"/>
+<area shape="rect" id="node3" href="$class_abstract_user.html#ab572f85a8caa8d284198cce04498a4eb" title="AbstractUser::requestAttended" alt="" coords="219,56,421,83"/>
+<area shape="rect" id="node4" href="$classuser_base.html#aa0806e0b55f39030916d9cd277a31665" title="userBase::requestArrival" alt="" coords="237,107,403,133"/>
+<area shape="rect" id="node6" href="$class_abstract_user.html#ad99a451f46c30ac2ce3d161e3d9900d8" title="AbstractUser::schedule" alt="" coords="241,157,399,184"/>
+<area shape="rect" id="node5" href="$class_abstract_request.html#ac86a35b0fc3cdfc0b724584a82a22585" title="AbstractRequest::compareReq" alt="" coords="469,107,672,133"/>
+</map>

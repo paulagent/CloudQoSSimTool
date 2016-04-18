@@ -1,0 +1,8 @@
+<map id="CfgDataCenter::getNumberOfStorageNodeTypes" name="CfgDataCenter::getNumberOfStorageNodeTypes">
+<area shape="rect" id="node2" href="$class_cfg_data_center.html#ad80632e4f1621eb9399dcc433d4a542e" title="CfgDataCenter::getNodeStorageType" alt="" coords="238,5,479,32"/>
+<area shape="rect" id="node3" href="$class_cfg_data_center.html#a9364b2bfb0728ba0b27a182378725008" title="CfgDataCenter::getNodeStorage\lQuantity" alt="" coords="253,57,465,98"/>
+<area shape="rect" id="node4" href="$class_cfg_data_center.html#ab81d3b3d2055ee810db9990772340cde" title="CfgDataCenter::generateStructure\lOfNodes" alt="" coords="248,122,469,163"/>
+<area shape="rect" id="node5" href="$class_cfg_data_center.html#aa541b691e26edf84e0f29deb342036e1" title="CfgDataCenter::generateStructure\lOfStorageNodes" alt="" coords="248,187,469,229"/>
+<area shape="rect" id="node6" href="$class_cfg_data_center.html#a77bf271a9f47f63eda15549f61a5c046" title="CfgDataCenter::printNodes" alt="" coords="268,253,449,280"/>
+<area shape="rect" id="node7" href="$class_cfg_data_center.html#a780d954c3ad53979e537ac25a2be7956" title="CfgDataCenter::printVms" alt="" coords="273,304,444,331"/>
+</map>

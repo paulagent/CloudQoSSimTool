@@ -1,0 +1,14 @@
+<map id="CloudSchedulerFCFS_gnup::initialize" name="CloudSchedulerFCFS_gnup::initialize">
+<area shape="rect" id="node2" href="$class_abstract_cloud_manager.html#a800c9c493653104f1be7c57aa73e5f42" title="AbstractCloudManager\l::initialize" alt="" coords="203,155,357,197"/>
+<area shape="rect" id="node12" href="$class_i_c_c_log.html#a71bfc3bba398e1b6970d95b037310e7b" title="ICCLog::Open" alt="" coords="227,243,333,269"/>
+<area shape="rect" id="node3" href="$class_network_manager.html#a05edf1fb3ad97a23ec0fdc0a89f62a0a" title="NetworkManager::setIPBasis" alt="" coords="406,137,599,164"/>
+<area shape="rect" id="node4" href="$class_cfg_cloud.html#aae6d74e29a13cb8548708e40bbf95c3e" title="CfgCloud::setVMType" alt="" coords="427,188,579,215"/>
+<area shape="rect" id="node5" href="$class_cfg_data_center.html#aed900a2597c96b50ebcd348af2cfb8a3" title="CfgDataCenter::setNodeType" alt="" coords="649,239,845,265"/>
+<area shape="rect" id="node6" href="$class_cfg_data_center.html#ad5eed4555102d524a6884808badc1306" title="CfgDataCenter::setStorage\lNodeType" alt="" coords="656,5,837,46"/>
+<area shape="rect" id="node7" href="$class_abstract_d_c_manager.html#ac59ba412da6525eed8367638db55c936" title="AbstractDCManager::\linitialize" alt="" coords="428,71,577,113"/>
+<area shape="rect" id="node8" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="894,129,1063,156"/>
+<area shape="rect" id="node10" href="$class_user_management.html#ac247f8cfdce695c129671660790843d0" title="UserManagement::initialize" alt="" coords="657,71,837,97"/>
+<area shape="rect" id="node11" href="$class_storage_management.html#ae228b883ed4958743e2f19bb5798bcc3" title="StorageManagement::\linitialize" alt="" coords="671,122,822,163"/>
+<area shape="rect" id="node9" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="1112,122,1307,163"/>
+<area shape="rect" id="node13" href="$class_i_c_c_log.html#a53780d8a11f3554cad75ba8a89605971" title="ICCLog::Close" alt="" coords="448,289,557,316"/>
+</map>

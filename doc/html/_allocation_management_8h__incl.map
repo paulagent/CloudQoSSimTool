@@ -1,0 +1,33 @@
+<map id="Management/CloudManagement/Base/AllocationManagement.h" name="Management/CloudManagement/Base/AllocationManagement.h">
+<area shape="rect" id="node3" href="$_v_m_i_d_8h.html" title="VMID.h" alt="" coords="2784,96,2851,123"/>
+<area shape="rect" id="node5" href="$_v_m_8h.html" title="VM.h" alt="" coords="2428,171,2482,197"/>
+<area shape="rect" id="node6" href="$_machine_8h.html" title="Machine.h" alt="" coords="2734,544,2815,571"/>
+<area shape="rect" id="node7" href="$_element_type_8h.html" title="ElementType.h" alt="" coords="3086,619,3196,645"/>
+<area shape="rect" id="node39" href="$_v_m_syscall_manager_8h.html" title="VMSyscallManager.h" alt="" coords="2327,245,2474,272"/>
+<area shape="rect" id="node8" href="$_abstract_syscall_manager_8h.html" title="AbstractSyscallManager.h" alt="" coords="2304,619,2478,645"/>
+<area shape="rect" id="node9" href="$icancloud___base_8h.html" title="icancloud_Base.h" alt="" coords="1316,693,1442,720"/>
+<area shape="rect" id="node10" href="$icancloud__types_8h.html" title="icancloud_types.h" alt="" coords="2829,859,2955,885"/>
+<area shape="rect" id="node14" href="$icancloud___app___i_o___message_8h.html" title="icancloud_App_IO_Message.h" alt="" coords="904,776,1102,803"/>
+<area shape="rect" id="node15" href="$icancloud___app___c_p_u___message_8h.html" title="icancloud_App_CPU_Message.h" alt="" coords="1126,776,1340,803"/>
+<area shape="rect" id="node16" href="$icancloud___app___m_e_m___message_8h.html" title="icancloud_App_MEM_Message.h" alt="" coords="1416,776,1632,803"/>
+<area shape="rect" id="node17" href="$icancloud___app___n_e_t___message_8h.html" title="icancloud_App_NET_Message.h" alt="" coords="1657,776,1868,803"/>
+<area shape="rect" id="node18" href="$icancloud___m_p_i___message_8h.html" title="icancloud_MPI_Message.h" alt="" coords="1894,776,2072,803"/>
+<area shape="rect" id="node19" href="$icancloud___migration___message_8h.html" title="icancloud_Migration\l_Message.h" alt="" coords="2250,769,2387,810"/>
+<area shape="rect" id="node20" href="$icancloud___block_list___message_8h.html" title="icancloud_BlockList\l_Message.h" alt="" coords="2463,769,2602,810"/>
+<area shape="rect" id="node21" href="$c_gate_manager_8h.html" title="cGateManager.h" alt="" coords="452,776,570,803"/>
+<area shape="rect" id="node35" href="$_constants_8h.html" title="Constants.h" alt="" coords="1204,859,1298,885"/>
+<area shape="rect" id="node36" href="$_i_c_c_log_8h.html" title="ICCLog.h" alt="" coords="2148,776,2226,803"/>
+<area shape="rect" id="node38" href="$_memoization__uthash_8h.html" title="Memoization_uthash.h" alt="" coords="2626,776,2779,803"/>
+<area shape="rect" id="node11" href="$icancloud__debug_8h.html" title="icancloud_debug.h" alt="" coords="2743,933,2872,960"/>
+<area shape="rect" id="node40" href="$_vm_msg_controller_8h.html" title="VmMsgController.h" alt="" coords="1989,544,2123,571"/>
+<area shape="rect" id="node41" href="$_abstract_cloud_user_8h.html" title="AbstractCloudUser.h" alt="" coords="2434,320,2578,347"/>
+<area shape="rect" id="node42" href="$cfg_m_p_i_8h.html" title="cfgMPI.h" alt="" coords="3007,776,3080,803"/>
+<area shape="rect" id="node43" href="$_machines_map_8h.html" title="MachinesMap.h" alt="" coords="2855,395,2970,421"/>
+<area shape="rect" id="node45" href="$_abstract_user_8h.html" title="AbstractUser.h" alt="" coords="2658,395,2768,421"/>
+<area shape="rect" id="node49" href="$_request_v_m_8h.html" title="RequestVM.h" alt="" coords="2149,395,2251,421"/>
+<area shape="rect" id="node44" href="$_heterogeneous_set_8h.html" title="HeterogeneousSet.h" alt="" coords="2902,469,3042,496"/>
+<area shape="rect" id="node46" href="$user_storage_8h.html" title="userStorage.h" alt="" coords="2530,469,2632,496"/>
+<area shape="rect" id="node47" href="$_abstract_node_8h.html" title="AbstractNode.h" alt="" coords="2657,469,2770,496"/>
+<area shape="rect" id="node48" href="$_user_job_8h.html" title="UserJob.h" alt="" coords="2795,469,2876,496"/>
+<area shape="rect" id="node50" href="$_request_8h.html" title="Request.h" alt="" coords="696,776,778,803"/>
+</map>

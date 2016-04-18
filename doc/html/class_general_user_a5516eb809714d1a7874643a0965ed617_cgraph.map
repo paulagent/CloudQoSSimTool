@@ -1,0 +1,27 @@
+<map id="GeneralUser::jobHasFinished" name="GeneralUser::jobHasFinished">
+<area shape="rect" id="node2" href="$class_user_job.html#aae111b3f27942eb74ab41d47ec8605b0" title="UserJob::getMachine" alt="" coords="272,5,419,32"/>
+<area shape="rect" id="node3" href="$class_machine.html#aa9c68bbbcdf04b49d8360644a1232e13" title="Machine::getNumProcesses\lRunning" alt="" coords="252,57,439,98"/>
+<area shape="rect" id="node5" href="$classqueues_manager.html#aa3777ebd71f54628f414eb97a813ff4f" title="queuesManager::getWQ_size" alt="" coords="248,123,443,149"/>
+<area shape="rect" id="node7" href="$class_abstract_cloud_user.html#ab21b9ab01a6b9846f84b6825fcda3fc8" title="AbstractCloudUser::\lshutdown_VM" alt="" coords="275,217,416,258"/>
+<area shape="rect" id="node4" href="$class_abstract_syscall_manager.html#a0a9a322e95629883d0a1222d84ba30e9" title="AbstractSyscallManager\l::getNumProcessesRunning" alt="" coords="491,57,677,98"/>
+<area shape="rect" id="node6" href="$class_job_queue.html#a93487229e8dd065b592938085694ac80" title="JobQueue::size" alt="" coords="527,123,641,149"/>
+<area shape="rect" id="node8" href="$class_machine.html#a929a37c500a8a808a7e30f3508d9ebec" title="Machine::getState" alt="" coords="520,173,648,200"/>
+<area shape="rect" id="node10" href="$class_v_m.html#ab84f8bde38ac5d7107f37084c7439e1e" title="VM::setPendingOperation" alt="" coords="743,224,913,251"/>
+<area shape="rect" id="node11" href="$class_machine.html#ae0909fcea9d5301ce800ab40a7582473" title="Machine::getPid" alt="" coords="526,275,642,301"/>
+<area shape="rect" id="node12" href="$class_abstract_cloud_user.html#a55b5ec2433ede1733800da45bed06377" title="AbstractCloudUser::\lsend_request_to_manager" alt="" coords="497,406,671,447"/>
+<area shape="rect" id="node9" href="$class_abstract_syscall_manager.html#a1b1bb74aca92c46fcf2a34a2020c6517" title="AbstractSyscallManager\l::getState" alt="" coords="746,158,910,199"/>
+<area shape="rect" id="node13" href="$class_abstract_request.html#a37b1a6c4319602babb2cff3783b4e354" title="AbstractRequest::getOperation" alt="" coords="727,275,929,301"/>
+<area shape="rect" id="node14" href="$class_request_v_m.html#ad04e9f737a99bf6cf84017483667a8f9" title="RequestVM::getDifferentTypes\lQuantity" alt="" coords="727,377,929,418"/>
+<area shape="rect" id="node16" href="$class_request_v_m.html#a6e0c2a27ea3002ae0a3c449caaede429" title="RequestVM::getSelectionQuantity" alt="" coords="979,253,1199,280"/>
+<area shape="rect" id="node19" href="$class_machines_map.html#a4ee6258bfae267a59bfdb32004369b77" title="MachinesMap::getMachineById" alt="" coords="725,443,931,469"/>
+<area shape="rect" id="node23" href="$class_abstract_request.html#a7fbb51f4dcad0ccc9e6a5c451d442f0a" title="AbstractRequest::getPid" alt="" coords="745,493,911,520"/>
+<area shape="rect" id="node24" href="$class_request_v_m.html#a560092eefe8762580ddc646882bfbbeb" title="RequestVM::getNumberVM" alt="" coords="737,544,919,571"/>
+<area shape="rect" id="node25" href="$class_request_v_m.html#af5a39e9a36b291a5b697f3fc0f4edcb8" title="RequestVM::getVM" alt="" coords="759,595,897,621"/>
+<area shape="rect" id="node26" href="$class_requests_management.html#aa5b8251724c15c6dfa181689401b4d9b" title="RequestsManagement\l::userSendRequest" alt="" coords="751,646,905,687"/>
+<area shape="rect" id="node15" href="$class_request_v_m.html#a325ad3ed16a52238d77ec680964cf4f4" title="RequestVM::getSelectionType" alt="" coords="989,304,1189,331"/>
+<area shape="rect" id="node17" href="$class_request_v_m.html#af3f9c199b3811013c50293080ecb13e1" title="RequestVM::eraseSelectionType" alt="" coords="982,355,1197,381"/>
+<area shape="rect" id="node18" href="$class_request_v_m.html#adde97eaf620941912827cf2ed44de711" title="RequestVM::decreaseSelection\lQuantity" alt="" coords="986,406,1193,447"/>
+<area shape="rect" id="node20" href="$class_machines_map.html#a71574379174ff867765875ca98e91854" title="MachinesMap::getMapQuantity" alt="" coords="988,472,1191,499"/>
+<area shape="rect" id="node21" href="$class_machines_map.html#aae76fe9e577a5e8a74b01b4fee57b3fe" title="MachinesMap::getSetQuantity" alt="" coords="990,523,1189,549"/>
+<area shape="rect" id="node22" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="992,574,1187,615"/>
+</map>

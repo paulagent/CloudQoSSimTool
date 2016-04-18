@@ -1,0 +1,4 @@
+<map id="H_MEM_SCHED_FIFO::getRemainingMemory" name="H_MEM_SCHED_FIFO::getRemainingMemory">
+<area shape="rect" id="node2" href="$class_h___m_e_m___s_c_h_e_d___f_i_f_o.html#a6a5d65a72532b57a5bb5fd69f6ae60ec" title="H_MEM_SCHED_FIFO::getVMGateIdx" alt="" coords="305,5,559,32"/>
+<area shape="rect" id="node3" href="$class_h___m_e_m___s_c_h_e_d___f_i_f_o.html#aa7f4c481abf3e610458c3bc997a797f8" title="H_MEM_SCHED_FIFO::getVMMemory\lOccupation_MB" alt="" coords="305,57,559,98"/>
+</map>

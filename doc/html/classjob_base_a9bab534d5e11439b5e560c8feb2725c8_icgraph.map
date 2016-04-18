@@ -1,0 +1,8 @@
+<map id="jobBase::getAppType" name="jobBase::getAppType">
+<area shape="rect" id="node2" href="$class_user_job.html#a5d2f804e284aa9015a3cbd8940dcc27e" title="UserJob::cloneJob" alt="" coords="213,5,344,32"/>
+<area shape="rect" id="node3" href="$class_smart_user.html#a6af88653c8133b26043cf4bc56fe9894" title="SmartUser::selectJob" alt="" coords="432,31,581,57"/>
+<area shape="rect" id="node5" href="$class_abstract_user_generator.html#aff36a54ca3269ade0e1e796fb6d55df6" title="AbstractUserGenerator\l::selectDistribution" alt="" coords="201,107,357,149"/>
+<area shape="rect" id="node4" href="$class_smart_user.html#a6ada9c455570130a2d96feedddfd9fe1" title="SmartUser::schedule" alt="" coords="657,31,802,57"/>
+<area shape="rect" id="node6" href="$class_abstract_user_generator.html#a21db40646994fa324a8441c9e8b6d666" title="AbstractUserGenerator\l::processSelfMessage" alt="" coords="429,94,585,135"/>
+<area shape="rect" id="node7" href="$class_user_generator_day.html#af7bdca7f72bca19a79ea3b8676714dfc" title="UserGeneratorDay::userCreate\lGroups" alt="" coords="405,159,608,201"/>
+</map>

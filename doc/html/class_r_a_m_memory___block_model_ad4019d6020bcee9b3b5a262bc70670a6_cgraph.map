@@ -1,0 +1,5 @@
+<map id="RAMMemory_BlockModel::initialize" name="RAMMemory_BlockModel::initialize">
+<area shape="rect" id="node2" href="$class_h_w_energy_interface.html#a019aa691206e18ae8c53269a1620345a" title="HWEnergyInterface::\linitialize" alt="" coords="230,5,375,46"/>
+<area shape="rect" id="node3" href="$classicancloud___base.html#aee97955f2815897b3d0cedd50a187ec3" title="icancloud_Base::initialize" alt="" coords="425,41,594,68"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html#a2800b8f9287cfecf66559e8680a2774d" title="icancloud_Base::showStarted\lModule" alt="" coords="643,34,837,75"/>
+</map>

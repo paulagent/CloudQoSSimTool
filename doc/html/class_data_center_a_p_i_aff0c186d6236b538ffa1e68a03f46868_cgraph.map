@@ -1,0 +1,6 @@
+<map id="DataCenterAPI::getNodeByIP" name="DataCenterAPI::getNodeByIP">
+<area shape="rect" id="node2" href="$class_machines_map.html#a90ea71167d02aac8cc27e22e72a3e84f" title="MachinesMap::getMachineByIP" alt="" coords="251,56,458,83"/>
+<area shape="rect" id="node3" href="$class_machines_map.html#a71574379174ff867765875ca98e91854" title="MachinesMap::getMapQuantity" alt="" coords="507,5,709,32"/>
+<area shape="rect" id="node4" href="$class_machines_map.html#aae76fe9e577a5e8a74b01b4fee57b3fe" title="MachinesMap::getSetQuantity" alt="" coords="509,56,707,83"/>
+<area shape="rect" id="node5" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="511,107,705,149"/>
+</map>

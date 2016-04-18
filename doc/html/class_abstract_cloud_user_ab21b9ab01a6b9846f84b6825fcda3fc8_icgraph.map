@@ -1,0 +1,7 @@
+<map id="AbstractCloudUser::shutdown_VM" name="AbstractCloudUser::shutdown_VM">
+<area shape="rect" id="node2" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="224,5,365,46"/>
+<area shape="rect" id="node3" href="$class_general_user.html#a6e925cd06072bd816afe987314c96657" title="GeneralUser::requestAttended" alt="" coords="195,71,394,97"/>
+<area shape="rect" id="node4" href="$class_general_user.html#a5516eb809714d1a7874643a0965ed617" title="GeneralUser::jobHasFinished" alt="" coords="198,121,391,148"/>
+<area shape="rect" id="node5" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="217,172,372,199"/>
+<area shape="rect" id="node6" href="$class_smart_user.html#a01632b506e12340573df25860e35838e" title="SmartUser::jobHasFinished" alt="" coords="203,223,386,249"/>
+</map>

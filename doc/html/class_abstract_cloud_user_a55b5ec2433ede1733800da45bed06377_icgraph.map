@@ -1,0 +1,12 @@
+<map id="AbstractCloudUser::send_request_to_manager" name="AbstractCloudUser::send_request_to_manager">
+<area shape="rect" id="node2" href="$class_abstract_cloud_user.html#ac7d17f8142e1fe9f5b84536380ffcfb3" title="AbstractCloudUser::\lstartVMs" alt="" coords="243,74,384,115"/>
+<area shape="rect" id="node6" href="$class_abstract_cloud_user.html#ab21b9ab01a6b9846f84b6825fcda3fc8" title="AbstractCloudUser::\lshutdown_VM" alt="" coords="243,191,384,233"/>
+<area shape="rect" id="node11" href="$class_abstract_cloud_user.html#a9ae861b649d7ba01f3aa96429a6abd90" title="AbstractCloudUser::\lnotify_UserRequestError" alt="" coords="230,257,397,298"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="475,107,616,149"/>
+<area shape="rect" id="node4" href="$class_general_user.html#a541aa46145f02f407591f7ba19cae819" title="GeneralUser::userInitialization" alt="" coords="447,5,644,32"/>
+<area shape="rect" id="node5" href="$class_smart_user.html#ad14bd8b4c0bd003c0a9620bb4a6b6dfb" title="SmartUser::userInitialization" alt="" coords="452,56,639,83"/>
+<area shape="rect" id="node7" href="$class_general_user.html#a6e925cd06072bd816afe987314c96657" title="GeneralUser::requestAttended" alt="" coords="446,173,645,200"/>
+<area shape="rect" id="node8" href="$class_general_user.html#a5516eb809714d1a7874643a0965ed617" title="GeneralUser::jobHasFinished" alt="" coords="449,224,642,251"/>
+<area shape="rect" id="node9" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="468,275,623,301"/>
+<area shape="rect" id="node10" href="$class_smart_user.html#a01632b506e12340573df25860e35838e" title="SmartUser::jobHasFinished" alt="" coords="454,325,637,352"/>
+</map>

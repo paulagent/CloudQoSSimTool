@@ -1,0 +1,8 @@
+<map id="CfgCloud::getMemorySize" name="CfgCloud::getMemorySize">
+<area shape="rect" id="node2" href="$class_cfg_cloud.html#ac86c2528700cd79604aac8d6f2a527ad" title="CfgCloud::getNumberOfVMTypes" alt="" coords="229,19,448,45"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_manager.html#a6089291642ef82d3a9ccd8a7a71b7302" title="AbstractCloudManager\l::closeVMConnections" alt="" coords="261,70,416,111"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="497,70,658,111"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="729,5,879,46"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="729,70,879,111"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="707,136,901,163"/>
+</map>

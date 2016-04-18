@@ -1,0 +1,6 @@
+<map id="AbstractNode::setLocalFiles" name="AbstractNode::setLocalFiles">
+<area shape="rect" id="node2" href="$class_abstract_syscall_manager.html#ac33ad3650a0a41d689cb621e61ee9b3c" title="AbstractSyscallManager\l::createLocalFiles" alt="" coords="266,5,430,46"/>
+<area shape="rect" id="node3" href="$class_abstract_node.html#a3f08d6722b3cf63f163dc2e37375bc23" title="AbstractNode::closeConnections" alt="" coords="241,71,455,97"/>
+<area shape="rect" id="node4" href="$class_syscall_manager.html#a23babb898c519d62471f4584872cc72d" title="SyscallManager::closeConnection" alt="" coords="505,71,725,97"/>
+<area shape="rect" id="node5" href="$class_remote_storage_app.html#a2b824e266be50b95ad0c963420a5e504" title="RemoteStorageApp::closeConnection" alt="" coords="774,71,1015,97"/>
+</map>

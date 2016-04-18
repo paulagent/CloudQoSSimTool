@@ -1,0 +1,19 @@
+<map id="Architecture/NodeComponents/Hardware/HWEnergyInterface.h" name="Architecture/NodeComponents/Hardware/HWEnergyInterface.h">
+<area shape="rect" id="node18" href="$_energy_meter_states_8h.html" title="EnergyMeterStates.h" alt="" coords="399,96,544,123"/>
+<area shape="rect" id="node23" href="$icancloud___base_8h.html" title="icancloud_Base.h" alt="" coords="2101,96,2226,123"/>
+<area shape="rect" id="node19" href="$_energy_state_8h.html" title="EnergyState.h" alt="" coords="146,179,250,205"/>
+<area shape="rect" id="node21" href="$icancloud__types_8h.html" title="icancloud_types.h" alt="" coords="428,179,554,205"/>
+<area shape="rect" id="node22" href="$icancloud__debug_8h.html" title="icancloud_debug.h" alt="" coords="405,269,534,296"/>
+<area shape="rect" id="node24" href="$icancloud___app___i_o___message_8h.html" title="icancloud_App_IO_Message.h" alt="" coords="2650,179,2848,205"/>
+<area shape="rect" id="node26" href="$icancloud___app___c_p_u___message_8h.html" title="icancloud_App_CPU_Message.h" alt="" coords="2923,179,3137,205"/>
+<area shape="rect" id="node28" href="$icancloud___app___m_e_m___message_8h.html" title="icancloud_App_MEM_Message.h" alt="" coords="3213,179,3429,205"/>
+<area shape="rect" id="node30" href="$icancloud___app___n_e_t___message_8h.html" title="icancloud_App_NET_Message.h" alt="" coords="3503,179,3714,205"/>
+<area shape="rect" id="node32" href="$icancloud___m_p_i___message_8h.html" title="icancloud_MPI_Message.h" alt="" coords="3789,179,3968,205"/>
+<area shape="rect" id="node34" href="$icancloud___migration___message_8h.html" title="icancloud_Migration\l_Message.h" alt="" coords="3992,171,4129,213"/>
+<area shape="rect" id="node37" href="$icancloud___block_list___message_8h.html" title="icancloud_BlockList\l_Message.h" alt="" coords="4225,171,4364,213"/>
+<area shape="rect" id="node39" href="$c_gate_manager_8h.html" title="cGateManager.h" alt="" coords="2152,179,2270,205"/>
+<area shape="rect" id="node41" href="$_constants_8h.html" title="Constants.h" alt="" coords="1984,179,2077,205"/>
+<area shape="rect" id="node42" href="$_i_c_c_log_8h.html" title="ICCLog.h" alt="" coords="1055,179,1133,205"/>
+<area shape="rect" id="node47" href="$_memoization__uthash_8h.html" title="Memoization_uthash.h" alt="" coords="1254,179,1406,205"/>
+<area shape="rect" id="node50" href="$uthash_8h.html" title="uthash.h" alt="" coords="1496,269,1568,296"/>
+</map>

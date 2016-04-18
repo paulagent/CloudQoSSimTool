@@ -1,0 +1,6 @@
+<map id="NetworkManager::setIPBasis" name="NetworkManager::setIPBasis">
+<area shape="rect" id="node2" href="$class_abstract_cloud_manager.html#a800c9c493653104f1be7c57aa73e5f42" title="AbstractCloudManager\l::initialize" alt="" coords="248,70,403,111"/>
+<area shape="rect" id="node3" href="$class_cloud_scheduler_f_c_f_s.html#a376eb82de6698a6498b00521af233e82" title="CloudSchedulerFCFS\l::initialize" alt="" coords="471,5,620,46"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s__gnup.html#aa95176723fe3b2e7b77a6933107e8cfa" title="CloudSchedulerFCFS\l_gnup::initialize" alt="" coords="471,70,620,111"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_r_r.html#aaae099d4346461105c523a11c48cb930" title="CloudSchedulerRR::initialize" alt="" coords="451,136,640,163"/>
+</map>

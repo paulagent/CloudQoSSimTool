@@ -1,0 +1,4 @@
+<map id="LocalNetManager::manage_create_storage_Connection" name="LocalNetManager::manage_create_storage_Connection">
+<area shape="rect" id="node2" href="$class_network_manager.html#a14fd899af486845822da8886fd45c7fc" title="NetworkManager::getRealPort" alt="" coords="243,12,442,39"/>
+<area shape="rect" id="node3" href="$class_port_table.html#a774abf9ae87d3061b3507f18566074f7" title="PortTable::getRealPort" alt="" coords="491,12,645,39"/>
+</map>

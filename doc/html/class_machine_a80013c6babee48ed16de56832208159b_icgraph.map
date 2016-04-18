@@ -1,0 +1,10 @@
+<map id="Machine::getMemoryCapacity" name="Machine::getMemoryCapacity">
+<area shape="rect" id="node2" href="$class_abstract_cloud_manager.html#a6089291642ef82d3a9ccd8a7a71b7302" title="AbstractCloudManager\l::closeVMConnections" alt="" coords="283,89,437,130"/>
+<area shape="rect" id="node7" href="$class_machines_map.html#a096a432b6ba54516e33fb969d630f0ee" title="MachinesMap::increaseInstances" alt="" coords="251,160,469,187"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="535,83,697,125"/>
+<area shape="rect" id="node4" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="785,5,935,46"/>
+<area shape="rect" id="node5" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="785,70,935,111"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="763,136,957,163"/>
+<area shape="rect" id="node8" href="$class_abstract_cloud_user.html#a2bd801b9a9f60c39d9fe8da557b6d348" title="AbstractCloudUser::\lnotify_UserRequestAttendeed" alt="" coords="517,162,715,203"/>
+<area shape="rect" id="node9" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="789,187,931,229"/>
+</map>

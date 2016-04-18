@@ -1,0 +1,14 @@
+<map id="PhysicalResourcesRequest::PhysicalResourcesRequest" name="PhysicalResourcesRequest::PhysicalResourcesRequest">
+<area shape="rect" id="node2" href="$class_physical_resources_request.html#a0ab8f19be84a79b40e39eb9d8f996c18" title="PhysicalResourcesRequest\l::getSet" alt="" coords="255,5,439,46"/>
+<area shape="rect" id="node3" href="$class_physical_resources_request.html#afb4b8dc0b142589a756f86dcc0fdae19" title="PhysicalResourcesRequest\l::getIndex" alt="" coords="255,70,439,111"/>
+<area shape="rect" id="node4" href="$class_physical_resources_request.html#ab4faf519df8c3519212c2cb2d6b62e55" title="PhysicalResourcesRequest\l::getCores" alt="" coords="255,135,439,177"/>
+<area shape="rect" id="node5" href="$class_physical_resources_request.html#af0a31331b2294ea9b3dae9e6fcb51075" title="PhysicalResourcesRequest\l::getMemory" alt="" coords="255,201,439,242"/>
+<area shape="rect" id="node6" href="$class_physical_resources_request.html#ab50348f84ac6ac302d3fbe1662640b02" title="PhysicalResourcesRequest\l::getStorage" alt="" coords="255,266,439,307"/>
+<area shape="rect" id="node7" href="$class_physical_resources_request.html#a69a67a205459626e099143f8e86434e8" title="PhysicalResourcesRequest\l::getMessageID" alt="" coords="255,331,439,373"/>
+<area shape="rect" id="node8" href="$class_abstract_request.html#a2144a63b42323cbe604cb114c34df953" title="AbstractRequest::dup" alt="" coords="272,397,421,424"/>
+<area shape="rect" id="node9" href="$class_abstract_request.html#a37b1a6c4319602babb2cff3783b4e354" title="AbstractRequest::getOperation" alt="" coords="245,448,448,475"/>
+<area shape="rect" id="node10" href="$class_abstract_request.html#a456fbecf8d0084f2560349415941b4a6" title="AbstractRequest::getTimes\lEnqueue" alt="" coords="255,499,438,541"/>
+<area shape="rect" id="node11" href="$class_abstract_request.html#afec21c9951a45991bdfb29c8aabc252f" title="AbstractRequest::getState" alt="" coords="258,565,435,592"/>
+<area shape="rect" id="node12" href="$class_abstract_request.html#a7fbb51f4dcad0ccc9e6a5c451d442f0a" title="AbstractRequest::getPid" alt="" coords="264,616,429,643"/>
+<area shape="rect" id="node13" href="$class_abstract_request.html#a289694e1c3c6369f9f9462ce045634a1" title="AbstractRequest::getUid" alt="" coords="263,667,430,693"/>
+</map>

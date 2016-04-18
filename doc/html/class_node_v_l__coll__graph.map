@@ -1,0 +1,18 @@
+<map id="NodeVL" name="NodeVL">
+<area shape="rect" id="node2" href="$class_node.html" title="Node" alt="" coords="1621,1325,1675,1352"/>
+<area shape="rect" id="node3" href="$class_abstract_node.html" title="AbstractNode" alt="" coords="1375,1325,1478,1352"/>
+<area shape="rect" id="node4" href="$class_machine.html" title="Machine" alt="" coords="1046,1325,1117,1352"/>
+<area shape="rect" id="node5" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="308,1205,423,1232"/>
+<area shape="rect" id="node8" href="$class_abstract_syscall_manager.html" title="AbstractSyscallManager" alt="" coords="677,1427,841,1453"/>
+<area shape="rect" id="node15" href="$class_h___memory_manager___base.html" title="H_MemoryManager_Base" alt="" coords="672,1212,845,1239"/>
+<area shape="rect" id="node17" href="$class_h___storage_manager___base.html" title="H_StorageManager_Base" alt="" coords="673,721,844,748"/>
+<area shape="rect" id="node20" href="$class_h___n_e_t_manager___base.html" title="H_NETManager_Base" alt="" coords="1350,427,1503,453"/>
+<area shape="rect" id="node24" href="$class_local_net_manager.html" title="LocalNetManager" alt="" coords="1019,391,1143,417"/>
+<area shape="rect" id="node28" href="$class_network_manager.html" title="NetworkManager" alt="" coords="698,359,819,385"/>
+<area shape="rect" id="node31" href="$class_h___c_p_u_manager___base.html" title="H_CPUManager_Base" alt="" coords="681,945,836,972"/>
+<area shape="rect" id="node13" href="$class_energy_meter_controller.html" title="EnergyMeterController" alt="" coords="496,1583,648,1609"/>
+<area shape="rect" id="node14" href="$class_hypervisor.html" title="Hypervisor" alt="" coords="1605,1183,1691,1209"/>
+<area shape="rect" id="node9" href="$classc_gate_manager.html" title="cGateManager" alt="" coords="312,808,419,835"/>
+<area shape="rect" id="node12" href="$classelement_type.html" title="elementType" alt="" coords="710,1376,807,1403"/>
+<area shape="rect" id="node25" href="$class_port_address_translation.html" title="PortAddressTranslation" alt="" coords="679,417,838,444"/>
+</map>

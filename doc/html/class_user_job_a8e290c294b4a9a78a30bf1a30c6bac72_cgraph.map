@@ -1,0 +1,5 @@
+<map id="UserJob::setMachine" name="UserJob::setMachine">
+<area shape="rect" id="node2" href="$class_job_results_set.html#ab375dbf191bb49e2743fcba446793470" title="JobResultsSet::setMachineType" alt="" coords="201,5,413,32"/>
+<area shape="rect" id="node3" href="$class_machine.html#a81a5acbae0483ddf028038424d0080aa" title="Machine::getTypeName" alt="" coords="226,56,387,83"/>
+<area shape="rect" id="node4" href="$classelement_type.html#af325335e4afbe024ec32047afcc9ed06" title="elementType::getType" alt="" coords="461,56,613,83"/>
+</map>

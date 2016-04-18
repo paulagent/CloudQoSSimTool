@@ -1,0 +1,12 @@
+<map id="jobBase::getPreloadSize" name="jobBase::getPreloadSize">
+<area shape="rect" id="node2" href="$class_user_job.html#a5d2f804e284aa9015a3cbd8940dcc27e" title="UserJob::cloneJob" alt="" coords="248,9,379,36"/>
+<area shape="rect" id="node5" href="$classuser_storage.html#a61c3ac39e4b4f7f91b1045b73094a037" title="userStorage::createFSforJob" alt="" coords="219,64,408,91"/>
+<area shape="rect" id="node9" href="$class_abstract_user_generator.html#aff36a54ca3269ade0e1e796fb6d55df6" title="AbstractUserGenerator\l::selectDistribution" alt="" coords="235,122,391,163"/>
+<area shape="rect" id="node3" href="$class_smart_user.html#a6af88653c8133b26043cf4bc56fe9894" title="SmartUser::selectJob" alt="" coords="483,5,632,32"/>
+<area shape="rect" id="node4" href="$class_smart_user.html#a6ada9c455570130a2d96feedddfd9fe1" title="SmartUser::schedule" alt="" coords="711,5,857,32"/>
+<area shape="rect" id="node6" href="$class_abstract_cloud_user.html#a6c98b369409d6a89d1feda03f7076ab1" title="AbstractCloudUser::\lcreateFSforJob" alt="" coords="487,57,628,98"/>
+<area shape="rect" id="node7" href="$class_abstract_cloud_user.html#aac8da1dfc8cdff013e581e8f1e72fd32" title="AbstractCloudUser::\lgetMachinesType" alt="" coords="713,57,855,98"/>
+<area shape="rect" id="node8" href="$class_general_user.html#abef5c64ee2865d0113d4c1f336ccaf45" title="GeneralUser::schedule" alt="" coords="707,123,861,149"/>
+<area shape="rect" id="node10" href="$class_abstract_user_generator.html#a21db40646994fa324a8441c9e8b6d666" title="AbstractUserGenerator\l::processSelfMessage" alt="" coords="479,122,635,163"/>
+<area shape="rect" id="node11" href="$class_user_generator_day.html#af7bdca7f72bca19a79ea3b8676714dfc" title="UserGeneratorDay::userCreate\lGroups" alt="" coords="456,187,659,229"/>
+</map>

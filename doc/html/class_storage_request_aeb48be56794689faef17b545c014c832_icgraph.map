@@ -1,0 +1,5 @@
+<map id="StorageRequest::getPreloadSize" name="StorageRequest::getPreloadSize">
+<area shape="rect" id="node2" href="$class_physical_resources_request.html#ae7b71fd4fd7f3d4dc311f4dc2b171bf3" title="PhysicalResourcesRequest\l::PhysicalResourcesRequest" alt="" coords="271,5,463,46"/>
+<area shape="rect" id="node3" href="$class_storage_request.html#a5b85fa05c094145441d50b609b5341a2" title="StorageRequest::compareReq" alt="" coords="267,71,466,97"/>
+<area shape="rect" id="node4" href="$class_physical_resources_request.html#a3e85f68b6b739462c52cba18db1d2cac" title="PhysicalResourcesRequest\l::compareReq" alt="" coords="515,63,699,105"/>
+</map>

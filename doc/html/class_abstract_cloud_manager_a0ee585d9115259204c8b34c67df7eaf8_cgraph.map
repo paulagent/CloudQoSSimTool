@@ -1,0 +1,7 @@
+<map id="AbstractCloudManager::getVmFromUser" name="AbstractCloudManager::getVmFromUser">
+<area shape="rect" id="node2" href="$class_user_management.html#a8fdfa1a17f4d93a81c574527f41c4d87" title="UserManagement::getUserById" alt="" coords="209,5,415,32"/>
+<area shape="rect" id="node3" href="$class_abstract_cloud_user.html#a219eb9e6752bd93f904b54e30cefa20a" title="AbstractCloudUser::\lsearchVmByPid" alt="" coords="241,57,383,98"/>
+<area shape="rect" id="node4" href="$class_machines_map.html#a71574379174ff867765875ca98e91854" title="MachinesMap::getMapQuantity" alt="" coords="464,13,667,40"/>
+<area shape="rect" id="node5" href="$class_machines_map.html#aae76fe9e577a5e8a74b01b4fee57b3fe" title="MachinesMap::getSetQuantity" alt="" coords="466,64,665,91"/>
+<area shape="rect" id="node6" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="468,115,663,157"/>
+</map>

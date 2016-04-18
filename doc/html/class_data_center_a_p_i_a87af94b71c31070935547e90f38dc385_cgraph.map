@@ -1,0 +1,8 @@
+<map id="DataCenterAPI::printNodeMapInfo" name="DataCenterAPI::printNodeMapInfo">
+<area shape="rect" id="node2" href="$class_data_center_a_p_i.html#a199f45a9f8798b7ecf7dd5d5d832fd4a" title="DataCenterAPI::getMapSize" alt="" coords="230,5,418,32"/>
+<area shape="rect" id="node4" href="$class_data_center_a_p_i.html#a8012e2a46887a419b693fa3d1f9886db" title="DataCenterAPI::getSetSize" alt="" coords="233,56,415,83"/>
+<area shape="rect" id="node6" href="$class_data_center_a_p_i.html#ad935cf91e7d7ee25397a3da579080022" title="DataCenterAPI::getNodeBy\lIndex" alt="" coords="232,107,416,149"/>
+<area shape="rect" id="node3" href="$class_machines_map.html#a4395beb7c95115aeb8c3dac8c861fb09" title="MachinesMap::size" alt="" coords="499,5,634,32"/>
+<area shape="rect" id="node5" href="$class_machines_map.html#aae76fe9e577a5e8a74b01b4fee57b3fe" title="MachinesMap::getSetQuantity" alt="" coords="467,56,666,83"/>
+<area shape="rect" id="node7" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="469,107,664,149"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="RemoteStorageApp::getStoragePort" name="RemoteStorageApp::getStoragePort">
+<area shape="rect" id="node2" href="$class_remote_storage_app.html#ad11e74053264b254d1f2aee7033638d7" title="RemoteStorageApp::create\l_listen" alt="" coords="299,5,479,46"/>
+<area shape="rect" id="node3" href="$class_remote_storage_app.html#a7234b301c011e64cfd944956d4be6de7" title="RemoteStorageApp::connect\l_to_storage_node" alt="" coords="294,70,485,111"/>
+<area shape="rect" id="node4" href="$class_remote_storage_app.html#ac63e1ad3e47c536b2bae83a39cad41b6" title="RemoteStorageApp::create\lFilesToPreload" alt="" coords="299,135,479,177"/>
+<area shape="rect" id="node5" href="$class_remote_storage_app.html#a594d248f36571d3938404ab8d71cc21e" title="RemoteStorageApp::delete\lUserFSFiles" alt="" coords="300,201,479,242"/>
+<area shape="rect" id="node6" href="$class_remote_storage_app.html#aceec53141c09a2d341f3c9a3c208e83b" title="RemoteStorageApp::setData\lStorage_EstablishedConnection" alt="" coords="285,266,493,307"/>
+</map>

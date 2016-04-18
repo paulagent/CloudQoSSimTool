@@ -1,0 +1,9 @@
+<map id="VM::shutdownVM" name="VM::shutdownVM">
+<area shape="rect" id="node2" href="$class_abstract_cloud_manager.html#a168edd7dfb1a5cacf9ec9000729c2e8d" title="AbstractCloudManager\l::unlinkVM" alt="" coords="181,11,336,53"/>
+<area shape="rect" id="node3" href="$class_v_m.html#a6d1e51ba54e03ecf8096d4907da6211a" title="VM::setNodeSetName" alt="" coords="181,77,336,104"/>
+<area shape="rect" id="node4" href="$class_abstract_cloud_manager.html#a6089291642ef82d3a9ccd8a7a71b7302" title="AbstractCloudManager\l::closeVMConnections" alt="" coords="384,70,539,111"/>
+<area shape="rect" id="node5" href="$class_abstract_cloud_manager.html#a5e7a5b9167acbddfbf970b7f53825c78" title="AbstractCloudManager\l::request_shutdown_vm" alt="" coords="587,70,749,111"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="820,5,969,46"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="820,70,969,111"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="797,136,992,163"/>
+</map>

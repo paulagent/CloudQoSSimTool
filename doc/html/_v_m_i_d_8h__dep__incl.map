@@ -1,0 +1,20 @@
+<map id="Base/VMID/VMID.h" name="Base/VMID/VMID.h">
+<area shape="rect" id="node2" href="$_node_v_l_8h.html" title="Architecture/Node/NodeVL\l/NodeVL.h" alt="" coords="348,81,527,122"/>
+<area shape="rect" id="node17" href="$_v_m_i_d_8cc.html" title="Base/VMID/VMID.cc" alt="" coords="551,88,697,115"/>
+<area shape="rect" id="node18" href="$_allocation_management_8h.html" title="Management/CloudManagement\l/Base/AllocationManagement.h" alt="" coords="721,81,931,122"/>
+<area shape="rect" id="node3" href="$_node_v_l_8cc.html" title="Architecture/Node/NodeVL\l/NodeVL.cc" alt="" coords="348,171,527,213"/>
+<area shape="rect" id="node4" href="$_abstract_cloud_manager_8h.html" title="Management/CloudManagement\l/CloudManager/AbstractCloudManager.h" alt="" coords="551,171,808,213"/>
+<area shape="rect" id="node15" href="$_hypervisor_8h.html" title="Virtualization/Hypervisor\l/Hypervisors/Hypervisor.h" alt="" coords="149,171,323,213"/>
+<area shape="rect" id="node5" href="$_abstract_cloud_manager_8cc.html" title="Management/CloudManagement\l/CloudManager/AbstractCloudManager.cc" alt="" coords="699,269,964,310"/>
+<area shape="rect" id="node6" href="$_abstract_cloud_scheduler_8h.html" title="Management/CloudManagement\l/ResourcesProvisioning/Abstract\lCloudScheduler.h" alt="" coords="461,261,675,317"/>
+<area shape="rect" id="node7" href="$_cloud_scheduler_f_c_f_s_8h.html" title="Management/CloudManagement\l/ResourcesProvisioning/CloudScheduler\lFCFS/CloudSchedulerFCFS.h" alt="" coords="7,365,263,421"/>
+<area shape="rect" id="node9" href="$_cloud_scheduler_f_c_f_s__gnup_8h.html" title="Management/CloudManagement\l/ResourcesProvisioning/CloudScheduler\lFCFS_gnup/CloudSchedulerFCFS_gnup.h" alt="" coords="289,365,559,421"/>
+<area shape="rect" id="node11" href="$_cloud_scheduler_random_8h.html" title="Management/CloudManagement\l/ResourcesProvisioning/CloudScheduler\lRandom/CloudSchedulerRandom.h" alt="" coords="584,365,840,421"/>
+<area shape="rect" id="node13" href="$_cloud_scheduler_r_r_8h.html" title="Management/CloudManagement\l/ResourcesProvisioning/CloudScheduler\lRR/CloudSchedulerRR.h" alt="" coords="865,365,1121,421"/>
+<area shape="rect" id="node8" href="$_cloud_scheduler_f_c_f_s_8cc.html" title="Management/CloudManagement\l/ResourcesProvisioning/CloudScheduler\lFCFS/CloudSchedulerFCFS.cc" alt="" coords="5,469,261,525"/>
+<area shape="rect" id="node10" href="$_cloud_scheduler_f_c_f_s__gnup_8cc.html" title="Management/CloudManagement\l/ResourcesProvisioning/CloudScheduler\lFCFS_gnup/CloudSchedulerFCFS_gnup.cc" alt="" coords="286,469,561,525"/>
+<area shape="rect" id="node12" href="$_cloud_scheduler_random_8cc.html" title="Management/CloudManagement\l/ResourcesProvisioning/CloudScheduler\lRandom/CloudSchedulerRandom.cc" alt="" coords="587,469,843,525"/>
+<area shape="rect" id="node14" href="$_cloud_scheduler_r_r_8cc.html" title="Management/CloudManagement\l/ResourcesProvisioning/CloudScheduler\lRR/CloudSchedulerRR.cc" alt="" coords="867,469,1123,525"/>
+<area shape="rect" id="node16" href="$_hypervisor_8cc.html" title="Virtualization/Hypervisor\l/Hypervisors/Hypervisor.cc" alt="" coords="145,269,327,310"/>
+<area shape="rect" id="node19" href="$_allocation_management_8cc.html" title="Management/CloudManagement\l/Base/AllocationManagement.cc" alt="" coords="833,171,1043,213"/>
+</map>

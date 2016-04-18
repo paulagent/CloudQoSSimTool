@@ -1,0 +1,8 @@
+<map id="AbstractDCManager::processRollBack" name="AbstractDCManager::processRollBack">
+<area shape="rect" id="node2" href="$class_data_center_a_p_i.html#ad935cf91e7d7ee25397a3da579080022" title="DataCenterAPI::getNodeBy\lIndex" alt="" coords="203,9,387,50"/>
+<area shape="rect" id="node4" href="$class_machine.html#a8cd8160fb7c38b7ed00c85cda2fec3fa" title="Machine::getFreeStorage" alt="" coords="211,77,379,104"/>
+<area shape="rect" id="node6" href="$class_user_management.html#aefc461cc9c9e7d82a3221380f2fdbfaa" title="UserManagement::freeUser\lComputeEntry" alt="" coords="203,131,386,173"/>
+<area shape="rect" id="node3" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="441,5,636,46"/>
+<area shape="rect" id="node5" href="$class_abstract_syscall_manager.html#a6b19825b84794c578a84a90416b7a759" title="AbstractSyscallManager\l::getFreeStorage" alt="" coords="457,70,621,111"/>
+<area shape="rect" id="node7" href="$class_user_management.html#aec54add207afa3ddae3018a9d4942de5" title="UserManagement::freeCompute\lResources" alt="" coords="435,135,643,177"/>
+</map>

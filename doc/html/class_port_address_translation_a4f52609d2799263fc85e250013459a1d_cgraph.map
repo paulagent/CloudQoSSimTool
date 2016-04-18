@@ -1,0 +1,5 @@
+<map id="PortAddressTranslation::portForwarding" name="PortAddressTranslation::portForwarding">
+<area shape="rect" id="node2" href="$class_port_address_translation.html#a4b2730df0b230150b1362fd07e842043" title="PortAddressTranslation\l::pat_connectionStablished" alt="" coords="213,38,392,79"/>
+<area shape="rect" id="node3" href="$class_vm___virtual_port___cell.html#a4a73d48f0f13654176174846fc18f82f" title="Vm_VirtualPort_Cell\l::setPort" alt="" coords="441,5,581,46"/>
+<area shape="rect" id="node4" href="$class_vm___virtual_port___cell.html#a713af7ea37409473e8733d9ec37ec620" title="Vm_VirtualPort_Cell\l::setConnectionID" alt="" coords="441,70,581,111"/>
+</map>

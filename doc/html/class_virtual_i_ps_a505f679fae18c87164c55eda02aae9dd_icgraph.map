@@ -1,0 +1,4 @@
+<map id="VirtualIPs::incVirtualIP" name="VirtualIPs::incVirtualIP">
+<area shape="rect" id="node2" href="$class_network_manager.html#a4f11d56317fb803bb5d03ebfcd11ae00" title="NetworkManager::getVMid" alt="" coords="209,12,386,39"/>
+<area shape="rect" id="node3" href="$class_local_net_manager.html#a5a78518e3780e9c734860004a850a8dc" title="LocalNetManager::manage\l_createConnection" alt="" coords="435,5,613,46"/>
+</map>

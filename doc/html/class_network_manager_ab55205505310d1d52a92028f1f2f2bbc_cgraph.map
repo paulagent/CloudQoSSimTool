@@ -1,0 +1,6 @@
+<map id="NetworkManager::allocateVirtualIP" name="NetworkManager::allocateVirtualIP">
+<area shape="rect" id="node2" href="$class_virtual_i_p_cell.html#a001fffc67d11603b0009540372e9f413" title="VirtualIPCell::setIPNode" alt="" coords="232,5,397,32"/>
+<area shape="rect" id="node3" href="$class_virtual_i_p_cell.html#a30f407dbb01df65a590a67a08eec7dda" title="VirtualIPCell::setVirtualIP" alt="" coords="229,56,400,83"/>
+<area shape="rect" id="node5" href="$class_virtual_i_p_cell.html#a6b3dbec378706bc96fbe2338de0cf787" title="VirtualIPCell::setVMID" alt="" coords="237,107,392,133"/>
+<area shape="rect" id="node4" href="$class_virtual_i_ps.html#a5cf1ff7c5240951f6f5ae565276660b6" title="VirtualIPs::setVirtualIP" alt="" coords="448,56,603,83"/>
+</map>

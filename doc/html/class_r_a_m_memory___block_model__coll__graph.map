@@ -1,0 +1,7 @@
+<map id="RAMMemory_BlockModel" name="RAMMemory_BlockModel">
+<area shape="rect" id="node2" href="$class_h_w_energy_interface.html" title="HWEnergyInterface" alt="" coords="673,33,810,60"/>
+<area shape="rect" id="node3" href="$classicancloud___base.html" title="icancloud_Base" alt="" coords="419,33,533,60"/>
+<area shape="rect" id="node9" href="$classicancloud___message.html" title="icancloud_Message" alt="" coords="407,163,545,189"/>
+<area shape="rect" id="node6" href="$class_s_m_s___main_memory.html" title="SMS_MainMemory" alt="" coords="675,221,808,248"/>
+<area shape="rect" id="node7" href="$class_splitting_message_system.html" title="SplittingMessageSystem" alt="" coords="393,260,559,287"/>
+</map>

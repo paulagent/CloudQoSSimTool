@@ -1,0 +1,7 @@
+<map id="AbstractSyscallManager::setFreeMemory" name="AbstractSyscallManager::setFreeMemory">
+<area shape="rect" id="node2" href="$class_machine.html#ac6fe2d3fe1bb10e07b1482f9ffb2c93c" title="Machine::initialize" alt="" coords="219,31,346,57"/>
+<area shape="rect" id="node3" href="$class_abstract_node.html#a33a886e67f6c2d2fe765ea08400fad43" title="AbstractNode::initialize" alt="" coords="395,5,552,32"/>
+<area shape="rect" id="node6" href="$class_v_m.html#afbeb99d4c21cad9c047f7e3a41b5a36b" title="VM::initialize" alt="" coords="425,56,522,83"/>
+<area shape="rect" id="node4" href="$class_node.html#aae071b74f8ad790ba8304f6e9c9258e1" title="Node::initialize" alt="" coords="601,5,709,32"/>
+<area shape="rect" id="node5" href="$class_node_v_l.html#aefc437b4a3be02432e7e72fc7812fcd4" title="NodeVL::initialize" alt="" coords="758,5,882,32"/>
+</map>

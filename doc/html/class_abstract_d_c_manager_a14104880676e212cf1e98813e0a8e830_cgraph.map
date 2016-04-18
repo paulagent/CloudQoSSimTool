@@ -1,0 +1,10 @@
+<map id="AbstractDCManager::bookStorageResources" name="AbstractDCManager::bookStorageResources">
+<area shape="rect" id="node2" href="$class_data_center_a_p_i.html#ad935cf91e7d7ee25397a3da579080022" title="DataCenterAPI::getNodeBy\lIndex" alt="" coords="220,9,404,50"/>
+<area shape="rect" id="node4" href="$class_machine.html#a8cd8160fb7c38b7ed00c85cda2fec3fa" title="Machine::getFreeStorage" alt="" coords="228,77,396,104"/>
+<area shape="rect" id="node6" href="$class_machine.html#a81a5acbae0483ddf028038424d0080aa" title="Machine::getTypeName" alt="" coords="231,128,393,155"/>
+<area shape="rect" id="node8" href="$class_machine.html#a2f56e118394746c0895bf83709798811" title="Machine::getIP" alt="" coords="257,179,367,205"/>
+<area shape="rect" id="node9" href="$class_abstract_node.html#a7e79c59fa18724a58430e321d87fff1e" title="AbstractNode::getStoragePort" alt="" coords="213,229,411,256"/>
+<area shape="rect" id="node3" href="$class_machines_map.html#ab121f7abeb9585b7b97c51a06f4a0431" title="MachinesMap::getMachineBy\lIndex" alt="" coords="459,5,653,46"/>
+<area shape="rect" id="node5" href="$class_abstract_syscall_manager.html#a6b19825b84794c578a84a90416b7a759" title="AbstractSyscallManager\l::getFreeStorage" alt="" coords="474,70,638,111"/>
+<area shape="rect" id="node7" href="$classelement_type.html#af325335e4afbe024ec32047afcc9ed06" title="elementType::getType" alt="" coords="480,136,632,163"/>
+</map>

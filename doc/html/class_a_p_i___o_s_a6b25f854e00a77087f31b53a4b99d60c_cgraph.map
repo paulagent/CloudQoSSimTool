@@ -1,0 +1,7 @@
+<map id="API_OS::setEstablishedConnection" name="API_OS::setEstablishedConnection">
+<area shape="rect" id="node2" href="$class_a_p_i___o_s.html#a4472b1158ac89d5e3af7b68562b61e5d" title="API_OS::searchConnectionById" alt="" coords="285,5,496,32"/>
+<area shape="rect" id="node3" href="$class_a_p_i___o_s.html#a9531f4eba1991922d84d58414033c8a0" title="API_OS::connectionsToString" alt="" coords="292,56,489,83"/>
+<area shape="rect" id="node4" href="$classicancloud___base.html#af7a4fef53d5de8fe2b98a3ba8179c374" title="icancloud_Base::showError\lMessage" alt="" coords="795,127,976,169"/>
+<area shape="rect" id="node5" href="$classicancloud___base.html#a79bc49c379f5927058af0c2a2a668af2" title="icancloud_Base::showDebug\lMessage" alt="" coords="295,158,486,199"/>
+<area shape="rect" id="node6" href="$classicancloud___base.html#a6667b234e21ffbc0841d1d03d71f6f93" title="icancloud_Base::getHostName" alt="" coords="544,161,747,188"/>
+</map>

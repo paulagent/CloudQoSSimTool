@@ -1,0 +1,6 @@
+<map id="Vm_VirtualPort_Cell::getRealPort" name="Vm_VirtualPort_Cell::getRealPort">
+<area shape="rect" id="node2" href="$class_port_address_translation.html#a5b0f1ac0ad5cb99834845313a9f232e2" title="PortAddressTranslation\l::pat_arrivesIncomingConnection" alt="" coords="195,5,408,46"/>
+<area shape="rect" id="node3" href="$class_port_address_translation.html#afcc78fd086b436015727332c25f6bd3d" title="PortAddressTranslation\l::pat_sendMessage" alt="" coords="222,70,381,111"/>
+<area shape="rect" id="node4" href="$class_port_address_translation.html#a4b4874dceb88c96528097429aa6f2841" title="PortAddressTranslation\l::pat_closeConnection" alt="" coords="222,135,381,177"/>
+<area shape="rect" id="node5" href="$class_local_net_manager.html#a6450f60e66bf95c183c60b89276713a3" title="LocalNetManager::manage\l_close_single_connection" alt="" coords="456,135,635,177"/>
+</map>

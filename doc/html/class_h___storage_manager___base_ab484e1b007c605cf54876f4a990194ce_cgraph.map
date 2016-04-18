@@ -1,0 +1,6 @@
+<map id="H_StorageManager_Base::createStorageCell" name="H_StorageManager_Base::createStorageCell">
+<area shape="rect" id="node2" href="$classc_gate_manager.html#ad566e09aa1825fb442c21cd2140c0800" title="cGateManager::newGate" alt="" coords="233,5,399,32"/>
+<area shape="rect" id="node4" href="$classc_gate_manager.html#ab2a45f184a5ac8750b03015466ba1cce" title="cGateManager::connectOut" alt="" coords="225,56,407,83"/>
+<area shape="rect" id="node5" href="$classc_gate_manager.html#a59f97bc1fc8cc23f7e9f28534b2fd948" title="cGateManager::connectIn" alt="" coords="230,107,402,133"/>
+<area shape="rect" id="node3" href="$classc_gate_manager.html#a15d49d0ee407cd043d07322c762095d7" title="cGateManager::linkGate" alt="" coords="456,5,619,32"/>
+</map>

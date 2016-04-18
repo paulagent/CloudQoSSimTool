@@ -1,0 +1,12 @@
+<map id="AbstractSyscallManager::setRemoteFiles" name="AbstractSyscallManager::setRemoteFiles">
+<area shape="rect" id="node2" href="$class_abstract_node.html#a6130405c20c1063ad5db18efee1220cb" title="AbstractNode::setRemoteFiles" alt="" coords="219,107,421,133"/>
+<area shape="rect" id="node3" href="$class_storage_management.html#ab5003808dfac733bc532dcdf7f1b30e8" title="StorageManagement::\lcreateConnectionToStorage" alt="" coords="469,99,653,141"/>
+<area shape="rect" id="node4" href="$class_storage_management.html#a6cb83eeac33e28dfd47ba9af13c85519" title="StorageManagement::\lmanageStorageRequest" alt="" coords="701,99,864,141"/>
+<area shape="rect" id="node5" href="$class_abstract_d_c_manager.html#a6776bee156d70c61e2a61e06270da927" title="AbstractDCManager::\luserStorageRequest" alt="" coords="912,99,1061,141"/>
+<area shape="rect" id="node6" href="$class_cloud_scheduler_f_c_f_s.html#a5a91aff156ec3d9ca724bf97e419a3f2" title="CloudSchedulerFCFS\l::schedule" alt="" coords="1132,5,1281,46"/>
+<area shape="rect" id="node7" href="$class_cloud_scheduler_f_c_f_s__gnup.html#ad6c0cc9404e55891b8215ae83f05fed3" title="CloudSchedulerFCFS\l_gnup::schedule" alt="" coords="1132,70,1281,111"/>
+<area shape="rect" id="node8" href="$class_cloud_scheduler_r_r.html#a79698d4e10d7a62f72fe60ca501ddae2" title="CloudSchedulerRR::schedule" alt="" coords="1109,136,1304,163"/>
+<area shape="rect" id="node9" href="$class_abstract_d_c_manager.html#ab01470601faad236e010bdbd14c9361d" title="AbstractDCManager::\lisCfgLoaded" alt="" coords="1132,187,1281,229"/>
+<area shape="rect" id="node10" href="$class_abstract_cloud_manager.html#ad4a41521d8c489bcfc489980e0779766" title="AbstractCloudManager\l::initManager" alt="" coords="1549,158,1704,199"/>
+<area shape="rect" id="node11" href="$class_abstract_d_c_manager.html#ad77adb0cf796d84d0183c37bd5e0391e" title="AbstractDCManager::\linitManager" alt="" coords="1352,187,1501,229"/>
+</map>
