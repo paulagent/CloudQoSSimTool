@@ -454,8 +454,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
                 //TODO--
 
             } else if (selectedNode == NULL){ // There are not a node to allocate the request!
-                // 1- shut down the first vm in timeoutqeue
-                // 2- assign resources to the current vm
+
                 // Reenqueue to wait until exists enough resources.
                 req->incrementTimesEnqueue();
                 req->setState(REQUEST_PENDING);
@@ -489,7 +488,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
 
                     linkVM (nodeVL, vmNew);
 
-                // If the linked is incorrect
+                // If the linked is incorrect, Zahra: No, I think if the link is correct
                     req->decreaseSelectionQuantity(i);
                     attendedRequest_vms.insert(attendedRequest_vms.end(), vmNew);
                 // Put VM in running VM Vector
@@ -498,15 +497,18 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
                    // simtime_t start_time;
                    // start_time=clock();
 
-                    RunningVM* started_VM = new RunningVM();
-                    started_VM->vmID.push_back(vmNew);
+                    RunningVM* started_VM;
+                    started_VM->vm=vmNew;
                     started_VM->start_time= now;
                     started_VM->end_time=now+2000000; //clocks per secs
-                    started_VM->user=vmNew->getUid();
+                    started_VM->userID=vmNew->getUid();
                     runVM.push_back(started_VM);
+                    printf("\n Method[Start_VM]: -------> VM %s has started.\n",started_VM->vm->getFullName());
+
              }
         }
         if (!notEnoughResources) req->eraseSelectionType(i);
+
     }
     // Send all attendeed requests
     attendedRequest = new RequestVM(req -> getUid(), REQUEST_START_VM, attendedRequest_vms);
@@ -573,8 +575,19 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req){
             // connection control
             closeVMConnections (nodes, vm);
 
+            // if vm job finishes before time slice elapse
+            int id=vm->getId();
+            for (int k=0 ; k<runVM.size();++k)
+            {
+                if (runVM.at(k)->vm->getId()==id)
+                {
+                    runVM.erase(runVM.begin()+k);
+                }
+            }
             // Delete the first VM and proceed if exists any one.
             req->eraseVM(0);
+            printf("\n Method[Shutdown_VM]: -------> VM %s has shutdown.\n",vm->getFullName());
+
 
         }
 }

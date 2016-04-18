@@ -209,7 +209,7 @@ using std::string;
 	
 /************************* CLOUD SCHEDULER *************************/
 
-	#define DEBUG_CLOUD_SCHED false
+	#define DEBUG_CLOUD_SCHED true
 
 /************************* HYPERVISOR SCHEDULER *************************/
 

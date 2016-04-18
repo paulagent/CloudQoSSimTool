@@ -226,7 +226,7 @@ void AbstractUserGenerator::createUser (){
 
                     // Get virtual machines selection
                        vmSelectionSize = vmSelect.size();
-
+                       printf("AbstractUserGenerator::createUser vmSelect %d \n", vmSelectionSize);
                        for (j = 0; ((int)j) < (vmSelectionSize); j++){
 
                            vmSelectionQuantity = (*(vmSelect.begin()+j))->quantity;
@@ -277,7 +277,7 @@ void AbstractUserGenerator::createUser (){
 
             // Notify to cloud manager the arrival of a new user..
             userManagementPtr->newUser (user);
-
+            printf("AbstractUserGenerator::createUser: user created : %s \n",user->getUserName().c_str());
 		}catch (exception& e){
 			throw cRuntimeError("UserGenerator_cell::createUser->Error creating user %s\n",userID.c_str());
 		}

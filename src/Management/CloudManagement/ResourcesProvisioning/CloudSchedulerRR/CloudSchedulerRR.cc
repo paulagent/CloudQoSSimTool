@@ -69,7 +69,7 @@ void CloudSchedulerRR::setupScheduler(){
 void CloudSchedulerRR::schedule (){
 
 
-    if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER]: -------> schedule\n");
+    if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER_RR]: -------> schedule\n");
 
        //Define ...
            vector<AbstractNode*> selectedNodes;
@@ -102,11 +102,11 @@ void CloudSchedulerRR::schedule (){
            if (schedulerBlock()){
 
                req =  getRequestByIndex(j);
-
+               printf("\n Method[CLOUD_SCHEDULER_RR]: ------->getrequest \n");
                // Start with the vm allocation
 
                while ((j < (numPendingRequests())) && (req != NULL)){
-
+                   printf("\n Method[CLOUD_SCHEDULER_RR]: -------> inside request loop\n");
                    req_st = dynamic_cast<StorageRequest*>(req);
                    req_vm = dynamic_cast<RequestVM*>(req);
 
@@ -125,6 +125,7 @@ void CloudSchedulerRR::schedule (){
                    else if (req_vm != NULL){
 
                        if (req->getOperation() == REQUEST_START_VM) {
+                           printf("\n Method[CLOUD_SCHEDULER_RR]: -------> start vm\n");
                            notEnoughResources = request_start_vm (req_vm);
                            if (!notEnoughResources){
                                eraseRequest(req);
@@ -140,6 +141,7 @@ void CloudSchedulerRR::schedule (){
                        }
 
                        else if (req->getOperation() == REQUEST_FREE_RESOURCES){
+                           printf("\n Method[CLOUD_SCHEDULER_RR]: -------> free resources\n");
                            request_shutdown_vm(req_vm);
                            eraseRequest(req);
                            requestErased = true;
@@ -172,33 +174,63 @@ void CloudSchedulerRR::schedule (){
 
                }
                j=0;
+              // vector<RunningVM*> runVM= AbstractCloudManager::runVM;
+               printf("\n Method[CLOUD_SCHEDULER_RR]: -------> Before our loop\n");
+
                while (j<AbstractCloudManager::runVM.size())
                {
+                   printf("\n Method[CLOUD_SCHEDULER_RR]: -------> enter RR\n");
                    clock_t t=clock(); // we are not sure about current time
                    RunningVM* vm;
                    vm=AbstractCloudManager::runVM.at(j);
-                   if (t> vm->end_time)
+                   if (t> vm->end_time)   // we need to shutdown vm
                    {
                        // make new request
+                  //     RequestVM* reqvm;
+                    //   new
                        AbstractRequest* new_req;
+                   //    new new_req();
+
+
+
+                       RequestVM* new_req_vm=new RequestVM();
+                       new_req_vm->setUid(vm->userID);
+                       new_req_vm->setOperation(REQUEST_START_VM);
+                  //     new_req_vm->setVectorVM(vm->vmID);
+                   //.    new_req_vm->setn
+                    //   vm->vm->getElementType()->
+                       new_req_vm->setNewSelection(vm->vm->getElementType()->getType(),1);
+                     //  vm->vm->getProcessRunning()  //check  running process
+
+/*
                        new_req->setOperation(REQUEST_START_VM);
                        new_req->setState(REQUEST_PENDING);
                        new_req->setUid(vm->user);
+                    //   new_req->*/
+                       new_req= dynamic_cast<AbstractRequest*>(new_req_vm);
                        // add new request to temp queue
-                       RequestsManagement* manager;
-                       manager->userSendRequest(new_req);
+                     //  RequestsManagement* manager=new RequestsManagement();
+                      // RequestsManagement* manager;
+                      // manager->u
+                     //  manager->userSendRequest(new_req);
+                       if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to start VM has sent.\n");
                        // shutdown VM
-                       RequestVM* new_req_vm=new RequestVM();
-                       new_req_vm->setUid(vm->user);
-                       new_req_vm->setOperation(REQUEST_FREE_RESOURCES);
-                       new_req_vm->setVectorVM(vm->vmID);
 
-                       request_shutdown_vm(new_req_vm);
+                       RequestVM* new_req_vm2=new RequestVM();
+                       new_req_vm2->setUid(vm->userID);
+                       new_req_vm2->setOperation(REQUEST_FREE_RESOURCES);
+                       new_req_vm2->setNewSelection(vm->vm->getElementType()->getType(),1); // zahra: check here first if anything wrong
+                       request_shutdown_vm(new_req_vm2);
+                       if (DEBUG_CLOUD_SCHED){
+                           printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to Shutdown VM %s has been sent.\n",vm->vm->getFullName());
+
+                       }
+
                        // save the state
 
 
                        // erase from vector
-                       AbstractCloudManager::runVM.erase(AbstractCloudManager::runVM.begin());
+                       AbstractCloudManager::runVM.erase(AbstractCloudManager::runVM.begin()+j);
 
                    }
                    else
@@ -286,7 +318,7 @@ AbstractNode* CloudSchedulerRR::selectNode (AbstractRequest* req){
 
 vector<AbstractNode*> CloudSchedulerRR::selectStorageNodes (AbstractRequest* st_req){
 
-    if (DEBUG_CLOUD_SCHED) printf("\n Method[SCHEDULER_FIFO]: -------> selectStorageNode\n");
+    if (DEBUG_CLOUD_SCHED) printf("\n Method[SCHEDULER_RR]: -------> selectStorageNode\n");
 
     // Define ..
         int numNodesFs;

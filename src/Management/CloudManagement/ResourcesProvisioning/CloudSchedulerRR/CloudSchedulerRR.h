@@ -14,6 +14,7 @@
 #define SCHEDULER_RR_H_
 
 #include "AbstractCloudScheduler.h"
+#include "RequestsManagement.h"
 #include "RunningVM.h"
 
 class CloudSchedulerRR : public AbstractCloudScheduler{

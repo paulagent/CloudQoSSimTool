@@ -15,9 +15,9 @@
  */
 class RunningVM{
 public:
-    int user;
-   // VM* vm;
-    vector<VM*> vmID;
+    int userID;
+    VM* vm;
+  //  vector<VM*> vmID;
     clock_t start_time;
     clock_t end_time;
     void initialize();
