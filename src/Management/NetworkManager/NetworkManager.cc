@@ -28,6 +28,8 @@ NetworkManager::~NetworkManager() {
 }
 
 void NetworkManager::initialize(){
+
+    printf("\n Method[NetworkManagerTest::initialize]: ------->initialize \n");
     icancloud_Base::initialize();
 	ipsCloud.clear();
 	ipBasis = "";
@@ -61,7 +63,7 @@ void NetworkManager::processResponseMessage (icancloud_Message *sm){
 
 
 void NetworkManager::createNewUser (int newUserID){
-
+    printf("\n Method[Mag::NetworkManagerTest::createNewUser]: ------->initialize \n");
 	ipsUserSet* element;
 
 	element = new ipsUserSet();
@@ -99,7 +101,7 @@ string NetworkManager::getIPBasis(){
 }
 
 string NetworkManager::allocateVirtualIP (string ipNode, int userID, int vmID){
-
+    printf("\n Method[NetworkManagerTest::allocateVirtualIP]: ------->allocateVirtualIP \n");
 	vector <ipsUserSet*>::iterator it;
 	VirtualIPCell* ipcell;
 	string virtualIP;

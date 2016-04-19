@@ -23,6 +23,7 @@ RequestsManagement::~RequestsManagement() {
 }
 
 void RequestsManagement::initialize(){
+    printf("\n Method[RequestsManagement::initialize]: ------->initialize \n");
     schedulerQueueBlocked = false;
     requestsQueue.clear();
     temporalRequestsQueue.clear();

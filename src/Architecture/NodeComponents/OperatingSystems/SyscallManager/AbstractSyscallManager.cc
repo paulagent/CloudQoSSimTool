@@ -6,7 +6,7 @@ AbstractSyscallManager::~AbstractSyscallManager(){
 
 
 void AbstractSyscallManager::initialize(){
-
+    printf("\n Method[AbstractSyscallManager::initialize]: ------->initialize \n");
     // Init the super-class
     icancloud_Base::initialize();
 

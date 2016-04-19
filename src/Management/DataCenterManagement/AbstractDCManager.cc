@@ -38,7 +38,7 @@ void AbstractDCManager::initialize(){
             time_t rawtime;
             struct tm * timeinfo;
             std::ostringstream file;
-
+            printf("\n Method[Abstract DC manager]: ------->start \n");
         // Initialize the superclasses
             // Finish the super-class
             DataCenterAPI::initialize();
@@ -264,7 +264,7 @@ cGate* AbstractDCManager::getOutGate (cMessage *msg){
 ICCLog acs_f;
 
 void AbstractDCManager::initManager (int totalNodes){
-
+    printf("\n Method[Abstract DC manager]: ------->initmanager \n");
     // Define.
         std::ofstream line;
         string file;
@@ -283,9 +283,9 @@ void AbstractDCManager::initManager (int totalNodes){
          cModule* nodeMod;
          string nodeName;
          Node* nodeChecked;
-
+         printf("\n Method[Abstract DC manager_initmanagr]: ------->before test ifcfgloaded \n");
     if (!isCfgLoaded()){
-
+        printf("\n Method[Abstract DC manager_initmanagr]: ------->ifcfgloaded \n");
             // Initialize structures and parameters
                 nodesMap = new MachinesMap();
                 storage_nodesMap = new MachinesMap();
@@ -592,6 +592,7 @@ void AbstractDCManager::finalizeDCManager(){
 }
 
 void AbstractDCManager::initScheduler(){
+    printf("\n Method[Abstract DC manager]: ------->initScheduler \n");
     setupScheduler();
     schedule();
     if (!smAlarm->isScheduled()) scheduleAt(simTime()+timeBetweenScheduleEvents_s, smAlarm);
@@ -603,7 +604,7 @@ void AbstractDCManager::initScheduler(){
  * Booking methods
  ***********************************************************************/
 int AbstractDCManager::bookComputeResources( int uid, int jobID, int nodeSet, int nodeID, int cores){
-
+    printf("\n Method[Abstract DC manager]: -------bookcomputerResources \n");
     // Define ..
         AbstractNode* node;
         int messageID;

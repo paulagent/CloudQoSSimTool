@@ -41,7 +41,7 @@ void icancloud_Base::initialize(){
     char module_path [NAME_SIZE];
 	char currentHostName [NAME_SIZE];
 	string currentRunPath;
-
+	//printf("\n Method[icancloud_Base]: ------->initialize \n");
 		// Init common attributes
 		currentRequest = 0;
 		latencyMessage = NULL;

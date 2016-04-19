@@ -44,7 +44,7 @@ AbstractUserGenerator::~AbstractUserGenerator() {
 }
 
 void AbstractUserGenerator::initialize(){
-
+    printf("\n Method[AbstractUserGenerator::initialize]: ------->initialize \n");
 	// Init the superclass
 		icancloud_Base::initialize();
         struct tm * timeinfo;
