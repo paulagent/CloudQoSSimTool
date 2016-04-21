@@ -142,9 +142,9 @@ unsigned int icancloud_Message::getTraceArraySize() const{
 
 
 TraceComponent& icancloud_Message::getTrace(unsigned int k){
-//    TraceComponent* trace;
-//    trace = NULL;
-//    return *trace;
+   TraceComponent* trace;
+    trace = NULL;
+    return *trace;
 }
 
 

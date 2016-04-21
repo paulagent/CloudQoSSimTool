@@ -487,23 +487,24 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
                     nodeVL->testLinkVM (vmNew->getNumCores(), vmNew->getMemoryCapacity(), vmNew->getStorageCapacity(), vmNew->getNumNetworkIF(), vmNew->getTypeName(), vmNew->getUid(), vmNew->getPid());
 
                     linkVM (nodeVL, vmNew);
+                    clock_t now = clock();
+                                     // simtime_t start_time;
+                                     // start_time=clock();
 
+                                      RunningVM* started_VM= new RunningVM();
+                                  //    started_VM=null;
+                                      started_VM->vm=vmNew;
+                                      started_VM->start_time= now;
+                                      started_VM->end_time=now+2000000; //clocks per secs
+                                      started_VM->userID=vmNew->getUid();
+                                      runVM.push_back(started_VM);
                 // If the linked is incorrect, Zahra: No, I think if the link is correct
                     req->decreaseSelectionQuantity(i);
                     attendedRequest_vms.insert(attendedRequest_vms.end(), vmNew);
                 // Put VM in running VM Vector
                 // current time
-                    clock_t now = clock();
-                   // simtime_t start_time;
-                   // start_time=clock();
-
-                    RunningVM* started_VM;
-                    started_VM->vm=vmNew;
-                    started_VM->start_time= now;
-                    started_VM->end_time=now+2000000; //clocks per secs
-                    started_VM->userID=vmNew->getUid();
-                    runVM.push_back(started_VM);
                     printf("\n Method[Start_VM]: -------> VM %s has started.\n",started_VM->vm->getFullName());
+
 
              }
         }

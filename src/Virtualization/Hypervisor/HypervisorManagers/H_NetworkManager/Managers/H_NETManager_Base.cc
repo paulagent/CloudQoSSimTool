@@ -447,13 +447,14 @@ void H_NETManager_Base::enqueuePendingMessage(icancloud_Message* sm){
 		msg->time_enqueued = simTime().dbl();
 
 		pendingConnections.push_back(msg);
-
+		printf("APP_ALARM");
 		cMessage *initScheduler = new cMessage (SM_APP_ALARM.c_str());
 		scheduleAt (simTime() + 1, initScheduler);
 }
 
 void H_NETManager_Base::checkPendingMessages(){
 
+    printf("checkPendingMessages");
 	Enter_Method_Silent();
 
 		enqueuedMessage* msg;

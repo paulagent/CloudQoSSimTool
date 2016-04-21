@@ -24,7 +24,7 @@ HWEnergyInterface::HWEnergyInterface(){
 }
 
 void HWEnergyInterface::initialize() {
-    printf("\n Method[HWEnergyInterface::initialize]: ------->initialize \n");
+//    printf("\n Method[HWEnergyInterface::initialize]: ------->initialize \n");
     // Init the superClass
        icancloud_Base::initialize();
 

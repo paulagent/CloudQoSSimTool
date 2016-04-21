@@ -69,7 +69,8 @@ void CloudSchedulerRR::setupScheduler(){
 void CloudSchedulerRR::schedule (){
 
 
-    if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER_RR]: -------> schedule\n");
+ //   if (DEBUG_CLOUD_SCHED)
+        printf("\n Method[CLOUD_SCHEDULER_RR]: -------> schedule\n");
 
        //Define ...
            vector<AbstractNode*> selectedNodes;
@@ -97,6 +98,7 @@ void CloudSchedulerRR::schedule (){
            j = 0;
 
        // Begin ..
+           printf("\n Method[CLOUD_SCHEDULER_RR]: -------> initialize\n");
 
            // Schedule..
            if (schedulerBlock()){
@@ -177,10 +179,12 @@ void CloudSchedulerRR::schedule (){
               // vector<RunningVM*> runVM= AbstractCloudManager::runVM;
                printf("\n Method[CLOUD_SCHEDULER_RR]: -------> Before our loop\n");
 
-               while (j<AbstractCloudManager::runVM.size())
+               while (j< int(AbstractCloudManager::runVM.size()))
                {
-                   printf("\n Method[CLOUD_SCHEDULER_RR]: -------> enter RR\n");
                    clock_t t=clock(); // we are not sure about current time
+
+                   printf("\n Method[CLOUD_SCHEDULER_RR]: -------> enter RR + %d\n", t);
+
                    RunningVM* vm;
                    vm=AbstractCloudManager::runVM.at(j);
                    if (t> vm->end_time)   // we need to shutdown vm
@@ -191,9 +195,11 @@ void CloudSchedulerRR::schedule (){
                        AbstractRequest* new_req;
                    //    new new_req();
 
+                       printf("\n Method[CLOUD_SCHEDULER_RR]: -------> t is greater than  vm end_time\n");
 
 
                        RequestVM* new_req_vm=new RequestVM();
+
                        new_req_vm->setUid(vm->userID);
                        new_req_vm->setOperation(REQUEST_START_VM);
                   //     new_req_vm->setVectorVM(vm->vmID);
@@ -207,7 +213,7 @@ void CloudSchedulerRR::schedule (){
                        new_req->setState(REQUEST_PENDING);
                        new_req->setUid(vm->user);
                     //   new_req->*/
-                       new_req= dynamic_cast<AbstractRequest*>(new_req_vm);
+                      new_req= dynamic_cast<AbstractRequest*>(new_req_vm);
                        // add new request to temp queue
                      //  RequestsManagement* manager=new RequestsManagement();
                       // RequestsManagement* manager;
@@ -314,6 +320,61 @@ AbstractNode* CloudSchedulerRR::selectNode (AbstractRequest* req){
             }
 
 		return node;
+/*
+    // Bring from FIFS
+ //   if (DEBUG_CLOUD_SCHED)
+        printf("\n Method[SCHEDULER_FIFO]: -------> select_nodes\n");
+
+       // Define ..
+           vector <int> set;
+           AbstractNode* node;
+           int vmCPU;
+           int vmMemory;
+           int i;
+           elementType* el;
+           int numProcesses;
+           RequestVM* reqVm;
+
+           // Cast
+           reqVm = dynamic_cast<RequestVM*>(req);
+           if (reqVm == NULL) throw cRuntimeError("AbstractCloudManager::selectNode->Error. Casting the request\n");
+
+       // Init ..
+           set.clear();
+           node = NULL;
+           el = reqVm->getSingleRequestType();
+           vmCPU = el->getNumCores();
+           vmMemory = el->getMemorySize();
+           numProcesses = 0;
+
+       // Begin ..
+
+           // Define ..
+               vector<HeterogeneousSet*>::iterator setIt;
+
+           // Begin ..
+
+               // Push in the set the different heterogeneous node types where it is possible allocate the vm
+                   for (i = 0; i < getMapSize(); i++){
+                       if ( (getSetMemorySize(i, false) >= vmMemory) && (getSetNumCores(i,false) >= vmCPU) ){
+                           set.push_back(i);
+                           break;
+                       }
+                   }
+
+               // select the first set
+                   for (i = 0; i < (int)set.size(); i++){
+                       for (int j = 0; j < getSetSize((*(set.begin() + i))); j++){
+                           NodeVL* node_vl = check_and_cast<NodeVL*>(getNodeByIndex((*(set.begin())),j));
+                           numProcesses = node_vl->getNumOfLinkedVMs();
+                           if (numProcesses < maximum_number_of_processes_per_node){
+                               node = check_and_cast<Node*>(node_vl);
+                               break;
+                           }
+                       }
+                   }
+
+           return node;*/
 
 }
 

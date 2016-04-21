@@ -74,7 +74,6 @@ bool RequestsManagement::schedulerUnblock(){
     }
 
     blockArrivalRequests(false);
-
     return result;
 
 }

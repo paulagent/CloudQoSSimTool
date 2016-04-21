@@ -168,7 +168,7 @@ void AbstractDCManager::processSelfMessage (cMessage *msg){
 
     // Begin ..
         if(!strcmp (msg->getName(), SM_APP_ALARM.c_str())){
-
+printf("call schedule");
             schedule();
 
             if ((checkFinalization()) && (!simulationPerTime)){

@@ -21,7 +21,8 @@ public:
     clock_t start_time;
     clock_t end_time;
     void initialize();
-
+    RunningVM();
+    ~RunningVM();
        /**
         * This method classifies an incoming message and invokes the corresponding method
         * to process it.
