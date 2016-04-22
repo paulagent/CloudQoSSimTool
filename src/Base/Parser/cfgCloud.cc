@@ -34,6 +34,7 @@ int CfgCloud::getIndexForVM (string vmName){
     int position = -1;
 
     printf("CfgCloud::getIndexForVM : vms size ----> %d",(int)vms.size() );
+
     for (int i = 0; (i < (int)vms.size()) && (!found); i++){
         if ( strcmp((*(vms.begin() + i))->vmtype.c_str(), vmName.c_str()) == 0){
             found = true;

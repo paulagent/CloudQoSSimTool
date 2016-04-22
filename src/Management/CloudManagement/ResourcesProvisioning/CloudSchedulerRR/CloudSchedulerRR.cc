@@ -215,15 +215,21 @@ void CloudSchedulerRR::schedule (){
                       new_req= dynamic_cast<AbstractRequest*>(new_req_vm);
                        // add new request to temp queue
                      //RequestsManagement* manager=new RequestsManagement();
-                      printf("TEST REQUEST MANAGER2");
-                      RequestsManagement* manager;
+                      AbstractUser* user;
+                      AbstractCloudUser* cl_user;
+                      user = getUserById(vm->userID);
+                      cl_user = check_and_cast<AbstractCloudUser*>(user);
+                      cl_user->send_request_to_manager(new_req);
+                      printf("\nTEST REQUEST MANAGER2 ---> After sending request \n");
+
+                  //    RequestsManagement* manager;
                     //   manager->initialize();
                       // manager->u
-                       cModule* managerMod2;
+                 //      cModule* managerMod2;
 
-                       managerMod2 = this->getParentModule()->getSubmodule("manager");
-                       manager = dynamic_cast<RequestsManagement*> (managerMod2);
-                       manager->userSendRequest(new_req);
+                 //      managerMod2 = this->getParentModule()->getSubmodule("manager");
+                //       manager = dynamic_cast<RequestsManagement*> (managerMod2);
+                //       manager->userSendRequest(new_req);
                   //     if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to start VM has sent.\n");
                        // shutdown VM
 
@@ -293,6 +299,8 @@ AbstractNode* CloudSchedulerRR::selectNode (AbstractRequest* req){
      //       positionInitial = currentNodeIndex;
             while (!found){  // it continues until found is FALSE
                 if (DEBUG_CLOUD_SCHED) printf("\n Method[SCHEDULER_ROUNDROBIN]:In Found Loop \n");
+                printf("\n Method[SCHEDULER_ROUNDROBIN]: setInitial------>%d \n", setInitial);
+                printf("\n Method[SCHEDULER_ROUNDROBIN]: positionInitial------>%d \n", positionInitial);
 
                  node = getNodeByIndex(setInitial,positionInitial);
 
@@ -309,6 +317,7 @@ AbstractNode* CloudSchedulerRR::selectNode (AbstractRequest* req){
 
                  currentNodeIndex++;
                  printf("\n Method[SCHEDULER_ROUNDROBIN]:getSetSize(setInitial)------>%d \n",getSetSize(setInitial));
+                 printf("\n Method[SCHEDULER_ROUNDROBIN]: currentNodeIndex------>%d \n", currentNodeIndex);
 
                  if ((unsigned int)currentNodeIndex > (unsigned int)getSetSize(setInitial)){
                      setInitial++;
@@ -327,6 +336,7 @@ AbstractNode* CloudSchedulerRR::selectNode (AbstractRequest* req){
                      node = NULL;
                  }
             }
+            printf("\n Method[SCHEDULER_ROUNDROBIN]: selectednode------>%s \n", node->getFullName());
 
 		return node;
 /*
