@@ -445,7 +445,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
             //erase the rest of vms less the actual
 
             selectedNode = selectNode(reqA);
-
+            printf("MODULE[AbstractCloudManager::request_start_vm] seled node %s\n",selectedNode->getFullName());
             delete (reqSch);
 
             operation = req->getOperation();
@@ -579,7 +579,7 @@ printf("METHOD[AbstractCloudManager::request_shutdown_vm]: VMQuantity ----------
 
             // if vm job finishes before time slice elapse
             int id=vm->getId();
-            for (int k=0 ; k<runVM.size();++k)
+            for (int k=0 ; k<(int)runVM.size();++k)
             {
                 if (runVM.at(k)->vm->getId()==id)
                 {
@@ -689,7 +689,7 @@ VM* AbstractCloudManager::create_VM (VM* vmImage, string vmName, cModule* parent
 		for (i = 0; i < numParameters ; i++){
 			cloneVm->par(i) = vmImage->par(i);
 		}
-
+		printf("MODULE[AbstractCloudManager::create_vm] before call getIndexForVM -----> %s \n",vmName.c_str());
 		int position = cfg->getIndexForVM(vmName.c_str());
 		cloneVm->par("numCores") = cfg->getNumCores(position);
         cloneVm->par("memorySize_MB") = cfg->getMemorySize(position);
