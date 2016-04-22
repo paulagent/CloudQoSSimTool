@@ -21,7 +21,15 @@ RequestsManagement::~RequestsManagement() {
     temporalRequestsQueue.clear();
     executingRequests.clear();
 }
-
+/*RequestsManagement::RequestsManagement()
+{
+    printf("\n Method[RequestsManagement::initialize]: ------->initialize \n");
+       schedulerQueueBlocked = false;
+       requestsQueue.clear();
+       temporalRequestsQueue.clear();
+       executingRequests.clear();
+       icancloud_Base::initialize();
+}*/
 void RequestsManagement::initialize(){
     printf("\n Method[RequestsManagement::initialize]: ------->initialize \n");
     schedulerQueueBlocked = false;

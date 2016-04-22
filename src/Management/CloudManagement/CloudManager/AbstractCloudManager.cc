@@ -476,6 +476,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
                     nodeVL = check_and_cast<NodeVL*>(selectedNode);
 
                     // Create the vm as image of vm image.
+                    printf("MODULE[AbstractCloudManager::request_start_vm] -----> %s",req->getSelectionType(0).c_str());
                     vmNew = create_VM (vm, req->getSelectionType(0).c_str(), nodeVL->getHypervisor());
 
                     vmNew->setUid(req->getUid());
@@ -547,7 +548,7 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req){
 
     // Init ..
         nodes.clear();
-
+printf("METHOD[AbstractCloudManager::request_shutdown_vm]: VMQuantity ---------------> %d ", req->getVMQuantity());
     // Get the first VM
         while (req->getVMQuantity() != 0){
 

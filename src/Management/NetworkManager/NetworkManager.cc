@@ -29,7 +29,7 @@ NetworkManager::~NetworkManager() {
 
 void NetworkManager::initialize(){
 
-    printf("\n Method[NetworkManagerTest::initialize]: ------->initialize \n");
+ //   printf("\n Method[NetworkManagerTest::initialize]: ------->initialize \n");
     icancloud_Base::initialize();
 	ipsCloud.clear();
 	ipBasis = "";

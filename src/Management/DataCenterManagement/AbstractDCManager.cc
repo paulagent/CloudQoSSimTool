@@ -38,7 +38,7 @@ void AbstractDCManager::initialize(){
             time_t rawtime;
             struct tm * timeinfo;
             std::ostringstream file;
-            printf("\n Method[Abstract DC manager]: ------->start \n");
+      //      printf("\n Method[Abstract DC manager]: ------->start \n");
         // Initialize the superclasses
             // Finish the super-class
             DataCenterAPI::initialize();

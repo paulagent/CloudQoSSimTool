@@ -29,7 +29,7 @@ void H_CPUManager_Base::initialize() {
 
 	std::ostringstream osStream;
 	unsigned int i;
-	 printf("\n Method[H_CPUManager_Base]: ------->getrequest \n");
+//	 printf("\n Method[H_CPUManager_Base]: ------->getrequest \n");
 		// Init the super-class
 	    icancloud_Base::initialize();
 

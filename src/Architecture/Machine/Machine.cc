@@ -21,7 +21,7 @@ Machine::~Machine() {
 void Machine::initialize(){
 
     cModule* osMod;
-    printf("\n Method[Machine::initialize]: ------->initialize \n");
+ //   printf("\n Method[Machine::initialize]: ------->initialize \n");
  // create the gates for the new application
     osMod = this->getSubmodule("osModule")->getSubmodule("syscallManager");
     os = dynamic_cast<AbstractSyscallManager*>(osMod);

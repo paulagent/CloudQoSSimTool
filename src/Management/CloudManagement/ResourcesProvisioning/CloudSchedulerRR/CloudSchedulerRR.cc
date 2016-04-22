@@ -98,17 +98,18 @@ void CloudSchedulerRR::schedule (){
            j = 0;
 
        // Begin ..
-           printf("\n Method[CLOUD_SCHEDULER_RR]: -------> initialize\n");
+       //    printf("\n Method[CLOUD_SCHEDULER_RR]: -------> initialize\n");
 
            // Schedule..
            if (schedulerBlock()){
 
                req =  getRequestByIndex(j);
-               printf("\n Method[CLOUD_SCHEDULER_RR]: ------->getrequest \n");
                // Start with the vm allocation
 
                while ((j < (numPendingRequests())) && (req != NULL)){
+                   printf("\n Method[CLOUD_SCHEDULER_RR]: ------->getrequest------> %d \n", req->getOperation());
                    printf("\n Method[CLOUD_SCHEDULER_RR]: -------> inside request loop\n");
+                   printf("\n Method[CLOUD_SCHEDULER_RR]: ------->numPendingRequests------> %d \n", numPendingRequests());
                    req_st = dynamic_cast<StorageRequest*>(req);
                    req_vm = dynamic_cast<RequestVM*>(req);
 
@@ -183,43 +184,47 @@ void CloudSchedulerRR::schedule (){
                {
                    clock_t t=clock(); // we are not sure about current time
 
-                   printf("\n Method[CLOUD_SCHEDULER_RR]: -------> enter RR + %d\n", t);
+                   printf("\n Method[CLOUD_SCHEDULER_RR]: -------> enter RR + %ld\n", t);
 
                    RunningVM* vm;
                    vm=AbstractCloudManager::runVM.at(j);
                    if (t> vm->end_time)   // we need to shutdown vm
                    {
                        // make new request
-                  //     RequestVM* reqvm;
-                    //   new
+
+
+
+
+
+                       printf("\n Method[CLOUD_SCHEDULER_RR]: -------> t is greater than  vm end_time, we need to shut down vm\n");
+
+                  //     printf("TEST REQUEST MANAGER-1");
+
+                //       printf("TEST REQUEST MANAGER0");
                        AbstractRequest* new_req;
-                   //    new new_req();
-
-                       printf("\n Method[CLOUD_SCHEDULER_RR]: -------> t is greater than  vm end_time\n");
-
-
                        RequestVM* new_req_vm=new RequestVM();
-
                        new_req_vm->setUid(vm->userID);
+                       new_req_vm->setForSingleRequest(vm->vm->getElementType());
                        new_req_vm->setOperation(REQUEST_START_VM);
-                  //     new_req_vm->setVectorVM(vm->vmID);
-                   //.    new_req_vm->setn
-                    //   vm->vm->getElementType()->
-                       new_req_vm->setNewSelection(vm->vm->getElementType()->getType(),1);
+                   //    new_req_vm->setNewSelection(vm->vm->getElementType()->getType(),1);
                      //  vm->vm->getProcessRunning()  //check  running process
 
-/*
-                       new_req->setOperation(REQUEST_START_VM);
-                       new_req->setState(REQUEST_PENDING);
-                       new_req->setUid(vm->user);
-                    //   new_req->*/
+
+
+
                       new_req= dynamic_cast<AbstractRequest*>(new_req_vm);
                        // add new request to temp queue
-                     //  RequestsManagement* manager=new RequestsManagement();
-                      // RequestsManagement* manager;
+                     //RequestsManagement* manager=new RequestsManagement();
+                      printf("TEST REQUEST MANAGER2");
+                      RequestsManagement* manager;
+                    //   manager->initialize();
                       // manager->u
-                     //  manager->userSendRequest(new_req);
-                       if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to start VM has sent.\n");
+                       cModule* managerMod2;
+
+                       managerMod2 = this->getParentModule()->getSubmodule("manager");
+                       manager = dynamic_cast<RequestsManagement*> (managerMod2);
+                       manager->userSendRequest(new_req);
+                  //     if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to start VM has sent.\n");
                        // shutdown VM
 
                        RequestVM* new_req_vm2=new RequestVM();
@@ -277,14 +282,17 @@ AbstractNode* CloudSchedulerRR::selectNode (AbstractRequest* req){
         vmMemory = el->getMemorySize();
         setInitial = currentNodeType;
         positionInitial = currentNodeIndex;
+        if (DEBUG_CLOUD_SCHED) printf("\n Method[SCHEDULER_ROUNDROBIN]:currentNodeIndex :  ------->%d \n", currentNodeIndex);
+
         found = false;
 
     // Begin ..
 
         // select the node
 
-            positionInitial = currentNodeIndex;
-            while (!found){
+     //       positionInitial = currentNodeIndex;
+            while (!found){  // it continues until found is FALSE
+                if (DEBUG_CLOUD_SCHED) printf("\n Method[SCHEDULER_ROUNDROBIN]:In Found Loop \n");
 
                  node = getNodeByIndex(setInitial,positionInitial);
 
@@ -300,6 +308,7 @@ AbstractNode* CloudSchedulerRR::selectNode (AbstractRequest* req){
                  }
 
                  currentNodeIndex++;
+                 printf("\n Method[SCHEDULER_ROUNDROBIN]:getSetSize(setInitial)------>%d \n",getSetSize(setInitial));
 
                  if ((unsigned int)currentNodeIndex > (unsigned int)getSetSize(setInitial)){
                      setInitial++;

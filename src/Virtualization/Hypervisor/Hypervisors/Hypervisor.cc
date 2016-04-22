@@ -23,7 +23,7 @@ Hypervisor::~Hypervisor() {
 
 void Hypervisor::initialize(){
     cModule* mod;
-    printf("\n Method[Hypervisor]: ------->Init \n");
+ //   printf("\n Method[Hypervisor]: ------->Init \n");
     mod = this->getSubmodule("cpuManager");
     cpuM = check_and_cast<H_CPUManager_Base*>(mod);
 

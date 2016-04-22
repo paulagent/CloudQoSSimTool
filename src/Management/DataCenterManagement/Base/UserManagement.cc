@@ -20,7 +20,7 @@ UserManagement::~UserManagement() {
 }
 
 void UserManagement::initialize(){
-    printf("\n Method[UserManagement::initialize]: ------->initialize \n");
+ //   printf("\n Method[UserManagement::initialize]: ------->initialize \n");
     userList.clear();
     no_more_users = false;
     simulationPerTime = false;

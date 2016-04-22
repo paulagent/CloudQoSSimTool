@@ -569,6 +569,8 @@ Machine* MachinesMap::getMachineByIndex (int machineSetIndex, int machineIndex){
 	// Init ..
 		result = NULL;
         machineMapSize = machineMap.size();
+    //    if (DEBUG_CLOUD_SCHED) printf("\n Method[MachinesMap::getMachineByIndex]:machineMapSize---->%d \n", machineMapSize);
+
 	// Begin ..
 
 		if ((machineSetIndex < machineMapSize) && (machineSetIndex >= 0)){
