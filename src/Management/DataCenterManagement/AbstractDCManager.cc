@@ -264,7 +264,7 @@ cGate* AbstractDCManager::getOutGate (cMessage *msg){
 ICCLog acs_f;
 
 void AbstractDCManager::initManager (int totalNodes){
-    printf("\n Method[Abstract DC manager]: ------->initmanager \n");
+    //printf("\n Method[Abstract DC manager]: ------->initmanager \n");
     // Define.
         std::ofstream line;
         string file;
@@ -283,7 +283,7 @@ void AbstractDCManager::initManager (int totalNodes){
          cModule* nodeMod;
          string nodeName;
          Node* nodeChecked;
-         printf("\n Method[Abstract DC manager_initmanagr]: ------->before test ifcfgloaded \n");
+       //  printf("\n Method[Abstract DC manager_initmanagr]: ------->before test ifcfgloaded \n");
     if (!isCfgLoaded()){
         printf("\n Method[Abstract DC manager_initmanagr]: ------->ifcfgloaded \n");
             // Initialize structures and parameters
@@ -592,7 +592,7 @@ void AbstractDCManager::finalizeDCManager(){
 }
 
 void AbstractDCManager::initScheduler(){
-    printf("\n Method[Abstract DC manager]: ------->initScheduler \n");
+    //printf("\n Method[Abstract DC manager]: ------->initScheduler \n");
     setupScheduler();
     schedule();
     if (!smAlarm->isScheduled()) scheduleAt(simTime()+timeBetweenScheduleEvents_s, smAlarm);

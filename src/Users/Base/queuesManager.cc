@@ -29,7 +29,7 @@ void queuesManager::finish(){
 }
 
 void queuesManager::initialize(){
-    printf("\n Method[queuesManager::initialize]: ------->initialize \n");
+    //printf("\n Method[queuesManager::initialize]: ------->initialize \n");
     icancloud_Base::initialize();
         // Initialize structures and parameters
             waitingQueue = new JobQueue();
