@@ -150,7 +150,6 @@ AbstractRequest* RequestsManagement::getRequestByIndex (unsigned int index){
 
             // Obtain the request at position = index
             if (requestsQueue.size()>0) req = (*(requestsQueue.begin()+index));
-
         }
 
         return req;

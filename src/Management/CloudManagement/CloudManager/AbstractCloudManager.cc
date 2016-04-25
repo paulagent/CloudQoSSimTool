@@ -445,7 +445,6 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
             //erase the rest of vms less the actual
 
             selectedNode = selectNode(reqA);
-            printf("MODULE[AbstractCloudManager::request_start_vm] seled node %s\n",selectedNode->getFullName());
             delete (reqSch);
 
             operation = req->getOperation();
@@ -463,6 +462,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
 
             } // everything is ok.
             else {
+                printf("MODULE[AbstractCloudManager::request_start_vm] select node %s\n",selectedNode->getFullName());
 
                 std::ostringstream vmName;
                 vmName << vm->getName();
@@ -476,7 +476,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
                     nodeVL = check_and_cast<NodeVL*>(selectedNode);
 
                     // Create the vm as image of vm image.
-                    printf("MODULE[AbstractCloudManager::request_start_vm] -----> %s",req->getSelectionType(0).c_str());
+                    printf("MODULE[AbstractCloudManager::request_start_vm] -----> %s \n",req->getSelectionType(0).c_str());
                     vmNew = create_VM (vm, req->getSelectionType(0).c_str(), nodeVL->getHypervisor());
 
                     vmNew->setUid(req->getUid());
