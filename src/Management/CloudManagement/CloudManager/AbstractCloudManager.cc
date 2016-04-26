@@ -432,11 +432,24 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
         for (int j = 0; (j < vmQuantity) && !notEnoughResources; j++ ){
 
             // Get the original virtual machine image
-            vmImage = getSubmodule("vmImage");
+            //C++ offers a solution which is called dynamic_cast. Here we use check_and_cast<>() which is provided by OMNeT++:
+            //it tries to cast the pointer via dynamic_cast,
+         //and if it fails it stops the simulation with an error message
+            cModule* vmSet = getParentModule()->getSubmodule("vmSet");
+            //if (vmSet == NULL) throw cRuntimeError ("AbstractCloudManager::initialize() -> Error during initialization. There is no vmSet\n");
+                     vmImage = vmSet->getSubmodule("vmImage",0);
 
-            vm = dynamic_cast<VM*>(vmImage);
-            printf("\n vm->getMemorySize----->%f", vm->getFreeMemory());
-                       printf("\n vm->getStorageSize----->%f", vm->getFreeStorage());
+                     //                           vmImage->par("numCores").longValue(),
+                       //                         vmImage->par("memorySize_MB").doubleValue(),
+                       //                         vmImage->par("storageSize_GB").doubleValue()
+       // vmImage = getSubmodule("vmImage");
+       // vm =  check_and_cast<VM*>(vmImage);
+            printf("\n vm->getMemorySize----->%s", vmImage->par("id").stringValue());
+            //vm = dynamic_cast<VM*>(vmImage);
+
+       // printf("\n vm->getMemorySize----->%s", vm->getHostName().c_str());
+          //  printf("\n vm->getMemorySize----->%f", vm->getFreeMemory());
+             //          printf("\n vm->getStorageSize----->%f", vm->getFreeStorage());
           //  vm->get
             // Create the request for scheduling selecting node method
             RequestVM* reqSch;
@@ -446,11 +459,11 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
 
             reqSch->cleanSelectionType();
             reqSch->setForSingleRequest(vm->getElementType());
-            elementType* el;
+            //elementType* el;
           //  el = reqSch->getSingleRequestType();
-            el=vm->getElementType();
-            printf("el->getMemorySize----->%d", el->getMemorySize());
-            printf("el->getMemorySize----->%d", el->getNumCores());
+           // el=vm->getElementType();
+            //printf("el->getMemorySize----->%d", el->getMemorySize());
+           // printf("el->getMemorySize----->%d", el->getNumCores());
 
             reqA = check_and_cast<AbstractRequest*>(reqSch);
 

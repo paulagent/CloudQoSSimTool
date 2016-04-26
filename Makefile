@@ -249,14 +249,14 @@ OBJS = \
     $O/src/Applications/Apps/ApplicationHTC/ApplicationHTC.o \
     $O/src/Applications/Apps/CPU_Intensive/CPU_Intensive.o \
     $O/src/Applications/Apps/ServerApplication/ServerApplication.o \
-    $O/src/Applications/Base/UserJob.o \
     $O/src/Applications/Base/jobBase.o \
+    $O/src/Applications/Base/UserJob.o \
     $O/src/Applications/Base/Management/JobResults.o \
-    $O/src/Applications/Base/Management/JobQueue.o \
     $O/src/Applications/Base/Management/JobResultsSet.o \
+    $O/src/Applications/Base/Management/JobQueue.o \
     $O/src/Applications/Libraries_API/API_OS/API_OS.o \
-    $O/src/Applications/Libraries_API/MPI_Base/MPI_Call.o \
     $O/src/Applications/Libraries_API/MPI_Base/MPI_Base.o \
+    $O/src/Applications/Libraries_API/MPI_Base/MPI_Call.o \
     $O/src/Architecture/Machine/Machine.o \
     $O/src/Architecture/Node/AbstractNode.o \
     $O/src/Architecture/Node/Node/Node.o \
@@ -291,27 +291,27 @@ OBJS = \
     $O/src/Base/icancloud_Base.o \
     $O/src/Base/cGateManager.o \
     $O/src/Base/icancloud_MemoryBlock.o \
-    $O/src/Base/Messages/icancloud_Message.o \
-    $O/src/Base/Messages/icancloud_App_IO_Message.o \
-    $O/src/Base/Messages/icancloud_BlockList_Message.o \
-    $O/src/Base/Messages/icancloud_Migration_Message.o \
-    $O/src/Base/Messages/icancloud_App_NET_Message.o \
-    $O/src/Base/Messages/icancloud_File.o \
-    $O/src/Base/Messages/icancloud_MPI_Message.o \
-    $O/src/Base/Messages/icancloud_App_MEM_Message.o \
     $O/src/Base/Messages/icancloud_App_CPU_Message.o \
-    $O/src/Base/Messages/SMS/icancloud_Request.o \
-    $O/src/Base/Messages/SMS/SMS_Branch.o \
-    $O/src/Base/Messages/SMS/SMS_PFS.o \
-    $O/src/Base/Messages/SMS/SMS_RAID_0.o \
-    $O/src/Base/Messages/SMS/SMS_NFS.o \
+    $O/src/Base/Messages/icancloud_MPI_Message.o \
+    $O/src/Base/Messages/icancloud_File.o \
+    $O/src/Base/Messages/icancloud_Migration_Message.o \
+    $O/src/Base/Messages/icancloud_Message.o \
+    $O/src/Base/Messages/icancloud_BlockList_Message.o \
+    $O/src/Base/Messages/icancloud_App_IO_Message.o \
+    $O/src/Base/Messages/icancloud_App_NET_Message.o \
+    $O/src/Base/Messages/icancloud_App_MEM_Message.o \
     $O/src/Base/Messages/SMS/SMS_MainMemory.o \
     $O/src/Base/Messages/SMS/SplittingMessageSystem.o \
-    $O/src/Base/Parser/cfgDataCenter.o \
-    $O/src/Base/Parser/cfgCloud.o \
+    $O/src/Base/Messages/SMS/SMS_PFS.o \
+    $O/src/Base/Messages/SMS/icancloud_Request.o \
+    $O/src/Base/Messages/SMS/SMS_Branch.o \
+    $O/src/Base/Messages/SMS/SMS_NFS.o \
+    $O/src/Base/Messages/SMS/SMS_RAID_0.o \
     $O/src/Base/Parser/cfgCommunications.o \
     $O/src/Base/Parser/cfgMPI.o \
     $O/src/Base/Parser/cfgPreloadFS.o \
+    $O/src/Base/Parser/cfgDataCenter.o \
+    $O/src/Base/Parser/cfgCloud.o \
     $O/src/Base/Request/AbstractRequest.o \
     $O/src/Base/Request/HPCRequest/PhysicalResourcesRequest.o \
     $O/src/Base/Request/RequestBase/RequestBase.o \
@@ -328,9 +328,9 @@ OBJS = \
     $O/src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/NetworkMeter/NetworkMeterCore/NetworkMeterCore.o \
     $O/src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/StorageMeter/StorageMeterCore/StorageMeterCore.o \
     $O/src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/Memoization_uthash.o \
-    $O/src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/EState.o \
     $O/src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/EnergyMeterStates.o \
     $O/src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/EnergyState.o \
+    $O/src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/EState.o \
     $O/src/EnergySystem/PSU/AbstractPSU.o \
     $O/src/EnergySystem/PSU/MainPSU/MainPSU.o \
     $O/src/Management/CloudManagement/Base/AllocationManagement.o \
@@ -340,24 +340,24 @@ OBJS = \
     $O/src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerRR/CloudSchedulerRR.o \
     $O/src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerRandom/CloudSchedulerRandom.o \
     $O/src/Management/DataCenterManagement/AbstractDCManager.o \
-    $O/src/Management/DataCenterManagement/Base/StorageManagement.o \
     $O/src/Management/DataCenterManagement/Base/RequestsManagement.o \
-    $O/src/Management/DataCenterManagement/Base/DataCenterAPI.o \
+    $O/src/Management/DataCenterManagement/Base/StorageManagement.o \
     $O/src/Management/DataCenterManagement/Base/UserManagement.o \
+    $O/src/Management/DataCenterManagement/Base/DataCenterAPI.o \
     $O/src/Management/DataCenterManagement/ResourcesProvisioning/DataCenterSchedulers/DataCenterSchedulerFIFO/DataCenterSchedulerFIFO.o \
-    $O/src/Management/MachinesStructure/HeterogeneousSet.o \
-    $O/src/Management/MachinesStructure/MachinesMap.o \
     $O/src/Management/MachinesStructure/ElementType.o \
+    $O/src/Management/MachinesStructure/MachinesMap.o \
+    $O/src/Management/MachinesStructure/HeterogeneousSet.o \
     $O/src/Management/NetworkManager/NetworkManager.o \
+    $O/src/Management/NetworkManager/VirtualIPCell.o \
     $O/src/Management/NetworkManager/PortTable.o \
     $O/src/Management/NetworkManager/VirtualIPs.o \
-    $O/src/Management/NetworkManager/VirtualIPCell.o \
     $O/src/Management/Topology/ComputeNode.o \
     $O/src/Management/Topology/StorageNode.o \
     $O/src/Users/AbstractUser.o \
-    $O/src/Users/Base/userBase.o \
     $O/src/Users/Base/queuesManager.o \
     $O/src/Users/Base/userStorage.o \
+    $O/src/Users/Base/userBase.o \
     $O/src/Users/Profiles/CloudUser/AbstractCloudUser.o \
     $O/src/Users/Profiles/GeneralUser/GeneralUser.o \
     $O/src/Users/Profiles/SmartUser/SmartUser.o \
@@ -391,25 +391,25 @@ OBJS = \
     $O/src/Virtualization/VirtualMachines/VM.o \
     $O/src/Virtualization/VirtualMachines/SetDefinition/VmImage.o \
     $O/src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.o \
-    $O/src/Base/Messages/icancloud_App_NET_Message_m.o \
-    $O/src/Base/Messages/icancloud_App_MEM_Message_m.o \
-    $O/src/Base/Messages/icancloud_App_IO_Message_m.o \
-    $O/src/Base/Messages/icancloud_BlockList_Message_m.o \
-    $O/src/Base/Messages/icancloud_Migration_Message_m.o \
-    $O/src/Base/Messages/icancloud_Message_m.o \
     $O/src/Base/Messages/icancloud_App_CPU_Message_m.o \
-    $O/src/Base/Messages/icancloud_MPI_Message_m.o
+    $O/src/Base/Messages/icancloud_Message_m.o \
+    $O/src/Base/Messages/icancloud_Migration_Message_m.o \
+    $O/src/Base/Messages/icancloud_BlockList_Message_m.o \
+    $O/src/Base/Messages/icancloud_App_IO_Message_m.o \
+    $O/src/Base/Messages/icancloud_MPI_Message_m.o \
+    $O/src/Base/Messages/icancloud_App_NET_Message_m.o \
+    $O/src/Base/Messages/icancloud_App_MEM_Message_m.o
 
 # Message files
 MSGFILES = \
-    src/Base/Messages/icancloud_App_NET_Message.msg \
-    src/Base/Messages/icancloud_App_MEM_Message.msg \
-    src/Base/Messages/icancloud_App_IO_Message.msg \
-    src/Base/Messages/icancloud_BlockList_Message.msg \
-    src/Base/Messages/icancloud_Migration_Message.msg \
-    src/Base/Messages/icancloud_Message.msg \
     src/Base/Messages/icancloud_App_CPU_Message.msg \
-    src/Base/Messages/icancloud_MPI_Message.msg
+    src/Base/Messages/icancloud_Message.msg \
+    src/Base/Messages/icancloud_Migration_Message.msg \
+    src/Base/Messages/icancloud_BlockList_Message.msg \
+    src/Base/Messages/icancloud_App_IO_Message.msg \
+    src/Base/Messages/icancloud_MPI_Message.msg \
+    src/Base/Messages/icancloud_App_NET_Message.msg \
+    src/Base/Messages/icancloud_App_MEM_Message.msg
 
 # Other makefile variables (-K)
 INET_PROJ=../inet
