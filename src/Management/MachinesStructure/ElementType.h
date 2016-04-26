@@ -16,8 +16,8 @@ using namespace std;
 
 class elementType {
     string name;			    							// node Name
-	int memoryTotal;										// Size of memory
-	int storageTotal;										// Size of memory
+	double memoryTotal;										// Size of memory
+	double storageTotal;										// Size of memory
 	int numCores;											// Number of CPUs
 	int numStorageDevices;									// Number of Storage Servers
 	int numNetIF;											// Number of network interfaces
@@ -36,8 +36,8 @@ public:
 	string getType(){return name.c_str();};
 
 	void setNumCores (int numCPU){numCores = numCPU;};
-	void setMemorySize (int memorySize){memoryTotal = memorySize;};
-	void setDiskSize (int diskSize){storageTotal = diskSize;};
+	void setMemorySize (double memorySize){memoryTotal = memorySize;};
+	void setDiskSize (double diskSize){storageTotal = diskSize;};
 	void setNumStorageDevices (int numStorageDev){numStorageDevices = numStorageDev;};
 	void setNumNetIF (int numNicIF){numNetIF = numNicIF;};
 	void setType(string id){name = id;};

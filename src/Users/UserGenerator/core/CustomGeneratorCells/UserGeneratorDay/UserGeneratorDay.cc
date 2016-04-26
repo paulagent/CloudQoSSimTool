@@ -90,7 +90,7 @@ void UserGeneratorDay::processSelfMessage (cMessage *msg){
         if (time_intervals_H != 0)
         {
            scheduleAt (simTime(), newHourEvent);
-           printf("\n Method[UserGeneratorDay]: newHourEvent %d-------> \n", newHourEvent);
+     //      printf("\n Method[UserGeneratorDay]: newHourEvent %d-------> \n", newHourEvent);
 
         }
         else
@@ -205,7 +205,7 @@ void UserGeneratorDay::userCreateGroups(int intervals, int nusers){
        for (long int i=0; i<nExperiments; ++i) {
 
            number = selectDistribution();
-           printf("\n Method[userCreateGroups]: number: %d-------> \n",number);
+      //     printf("\n Method[userCreateGroups]: number: %d-------> \n",number);
          if ((number>=0.0)&&(number<intervals)){
              (*(p.begin() + ((long int)(round(number)))))++;
          }

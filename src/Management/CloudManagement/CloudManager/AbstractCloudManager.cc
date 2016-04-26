@@ -58,11 +58,11 @@ void AbstractCloudManager::initialize(){
                            vmImage->par("memorySize_MB").doubleValue(),
                            vmImage->par("storageSize_GB").doubleValue()
                            );
+            // Parameters are correct so far
 /*printf("\n MODULE[AbstractCloudManager::initialize()]: id----->%s",vmImage->par("id").stringValue());
 printf("\n MODULE[AbstractCloudManager::initialize()]: numCores----->%ld", vmImage->par("numCores").longValue());
 printf("\n MODULE[AbstractCloudManager::initialize()]: memorySize_MB----->%f", vmImage->par("memorySize_MB").doubleValue());
 printf("\n MODULE[AbstractCloudManager::initialize()]: storageSize_GB----->%f",  vmImage->par("storageSize_GB").doubleValue());*/
-
 
         }
 
@@ -417,7 +417,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
         int operation;
         int vmQuantity = 0;
 
-        cModule  *vmImage;
+        cModule*  vmImage;
 
         // Init ..
         notEnoughResources = false;
@@ -428,43 +428,47 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
     for (int i = 0; ((i < req->getDifferentTypesQuantity()) && (!notEnoughResources));){
 
         vmQuantity = req->getSelectionQuantity(i);
-
+        printf("MODULE[AbstractCloudManager::request_start_vm] vmQuantity----------------> %d", vmQuantity);
         for (int j = 0; (j < vmQuantity) && !notEnoughResources; j++ ){
 
             // Get the original virtual machine image
             //C++ offers a solution which is called dynamic_cast. Here we use check_and_cast<>() which is provided by OMNeT++:
             //it tries to cast the pointer via dynamic_cast,
          //and if it fails it stops the simulation with an error message
-            cModule* vmSet = getParentModule()->getSubmodule("vmSet");
-            //if (vmSet == NULL) throw cRuntimeError ("AbstractCloudManager::initialize() -> Error during initialization. There is no vmSet\n");
-                     vmImage = vmSet->getSubmodule("vmImage",0);
+           cModule* vmSet = getParentModule()->getSubmodule("vmSet");
+           vmImage = vmSet->getSubmodule("vmImage",0);
+      //     printf("\nMODULE[AbstractCloudManager::request_start_vm] memorySize_MB----->%f", vmImage->par("memorySize_MB").doubleValue());
 
-                     //                           vmImage->par("numCores").longValue(),
-                       //                         vmImage->par("memorySize_MB").doubleValue(),
-                       //                         vmImage->par("storageSize_GB").doubleValue()
-       // vmImage = getSubmodule("vmImage");
-       // vm =  check_and_cast<VM*>(vmImage);
-            printf("\n vm->getMemorySize----->%s", vmImage->par("id").stringValue());
-            //vm = dynamic_cast<VM*>(vmImage);
+
+     //   vm =  check_and_cast<VM*>(*vmImage);
+           //vm = dynamic_cast<VM*>(vmImage);
+    //    printf("\n vm->getMemorySize after cast----->%s", vmImage->par("id").stringValue());
 
        // printf("\n vm->getMemorySize----->%s", vm->getHostName().c_str());
           //  printf("\n vm->getMemorySize----->%f", vm->getFreeMemory());
              //          printf("\n vm->getStorageSize----->%f", vm->getFreeStorage());
-          //  vm->get
+
             // Create the request for scheduling selecting node method
             RequestVM* reqSch;
             AbstractRequest* reqA;
+          //  vm=req->getVM(0);
+       //     printf("\nMODULE[AbstractCloudManager::request_start_vm]  req->getNumberVM()----->%d",  req->getNumberVM());
+
 
             reqSch = req->dup();
-
             reqSch->cleanSelectionType();
-            reqSch->setForSingleRequest(vm->getElementType());
-            //elementType* el;
-          //  el = reqSch->getSingleRequestType();
-           // el=vm->getElementType();
-            //printf("el->getMemorySize----->%d", el->getMemorySize());
-           // printf("el->getMemorySize----->%d", el->getNumCores());
 
+            elementType* el;
+            el= new elementType();
+            el->setMemorySize(vmImage->par("memorySize_MB").doubleValue());
+            el->setType(vmImage->par("id").stringValue());
+            el->setNumCores(vmImage->par("numCores"));
+            el->setDiskSize(vmImage->par("storageSize_GB").doubleValue());
+          //  el = reqSch->getSingleRequestType();
+          //  el=vm->getElementType();
+            printf("\n el->getMemorySize----->%d", el->getMemorySize());
+            printf("\n el->getNumCores()---->%d", el->getNumCores());
+            reqSch->setForSingleRequest(el);
             reqA = check_and_cast<AbstractRequest*>(reqSch);
 
             //erase the rest of vms less the actual
@@ -480,6 +484,8 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
             } else if (selectedNode == NULL){ // There are not a node to allocate the request!
 
                 // Reenqueue to wait until exists enough resources.
+                printf("MODULE[AbstractCloudManager::request_start_vm] selectedNode == NULL");
+
                 req->incrementTimesEnqueue();
                 req->setState(REQUEST_PENDING);
                 req->incrementTimesEnqueue();

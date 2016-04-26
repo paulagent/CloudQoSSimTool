@@ -274,7 +274,7 @@ AbstractNode* CloudSchedulerRR::selectNode (AbstractRequest* req){
         vmMemory = el->getMemorySize();
         setInitial = currentNodeType;
         positionInitial = currentNodeIndex;
-        if (DEBUG_CLOUD_SCHED) printf("\n Method[SCHEDULER_ROUNDROBIN]:currentNodeIndex :  ------->%d \n", currentNodeIndex);
+ //       if (DEBUG_CLOUD_SCHED) printf("\n Method[SCHEDULER_ROUNDROBIN]:currentNodeIndex :  ------->%d \n", currentNodeIndex);
 
         found = false;
 
