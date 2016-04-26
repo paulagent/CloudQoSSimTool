@@ -58,6 +58,11 @@ void AbstractCloudManager::initialize(){
                            vmImage->par("memorySize_MB").doubleValue(),
                            vmImage->par("storageSize_GB").doubleValue()
                            );
+/*printf("\n MODULE[AbstractCloudManager::initialize()]: id----->%s",vmImage->par("id").stringValue());
+printf("\n MODULE[AbstractCloudManager::initialize()]: numCores----->%ld", vmImage->par("numCores").longValue());
+printf("\n MODULE[AbstractCloudManager::initialize()]: memorySize_MB----->%f", vmImage->par("memorySize_MB").doubleValue());
+printf("\n MODULE[AbstractCloudManager::initialize()]: storageSize_GB----->%f",  vmImage->par("storageSize_GB").doubleValue());*/
+
 
         }
 
@@ -430,7 +435,9 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
             vmImage = getSubmodule("vmImage");
 
             vm = dynamic_cast<VM*>(vmImage);
-
+            printf("\n vm->getMemorySize----->%f", vm->getFreeMemory());
+                       printf("\n vm->getStorageSize----->%f", vm->getFreeStorage());
+          //  vm->get
             // Create the request for scheduling selecting node method
             RequestVM* reqSch;
             AbstractRequest* reqA;
@@ -439,6 +446,11 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
 
             reqSch->cleanSelectionType();
             reqSch->setForSingleRequest(vm->getElementType());
+            elementType* el;
+          //  el = reqSch->getSingleRequestType();
+            el=vm->getElementType();
+            printf("el->getMemorySize----->%d", el->getMemorySize());
+            printf("el->getMemorySize----->%d", el->getNumCores());
 
             reqA = check_and_cast<AbstractRequest*>(reqSch);
 

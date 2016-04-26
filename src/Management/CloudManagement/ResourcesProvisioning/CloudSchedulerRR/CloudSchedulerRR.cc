@@ -180,7 +180,7 @@ void CloudSchedulerRR::schedule (){
                {
                    clock_t t=clock(); // we are not sure about current time
 
-                   printf("\n Method[CLOUD_SCHEDULER_RR]:NO_Runiing_VM -------> %d\n", runVM.size());
+                   printf("\n Method[CLOUD_SCHEDULER_RR]:NO_Runiing_VM -------> %ld \n", runVM.size());
 
                    RunningVM* vm;
                    vm=AbstractCloudManager::runVM.at(j);
@@ -269,6 +269,7 @@ AbstractNode* CloudSchedulerRR::selectNode (AbstractRequest* req){
     // Init ..
         node = NULL;
         el = reqVm->getSingleRequestType();
+   //     el= reqVm->get
         vmCPU = el->getNumCores();
         vmMemory = el->getMemorySize();
         setInitial = currentNodeType;
