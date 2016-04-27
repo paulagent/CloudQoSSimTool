@@ -19,6 +19,7 @@ Define_Module(Node);
 
 void Node::initialize(){
 
+    printf("Node::initialize()");
     AbstractNode::initialize();
     // Initialize the state
     energyMeterPtr = NULL;
@@ -72,9 +73,22 @@ void Node::initNode (){
         par("ip").setStringValue(ip.c_str());
 
         // Init the parameters
+        initialize();
         storageNode = par("storageNode").boolValue();
         state = par("initialState").stringValue();
         storageLocalPort = par("storage_local_port").longValue();
+/*
+
+       elementType* el;
+       el= new elementType();
+       el->setMemorySize(par("memorySize_MB").doubleValue());
+
+       el->setNumCores(par("numCores"));
+       el->setDiskSize(par("storageSize_GB").doubleValue());
+
+
+        type=el;
+*/
 
         cModule* mod = getSubmodule("energyMeter")->getSubmodule("meterController");
 

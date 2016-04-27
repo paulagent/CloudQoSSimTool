@@ -76,6 +76,7 @@ printf("\n MODULE[AbstractCloudManager::initialize()]: storageSize_GB----->%f", 
         for (int i = 0; i < computeSize; i++){
             cModule* computeNodeMod = topology->getSubmodule("computeNode",i);
             dataCenterConfig->setNodeType(computeNodeMod->par("id").stringValue(), computeNodeMod->par("quantity").longValue());
+
         }
 
         int storageSize = topology->par("storageNodeQuantity").longValue();
@@ -121,6 +122,7 @@ void AbstractCloudManager::initManager (int totalNodes){
        // Create the cfgCloud object!
 
             if (!isCfgLoaded()){
+                printf("\n MODULE[AbstractCloudManager::initManager]: cfg is not loaded ");
 
                 // Initialize structures and parameters
                     nodesMap = new MachinesMap();
@@ -161,9 +163,9 @@ void AbstractCloudManager::initManager (int totalNodes){
                           for (i = 0 ; i < (int)nodeNames.size(); i++){
 
                               nodeName = (*(nodeNames.begin() + i));
+                              printf("\n MODULE[AbstractCloudManager::initManager]: nodeName:------->%s",nodeName.c_str());
 
                               nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
-
                               nodeChecked = check_and_cast<Node*>(nodeMod);
                               nodeChecked->initNode();
 
@@ -409,7 +411,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
 
         RequestVM* attendedRequest;
 
-        VM* vm;
+        VM* vm=new VM();
         VM* vmNew;
         string uid;
 
@@ -437,22 +439,12 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
          //and if it fails it stops the simulation with an error message
            cModule* vmSet = getParentModule()->getSubmodule("vmSet");
            vmImage = vmSet->getSubmodule("vmImage",0);
-      //     printf("\nMODULE[AbstractCloudManager::request_start_vm] memorySize_MB----->%f", vmImage->par("memorySize_MB").doubleValue());
 
-
-     //   vm =  check_and_cast<VM*>(*vmImage);
-           //vm = dynamic_cast<VM*>(vmImage);
-    //    printf("\n vm->getMemorySize after cast----->%s", vmImage->par("id").stringValue());
-
-       // printf("\n vm->getMemorySize----->%s", vm->getHostName().c_str());
-          //  printf("\n vm->getMemorySize----->%f", vm->getFreeMemory());
-             //          printf("\n vm->getStorageSize----->%f", vm->getFreeStorage());
+           vm->initialize();
 
             // Create the request for scheduling selecting node method
             RequestVM* reqSch;
             AbstractRequest* reqA;
-          //  vm=req->getVM(0);
-       //     printf("\nMODULE[AbstractCloudManager::request_start_vm]  req->getNumberVM()----->%d",  req->getNumberVM());
 
 
             reqSch = req->dup();
@@ -460,10 +452,10 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
 
             elementType* el;
             el= new elementType();
-            el->setMemorySize(vmImage->par("memorySize_MB").doubleValue());
+            el->setMemorySize(vmImage->par("memorySize_MB").longValue()*1024);
             el->setType(vmImage->par("id").stringValue());
             el->setNumCores(vmImage->par("numCores"));
-            el->setDiskSize(vmImage->par("storageSize_GB").doubleValue());
+            el->setDiskSize(vmImage->par("storageSize_GB").longValue()*1024*1024);
           //  el = reqSch->getSingleRequestType();
           //  el=vm->getElementType();
             printf("\n el->getMemorySize----->%d", el->getMemorySize());

@@ -19,6 +19,7 @@ Machine::~Machine() {
 }
 
 void Machine::initialize(){
+    printf("hi from Machine::initialize()");
 
     cModule* osMod;
  //   printf("\n Method[Machine::initialize]: ------->initialize \n");

@@ -275,7 +275,10 @@ AbstractNode* DataCenterAPI::getNodeByIndex (int setIndex, int nodeIndex, bool s
     else
         result = nodesMap->getMachineByIndex(setIndex, nodeIndex);
 
-  //  if (DEBUG_CLOUD_SCHED) printf("\n Method[DataCenterAPI::getNodeByIndex]:node name:---->%s \n", result->getName());
+    if (DEBUG_CLOUD_SCHED) printf("\n Method[DataCenterAPI::getNodeByIndex]:node name:---->%s \n", result->getName());
+    if (DEBUG_CLOUD_SCHED) printf("\n Method[DataCenterAPI::getNodeByIndex]:memory capacity:---->%d \n", result->getMemoryCapacity());
+    if (DEBUG_CLOUD_SCHED) printf("\n Method[DataCenterAPI::getNodeByIndex]:free memory:---->%f \n", result->getFreeMemory());
+
     node = dynamic_cast<AbstractNode*>(result);
 
     return node;
