@@ -37,7 +37,7 @@ void AbstractPSU::initialize(){
     switchOff();
 
     alarm = new cMessage ("measure_energy");
-    scheduleAt (simTime()+scale, alarm);
+    //scheduleAt (simTime()+scale, alarm);
 }
 
 void AbstractPSU::finish(){

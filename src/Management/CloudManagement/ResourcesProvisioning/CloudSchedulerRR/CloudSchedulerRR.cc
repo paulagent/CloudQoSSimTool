@@ -25,6 +25,7 @@ void CloudSchedulerRR::initialize(){
 
     AbstractCloudManager::initialize();
     minimum_percent_storageNode_free = 0.0;
+/*
     printNodePowerConsumption = false;
     printNodeEnergyConsumed =  false;
     printComponentsPowerConsumption = false;
@@ -32,7 +33,7 @@ void CloudSchedulerRR::initialize(){
     printDataCenterPowerConsumption = false;
     printDataCenterEnergyConsumed = false;
 
-    dc_EnergyConsumed = 0.0;
+    dc_EnergyConsumed = 0.0; */
     maximum_number_of_processes_per_node = par("numberOfVMperNode");
     currentNodeIndex = 0;
     currentNodeType = 0;
@@ -43,6 +44,7 @@ void CloudSchedulerRR::initialize(){
 void CloudSchedulerRR::setupScheduler(){
 
     minimum_percent_storageNode_free = par("minimum_percent_storageNode_free").doubleValue();
+  /*
     printNodePowerConsumption = par("printNodePowerConsumed").boolValue();
     printNodeEnergyConsumed = par("printNodeEnergyConsumed").boolValue();
     printComponentsPowerConsumption = par("printComponentsPowerConsumed").boolValue();
@@ -50,11 +52,12 @@ void CloudSchedulerRR::setupScheduler(){
     printDataCenterPowerConsumption = par("printDataCenterPowerConsumed").boolValue();
     printDataCenterEnergyConsumed = par("printDataCenterEnergyConsumed").boolValue();
 
-    dc_EnergyConsumed = 0.0;
+    dc_EnergyConsumed = 0.0; */
 
     AllocationManagement::setupStorageNodes();
 
     // reconfigure if it will be needed..
+   /*
     ofstream f;
     if ((!printNodePowerConsumption) &&
         (!printNodeEnergyConsumed) &&
@@ -63,7 +66,7 @@ void CloudSchedulerRR::setupScheduler(){
         ){
         csrr_f.Open(logName, par("outputCompression").boolValue());
 
-    }
+    } */
 }
 
 void CloudSchedulerRR::schedule (){
@@ -499,16 +502,17 @@ void CloudSchedulerRR::freeResources (int uId, int pId, AbstractNode* computingN
 void CloudSchedulerRR::printEnergyValues(){
 
     // Define ..
-    int i, j;
+   /* int i, j;
     AbstractNode* nodeA;
-    Node* node;
+    Node* node; */
     ostringstream data;
     ostringstream file;
+   /*
     int computeNodeMapSize;
     int computeNodeSetSize;
     int storageNodeMapSize;
-    int storageNodeSetSize;
-
+    int storageNodeSetSize; */
+/*
     double nodeEnergyConsumed = 0.0;
     double nodeInstantConsumption = 0.0;
     double cpuEnergyConsumed = 0.0;
@@ -713,24 +717,25 @@ void CloudSchedulerRR::printEnergyValues(){
 
     // print data to the file
         csrr_f.Append(data.str().c_str()) ;
+        */
 
 }
 
 void CloudSchedulerRR::finalizeScheduler(){
     // Define ..
-      AbstractNode* nodeA;
-      Node* node;
+     // AbstractNode* nodeA;
+     // Node* node;
       ostringstream data;
       ostringstream file;
-      int i,j;
+     /* int i,j;
       int computeNodeMapSize;
       int storageNodeMapSize;
       int storageNodeSetSize;
 
       int computeNodeSetSize = 0;
       int storageSetSize = 0;
-      int totalNumberNodes = 0;
-
+      int totalNumberNodes = 0; */
+/*
       double nodeEnergyConsumed = 0.0;
       double cpuEnergyConsumed = 0.0;
       double memoryEnergyConsumed = 0.0;
@@ -814,7 +819,7 @@ void CloudSchedulerRR::finalizeScheduler(){
                 csrr_f.Close();
             }
     }
-
+*/
 }
 
 int CloudSchedulerRR::selectNodeSet (string setName, int vmcpu, int vmmemory){
