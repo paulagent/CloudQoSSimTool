@@ -27,9 +27,6 @@ void Machine::initialize(){
     osMod = this->getSubmodule("osModule")->getSubmodule("syscallManager");
     os = dynamic_cast<AbstractSyscallManager*>(osMod);
 
-    // Below code does not work, it will report can not find parameters for mem and storage
-
-
 
     type = new elementType();
 

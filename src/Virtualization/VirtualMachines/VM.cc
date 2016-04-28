@@ -40,9 +40,10 @@ VM::VM(elementType* el) {
      osMod = getSubmodule("osModule")->getSubmodule("syscallManager");
      os = dynamic_cast<VMSyscallManager*>(osMod);
 
+     printf("hi from Machine::con2 \n ");
 
 
-     type = new elementType();
+         type = new elementType();
 
          type->setDiskSize(el->getStorageSize());
 
@@ -54,7 +55,7 @@ VM::VM(elementType* el) {
          type->setNumCores(el->getNumCores());
          type->setNumStorageDevices(el->getNumStorageDevices());
          type->setType(el->getType());
-
+         printf("hi from Machine::con3 \n ");
 
 
 

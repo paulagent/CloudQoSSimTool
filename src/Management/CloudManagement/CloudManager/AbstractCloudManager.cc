@@ -411,7 +411,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
 
         RequestVM* attendedRequest;
 
-        VM* vm;
+        VM* vm = new VM();
         VM* vmNew;
         string uid;
 
@@ -439,7 +439,15 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
          //and if it fails it stops the simulation with an error message
            cModule* vmSet = getParentModule()->getSubmodule("vmSet");
            vmImage = vmSet->getSubmodule("vmImage",0);
+           std::ostringstream vmPath;
+           std::ostringstream vmPath2;
+           vmPath << vmImage->getNedTypeName();
 
+           printf("\n getNedTypeName from request start vm----->%s", vmPath.str().c_str());
+
+           cModule*   vmImage2 = getSubmodule("vmImage");
+
+           VM* vm2 = dynamic_cast<VM*>(vmImage2);
 
 
             // Create the request for scheduling selecting node method
@@ -485,9 +493,11 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
             } // everything is ok.
             else {
                 printf("MODULE[AbstractCloudManager::request_start_vm] select node %s\n",selectedNode->getFullName());
-                vm =new VM(el);
+             //  vm->initialize();
+
+                if (vm == NULL) printf("MODULE[AbstractCloudManager: initial vm not successful");
                 std::ostringstream vmName;
-                vmName << vm->getName();
+                //vmName << vm->getName();
 
                 // Start the node (if it is off)
                     if (!(selectedNode->isON())){
@@ -499,7 +509,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
 
                     // Create the vm as image of vm image.
                     printf("MODULE[AbstractCloudManager::request_start_vm] -----> %s \n",req->getSelectionType(0).c_str());
-                    vmNew = create_VM (vm, req->getSelectionType(0).c_str(), nodeVL->getHypervisor());
+                    vmNew = create_VM (vm2, req->getSelectionType(0).c_str(), nodeVL->getHypervisor());
 
                     vmNew->setUid(req->getUid());
 
@@ -699,6 +709,7 @@ VM* AbstractCloudManager::create_VM (VM* vmImage, string vmName, cModule* parent
 
 	// Here the kind of module is taken to create the module as image..
 		vmPath << vmImage->getNedTypeName();
+		printf("\n getNedTypeName from create vm ---->%s", vmPath.str().c_str());
 
 	//create the vm module
 		cModuleType *modVMType = cModuleType::get (vmPath.str().c_str());
