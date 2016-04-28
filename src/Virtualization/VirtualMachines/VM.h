@@ -37,8 +37,8 @@ protected:
                                             // Each state changed will generate a new vmStatesLog entry-
 
 public:
-
-
+     VM();
+    VM( elementType* el);
     /*
     * Destructor
     */

@@ -19,7 +19,7 @@ AbstractNode::~AbstractNode() {
 }
 
 void AbstractNode::initialize(){
-printf("hi from AbstractNode::initialize()");
+printf("hi from AbstractNode::initialize() \n ");
     Machine::initialize();
 
     os = dynamic_cast<SyscallManager*>(os);

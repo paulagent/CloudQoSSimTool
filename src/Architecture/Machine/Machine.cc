@@ -19,16 +19,22 @@ Machine::~Machine() {
 }
 
 void Machine::initialize(){
-    printf("hi from Machine::initialize()");
+    printf("hi from Machine::initialize() \n ");
 
     cModule* osMod;
- //   printf("\n Method[Machine::initialize]: ------->initialize \n");
+
  // create the gates for the new application
     osMod = this->getSubmodule("osModule")->getSubmodule("syscallManager");
     os = dynamic_cast<AbstractSyscallManager*>(osMod);
 
+    // Below code does not work, it will report can not find parameters for mem and storage
+
+
+
     type = new elementType();
-    type->setDiskSize( par("storageSize_GB").longValue() * 1024 * 1024);
+
+    type->setDiskSize(par("storageSize_GB").longValue() * 1024 * 1024);
+
     type->setMemorySize(par("memorySize_MB").longValue() * 1024);
 
     os->setFreeMemory (type->getMemorySize());

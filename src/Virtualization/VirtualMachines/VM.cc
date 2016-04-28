@@ -17,6 +17,51 @@
 
 Define_Module(VM);
 
+VM::VM(){
+
+}
+
+
+VM::VM(elementType* el) {
+    printf("hi from Vm construtor::VM() \n ");
+    // Define ..
+     cModule* osMod;
+     string vmTypeName;
+
+
+    // Init ..
+     states_log.clear();
+     pending_operation = NOT_PENDING_OPS;
+     userID = -1;
+     nodeName = -1;
+     nodeSetName = "";
+     vmName = "";
+
+     osMod = getSubmodule("osModule")->getSubmodule("syscallManager");
+     os = dynamic_cast<VMSyscallManager*>(osMod);
+
+
+
+     type = new elementType();
+
+         type->setDiskSize(el->getStorageSize());
+
+         type->setMemorySize(el->getMemorySize());
+
+        // os->setFreeMemory (el->getMemorySize());
+        // os->setFreeStorage (el->getStorageSize());
+
+         type->setNumCores(el->getNumCores());
+         type->setNumStorageDevices(el->getNumStorageDevices());
+         type->setType(el->getType());
+
+
+
+
+
+     //changeState(MACHINE_STATE_OFF);
+
+}
 
 VM::~VM() {
     states_log.clear();

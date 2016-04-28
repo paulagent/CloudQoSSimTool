@@ -226,9 +226,9 @@ void CloudSchedulerRR::schedule (){
                        new_req_vm2->setVectorVM(vSet);
                       // AbstractCloudManager::runVM.erase(AbstractCloudManager::runVM.begin()+j);
                        if (DEBUG_CLOUD_SCHED){
-                                                 printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to Shutdown VM %s has been sent.\n",vm->vm->getFullName());
+                           printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to Shutdown VM %s has been sent.\n",vm->vm->getFullName());
 
-                                             }
+                             }
                        request_shutdown_vm(new_req_vm2);
 
 

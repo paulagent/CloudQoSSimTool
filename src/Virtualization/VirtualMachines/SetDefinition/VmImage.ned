@@ -26,6 +26,6 @@ module VmImage
         string id;					// Identification
         int numCores;				// Number of cores
         double memorySize_MB;		// Amount of memory (in MiB) of VM
-        double storageSize_GB;		// Amount of storage size (in GiB) of VM
+        double storageSize_GB;		// Amount of storage size (in GiB) of VM  
 
 }

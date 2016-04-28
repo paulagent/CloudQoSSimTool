@@ -411,7 +411,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
 
         RequestVM* attendedRequest;
 
-        VM* vm=new VM();
+        VM* vm;
         VM* vmNew;
         string uid;
 
@@ -440,7 +440,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
            cModule* vmSet = getParentModule()->getSubmodule("vmSet");
            vmImage = vmSet->getSubmodule("vmImage",0);
 
-           vm->initialize();
+
 
             // Create the request for scheduling selecting node method
             RequestVM* reqSch;
@@ -456,8 +456,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
             el->setType(vmImage->par("id").stringValue());
             el->setNumCores(vmImage->par("numCores"));
             el->setDiskSize(vmImage->par("storageSize_GB").longValue()*1024*1024);
-          //  el = reqSch->getSingleRequestType();
-          //  el=vm->getElementType();
+
             printf("\n el->getMemorySize----->%d", el->getMemorySize());
             printf("\n el->getNumCores()---->%d", el->getNumCores());
             reqSch->setForSingleRequest(el);
@@ -486,7 +485,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
             } // everything is ok.
             else {
                 printf("MODULE[AbstractCloudManager::request_start_vm] select node %s\n",selectedNode->getFullName());
-
+                vm =new VM(el);
                 std::ostringstream vmName;
                 vmName << vm->getName();
 
