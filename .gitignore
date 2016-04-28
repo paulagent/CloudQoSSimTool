@@ -29,3 +29,6 @@
 
 # Editors temporary files 
 *~
+
+# do not push out folder
+out/
