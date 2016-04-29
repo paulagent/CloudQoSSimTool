@@ -54,7 +54,7 @@ void AbstractCloudManager::initialize(){
             cModule* vmImage = vmSet->getSubmodule("vmImage",i);
 
             cfg->setVMType(vmImage->par("id").stringValue(),
-                           vmImage->par("numCores").longValue(),
+                           vmImage->par("numCores"),
                            vmImage->par("memorySize_MB").doubleValue(),
                            vmImage->par("storageSize_GB").doubleValue()
                            );
@@ -439,8 +439,10 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
          //and if it fails it stops the simulation with an error message
            cModule* vmSet = getParentModule()->getSubmodule("vmSet");
            vmImage = vmSet->getSubmodule("vmImage",0);
+           cModule*   vmImage2 = getSubmodule("vmImage");
 
-           vm->initialize();
+           VM* vm2 = dynamic_cast<VM*>(vmImage2);
+          // vm->initialize();
 
             // Create the request for scheduling selecting node method
             RequestVM* reqSch;
@@ -500,7 +502,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
 
                     // Create the vm as image of vm image.
                     printf("MODULE[AbstractCloudManager::request_start_vm] -----> %s \n",req->getSelectionType(0).c_str());
-                    vmNew = create_VM (vm, req->getSelectionType(0).c_str(), nodeVL->getHypervisor());
+                    vmNew = create_VM (vm2, req->getSelectionType(0).c_str(), nodeVL->getHypervisor());
 
                     vmNew->setUid(req->getUid());
 
