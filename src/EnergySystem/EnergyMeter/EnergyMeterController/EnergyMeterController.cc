@@ -22,24 +22,24 @@ EnergyMeterController::~EnergyMeterController() {
 }
 
 void EnergyMeterController::finish(){
-   /* cpu = NULL;
+   cpu = NULL;
     memory = NULL;
     storage = NULL;
     network = NULL;
-    psu = NULL; */
+    psu = NULL;
 }
 
 void EnergyMeterController::initialize(){
- /*   cpu = NULL;
+   cpu = NULL;
     memory = NULL;
     storage = NULL;
     network = NULL;
-    psu = NULL; */
+    psu = NULL;
 }
 
 
 void EnergyMeterController::init(){
-/*
+
     activeEnergyMeter = getParentModule()->par("activeEnergyMeter").boolValue();
 
     cpu = dynamic_cast <AbstractMeterUnit*>(getParentModule()->getSubmodule("cpuMeter")->getSubmodule("core"));
@@ -54,86 +54,86 @@ void EnergyMeterController::init(){
 }
 
 void EnergyMeterController::registerMemorization(bool memo){
-  /*
+
     memorization = memo;
     cpu ->activeMemorization(memorization);
     memory ->activeMemorization(memorization);
     storage ->activeMemorization(memorization);
     network ->activeMemorization(memorization);
-*/
+
 }
 
 void EnergyMeterController::activateMeters(){
- /*
+
     cpu ->activateMeter();
     memory ->activateMeter();
     storage ->activateMeter();
-    network ->activateMeter(); */
+    network ->activateMeter();
 }
 
 void EnergyMeterController::loadMemo(MemoSupport* c,MemoSupport* m,MemoSupport* s,MemoSupport* n){
-/*
+
     cpu ->loadMemo(c);
     memory ->loadMemo(m);
     storage ->loadMemo(s);
-    network ->loadMemo(n); */
+    network ->loadMemo(n);
 }
 
 double EnergyMeterController::cpuInstantConsumption(string state, int partIndex){
-  // return cpu->getInstantConsumption(state,partIndex);
+   return cpu->getInstantConsumption(state,partIndex);
 }
 
 double EnergyMeterController::getCPUEnergyConsumed(int partIndex){
-   // return cpu->getEnergyConsumed(partIndex);
+    return cpu->getEnergyConsumed(partIndex);
 }
 
 double EnergyMeterController::getMemoryInstantConsumption(string state,int partIndex){
-   // return memory->getInstantConsumption(state,partIndex);
+    return memory->getInstantConsumption(state,partIndex);
 }
 
 double EnergyMeterController::getMemoryEnergyConsumed(int partIndex){
-   // return memory->getEnergyConsumed(partIndex);
+    return memory->getEnergyConsumed(partIndex);
 }
 
 double EnergyMeterController::getNICInstantConsumption(string state,int partIndex){
-   // return network->getInstantConsumption(state,partIndex);
+    return network->getInstantConsumption(state,partIndex);
 }
 
 double EnergyMeterController::getNICEnergyConsumed(int partIndex){
-   // return network->getEnergyConsumed(partIndex);
+    return network->getEnergyConsumed(partIndex);
 }
 
 double EnergyMeterController::getStorageInstantConsumption(string state,int partIndex){
-   // return storage->getInstantConsumption(state,partIndex);
+    return storage->getInstantConsumption(state,partIndex);
 }
 
 double EnergyMeterController::getStorageEnergyConsumed(int partIndex){
-   // return storage->getEnergyConsumed(partIndex);
+    return storage->getEnergyConsumed(partIndex);
 }
 
 double EnergyMeterController::getPSUConsumptionLoss(){
-   // return psu->getConsumptionLoss();
+    return psu->getConsumptionLoss();
 }
 
 double EnergyMeterController::getPSUEnergyLoss(){
-   // return psu->getEnergyLoss();
+    return psu->getEnergyLoss();
 }
 
 double EnergyMeterController::getNodeInstantConsumption(){
-   // return psu->getNodeConsumption();
+    return psu->getNodeConsumption();
 }
 
 double EnergyMeterController::getNodeEnergyConsumed(){
-   // return psu->getNodeEnergyConsumed();
+    return psu->getNodeEnergyConsumed();
 }
 
 double EnergyMeterController::getNodeSubsystemsConsumption(){
-   // return psu->getNodeSubsystemsConsumption();
+    return psu->getNodeSubsystemsConsumption();
 
 }
 
 void EnergyMeterController::switchOnPSU (){
-   // psu->switchOn();
+    psu->switchOn();
 }
 
 
