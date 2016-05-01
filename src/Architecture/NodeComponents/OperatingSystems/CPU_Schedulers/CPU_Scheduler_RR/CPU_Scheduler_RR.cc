@@ -27,7 +27,7 @@ void CPU_Scheduler_RR::initialize(){
 	    numCPUs = par ("numCPUs");
 	    quantum = par ("quantum");
 	    
-	    
+	    cout << "the number of cpus" << numCPUs <<endl;
 	    // State of CPUs
 		isCPU_Idle = new bool [numCPUs];
 		
@@ -49,6 +49,7 @@ void CPU_Scheduler_RR::initialize(){
 	
 		    for (i=0; i<numCPUs; i++){
 				toCPUGate [i] = gate ("toCPU", i);
+				 cout << "the gate  of toCPUGate [i] " << toCPUGate [i]->getFullName()  <<endl;
 				fromCPUGate [i] = gate ("fromCPU", i);
 		    }    
 }
@@ -103,13 +104,13 @@ void CPU_Scheduler_RR::processRequestMessage (icancloud_Message *sm){
 				
 		// Search for an empty cpu core
 		cpuIndex = searchIdleCPU();
-		
+		cout << "cpuIndex is: " << cpuIndex <<endl;
 		// All CPUs are busy
 		if (cpuIndex == NOT_FOUND){
 			
 			if (DEBUG_CPU_Scheduler_RR)
 				showDebugMessage ("Enqueing computing block. All CPUs are busy: %s", sm_cpu->contentsToString(DEBUG_MSG_CPU_Scheduler_RR).c_str());
-			
+			cout << "All CPUs are busy   " <<endl;
 			// Enqueue current computing block
 			requestsQueue.insert (sm_cpu);
 		}
@@ -119,12 +120,13 @@ void CPU_Scheduler_RR::processRequestMessage (icancloud_Message *sm){
 			
 			if (DEBUG_CPU_Scheduler_RR)
 				showDebugMessage ("Sending computing block to CPU[%d]:%s", cpuIndex, sm_cpu->contentsToString(DEBUG_MSG_CPU_Scheduler_RR).c_str());
-			
+			cout << "At least, one cpu core is idle   " <<endl;
 			// Assign cpu core
 			sm_cpu->setNextModuleIndex(cpuIndex);			
 			
 			// Update state!
 			isCPU_Idle[cpuIndex]=false;		
+
 			sendRequestMessage (sm_cpu, toCPUGate[cpuIndex]);
 		}
 }

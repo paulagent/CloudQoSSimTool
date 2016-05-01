@@ -33,7 +33,7 @@ module VmOperatingSystemModule like IOperatingSystem
         string syscallManagerType = default("VMSyscallManager");
         string cpuSchedulerType = default("CPU_Scheduler_FIFO");		// CPU Service type   
 
-        @display("i=icons/OOSS;bgb=306,405");
+        @display("i=icons/OOSS;bgb=720,431");
     gates:
         input fromApps[];			// Input gates from Applications
         input fromStorageSystem[];	// Input gates from Storage Servers
@@ -100,7 +100,7 @@ module VmOperatingSystemModule like IOperatingSystem
 
         vmMsgController: VmMsgController {
             parameters:
-                @display("p=192,147");
+                @display("p=624,125");
             gates:
                 fromOSApps[];
                 toOSApps[];

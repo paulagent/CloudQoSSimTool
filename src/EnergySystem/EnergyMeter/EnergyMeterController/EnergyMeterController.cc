@@ -50,7 +50,7 @@ void EnergyMeterController::init(){
 
     network = dynamic_cast <AbstractMeterUnit*>(getParentModule()->getSubmodule("networkMeter")->getSubmodule("core"));
 
-    psu = dynamic_cast <AbstractPSU*>(getParentModule()->getParentModule()->getSubmodule("psu")); */
+    psu = dynamic_cast <AbstractPSU*>(getParentModule()->getParentModule()->getSubmodule("psu"));
 }
 
 void EnergyMeterController::registerMemorization(bool memo){

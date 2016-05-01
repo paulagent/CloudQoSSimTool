@@ -181,7 +181,7 @@ void icancloud_Base::sendRequestMessage (icancloud_Message *sm, cGate* gate){
 		sm->addNodeToTrace (getHostName());
 		updateMessageTrace (sm);
 	}
-
+cout << "this is the problem " <<  gate->getFullName()<< endl;
 	// Send the message!
 	send (sm, gate);
 

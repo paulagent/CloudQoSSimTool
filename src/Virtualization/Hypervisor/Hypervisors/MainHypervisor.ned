@@ -53,8 +53,8 @@ module MainHypervisor like IHypervisor
         output toNodeStorageServers[numStorageServers];
 
         //cpu
-        input fromVMCPU[];
-        output toVMCPU[];
+        input fromVMCPU[numCPUs];
+        output toVMCPU[numCPUs];
 
         input fromNodeCPU[numCPUs];
         output toNodeCPU[numCPUs];
@@ -121,8 +121,8 @@ module MainHypervisor like IHypervisor
                 computingOverhead = computingOverhead;
                 @display("i=icons/Redirector;p=365,182");
             gates:
-                fromVMCPU[];
-                toVMCPU[];
+                fromVMCPU[numCPUs];
+                toVMCPU[numCPUs];
 
                 fromNodeCPU[numCPUs];
                 toNodeCPU[numCPUs];
@@ -161,6 +161,13 @@ module MainHypervisor like IHypervisor
         // Connection between node OS and hypervisor
         cpuManager.fromVMCPU++ <-- fromVMCPU++;
         cpuManager.toVMCPU++ --> toVMCPU++;
+        //  for i=0..numCPUs-1 {
+    //       cpuManager.fromVMCPU[i] <-- fromVMCPU[i];
+     //      cpuManager.toVMCPU[i] --> toVMCPU[i];
+     //   }
+        
+         // Connection between node OS and hypervisor
+        
         memoryManager.toVMMemoryI++ --> toVMMemoryI++;
         memoryManager.fromVMMemoryI++ <-- fromVMMemoryI++;
         memoryManager.fromVMMemoryO++ <-- fromVMMemoryO++;

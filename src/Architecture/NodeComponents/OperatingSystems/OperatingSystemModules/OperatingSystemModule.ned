@@ -34,7 +34,7 @@ module OperatingSystemModule
         string syscallManagerType = default("SyscallManager");
         string cpuSchedulerType;										// CPU Service type   			
 
-        @display("i=icons/OOSS;bgb=309,340");
+        @display("i=icons/OOSS;bgb=838,466");
 
     gates:
         input fromApps[];			// Input gates from Applications
@@ -57,7 +57,7 @@ module OperatingSystemModule
 
         syscallManager: <syscallManagerType> like ISyscallManager {
             parameters:
-                @display("p=74,147");
+                @display("p=444,168");
             gates:
                 fromApps[];
         }
@@ -81,14 +81,14 @@ module OperatingSystemModule
         }
 
         fsModule[numFS]: FSModule {
-            @display("p=159,260");
+            @display("p=318,366");
         }
 
         vmModule: VolumeManagerModule {
             parameters:
                 numStorageSystems = numStorageSystems;
                 numFS = numFS;
-                @display("p=261,261");
+                @display("p=483,276");
             gates:
                 fromFS[numFS];
                 toFS[numFS];
@@ -97,14 +97,14 @@ module OperatingSystemModule
         }
 
         nodeStates: StatesApplication {
-            @display("p=215,146;i=old/app");
+            @display("p=712,161;i=old/app");
             gates:
                 fromOS;
                 toOS;
         }
 
         remoteStorage: RemoteStorageApp {
-            @display("p=215,72;i=old/app");
+            @display("p=734,62;i=old/app");
             gates:
                 fromOS;
                 toOS;

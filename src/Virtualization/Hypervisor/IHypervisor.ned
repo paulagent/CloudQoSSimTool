@@ -32,8 +32,8 @@ moduleinterface IHypervisor
         output toNodeStorageServers[numStorageServers];
 
         //cpu
-        input fromVMCPU[];
-        output toVMCPU[];
+        input fromVMCPU[numCPUs];
+        output toVMCPU[numCPUs];
         input fromNodeCPU[numCPUs];
         output toNodeCPU[numCPUs];
 

@@ -63,7 +63,7 @@ module NodeVL like INode
         // Node parameters
         int numCores;												// Number of CPU cores		
         double memorySize_MB;										// Total amount of memory of this node (in MB)
-        double memoryBlockSize_KB = default (128);
+        double memoryBlockSize_KB = default(128);
         int numStorageSystems = default(1);							// Number of Storage systems. As default, 1 storage system
         int storageSize_GB;									// Total amount of space for each storage system
         string initialState;										// state or the node  NODE_STATE_OFF | NODE_STATE_IDLE | NODE_STATE_RUNNING
@@ -78,8 +78,8 @@ module NodeVL like INode
         output toVMStorageServers[];
 
         //cpu
-        input fromVMCPU[];
-        output toVMCPU[];
+        input fromVMCPU[numCores];
+        output toVMCPU[numCores];
 
         //memory
         input fromVMMemoryI[];
@@ -291,9 +291,10 @@ module NodeVL like INode
         osModule.toOutputMemory --> hypervisor.fromVMMemoryO++;
 
 		//Conections of the CPU and Operative System
-        osModule.fromCPU[0] <-- hypervisor.toVMCPU++;
-        osModule.toCPU[0] --> hypervisor.fromVMCPU++;
-
+		for i=0..numCores-1 {
+        osModule.fromCPU[i] <-- hypervisor.toVMCPU[i];
+        osModule.toCPU[i] --> hypervisor.fromVMCPU[i];
+		}
         // Connections between Operating System and Network
         osModule.toNet_TCP --> hypervisor.fromVMNet++;
         osModule.fromNet_TCP <-- hypervisor.toVMNet++;

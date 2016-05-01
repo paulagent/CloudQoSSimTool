@@ -102,9 +102,10 @@ void AbstractDCManager::initialize(){
             if (timeBetweenLogResults_s < 0.5) throw cRuntimeError ("The time between schedule events has to be at least 1..");
 
         // Get the parameters for print the energy data to a file
-            printEnergyTrace = par("printEnergyTrace").boolValue();
-            printEnergyToFile = par("printEnergyToFile").boolValue();
-
+           // printEnergyTrace = par("printEnergyTrace").boolValue();
+           // printEnergyToFile = par("printEnergyToFile").boolValue();
+            printEnergyTrace = false;
+                    printEnergyToFile = false;
 
         // Create the file
           if (printEnergyToFile){
