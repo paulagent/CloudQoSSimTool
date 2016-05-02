@@ -120,12 +120,12 @@ using std::string;
 	#define DEBUG_CPU_Scheduler_FIFO false				// Shows basic debug messages
 	#define DEBUG_MSG_CPU_Scheduler_FIFO false			// Shows all messages enterely (including all parameters)
 	#define DEBUG_CPU_Scheduler_RR true				// Shows basic debug messages
-	#define DEBUG_MSG_CPU_Scheduler_RR true			// Shows all messages enterely (including all parameters)
+	#define DEBUG_MSG_CPU_Scheduler_RR false			// Shows all messages enterely (including all parameters)
 
 /************************* CPU Cores *************************/
 
 	#define DEBUG_CPUcore true					// Shows basic debug messages
-	#define DEBUG_MSG_CPUcore true				// Shows all messages enterely (including all parameters)
+	#define DEBUG_MSG_CPUcore false				// Shows all messages enterely (including all parameters)
 
 
 /************************* BASIC FILE SYSTEM *************************/

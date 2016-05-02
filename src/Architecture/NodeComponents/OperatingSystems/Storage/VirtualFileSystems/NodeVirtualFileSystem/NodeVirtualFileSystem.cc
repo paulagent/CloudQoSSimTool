@@ -95,7 +95,7 @@ void NodeVirtualFileSystem::processRequestMessage (icancloud_Message *sm){
 	string path;
 	pathEntry newEntry;
 	uPathEntry newUPath;
-
+cout << "test for message flow" <<endl;
 		// Cast!
 		sm_io = check_and_cast <icancloud_App_IO_Message*> (sm);
 
@@ -107,14 +107,14 @@ void NodeVirtualFileSystem::processRequestMessage (icancloud_Message *sm){
 		if (operation == SM_CHANGE_DISK_STATE){
 
 			for (index = 0; index < numFS; index++){
-
+			    cout << "test for message flow SM_CHANGE_DISK_STATE " <<endl;
 				sendRequestMessage(sm, toFSGates[index]);
 
 			}
 
 		// The message is to configure the HBS manager to nfs mode
 		} else if (operation == SM_SET_HBS_TO_REMOTE){
-
+		    cout << "test for message flow SM_SET_HBS_TO_REMOTE " <<endl;
 			sendRequestMessage (sm_io, toFSGates[0]);
 
 		} else if (operation == SM_SET_IOR){
