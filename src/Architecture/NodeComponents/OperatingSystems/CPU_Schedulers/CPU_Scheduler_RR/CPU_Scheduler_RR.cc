@@ -99,7 +99,7 @@ void CPU_Scheduler_RR::processRequestMessage (icancloud_Message *sm){
 		// Casting to debug!
 		sm_cpu = check_and_cast<icancloud_App_CPU_Message *>(sm);
 		
-		// Assign infinite quantum
+		// Assign  quantum accoriding to ini config file
 		sm_cpu->setQuantum(quantum);
 				
 		// Search for an empty cpu core
@@ -201,7 +201,6 @@ int CPU_Scheduler_RR::searchIdleCPU (){
 	unsigned int i;
 	bool found;
 	int result;
-	
 		// Init
 		i = 0;
 		found = false;

@@ -9,6 +9,7 @@ API_OS::~API_OS(){
 void API_OS::initialize(){
 	
 	// Init the super-class
+
 	icancloud_Base::initialize();
 
 }

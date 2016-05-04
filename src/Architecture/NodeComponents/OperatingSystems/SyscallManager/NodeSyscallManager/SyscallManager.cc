@@ -158,7 +158,8 @@ void SyscallManager::processRequestMessage (icancloud_Message *sm){
 		
 		// CPU operation?
 		else if ((operation == SM_CPU_EXEC) || (operation == SM_CHANGE_CPU_STATE)) {
-
+cout << "SyscallManager request msg --->" << sm->getArrivalModule()->getFullName()<<endl;
+cout << "SyscallManager request msg --->" << sm->getSenderModule()->getFullName()<<endl;
 			sendRequestMessage (sm, toCPUGate);			
 		}
 

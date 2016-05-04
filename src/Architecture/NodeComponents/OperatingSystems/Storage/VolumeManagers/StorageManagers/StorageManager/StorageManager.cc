@@ -26,7 +26,7 @@ void StorageManager::initialize(){
 		// Set the moduleIdName
 		osStream << "StorageSystem." << getId();
 		moduleIdName = osStream.str();
-
+		cout << "call for storage Manager " << moduleIdName <<endl;
 		// Init the super-class
 		icancloud_Base::initialize();
 

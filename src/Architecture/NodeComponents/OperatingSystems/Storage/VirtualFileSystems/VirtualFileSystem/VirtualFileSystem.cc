@@ -164,6 +164,7 @@ void VirtualFileSystem::processRequestMessage (icancloud_Message *sm){
 
 						sm_io->setNextModuleIndex (index);
 						sm_io->setRemoteOperation (false);
+						cout << "virtual file system message test" << sm_io->getClassName()  << endl;
 						sendRequestMessage (sm_io, toFSGates[index]);
 					}
 					 else {

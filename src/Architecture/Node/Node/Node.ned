@@ -47,7 +47,7 @@ module Node like INode
         int storage_local_port = default(2049);													// Port for listening the incoming connections
         string hostName = default("");															// Node's hostname       
 
-        bool activeEnergyMeter = default(true);
+        bool activeEnergyMeter = default(false);						//change by bing
 
         // Main Hardware subsystems        
         string cpuModuleType = default("CPU_Module");				// CPUModule type as CPU type

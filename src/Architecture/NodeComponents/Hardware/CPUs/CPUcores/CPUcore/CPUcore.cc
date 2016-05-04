@@ -192,6 +192,7 @@ void CPUcore::processRequestMessage (icancloud_Message *sm){
 	        // TODO: The cpu scheduler should increase the speed of the cpu depending on the calculated load..
 			else{
 				cpuTime = tick_s.dbl() * sm_cpu->getQuantum();
+				cout << "CPU time for RR" << cpuTime <<endl;
 				sm_cpu->executeTime (cpuTime);				
 			}
 		}

@@ -182,6 +182,8 @@ void icancloud_Base::sendRequestMessage (icancloud_Message *sm, cGate* gate){
 		updateMessageTrace (sm);
 	}
 cout << "this is the problem " <<  gate->getFullName()<< endl;
+
+
 	// Send the message!
 	send (sm, gate);
 
@@ -939,7 +941,7 @@ void icancloud_Base::processCurrentRequestMessage (){
 
 				// Dynamic cast!
 				sm = check_and_cast<icancloud_Message *>(unqueuedMessage);
-
+cout<< "request info " << unqueuedMessage ->getSenderGate()->getFullName()<< endl;
 				// Process
 				processRequestMessage (sm);
 			}

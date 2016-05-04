@@ -39,8 +39,10 @@ void PortAddressTranslation::pat_initialize(string nodeIP){
 		user = searchUser(0);
 
 		// If the user does not exists, create it ..
+		cout << "PortAddressTranslation::pat_initialize" << endl;
 			if (user != NULL){
 				deleteUser (0);
+				cout << "PortAddressTranslation::pat_initialize : delete user "<< endl;
 			}
 
 			user = newUser(0);

@@ -39,7 +39,7 @@ void H_STORAGE_SCHED_FIFO::schedulingStorage(icancloud_Message *msg){
     int operation = msg->getOperation();
 
     if (msg->arrivedOn("fromNET_Manager")){
-
+        cout << "message arrive on fromNET_Manager "<< endl;
         sm =  check_and_cast <icancloud_App_IO_Message*>  (msg);
 
         if (operation == SM_DELETE_USER_FS) {
@@ -66,7 +66,7 @@ void H_STORAGE_SCHED_FIFO::schedulingStorage(icancloud_Message *msg){
        }
     }
     else if (msg->arrivedOn("fromVMStorageServers")){
-
+cout << "message arrive on fromVMStorageServers "<< endl;
         sm =  check_and_cast <icancloud_App_IO_Message*>  (msg);
 
         long int ok;

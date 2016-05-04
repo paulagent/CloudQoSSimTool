@@ -149,7 +149,7 @@ using std::string;
 
 /************************* I/O REDIRECTOR *************************/
 
-	#define DEBUG_IO_Rediretor false				// Shows basic debug messages
+	#define DEBUG_IO_Rediretor true				// Shows basic debug messages
 	#define DEBUG_MSG_IO_Rediretor false			// Shows all messages enterely (including all parameters)
 	
 

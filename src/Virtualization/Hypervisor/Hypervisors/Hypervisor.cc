@@ -43,6 +43,9 @@ void Hypervisor::finish(){
 }
 
 void Hypervisor::handleMessage(cMessage* msg){
+
+    cout << "Hypervisor msg send gate  name --->" << msg->getSenderGate()->getFullName() << endl;
+    cout << "Hypervisor msg arrive gate module-->" << msg->getArrivalModule()->getFullName() << endl;
    throw cRuntimeError ("Hypervisor::handleMessage -> Hypervisor module (cover) should not receive messages\n");
    delete(msg);
 }

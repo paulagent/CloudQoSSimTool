@@ -127,8 +127,7 @@ void JobQueue::move_to_qDst  (int position_qSrc, JobQueue* qDst, int position_qD
 			removeJob(position_qSrc);
 
 		} else {
-
-			printf ("\nError inserting job in position: %d , into destination queue. Maybe the position of job doesn't exist?\n", position_qSrc);
+printf ("\nError inserting job in position: %d , into destination queue. Maybe the position of job doesn't exist?\n", position_qSrc);
 
 		}
 }

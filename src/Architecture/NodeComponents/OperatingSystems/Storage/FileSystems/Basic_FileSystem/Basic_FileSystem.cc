@@ -21,7 +21,7 @@ void Basic_FileSystem::initialize(){
 		// Set the moduleIdName
 		osStream << "Basic_FileSystem." << getId();
 		moduleIdName = osStream.str();
-
+cout << "call for Basic_FileSystem" << moduleIdName <<endl;
 		// Init the super-class
 		icancloud_Base::initialize();
 
@@ -82,6 +82,7 @@ void Basic_FileSystem::processSelfMessage (cMessage *msg){
 
 
 void Basic_FileSystem::processRequestMessage (icancloud_Message *sm){
+
 	processIORequest (sm);
 }
 
@@ -90,7 +91,7 @@ void Basic_FileSystem::processResponseMessage (icancloud_Message *sm){
 
 	icancloud_App_IO_Message *sm_io;
 	icancloud_BlockList_Message *sm_bl;
-
+	cout << "call for Basic_FileSystem ---->processResponseMessage" << sm->getSenderGate() ->getFullName()<<endl;
 
 		sm_bl = check_and_cast<icancloud_BlockList_Message *>(sm);
 		sm_io = sm_bl->transformToApp_IO_Message();
@@ -108,7 +109,7 @@ void Basic_FileSystem::processIORequest (icancloud_Message *sm){
 	icancloud_App_IO_Message *sm_io;			// IO Request message
 	icancloud_BlockList_Message *sm_bl;		// Block List message
 	vector <icancloud_File>::iterator list_it;	// File list iterator
-
+	cout << "call for Basic_FileSystem ---->processIORequest" << sm->getSenderGate() ->getFullName()<<endl;
     	// Cast!
     	sm_io = check_and_cast<icancloud_App_IO_Message *>(sm);
     	operation = sm_io->getOperation();

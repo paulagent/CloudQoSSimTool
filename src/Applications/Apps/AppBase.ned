@@ -20,18 +20,19 @@ module AppBase
         int numFSRoutes;				// Number of different routes that applications will need  
         int numFiles;					// Number of different files that applications will need 
 
+        @display("bgb=616,287");
     submodules:
 
         app: <appType> like IAPP {
             @display("p=65,103");
         }
-        
+
         FSConfig[numFSRoutes]: FSUserDefinition {
-            @display("p=332,103");
+            @display("p=473,103");
         }
-        
+
         preloadFiles[numFiles]: PreloadFilesDefinition {
-            @display("p=186,103");
+            @display("p=238,103");
         }
 }
 
