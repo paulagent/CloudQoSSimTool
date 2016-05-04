@@ -172,13 +172,16 @@ User_VirtualPort_Cell* PortAddressTranslation::searchUser (int uId){
 	// Init ..
 		found = false;
 		user_cell = NULL;
-
+cout << "PortAddressTranslation::searchUser --user_vm_ports.size--->" << user_vm_ports.size()<<endl;
 	for (i = 0; (i < user_vm_ports.size()) && (!found);){
-
+cout << "PortAddressTranslation::searchUser---1111>" << uId<<endl;
 		if ((*(user_vm_ports.begin()+i))->getUserID() == uId){
-			found = true;
+
+ 			found = true;
 			user_cell = (*(user_vm_ports.begin()+i));
+			cout << "PortAddressTranslation::searchUser-- user_cell->"  <<endl;
 		}else {
+		    cout << "PortAddressTranslation::searchUser-- iterate all the user id->" << (*(user_vm_ports.begin()+i))->getUserID() <<endl;
 			i++;
 		}
 	}
@@ -199,6 +202,7 @@ void PortAddressTranslation::deleteUser (int uId){
 
 		if ((*(user_vm_ports.begin()+i))->getUserID() == uId){
 			found = true;
+			cout << "PortAddressTranslation::deleteUser--->" << uId <<endl;
 			user_vm_ports.erase(user_vm_ports.begin()+i);
 		}else {
 			i++;
@@ -474,7 +478,6 @@ int PortAddressTranslation::pat_closeConnection(icancloud_Message* sm){
 			virtualPort = sm_net->getLocalPort();
 
 			connID = vm->getConnectionID(virtualPort);
-
 			if (connID != sm->getConnectionId())throw cRuntimeError("portManager::pat_closeConnection error. Connection id doesn't match %i != %i to free ports!\n",connID, sm->getConnectionId() );
 
 			vm->deletePort_byConnectionID(connID);
@@ -508,7 +511,7 @@ vector<int> PortAddressTranslation::pat_closeVM(int uId, int pId){
 
 	// Search the user into the structure
 		user = searchUser(uId);
-
+		cout << "PortAddressTranslation::pat_closeConnection ---> uId " << uId << endl;
 		// If the user does not exists, create it ..
 			if (user == NULL) throw cRuntimeError("portManager::pat_closeConnection error. There is no user %i - vm %i to free ports!\n",uId, pId);
 

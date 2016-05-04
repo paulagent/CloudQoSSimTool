@@ -267,7 +267,7 @@ vector<icancloud_App_NET_Message*> LocalNetManager::manage_close_connections(int
 
 	// get all the connectionIDs to close the connections from the Local net manager (PAT)..
 		connectionIDs = getConnectionsIDs(uId, pId);
-
+cout << "manage_close_connection" << endl;
 		for (i = 0; i < connectionIDs.size();i++){
 			// Build the message for closing connection (node host)
 			sm_close_connection =  new icancloud_App_NET_Message ();
@@ -280,7 +280,7 @@ vector<icancloud_App_NET_Message*> LocalNetManager::manage_close_connections(int
 			sm_close_connection -> setKind(TCP_C_CLOSE);
 
 			//Build the parameters for close the socket
-
+cout << "manage_close_connection:conncection id --->" << sm_close_connection ->getConnectionId()<<endl;
 			TCPCommand *cmd = new TCPCommand();
 			cmd->setConnId((*(connectionIDs.begin()+i)));
 
@@ -427,7 +427,7 @@ vector<int> LocalNetManager::getConnectionsIDs(int uId, int pId){
 
 	vector<User_VirtualPort_Cell*>::iterator it;
 	vector<int> connectionIDs;
-
+cout << "LocalNetManager::getConnectionsIDs" << uId <<endl;
 	connectionIDs = pat->pat_closeVM(uId, pId);
 
 	return connectionIDs;
