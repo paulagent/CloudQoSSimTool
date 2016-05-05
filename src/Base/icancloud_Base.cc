@@ -943,7 +943,7 @@ void icancloud_Base::processCurrentRequestMessage (){
 				sm = check_and_cast<icancloud_Message *>(unqueuedMessage);
 
 				// Process
-				cout<<"icancloud_Base::processCurrentRequestMessage "<<endl;
+				//cout<<"icancloud_Base::processCurrentRequestMessage "<<endl;
 				processRequestMessage (sm);
 			}
 		}

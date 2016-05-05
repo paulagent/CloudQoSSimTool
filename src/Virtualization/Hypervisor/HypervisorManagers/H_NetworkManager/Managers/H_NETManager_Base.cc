@@ -163,7 +163,7 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 	icancloud_App_IO_Message *sm_io;
 
 	vector<icancloud_App_NET_Message*> sm_close;
-    cout << "H_NETManager_Base::processRequestMessage  ----->ArrivalModule-----> "<< sm->getArrivalModule() << endl;
+   // cout << "H_NETManager_Base::processRequestMessage  ----->ArrivalModule-----> "<< sm->getArrivalModule() << endl;
 
 	// Init ..
 		sm_net = dynamic_cast <icancloud_App_NET_Message*> (sm);
@@ -171,12 +171,12 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 
 		userID = sm->getUid();
 
-		cout << "H_NETManager_Base::processRequestMessage ---> userid ---->"   <<  userID <<endl;
+	//	cout << "H_NETManager_Base::processRequestMessage ---> userid ---->"   <<  userID <<endl;
 		vmID = sm->getPid();
-        cout << "H_NETManager_Base::processRequestMessage ---> vmID ---->"   <<  vmID <<endl;
+     //   cout << "H_NETManager_Base::processRequestMessage ---> vmID ---->"   <<  vmID <<endl;
 
 		operation = sm->getOperation();
-        cout << "H_NETManager_Base::processRequestMessage ---> operation ---->"   <<  operation  <<endl;
+       // cout << "H_NETManager_Base::processRequestMessage ---> operation ---->"   <<  operation  <<endl;
 
 		sm_close.clear();
 
@@ -190,13 +190,13 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
                 (operation == SM_ITERATIVE_PRECOPY) ||
                 (operation == SM_VM_ACTIVATION) ||
                 (operation == SM_CONNECTION_CONTENTS) )   {
-                cout << "H_NETManager_Base::processRequestMessage ---> The message is a migration operation"<< endl;
+             //   cout << "H_NETManager_Base::processRequestMessage ---> The message is a migration operation"<< endl;
 
                 sendRequestMessage(sm_net, toVMNet->getGate(nodeGate));
 
             // The message is a communication between vms
             } else {
-                cout << "H_NETManager_Base::processRequestMessage ---> The message is a communication between vms"<< endl;
+            //    cout << "H_NETManager_Base::processRequestMessage ---> The message is a communication between vms"<< endl;
                 schedulingNET(sm);
             }
 
@@ -204,7 +204,7 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 		} else {
 
 			// Reception of the message at node target..
-            cout << "H_NETManager_Base::processRequestMessage ---> It is a io operation"<< endl;
+            //cout << "H_NETManager_Base::processRequestMessage ---> It is a io operation"<< endl;
 
 			sm_io->setRemoteOperation(false);
 			sm->setNextModuleIndex(storageApp_ModuleIndex);
@@ -214,17 +214,17 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 	}
 	// The message came from the disk, a remote storage operation ..
 	else if (sm->arrivedOn("fromHStorageManager")){
-        cout << "H_NETManager_Base::processRequestMessage ---> The message came from the disk, a remote storage operation .."<< endl;
+       // cout << "H_NETManager_Base::processRequestMessage ---> The message came from the disk, a remote storage operation .."<< endl;
 
 	    sendRequestMessage(sm, toNodeNet);
 	}
 
 	// The message came from a vm application ..
 	else if (sm->arrivedOn("fromVMNet")){
-        cout << "H_NETManager_Base::processRequestMessage ---> The message came from a vm application .."<< endl;
+     //   cout << "H_NETManager_Base::processRequestMessage ---> The message came from a vm application .."<< endl;
 
 		if(operation == SM_SET_IOR){
-	        cout << "H_NETManager_Base::processRequestMessage ---> create vm"<< endl;
+	   //     cout << "H_NETManager_Base::processRequestMessage ---> create vm"<< endl;
 
 			localNetManager->createVM(sm);
 			delete (sm);
@@ -308,11 +308,11 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 
 		}
 		else if (operation == SM_CLOSE_VM_CONNECTIONS){
-            cout << "H_NETManager_Base::processRequestMessage ---> SM_CLOSE_VM_CONNECTIONS"<< endl;
+          //  cout << "H_NETManager_Base::processRequestMessage ---> SM_CLOSE_VM_CONNECTIONS"<< endl;
 
 		    sm_close = localNetManager->manage_close_connections(sm->getUid(), sm->getPid());
 
-            cout << "H_NETManager_Base::processRequestMessage ---> size of sm--->> "<<  sm_close.size()<<endl;
+          //  cout << "H_NETManager_Base::processRequestMessage ---> size of sm--->> "<<  sm_close.size()<<endl;
 
 
 		    for (int i = 0; i < (int)sm_close.size(); i++){
@@ -336,7 +336,7 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
                 (operation  == MPI_GATHER)){
 
 
-	        cout << "H_NETManager_Base::processRequestMessage ---> before overhead .."<< endl;
+	      //  cout << "H_NETManager_Base::processRequestMessage ---> before overhead .."<< endl;
 
 		    //////////////
            // Overhead //
