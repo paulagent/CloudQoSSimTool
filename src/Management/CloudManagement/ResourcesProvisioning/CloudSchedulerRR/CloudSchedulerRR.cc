@@ -210,7 +210,7 @@ void CloudSchedulerRR::schedule (){
                        string token = a.substr(0,a.find(delimeter));
                  //      cout << " Method[CLOUD_SCHEDULER_RR]----> token --->" << token << endl;
                        new_req_vm->setNewSelection(token.c_str(),1);
-
+                       new_req_vm->setPid(vm->vm->getPid());
                        new_req= dynamic_cast<AbstractRequest*>(new_req_vm);
                        // add new request to temp queue
 
