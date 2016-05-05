@@ -140,17 +140,17 @@ void PortAddressTranslation::pat_createVM (int userID, int vmID, string vmIP){
 
 	// Search the user into the structure
 		user = searchUser(userID);
-		cout << "PortAddressTranslation::pat_createVM ---> userID--->" <<userID <<endl;
+		//cout << "PortAddressTranslation::pat_createVM ---> userID--->" <<userID <<endl;
 
 	// If the user does not exists, create it ..
 		if (user == NULL){
-	        cout << "PortAddressTranslation::pat_createVM ---> user ==null--->"<< endl;
+	     //   cout << "PortAddressTranslation::pat_createVM ---> user ==null--->"<< endl;
 
 			user = newUser(userID);
 		}
 
 	// Search vm..
-        cout << "PortAddressTranslation::pat_createVM ---> user--->" << user->getUserID() <<endl;
+      //  cout << "PortAddressTranslation::pat_createVM ---> user--->" << user->getUserID() <<endl;
 
 		vm = user->searchVM(vmID);
 
@@ -175,11 +175,11 @@ User_VirtualPort_Cell* PortAddressTranslation::searchUser (int uId){
 	// Init ..
 		found = false;
 		user_cell = NULL;
-		cout << "PortAddressTranslation::searchUser : userID----->" << uId << endl;
-        cout << "PortAddressTranslation::searchUser : user_vm_ports.size()---->" << user_vm_ports.size() << endl;
+	//	cout << "PortAddressTranslation::searchUser : userID----->" << uId << endl;
+      //  cout << "PortAddressTranslation::searchUser : user_vm_ports.size()---->" << user_vm_ports.size() << endl;
 
 	for (i = 0; (i < user_vm_ports.size()) && (!found); ){
-        cout << "PortAddressTranslation::searchUser : userID----->" << (*(user_vm_ports.begin()+i))->getUserID() << endl;
+       // cout << "PortAddressTranslation::searchUser : userID----->" << (*(user_vm_ports.begin()+i))->getUserID() << endl;
 
 		if ((*(user_vm_ports.begin()+i))->getUserID() == uId){
 			found = true;
@@ -206,7 +206,7 @@ void PortAddressTranslation::deleteUser (int uId){
 		if ((*(user_vm_ports.begin()+i))->getUserID() == uId){
 			found = true;
 			user_vm_ports.erase(user_vm_ports.begin()+i);
-			cout<<"PortAddressTranslation::deleteUser --->user_vm_ports.erase(user_vm_ports.begin()+i) --->i="<<i<<endl;
+		//	cout<<"PortAddressTranslation::deleteUser --->user_vm_ports.erase(user_vm_ports.begin()+i) --->i="<<i<<endl;
 		}else {
 			i++;
 		}
@@ -219,7 +219,7 @@ User_VirtualPort_Cell* PortAddressTranslation::newUser(int uId){
 	User_VirtualPort_Cell* user;
 
 	user = new User_VirtualPort_Cell();
-	cout << "PortAddressTranslation::newUser ----> push back user :   " << uId <<"  to user_vm_ports"<< endl;
+	//cout << "PortAddressTranslation::newUser ----> push back user :   " << uId <<"  to user_vm_ports"<< endl;
 	user->setUserID(uId);
 
 	user_vm_ports.push_back(user);
