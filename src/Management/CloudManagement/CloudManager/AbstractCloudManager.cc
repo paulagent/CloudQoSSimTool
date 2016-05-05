@@ -26,364 +26,408 @@ AbstractCloudManager::~AbstractCloudManager() {
 
 }
 
-void AbstractCloudManager::initialize(){
+void AbstractCloudManager::initialize() {
 
     // Define ..
-        string initialVIP;
-        cModule* networkManagerMod;
+    string initialVIP;
+    cModule* networkManagerMod;
 
     // Initialize the migration parameters
-        dirtyingRate = par ("dirtyingRate");
-        migrationVector.clear();
+    dirtyingRate = par("dirtyingRate");
+    migrationVector.clear();
 
-        initialVIP = par("virtualIPsBasis").stringValue();
+    initialVIP = par("virtualIPsBasis").stringValue();
 
-        networkManagerMod = getParentModule()->getSubmodule("networkManager");
-        networkManager = check_and_cast <NetworkManager*> (networkManagerMod);
-        networkManager->setIPBasis(initialVIP.c_str());
+    networkManagerMod = getParentModule()->getSubmodule("networkManager");
+    networkManager = check_and_cast<NetworkManager*>(networkManagerMod);
+    networkManager->setIPBasis(initialVIP.c_str());
 
     // Create the cfgCloud object!
-        CfgCloud* cfg;
-        cfg = new CfgCloud();
+    CfgCloud* cfg;
+    cfg = new CfgCloud();
 
-        cModule* vmSet = getParentModule()->getSubmodule("vmSet");
-        if (vmSet == NULL) throw cRuntimeError ("AbstractCloudManager::initialize() -> Error during initialization. There is no vmSet\n");
+    cModule* vmSet = getParentModule()->getSubmodule("vmSet");
+    if (vmSet == NULL)
+        throw cRuntimeError(
+                "AbstractCloudManager::initialize() -> Error during initialization. There is no vmSet\n");
 
-        int vmSetSize = vmSet->par("vmImageQuantity").longValue();
-        for (int i = 0; i < vmSetSize; i++){
-            cModule* vmImage = vmSet->getSubmodule("vmImage",i);
+    int vmSetSize = vmSet->par("vmImageQuantity").longValue();
+    for (int i = 0; i < vmSetSize; i++) {
+        cModule* vmImage = vmSet->getSubmodule("vmImage", i);
 
-            cfg->setVMType(vmImage->par("id").stringValue(),
-                           vmImage->par("numCores"),
-                           vmImage->par("memorySize_MB").doubleValue(),
-                           vmImage->par("storageSize_GB").doubleValue()
-                           );
-            // Parameters are correct so far
-/*printf("\n MODULE[AbstractCloudManager::initialize()]: id----->%s",vmImage->par("id").stringValue());
-printf("\n MODULE[AbstractCloudManager::initialize()]: numCores----->%ld", vmImage->par("numCores").longValue());
-printf("\n MODULE[AbstractCloudManager::initialize()]: memorySize_MB----->%f", vmImage->par("memorySize_MB").doubleValue());
-printf("\n MODULE[AbstractCloudManager::initialize()]: storageSize_GB----->%f",  vmImage->par("storageSize_GB").doubleValue());*/
+        cfg->setVMType(vmImage->par("id").stringValue(),
+                vmImage->par("numCores"),
+                vmImage->par("memorySize_MB").doubleValue(),
+                vmImage->par("storageSize_GB").doubleValue());
+        // Parameters are correct so far
+        /*printf("\n MODULE[AbstractCloudManager::initialize()]: id----->%s",vmImage->par("id").stringValue());
+         printf("\n MODULE[AbstractCloudManager::initialize()]: numCores----->%ld", vmImage->par("numCores").longValue());
+         printf("\n MODULE[AbstractCloudManager::initialize()]: memorySize_MB----->%f", vmImage->par("memorySize_MB").doubleValue());
+         printf("\n MODULE[AbstractCloudManager::initialize()]: storageSize_GB----->%f",  vmImage->par("storageSize_GB").doubleValue());*/
 
-        }
+    }
 
-        dataCenterConfig = check_and_cast<CfgDataCenter*>(cfg);
+    dataCenterConfig = check_and_cast<CfgDataCenter*>(cfg);
 
-        cModule* topology = getParentModule()->getSubmodule("topology");
-        if (topology == NULL) throw cRuntimeError ("AbstractCloudManager::initialize() -> Error during initialization. There is no topology\n");
+    cModule* topology = getParentModule()->getSubmodule("topology");
+    if (topology == NULL)
+        throw cRuntimeError(
+                "AbstractCloudManager::initialize() -> Error during initialization. There is no topology\n");
 
-        int computeSize = topology->par("computeNodeQuantity").longValue();
+    int computeSize = topology->par("computeNodeQuantity").longValue();
 
-        for (int i = 0; i < computeSize; i++){
-            cModule* computeNodeMod = topology->getSubmodule("computeNode",i);
-            dataCenterConfig->setNodeType(computeNodeMod->par("id").stringValue(), computeNodeMod->par("quantity").longValue());
+    for (int i = 0; i < computeSize; i++) {
+        cModule* computeNodeMod = topology->getSubmodule("computeNode", i);
+        dataCenterConfig->setNodeType(computeNodeMod->par("id").stringValue(),
+                computeNodeMod->par("quantity").longValue());
 
-        }
+    }
 
-        int storageSize = topology->par("storageNodeQuantity").longValue();
+    int storageSize = topology->par("storageNodeQuantity").longValue();
 
-        for (int i = 0; i < storageSize; i++){
-            cModule* storageNodeMod = topology->getSubmodule("storageNode",i);
-            dataCenterConfig->setStorageNodeType(storageNodeMod->par("id").stringValue(),storageNodeMod->par("quantity").longValue());
-        }
+    for (int i = 0; i < storageSize; i++) {
+        cModule* storageNodeMod = topology->getSubmodule("storageNode", i);
+        dataCenterConfig->setStorageNodeType(
+                storageNodeMod->par("id").stringValue(),
+                storageNodeMod->par("quantity").longValue());
+    }
 
-        configDone = true;
+    configDone = true;
 
-        reqPendingToDelete.clear();
+    reqPendingToDelete.clear();
 
-        AbstractDCManager::initialize();
+    AbstractDCManager::initialize();
 
-        configDone = false;
+    configDone = false;
 }
 
-void AbstractCloudManager::initManager (int totalNodes){
+void AbstractCloudManager::initManager(int totalNodes) {
 
     migrationActive = false;
 
-       // Define.
-           std::ofstream line;
-           string file;
-           int i;
-           int computeNodeSetSize = 0;
-           int storageSetSize = 0;
-           if (totalNodes == -1) totalNodes = 0;
-           CfgCloud* config = check_and_cast<CfgCloud*>(dataCenterConfig);
-       // Definition for parse
-           // Nodes
-               vector<string> nodeNames;
-               string nodeTypeName;
-               HeterogeneousSet* hetNodeSet;
+    // Define.
+    std::ofstream line;
+    string file;
+    int i;
+    int computeNodeSetSize = 0;
+    int storageSetSize = 0;
+    if (totalNodes == -1)
+        totalNodes = 0;
+    CfgCloud* config = check_and_cast<CfgCloud*>(dataCenterConfig);
+    // Definition for parse
+    // Nodes
+    vector<string> nodeNames;
+    string nodeTypeName;
+    HeterogeneousSet* hetNodeSet;
 
-       // Define auxiliar variables to link the module to the object
-            cModule* nodeMod;
-            string nodeName;
-            Node* nodeChecked;
-            Machine* machine;
+    // Define auxiliar variables to link the module to the object
+    cModule* nodeMod;
+    string nodeName;
+    Node* nodeChecked;
+    Machine* machine;
 
-       // Create the cfgCloud object!
+    // Create the cfgCloud object!
 
-            if (!isCfgLoaded()){
-                printf("\n MODULE[AbstractCloudManager::initManager]: cfg is not loaded ");
+    if (!isCfgLoaded()) {
+        //    printf(
+        //          "\n MODULE[AbstractCloudManager::initManager]: cfg is not loaded ");
+//
+        // Initialize structures and parameters
+        nodesMap = new MachinesMap();
+        storage_nodesMap = new MachinesMap();
 
-                // Initialize structures and parameters
-                    nodesMap = new MachinesMap();
-                    storage_nodesMap = new MachinesMap();
+        // Get the Nodes
 
-                // Get the Nodes
+        computeNodeSetSize = config->getNumberOfNodeTypes();
 
-                    computeNodeSetSize = config->getNumberOfNodeTypes();
+        // Memorization
+        MemoSupport* cpu;
+        MemoSupport* memory;
+        MemoSupport* storage;
+        MemoSupport* network;
+        string component;
 
-                // Memorization
-                   MemoSupport* cpu;
-                   MemoSupport* memory;
-                   MemoSupport* storage;
-                   MemoSupport* network;
-                   string component;
+        bool componentsLoaded;
 
-                   bool componentsLoaded;
+        // Memorization init
+        cpus.clear();
+        memories.clear();
+        storages.clear();
+        networks.clear();
+        cpu = NULL;
+        memory = NULL;
+        storage = NULL;
+        network = NULL;
 
-                   // Memorization init
-                       cpus.clear();
-                       memories.clear();
-                       storages.clear();
-                       networks.clear();
-                       cpu = NULL;
-                       memory = NULL;
-                       storage = NULL;
-                       network = NULL;
+        for (int j = 0; j < computeNodeSetSize; j++) {
 
-                    for (int j = 0; j < computeNodeSetSize; j++){
+            nodeNames = config->generateStructureOfNodes(j);
 
-                        nodeNames = config->generateStructureOfNodes(j);
+            hetNodeSet = new HeterogeneousSet();
 
-                        hetNodeSet = new HeterogeneousSet();
+            componentsLoaded = false;
 
-                        componentsLoaded = false;
+            // link all the created nodes by omnet in the vector nodeSet.
+            for (i = 0; i < (int) nodeNames.size(); i++) {
 
-                        // link all the created nodes by omnet in the vector nodeSet.
-                          for (i = 0 ; i < (int)nodeNames.size(); i++){
+                nodeName = (*(nodeNames.begin() + i));
+                // printf(
+                //        "\n MODULE[AbstractCloudManager::initManager]: nodeName:------->%s",
+                //        nodeName.c_str());
 
-                              nodeName = (*(nodeNames.begin() + i));
-                              printf("\n MODULE[AbstractCloudManager::initManager]: nodeName:------->%s",nodeName.c_str());
+                nodeMod = getParentModule()->getParentModule()->getModuleByPath(
+                        nodeName.c_str());
+                nodeChecked = check_and_cast<Node*>(nodeMod);
+                nodeChecked->initNode();
 
-                              nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
-                              nodeChecked = check_and_cast<Node*>(nodeMod);
-                              nodeChecked->initNode();
+                if ((memorization) && (!componentsLoaded)) {
+                    componentsLoaded = true;
+                    bool found = false;
+                    // CPU
+                    component = nodeChecked->getCPUName();
 
-                              if ((memorization) && (!componentsLoaded)){
-                                   componentsLoaded = true;
-                                   bool found = false;
-                                   // CPU
-                                       component = nodeChecked->getCPUName();
-
-                                       for (int k = 0; k < (int)cpus.size() && (!found); k++){
-                                           if (strcmp ((*(cpus.begin() + k))->getComponentName().c_str(), component.c_str()) == 0){
-                                               found = true;
-                                               cpu = (*(cpus.begin() + k));
-                                           }
-                                       }
-
-                                       if (!found){
-                                           cpu = new MemoSupport( component );
-                                           printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
-                                           cpus.push_back(cpu);
-                                       }
-
-
-                                   // MEMORY
-                                       component = nodeChecked->getMemoryName();
-                                       found = false;
-
-                                       for (int k = 0; k < (int)memories.size() && (!found); k++){
-                                           if (strcmp ((*(memories.begin() + k))->getComponentName().c_str(), component.c_str()) == 0){
-                                               found = true;
-                                               memory = (*(memories.begin() + k));
-                                           }
-                                       }
-
-                                       if (!found){
-                                           memory = new MemoSupport( component );
-                                           printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
-                                           memories.push_back(memory);
-                                       }
-
-                                   // STORAGE
-                                       component = nodeChecked->getStorageName();
-                                       found = false;
-
-                                       for (int k = 0; k < (int)storages.size() && (!found); k++){
-                                           if (strcmp ((*(storages.begin() + k))->getComponentName().c_str(), component.c_str()) == 0){
-                                               found = true;
-                                               storage = (*(storages.begin() + k));
-                                           }
-                                       }
-
-                                       if (!found){
-                                           storage = new MemoSupport( component );
-                                           printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
-                                           storages.push_back(storage);
-                                       }
-                                   // NETWORK
-                                       component = nodeChecked->getNetworkName();
-                                       found = false;
-
-                                       for (int k = 0; k < (int)networks.size() && (!found); k++){
-                                           if (strcmp ((*(networks.begin() + k))->getComponentName().c_str(), component.c_str()) == 0){
-                                               found = true;
-                                               network = (*(networks.begin() + k));
-                                           }
-                                       }
-
-                                       if (!found){
-                                           network = new MemoSupport( component );
-                                           printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
-                                           networks.push_back(network);
-                                       }
-                               }
-                              nodeChecked->loadMemo(cpu,memory,storage,network);
-
-                              string state = (nodeMod->par("initialState").stringValue());
-                              if (strcmp(state.c_str(), MACHINE_STATE_OFF) == 0) nodeChecked->turnOff();
-                              else nodeChecked->turnOn();
-
-                              if (i == 0){
-                                  hetNodeSet->setElementType(nodeChecked->getElementType());
-                              }
-
-                              machine = check_and_cast<Machine*>(nodeChecked);
-                              hetNodeSet->initMachine(machine);
-                              totalNodes++;
-                          }
-
-                    nodesMap->setInstances(hetNodeSet);
-
+                    for (int k = 0; k < (int) cpus.size() && (!found); k++) {
+                        if (strcmp(
+                                (*(cpus.begin() + k))->getComponentName().c_str(),
+                                component.c_str()) == 0) {
+                            found = true;
+                            cpu = (*(cpus.begin() + k));
+                        }
                     }
 
-                // Get the Storage Nodes
-                    storageSetSize = config->getNumberOfStorageNodeTypes();
-
-                    for (int j = 0; j < storageSetSize; j++){
-
-                        nodeNames = config->generateStructureOfStorageNodes(j);
-
-                        hetNodeSet = new HeterogeneousSet();
-
-                        componentsLoaded = false;
-
-                        // link all the created nodes by omnet in the vector nodeSet.
-                          for (i = 0 ; i < (int)nodeNames.size(); i++){
-
-                              nodeName = (*(nodeNames.begin() + i));
-                              nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
-
-                              nodeChecked = check_and_cast<Node*>(nodeMod);
-                              nodeChecked->initNode();
-
-                              if ((memorization) && (!componentsLoaded)){
-                                   componentsLoaded = true;
-                                   bool found = false;
-                                   // CPU
-                                       component = nodeChecked->getCPUName();
-
-                                       for (int k = 0; k < (int)cpus.size() && (!found); k++){
-                                           if (strcmp ((*(cpus.begin() + k))->getComponentName().c_str(), component.c_str()) == 0){
-                                               found = true;
-                                               cpu = (*(cpus.begin() + k));
-                                           }
-                                       }
-
-                                       if (!found){
-                                           cpu = new MemoSupport( component );
-                                           printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
-                                           cpus.push_back(cpu);
-                                       }
-
-                                   // MEMORY
-                                       component = nodeChecked->getMemoryName();
-                                       found = false;
-
-                                       for (int k = 0; k < (int)memories.size() && (!found); k++){
-                                           if (strcmp ((*(memories.begin() + k))->getComponentName().c_str(), component.c_str()) == 0){
-                                               found = true;
-                                               memory = (*(memories.begin() + k));
-                                           }
-                                       }
-
-                                       if (!found){
-                                           memory = new MemoSupport( component );
-                                           printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
-                                           memories.push_back(memory);
-                                       }
-
-
-                                   // STORAGE
-                                       component = nodeChecked->getStorageName();
-                                       found = false;
-
-                                       for (int k = 0; k < (int)storages.size() && (!found); k++){
-                                           if (strcmp ((*(storages.begin() + k))->getComponentName().c_str(), component.c_str()) == 0){
-                                               found = true;
-                                               storage = (*(storages.begin() + k));
-                                           }
-                                       }
-
-                                       if (!found){
-                                           storage = new MemoSupport( component );
-                                           printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
-                                           storages.push_back(storage);
-                                       }
-
-                                   // NETWORK
-                                       component = nodeChecked->getNetworkName();
-                                       found = false;
-
-                                       for (int k = 0; k < (int)networks.size() && (!found); k++){
-                                           if (strcmp ((*(networks.begin() + k))->getComponentName().c_str(), component.c_str()) == 0){
-                                               found = true;
-                                               network = (*(networks.begin() + k));
-                                           }
-                                       }
-
-                                       if (!found){
-                                           network = new MemoSupport( component );
-                                           printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
-                                           networks.push_back(network);
-                                       }
-                              }
-
-                              nodeChecked->loadMemo(cpu,memory,storage,network);
-
-                              string state = (nodeMod->par("initialState").stringValue());
-                              if (strcmp(state.c_str(), MACHINE_STATE_OFF) == 0) nodeChecked->turnOff();
-                              else nodeChecked->turnOn();
-
-                              if (i == 0){
-                                  hetNodeSet->setElementType(nodeChecked->getElementType());
-                              }
-
-                              machine = check_and_cast<Machine*>(nodeChecked);
-                              hetNodeSet->initMachine(machine);
-                              totalNodes++;
-                          }
-
-                        storage_nodesMap->setInstances(hetNodeSet);
+                    if (!found) {
+                        cpu = new MemoSupport(component);
+                        printf("AbstractMeterUnit::loadMemo()-> %s\n",
+                                component.c_str());
+                        cpus.push_back(cpu);
                     }
-                    cfgLoaded();
+
+                    // MEMORY
+                    component = nodeChecked->getMemoryName();
+                    found = false;
+
+                    for (int k = 0; k < (int) memories.size() && (!found);
+                            k++) {
+                        if (strcmp(
+                                (*(memories.begin() + k))->getComponentName().c_str(),
+                                component.c_str()) == 0) {
+                            found = true;
+                            memory = (*(memories.begin() + k));
+                        }
+                    }
+
+                    if (!found) {
+                        memory = new MemoSupport(component);
+                        printf("AbstractMeterUnit::loadMemo()-> %s\n",
+                                component.c_str());
+                        memories.push_back(memory);
+                    }
+
+                    // STORAGE
+                    component = nodeChecked->getStorageName();
+                    found = false;
+
+                    for (int k = 0; k < (int) storages.size() && (!found);
+                            k++) {
+                        if (strcmp(
+                                (*(storages.begin() + k))->getComponentName().c_str(),
+                                component.c_str()) == 0) {
+                            found = true;
+                            storage = (*(storages.begin() + k));
+                        }
+                    }
+
+                    if (!found) {
+                        storage = new MemoSupport(component);
+                        printf("AbstractMeterUnit::loadMemo()-> %s\n",
+                                component.c_str());
+                        storages.push_back(storage);
+                    }
+                    // NETWORK
+                    component = nodeChecked->getNetworkName();
+                    found = false;
+
+                    for (int k = 0; k < (int) networks.size() && (!found);
+                            k++) {
+                        if (strcmp(
+                                (*(networks.begin() + k))->getComponentName().c_str(),
+                                component.c_str()) == 0) {
+                            found = true;
+                            network = (*(networks.begin() + k));
+                        }
+                    }
+
+                    if (!found) {
+                        network = new MemoSupport(component);
+                        printf("AbstractMeterUnit::loadMemo()-> %s\n",
+                                component.c_str());
+                        networks.push_back(network);
+                    }
+                }
+                nodeChecked->loadMemo(cpu, memory, storage, network);
+
+                string state = (nodeMod->par("initialState").stringValue());
+                if (strcmp(state.c_str(), MACHINE_STATE_OFF) == 0)
+                    nodeChecked->turnOff();
+                else
+                    nodeChecked->turnOn();
+
+                if (i == 0) {
+                    hetNodeSet->setElementType(nodeChecked->getElementType());
                 }
 
-       AbstractDCManager::initManager(totalNodes);
+                machine = check_and_cast<Machine*>(nodeChecked);
+                hetNodeSet->initMachine(machine);
+                totalNodes++;
+            }
+
+            nodesMap->setInstances(hetNodeSet);
+
+        }
+
+        // Get the Storage Nodes
+        storageSetSize = config->getNumberOfStorageNodeTypes();
+
+        for (int j = 0; j < storageSetSize; j++) {
+
+            nodeNames = config->generateStructureOfStorageNodes(j);
+
+            hetNodeSet = new HeterogeneousSet();
+
+            componentsLoaded = false;
+
+            // link all the created nodes by omnet in the vector nodeSet.
+            for (i = 0; i < (int) nodeNames.size(); i++) {
+
+                nodeName = (*(nodeNames.begin() + i));
+                nodeMod = getParentModule()->getParentModule()->getModuleByPath(
+                        nodeName.c_str());
+
+                nodeChecked = check_and_cast<Node*>(nodeMod);
+                nodeChecked->initNode();
+
+                if ((memorization) && (!componentsLoaded)) {
+                    componentsLoaded = true;
+                    bool found = false;
+                    // CPU
+                    component = nodeChecked->getCPUName();
+
+                    for (int k = 0; k < (int) cpus.size() && (!found); k++) {
+                        if (strcmp(
+                                (*(cpus.begin() + k))->getComponentName().c_str(),
+                                component.c_str()) == 0) {
+                            found = true;
+                            cpu = (*(cpus.begin() + k));
+                        }
+                    }
+
+                    if (!found) {
+                        cpu = new MemoSupport(component);
+                        printf("AbstractMeterUnit::loadMemo()-> %s\n",
+                                component.c_str());
+                        cpus.push_back(cpu);
+                    }
+
+                    // MEMORY
+                    component = nodeChecked->getMemoryName();
+                    found = false;
+
+                    for (int k = 0; k < (int) memories.size() && (!found);
+                            k++) {
+                        if (strcmp(
+                                (*(memories.begin() + k))->getComponentName().c_str(),
+                                component.c_str()) == 0) {
+                            found = true;
+                            memory = (*(memories.begin() + k));
+                        }
+                    }
+
+                    if (!found) {
+                        memory = new MemoSupport(component);
+                        printf("AbstractMeterUnit::loadMemo()-> %s\n",
+                                component.c_str());
+                        memories.push_back(memory);
+                    }
+
+                    // STORAGE
+                    component = nodeChecked->getStorageName();
+                    found = false;
+
+                    for (int k = 0; k < (int) storages.size() && (!found);
+                            k++) {
+                        if (strcmp(
+                                (*(storages.begin() + k))->getComponentName().c_str(),
+                                component.c_str()) == 0) {
+                            found = true;
+                            storage = (*(storages.begin() + k));
+                        }
+                    }
+
+                    if (!found) {
+                        storage = new MemoSupport(component);
+                        printf("AbstractMeterUnit::loadMemo()-> %s\n",
+                                component.c_str());
+                        storages.push_back(storage);
+                    }
+
+                    // NETWORK
+                    component = nodeChecked->getNetworkName();
+                    found = false;
+
+                    for (int k = 0; k < (int) networks.size() && (!found);
+                            k++) {
+                        if (strcmp(
+                                (*(networks.begin() + k))->getComponentName().c_str(),
+                                component.c_str()) == 0) {
+                            found = true;
+                            network = (*(networks.begin() + k));
+                        }
+                    }
+
+                    if (!found) {
+                        network = new MemoSupport(component);
+                        printf("AbstractMeterUnit::loadMemo()-> %s\n",
+                                component.c_str());
+                        networks.push_back(network);
+                    }
+                }
+
+                nodeChecked->loadMemo(cpu, memory, storage, network);
+
+                string state = (nodeMod->par("initialState").stringValue());
+                if (strcmp(state.c_str(), MACHINE_STATE_OFF) == 0)
+                    nodeChecked->turnOff();
+                else
+                    nodeChecked->turnOn();
+
+                if (i == 0) {
+                    hetNodeSet->setElementType(nodeChecked->getElementType());
+                }
+
+                machine = check_and_cast<Machine*>(nodeChecked);
+                hetNodeSet->initMachine(machine);
+                totalNodes++;
+            }
+
+            storage_nodesMap->setInstances(hetNodeSet);
+        }
+        cfgLoaded();
+    }
+
+    AbstractDCManager::initManager(totalNodes);
 
 }
 
-void AbstractCloudManager::finalizeManager(){
+void AbstractCloudManager::finalizeManager() {
 
     // finalize the scheduler
-   finalizeScheduler();
+    finalizeScheduler();
 
     AbstractDCManager::finalizeDCManager();
 
 }
 
-VM* AbstractCloudManager::getVmFromUser(int uId, int pId){
+VM* AbstractCloudManager::getVmFromUser(int uId, int pId) {
     AbstractCloudUser* userCl;
     AbstractUser* user;
     user = getUserById(uId);
@@ -392,7 +436,7 @@ VM* AbstractCloudManager::getVmFromUser(int uId, int pId){
     return vm;
 }
 
-AbstractCloudUser* AbstractCloudManager::getUserFromId(int uId){
+AbstractCloudUser* AbstractCloudManager::getUserFromId(int uId) {
     AbstractCloudUser* userCl;
     AbstractUser* user;
     user = getUserById(uId);
@@ -401,68 +445,71 @@ AbstractCloudUser* AbstractCloudManager::getUserFromId(int uId){
     return userCl;
 }
 
-bool AbstractCloudManager::request_start_vm (RequestVM* req){
+bool AbstractCloudManager::request_start_vm(RequestVM* req) {
 
     //Define ...
-        AbstractNode* selectedNode;
-        vector<VM*> attendedRequest_vms;
-        AbstractUser* user;
-        NodeVL* nodeVL;
+    AbstractNode* selectedNode;
+    vector<VM*> attendedRequest_vms;
+    AbstractUser* user;
+    NodeVL* nodeVL;
 
-        RequestVM* attendedRequest;
+    RequestVM* attendedRequest;
 
-        VM* vm = new VM();
-        VM* vmNew;
-        string uid;
+    VM* vm = new VM();
+    VM* vmNew;
+    string uid;
 
-        bool notEnoughResources;
-        int operation;
-        int vmQuantity = 0;
+    bool notEnoughResources;
+    int operation;
+    int vmQuantity = 0;
 
-        cModule*  vmImage;
+    cModule* vmImage;
 
-        // Init ..
-        notEnoughResources = false;
-        operation = REQUEST_NOP;
-        selectedNode = NULL;
-        attendedRequest_vms.clear();
+    // Init ..
+    notEnoughResources = false;
+    operation = REQUEST_NOP;
+    selectedNode = NULL;
+    attendedRequest_vms.clear();
 
-    for (int i = 0; ((i < req->getDifferentTypesQuantity()) && (!notEnoughResources));){
+    for (int i = 0;
+            ((i < req->getDifferentTypesQuantity()) && (!notEnoughResources));
+            ) {
 
         vmQuantity = req->getSelectionQuantity(i);
-        printf("MODULE[AbstractCloudManager::request_start_vm] vmQuantity----------------> %d", vmQuantity);
-        for (int j = 0; (j < vmQuantity) && !notEnoughResources; j++ ){
+        //printf(
+        //        "MODULE[AbstractCloudManager::request_start_vm] vmQuantity----------------> %d",
+        //        vmQuantity);
+        for (int j = 0; (j < vmQuantity) && !notEnoughResources; j++) {
 
-            // Get the original virtual machine image
+            //uvic add Get the original virtual machine image
             //C++ offers a solution which is called dynamic_cast. Here we use check_and_cast<>() which is provided by OMNeT++:
             //it tries to cast the pointer via dynamic_cast,
-         //and if it fails it stops the simulation with an error message
-           cModule* vmSet = getParentModule()->getSubmodule("vmSet");
-           vmImage = vmSet->getSubmodule("vmImage",0);
+            //and if it fails it stops the simulation with an error message
+            cModule* vmSet = getParentModule()->getSubmodule("vmSet");
+            vmImage = vmSet->getSubmodule("vmImage", 0);
 
-           cModule*   vmImage2 = getSubmodule("vmImage");
+            cModule* vmImage2 = getSubmodule("vmImage");
 
-           VM* vm2 = dynamic_cast<VM*>(vmImage2);
-          // vm->initialize();
-
+            VM* vm2 = dynamic_cast<VM*>(vmImage2);
+            // uvic add end
 
             // Create the request for scheduling selecting node method
             RequestVM* reqSch;
             AbstractRequest* reqA;
 
-
             reqSch = req->dup();
             reqSch->cleanSelectionType();
 
             elementType* el;
-            el= new elementType();
-            el->setMemorySize(vmImage->par("memorySize_MB").longValue()*1024);
+            el = new elementType();
+            el->setMemorySize(vmImage->par("memorySize_MB").longValue() * 1024);
             el->setType(vmImage->par("id").stringValue());
             el->setNumCores(vmImage->par("numCores"));
-            el->setDiskSize(vmImage->par("storageSize_GB").longValue()*1024*1024);
+            el->setDiskSize(
+                    vmImage->par("storageSize_GB").longValue() * 1024 * 1024);
 
-            printf("\n el->getMemorySize----->%d", el->getMemorySize());
-            printf("\n el->getNumCores()---->%d", el->getNumCores());
+            //printf("\n el->getMemorySize----->%d", el->getMemorySize());
+            //printf("\n el->getNumCores()---->%d", el->getNumCores());
             reqSch->setForSingleRequest(el);
             reqA = check_and_cast<AbstractRequest*>(reqSch);
 
@@ -473,13 +520,14 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
 
             operation = req->getOperation();
 
-            if (operation == REQUEST_ERROR){
+            if (operation == REQUEST_ERROR) {
                 //TODO--
 
-            } else if (selectedNode == NULL){ // There are not a node to allocate the request!
+            } else if (selectedNode == NULL) { // There are not a node to allocate the request!
 
                 // Reenqueue to wait until exists enough resources.
-                printf("MODULE[AbstractCloudManager::request_start_vm] selectedNode == NULL");
+                //printf(
+                //        "MODULE[AbstractCloudManager::request_start_vm] selectedNode == NULL");
 
                 req->incrementTimesEnqueue();
                 req->setState(REQUEST_PENDING);
@@ -488,466 +536,524 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
 
             } // everything is ok.
             else {
-                printf("MODULE[AbstractCloudManager::request_start_vm] select node %s\n",selectedNode->getFullName());
-             //  vm->initialize();
+                //   printf(
+                //         "MODULE[AbstractCloudManager::request_start_vm] select node %s\n",
+                //          selectedNode->getFullName());
+                //  vm->initialize();
 
-                if (vm == NULL) printf("MODULE[AbstractCloudManager: initial vm not successful");
+                if (vm == NULL)
+                    printf(
+                            "MODULE[AbstractCloudManager: initial vm not successful");
                 std::ostringstream vmName;
                 //vmName << vm->getName();
 
                 // Start the node (if it is off)
-                    if (!(selectedNode->isON())){
-                        selectedNode->turnOn();
-                    }
+                if (!(selectedNode->isON())) {
+                    selectedNode->turnOn();
+                }
 
                 // link the vm to the node
-                    nodeVL = check_and_cast<NodeVL*>(selectedNode);
+                nodeVL = check_and_cast<NodeVL*>(selectedNode);
 
-                    // Create the vm as image of vm image.
-                    printf("MODULE[AbstractCloudManager::request_start_vm] -----> %s \n",req->getSelectionType(0).c_str());
-                    vmNew = create_VM (vm2, req->getSelectionType(0).c_str(), nodeVL->getHypervisor());
+                // Create the vm as image of vm image.
+                //printf(
+                //        "MODULE[AbstractCloudManager::request_start_vm] -----> %s \n",
+                //        req->getSelectionType(0).c_str());
+                // uvic add change vm to vm2
+                vmNew = create_VM(vm2, req->getSelectionType(0).c_str(),
+                        nodeVL->getHypervisor());
 
-                    vmNew->setUid(req->getUid());
+                vmNew->setUid(req->getUid());
 
-                    vmName << req->getSelectionType(0).c_str() <<":u" << req->getUid() << ":p" << vmNew->getPid() << "";
-                    vmNew->cModule::setName(vmName.str().c_str());
-                    vmNew->setName(vmName.str().c_str());
-                   // vmNew-> t.start
-                    nodeVL->testLinkVM (vmNew->getNumCores(), vmNew->getMemoryCapacity(), vmNew->getStorageCapacity(), vmNew->getNumNetworkIF(), vmNew->getTypeName(), vmNew->getUid(), vmNew->getPid());
+                vmName << req->getSelectionType(0).c_str() << ":u"
+                        << req->getUid() << ":p" << vmNew->getPid() << "";
+                vmNew->cModule::setName(vmName.str().c_str());
+                vmNew->setName(vmName.str().c_str());
+                // vmNew-> t.start
+                nodeVL->testLinkVM(vmNew->getNumCores(),
+                        vmNew->getMemoryCapacity(), vmNew->getStorageCapacity(),
+                        vmNew->getNumNetworkIF(), vmNew->getTypeName(),
+                        vmNew->getUid(), vmNew->getPid());
 
-                    linkVM (nodeVL, vmNew);
-                    clock_t now = clock();
-                                     // simtime_t start_time;
-                                     // start_time=clock();
+                linkVM(nodeVL, vmNew);
+                //uvic add
+                clock_t now = clock();
+                // simtime_t start_time;
+                // start_time=clock();
 
-                                      RunningVM* started_VM= new RunningVM();
-                                  //    started_VM=null;
-                                      started_VM->vm=vmNew;
-                                      started_VM->start_time= now;
-                                      started_VM->end_time=now+2000000; //clocks per secs
-                                      started_VM->userID=vmNew->getUid();
-                                      runVM.push_back(started_VM);
+                RunningVM* started_VM = new RunningVM();
+                //    started_VM=null;
+                started_VM->vm = vmNew;
+                started_VM->start_time = now;
+                started_VM->end_time = now + 2000000; //clocks per secs
+                started_VM->userID = vmNew->getUid();
+                runVM.push_back(started_VM);
                 // If the linked is incorrect, Zahra: No, I think if the link is correct
-                    req->decreaseSelectionQuantity(i);
-                    attendedRequest_vms.insert(attendedRequest_vms.end(), vmNew);
+                req->decreaseSelectionQuantity(i);
+                attendedRequest_vms.insert(attendedRequest_vms.end(), vmNew);
                 // Put VM in running VM Vector
                 // current time
-                    printf("\n Method[ AbstractCloudManager::request_start_vm]: -------> VM %s has started.\n",started_VM->vm->getFullName());
+                //printf(
+                //        "\n Method[ AbstractCloudManager::request_start_vm]: -------> VM %s has started.\n",
+                //        started_VM->vm->getFullName());
 
-
-             }
+            }
         }
-        if (!notEnoughResources) req->eraseSelectionType(i);
+        if (!notEnoughResources)
+            req->eraseSelectionType(i);
 
     }
     // Send all attendeed requests
-    attendedRequest = new RequestVM(req -> getUid(), REQUEST_START_VM, attendedRequest_vms);
-    if (notEnoughResources){
+    attendedRequest = new RequestVM(req->getUid(), REQUEST_START_VM,
+            attendedRequest_vms);
+    if (notEnoughResources) {
 
         // At least one vm has been allocated
-        if (attendedRequest_vms.size() > 0){
-            attendedRequest->setState (REQUEST_PENDING);
-            user = getUserByModuleID(req -> getUid());
-            user -> notify_UserRequestAttendeed(attendedRequest);
-        }
-        else{
-            delete(attendedRequest);
+        if (attendedRequest_vms.size() > 0) {
+            attendedRequest->setState(REQUEST_PENDING);
+            user = getUserByModuleID(req->getUid());
+            user->notify_UserRequestAttendeed(attendedRequest);
+        } else {
+            delete (attendedRequest);
         }
 
     }
     // All the request has been allocated.
-    else{
-        attendedRequest->setState (REQUEST_SUCCESS);
-        user = getUserByModuleID(req -> getUid());
-        user -> notify_UserRequestAttendeed(attendedRequest);
+    else {
+        attendedRequest->setState(REQUEST_SUCCESS);
+        user = getUserByModuleID(req->getUid());
+        user->notify_UserRequestAttendeed(attendedRequest);
     }
 
     return notEnoughResources;
 
 }
 
-void AbstractCloudManager::request_shutdown_vm(RequestVM* req){
+void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
 
     // Define ..
-        VM* vm;
-        vector<AbstractNode*> nodes;
-        RequestVM* req_copy;
-        AbstractRequest* base;
+    VM* vm;
+    vector<AbstractNode*> nodes;
+    RequestVM* req_copy;
+    AbstractRequest* base;
 
     // Init ..
-        nodes.clear();
-printf("METHOD[AbstractCloudManager::request_shutdown_vm]: VMQuantity ---------------> %d ", req->getVMQuantity());
+    nodes.clear();
+    //printf(
+    //        "METHOD[AbstractCloudManager::request_shutdown_vm]: VMQuantity ---------------> %d ",
+    //        req->getVMQuantity());
     // Get the first VM
-        while (req->getVMQuantity() != 0){
+    while (req->getVMQuantity() != 0) {
 
-            vm = req->getVM(0);
+        vm = req->getVM(0);
 
-            // Dup the request to storage in the queue waiting for format FS and close connections
+        // Dup the request to storage in the queue waiting for format FS and close connections
 
-                req_copy = req->dup();
+        req_copy = req->dup();
 
-            //erase the rest of vms less the actual
-                if (req_copy->getVMQuantity() > 1){
-                    while (req_copy->getVMQuantity() != 1)
-                        req_copy->eraseVM(1);
-                }
-
-                reqPendingToDelete.push_back(req_copy);
-
-                base = dynamic_cast<AbstractRequest*>(req_copy);
-                if (base == NULL) throw cRuntimeError("AbstractCloudManager::notify_shutdown_vm->Error(req_copy). Casting the request\n");
-
-            nodes = remoteShutdown (base);
-            nodes.push_back(getNodeByIndex(vm->getNodeSetName(), vm->getNodeName()));
-
-            // Remote storage control
-            formatFSFromNodes (nodes, vm->getUid(), vm->getId(), shutdownNodeIfIDLE());
-            // connection control
-            closeVMConnections (nodes, vm);
-
-            // if vm job finishes before time slice elapse
-            int id=vm->getId();
-            for (int k=0 ; k<(int)runVM.size();++k)
-            {
-                if (runVM.at(k)->vm->getId()==id)
-                {
-                    runVM.erase(runVM.begin()+k);
-                }
-            }
-            // Delete the first VM and proceed if exists any one.
-            req->eraseVM(0);
-            printf("\n Method[Shutdown_VM]: -------> VM %s has shutdown.\n",vm->getFullName());
-
-
+        //erase the rest of vms less the actual
+        if (req_copy->getVMQuantity() > 1) {
+            while (req_copy->getVMQuantity() != 1)
+                req_copy->eraseVM(1);
         }
+
+        reqPendingToDelete.push_back(req_copy);
+
+        base = dynamic_cast<AbstractRequest*>(req_copy);
+        if (base == NULL)
+            throw cRuntimeError(
+                    "AbstractCloudManager::notify_shutdown_vm->Error(req_copy). Casting the request\n");
+
+        nodes = remoteShutdown(base);
+        nodes.push_back(
+                getNodeByIndex(vm->getNodeSetName(), vm->getNodeName()));
+
+        // Remote storage control
+        formatFSFromNodes(nodes, vm->getUid(), vm->getId(),
+                shutdownNodeIfIDLE());
+        // connection control
+        closeVMConnections(nodes, vm);
+// uvic add
+        // if vm job finishes before time slice elapse
+        int id = vm->getId();
+        for (int k = 0; k < (int) runVM.size(); ++k) {
+            if (runVM.at(k)->vm->getId() == id) {
+                runVM.erase(runVM.begin() + k);
+            }
+        }
+        // Delete the first VM and proceed if exists any one.
+        req->eraseVM(0);
+        // printf("\n Method[Shutdown_VM]: -------> VM %s has shutdown.\n",
+        //         vm->getFullName());
+
+    }
 }
 
-void AbstractCloudManager::linkVM (AbstractNode* node, VM* vm){
+void AbstractCloudManager::linkVM(AbstractNode* node, VM* vm) {
 
-	// link the node place to the base vm
+    // link the node place to the base vm
 
-		linkVMInternals (node,vm, false);
+    linkVMInternals(node, vm, false);
 
-        vm->changeState(MACHINE_STATE_OFF);
-        vm->setPendingOperation(NOT_PENDING_OPS);
+    vm->changeState(MACHINE_STATE_OFF);
+    vm->setPendingOperation(NOT_PENDING_OPS);
 
 }
 
-void AbstractCloudManager::unlinkVM(AbstractNode* node, VM* vm, bool turnOff){
+void AbstractCloudManager::unlinkVM(AbstractNode* node, VM* vm, bool turnOff) {
 
     vm->shutdownVM();
 
     unlinkVMInternals(node, vm, false);
 
-    for(int k = 0; k < vm->gateCount();k++){
-         vm->gateByOrdinal(k)->disconnect();
+    for (int k = 0; k < vm->gateCount(); k++) {
+        vm->gateByOrdinal(k)->disconnect();
     }
 
     vm->callFinish();
 
-    if (turnOff){
+    if (turnOff) {
         NodeVL* nodeVL = check_and_cast<NodeVL*>(node);
-        if ((nodeVL->getNumProcessesRunning() == 0) && (nodeVL->getNumVMAllocated() == 0))
+        if ((nodeVL->getNumProcessesRunning() == 0)
+                && (nodeVL->getNumVMAllocated() == 0))
             node->turnOff();
     }
 }
 
-void AbstractCloudManager::closeVMConnections (vector<AbstractNode*> nodes, VM* vm){
-
-        // Define ..
-        std::ostringstream user_vm;
-        unsigned int i;
-        string nodeSetName;
-        NodeVL* node;
-        AbstractCloudManager::PendingConnectionDeletion* pendingConnectionUnit;
-
-        // Init ..
-        // Create the pending remote storage deletion element
-            pendingConnectionUnit = new AbstractCloudManager::PendingConnectionDeletion();
-            pendingConnectionUnit->uId = vm->getUid();
-            pendingConnectionUnit->pId = vm->getPid();
-
-
-        // The remote nodes and the local.
-            pendingConnectionUnit->connectionsQuantity = nodes.size();
-
-        // Insert into the pendingRemoteStorageDeletion vector
-            connectionsDeletion.push_back(pendingConnectionUnit);
-
-        // The vm has remote storage
-
-            if (nodes.size() != 0){
-                for (i = 0; i < nodes.size(); i++){
-
-                   node = dynamic_cast<NodeVL*> ((*(nodes.begin()+i)));
-
-                   if (node == NULL) throw cRuntimeError ("AbstractCloudManager::closeVMConnections->Abstract node cannot be casted to NodeVL\n");
-                   node->closeConnections(vm->getUid(), vm->getPid());
-                }
-
-            }
-}
-
-VM* AbstractCloudManager::create_VM (VM* vmImage, string vmName, cModule* parent){
-
-	//Define ...
-
-		cModule *cloneVm;
-		std::ostringstream vmPath;
-		string parameter, nedFolder;
-		int i, numParameters;
-	// Init ..
-
-
-	//  into vmImage the module to clone
-        CfgCloud* cfg;
-        cfg = check_and_cast<CfgCloud*>(dataCenterConfig );
-
-	// Here the kind of module is taken to create the module as image..
-		vmPath << vmImage->getNedTypeName();
-		printf("\n AbstractCloudManager::create_VM---->getNedTypeName from create vm ---->%s", vmPath.str().c_str());
-
-	//create the vm module
-		cModuleType *modVMType = cModuleType::get (vmPath.str().c_str());
-
-		//I create the VM out of the module.
-		cloneVm = modVMType->create(vmImage->getTypeName().c_str(), parent);
-
-	//configure the main parameters
-		numParameters = vmImage->getNumParams();
-		for (i = 0; i < numParameters ; i++){
-			cloneVm->par(i) = vmImage->par(i);
-		}
-		printf("MODULE[AbstractCloudManager::create_vm] before call getIndexForVM -----> %s \n",vmName.c_str());
-		int position = cfg->getIndexForVM(vmName.c_str());
-		cloneVm->par("numCores") = cfg->getNumCores(position);
-        cloneVm->par("memorySize_MB") = cfg->getMemorySize(position);
-        cloneVm->par("storageSize_GB") = cfg->getStorageSize(position);
-
-	//finalize and build the module
-		cloneVm->finalizeParameters();
-		cloneVm->buildInside();
-
-		VM* vm;
-		vm = dynamic_cast<VM*>(cloneVm);
-		vm->callInitialize();
-
-		return vm;
-}
-
-void AbstractCloudManager::linkVMInternals (AbstractNode* node, VM* vm, bool migration){
-
-        // Define ...
-            unsigned int i;
-
-            string ipNode;
-            string virtualIP;
-            string virtualIPAux;
-            cGate** fromNodeCPU;
-            cGate** toNodeCPU;
-            cGate* fromNodeMemoryI;
-            cGate* fromNodeMemoryO;
-            cGate* toNodeMemoryI;
-            cGate* toNodeMemoryO;
-            cGate* toNodeNet;
-            cGate* fromNodeNet;
-            cGate* fromNodeStorageSystem;
-            cGate* toNodeStorageSystem;
-            NodeVL* nodeVL;
-
-        // Init ..
-            virtualIPAux = "";
-
-            nodeVL = dynamic_cast<NodeVL*>(node);
-            if (nodeVL == NULL) throw cRuntimeError("AbstractCloudManager::unlinkVMInternals->can not dynamic casted to NodeVL\n");
-
-            //link the VM to the networkManager
-                ipNode = nodeVL->par("ip").stringValue();
-
-            // Build the vmName
-
-            if (!migration){
-
-                    if (!ipNode.empty()){
-
-                        virtualIPAux = vm->par("ip").stdstringValue();
-
-                        if (virtualIPAux.empty()){
-                            virtualIP = networkManager->allocateVirtualIP(ipNode,vm->getUid(),vm->getPid());
-                        } else {
-                            virtualIP = networkManager->changeNodeIP(virtualIPAux,vm->getUid(),ipNode);
-                        }
-
-                        vm->par("ip").setStringValue(virtualIP.c_str());
-                    }
-                    vm->setIP(virtualIP);
-
-            } else {
-                virtualIP = vm->par("virtualIP").stringValue();
-                virtualIPAux= networkManager->changeNodeIP(virtualIP, vm->getUid(), ipNode);
-            }
-
-        // Connect the VM to the Hypervisor
-
-            fromNodeMemoryI = NULL;
-            fromNodeMemoryO = NULL;
-            toNodeMemoryI = NULL;
-            toNodeMemoryO = NULL;
-            toNodeNet = NULL;
-            fromNodeNet = NULL;
-            fromNodeStorageSystem = NULL;
-            toNodeStorageSystem = NULL;
-            toNodeCPU = new cGate* [vm->getNumCores()];
-            fromNodeCPU = new cGate* [vm->getNumCores()];
-            // Get VM the gates..
-                // CPU
-                for (i = 0 ; i < (unsigned int)vm->getNumCores() ; i++){
-                    fromNodeCPU [i] = (vm->gate("fromNodeCPU",i));
-                    toNodeCPU [i] = (vm->gate("toNodeCPU",i));
-                }
-
-                // Memory
-                    fromNodeMemoryI = vm->gate("fromNodeMemoryI");
-                    toNodeMemoryI = vm->gate("toNodeMemoryI");
-                    fromNodeMemoryO = (vm->gate("fromNodeMemoryO"));
-                    toNodeMemoryO = (vm->gate("toNodeMemoryO"));
-
-                // Net
-                    fromNodeNet = vm->gate("fromNodeNet");
-                    toNodeNet = vm->gate("toNodeNet");
-
-                // Storage
-                    fromNodeStorageSystem = vm->gate("fromNodeStorageSystem",0);
-                    toNodeStorageSystem = vm->gate("toNodeStorageSystem",0);
-
-                    nodeVL -> NodeVL::linkVM(fromNodeCPU, toNodeCPU,
-                                     fromNodeMemoryI, toNodeMemoryI, fromNodeMemoryO, toNodeMemoryO,
-                                     fromNodeNet, toNodeNet,
-                                     fromNodeStorageSystem,toNodeStorageSystem,
-                                     vm->getNumCores(), vm->getIP(),vm->getMemoryCapacity(),
-                                     vm->getStorageCapacity(),vm->getUid(), vm->getPid());
-
-            // link the node place to the base vm
-                    vm->setNodeName(node->getIndex());
-                    vm->setNodeSetName(node->getName());
-
-            nodeVL->setVMInstance(vm);
-
-
-}
-
-void  AbstractCloudManager::unlinkVMInternals (AbstractNode* node, VM* vm, bool migration){
+void AbstractCloudManager::closeVMConnections(vector<AbstractNode*> nodes,
+        VM* vm) {
 
     // Define ..
-        std::ostringstream msgLine;
-        string virtualIP;
-        vector<int> gates;
-        vector<int>::iterator gatesIt;
-        NodeVL* nodeVL;
+    std::ostringstream user_vm;
+    unsigned int i;
+    string nodeSetName;
+    NodeVL* node;
+    AbstractCloudManager::PendingConnectionDeletion* pendingConnectionUnit;
 
     // Init ..
+    // Create the pending remote storage deletion element
+    pendingConnectionUnit =
+            new AbstractCloudManager::PendingConnectionDeletion();
+    pendingConnectionUnit->uId = vm->getUid();
+    pendingConnectionUnit->pId = vm->getPid();
 
-        nodeVL = dynamic_cast<NodeVL*>(node);
-        if (nodeVL == NULL) throw cRuntimeError("AbstractCloudManager::unlinkVMInternals->can not dynamic casted to NodeVL\n");
+    // The remote nodes and the local.
+    pendingConnectionUnit->connectionsQuantity = nodes.size();
 
-        if (!migration){
-            // Unlink from network manager
-            virtualIP = vm->par("ip").stringValue();
-            networkManager->deleteVirtualIP_by_VIP(virtualIP, vm->getUid());
+    // Insert into the pendingRemoteStorageDeletion vector
+    connectionsDeletion.push_back(pendingConnectionUnit);
+
+    // The vm has remote storage
+
+    if (nodes.size() != 0) {
+        for (i = 0; i < nodes.size(); i++) {
+
+            node = dynamic_cast<NodeVL*>((*(nodes.begin() + i)));
+
+            if (node == NULL)
+                throw cRuntimeError(
+                        "AbstractCloudManager::closeVMConnections->Abstract node cannot be casted to NodeVL\n");
+            node->closeConnections(vm->getUid(), vm->getPid());
         }
 
-        // Disconnect the VM to the Hypervisor
-
-        if (vm->getNumProcessesRunning() != 0){
-            throw cRuntimeError ("AbstractCloudManager::unlinkVMInternals -> the VM has jobs that are not finalized when the order of unlink it has been given\n");
-        }
-
-        else {
-            nodeVL->unlinkVM(vm->getMemoryCapacity(), vm->getNumCores(), vm->getStorageCapacity(), virtualIP, vm->getUid(), vm->getId());
-        }
-
-}
-
-void AbstractCloudManager::notifyManager(icancloud_Message* msg){
-
-    int operation = msg->getOperation();
-
-    if (operation == SM_NOTIFY_USER_FS_DELETED){
-        notifyFSFormatted(msg->getUid(), msg->getPid(), shutdownNodeIfIDLE());
-
-    } else if (operation == SM_NOTIFY_PRELOAD_FINALIZATION ){
-        notifyStorageConnectionSuccesful(msg->getUid(), msg->getPid(), msg->getCommId());
-
-    } else if (operation == SM_NOTIFY_USER_CONNECTIONS_CLOSED ){
-        notifyVMConnectionsClosed(msg->getUid(), msg->getPid(), shutdownNodeIfIDLE() );
-
-    } else {
-        showErrorMessage("AbstractCloudManager::notifyManager-->operation unknown: %i", msg->getOperation());
     }
 }
 
-void AbstractCloudManager::notifyStorageConnectionSuccesful (int uId, int pId, int spId){
+VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
+        cModule* parent) {
 
-    // Define ..
-        vector<PendingStorageRequest*>::iterator requestsIt;
-        vector <processOperations*>::iterator processOp;
-        vector <subprocessOperations*>::iterator subprocessOp;
-        vector <connection_T*> connections;
-        stringstream id;
-        bool found;
-        bool notify;
-    // if the connection is the last
-        StorageRequest* request;
+    //Define ...
+
+    cModule *cloneVm;
+    std::ostringstream vmPath;
+    string parameter, nedFolder;
+    int i, numParameters;
+    // Init ..
+
+    //  into vmImage the module to clone
+    CfgCloud* cfg;
+    cfg = check_and_cast<CfgCloud*>(dataCenterConfig);
+
+    // Here the kind of module is taken to create the module as image..
+    vmPath << vmImage->getNedTypeName();
+    // printf(
+    //        "\n AbstractCloudManager::create_VM---->getNedTypeName from create vm ---->%s",
+    //        vmPath.str().c_str());
+
+    //create the vm module
+    cModuleType *modVMType = cModuleType::get(vmPath.str().c_str());
+
+    //I create the VM out of the module.
+    cloneVm = modVMType->create(vmImage->getTypeName().c_str(), parent);
+
+    //configure the main parameters
+    numParameters = vmImage->getNumParams();
+    for (i = 0; i < numParameters; i++) {
+        cloneVm->par(i) = vmImage->par(i);
+    }
+    //printf(
+    //        "MODULE[AbstractCloudManager::create_vm] before call getIndexForVM -----> %s \n",
+    //        vmName.c_str());
+    int position = cfg->getIndexForVM(vmName.c_str());
+    cloneVm->par("numCores") = cfg->getNumCores(position);
+    cloneVm->par("memorySize_MB") = cfg->getMemorySize(position);
+    cloneVm->par("storageSize_GB") = cfg->getStorageSize(position);
+
+    //finalize and build the module
+    cloneVm->finalizeParameters();
+    cloneVm->buildInside();
+
+    VM* vm;
+    vm = dynamic_cast<VM*>(cloneVm);
+    vm->callInitialize();
+
+    return vm;
+}
+
+void AbstractCloudManager::linkVMInternals(AbstractNode* node, VM* vm,
+        bool migration) {
+
+    // Define ...
+    unsigned int i;
+
+    string ipNode;
+    string virtualIP;
+    string virtualIPAux;
+    cGate** fromNodeCPU;
+    cGate** toNodeCPU;
+    cGate* fromNodeMemoryI;
+    cGate* fromNodeMemoryO;
+    cGate* toNodeMemoryI;
+    cGate* toNodeMemoryO;
+    cGate* toNodeNet;
+    cGate* fromNodeNet;
+    cGate* fromNodeStorageSystem;
+    cGate* toNodeStorageSystem;
+    NodeVL* nodeVL;
 
     // Init ..
-        requestsIt = pendingStorageRequests.begin();
-        found = false;
-        notify = false;
+    virtualIPAux = "";
 
-        // User
-        for (requestsIt = pendingStorageRequests.begin(); (requestsIt < pendingStorageRequests.end()) && (!found);requestsIt++){
+    nodeVL = dynamic_cast<NodeVL*>(node);
+    if (nodeVL == NULL)
+        throw cRuntimeError(
+                "AbstractCloudManager::unlinkVMInternals->can not dynamic casted to NodeVL\n");
 
-            if ((uId == (*requestsIt)->uId))
+    //link the VM to the networkManager
+    ipNode = nodeVL->par("ip").stringValue();
 
-                // VM
-                for (processOp = (*requestsIt)->processOperation.begin(); (processOp < (*requestsIt)->processOperation.end()) && (!found); processOp++){
-                    if ((*(processOp))->pId == pId){
+    // Build the vmName
 
-                        // App
-                        for (subprocessOp = (*(processOp))->pendingOperation.begin(); (subprocessOp < (*(processOp))->pendingOperation.end()) && (!found); subprocessOp++){
-                            if ((*subprocessOp)->spId == spId){
+    if (!migration) {
 
+        if (!ipNode.empty()) {
 
-                                (*subprocessOp)->numberOfConnections = (*subprocessOp)->numberOfConnections-1;
+            virtualIPAux = vm->par("ip").stdstringValue();
 
-                                found = true;
+            if (virtualIPAux.empty()) {
+                virtualIP = networkManager->allocateVirtualIP(ipNode,
+                        vm->getUid(), vm->getPid());
+            } else {
+                virtualIP = networkManager->changeNodeIP(virtualIPAux,
+                        vm->getUid(), ipNode);
+            }
 
-                                if ((*subprocessOp)->numberOfConnections == 0){
+            vm->par("ip").setStringValue(virtualIP.c_str());
+        }
+        vm->setIP(virtualIP);
 
-                                    notify = true;
+    } else {
+        virtualIP = vm->par("virtualIP").stringValue();
+        virtualIPAux = networkManager->changeNodeIP(virtualIP, vm->getUid(),
+                ipNode);
+    }
 
-                                    // Create the request to be used by the scheduler
-                                    request = new StorageRequest();
+    // Connect the VM to the Hypervisor
 
-                                    request->setOperation((*subprocessOp)->operation);
-                                    request->setPid(pId);
-                                    request->setUid(uId);
-                                    request->setSPid(spId);
-                                    // set the vm and the connection vector
-                                    for (int j = 0; j < (int)(*subprocessOp)->pendingOperation.size(); j++){
-                                        connection_t* connection = (*((*subprocessOp)->pendingOperation.begin()+j));
-                                        request->setConnection(connection);
-                                    }
+    fromNodeMemoryI = NULL;
+    fromNodeMemoryO = NULL;
+    toNodeMemoryI = NULL;
+    toNodeMemoryO = NULL;
+    toNodeNet = NULL;
+    fromNodeNet = NULL;
+    fromNodeStorageSystem = NULL;
+    toNodeStorageSystem = NULL;
+    toNodeCPU = new cGate*[vm->getNumCores()];
+    fromNodeCPU = new cGate*[vm->getNumCores()];
+    // Get VM the gates..
+    // CPU
+    for (i = 0; i < (unsigned int) vm->getNumCores(); i++) {
+        fromNodeCPU[i] = (vm->gate("fromNodeCPU", i));
+        toNodeCPU[i] = (vm->gate("toNodeCPU", i));
+    }
 
-                                    // delete the data from the pending requests
-                                    (*(processOp))->pendingOperation.erase(subprocessOp);
+    // Memory
+    fromNodeMemoryI = vm->gate("fromNodeMemoryI");
+    toNodeMemoryI = vm->gate("toNodeMemoryI");
+    fromNodeMemoryO = (vm->gate("fromNodeMemoryO"));
+    toNodeMemoryO = (vm->gate("toNodeMemoryO"));
 
-                                    if ((*processOp)->pendingOperation.size() == 0){
-                                        (*requestsIt)->processOperation.erase(processOp);
+    // Net
+    fromNodeNet = vm->gate("fromNodeNet");
+    toNodeNet = vm->gate("toNodeNet");
 
-                                        if ((*requestsIt)->processOperation.size() == 0){
-                                            pendingStorageRequests.erase(requestsIt);
-                                        }
+    // Storage
+    fromNodeStorageSystem = vm->gate("fromNodeStorageSystem", 0);
+    toNodeStorageSystem = vm->gate("toNodeStorageSystem", 0);
+
+    nodeVL->NodeVL::linkVM(fromNodeCPU, toNodeCPU, fromNodeMemoryI,
+            toNodeMemoryI, fromNodeMemoryO, toNodeMemoryO, fromNodeNet,
+            toNodeNet, fromNodeStorageSystem, toNodeStorageSystem,
+            vm->getNumCores(), vm->getIP(), vm->getMemoryCapacity(),
+            vm->getStorageCapacity(), vm->getUid(), vm->getPid());
+
+    // link the node place to the base vm
+    vm->setNodeName(node->getIndex());
+    vm->setNodeSetName(node->getName());
+
+    nodeVL->setVMInstance(vm);
+
+}
+
+void AbstractCloudManager::unlinkVMInternals(AbstractNode* node, VM* vm,
+        bool migration) {
+
+    // Define ..
+    std::ostringstream msgLine;
+    string virtualIP;
+    vector<int> gates;
+    vector<int>::iterator gatesIt;
+    NodeVL* nodeVL;
+
+    // Init ..
+
+    nodeVL = dynamic_cast<NodeVL*>(node);
+    if (nodeVL == NULL)
+        throw cRuntimeError(
+                "AbstractCloudManager::unlinkVMInternals->can not dynamic casted to NodeVL\n");
+
+    if (!migration) {
+        // Unlink from network manager
+        virtualIP = vm->par("ip").stringValue();
+        networkManager->deleteVirtualIP_by_VIP(virtualIP, vm->getUid());
+    }
+
+    // Disconnect the VM to the Hypervisor
+
+    if (vm->getNumProcessesRunning() != 0) {
+        throw cRuntimeError(
+                "AbstractCloudManager::unlinkVMInternals -> the VM has jobs that are not finalized when the order of unlink it has been given\n");
+    }
+
+    else {
+        nodeVL->unlinkVM(vm->getMemoryCapacity(), vm->getNumCores(),
+                vm->getStorageCapacity(), virtualIP, vm->getUid(), vm->getId());
+    }
+
+}
+
+void AbstractCloudManager::notifyManager(icancloud_Message* msg) {
+
+    int operation = msg->getOperation();
+
+    if (operation == SM_NOTIFY_USER_FS_DELETED) {
+        notifyFSFormatted(msg->getUid(), msg->getPid(), shutdownNodeIfIDLE());
+
+    } else if (operation == SM_NOTIFY_PRELOAD_FINALIZATION) {
+        notifyStorageConnectionSuccesful(msg->getUid(), msg->getPid(),
+                msg->getCommId());
+
+    } else if (operation == SM_NOTIFY_USER_CONNECTIONS_CLOSED) {
+        notifyVMConnectionsClosed(msg->getUid(), msg->getPid(),
+                shutdownNodeIfIDLE());
+
+    } else {
+        showErrorMessage(
+                "AbstractCloudManager::notifyManager-->operation unknown: %i",
+                msg->getOperation());
+    }
+}
+
+void AbstractCloudManager::notifyStorageConnectionSuccesful(int uId, int pId,
+        int spId) {
+
+    // Define ..
+    vector<PendingStorageRequest*>::iterator requestsIt;
+    vector<processOperations*>::iterator processOp;
+    vector<subprocessOperations*>::iterator subprocessOp;
+    vector<connection_T*> connections;
+    stringstream id;
+    bool found;
+    bool notify;
+    // if the connection is the last
+    StorageRequest* request;
+
+    // Init ..
+    requestsIt = pendingStorageRequests.begin();
+    found = false;
+    notify = false;
+
+    // User
+    for (requestsIt = pendingStorageRequests.begin();
+            (requestsIt < pendingStorageRequests.end()) && (!found);
+            requestsIt++) {
+
+        if ((uId == (*requestsIt)->uId))
+
+            // VM
+            for (processOp = (*requestsIt)->processOperation.begin();
+                    (processOp < (*requestsIt)->processOperation.end())
+                            && (!found); processOp++) {
+                if ((*(processOp))->pId == pId) {
+
+                    // App
+                    for (subprocessOp = (*(processOp))->pendingOperation.begin();
+                            (subprocessOp
+                                    < (*(processOp))->pendingOperation.end())
+                                    && (!found); subprocessOp++) {
+                        if ((*subprocessOp)->spId == spId) {
+
+                            (*subprocessOp)->numberOfConnections =
+                                    (*subprocessOp)->numberOfConnections - 1;
+
+                            found = true;
+
+                            if ((*subprocessOp)->numberOfConnections == 0) {
+
+                                notify = true;
+
+                                // Create the request to be used by the scheduler
+                                request = new StorageRequest();
+
+                                request->setOperation(
+                                        (*subprocessOp)->operation);
+                                request->setPid(pId);
+                                request->setUid(uId);
+                                request->setSPid(spId);
+                                // set the vm and the connection vector
+                                for (int j = 0;
+                                        j
+                                                < (int) (*subprocessOp)->pendingOperation.size();
+                                        j++) {
+                                    connection_t* connection =
+                                            (*((*subprocessOp)->pendingOperation.begin()
+                                                    + j));
+                                    request->setConnection(connection);
+                                }
+
+                                // delete the data from the pending requests
+                                (*(processOp))->pendingOperation.erase(
+                                        subprocessOp);
+
+                                if ((*processOp)->pendingOperation.size()
+                                        == 0) {
+                                    (*requestsIt)->processOperation.erase(
+                                            processOp);
+
+                                    if ((*requestsIt)->processOperation.size()
+                                            == 0) {
+                                        pendingStorageRequests.erase(
+                                                requestsIt);
                                     }
                                 }
                             }
@@ -955,11 +1061,13 @@ void AbstractCloudManager::notifyStorageConnectionSuccesful (int uId, int pId, i
                     }
                 }
             }
+    }
 
-    if (!found){
-        throw cRuntimeError ("AbstractCloudManager::notifyStorageConnectionSuccesful -> Notify storage connection succesful has been invoked and there is no conection pending \n");
+    if (!found) {
+        throw cRuntimeError(
+                "AbstractCloudManager::notifyStorageConnectionSuccesful -> Notify storage connection succesful has been invoked and there is no conection pending \n");
     } else {
-        if (notify){
+        if (notify) {
             AbstractUser* user;
             AbstractCloudUser* userCl;
             user = getUserById(uId);
@@ -968,86 +1076,95 @@ void AbstractCloudManager::notifyStorageConnectionSuccesful (int uId, int pId, i
         }
     }
 
- }
+}
 
-void AbstractCloudManager::notifyFSFormatted(int uId, int pId, bool turnOffNode){
+void AbstractCloudManager::notifyFSFormatted(int uId, int pId,
+        bool turnOffNode) {
 
     // Define ..
-        vector <PendingRemoteStorageDeletion*>::iterator pendingDelete;
-        PendingConnectionDeletion* pendingConnectionUnit;
-        AbstractNode* node;
-        unsigned int i;
-        int pendingConnections;
-        int pendingRSD;
+    vector<PendingRemoteStorageDeletion*>::iterator pendingDelete;
+    PendingConnectionDeletion* pendingConnectionUnit;
+    AbstractNode* node;
+    unsigned int i;
+    int pendingConnections;
+    int pendingRSD;
 
-        string nodeSetName;
+    string nodeSetName;
 
-        bool found;
-        bool pending_found;
+    bool found;
+    bool pending_found;
 
     // Init ..
-        found = false;
-        pending_found = false;
-        pendingConnections = 0;
-        pendingRSD = 0;
+    found = false;
+    pending_found = false;
+    pendingConnections = 0;
+    pendingRSD = 0;
 
     // Begin the search of the vm in the pending remote storage deletion vector
-        for (pendingDelete = pendingRemoteStorageDeletion.begin(); (pendingDelete < pendingRemoteStorageDeletion.end()) && (!found); pendingDelete++){
+    for (pendingDelete = pendingRemoteStorageDeletion.begin();
+            (pendingDelete < pendingRemoteStorageDeletion.end()) && (!found);
+            pendingDelete++) {
 
-            if (((*pendingDelete)->uId == uId) && ((*pendingDelete)->pId == pId)){
+        if (((*pendingDelete)->uId == uId) && ((*pendingDelete)->pId == pId)) {
 
-                found = true;
+            found = true;
 
-                // Decrement the waiting for remote storage filesystem formatting notifications
-                (*pendingDelete)->remoteStorageQuantity--;
-                pendingRSD = (*pendingDelete)->remoteStorageQuantity;
+            // Decrement the waiting for remote storage filesystem formatting notifications
+            (*pendingDelete)->remoteStorageQuantity--;
+            pendingRSD = (*pendingDelete)->remoteStorageQuantity;
 
-                // Check if it is the last connection and there are not pending connections..
-                if ((*pendingDelete)->remoteStorageQuantity == 0) {
+            // Check if it is the last connection and there are not pending connections..
+            if ((*pendingDelete)->remoteStorageQuantity == 0) {
 
-                    // Get if there are pending connections..
-                    for (i = 0; (i < connectionsDeletion.size()) && (!pending_found);){
-                        pendingConnectionUnit = (*(connectionsDeletion.begin() + i));
+                // Get if there are pending connections..
+                for (i = 0;
+                        (i < connectionsDeletion.size()) && (!pending_found);) {
+                    pendingConnectionUnit =
+                            (*(connectionsDeletion.begin() + i));
 
-                        if ( (pendingConnectionUnit->uId == uId) && (pendingConnectionUnit->pId == pId)  ){
-                            pendingConnections = pendingConnectionUnit->connectionsQuantity;
-                            pending_found = true;
-                        } else {
-                            i++;
-                        }
+                    if ((pendingConnectionUnit->uId == uId)
+                            && (pendingConnectionUnit->pId == pId)) {
+                        pendingConnections =
+                                pendingConnectionUnit->connectionsQuantity;
+                        pending_found = true;
+                    } else {
+                        i++;
                     }
                 }
-                // It is possible to shutdown the vm without problems
-                if (((pendingConnections == 0) || (!pending_found)) && (pendingRSD == 0))  {
+            }
+            // It is possible to shutdown the vm without problems
+            if (((pendingConnections == 0) || (!pending_found))
+                    && (pendingRSD == 0)) {
 
-                    // If pending_found, the pending connection unit is not needed anymore
-                    if (pending_found)
-                        connectionsDeletion.erase(connectionsDeletion.begin() + i);
+                // If pending_found, the pending connection unit is not needed anymore
+                if (pending_found)
+                    connectionsDeletion.erase(connectionsDeletion.begin() + i);
 
-                    // Operate with the remote storage..
-                    if (pendingConnections == 0)
-                        pendingRemoteStorageDeletion.erase(pendingDelete);
+                // Operate with the remote storage..
+                if (pendingConnections == 0)
+                    pendingRemoteStorageDeletion.erase(pendingDelete);
 
+                // notify the scheduler the shutdown of the vm
+                // Get the vm
+                VM* vm = getVmFromUser(uId, pId);
+
+                if (vm->getNumProcessesRunning() == 0) {
+                    // Free the resources of the node!
+                    node = getNodeByIndex(vm->getNodeSetName(),
+                            vm->getNodeName());
+
+                    unlinkVM(node, vm, turnOffNode);
 
                     // notify the scheduler the shutdown of the vm
-                        // Get the vm
-                            VM* vm = getVmFromUser(uId, pId);
-
-                            if (vm->getNumProcessesRunning() == 0){
-                                // Free the resources of the node!
-                                    node = getNodeByIndex (vm->getNodeSetName(), vm->getNodeName());
-
-                                    unlinkVM(node, vm, turnOffNode);
-
-                                // notify the scheduler the shutdown of the vm
-                                    notify_shutdown_vm (uId, pId, node);
-                            }
+                    notify_shutdown_vm(uId, pId, node);
                 }
             }
         }
+    }
 }
 
-void AbstractCloudManager::notify_shutdown_vm (int uId, int pId, AbstractNode* node){
+void AbstractCloudManager::notify_shutdown_vm(int uId, int pId,
+        AbstractNode* node) {
 
 // Define ..
     RequestVM* req;
@@ -1061,120 +1178,122 @@ void AbstractCloudManager::notify_shutdown_vm (int uId, int pId, AbstractNode* n
 
 // Begin ..
 
-    for (i = 0; (!found) && (i < (reqPendingToDelete.size())); ){
+    for (i = 0; (!found) && (i < (reqPendingToDelete.size()));) {
 
-        req =  (*(reqPendingToDelete.begin() + i));
+        req = (*(reqPendingToDelete.begin() + i));
 
-        if ( (req->getUid() == uId) && (req->getPid() == pId) ){
+        if ((req->getUid() == uId) && (req->getPid() == pId)) {
 
             // copy the req;
-                req_copy = req->dup();
+            req_copy = req->dup();
 
-                user = getUserByModuleID(req -> getUid());
-                user -> notify_UserRequestAttendeed(req_copy);
+            user = getUserByModuleID(req->getUid());
+            user->notify_UserRequestAttendeed(req_copy);
 //                node = getNodeByIndex(req_copy->getVM(0)->getNodeSetName(), req_copy->getVM(0)->getNodeName());
 
-                reqPendingToDelete.erase(reqPendingToDelete.begin() + i);
+            reqPendingToDelete.erase(reqPendingToDelete.begin() + i);
 
             found = true;
 
-        }
-        else {
+        } else {
             i++;
         }
 
     }
 
-    freeResources (uId, pId, node);
+    freeResources(uId, pId, node);
 
 }
 
-void AbstractCloudManager::notifyVMConnectionsClosed (int uId, int pId, bool turnOff){
+void AbstractCloudManager::notifyVMConnectionsClosed(int uId, int pId,
+        bool turnOff) {
 
     // Define ..
-        PendingConnectionDeletion* pendingConnectionUnit;
-        vector<PendingConnectionDeletion*>::iterator it;
-        vector <PendingRemoteStorageDeletion*>::iterator pendingDelete;
-        bool pending_found;
-        bool found;
-        int pendingConnections;
-        VM* vm;
-        AbstractNode* node;
-        string nodeSetName;
-        int nodeName;
-        std::ostringstream user_vm;
-        int pendingRSD;
+    PendingConnectionDeletion* pendingConnectionUnit;
+    vector<PendingConnectionDeletion*>::iterator it;
+    vector<PendingRemoteStorageDeletion*>::iterator pendingDelete;
+    bool pending_found;
+    bool found;
+    int pendingConnections;
+    VM* vm;
+    AbstractNode* node;
+    string nodeSetName;
+    int nodeName;
+    std::ostringstream user_vm;
+    int pendingRSD;
 
     // Init ..
-        found = false;
-        pending_found = false;
-        pendingConnections = 0;
-        pendingRSD = -1;
-
+    found = false;
+    pending_found = false;
+    pendingConnections = 0;
+    pendingRSD = -1;
 
     // Get if there are pending connections..
-        for (it = connectionsDeletion.begin(); (it < connectionsDeletion.end()) && (!found);){
-            pendingConnectionUnit = (*(it));
+    for (it = connectionsDeletion.begin();
+            (it < connectionsDeletion.end()) && (!found);) {
+        pendingConnectionUnit = (*(it));
 
-            if ((pendingConnectionUnit->pId) == pId){
-                pendingConnectionUnit->connectionsQuantity--;
-                found = true;
+        if ((pendingConnectionUnit->pId) == pId) {
+            pendingConnectionUnit->connectionsQuantity--;
+            found = true;
 
-                pendingConnections = pendingConnectionUnit->connectionsQuantity;
-                // Check if it is the last connection and there are not pending connections..
-                if (pendingConnections == 0){
+            pendingConnections = pendingConnectionUnit->connectionsQuantity;
+            // Check if it is the last connection and there are not pending connections..
+            if (pendingConnections == 0) {
 
-                    // erase the pending entry in connections deletion
-                    connectionsDeletion.erase(it);
-                    pending_found = false;
+                // erase the pending entry in connections deletion
+                connectionsDeletion.erase(it);
+                pending_found = false;
 
-                    for (pendingDelete = pendingRemoteStorageDeletion.begin(); (pendingDelete < pendingRemoteStorageDeletion.end()) && (!pending_found); ){
+                for (pendingDelete = pendingRemoteStorageDeletion.begin();
+                        (pendingDelete < pendingRemoteStorageDeletion.end())
+                                && (!pending_found);) {
 
-                        if (((*pendingDelete)->pId == pId) && ((*pendingDelete)->uId == uId)){
+                    if (((*pendingDelete)->pId == pId)
+                            && ((*pendingDelete)->uId == uId)) {
 
-                            // Get the vm
-                                vm = getVmFromUser(uId, pId);
+                        // Get the vm
+                        vm = getVmFromUser(uId, pId);
 
-                            // Set the pending found to control the case
-                                pending_found = true;
+                        // Set the pending found to control the case
+                        pending_found = true;
 
+                        // Operate with the remote storage..
+                        pendingRSD = (*pendingDelete)->remoteStorageQuantity;
+                        // It is possible to shutdown the vm without problems
+                        if (pendingRSD == 0) {
                             // Operate with the remote storage..
-                                pendingRSD = (*pendingDelete)->remoteStorageQuantity;
-                               // It is possible to shutdown the vm without problems
-                               if (pendingRSD == 0) {
-                                   // Operate with the remote storage..
-                                   pendingRemoteStorageDeletion.erase(pendingDelete);
-                               }
-
-                        } else {
-                            pendingDelete++;
+                            pendingRemoteStorageDeletion.erase(pendingDelete);
                         }
+
+                    } else {
+                        pendingDelete++;
                     }
                 }
+            }
 
+            if (((pendingRSD == 0) || (!pending_found))
+                    && (pendingConnections == 0)) {
 
-                if (((pendingRSD == 0) || (!pending_found)) && (pendingConnections == 0)){
+                // Shutdown the vm
+                nodeSetName = vm->getNodeSetName();
+                nodeName = vm->getNodeName();
 
-                    // Shutdown the vm
-                       nodeSetName = vm->getNodeSetName();
-                       nodeName = vm->getNodeName();
+                node = getNodeByIndex(nodeSetName, nodeName);
 
-                       node = getNodeByIndex (nodeSetName, nodeName);
+                if (vm->getNumProcessesRunning() == 0) {
+                    // Free the resources of the node!
+                    unlinkVM(node, vm, turnOff);
 
-                       if (vm->getNumProcessesRunning() == 0){
-                            // Free the resources of the node!
-                               unlinkVM(node, vm, turnOff);
-
-                            // notify the scheduler the shutdown of the vm
-                              notify_shutdown_vm(uId, pId, node);
-                       }
+                    // notify the scheduler the shutdown of the vm
+                    notify_shutdown_vm(uId, pId, node);
                 }
-
-            }
-            else {
-                it++;
             }
 
+        } else {
+            it++;
         }
+
+    }
 }
 

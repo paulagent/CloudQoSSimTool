@@ -18,8 +18,8 @@
 AbstractNode::~AbstractNode() {
 }
 
-void AbstractNode::initialize(){
-printf("hi from AbstractNode::initialize() \n ");
+void AbstractNode::initialize() {
+//printf("hi from AbstractNode::initialize() \n ");
     Machine::initialize();
 
     os = dynamic_cast<SyscallManager*>(os);
@@ -27,21 +27,21 @@ printf("hi from AbstractNode::initialize() \n ");
 
 }
 
-void AbstractNode::finish(){
+void AbstractNode::finish() {
 
     Machine::finish();
 }
 
-void AbstractNode::initialize_syscallManager(int localPort){
+void AbstractNode::initialize_syscallManager(int localPort) {
     SyscallManager* sc;
     storageLocalPort = localPort;
     sc = check_and_cast<SyscallManager*>(os);
-    sc -> initializeSystemApps(storageLocalPort, INITIAL_STATE);
-    sc -> setManager(this);
+    sc->initializeSystemApps(storageLocalPort, INITIAL_STATE);
+    sc->setManager(this);
 }
 
-void AbstractNode::closeConnections (int uId, int pId){
+void AbstractNode::closeConnections(int uId, int pId) {
     SyscallManager* sc;
     sc = check_and_cast<SyscallManager*>(os);
-    sc ->closeConnection(uId, pId);
+    sc->closeConnection(uId, pId);
 }

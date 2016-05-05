@@ -15,21 +15,19 @@
 
 #include "DataCenterAPI.h"
 
-
 DataCenterAPI::~DataCenterAPI() {
     // TODO Auto-generated destructor stub
 }
 
-
 // ---------------------- Scheduling interaction with nodeMap  ------------------------------------
 
-int DataCenterAPI::getDifferentTypesSize(bool storage){
+int DataCenterAPI::getDifferentTypesSize(bool storage) {
 
     int result;
 
-    if (storage){
+    if (storage) {
         result = storage_nodesMap->getMapQuantity();
-    }else{
+    } else {
         result = nodesMap->getMapQuantity();
     }
 
@@ -37,14 +35,13 @@ int DataCenterAPI::getDifferentTypesSize(bool storage){
 
 }
 
-
-int DataCenterAPI::getSetSize(bool storage, string setId){
+int DataCenterAPI::getSetSize(bool storage, string setId) {
 
     int result;
 
-    if (storage){
+    if (storage) {
         result = storage_nodesMap->getSetQuantity(setId);
-    }else{
+    } else {
         result = nodesMap->getSetQuantity(setId);
     }
 
@@ -52,13 +49,13 @@ int DataCenterAPI::getSetSize(bool storage, string setId){
 
 }
 
-int DataCenterAPI::getSetSize(bool storage, int setIndex){
+int DataCenterAPI::getSetSize(bool storage, int setIndex) {
 
     int result;
 
-    if (storage){
+    if (storage) {
         result = storage_nodesMap->getSetQuantity(setIndex);
-    }else{
+    } else {
         result = nodesMap->getSetQuantity(setIndex);
     }
 
@@ -66,8 +63,7 @@ int DataCenterAPI::getSetSize(bool storage, int setIndex){
 
 }
 
-int DataCenterAPI::getSetPosition (string setId, bool storage){
-
+int DataCenterAPI::getSetPosition(string setId, bool storage) {
 
     int result;
 
@@ -79,7 +75,7 @@ int DataCenterAPI::getSetPosition (string setId, bool storage){
     return result;
 }
 
-string DataCenterAPI::getSetName (int index, bool storage){
+string DataCenterAPI::getSetName(int index, bool storage) {
 
     string result;
 
@@ -92,7 +88,7 @@ string DataCenterAPI::getSetName (int index, bool storage){
 
 }
 
-int DataCenterAPI::getSetSize (string setId, bool storage){
+int DataCenterAPI::getSetSize(string setId, bool storage) {
     int result;
 
     if (storage)
@@ -103,7 +99,7 @@ int DataCenterAPI::getSetSize (string setId, bool storage){
     return result;
 }
 
-int DataCenterAPI::getSetSize (int nodeIndex, bool storage){
+int DataCenterAPI::getSetSize(int nodeIndex, bool storage) {
     int result;
 
     if (storage)
@@ -114,7 +110,7 @@ int DataCenterAPI::getSetSize (int nodeIndex, bool storage){
     return result;
 }
 
-int DataCenterAPI::getSetNumCores(string setId, bool storage){
+int DataCenterAPI::getSetNumCores(string setId, bool storage) {
     int result;
 
     if (storage)
@@ -125,7 +121,7 @@ int DataCenterAPI::getSetNumCores(string setId, bool storage){
     return result;
 }
 
-int DataCenterAPI::getSetNumCores(int nodeIndex, bool storage){
+int DataCenterAPI::getSetNumCores(int nodeIndex, bool storage) {
     int result;
 
     if (storage)
@@ -136,7 +132,7 @@ int DataCenterAPI::getSetNumCores(int nodeIndex, bool storage){
     return result;
 }
 
-int DataCenterAPI::getSetMemorySize(string setId, bool storage){
+int DataCenterAPI::getSetMemorySize(string setId, bool storage) {
     int result;
 
     if (storage)
@@ -147,7 +143,7 @@ int DataCenterAPI::getSetMemorySize(string setId, bool storage){
     return result;
 }
 
-int DataCenterAPI::getSetMemorySize(int nodeIndex, bool storage){
+int DataCenterAPI::getSetMemorySize(int nodeIndex, bool storage) {
     int result;
 
     if (storage)
@@ -158,7 +154,7 @@ int DataCenterAPI::getSetMemorySize(int nodeIndex, bool storage){
     return result;
 }
 
-int DataCenterAPI::getSetStorageSize(string setId, bool storage){
+int DataCenterAPI::getSetStorageSize(string setId, bool storage) {
     int result;
 
     if (storage)
@@ -169,7 +165,7 @@ int DataCenterAPI::getSetStorageSize(string setId, bool storage){
     return result;
 }
 
-int DataCenterAPI::getSetStorageSize(int nodeIndex, bool storage){
+int DataCenterAPI::getSetStorageSize(int nodeIndex, bool storage) {
     int result;
 
     if (storage)
@@ -180,8 +176,7 @@ int DataCenterAPI::getSetStorageSize(int nodeIndex, bool storage){
     return result;
 }
 
-
-string DataCenterAPI::getNodeState(string setId, int nodeIndex, bool storage){
+string DataCenterAPI::getNodeState(string setId, int nodeIndex, bool storage) {
     string result;
 
     if (storage)
@@ -192,7 +187,7 @@ string DataCenterAPI::getNodeState(string setId, int nodeIndex, bool storage){
     return result;
 }
 
-string DataCenterAPI::getNodeState  (int setIndex, int nodeIndex, bool storage){
+string DataCenterAPI::getNodeState(int setIndex, int nodeIndex, bool storage) {
     string result;
 
     if (storage)
@@ -203,7 +198,7 @@ string DataCenterAPI::getNodeState  (int setIndex, int nodeIndex, bool storage){
     return result;
 }
 
-int DataCenterAPI::countONNodes (string setId, bool storage){
+int DataCenterAPI::countONNodes(string setId, bool storage) {
     int result;
 
     if (storage)
@@ -214,7 +209,7 @@ int DataCenterAPI::countONNodes (string setId, bool storage){
     return result;
 }
 
-int DataCenterAPI::countONNodes (int setIndex, bool storage){
+int DataCenterAPI::countONNodes(int setIndex, bool storage) {
     int result;
 
     if (storage)
@@ -225,7 +220,7 @@ int DataCenterAPI::countONNodes (int setIndex, bool storage){
     return result;
 }
 
-int DataCenterAPI::countOFFNodes (string setId, bool storage){
+int DataCenterAPI::countOFFNodes(string setId, bool storage) {
     int result;
 
     if (storage)
@@ -236,7 +231,7 @@ int DataCenterAPI::countOFFNodes (string setId, bool storage){
     return result;
 }
 
-int DataCenterAPI::countOFFNodes (int setIndex, bool storage){
+int DataCenterAPI::countOFFNodes(int setIndex, bool storage) {
     int result;
 
     if (storage)
@@ -249,7 +244,8 @@ int DataCenterAPI::countOFFNodes (int setIndex, bool storage){
 
 // ------------------ To obtain nodes from the set -------------------------
 
-AbstractNode* DataCenterAPI::getNodeByIndex (string setId, int nodeIndex, bool storage){
+AbstractNode* DataCenterAPI::getNodeByIndex(string setId, int nodeIndex,
+        bool storage) {
     Machine* result;
     AbstractNode* node;
 
@@ -263,39 +259,41 @@ AbstractNode* DataCenterAPI::getNodeByIndex (string setId, int nodeIndex, bool s
     return node;
 }
 
-AbstractNode* DataCenterAPI::getNodeByIndex (int setIndex, int nodeIndex, bool storage){
+AbstractNode* DataCenterAPI::getNodeByIndex(int setIndex, int nodeIndex,
+        bool storage) {
     Machine* result;
     AbstractNode* node;
- //   if (DEBUG_CLOUD_SCHED) printf("\n Method[DataCenterAPI::getNodeByIndex]:setIndex---->%d \n", setIndex);
- //   if (DEBUG_CLOUD_SCHED) printf("\n Method[DataCenterAPI::getNodeByIndex]:nodeIndex---->%d \n", nodeIndex);
-
+    //   if (DEBUG_CLOUD_SCHED) printf("\n Method[DataCenterAPI::getNodeByIndex]:setIndex---->%d \n", setIndex);
+    //   if (DEBUG_CLOUD_SCHED) printf("\n Method[DataCenterAPI::getNodeByIndex]:nodeIndex---->%d \n", nodeIndex);
 
     if (storage)
         result = storage_nodesMap->getMachineByIndex(setIndex, nodeIndex);
     else
         result = nodesMap->getMachineByIndex(setIndex, nodeIndex);
 
-  /*  if (DEBUG_CLOUD_SCHED) printf("\n Method[DataCenterAPI::getNodeByIndex]:node name:---->%s \n", result->getName());
-    if (DEBUG_CLOUD_SCHED) printf("\n Method[DataCenterAPI::getNodeByIndex]:memory capacity:---->%d \n", result->getMemoryCapacity());
-    if (DEBUG_CLOUD_SCHED) printf("\n Method[DataCenterAPI::getNodeByIndex]:free memory:---->%f \n", result->getFreeMemory());*/
+    /*  if (DEBUG_CLOUD_SCHED) printf("\n Method[DataCenterAPI::getNodeByIndex]:node name:---->%s \n", result->getName());
+     if (DEBUG_CLOUD_SCHED) printf("\n Method[DataCenterAPI::getNodeByIndex]:memory capacity:---->%d \n", result->getMemoryCapacity());
+     if (DEBUG_CLOUD_SCHED) printf("\n Method[DataCenterAPI::getNodeByIndex]:free memory:---->%f \n", result->getFreeMemory());*/
 
     node = dynamic_cast<AbstractNode*>(result);
 
     return node;
 }
 
-string DataCenterAPI::getNodeIp (string setIndex, int nodeIndex, bool storage){
+string DataCenterAPI::getNodeIp(string setIndex, int nodeIndex, bool storage) {
     string result;
 
     if (storage)
-        result = storage_nodesMap->getMachineByIndex(setIndex, nodeIndex)->getIP().c_str();
+        result =
+                storage_nodesMap->getMachineByIndex(setIndex, nodeIndex)->getIP().c_str();
     else
-        result = nodesMap->getMachineByIndex(setIndex, nodeIndex)->getIP().c_str();
+        result =
+                nodesMap->getMachineByIndex(setIndex, nodeIndex)->getIP().c_str();
 
     return result;
 }
 
-vector<AbstractNode*> DataCenterAPI::getONNodes (string setId, bool storage){
+vector<AbstractNode*> DataCenterAPI::getONNodes(string setId, bool storage) {
     vector<AbstractNode*> nodes;
     AbstractNode* node;
     vector<Machine*> result;
@@ -306,7 +304,7 @@ vector<AbstractNode*> DataCenterAPI::getONNodes (string setId, bool storage){
         result = nodesMap->getONMachines(setId.c_str());
 
     nodes.clear();
-    for (int i =0; i < (int)result.size();i++){
+    for (int i = 0; i < (int) result.size(); i++) {
         node = dynamic_cast<AbstractNode*>(*(result.begin() + i));
         nodes.push_back(node);
     }
@@ -314,7 +312,7 @@ vector<AbstractNode*> DataCenterAPI::getONNodes (string setId, bool storage){
     return nodes;
 }
 
-vector<AbstractNode*> DataCenterAPI::getONNodes (int setIndex, bool storage){
+vector<AbstractNode*> DataCenterAPI::getONNodes(int setIndex, bool storage) {
     vector<AbstractNode*> nodes;
     AbstractNode* node;
     vector<Machine*> result;
@@ -325,7 +323,7 @@ vector<AbstractNode*> DataCenterAPI::getONNodes (int setIndex, bool storage){
         result = nodesMap->getONMachines(setIndex);
 
     nodes.clear();
-    for (int i =0; i < (int)result.size();i++){
+    for (int i = 0; i < (int) result.size(); i++) {
         node = dynamic_cast<AbstractNode*>(*(result.begin() + i));
         nodes.push_back(node);
     }
@@ -333,7 +331,7 @@ vector<AbstractNode*> DataCenterAPI::getONNodes (int setIndex, bool storage){
     return nodes;
 }
 
-vector<AbstractNode*> DataCenterAPI::getOFFNodes (string setId, bool storage){
+vector<AbstractNode*> DataCenterAPI::getOFFNodes(string setId, bool storage) {
     vector<AbstractNode*> nodes;
     AbstractNode* node;
     vector<Machine*> result;
@@ -344,7 +342,7 @@ vector<AbstractNode*> DataCenterAPI::getOFFNodes (string setId, bool storage){
         result = nodesMap->getOFFMachines(setId.c_str());
 
     nodes.clear();
-    for (int i =0; i < (int)result.size();i++){
+    for (int i = 0; i < (int) result.size(); i++) {
         node = dynamic_cast<AbstractNode*>(*(result.begin() + i));
         nodes.push_back(node);
     }
@@ -352,7 +350,7 @@ vector<AbstractNode*> DataCenterAPI::getOFFNodes (string setId, bool storage){
     return nodes;
 }
 
-vector<AbstractNode*> DataCenterAPI::getOFFNodes (int setIndex, bool storage){
+vector<AbstractNode*> DataCenterAPI::getOFFNodes(int setIndex, bool storage) {
     vector<AbstractNode*> nodes;
     AbstractNode* node;
     vector<Machine*> result;
@@ -363,7 +361,7 @@ vector<AbstractNode*> DataCenterAPI::getOFFNodes (int setIndex, bool storage){
         result = nodesMap->getOFFMachines(setIndex);
 
     nodes.clear();
-    for (int i =0; i < (int)result.size();i++){
+    for (int i = 0; i < (int) result.size(); i++) {
         node = dynamic_cast<AbstractNode*>(*(result.begin() + i));
         nodes.push_back(node);
     }
@@ -371,30 +369,32 @@ vector<AbstractNode*> DataCenterAPI::getOFFNodes (int setIndex, bool storage){
     return nodes;
 }
 
-AbstractNode* DataCenterAPI::getNodeByIP (string ip){
+AbstractNode* DataCenterAPI::getNodeByIP(string ip) {
     Machine* result;
     AbstractNode* node;
 
     result = storage_nodesMap->getMachineByIP(ip);
-    if (result == NULL) result = nodesMap->getMachineByIP(ip);
+    if (result == NULL)
+        result = nodesMap->getMachineByIP(ip);
 
     node = dynamic_cast<AbstractNode*>(result);
 
     return node;
 }
 
-elementType* DataCenterAPI::getElementType (int index, bool storageNodes){
+elementType* DataCenterAPI::getElementType(int index, bool storageNodes) {
     elementType* result;
 
     if (storageNodes)
-       result = storage_nodesMap->getElementType(index);
+        result = storage_nodesMap->getElementType(index);
     else
-       result = nodesMap->getElementType(index);
+        result = nodesMap->getElementType(index);
 
     return result;
 }
 
-void DataCenterAPI::setElementType(elementType* element, int index, bool storageNodes){
+void DataCenterAPI::setElementType(elementType* element, int index,
+        bool storageNodes) {
 
     if (storageNodes)
         storage_nodesMap->setElementType(index, element);
@@ -403,23 +403,24 @@ void DataCenterAPI::setElementType(elementType* element, int index, bool storage
 
 }
 
-int DataCenterAPI::getNumberOfProcesses(int nodeSet, int nodeID, bool storageNodes){
-    return nodesMap->getMachineByIndex(nodeSet,nodeID)->getNumProcessesRunning();
+int DataCenterAPI::getNumberOfProcesses(int nodeSet, int nodeID,
+        bool storageNodes) {
+    return nodesMap->getMachineByIndex(nodeSet, nodeID)->getNumProcessesRunning();
 }
 
-void DataCenterAPI::printNodeMapInfo(){
-    printf ("------------computeNodes ---------------\n");
-    for (int i = 0; i < getMapSize(); i++){
-        for (int j = 0; j < getSetSize(i,false); j++){
-            printf("NodeIP:%s\n", getNodeByIndex(i,j, false)->getIP().c_str());
+void DataCenterAPI::printNodeMapInfo() {
+    printf("------------computeNodes ---------------\n");
+    for (int i = 0; i < getMapSize(); i++) {
+        for (int j = 0; j < getSetSize(i, false); j++) {
+            printf("NodeIP:%s\n", getNodeByIndex(i, j, false)->getIP().c_str());
         }
     }
 
-    printf ("------------storageNodes ---------------\n");
-    for (int i = 0; i < getMapSize(); i++){
-        for (int j = 0; j < getSetSize(i,true); j++){
-            printf("NodeIP:%s\n", getNodeByIndex(i,j, true)->getIP().c_str());
+    printf("------------storageNodes ---------------\n");
+    for (int i = 0; i < getMapSize(); i++) {
+        for (int j = 0; j < getSetSize(i, true); j++) {
+            printf("NodeIP:%s\n", getNodeByIndex(i, j, true)->getIP().c_str());
         }
     }
-    printf ("--------------------------------------------");
+    printf("--------------------------------------------");
 }

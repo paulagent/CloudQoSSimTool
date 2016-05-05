@@ -21,9 +21,9 @@ Hypervisor::~Hypervisor() {
     // TODO Auto-generated destructor stub
 }
 
-void Hypervisor::initialize(){
+void Hypervisor::initialize() {
     cModule* mod;
- //   printf("\n Method[Hypervisor]: ------->Init \n");
+    //   printf("\n Method[Hypervisor]: ------->Init \n");
     mod = this->getSubmodule("cpuManager");
     cpuM = check_and_cast<H_CPUManager_Base*>(mod);
 
@@ -38,31 +38,26 @@ void Hypervisor::initialize(){
 
 }
 
-void Hypervisor::finish(){
+void Hypervisor::finish() {
 
 }
 
-void Hypervisor::handleMessage(cMessage* msg){
+void Hypervisor::handleMessage(cMessage* msg) {
 
-    printf("\n MODULE [Hypervisor::handleMessage- msg: full path--------> %s\n", msg->getFullPath().c_str());
-    printf("\n MODULE [Hypervisor::handleMessage- msg: getArrivalGate--------> %s\n", msg->getArrivalGate()->getFullName());
-    printf("\n MODULE [Hypervisor::handleMessage- msg: getSenderGate--------> %s\n", msg->getSenderGate()->getFullName());
+    //printf("\n MODULE [Hypervisor::handleMessage- msg: full path--------> %s\n", msg->getFullPath().c_str());
+    //  printf("\n MODULE [Hypervisor::handleMessage- msg: getArrivalGate--------> %s\n", msg->getArrivalGate()->getFullName());
+    // printf("\n MODULE [Hypervisor::handleMessage- msg: getSenderGate--------> %s\n", msg->getSenderGate()->getFullName());
 
-    throw cRuntimeError ("Hypervisor::handleMessage -> Hypervisor module (cover) should not receive messages\n");
-   delete(msg);
+    throw cRuntimeError(
+            "Hypervisor::handleMessage -> Hypervisor module (cover) should not receive messages\n");
+    delete (msg);
 }
 
-void Hypervisor::setVM (cGate** iGateCPU,
-        cGate** oGateCPU,
-        cGate* iGateMemI,
-        cGate* oGateMemI,
-        cGate* iGateMemO,
-        cGate* oGateMemO,
-        cGate* iGateNet,
-        cGate* oGateNet,
-        cGate* iGateStorage,
-        cGate* oGateStorage,
-        int numCores, string virtualIP, int requestedMemoryKB, int requestedStorageKB, int uId, int pId){
+void Hypervisor::setVM(cGate** iGateCPU, cGate** oGateCPU, cGate* iGateMemI,
+        cGate* oGateMemI, cGate* iGateMemO, cGate* oGateMemO, cGate* iGateNet,
+        cGate* oGateNet, cGate* iGateStorage, cGate* oGateStorage, int numCores,
+        string virtualIP, int requestedMemoryKB, int requestedStorageKB,
+        int uId, int pId) {
 
     cpuM->setVM(oGateCPU, iGateCPU, numCores, uId, pId);
 
@@ -70,11 +65,12 @@ void Hypervisor::setVM (cGate** iGateCPU,
 
     storageM->setVM(oGateStorage, iGateStorage, uId, pId, requestedStorageKB);
 
-    memM->setVM(oGateMemI, oGateMemO, iGateMemI, iGateMemO, uId, pId, requestedMemoryKB);
+    memM->setVM(oGateMemI, oGateMemO, iGateMemI, iGateMemO, uId, pId,
+            requestedMemoryKB);
 
 }
 
-void Hypervisor::freeResources (int uId, int pId){
+void Hypervisor::freeResources(int uId, int pId) {
     cpuM->freeVM(uId, pId);
     memM->freeVM(uId, pId);
     netM->freeVM(uId, pId);

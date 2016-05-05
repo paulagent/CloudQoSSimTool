@@ -17,55 +17,58 @@
 
 Define_Module(Node);
 
-void Node::initialize(){
+void Node::initialize() {
 
-    printf("Node::initialize()");
+    // printf("Node::initialize()");
     AbstractNode::initialize();
     // Initialize the state
     energyMeterPtr = NULL;
 
 }
 
-void Node::finish(){
+void Node::finish() {
     AbstractNode::finish();
 }
 
 //----------------------------------------------------------------------------------
 
-void Node::turnOn (){
+void Node::turnOn() {
 
-    if (equalStates(getState(),MACHINE_STATE_OFF)){
+    if (equalStates(getState(), MACHINE_STATE_OFF)) {
 
-            AbstractNode::changeState(MACHINE_STATE_IDLE);
-            energyMeterPtr->switchOnPSU();
+        AbstractNode::changeState(MACHINE_STATE_IDLE);
+        energyMeterPtr->switchOnPSU();
     }
 
 }
 
-void Node::turnOff (){
+void Node::turnOff() {
 
-    if (!equalStates(getState(), MACHINE_STATE_OFF)){
+    if (!equalStates(getState(), MACHINE_STATE_OFF)) {
         AbstractNode::changeState(MACHINE_STATE_OFF);
         energyMeterPtr->switchOffPSU();
     }
 }
 
-void Node::initNode (){
+void Node::initNode() {
 
     RoutingTable* rTable;
     string ipNode;
     string state;
     // Init ..
 
-    try{
+    try {
 
         //get the ip of the Node
-        rTable = dynamic_cast <RoutingTable*> (getSubmodule("routingTable"));
+        rTable = dynamic_cast<RoutingTable*>(getSubmodule("routingTable"));
 
-        if (rTable == NULL) throw cRuntimeError("BaseNode::initNode -> The node %s[%i] has no assigned ip. Check if everything is correctly configured..\n", getFullName(), getIndex());
+        if (rTable == NULL)
+            throw cRuntimeError(
+                    "BaseNode::initNode -> The node %s[%i] has no assigned ip. Check if everything is correctly configured..\n",
+                    getFullName(), getIndex());
 
         ipNode = rTable->getRouterId().str();
-        if (strcmp(ipNode.c_str(), "<unspec>") == 0){
+        if (strcmp(ipNode.c_str(), "<unspec>") == 0) {
             ipNode = "0.0.0.0";
         }
         ip = ipNode.c_str();
@@ -77,58 +80,67 @@ void Node::initNode (){
         storageNode = par("storageNode").boolValue();
         state = par("initialState").stringValue();
         storageLocalPort = par("storage_local_port").longValue();
-/*
+        /*
 
-       elementType* el;
-       el= new elementType();
-       el->setMemorySize(par("memorySize_MB").doubleValue());
+         elementType* el;
+         el= new elementType();
+         el->setMemorySize(par("memorySize_MB").doubleValue());
 
-       el->setNumCores(par("numCores"));
-       el->setDiskSize(par("storageSize_GB").doubleValue());
+         el->setNumCores(par("numCores"));
+         el->setDiskSize(par("storageSize_GB").doubleValue());
 
 
-        type=el;
-*/
+         type=el;
+         */
 
-        cModule* mod = getSubmodule("energyMeter")->getSubmodule("meterController");
+        cModule* mod = getSubmodule("energyMeter")->getSubmodule(
+                "meterController");
 
-        energyMeterPtr = check_and_cast <EnergyMeterController*> (mod);
+        energyMeterPtr = check_and_cast<EnergyMeterController*>(mod);
         energyMeterPtr->init();
-        energyMeterPtr->registerMemorization(getParentModule()->getSubmodule("manager")->par("memorization").boolValue());
+        energyMeterPtr->registerMemorization(
+                getParentModule()->getSubmodule("manager")->par("memorization").boolValue());
         energyMeterPtr->activateMeters();
 
         // initialize system apps
         int port;
-         port = storageLocalPort;
+        port = storageLocalPort;
         initialize_syscallManager(port);
 
-         if (equalStates(getState(),MACHINE_STATE_OFF)) turnOff();
-         else if (!equalStates(getState(),MACHINE_STATE_OFF)) turnOn();
-         else throw cRuntimeError("Node::initNode ->initializing state unknown [%s]\n", state.c_str());
+        if (equalStates(getState(), MACHINE_STATE_OFF))
+            turnOff();
+        else if (!equalStates(getState(), MACHINE_STATE_OFF))
+            turnOn();
+        else
+            throw cRuntimeError(
+                    "Node::initNode ->initializing state unknown [%s]\n",
+                    state.c_str());
 
-    }catch (exception& e){
-        throw cRuntimeError("Node::initNode -> can not initialize the node module!...");
+    } catch (exception& e) {
+        throw cRuntimeError(
+                "Node::initNode -> can not initialize the node module!...");
     }
 
 }
 
-void Node::notifyManager (icancloud_Message* msg){
+void Node::notifyManager(icancloud_Message* msg) {
     AbstractDCManager* manager;
 
-    manager = dynamic_cast <AbstractDCManager*> (managerPtr);
-    if (manager == NULL) throw cRuntimeError ("Node::notifyVMConnectionsClosed -> Manager can not be casted\n");
+    manager = dynamic_cast<AbstractDCManager*>(managerPtr);
+    if (manager == NULL)
+        throw cRuntimeError(
+                "Node::notifyVMConnectionsClosed -> Manager can not be casted\n");
 
     manager->notifyManager(msg);
-};
+}
+;
 
+void Node::setManager(icancloud_Base* manager) {
 
-
-void Node::setManager(icancloud_Base* manager){
-
-    managerPtr = dynamic_cast <AbstractDCManager*> (manager);
-    if (managerPtr == NULL) throw cRuntimeError ("Node::notifyVMConnectionsClosed -> Manager can not be casted\n");
-};
-
-
-
+    managerPtr = dynamic_cast<AbstractDCManager*>(manager);
+    if (managerPtr == NULL)
+        throw cRuntimeError(
+                "Node::notifyVMConnectionsClosed -> Manager can not be casted\n");
+}
+;
 

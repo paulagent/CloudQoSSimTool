@@ -17,50 +17,44 @@
 
 Define_Module(VM);
 
-VM::VM(){
+VM::VM() {
 
 }
 
-
 VM::VM(elementType* el) {
-    printf("hi from Vm construtor::VM() \n ");
+    //printf("hi from Vm construtor::VM() \n ");
     // Define ..
-     cModule* osMod;
-     string vmTypeName;
-
+    cModule* osMod;
+    string vmTypeName;
 
     // Init ..
-     states_log.clear();
-     pending_operation = NOT_PENDING_OPS;
-     userID = -1;
-     nodeName = -1;
-     nodeSetName = "";
-     vmName = "";
+    states_log.clear();
+    pending_operation = NOT_PENDING_OPS;
+    userID = -1;
+    nodeName = -1;
+    nodeSetName = "";
+    vmName = "";
 
-     osMod = getSubmodule("osModule")->getSubmodule("syscallManager");
-     os = dynamic_cast<VMSyscallManager*>(osMod);
+    osMod = getSubmodule("osModule")->getSubmodule("syscallManager");
+    os = dynamic_cast<VMSyscallManager*>(osMod);
 
-     printf("hi from Machine::con2 \n ");
+    printf("hi from Machine::con2 \n ");
 
+    type = new elementType();
 
-         type = new elementType();
+    type->setDiskSize(el->getStorageSize());
 
-         type->setDiskSize(el->getStorageSize());
+    type->setMemorySize(el->getMemorySize());
 
-         type->setMemorySize(el->getMemorySize());
+    // os->setFreeMemory (el->getMemorySize());
+    // os->setFreeStorage (el->getStorageSize());
 
-        // os->setFreeMemory (el->getMemorySize());
-        // os->setFreeStorage (el->getStorageSize());
+    type->setNumCores(el->getNumCores());
+    type->setNumStorageDevices(el->getNumStorageDevices());
+    type->setType(el->getType());
+    //  printf("hi from Machine::con3 \n ");
 
-         type->setNumCores(el->getNumCores());
-         type->setNumStorageDevices(el->getNumStorageDevices());
-         type->setType(el->getType());
-         printf("hi from Machine::con3 \n ");
-
-
-
-
-     //changeState(MACHINE_STATE_OFF);
+    //changeState(MACHINE_STATE_OFF);
 
 }
 
@@ -69,37 +63,37 @@ VM::~VM() {
 
 }
 
-void VM::initialize(){
+void VM::initialize() {
 
     // Define ..
-     cModule* osMod;
-     string vmTypeName;
-     Machine::initialize();
+    cModule* osMod;
+    string vmTypeName;
+    Machine::initialize();
 
     // Init ..
-     states_log.clear();
-     pending_operation = NOT_PENDING_OPS;
-     userID = -1;
-     nodeName = -1;
-     nodeSetName = "";
-     vmName = "";
+    states_log.clear();
+    pending_operation = NOT_PENDING_OPS;
+    userID = -1;
+    nodeName = -1;
+    nodeSetName = "";
+    vmName = "";
 
-     osMod = getSubmodule("osModule")->getSubmodule("syscallManager");
-     os = dynamic_cast<VMSyscallManager*>(osMod);
-     Machine::changeState(MACHINE_STATE_OFF);
+    osMod = getSubmodule("osModule")->getSubmodule("syscallManager");
+    os = dynamic_cast<VMSyscallManager*>(osMod);
+    Machine::changeState(MACHINE_STATE_OFF);
 
 }
 
-void VM::finish(){
+void VM::finish() {
 
     Machine::finish();
 }
 
-void VM::changeState(string newState){
+void VM::changeState(string newState) {
     vmStatesLog_t* log;
     string oldstate;
 
-    if (states_log.size() == 0 ){
+    if (states_log.size() == 0) {
 
         log = new vmStatesLog_t();
         log->vm_state = newState;
@@ -107,47 +101,47 @@ void VM::changeState(string newState){
 
         states_log.push_back(log);
     } else {
-       oldstate = (*(states_log.end() -1))->vm_state;
+        oldstate = (*(states_log.end() - 1))->vm_state;
 
-       if (strcmp(oldstate.c_str(), newState.c_str()) != 0){
-           log = new vmStatesLog_t();
-           log->vm_state = newState;
-           log->init_time_M = simTime().dbl() / 60;
+        if (strcmp(oldstate.c_str(), newState.c_str()) != 0) {
+            log = new vmStatesLog_t();
+            log->vm_state = newState;
+            log->init_time_M = simTime().dbl() / 60;
 
-           states_log.push_back(log);
-       }
+            states_log.push_back(log);
+        }
     }
 
     Machine::changeState(newState);
-};
+}
+;
 
+void VM::shutdownVM() {
 
-void VM::shutdownVM (){
+    // Define ..
+    vector<int>::iterator jobIt;
 
-	// Define ..
-		vector<int>::iterator jobIt;
+    // Begin ..
+    if ((!equalStates(getState(), MACHINE_STATE_OFF)
+            || (!(equalStates(getState(), MACHINE_STATE_IDLE))))) {
 
-	// Begin ..
-	if ((!equalStates(getState(),MACHINE_STATE_OFF) || (!(equalStates(getState(),MACHINE_STATE_IDLE))))){
+        os->removeAllProcesses();
+    }
 
-	    os->removeAllProcesses();
-	}
+    if (!equalStates(getState(), MACHINE_STATE_OFF)) {
+        Machine::changeState(MACHINE_STATE_OFF);
+    }
 
-	if (!equalStates(getState(),MACHINE_STATE_OFF)){
-	    Machine::changeState(MACHINE_STATE_OFF);
-	}
-
-	 pending_operation = NOT_PENDING_OPS;
+    pending_operation = NOT_PENDING_OPS;
 
 }
 
-bool VM::isAppRunning(int pId){
+bool VM::isAppRunning(int pId) {
 
-
-	return os->isAppRunning(pId);
+    return os->isAppRunning(pId);
 }
 
-void VM::setManager(icancloud_Base* manager){
+void VM::setManager(icancloud_Base* manager) {
     Machine::setManager(manager);
     os->setManager(manager);
 }
