@@ -222,22 +222,37 @@ void RequestsManagement::blockArrivalRequests(bool blocked){
     if (!blocked){
       //  AbstractRequest* req1= *requestsQueue.end();
         cout << "RequestsManagement::blockArrivalRequests----> requestsQueue.size() " << requestsQueue.size() <<endl;
-        unsigned int i=0;
+      //  unsigned int i=0;
         cout << "RequestsManagement::blockArrivalRequests----> temporalRequestsQueue.size()" <<temporalRequestsQueue.size()<<endl;
 
-        while (i< temporalRequestsQueue.size()){
 
-            requestsQueue.push_back(*(temporalRequestsQueue.begin()+i));
-            cout << "RequestsManagement::blockArrivalRequests----> *(temporalRequestsQueue.begin()+i)" << *(temporalRequestsQueue.begin()+i)  <<endl;
+        while (temporalRequestsQueue.size() != 0){
+            AbstractRequest* req_b= *requestsQueue.begin();
+            cout << "RequestsManagement::blockArrivalRequests----> *(temporalRequestsQueue.begin()+i)" << req_b->getUid()  <<endl;
+            requestsQueue.push_back((*temporalRequestsQueue.begin()));
+
+             temporalRequestsQueue.erase(temporalRequestsQueue.begin());
+
+
+                  cout << "RequestsManagement::blockArrivalRequests----> temporalRequestsQueue.size() after erase " << temporalRequestsQueue.size() <<endl;
+       // while (i< temporalRequestsQueue.size()){
+
+          //  requestsQueue.push_back(*(temporalRequestsQueue.begin()+i));
+
             cout << "RequestsManagement::blockArrivalRequests----> requestsQueue.size() " << requestsQueue.size() <<endl;
 
-            AbstractRequest* req= *requestsQueue.end();
-            cout << "RequestsManagement::blockArrivalRequests----> req->getUid()" << req->getUid() <<endl;
 
-            ++i;
+            //cout << "RequestsManagement::blockArrivalRequests----> req->getUid()" << req->getUid() <<endl;
+
+           // ++i;
           //  temporalRequestsQueue.erase(temporalRequestsQueue.begin());
         }
-        temporalRequestsQueue.clear();
+        //temporalRequestsQueue.clear();
+        for(std::vector<AbstractRequest*>::iterator it = requestsQueue.begin(); it != requestsQueue.end(); ++it) {
+            /* std::cout << *it; ... */
+            AbstractRequest* req= *it;
+            cout << "RequestsManagement::blockArrivalRequests----> req->getUid()" << req->getUid() <<endl;
+        }
 
     }
 

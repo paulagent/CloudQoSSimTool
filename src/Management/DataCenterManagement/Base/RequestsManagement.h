@@ -13,7 +13,7 @@
 
 #include "Request.h"
 #include "icancloud_Base.h"
-
+#include <vector>
 class RequestsManagement : virtual public icancloud_Base{
 
 protected:
