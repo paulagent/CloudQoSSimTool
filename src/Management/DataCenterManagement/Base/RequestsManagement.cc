@@ -227,7 +227,8 @@ void RequestsManagement::blockArrivalRequests(bool blocked){
         for(std::vector<AbstractRequest*>::iterator it = temporalRequestsQueue.begin(); it != temporalRequestsQueue.end(); ++it) {
                  /* std::cout << *it; ... */
                  AbstractRequest* req1= *it;
-                 cout << "RequestsManagement::blockArrivalRequests----> req1->getPid()" << req1->getUid() <<endl;
+                 cout << "RequestsManagement::blockArrivalRequests---->from temporal: req1->getPid()" << req1->getUid() << "operation" <<req1->getOperation()  << endl;
+
                  requestsQueue.push_back(*it);
              }
 
@@ -239,7 +240,7 @@ void RequestsManagement::blockArrivalRequests(bool blocked){
       //       temporalRequestsQueue.erase(temporalRequestsQueue.begin());
 
 
-                  cout << "RequestsManagement::blockArrivalRequests----> temporalRequestsQueue.size() after erase " << temporalRequestsQueue.size() <<endl;
+
        // while (i< temporalRequestsQueue.size()){
 
           //  requestsQueue.push_back(*(temporalRequestsQueue.begin()+i));
@@ -253,10 +254,11 @@ void RequestsManagement::blockArrivalRequests(bool blocked){
           //  temporalRequestsQueue.erase(temporalRequestsQueue.begin());
        // }
         temporalRequestsQueue.clear();
+        cout << "RequestsManagement::blockArrivalRequests----> temporalRequestsQueue.size() after erase " << temporalRequestsQueue.size() <<endl;
         for(std::vector<AbstractRequest*>::iterator it = requestsQueue.begin(); it != requestsQueue.end(); ++it) {
             /* std::cout << *it; ... */
             AbstractRequest* req= *it;
-            cout << "RequestsManagement::blockArrivalRequests----> req->getUid()" << req->getUid() <<": "<< req->getPid() <<endl;
+            cout << "RequestsManagement::blockArrivalRequests---->from requestQueue req->getUid()" << req->getUid() <<": "<< req->getPid() <<":"<< req->getOperation() <<endl;
         }
 
     }

@@ -111,14 +111,15 @@ void CloudSchedulerRR::schedule (){
 
              //  while ((j < (numPendingRequests())) && (req != NULL)){
                while ((j < (numPendingRequests())) ){
-
+              // uvic:
                    if (req == NULL){
                        cout << "Method[CLOUD_SCHEDULER_RR]: -------> req == NULL"<<endl;
                        eraseRequest(req);
                        requestErased = true;
                    }
+                   //uvic
                    printf("\n Method[CLOUD_SCHEDULER_RR]: ------->numPendingRequests------> %d \n", numPendingRequests());
-
+                   printf("\n Method[CLOUD_SCHEDULER_RR]: ------->userid------> %d \n", req->getUid());
                    printf("\n Method[CLOUD_SCHEDULER_RR]: ------->REQUEST TYPE: %d \n", req->getOperation());
                //    printf("\n Method[CLOUD_SCHEDULER_RR]: -------> inside request loop\n");
                    req_st = dynamic_cast<StorageRequest*>(req);
@@ -135,6 +136,10 @@ void CloudSchedulerRR::schedule (){
                        //TODO: Return the st_req and analyzes the error at sched
                        AbstractDCManager::userStorageRequest (req_st, node);
                        eraseRequest(req_st);
+                  //uvic:
+                       requestErased = true;
+                       //uvic
+
                    }
                    else if (req_vm != NULL){
 
