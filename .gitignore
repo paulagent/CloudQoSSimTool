@@ -29,6 +29,7 @@
 
 # Editors temporary files 
 *~
-
+#do not push auto generated msg cc and h files
+*_m.h
 # do not push out folder
 out/
