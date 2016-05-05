@@ -86,7 +86,7 @@ network RRTest
                 remote_storage_VMs_per_node = 2;
                 minimum_percent_storageNode_free = 0.15;
                 virtualIPsBasis = "10.0.0.1";
-                @display("p=350,170");
+                @display("p=397,164");
         }
 
         // ---------------------------------------------------------------
@@ -95,7 +95,7 @@ network RRTest
         userGenerator: UserGenerator {
             parameters:
                 numCells = 1;
-                @display("p=295,266");
+                @display("p=397,277");
         }
 
         // ---------------------------------------------------------------
@@ -103,7 +103,7 @@ network RRTest
         // ---------------------------------------------------------------
         switch_0: EtherSwitch;
         rackSwitch_0: EtherSwitch {
-            @display("p=201,112");
+            @display("p=241,117");
         }
 
         // ---------------------------------------------------------------
@@ -112,7 +112,12 @@ network RRTest
         // ---------------------------------------------------------------
         //   Definition of Storage Nodes
         // ---------------------------------------------------------------
-        ns_0_NodeStorage_C: NodeVL;
+        ns_0_NodeStorage_C: NodeVL {
+            @display("p=165,251");
+        }
+        ns_1_NodeStorage_C: NodeVL {
+            @display("p=330,230");
+        }
         //------------------------------------------------------
         // Modules that defines the topology and the set of VMs 
         //------------------------------------------------------
@@ -123,7 +128,14 @@ network RRTest
         // ---------------------------------------------------------------
         rc_0_Rack_A_16[6]: NodeVL {
 
-            @display("p=239,42");
+            @display("p=279,45");
+        }
+        // ---------------------------------------------------------------
+        //   Definition of Racks
+        // ---------------------------------------------------------------
+        rc_1_Rack_A_16[6]: NodeVL {
+
+            @display("p=119,45");
         }
     // ---------------------------------------------------------------
     //   Connections section
@@ -133,9 +145,13 @@ network RRTest
         // Connections for rack rc_0_Rack_A_16
         for i=0..5 {
             rc_0_Rack_A_16[i].ethg++ <--> RackChannel_0_RRTest <--> rackSwitch_0.ethg++;
+            rc_1_Rack_A_16[i].ethg++ <--> RackChannel_0_RRTest <--> rackSwitch_0.ethg++;
+
         }
 
         rackSwitch_0.ethg++ <--> Channel_0_RRTest <--> switch_0.ethg++;
         ns_0_NodeStorage_C.ethg++ <--> Channel_1_RRTest <--> switch_0.ethg++;
+        ns_1_NodeStorage_C.ethg++ <--> Channel_1_RRTest <--> switch_0.ethg++;
+
 }
 

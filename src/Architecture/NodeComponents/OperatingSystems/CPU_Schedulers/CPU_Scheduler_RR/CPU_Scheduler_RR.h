@@ -42,7 +42,8 @@ class CPU_Scheduler_RR :public icancloud_Base{
 
 	    /** Input gates from CPU. */
 	    cGate** fromCPUGate;
-	    
+        unsigned int queueSize;
+
 	        	
 	   /**
 	    * Destructor.

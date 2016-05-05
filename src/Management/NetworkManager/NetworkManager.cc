@@ -166,6 +166,7 @@ void NetworkManager::deleteVirtualIP_by_VMID(int vmID, int userID){
 	bool found;
 	int vm_id;
 	string hole;
+    cout << "NetworkManager::deleteVirtualIP_by_VMID"  << endl;
 
 	found = false;
 
@@ -408,6 +409,7 @@ int NetworkManager::getRealPort(string destinationIP, int virtualPort, int desti
 void NetworkManager::freeAllPortsOfVM (string ipNode, int vmID, int user){
 
 	PortTable* node;
+    cout << "NetworkManager::freeAllPortsOfVM"  << endl;
 
 	node = getNodeFromPortsTable(ipNode.c_str());
 

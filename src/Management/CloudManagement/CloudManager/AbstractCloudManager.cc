@@ -532,7 +532,7 @@ bool AbstractCloudManager::request_start_vm (RequestVM* req){
                     attendedRequest_vms.insert(attendedRequest_vms.end(), vmNew);
                 // Put VM in running VM Vector
                 // current time
-                    printf("\n Method[Start_VM]: -------> VM %s has started.\n",started_VM->vm->getFullName());
+                    printf("\n Method[ AbstractCloudManager::request_start_vm]: -------> VM %s has started.\n",started_VM->vm->getFullName());
 
 
              }
@@ -705,7 +705,7 @@ VM* AbstractCloudManager::create_VM (VM* vmImage, string vmName, cModule* parent
 
 	// Here the kind of module is taken to create the module as image..
 		vmPath << vmImage->getNedTypeName();
-		printf("\n getNedTypeName from create vm ---->%s", vmPath.str().c_str());
+		printf("\n AbstractCloudManager::create_VM---->getNedTypeName from create vm ---->%s", vmPath.str().c_str());
 
 	//create the vm module
 		cModuleType *modVMType = cModuleType::get (vmPath.str().c_str());

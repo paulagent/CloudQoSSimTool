@@ -109,7 +109,14 @@ void CloudSchedulerRR::schedule (){
                req =  getRequestByIndex(j);
                // Start with the vm allocation
 
-               while ((j < (numPendingRequests())) && (req != NULL)){
+             //  while ((j < (numPendingRequests())) && (req != NULL)){
+               while ((j < (numPendingRequests())) ){
+
+                   if (req == NULL){
+                       cout << "Method[CLOUD_SCHEDULER_RR]: -------> req == NULL"<<endl;
+                       eraseRequest(req);
+                       requestErased = true;
+                   }
                    printf("\n Method[CLOUD_SCHEDULER_RR]: ------->numPendingRequests------> %d \n", numPendingRequests());
 
                    printf("\n Method[CLOUD_SCHEDULER_RR]: ------->REQUEST TYPE: %d \n", req->getOperation());
@@ -187,7 +194,7 @@ void CloudSchedulerRR::schedule (){
 
                    RunningVM* vm;
                    vm=AbstractCloudManager::runVM.at(j);
-                   if (t> vm->end_time)   // we need to shutdown vm
+                   if (t>= vm->end_time)   // we need to shutdown vm
                    {
 
                        printf("\n Method[CLOUD_SCHEDULER_RR]: -------> t is greater than  vm end_time, we need to shut down vm\n");
@@ -201,7 +208,7 @@ void CloudSchedulerRR::schedule (){
                        string a = vm->vm->getFullName();
                        string delimeter = ":";
                        string token = a.substr(0,a.find(delimeter));
-
+                 //      cout << " Method[CLOUD_SCHEDULER_RR]----> token --->" << token << endl;
                        new_req_vm->setNewSelection(token.c_str(),1);
 
                        new_req= dynamic_cast<AbstractRequest*>(new_req_vm);

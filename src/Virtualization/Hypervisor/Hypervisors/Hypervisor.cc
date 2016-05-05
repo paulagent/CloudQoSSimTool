@@ -43,7 +43,12 @@ void Hypervisor::finish(){
 }
 
 void Hypervisor::handleMessage(cMessage* msg){
-   throw cRuntimeError ("Hypervisor::handleMessage -> Hypervisor module (cover) should not receive messages\n");
+
+    printf("\n MODULE [Hypervisor::handleMessage- msg: full path--------> %s\n", msg->getFullPath().c_str());
+    printf("\n MODULE [Hypervisor::handleMessage- msg: getArrivalGate--------> %s\n", msg->getArrivalGate()->getFullName());
+    printf("\n MODULE [Hypervisor::handleMessage- msg: getSenderGate--------> %s\n", msg->getSenderGate()->getFullName());
+
+    throw cRuntimeError ("Hypervisor::handleMessage -> Hypervisor module (cover) should not receive messages\n");
    delete(msg);
 }
 

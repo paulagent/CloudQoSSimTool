@@ -425,7 +425,6 @@ void CPUcore::changeState (string energyState, unsigned componentIndex){
 // 	else if (strcmp (energyState.c_str(),C2_StopGrant) == 0){
 //
 // 	}
-//
 //	// Stops all CPU internal and external clocks
 // 	else if (strcmp (energyState.c_str(),C3_Sleep) == 0){
 //

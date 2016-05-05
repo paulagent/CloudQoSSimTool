@@ -68,6 +68,7 @@ void LocalNetManager::createVM(icancloud_Message* sm){
 
 	// Init ..
 		sm_net = check_and_cast <icancloud_App_NET_Message*> (sm);
+        cout << "LocalNetManager::createVM ---> id----> "<<sm->getUid() << endl;
 
 	// create the user into the structure
 		pat->pat_createVM(sm->getUid(), sm->getPid(), sm_net->getLocalIP());
@@ -254,6 +255,7 @@ vector<icancloud_App_NET_Message*> LocalNetManager::manage_close_connections(int
 	vector<int> connectionIDs;
 	unsigned int i;
 	vector<icancloud_App_NET_Message*> sm_vector;
+    cout << "LocalNetManager::manage_close_connection-----> uid--->"<< uId<< endl;
 
 	// Init ..
 		connectionIDs.clear();
@@ -267,10 +269,12 @@ vector<icancloud_App_NET_Message*> LocalNetManager::manage_close_connections(int
 
 	// get all the connectionIDs to close the connections from the Local net manager (PAT)..
 		connectionIDs = getConnectionsIDs(uId, pId);
+        cout << "LocalNetManager::manage_close_connection----->connectionIDs.size()--->"<< connectionIDs.size()<< endl;
 
 		for (i = 0; i < connectionIDs.size();i++){
 			// Build the message for closing connection (node host)
 			sm_close_connection =  new icancloud_App_NET_Message ();
+		    cout << "LocalNetManager::manage_close_connection----->new icancloud_App_NET_Message--->"<<  endl;
 
 			sm_close_connection ->setOperation(SM_CLOSE_CONNECTION);
 			sm_close_connection -> setUid(uId);
@@ -280,6 +284,7 @@ vector<icancloud_App_NET_Message*> LocalNetManager::manage_close_connections(int
 			sm_close_connection -> setKind(TCP_C_CLOSE);
 
 			//Build the parameters for close the socket
+            cout << "LocalNetManager::manage_close_connection----->Build the parameters for close the TCP socket--->"<<  endl;
 
 			TCPCommand *cmd = new TCPCommand();
 			cmd->setConnId((*(connectionIDs.begin()+i)));
@@ -427,7 +432,7 @@ vector<int> LocalNetManager::getConnectionsIDs(int uId, int pId){
 
 	vector<User_VirtualPort_Cell*>::iterator it;
 	vector<int> connectionIDs;
-
+	cout << "LocalNetManager::getConnectionsIDs" << endl;
 	connectionIDs = pat->pat_closeVM(uId, pId);
 
 	return connectionIDs;

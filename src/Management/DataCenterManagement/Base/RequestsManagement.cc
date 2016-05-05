@@ -92,8 +92,11 @@ void RequestsManagement::userSendRequest(AbstractRequest* request){
     // Insert into the requestsQueue
     if (!schedulerQueueBlocked){
         requestsQueue.push_back(request);
+       // cout << "RequestsManagement::userSendRequest --> NOT schedulerQueueBlocked --->requestsQueue.push_back(request)" << endl;
     } else {
         temporalRequestsQueue.push_back(request);
+      //  cout << "RequestsManagement::userSendRequest -->  schedulerQueueBlocked  --->temporalRequestsQueue.push_back(request);" << endl;
+
     }
 
 }
@@ -183,7 +186,7 @@ void RequestsManagement::eraseRequest (AbstractRequest* req){
     vector<AbstractRequest*>::iterator reqIt;
     unsigned int index;
     bool found = false;
-
+    cout << "RequestsManagement::eraseRequest"<<endl;
     for ((index = 0); (index < requestsQueue.size()) && (!found); index++ ){
 
         reqIt = requestsQueue.begin() + index;
@@ -214,12 +217,28 @@ void RequestsManagement::user_request(AbstractRequest* request){
 }
 
 void RequestsManagement::blockArrivalRequests(bool blocked){
+    cout << "RequestsManagement::blockArrivalRequests" <<endl;
 
     if (!blocked){
-        while (temporalRequestsQueue.size() != 0){
-            requestsQueue.push_back((*temporalRequestsQueue.begin()));
-            temporalRequestsQueue.erase(temporalRequestsQueue.begin());
+      //  AbstractRequest* req1= *requestsQueue.end();
+        cout << "RequestsManagement::blockArrivalRequests----> requestsQueue.size() " << requestsQueue.size() <<endl;
+        unsigned int i=0;
+        cout << "RequestsManagement::blockArrivalRequests----> temporalRequestsQueue.size()" <<temporalRequestsQueue.size()<<endl;
+
+        while (i< temporalRequestsQueue.size()){
+
+            requestsQueue.push_back(*(temporalRequestsQueue.begin()+i));
+            cout << "RequestsManagement::blockArrivalRequests----> *(temporalRequestsQueue.begin()+i)" << *(temporalRequestsQueue.begin()+i)  <<endl;
+            cout << "RequestsManagement::blockArrivalRequests----> requestsQueue.size() " << requestsQueue.size() <<endl;
+
+            AbstractRequest* req= *requestsQueue.end();
+            cout << "RequestsManagement::blockArrivalRequests----> req->getUid()" << req->getUid() <<endl;
+
+            ++i;
+          //  temporalRequestsQueue.erase(temporalRequestsQueue.begin());
         }
+        temporalRequestsQueue.clear();
+
     }
 
     schedulerQueueBlocked = blocked;
