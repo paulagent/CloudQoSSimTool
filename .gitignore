@@ -33,3 +33,8 @@
 *_m.h
 # do not push out folder
 out/
+
+# disable measurement file such as vec and sca
+*.sca
+*.vec
+*.log
