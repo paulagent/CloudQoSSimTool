@@ -267,7 +267,7 @@ vector<icancloud_App_NET_Message*> LocalNetManager::manage_close_connections(int
 
 	// get all the connectionIDs to close the connections from the Local net manager (PAT)..
 		connectionIDs = getConnectionsIDs(uId, pId);
-cout << "manage_close_connection" << endl;
+cout << "LocalNetManager:: manage_close_connection" << endl;
 		for (i = 0; i < connectionIDs.size();i++){
 			// Build the message for closing connection (node host)
 			sm_close_connection =  new icancloud_App_NET_Message ();
@@ -288,7 +288,7 @@ cout << "manage_close_connection:conncection id --->" << sm_close_connection ->g
 
 			sm_vector.push_back(sm_close_connection);
 		}
-
+		cout << "LocalNetManager::manage_close_connection for loop does not execute" << endl;
 		return sm_vector;
 }
 

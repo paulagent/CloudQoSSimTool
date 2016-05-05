@@ -20,7 +20,7 @@ PortAddressTranslation::PortAddressTranslation() {
 	portPtr = REGISTERED_INITIAL_PORT;
 	user_vm_ports.clear();
 	portHoles.clear();
-
+	cout << "PortAddressTranslation(constructor)" << endl;
 	for (int i = 0; i < LAST_PORT; i++){
 		freePorts[i] = NOT_STABLISHED;
 	}
@@ -204,6 +204,7 @@ void PortAddressTranslation::deleteUser (int uId){
 			found = true;
 			cout << "PortAddressTranslation::deleteUser--->" << uId <<endl;
 			user_vm_ports.erase(user_vm_ports.begin()+i);
+			cout << "PortAddressTranslation::after deleteUser- check size-->" << user_vm_ports.size() <<endl;
 		}else {
 			i++;
 		}

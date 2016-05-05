@@ -295,7 +295,7 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 
 		}
 		else if (operation == SM_CLOSE_VM_CONNECTIONS){
-
+		  cout<< "  H_NETManager_Base::processRequestMessage---->" << endl;
 		    sm_close = localNetManager->manage_close_connections(sm->getUid(), sm->getPid());
 
 		    for (int i = 0; i < (int)sm_close.size(); i++){
