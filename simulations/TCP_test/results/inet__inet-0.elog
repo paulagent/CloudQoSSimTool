@@ -1,0 +1,10 @@
+E # 0 t 0 m 1 ce -1 msg -1
+SB v 1030 rid inet__inet-0-20160429-12:46:48-3691 b 1000
+KF p -1 c "" s ""
+MC id 1 c cModule t icancloud.simulations.TCP_test.TCP_test n TCP_test cm 1
+MS id 1 d bgb=765,419
+MC id 2 c cModule t inet.nodes.ethernet.EtherSwitch pid 1 n etherSwitch cm 1
+MS id 2 d p=270,127;i=device/switch
+MC id 3 c cModule t inet.nodes.ethernet.EtherSwitch pid 1 n etherSwitch1 cm 1
+MS id 3 d p=557,127;i=device/switch
+MC id 4 c Node t icancloud.src.Architecture.Node.Node.Node pid 1 n client
