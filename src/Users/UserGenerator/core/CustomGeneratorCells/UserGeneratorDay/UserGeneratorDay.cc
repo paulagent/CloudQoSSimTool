@@ -70,18 +70,18 @@ void UserGeneratorDay::processSelfMessage (cMessage *msg){
                 for (i = 0; (int)i < quantity_user_preloaded; i++) createUser();
 
         if (strcmp (distribution.c_str(), "no_distribution") == 0){
-            printf("\n Method[UserGeneratorDay]: -------> noDistribution\n");
-            printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
+         //   printf("\n Method[UserGeneratorDay]: -------> noDistribution\n");
+        //    printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
 
 
             for (i = 0; (int)i < total_users; i++)
                 createUser();
-            printf("\n Method[UserGeneratorDay]: -------> noDistribution  --> user creation finished\n");
+         //   printf("\n Method[UserGeneratorDay]: -------> noDistribution  --> user creation finished\n");
 
         } else {
-            printf("\n Method[UserGeneratorDay]: -------> Prepare to user arrivals\n");
-            printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
-            printf("\n Method[UserGeneratorDay]: total_users %d-------> \n", total_users);
+         //   printf("\n Method[UserGeneratorDay]: -------> Prepare to user arrivals\n");
+        //    printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
+       //     printf("\n Method[UserGeneratorDay]: total_users %d-------> \n", total_users);
 
             // Prepare to user arrival .. !!
                 userCreateGroups(time_intervals_H, total_users);

@@ -507,7 +507,7 @@ vector<int> PortAddressTranslation::pat_closeVM(int uId, int pId){
 		vector<int> rPorts;
 		vector<int> connIds;
 		bool connectedPorts;
-		cout <<"ortAddressTranslation::pat_closeVM" <<endl;
+		//cout <<"ortAddressTranslation::pat_closeVM" <<endl;
 	// Init ..
 		rPorts.clear();
 		connIds.clear();

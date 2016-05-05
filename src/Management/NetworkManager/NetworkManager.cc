@@ -63,7 +63,7 @@ void NetworkManager::processResponseMessage (icancloud_Message *sm){
 
 
 void NetworkManager::createNewUser (int newUserID){
-    printf("\n Method[Mag::NetworkManagerTest::createNewUser]: ------->initialize \n");
+   // printf("\n Method[Mag::NetworkManagerTest::createNewUser]: ------->initialize \n");
 	ipsUserSet* element;
 
 	element = new ipsUserSet();
@@ -101,7 +101,7 @@ string NetworkManager::getIPBasis(){
 }
 
 string NetworkManager::allocateVirtualIP (string ipNode, int userID, int vmID){
-    printf("\n Method[NetworkManagerTest::allocateVirtualIP]: ------->allocateVirtualIP \n");
+   // printf("\n Method[NetworkManagerTest::allocateVirtualIP]: ------->allocateVirtualIP \n");
 	vector <ipsUserSet*>::iterator it;
 	VirtualIPCell* ipcell;
 	string virtualIP;
@@ -166,7 +166,7 @@ void NetworkManager::deleteVirtualIP_by_VMID(int vmID, int userID){
 	bool found;
 	int vm_id;
 	string hole;
-    cout << "NetworkManager::deleteVirtualIP_by_VMID"  << endl;
+   // cout << "NetworkManager::deleteVirtualIP_by_VMID"  << endl;
 
 	found = false;
 
@@ -409,7 +409,7 @@ int NetworkManager::getRealPort(string destinationIP, int virtualPort, int desti
 void NetworkManager::freeAllPortsOfVM (string ipNode, int vmID, int user){
 
 	PortTable* node;
-    cout << "NetworkManager::freeAllPortsOfVM"  << endl;
+  ///  cout << "NetworkManager::freeAllPortsOfVM"  << endl;
 
 	node = getNodeFromPortsTable(ipNode.c_str());
 

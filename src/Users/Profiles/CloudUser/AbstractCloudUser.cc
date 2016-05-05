@@ -141,7 +141,7 @@ void AbstractCloudUser::startVMs (AbstractRequest* vmSet){
 
     vmSet -> setOperation (REQUEST_START_VM);
     vmSet -> setUid (this->getId());
-cout << "AbstractCloudUser::startVMs --->uid---->"<<this->getId() <<endl;
+//cout << "AbstractCloudUser::startVMs --->uid---->"<<this->getId() <<endl;
 //
 //    for (vmSetIt = vmSet.begin(); vmSetIt < vmSet.end(); ){
 //        if (  ((*vmSetIt)->getState() == MACHINE_STATE_OFF) &&
@@ -679,13 +679,13 @@ void AbstractCloudUser::send_request_to_manager (AbstractRequest* req){
 	if ((request == NULL)  && (req_st == NULL)) throw cRuntimeError("AbstractCloudUser::send_request_to_manager->error during casting to RequestVM or StorageRequest\n");
 
 	if (req->getOperation() == REQUEST_START_VM){
-	    cout << "AbstractCloudUser::send_request_to_manager --->REQUEST_START_VM" << endl;
-        cout << "AbstractCloudUser::send_request_to_manager --->REQUEST_START_VM  --->request->getDifferentTypesQuantity()-->" << request->getDifferentTypesQuantity() << endl;
+	   // cout << "AbstractCloudUser::send_request_to_manager --->REQUEST_START_VM" << endl;
+     //   cout << "AbstractCloudUser::send_request_to_manager --->REQUEST_START_VM  --->request->getDifferentTypesQuantity()-->" << request->getDifferentTypesQuantity() << endl;
 
 	    for (int  i = 0; i < request->getDifferentTypesQuantity(); i++){
 
 	        pendingVmsAtStartup = pendingVmsAtStartup + request->getSelectionQuantity(i);
-            cout << "AbstractCloudUser::send_request_to_manager --->REQUEST_START_VM  --->pendingVmsAtStartup-->" << pendingVmsAtStartup << endl;
+     //       cout << "AbstractCloudUser::send_request_to_manager --->REQUEST_START_VM  --->pendingVmsAtStartup-->" << pendingVmsAtStartup << endl;
 
 	    }
 
