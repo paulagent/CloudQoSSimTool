@@ -474,7 +474,7 @@ void H_NETManager_Base::enqueuePendingMessage(icancloud_Message* sm){
 
 void H_NETManager_Base::checkPendingMessages(){
 
-    printf("checkPendingMessages");
+
 	Enter_Method_Silent();
 
 		enqueuedMessage* msg;

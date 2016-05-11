@@ -186,8 +186,12 @@ void CPU_Scheduler_FIFO::processResponseMessage (icancloud_Message *sm){
 
 			sendRequestMessage (new_msg, toCPUGate[cpuIndex]);
 			// Pop
+			//uvic
+			//cout <<"CPU_Scheduler_FIFO::processResponseMessage queueSize before pop size:  " <<requestsQueue.size() <<endl;
 			unqueuedMessage = (cMessage *) requestsQueue.pop();
 			queueSize--;
+		//	cout <<"CPU_Scheduler_FIFO::processResponseMessage  queueSize after pop size:  " <<requestsQueue.size() <<endl;
+			cout <<"CPU_Scheduler_FIFO::processResponseMessage after pop check para queueSize:  " <<queueSize <<endl;
 			// Dynamic cast!
 			nextRequest = check_and_cast<icancloud_Message *>(unqueuedMessage);
 

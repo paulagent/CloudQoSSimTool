@@ -22,6 +22,7 @@ LocalNetManager::~LocalNetManager() {
 }
 
 void LocalNetManager::initialize() {
+    cout << "LocalNetManager::initialize()  call PortAddressTranslation() constructor :"<< getHostName() <<endl;
 	pat = new PortAddressTranslation();
 	ip_LocalNode.clear();
 
@@ -68,7 +69,7 @@ void LocalNetManager::createVM(icancloud_Message* sm){
 
 	// Init ..
 		sm_net = check_and_cast <icancloud_App_NET_Message*> (sm);
-      //  cout << "LocalNetManager::createVM ---> id----> "<<sm->getUid() << endl;
+        cout << "LocalNetManager::createVM ---> id----> "<<sm->getUid() << endl;
 
 	// create the user into the structure
 		pat->pat_createVM(sm->getUid(), sm->getPid(), sm_net->getLocalIP());
@@ -255,8 +256,8 @@ vector<icancloud_App_NET_Message*> LocalNetManager::manage_close_connections(int
 	vector<int> connectionIDs;
 	unsigned int i;
 	vector<icancloud_App_NET_Message*> sm_vector;
-   // cout << "LocalNetManager::manage_close_connection-----> uid--->"<< uId<< endl;
-
+    cout << "LocalNetManager::manage_close_connection-----> uid--->"<< uId<< endl;
+    cout << "LocalNetManager::manage_close_connection-----> pid--->"<< pId<< endl;
 	// Init ..
 		connectionIDs.clear();
 		sm_vector.clear();

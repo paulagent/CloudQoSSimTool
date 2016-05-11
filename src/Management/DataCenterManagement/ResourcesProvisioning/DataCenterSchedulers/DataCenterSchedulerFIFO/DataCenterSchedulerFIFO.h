@@ -23,12 +23,12 @@ class DataCenterSchedulerFIFO : public DataCenterSchedulerInterface{
         double minimum_percent_storageNode_free;
 
         //Flags To control the energy printing
-            bool printNodePowerConsumption;        // print Node instant consumption
-            bool printNodeEnergyConsumed;          // print Node energy consumed
-            bool printComponentsPowerConsumption;  // print main subsytems instant consumption
-            bool printComponentsEnergyConsumed;    // print main subsytems instant consumption
-            bool printDataCenterPowerConsumption;  // print all the data-center energyConsumed
-            bool printDataCenterEnergyConsumed;    // print all the data-center instant consumption
+          //  bool printNodePowerConsumption;        // print Node instant consumption
+         //   bool printNodeEnergyConsumed;          // print Node energy consumed
+         //   bool printComponentsPowerConsumption;  // print main subsytems instant consumption
+        //    bool printComponentsEnergyConsumed;    // print main subsytems instant consumption
+        //    bool printDataCenterPowerConsumption;  // print all the data-center energyConsumed
+        //    bool printDataCenterEnergyConsumed;    // print all the data-center instant consumption
 
             double dc_EnergyConsumed;  // Tostorage the total data center energy consumed.
 
@@ -83,9 +83,10 @@ class DataCenterSchedulerFIFO : public DataCenterSchedulerInterface{
          * This method defines the data that will be printed in 'logName' file at 'OUTPUT_ DIRECTORY'
          * if the printEnergyToFile and printEnergyTrace are active
          */
+		/*
 		void printEnergyValues();
 
-		/*
+
 		 *  This method is invoked before to finalize the simulation
 		 */
 		void finalizeManager();

@@ -17,62 +17,66 @@
 
 PortAddressTranslation::PortAddressTranslation() {
 
-	portPtr = REGISTERED_INITIAL_PORT;
-	user_vm_ports.clear();
-	portHoles.clear();
+    portPtr = REGISTERED_INITIAL_PORT;
 
-	for (int i = 0; i < LAST_PORT; i++){
-		freePorts[i] = NOT_STABLISHED;
-	}
+    user_vm_ports.clear();
+    portHoles.clear();
+
+    for (int i = 0; i < LAST_PORT; i++) {
+        freePorts[i] = NOT_STABLISHED;
+    }
 }
 
 PortAddressTranslation::~PortAddressTranslation() {
-	// TODO Auto-generated destructor stub
+    // TODO Auto-generated destructor stub
 }
 
-void PortAddressTranslation::pat_initialize(string nodeIP){
+void PortAddressTranslation::pat_initialize(string nodeIP) {
 
-	User_VirtualPort_Cell* user;
-	Vm_VirtualPort_Cell* vm;
+    User_VirtualPort_Cell* user;
+    Vm_VirtualPort_Cell* vm;
 
-	// Search the user into the structure
-		user = searchUser(0);
+    // Search the user into the structure
+    user = searchUser(0);
 
-		// If the user does not exists, create it ..
-			if (user != NULL){
-				deleteUser (0);
-			}
+    // If the user does not exists, create it ..
+    if (user != NULL) {
+        deleteUser(0);
+    }
+ //uvic add
+    std::srand(std::time(0));
 
-			user = newUser(0);
+    int random_variable = std::rand();
+    user = newUser(random_variable);
 
-	// the node is defined as an vm..
-		vm = user->newVM(0);
-		vm->setVMIP(nodeIP.c_str());
+    // the node is defined as an vm..
+    vm = user->newVM(0);
+    vm->setVMIP(nodeIP.c_str());
 
 }
 
-void PortAddressTranslation::portForwarding(cMessage *msg){
+void PortAddressTranslation::portForwarding(cMessage *msg) {
 
-	// Define ..
-	icancloud_Message *sm;
-	int operation;
+    // Define ..
+    icancloud_Message *sm;
+    int operation;
 
-	// Cast!
-		sm = check_and_cast<icancloud_Message *>(msg);
-		operation = sm->getOperation ();
-	// Established connection message...
-		if (!strcmp (msg->getName(), "ESTABLISHED")){
-			pat_connectionStablished (sm);
-		}
+    // Cast!
+    sm = check_and_cast<icancloud_Message *>(msg);
+    operation = sm->getOperation();
+    // Established connection message...
+    if (!strcmp(msg->getName(), "ESTABLISHED")) {
+        pat_connectionStablished(sm);
+    }
 
-		// Closing connection message ..
-		else if (!strcmp (msg->getName(), "PEER_CLOSED")){
+    // Closing connection message ..
+    else if (!strcmp(msg->getName(), "PEER_CLOSED")) {
 //			¿?
-		}
-		// Finished connection message ..
-		else if (!strcmp (msg->getName(), "CLOSED")){
+    }
+    // Finished connection message ..
+    else if (!strcmp(msg->getName(), "CLOSED")) {
 //			¿?
-		}
+    }
 
 //		else if (operation == "CLOSE_VM"){
 //
@@ -80,474 +84,526 @@ void PortAddressTranslation::portForwarding(cMessage *msg){
 //
 //		}
 
-		// Not an ESTABLISHED message message...
-		else{
+// Not an ESTABLISHED message message...
+    else {
 
-			// Request!
-			if (!sm->getIsResponse()){
+        // Request!
+        if (!sm->getIsResponse()) {
 
-				// Create a new connection... client-side
-				if ( (operation == SM_LISTEN_CONNECTION) ||
-					 (operation == SM_MIGRATION_REQUEST_LISTEN)) {
+            // Create a new connection... client-side
+            if ((operation == SM_LISTEN_CONNECTION)
+                    || (operation == SM_MIGRATION_REQUEST_LISTEN)) {
 
+            }
 
-				}
+            // Send data...
+            else if ((operation == SM_OPEN_FILE) || (operation == SM_CLOSE_FILE)
+                    || (operation == SM_READ_FILE)
+                    || (operation == SM_WRITE_FILE)
+                    || (operation == SM_CREATE_FILE)
+                    || (operation == SM_DELETE_FILE)
+                    || (operation == SM_SEND_DATA_NET)
+                    || (operation == SM_ITERATIVE_PRECOPY)
+                    || (operation == SM_STOP_AND_DOWN_VM)
+                    || (operation == SM_VM_ACTIVATION)
+                    || (operation == MPI_SEND) || (operation == MPI_RECV)
+                    || (operation == MPI_BARRIER_UP)
+                    || (operation == MPI_BARRIER_DOWN)
+                    || (operation == MPI_BCAST) || (operation == MPI_SCATTER)
+                    || (operation == MPI_GATHER)) {
 
-				// Send data...
-				else if ((operation == SM_OPEN_FILE)   	   ||
-						 (operation == SM_CLOSE_FILE)  	   ||
-						 (operation == SM_READ_FILE)   	   ||
-						 (operation == SM_WRITE_FILE)  	   ||
-						 (operation == SM_CREATE_FILE) 	   ||
-						 (operation == SM_DELETE_FILE) 	   ||
-						 (operation == SM_SEND_DATA_NET)     ||
-						 (operation == SM_ITERATIVE_PRECOPY) ||
-						 (operation == SM_STOP_AND_DOWN_VM)  ||
-						 (operation == SM_VM_ACTIVATION)	   ||
-						 (operation == MPI_SEND) 			   ||
-						 (operation == MPI_RECV) 			   ||
-						 (operation == MPI_BARRIER_UP)   	   ||
-						 (operation == MPI_BARRIER_DOWN) 	   ||
-						 (operation == MPI_BCAST)   		   ||
-						 (operation == MPI_SCATTER) 		   ||
-						 (operation == MPI_GATHER)){
+                pat_sendMessage(sm);
+            }
 
-					pat_sendMessage (sm);
-				}
+            // Close connection...
+            else if (operation == SM_CLOSE_CONNECTION) {
 
-				// Close connection...
-				else if (operation == SM_CLOSE_CONNECTION){
+                pat_closeConnection(sm);
 
-					pat_closeConnection (sm);
+            }
 
-				}
-
-				// Operation does not change the port...
-				else{
+            // Operation does not change the port...
+            else {
 //					NULL;
-				}
-			}
-			// The message is a response
-			else {
-				pat_receiveMessage(sm);
-			}
-		}
+            }
+        }
+        // The message is a response
+        else {
+            pat_receiveMessage(sm);
+        }
+    }
 }
 
-void PortAddressTranslation::pat_createVM (int userID, int vmID, string vmIP){
-	User_VirtualPort_Cell* user;
-	Vm_VirtualPort_Cell* vm;
+void PortAddressTranslation::pat_createVM(int userID, int vmID, string vmIP) {
+    User_VirtualPort_Cell* user;
+    Vm_VirtualPort_Cell* vm;
 
-	// Search the user into the structure
-		user = searchUser(userID);
-		//cout << "PortAddressTranslation::pat_createVM ---> userID--->" <<userID <<endl;
+    // Search the user into the structure
+    user = searchUser(userID);
+    //cout << "PortAddressTranslation::pat_createVM ---> userID--->" <<userID <<endl;
 
-	// If the user does not exists, create it ..
-		if (user == NULL){
-	     //   cout << "PortAddressTranslation::pat_createVM ---> user ==null--->"<< endl;
+    // If the user does not exists, create it ..
+    if (user == NULL) {
+        //   cout << "PortAddressTranslation::pat_createVM ---> user ==null--->"<< endl;
 
-			user = newUser(userID);
-		}
+        user = newUser(userID);
+    }
 
-	// Search vm..
-      //  cout << "PortAddressTranslation::pat_createVM ---> user--->" << user->getUserID() <<endl;
+    // Search vm..
+    //  cout << "PortAddressTranslation::pat_createVM ---> user--->" << user->getUserID() <<endl;
 
-		vm = user->searchVM(vmID);
+    vm = user->searchVM(vmID);
 
-	// initialize the vm..
-		if (vm == NULL){
-			vm = user->newVM(vmID);
-			vm->setVMIP(vmIP.c_str());
-		} else if (vm->getVMIP() != vmIP){
-			throw cRuntimeError("PortAddressTranslation::pat_createVM error!. vmID:%i have different ips!!",userID);
-		} else {
-		    // Another job has been instanced in a vm..
-		}
+    // initialize the vm..
+    if (vm == NULL) {
+        vm = user->newVM(vmID);
+        vm->setVMIP(vmIP.c_str());
+    } else if (vm->getVMIP() != vmIP) {
+        throw cRuntimeError(
+                "PortAddressTranslation::pat_createVM error!. vmID:%i have different ips!!",
+                userID);
+    } else {
+        // Another job has been instanced in a vm..
+    }
 }
 
-User_VirtualPort_Cell* PortAddressTranslation::searchUser (int uId){
+User_VirtualPort_Cell* PortAddressTranslation::searchUser(int uId) {
 
-	// Define ..
-		bool found;
-		unsigned int i;
-		User_VirtualPort_Cell* user_cell;
+    // Define ..
+    bool found;
+    unsigned int i;
+    User_VirtualPort_Cell* user_cell;
 
-	// Init ..
-		found = false;
-		user_cell = NULL;
-	//	cout << "PortAddressTranslation::searchUser : userID----->" << uId << endl;
-      //  cout << "PortAddressTranslation::searchUser : user_vm_ports.size()---->" << user_vm_ports.size() << endl;
+    // Init ..
+    found = false;
+    user_cell = NULL;
+    cout << "PortAddressTranslation::searchUser : userID----->" << uId << endl;
+    //  cout << "PortAddressTranslation::searchUser : user_vm_ports.size()---->" << user_vm_ports.size() << endl;
 
-	for (i = 0; (i < user_vm_ports.size()) && (!found); ){
-       // cout << "PortAddressTranslation::searchUser : userID----->" << (*(user_vm_ports.begin()+i))->getUserID() << endl;
+    for (vector<User_VirtualPort_Cell*>::iterator it = user_vm_ports.begin();
+               it != user_vm_ports.end(); ++it) {
+           cout <<" PortAddressTranslation::searchUser : userID---->" << (*it)->getUserID();
+           cout << '\n';
+       }
 
-		if ((*(user_vm_ports.begin()+i))->getUserID() == uId){
-			found = true;
-			user_cell = (*(user_vm_ports.begin()+i));
-		}else {
-			i++;
-		}
-	}
 
-	return user_cell;
+    for (i = 0; (i < user_vm_ports.size()) && (!found);) {
+        // cout << "PortAddressTranslation::searchUser : userID----->" << (*(user_vm_ports.begin()+i))->getUserID() << endl;
 
-}
+        if ((*(user_vm_ports.begin() + i))->getUserID() == uId) {
+            found = true;
+            user_cell = (*(user_vm_ports.begin() + i));
+        } else {
+            i++;
+        }
+    }
 
-void PortAddressTranslation::deleteUser (int uId){
-	// Define ..
-		bool found;
-		unsigned int i;
-
-	// Init ..
-		found = false;
-
-	for (i = 0; (i < user_vm_ports.size()) && (!found);){
-
-		if ((*(user_vm_ports.begin()+i))->getUserID() == uId){
-			found = true;
-			user_vm_ports.erase(user_vm_ports.begin()+i);
-		//	cout<<"PortAddressTranslation::deleteUser --->user_vm_ports.erase(user_vm_ports.begin()+i) --->i="<<i<<endl;
-		}else {
-			i++;
-		}
-	}
+    return user_cell;
 
 }
 
-User_VirtualPort_Cell* PortAddressTranslation::newUser(int uId){
+void PortAddressTranslation::deleteUser(int uId) {
+    // Define ..
+    bool found;
+    unsigned int i;
 
-	User_VirtualPort_Cell* user;
+    // Init ..
+    found = false;
+    //uvic
+    cout << "PortAddressTranslation::deleteUser --->" << uId << endl;
+    for (i = 0; (i < user_vm_ports.size()) && (!found);) {
 
-	user = new User_VirtualPort_Cell();
-	//cout << "PortAddressTranslation::newUser ----> push back user :   " << uId <<"  to user_vm_ports"<< endl;
-	user->setUserID(uId);
+        if ((*(user_vm_ports.begin() + i))->getUserID() == uId) {
+            found = true;
+            user_vm_ports.erase(user_vm_ports.begin() + i);
 
-	user_vm_ports.push_back(user);
-
-	return user;
-
-}
-
-int PortAddressTranslation::getNewPort(){
-	int port;
-
-	if (portHoles.size() != 0){
-
-		port = (*portHoles.begin());
-		portHoles.erase(portHoles.begin());
-
-	} else {
-		// Throws an exception to stop the execution!
-		if ((portPtr == LAST_PORT) && (portHoles.size() == 0)) throw cRuntimeError("portManager::getNewPort error. There is no free ports!");
-
-		while (freePorts[portPtr]){
-			portPtr++;
-		}
-
-		port = portPtr;
-
-		portPtr++;
-
-	}
-
-	freePorts[port] = STABLISHED;
-
-	return port;
-}
-
-void PortAddressTranslation::freePort(int port){
-
-	// Mark as free the cell into the free port
-	freePorts[port] = NOT_STABLISHED;
-
-	// push it into the port holes!
-	portHoles.push_back(port);
+        } else {
+            i++;
+        }
+    }
 
 }
 
-int PortAddressTranslation::pat_createListen(int uId, int pId, int virtualPort){
+User_VirtualPort_Cell* PortAddressTranslation::newUser(int uId) {
 
-	// Define ..
-		User_VirtualPort_Cell* user;
-		Vm_VirtualPort_Cell* vm;
-		int realPort;
+    User_VirtualPort_Cell* user;
 
-	// Search the user into the structure
-		user = searchUser(uId);
+    user = new User_VirtualPort_Cell();
+    //uvic add
+  cout << "PortAddressTranslation::newUser ----> push back user :   " << uId << "  to user_vm_ports" << endl;
+    user->setUserID(uId);
 
-		// If the user does not exists, create it ..
-			if (user == NULL){
-				user = newUser(uId);
-			}
+    user_vm_ports.push_back(user);
+    cout << "PortAddressTranslation::newUser ----> user_vm_ports size :   "
+            << user_vm_ports.size() << endl;
 
-	// Search the vm
-		vm = user->searchVM(pId);
-
-		// If the vm does not exists, create it ..
-			if (vm == NULL){
-				vm = user->newVM(pId);
-			}
-
-	// Port forwarding
-		realPort = getNewPort();
-
-		vm->setPort(realPort, virtualPort);
-
-		return realPort;
-}
-
-void PortAddressTranslation::pat_arrivesIncomingConnection(icancloud_Message* sm){
-
-	// Define ..
-		icancloud_App_NET_Message* sm_net;
-		User_VirtualPort_Cell* user;
-		Vm_VirtualPort_Cell* vm;
-		int uId = sm->getUid();
-		int pId = sm->getPid();
-		int realPort;
-		int virtualPort;
-
-	// Init ..
-		sm_net =check_and_cast <icancloud_App_NET_Message*> (sm);
-
-	// Search the user into the structure
-		user = searchUser(uId);
-
-		// If the user does not exists, create it ..
-			if (user == NULL) throw cRuntimeError("portManager::pat_connectionStablished error. There is no listen connection for the user %i!\n", uId);
-
-	// Search the vm
-		vm = user->searchVM(pId);
-
-		// If the vm does not exists, create it ..
-			if (vm == NULL)throw cRuntimeError("portManager::pat_connectionStablished error. There is no vm connection for the incoming message %s!\n", pId);
-
-	//Allocate the connectionID
-		vm->setConnectionID(sm_net->getLocalPort(), sm_net->getConnectionId());
-
-	// Port forwarding
-		virtualPort = sm_net->getLocalPort();
-		realPort = vm->getRealPort(virtualPort);
-
-		sm_net->setLocalPort(realPort);
-		sm_net->setVirtual_localPort(virtualPort);
-}
-
-int PortAddressTranslation::pat_connectionStablished(icancloud_Message* sm){
-
-	// Define ..
-		icancloud_App_NET_Message* sm_net;
-		User_VirtualPort_Cell* user;
-		Vm_VirtualPort_Cell* vm;
-        int uId = sm->getUid();
-        int pId = sm->getPid();
-		int realPort;
+    for (vector<User_VirtualPort_Cell*>::iterator it = user_vm_ports.begin();
+            it != user_vm_ports.end(); ++it) {
+        cout << ' ' << (*it)->getUserID();
+        cout << '\n';
+    }
 
 
-	// Init ..
-		sm_net = check_and_cast <icancloud_App_NET_Message*> (sm);
 
-	// Search the user into the structure
-		user = searchUser(uId);
-
-		// If the user does not exists, create it ..
-			if (user == NULL){
-				user = newUser(uId);
-			}
-
-	// Search the vm
-		vm = user->searchVM(pId);
-
-		// If the vm does not exists, create it ..
-			if (vm == NULL){
-				vm = user->newVM(pId);
-			}
-
-	//Allocate the connectionID
-		realPort = sm_net->getLocalPort();
-
-		freePorts[realPort] = STABLISHED;
-
-		vm->setPort(realPort, realPort);
-		vm->setConnectionID(realPort, sm_net->getConnectionId());
-
-	return realPort;
+    return user;
 
 }
 
-void PortAddressTranslation::pat_receiveMessage(icancloud_Message* sm){
+int PortAddressTranslation::getNewPort() {
+    int port;
 
-	// Define ..
-			icancloud_App_NET_Message* sm_net;
-			User_VirtualPort_Cell* user;
-			Vm_VirtualPort_Cell* vm;
-	        int uId = sm->getUid();
-	        int pId = sm->getPid();
-			int realPort;
-			int virtualPort;
+    if (portHoles.size() != 0) {
 
-		// Init ..
-			sm_net = check_and_cast <icancloud_App_NET_Message*> (sm);
+        port = (*portHoles.begin());
+        portHoles.erase(portHoles.begin());
 
-		// Search the user into the structure
-			user = searchUser(uId);
+    } else {
+        // Throws an exception to stop the execution!
+        if ((portPtr == LAST_PORT) && (portHoles.size() == 0))
+            throw cRuntimeError(
+                    "portManager::getNewPort error. There is no free ports!");
 
-			// If the user does not exists, create it ..
-				if (user == NULL) throw cRuntimeError("portManager::pat_connectionStablished error. There is no listen connection for the user %i!\n", uId);
+        while (freePorts[portPtr]) {
+            portPtr++;
+        }
 
-		// Search the vm
-			vm = user->searchVM(pId);
+        port = portPtr;
 
-			// If the vm does not exists, create it ..
-				if (vm == NULL)throw cRuntimeError("portManager::pat_connectionStablished error. There is no vm connection for the incoming message %i!\n", pId);
+        portPtr++;
 
+    }
 
-		// PAT
-			//Get the virtual and real ports
-				realPort = sm_net->getDestinationPort();
-				virtualPort = vm->getVirtualPort(realPort);
+    freePorts[port] = STABLISHED;
 
-			// Reallocate in the message the ports
-				sm_net->setDestinationPort(virtualPort);
-				sm_net->setVirtual_destinationPort(realPort);
+    return port;
+}
+
+void PortAddressTranslation::freePort(int port) {
+
+    // Mark as free the cell into the free port
+    freePorts[port] = NOT_STABLISHED;
+
+    // push it into the port holes!
+    portHoles.push_back(port);
 
 }
 
-void PortAddressTranslation::pat_sendMessage(icancloud_Message* sm){
-	// Define ..
-		icancloud_App_NET_Message* sm_net;
-		User_VirtualPort_Cell* user;
-		Vm_VirtualPort_Cell* vm;
-        int uId = sm->getUid();
-        int pId = sm->getPid();
-		int realPort;
-		int virtualPort;
+int PortAddressTranslation::pat_createListen(int uId, int pId,
+        int virtualPort) {
 
-	// Init ..
-		sm_net = check_and_cast <icancloud_App_NET_Message*> (sm);
+    // Define ..
+    User_VirtualPort_Cell* user;
+    Vm_VirtualPort_Cell* vm;
+    int realPort;
 
-	// Search the user into the structure
-		user = searchUser(uId);
+    // Search the user into the structure
+    user = searchUser(uId);
 
-		// If the user does not exists, create it ..
-			if (user == NULL) throw cRuntimeError("portManager::pat_connectionStablished error. There is no listen connection for the user %s!\n", uId);
+    // If the user does not exists, create it ..
+    if (user == NULL) {
+        user = newUser(uId);
+    }
 
-	// Search the vm
-		vm = user->searchVM(pId);
+    // Search the vm
+    vm = user->searchVM(pId);
 
-		// If the vm does not exists, create it ..
-			if (vm == NULL)throw cRuntimeError("portManager::pat_connectionStablished error. There is no vm connection for the incoming message %s!\n", pId);
+    // If the vm does not exists, create it ..
+    if (vm == NULL) {
+        vm = user->newVM(pId);
+    }
 
+    // Port forwarding
+    realPort = getNewPort();
 
-	// PAT
-		//Get the virtual and real ports
-			virtualPort = sm_net->getLocalPort();
-			realPort = vm->getRealPort(virtualPort);
+    vm->setPort(realPort, virtualPort);
 
-		// Reallocate in the message the ports
-			sm_net->setLocalPort(realPort);
-			sm_net->setVirtual_localPort(virtualPort);
+    return realPort;
 }
 
-int PortAddressTranslation::pat_closeConnection(icancloud_Message* sm){
-	// Define ..
-		icancloud_App_NET_Message* sm_net;
-		User_VirtualPort_Cell* user;
-		Vm_VirtualPort_Cell* vm;
-        int uId = sm->getUid();
-        int pId = sm->getPid();
-		int realPort;
-		int virtualPort;
-		int connID;
+void PortAddressTranslation::pat_arrivesIncomingConnection(
+        icancloud_Message* sm) {
 
-	// Init ..
-		sm_net = check_and_cast <icancloud_App_NET_Message*> (sm);
+    // Define ..
+    icancloud_App_NET_Message* sm_net;
+    User_VirtualPort_Cell* user;
+    Vm_VirtualPort_Cell* vm;
+    int uId = sm->getUid();
+    int pId = sm->getPid();
+    int realPort;
+    int virtualPort;
 
-	// Search the user into the structure
-		user = searchUser(uId);
+    // Init ..
+    sm_net = check_and_cast<icancloud_App_NET_Message*>(sm);
 
-		// If the user does not exists, create it ..
-			if (user == NULL) throw cRuntimeError("portManager::pat_connectionStablished error. There is no listen connection for the user %s!\n", uId);
+    // Search the user into the structure
+    user = searchUser(uId);
 
-	// Search the vm
-		vm = user->searchVM(pId);
+    // If the user does not exists, create it ..
+    if (user == NULL)
+        throw cRuntimeError(
+                "portManager::pat_connectionStablished error. There is no listen connection for the user %i!\n",
+                uId);
 
-		// If the vm does not exists, create it ..
-			if (vm == NULL)throw cRuntimeError("portManager::pat_connectionStablished error. There is no vm connection for the incoming message %s!\n", pId);
+    // Search the vm
+    vm = user->searchVM(pId);
 
+    // If the vm does not exists, create it ..
+    if (vm == NULL)
+        throw cRuntimeError(
+                "portManager::pat_connectionStablished error. There is no vm connection for the incoming message %s!\n",
+                pId);
 
-	// PAT
-		//Get the virtual port assigned during the connection
-			virtualPort = sm_net->getLocalPort();
+    //Allocate the connectionID
+    vm->setConnectionID(sm_net->getLocalPort(), sm_net->getConnectionId());
 
-			connID = vm->getConnectionID(virtualPort);
+    // Port forwarding
+    virtualPort = sm_net->getLocalPort();
+    realPort = vm->getRealPort(virtualPort);
 
-			if (connID != sm->getConnectionId())throw cRuntimeError("portManager::pat_closeConnection error. Connection id doesn't match %i != %i to free ports!\n",connID, sm->getConnectionId() );
+    sm_net->setLocalPort(realPort);
+    sm_net->setVirtual_localPort(virtualPort);
+}
 
-			vm->deletePort_byConnectionID(connID);
+int PortAddressTranslation::pat_connectionStablished(icancloud_Message* sm) {
 
-		// If the port is busy by other user, get a new virtual port
-			realPort = vm->getRealPort(virtualPort);
+    // Define ..
+    icancloud_App_NET_Message* sm_net;
+    User_VirtualPort_Cell* user;
+    Vm_VirtualPort_Cell* vm;
+    int uId = sm->getUid();
+    int pId = sm->getPid();
+    int realPort;
 
-		    freePort(realPort);
-		    portHoles.push_back(realPort);
+    // Init ..
+    sm_net = check_and_cast<icancloud_App_NET_Message*>(sm);
 
-			sm_net->setLocalPort(realPort);
-			sm_net->setVirtual_localPort(virtualPort);
+    // Search the user into the structure
+    user = searchUser(uId);
 
-			return realPort;
+    // If the user does not exists, create it ..
+    if (user == NULL) {
+        user = newUser(uId);
+    }
+
+    // Search the vm
+    vm = user->searchVM(pId);
+
+    // If the vm does not exists, create it ..
+    if (vm == NULL) {
+        vm = user->newVM(pId);
+    }
+
+    //Allocate the connectionID
+    realPort = sm_net->getLocalPort();
+
+    freePorts[realPort] = STABLISHED;
+
+    vm->setPort(realPort, realPort);
+    vm->setConnectionID(realPort, sm_net->getConnectionId());
+
+    return realPort;
 
 }
 
-vector<int> PortAddressTranslation::pat_closeVM(int uId, int pId){
+void PortAddressTranslation::pat_receiveMessage(icancloud_Message* sm) {
 
-	// Define ..
-		User_VirtualPort_Cell* user;
-		Vm_VirtualPort_Cell* vm;
-		vector<int> rPorts;
-		vector<int> connIds;
-		bool connectedPorts;
-		//cout <<"ortAddressTranslation::pat_closeVM" <<endl;
-	// Init ..
-		rPorts.clear();
-		connIds.clear();
-		connectedPorts = false;
+    // Define ..
+    icancloud_App_NET_Message* sm_net;
+    User_VirtualPort_Cell* user;
+    Vm_VirtualPort_Cell* vm;
+    int uId = sm->getUid();
+    int pId = sm->getPid();
+    int realPort;
+    int virtualPort;
 
-	// Search the user into the structure
-		user = searchUser(uId);
+    // Init ..
+    sm_net = check_and_cast<icancloud_App_NET_Message*>(sm);
 
-		// If the user does not exists, create it ..
-			if (user == NULL) throw cRuntimeError("portManager::pat_closeConnection error. There is no user %i - vm %i to free ports!\n",uId, pId);
+    // Search the user into the structure
+    user = searchUser(uId);
 
-	// Search the vm
-		vm = user->searchVM(pId);
+    // If the user does not exists, create it ..
+    if (user == NULL)
+        throw cRuntimeError(
+                "portManager::pat_connectionStablished error. There is no listen connection for the user %i!\n",
+                uId);
 
-		// If the vm does not exists, create it ..
-			if (vm == NULL) printf("portManager::pat_closeConnection error. There is no open ports for %i to free ports!\n",pId );
-			else{
-            // PAT
-                //Get the virtual port assigned during the connection
-                    rPorts = vm->getAllRPorts();
+    // Search the vm
+    vm = user->searchVM(pId);
 
-                    connectedPorts = (rPorts.size() != 0);
+    // If the vm does not exists, create it ..
+    if (vm == NULL)
+        throw cRuntimeError(
+                "portManager::pat_connectionStablished error. There is no vm connection for the incoming message %i!\n",
+                pId);
 
-                    while (rPorts.size() != 0){
-                        freePort((*(rPorts.begin())));
-                        rPorts.erase(rPorts.begin());
-                    }
+    // PAT
+    //Get the virtual and real ports
+    realPort = sm_net->getDestinationPort();
+    virtualPort = vm->getVirtualPort(realPort);
 
-                    // Get the connIDs
-                    if (connectedPorts)
-                        connIds = vm->getAllConnectionIDs();
+    // Reallocate in the message the ports
+    sm_net->setDestinationPort(virtualPort);
+    sm_net->setVirtual_destinationPort(realPort);
 
-                    // erase the vm
-                        user->eraseVM(pId);
+}
 
-                    // If the user has not more vms, erase the entry
-                    if (user->getVM_Size() == 0){
-                        deleteUser(uId);
-                    }
-			}
+void PortAddressTranslation::pat_sendMessage(icancloud_Message* sm) {
+    // Define ..
+    icancloud_App_NET_Message* sm_net;
+    User_VirtualPort_Cell* user;
+    Vm_VirtualPort_Cell* vm;
+    int uId = sm->getUid();
+    int pId = sm->getPid();
+    int realPort;
+    int virtualPort;
 
-			return connIds;
+    // Init ..
+    sm_net = check_and_cast<icancloud_App_NET_Message*>(sm);
+
+    // Search the user into the structure
+    user = searchUser(uId);
+
+    // If the user does not exists, create it ..
+    if (user == NULL)
+        throw cRuntimeError(
+                "portManager::pat_connectionStablished error. There is no listen connection for the user %s!\n",
+                uId);
+
+    // Search the vm
+    vm = user->searchVM(pId);
+
+    // If the vm does not exists, create it ..
+    if (vm == NULL)
+        throw cRuntimeError(
+                "portManager::pat_connectionStablished error. There is no vm connection for the incoming message %s!\n",
+                pId);
+
+    // PAT
+    //Get the virtual and real ports
+    virtualPort = sm_net->getLocalPort();
+    realPort = vm->getRealPort(virtualPort);
+
+    // Reallocate in the message the ports
+    sm_net->setLocalPort(realPort);
+    sm_net->setVirtual_localPort(virtualPort);
+}
+
+int PortAddressTranslation::pat_closeConnection(icancloud_Message* sm) {
+    // Define ..
+    icancloud_App_NET_Message* sm_net;
+    User_VirtualPort_Cell* user;
+    Vm_VirtualPort_Cell* vm;
+    int uId = sm->getUid();
+    int pId = sm->getPid();
+    int realPort;
+    int virtualPort;
+    int connID;
+
+    // Init ..
+    sm_net = check_and_cast<icancloud_App_NET_Message*>(sm);
+
+    // Search the user into the structure
+    user = searchUser(uId);
+
+    // If the user does not exists, create it ..
+    if (user == NULL)
+        throw cRuntimeError(
+                "portManager::pat_connectionStablished error. There is no listen connection for the user %s!\n",
+                uId);
+
+    // Search the vm
+    vm = user->searchVM(pId);
+
+    // If the vm does not exists, create it ..
+    if (vm == NULL)
+        throw cRuntimeError(
+                "portManager::pat_connectionStablished error. There is no vm connection for the incoming message %s!\n",
+                pId);
+
+    // PAT
+    //Get the virtual port assigned during the connection
+    virtualPort = sm_net->getLocalPort();
+
+    connID = vm->getConnectionID(virtualPort);
+
+    if (connID != sm->getConnectionId())
+        throw cRuntimeError(
+                "portManager::pat_closeConnection error. Connection id doesn't match %i != %i to free ports!\n",
+                connID, sm->getConnectionId());
+
+    vm->deletePort_byConnectionID(connID);
+
+    // If the port is busy by other user, get a new virtual port
+    realPort = vm->getRealPort(virtualPort);
+
+    freePort(realPort);
+    portHoles.push_back(realPort);
+
+    sm_net->setLocalPort(realPort);
+    sm_net->setVirtual_localPort(virtualPort);
+
+    return realPort;
+
+}
+
+vector<int> PortAddressTranslation::pat_closeVM(int uId, int pId) {
+
+    // Define ..
+    User_VirtualPort_Cell* user;
+    Vm_VirtualPort_Cell* vm;
+    vector<int> rPorts;
+    vector<int> connIds;
+    bool connectedPorts;
+    //cout <<"ortAddressTranslation::pat_closeVM" <<endl;
+    // Init ..
+    rPorts.clear();
+    connIds.clear();
+    connectedPorts = false;
+    //uvic add
+    cout << "PortAddressTranslation::pat_closeVM-----> uid--->" << uId << endl;
+    cout << "PortAddressTranslation::pat_closeVM-----> pid--->" << pId << endl;
+    // Search the user into the structure
+    user = searchUser(uId);
+
+    // If the user does not exists, create it ..
+    if (user == NULL)
+        throw cRuntimeError(
+                "portManager::pat_closeConnection error. There is no user %i - vm %i to free ports!\n",
+                uId, pId);
+
+    // Search the vm
+    vm = user->searchVM(pId);
+
+    // If the vm does not exists, create it ..
+    if (vm == NULL)
+        printf(
+                "portManager::pat_closeConnection error. There is no open ports for %i to free ports!\n",
+                pId);
+    else {
+        // PAT
+        //Get the virtual port assigned during the connection
+        rPorts = vm->getAllRPorts();
+
+        connectedPorts = (rPorts.size() != 0);
+
+        while (rPorts.size() != 0) {
+            freePort((*(rPorts.begin())));
+            rPorts.erase(rPorts.begin());
+        }
+
+        // Get the connIDs
+        if (connectedPorts)
+            connIds = vm->getAllConnectionIDs();
+
+        // erase the vm
+        user->eraseVM(pId);
+
+        // If the user has not more vms, erase the entry
+        if (user->getVM_Size() == 0) {
+            deleteUser(uId);
+        }
+    }
+
+    return connIds;
 }

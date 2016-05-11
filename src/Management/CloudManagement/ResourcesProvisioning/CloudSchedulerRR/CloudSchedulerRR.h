@@ -28,12 +28,12 @@ protected:
     int currentNodeType;
 
      //Flags To control the energy printing
-         bool printNodePowerConsumption;        // print Node instant consumption
-         bool printNodeEnergyConsumed;          // print Node energy consumed
-         bool printComponentsPowerConsumption;  // print main subsytems instant consumption
-         bool printComponentsEnergyConsumed;    // print main subsytems instant consumption
-         bool printDataCenterPowerConsumption;  // print all the data-center energyConsumed
-         bool printDataCenterEnergyConsumed;    // print all the data-center instant consumption
+      //   bool printNodePowerConsumption;        // print Node instant consumption
+      //   bool printNodeEnergyConsumed;          // print Node energy consumed
+      //   bool printComponentsPowerConsumption;  // print main subsytems instant consumption
+    //    bool printComponentsEnergyConsumed;    // print main subsytems instant consumption
+     //    bool printDataCenterPowerConsumption;  // print all the data-center energyConsumed
+     //    bool printDataCenterEnergyConsumed;    // print all the data-center instant consumption
 
          double dc_EnergyConsumed;  // For storing the total data center energy consumed.
 

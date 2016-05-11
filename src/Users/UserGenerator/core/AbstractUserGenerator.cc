@@ -218,8 +218,9 @@ void AbstractUserGenerator::createUser (){
                 behaviorMod->setName(userID.c_str());
                 behaviorMod->finalizeParameters();
                 behaviorMod->buildInside();
+                cout << "AbstractUserGenerator::createUser---> before callInitialize "<<endl;
                 behaviorMod->callInitialize();
-
+                cout << "AbstractUserGenerator::createUser---> after callInitialize "<<endl;
                 user =  check_and_cast <AbstractUser*>  (behaviorMod);
                 // Initialize the user ..
                     user->initParameters (behavior, userID.c_str(), logName);

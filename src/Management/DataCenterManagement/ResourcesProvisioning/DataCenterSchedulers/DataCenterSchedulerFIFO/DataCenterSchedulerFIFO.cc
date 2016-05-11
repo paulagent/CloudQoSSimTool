@@ -48,12 +48,12 @@ void DataCenterSchedulerFIFO::finalizeManager(){
 
     // TODO
 }
-
+/*
 void DataCenterSchedulerFIFO::printEnergyValues(){
 
   // TODO
 }
-
+*/
 
 vector<AbstractNode*> DataCenterSchedulerFIFO::remoteShutdown (AbstractRequest* req){
 //TODO

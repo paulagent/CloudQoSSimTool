@@ -61,11 +61,12 @@ void CPU_Intensive::finish(){
 void CPU_Intensive::startExecution (){
 
     API_OS::startExecution();
-
+    cout << " CPU_Intensive::startExecution()---simulation start>"<<endl;
     Enter_Method_Silent();
     // Create SM_WAIT_TO_EXECUTE message for delaying the execution of this application
     cMessage *waitToExecuteMsg = new cMessage (SM_WAIT_TO_EXECUTE.c_str());
     scheduleAt (simTime()+startDelay, waitToExecuteMsg);
+    cout << " CPU_Intensive::startExecution()---self schedule at simTime()+startDelay time>"<<endl;
 }
 
 void CPU_Intensive::processSelfMessage (cMessage *msg){

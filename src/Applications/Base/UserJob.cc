@@ -17,97 +17,97 @@
 
 UserJob::~UserJob() {
     appType = "";
-    mPtr =NULL;
+    mPtr = NULL;
     fsStructures.clear();
 }
 
+void UserJob::initialize() {
+    //cout << "UserJob::initialize---->call initialize(): " << endl;
+    appType = "";
+    mPtr = NULL;
+    fsStructures.clear();
+    preloadFiles.clear();
+    jobResults = new JobResultsSet();
 
- void UserJob::initialize(){
+    jobBase::initialize();
 
-      appType = "";
-      mPtr =NULL;
-      fsStructures.clear();
-      preloadFiles.clear();
-      jobResults = new JobResultsSet();
+}
 
-      jobBase::initialize();
+void UserJob::startExecution() {
+    API_OS::startExecution();
+}
 
- }
+void UserJob::finish() {
 
- void UserJob::startExecution(){
-     API_OS::startExecution();
- }
+    fsStructures.clear();
+    preloadFiles.clear();
 
- void UserJob::finish(){
+    jobBase::finish();
 
-     fsStructures.clear();
-     preloadFiles.clear();
+}
 
-     jobBase::finish();
+UserJob* UserJob::cloneJob(cModule* userMod) {
 
- }
+    // Define ...
+    cModule *cloneApp;
+    AbstractUser* user;
+    UserJob* newJob;
+    cModuleType *modType;
+    std::ostringstream appPath;
+    int i, numParameters, size;
 
- UserJob* UserJob::cloneJob (cModule* userMod){
+    // Init ..
+    appPath << this->getNedTypeName();
 
-     // Define ...
-         cModule *cloneApp;
-         AbstractUser* user;
-         UserJob* newJob;
-         cModuleType *modType;
-         std::ostringstream appPath;
-         int i, numParameters, size;
+    // Create the app module
+    modType = cModuleType::get(appPath.str().c_str());
 
-     // Init ..
-         appPath << this->getNedTypeName();
+    // Create the app into the user module
+    cloneApp = modType->create(appPath.str().c_str(), userMod);
 
-     // Create the app module
-         modType = cModuleType::get (appPath.str().c_str());
+    // Configure the main parameters
+    numParameters = this->getNumParams();
+    for (i = 0; i < numParameters; i++) {
+        cloneApp->par(i) = this->par(i);
+    }
 
-     // Create the app into the user module
-         cloneApp = modType->create(appPath.str().c_str(), userMod);
+    cloneApp->setName("app");
 
-     // Configure the main parameters
-         numParameters = this->getNumParams();
-         for (i = 0; i < numParameters ; i++){
-             cloneApp->par(i) = this->par(i);
-         }
+    // Finalize and build the module
+    cloneApp->finalizeParameters();
+    cloneApp->buildInside();
 
-         cloneApp->setName("app");
+    // Call initiialize
+    cout << "UserJob::cloneJob->callInitialize() before call init;" << endl;
+    //uvic whic initialize method will call
+    cloneApp->callInitialize();
+    cout << "UserJob::cloneJob->callInitialize() after call init;" << endl;
+    newJob = check_and_cast<UserJob*>(cloneApp);
+    newJob->setOriginalName(this->getOriginalName().c_str());
+    newJob->setAppType(this->getAppType());
 
-     // Finalize and build the module
-         cloneApp->finalizeParameters();
-         cloneApp->buildInside();
+    user = check_and_cast<AbstractUser*>(userMod);
+    newJob->setUpUser(user);
 
-         // Call initiialize
-         cloneApp->callInitialize();
+    size = this->getPreloadSize();
+    for (i = 0; i < size; i++) {
+        newJob->setPreloadFile(this->getPreloadFile(i));
+    }
 
-         newJob = check_and_cast<UserJob*> (cloneApp);
-         newJob->setOriginalName(this->getOriginalName().c_str());
-         newJob->setAppType(this->getAppType());
+    size = this->getFSSize();
+    for (i = 0; i < size; i++) {
+        newJob->setFSElement(this->getFSElement(i));
+    }
 
-         user =  check_and_cast <AbstractUser*>  (userMod);
-         newJob->setUpUser(user);
+    return newJob;
+}
 
-         size = this->getPreloadSize();
-         for (i = 0; i < size; i++){
-             newJob->setPreloadFile(this->getPreloadFile(i));
-         }
-
-         size = this->getFSSize();
-         for (i = 0; i < size; i++){
-             newJob->setFSElement(this->getFSElement(i));
-         }
-
-         return newJob;
- }
-
-
-void UserJob::setMachine (Machine* m){
+void UserJob::setMachine(Machine* m) {
     mPtr = m;
     jobResults->setMachineType(mPtr->getTypeName());
 }
 
-void UserJob::setUpUser (AbstractUser *user){
+void UserJob::setUpUser(AbstractUser *user) {
 
     userPtr = user;
 }

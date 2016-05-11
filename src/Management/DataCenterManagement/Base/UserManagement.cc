@@ -17,6 +17,7 @@
 
 UserManagement::~UserManagement() {
     // TODO Auto-generated destructor stub
+    finish();
 }
 
 void UserManagement::initialize(){

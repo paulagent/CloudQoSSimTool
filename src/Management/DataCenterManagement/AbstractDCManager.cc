@@ -38,7 +38,7 @@ void AbstractDCManager::initialize(){
             time_t rawtime;
             struct tm * timeinfo;
             std::ostringstream file;
-      //      printf("\n Method[Abstract DC manager]: ------->start \n");
+            printf("\n Method[Abstract DC manager]: ------->start \n");
         // Initialize the superclasses
             // Finish the super-class
             DataCenterAPI::initialize();
@@ -146,7 +146,7 @@ void AbstractDCManager::initialize(){
       // Prepare the message waiting until all modules will be initialized-
           msg = new cMessage (SM_CALL_INITIALIZE.c_str());
           scheduleAt (simTime()+timeToStartManager, msg);
-
+cout <<"AbstractDCManager::initialize() --->start to initial" << endl;
           memorization = par ("memorization").boolValue();
 
 }
@@ -169,9 +169,10 @@ void AbstractDCManager::processSelfMessage (cMessage *msg){
 
     // Begin ..
         if(!strcmp (msg->getName(), SM_APP_ALARM.c_str())){
-printf("call schedule");
+               //printf("call schedule");
+            cout << "AbstractDCManager::processSelfMessage before schedule()" << endl;
             schedule();
-
+            cout << "AbstractDCManager::processSelfMessage after schedule()" << endl;
             if ((checkFinalization()) && (!simulationPerTime)){
                 cancelAndDelete(smAlarm);
                 finalizeManager();
@@ -190,7 +191,7 @@ printf("call schedule");
                     cancelEvent(logAlarm);
                     // Print energy values..
                     if ((printEnergyToFile) && (printEnergyTrace)){
-                        printEnergyValues();
+                      //  printEnergyValues();
                         scheduleAt (simTime()+timeBetweenLogResults_s, logAlarm);
                     }
         }

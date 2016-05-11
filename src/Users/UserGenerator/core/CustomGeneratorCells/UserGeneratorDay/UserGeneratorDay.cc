@@ -19,207 +19,213 @@ Define_Module(UserGeneratorDay);
 
 UserGeneratorDay::~UserGeneratorDay() {
 
-    cancelAndDelete (newHourEvent);
-    cancelAndDelete (newIntervalEvent);
+    cancelAndDelete(newHourEvent);
+    cancelAndDelete(newIntervalEvent);
 }
 
-void UserGeneratorDay::initialize(){
+void UserGeneratorDay::initialize() {
 
-	// Init the superclass
-        AbstractUserGenerator::initialize();
+    // Init the superclass
+    AbstractUserGenerator::initialize();
 
-	// Get the ned parameters
-        time_intervals_H = par ("time_creation").longValue();
-        quantity_user_preloaded = par ("quantity_user_preloaded").longValue();
-        total_users = par ("total_users").longValue();
-        repetitions = par ("repetitions").longValue();
+    // Get the ned parameters
+    time_intervals_H = par("time_creation").longValue();
+    quantity_user_preloaded = par("quantity_user_preloaded").longValue();
+    total_users = par("total_users").longValue();
+    repetitions = par("repetitions").longValue();
 
-	// Initialize ..
-        newIntervalEvent = new cMessage ("intervalEvent");
-        newHourEvent = new cMessage ("hourEvent");
-        hour = 0;
+    // Initialize ..
+    newIntervalEvent = new cMessage("intervalEvent");
+    newHourEvent = new cMessage("hourEvent");
+    hour = 0;
 
-        if ((total_users == 0) && (quantity_user_preloaded == 0)){
-            showErrorMessage("There are no users at userGenerator day. The users preloaded and the total users are 0");
-        }
+    if ((total_users == 0) && (quantity_user_preloaded == 0)) {
+        showErrorMessage(
+                "There are no users at userGenerator day. The users preloaded and the total users are 0");
+    }
 
-        cMessage *waitToExecuteMsg = new cMessage (SM_WAIT_TO_EXECUTE.c_str());
-        scheduleAt (simTime(), waitToExecuteMsg);
+    cMessage *waitToExecuteMsg = new cMessage(SM_WAIT_TO_EXECUTE.c_str());
+
+    scheduleAt(simTime(), waitToExecuteMsg);
 
 }
 
-void UserGeneratorDay::finish(){
+void UserGeneratorDay::finish() {
 
-	AbstractUserGenerator::finish();
+    AbstractUserGenerator::finish();
 }
 
-void UserGeneratorDay::processSelfMessage (cMessage *msg){
+void UserGeneratorDay::processSelfMessage(cMessage *msg) {
 
-	SimTime nextEvent;
-	unsigned int i,j;
-	double k;
-	bool finalization = false;
+    SimTime nextEvent;
+    unsigned int i, j;
+    double k;
+    bool finalization = false;
     string distribution = distributionName;
 
-	if (!strcmp (msg->getName(), SM_WAIT_TO_EXECUTE.c_str())){
+    if (!strcmp(msg->getName(), SM_WAIT_TO_EXECUTE.c_str())) {
 
-        delete(msg);
+        delete (msg);
 
         // create the preloaded users
-            if (quantity_user_preloaded != 0)
-                for (i = 0; (int)i < quantity_user_preloaded; i++) createUser();
-
-        if (strcmp (distribution.c_str(), "no_distribution") == 0){
-         //   printf("\n Method[UserGeneratorDay]: -------> noDistribution\n");
-        //    printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
-
-
-            for (i = 0; (int)i < total_users; i++)
+        if (quantity_user_preloaded != 0)
+            for (i = 0; (int) i < quantity_user_preloaded; i++)
                 createUser();
-         //   printf("\n Method[UserGeneratorDay]: -------> noDistribution  --> user creation finished\n");
+
+        if (strcmp(distribution.c_str(), "no_distribution") == 0) {
+            //   printf("\n Method[UserGeneratorDay]: -------> noDistribution\n");
+            //    printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
+
+            for (i = 0; (int) i < total_users; i++)
+                createUser();
+            //   printf("\n Method[UserGeneratorDay]: -------> noDistribution  --> user creation finished\n");
 
         } else {
-         //   printf("\n Method[UserGeneratorDay]: -------> Prepare to user arrivals\n");
-        //    printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
-       //     printf("\n Method[UserGeneratorDay]: total_users %d-------> \n", total_users);
+            //   printf("\n Method[UserGeneratorDay]: -------> Prepare to user arrivals\n");
+            //    printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
+            //     printf("\n Method[UserGeneratorDay]: total_users %d-------> \n", total_users);
 
             // Prepare to user arrival .. !!
-                userCreateGroups(time_intervals_H, total_users);
+            userCreateGroups(time_intervals_H, total_users);
         }
 
-        if (time_intervals_H != 0)
-        {
-           scheduleAt (simTime(), newHourEvent);
-     //      printf("\n Method[UserGeneratorDay]: newHourEvent %d-------> \n", newHourEvent);
+        if (time_intervals_H != 0) {
+            scheduleAt(simTime(), newHourEvent);
+            //      printf("\n Method[UserGeneratorDay]: newHourEvent %d-------> \n", newHourEvent);
 
-        }
-        else
+        } else
             finalizeUserGenerator(false);
 
-	} else if (!strcmp (msg->getName(), "intervalEvent")){
+    } else if (!strcmp(msg->getName(), "intervalEvent")) {
 
-	    cancelEvent(newIntervalEvent);
+        cancelEvent(newIntervalEvent);
 
         // create the user for this interval..
-                createUser();
+        createUser();
 
-	    if (subinterval_per_granularity.size() != 0){
-	        // Prepare the nextEvent ..
-	        nextEvent = (*(subinterval_per_granularity.begin()));
-	        subinterval_per_granularity.erase(subinterval_per_granularity.begin());
+        if (subinterval_per_granularity.size() != 0) {
+            // Prepare the nextEvent ..
+            nextEvent = (*(subinterval_per_granularity.begin()));
+            subinterval_per_granularity.erase(
+                    subinterval_per_granularity.begin());
 
-	        scheduleAt (nextEvent, newIntervalEvent);
-	    }
+            scheduleAt(nextEvent, newIntervalEvent);
+        }
 
-    } else if (!strcmp (msg->getName(), "hourEvent")){
+    } else if (!strcmp(msg->getName(), "hourEvent")) {
 
         // if hour == time intervals, the time limit for user's creation has been reached.
 
-        if (hour == time_intervals_H){
+        if (hour == time_intervals_H) {
 
-           // If repetitions != 0, repeat the process
-           if (repetitions != 0){
-               repetitions--;
-               hour = 0;
-
-               // If there are no distribution, when the process has to be repeated, it is the moment for creating the
-               // new subset of users for this repetition cycle
-               if (strcmp (distribution.c_str(), "no_distribution") == 0){
-                       for (i = 0; (int)i < total_users; i++)
-                           createUser();
-               }
-           }
-           // If repetitions == 0, finalize the user generation
-           else {
-               // Finalization of userGeneratorDay
-               AbstractUserGenerator::finalizeUserGenerator(false);
-               finalization = true;
-           }
+            // If repetitions != 0, repeat the process
+            if (repetitions != 0) {
+                repetitions--;
+                hour = 0;
+                //cout << "UserGeneratorDay::processSelfMessage" << endl;
+                // If there are no distribution, when the process has to be repeated, it is the moment for creating the
+                // new subset of users for this repetition cycle
+                if (strcmp(distribution.c_str(), "no_distribution") == 0) {
+                    for (i = 0; (int) i < total_users; i++)
+                        createUser();
+                }
+            }
+            // If repetitions == 0, finalize the user generation
+            else {
+                // Finalization of userGeneratorDay
+                AbstractUserGenerator::finalizeUserGenerator(false);
+                finalization = true;
+            }
         }
 
         cancelEvent(newHourEvent);
 
-        if (!finalization){
-           // If the users appear at the cloud system following a statistical distribution
-           if (strcmp (distribution.c_str(), "no_distribution") != 0){
+        if (!finalization) {
+            // If the users appear at the cloud system following a statistical distribution
+            if (strcmp(distribution.c_str(), "no_distribution") != 0) {
 
-               subinterval_per_granularity.clear();
+                subinterval_per_granularity.clear();
 
-               // j is the number of users to be created
-               j = (*(users_grouped_by_dist.begin() + hour));
+                // j is the number of users to be created
+                j = (*(users_grouped_by_dist.begin() + hour));
 
-               // there are not users at this interval
-               if (j == 0){
+                // there are not users at this interval
+                if (j == 0) {
 
-                   scheduleAt (simTime()+ 3600, newHourEvent);
+                    scheduleAt(simTime() + 3600, newHourEvent);
 
-               // There are only one user. So only it is needed to create a user
-               }else if (j == 1){
-                   scheduleAt (simTime()+ 3600, newHourEvent);
-                   scheduleAt (simTime(), newIntervalEvent);
+                    // There are only one user. So only it is needed to create a user
+                } else if (j == 1) {
+                    scheduleAt(simTime() + 3600, newHourEvent);
+                    scheduleAt(simTime(), newIntervalEvent);
 
-               // There are a group of users to distribute along the subintervals created by granularity..
-               } else {
-                   // k = 3600 sec per hour / j is the instant per create the user
-                   k = 3600 / j;
+                    // There are a group of users to distribute along the subintervals created by granularity..
+                } else {
+                    // k = 3600 sec per hour / j is the instant per create the user
+                    k = 3600 / j;
 
-                   // Creates the array per each next instant to create a user
-                   nextEvent = simTime();
+                    // Creates the array per each next instant to create a user
+                    nextEvent = simTime();
 
-                   for (i = 0; i < j - 1; i++){
-                       nextEvent += k;
-                       subinterval_per_granularity.push_back(nextEvent);
-                   }
+                    for (i = 0; i < j - 1; i++) {
+                        nextEvent += k;
+                        subinterval_per_granularity.push_back(nextEvent);
+                    }
 
-                   scheduleAt (simTime()+ 3600, newHourEvent);
-                   scheduleAt (simTime(), newIntervalEvent);
-               }
+                    scheduleAt(simTime() + 3600, newHourEvent);
+                    scheduleAt(simTime(), newIntervalEvent);
+                }
 
-               hour++;
+                hour++;
 
-           // Schedule the next event, for no distribution when all the time intervals (in hours 60 * 60 = 3600) has passed.
-           }else{
+                // Schedule the next event, for no distribution when all the time intervals (in hours 60 * 60 = 3600) has passed.
+            } else {
 
-               scheduleAt (simTime()+ (3600*time_intervals_H), newHourEvent);
-           }
+                scheduleAt(simTime() + (3600 * time_intervals_H), newHourEvent);
+            }
         } else {
             cancelEvent(newIntervalEvent);
         }
 
     } else {
 
-		showErrorMessage("Error in UserGenerator_cell. Error in name of message: %s ", msg->getName());
+        showErrorMessage(
+                "Error in UserGenerator_cell. Error in name of message: %s ",
+                msg->getName());
 
-	}
+    }
 }
 
-void UserGeneratorDay::userCreateGroups(int intervals, int nusers){
+void UserGeneratorDay::userCreateGroups(int intervals, int nusers) {
 
     double number;
     vector<long int> p;
 
-    const long int nExperiments=nusers * 100;  // number of experiments
+    const long int nExperiments = nusers * 100;  // number of experiments
 
-       for (long int i =0; i < intervals; i ++) p.push_back(0);
+    for (long int i = 0; i < intervals; i++)
+        p.push_back(0);
 
-       for (long int i=0; i<nExperiments; ++i) {
+    for (long int i = 0; i < nExperiments; ++i) {
 
-           number = selectDistribution();
-      //     printf("\n Method[userCreateGroups]: number: %d-------> \n",number);
-         if ((number>=0.0)&&(number<intervals)){
-             (*(p.begin() + ((long int)(round(number)))))++;
-         }
-       }
+        number = selectDistribution();
+        //     printf("\n Method[userCreateGroups]: number: %d-------> \n",number);
+        if ((number >= 0.0) && (number < intervals)) {
+            (*(p.begin() + ((long int) (round(number)))))++;
+        }
+    }
 
-       for (long int i=0; i<intervals; ++i) {
-           users_grouped_by_dist.push_back((long int)(((*(p.begin() + i))*nusers/nExperiments)));
-       }
+    for (long int i = 0; i < intervals; ++i) {
+        users_grouped_by_dist.push_back(
+                (long int) (((*(p.begin() + i)) * nusers / nExperiments)));
+    }
 
-       if (true){
+    if (true) {
 
-           for (int i=0; i<intervals; ++i) {
-               printf("%i - %i\n: [%i]",i, i+1, (*(users_grouped_by_dist.begin() + i)) );
-           }
-       }
+        for (int i = 0; i < intervals; ++i) {
+            printf("%i - %i\n: [%i]", i, i + 1,
+                    (*(users_grouped_by_dist.begin() + i)));
+        }
+    }
 }
 

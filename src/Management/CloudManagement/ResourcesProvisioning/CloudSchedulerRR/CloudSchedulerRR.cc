@@ -71,10 +71,6 @@ void CloudSchedulerRR::setupScheduler() {
 }
 
 void CloudSchedulerRR::schedule() {
-
-    //   if (DEBUG_CLOUD_SCHED)
-    // printf("\n\n\n\n\n\n Method[CLOUD_SCHEDULER_RR]: -------> START SCHEDULE:\n");
-
     //Define ...
     vector<AbstractNode*> selectedNodes;
     vector<VM*> attendedRequest_vms;
@@ -100,9 +96,7 @@ void CloudSchedulerRR::schedule() {
     attendedRequest_vms.clear();
     j = 0;
 
-    // Begin ..
-    //    printf("\n Method[CLOUD_SCHEDULER_RR]: -------> initialize\n");
-
+    // Begin
     // Schedule..
     if (schedulerBlock()) {
 
@@ -174,14 +168,13 @@ void CloudSchedulerRR::schedule() {
                 requestErased = true;
             } else {
                 throw cRuntimeError(
-                        "Error: Operation unknown for CloudScheduler\n");
+                        "Error: Operation unknown for CloudScheduler__RR\n");
             }
 
             if (!requestErased) {
                 j++;
 
             }
-
             requestErased = false;
             req = getRequestByIndex(j);
 

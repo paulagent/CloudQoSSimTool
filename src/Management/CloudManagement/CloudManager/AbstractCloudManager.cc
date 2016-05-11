@@ -612,6 +612,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
         if (attendedRequest_vms.size() > 0) {
             attendedRequest->setState(REQUEST_PENDING);
             user = getUserByModuleID(req->getUid());
+            // uvic this could be a problem if we pass an RequestVM instance instead of AbstractRequest
             user->notify_UserRequestAttendeed(attendedRequest);
         } else {
             delete (attendedRequest);
@@ -805,8 +806,9 @@ VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
 
     VM* vm;
     vm = dynamic_cast<VM*>(cloneVm);
+    cout << "AbstractCloudManager::create_VM---->before call init" <<endl;
     vm->callInitialize();
-
+    cout << "AbstractCloudManager::create_VM---->after call init" <<endl;
     return vm;
 }
 

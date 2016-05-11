@@ -125,10 +125,16 @@ int Vm_VirtualPort_Cell::getConnectionID (int virtualPort){
 		found = false;
 
 	// Get the port
-	for(it = ports.begin(); (it < ports.end()) && (!found); it++){
+		//uvic
+		// icancloud team use it < ports.end() && (!found), however it is not make sense
+	//cout << "Vm_VirtualPort_Cell::getConnectionID virtualPort---->" << virtualPort  <<endl;
+	for(it = ports.begin(); it != ports.end() && (!found); it++){
+printf( "Vm_VirtualPort_Cell::getConnectionID virtualPort---->%d \n" , virtualPort);
 		if ((*it)->vPort == virtualPort){
 			connId = (*it)->connectionID;
 			found = true;
+		//std::cout << "Vm_VirtualPort_Cell::getConnectionID---->" << connId  <<endl;
+			printf( "Vm_VirtualPort_Cell::getConnectionID---->--->%d \n" , connId);
 		}
 	}
 

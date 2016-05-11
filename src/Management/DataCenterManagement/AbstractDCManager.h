@@ -132,9 +132,10 @@ protected:
         /*
          * This method defines the data that will be printed in 'logName' file at 'OUTPUT_ DIRECTORY'
          * if the printEnergyToFile and printEnergyTrace are active
-         */
-        virtual void printEnergyValues() = 0;
 
+
+        virtual void printEnergyValues() = 0;
+ */
         /*
          *  This method is invoked before to finalize the simulation
          */

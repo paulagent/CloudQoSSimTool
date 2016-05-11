@@ -21,7 +21,7 @@ void API_OS::finish(){
 }
 
 void API_OS::startExecution(){
-
+cout << "API_OS::startExecution()---simulation start>"<<endl;
     fromOSGate = gate ("fromOS");
     toOSGate = gate ("toOS");
 }

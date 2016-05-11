@@ -38,10 +38,10 @@ protected:
     bool schedulerUnblock();
 
      /*
-      * To reinsert the request at the position index of the requests queue
-      */
-     void reinsertRequest (AbstractRequest* req, unsigned int index);
+      * To reinsert the request at the posiion index of the requests quetue
 
+     void reinsertRequest (AbstractRequest* req, unsigned int index);
+ */
      /*
       * Returns the set of requests from requestsQueue that id are the same as userModID
       */
