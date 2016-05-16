@@ -47,7 +47,7 @@ void PortAddressTranslation::pat_initialize(string nodeIP) {
     std::srand(std::time(0));
 
     int random_variable = std::rand();
-    user = newUser(random_variable);
+    user = newUser(random_variable+1);
 
     // the node is defined as an vm..
     vm = user->newVM(0);
@@ -178,7 +178,7 @@ User_VirtualPort_Cell* PortAddressTranslation::searchUser(int uId) {
     found = false;
     user_cell = NULL;
     cout << "PortAddressTranslation::searchUser : userID----->" << uId << endl;
-    //  cout << "PortAddressTranslation::searchUser : user_vm_ports.size()---->" << user_vm_ports.size() << endl;
+      cout << "PortAddressTranslation::searchUser : user_vm_ports.size()---->" << user_vm_ports.size() << endl;
 
     for (vector<User_VirtualPort_Cell*>::iterator it = user_vm_ports.begin();
                it != user_vm_ports.end(); ++it) {
@@ -230,20 +230,23 @@ User_VirtualPort_Cell* PortAddressTranslation::newUser(int uId) {
 
     user = new User_VirtualPort_Cell();
     //uvic add
-  cout << "PortAddressTranslation::newUser ----> push back user :   " << uId << "  to user_vm_ports" << endl;
+  //cout << "PortAddressTranslation::newUser ----> push back user :   " << uId << "  to user_vm_ports" << endl;
+   // user = searchUser(uId);
+   // if (user == NULL) {
     user->setUserID(uId);
-
     user_vm_ports.push_back(user);
-    cout << "PortAddressTranslation::newUser ----> user_vm_ports size :   "
-            << user_vm_ports.size() << endl;
+  //  }
 
+    //cout << "PortAddressTranslation::newUser ----> user_vm_ports size :   "
+    //        << user_vm_ports.size() << endl;
+/*
     for (vector<User_VirtualPort_Cell*>::iterator it = user_vm_ports.begin();
             it != user_vm_ports.end(); ++it) {
         cout << ' ' << (*it)->getUserID();
         cout << '\n';
     }
 
-
+*/
 
     return user;
 
@@ -562,7 +565,7 @@ vector<int> PortAddressTranslation::pat_closeVM(int uId, int pId) {
     connectedPorts = false;
     //uvic add
     cout << "PortAddressTranslation::pat_closeVM-----> uid--->" << uId << endl;
-    cout << "PortAddressTranslation::pat_closeVM-----> pid--->" << pId << endl;
+    //cout << "PortAddressTranslation::pat_closeVM-----> pid--->" << pId << endl;
     // Search the user into the structure
     user = searchUser(uId);
 
@@ -602,6 +605,7 @@ vector<int> PortAddressTranslation::pat_closeVM(int uId, int pId) {
         // If the user has not more vms, erase the entry
         if (user->getVM_Size() == 0) {
             deleteUser(uId);
+           // newUser(uId);
         }
     }
 

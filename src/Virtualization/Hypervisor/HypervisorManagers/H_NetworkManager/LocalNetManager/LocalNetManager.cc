@@ -256,8 +256,8 @@ vector<icancloud_App_NET_Message*> LocalNetManager::manage_close_connections(int
 	vector<int> connectionIDs;
 	unsigned int i;
 	vector<icancloud_App_NET_Message*> sm_vector;
-    cout << "LocalNetManager::manage_close_connection-----> uid--->"<< uId<< endl;
-    cout << "LocalNetManager::manage_close_connection-----> pid--->"<< pId<< endl;
+    //cout << "LocalNetManager::manage_close_connection-----> uid--->"<< uId<< endl;
+    //cout << "LocalNetManager::manage_close_connection-----> pid--->"<< pId<< endl;
 	// Init ..
 		connectionIDs.clear();
 		sm_vector.clear();
