@@ -105,7 +105,10 @@ int DataCenterAPI::getSetSize(int nodeIndex, bool storage) {
     if (storage)
         result = storage_nodesMap->getSetQuantity(nodeIndex);
     else
+    {
+        cout <<"DataCenterAPI::getSetSize  ------------------>  result = nodesMap->getSetQuantity(nodeIndex)" << endl;
         result = nodesMap->getSetQuantity(nodeIndex);
+    }
 
     return result;
 }

@@ -536,7 +536,7 @@ Machine* MachinesMap::getMachineByIndex (string machineSetId, int machineIndex){
 		Machine* machine;
 		vector<HeterogeneousSet*>::iterator setIt;
 		bool found;
-
+cout << "MachinesMap::getMachineByIndex (string machineSetId, int machineIndex)" << endl;
 	// Init ..
 		machine = NULL;
 		found = false;
@@ -566,6 +566,8 @@ Machine* MachinesMap::getMachineByIndex (int machineSetIndex, int machineIndex){
 	// Define ..
 		Machine* result;
 		int machineMapSize;
+		cout << "MachinesMap::getMachineByIndex (int machineSetIndex, int machineIndex" << endl;
+
 	// Init ..
 		result = NULL;
         machineMapSize = machineMap.size();

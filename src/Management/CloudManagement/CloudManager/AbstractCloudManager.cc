@@ -549,6 +549,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
 
                 // Start the node (if it is off)
                 if (!(selectedNode->isON())) {
+            cout << "AbstractCloudManager::request_start_vm -----> NODE WAS OFF" << endl;
                     selectedNode->turnOn();
                 }
 
@@ -640,9 +641,9 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
 
     // Init ..
     nodes.clear();
-    //printf(
-    //        "METHOD[AbstractCloudManager::request_shutdown_vm]: VMQuantity ---------------> %d ",
-    //        req->getVMQuantity());
+    printf(
+            "METHOD[AbstractCloudManager::request_shutdown_vm]: VMQuantity ---------------> %d ",
+            req->getVMQuantity());
     // Get the first VM
     while (req->getVMQuantity() != 0) {
 
@@ -684,8 +685,8 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
         }
         // Delete the first VM and proceed if exists any one.
         req->eraseVM(0);
-        // printf("\n Method[Shutdown_VM]: -------> VM %s has shutdown.\n",
-        //         vm->getFullName());
+         printf("\n Method[Shutdown_VM]: -------> VM %s has shutdown.\n",
+                 vm->getFullName());
 
     }
 }

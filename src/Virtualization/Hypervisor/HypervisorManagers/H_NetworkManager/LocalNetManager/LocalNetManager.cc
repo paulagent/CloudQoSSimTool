@@ -22,7 +22,7 @@ LocalNetManager::~LocalNetManager() {
 }
 
 void LocalNetManager::initialize() {
-    cout << "LocalNetManager::initialize()  call PortAddressTranslation() constructor :"<< getHostName() <<endl;
+  //  cout << "LocalNetManager::initialize()  call PortAddressTranslation() constructor :"<< getHostName() <<endl;
 	pat = new PortAddressTranslation();
 	ip_LocalNode.clear();
 

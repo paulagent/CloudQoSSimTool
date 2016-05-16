@@ -34,6 +34,9 @@ void Machine::initialize(){
 
     type->setMemorySize(par("memorySize_MB").longValue() * 1024);
 
+    cout << "Machine::initialize()---->os->setFreeMemory" << type->getMemorySize() << endl;
+    cout << "Machine::initialize()---->os->setFreeStorage" << type->getStorageSize() << endl;
+
     os->setFreeMemory (type->getMemorySize());
     os->setFreeStorage (type->getStorageSize());
 
