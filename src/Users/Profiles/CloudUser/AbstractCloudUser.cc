@@ -717,7 +717,7 @@ void AbstractCloudUser::send_request_to_manager (AbstractRequest* req){
 void AbstractCloudUser::deleteAllVMs(){
 
     int size = wastedVMs.size();
-
+ cout << "AbstractCloudUser::deleteAllVMs()" << endl;
     while(size != 0){
         VM* vm;
         vm = (*(wastedVMs.begin()));

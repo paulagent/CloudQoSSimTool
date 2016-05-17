@@ -685,7 +685,7 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
         }
         // Delete the first VM and proceed if exists any one.
         req->eraseVM(0);
-         printf("\n Method[Shutdown_VM]: -------> VM %s has shutdown.\n",
+         printf("\nAbstractCloudManager:: Method[Shutdown_VM]: -------> VM %s has shutdown.\n",
                  vm->getFullName());
 
     }
@@ -1203,7 +1203,7 @@ void AbstractCloudManager::notify_shutdown_vm(int uId, int pId,
         }
 
     }
-
+//uvic this method never implemented
     freeResources(uId, pId, node);
 
 }
