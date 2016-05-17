@@ -35,8 +35,8 @@ void NodeVL::finish(){
 }
 
 void NodeVL::freeResources (int pId, int uId){
-    cout << "NodeVL::freeResources :pid --ui ---> " << this->getFullName() <<endl;
-    cout << "NodeVL::freeResources :pid --ui ---> " << pId  <<":" <<uId <<endl;
+ //   cout << "NodeVL::freeResources :pid --ui ---> " << this->getFullName() <<endl;
+ //   cout << "NodeVL::freeResources :pid --ui ---> " << pId  <<":" <<uId <<endl;
     hypervisor->freeResources(pId,uId);
     if (getNumOfLinkedVMs() == 0) AbstractNode::freeResources();
 }
@@ -55,15 +55,15 @@ bool NodeVL::testLinkVM (int vmCPUs, int vmMemory, int vmStorage, int vmNetIF, s
          // The maximum number of processes that allow running at node (vms maybe?)
          if  (getNumProcessesRunning() < 1000){
              ok = true;
-             cout << " NodeVL::testLinkVM -----> before mem and stg decrease" << endl;
-             cout << "NodeVL::testLinkVM ---> Free Mem ---->" << os->getFreeMemory() <<endl;
-             cout << "NodeVL::testLinkVM ---> Free stg ---->" << os->getFreeStorage() <<endl;
+       //      cout << " NodeVL::testLinkVM -----> before mem and stg decrease" << endl;
+       //      cout << "NodeVL::testLinkVM ---> Free Mem ---->" << os->getFreeMemory() <<endl;
+        //     cout << "NodeVL::testLinkVM ---> Free stg ---->" << os->getFreeStorage() <<endl;
 
              os->memDecrease(vmMemory);
              os->storageDecrease(vmStorage);
-             cout << "NodeVL::testLinkVM -----> after mem and stg decrease" << endl;
-             cout << "NodeVL::testLinkVM ---> Free Mem ---->" << os->getFreeMemory() <<endl;
-             cout << "NodeVL::testLinkVM ---> Free stg ---->" << os->getFreeStorage() <<endl;
+        //     cout << "NodeVL::testLinkVM -----> after mem and stg decrease" << endl;
+        //     cout << "NodeVL::testLinkVM ---> Free Mem ---->" << os->getFreeMemory() <<endl;
+        //     cout << "NodeVL::testLinkVM ---> Free stg ---->" << os->getFreeStorage() <<endl;
 
 
 
@@ -201,16 +201,16 @@ void NodeVL::turnOn (){
 
     // Decrease the overhead of the hypervisor at system
     double memoryOverhead_MB = hypervisor->getMemoryOverhead();
-    cout <<  "NodeVL::turnOn -----> Full Name---->" << this->getFullName() << endl;
-
-    cout <<  "NodeVL::turnOn ----->hypervisor->getMemoryOverhead()------>" << memoryOverhead_MB << endl;
-    cout << " NodeVL::turnOn -----> before mem overhead decrease---------->" << endl;
-    cout << "NodeVL::turnOn ---> Free Mem ---->" << os->getFreeMemory() <<endl;
+  //  cout <<  "NodeVL::turnOn -----> Full Name---->" << this->getFullName() << endl;
+//
+  //  cout <<  "NodeVL::turnOn ----->hypervisor->getMemoryOverhead()------>" << memoryOverhead_MB << endl;
+  //  cout << " NodeVL::turnOn -----> before mem overhead decrease---------->" << endl;
+  //  cout << "NodeVL::turnOn ---> Free Mem ---->" << os->getFreeMemory() <<endl;
     os->memDecrease(memoryOverhead_MB * 1024);
 
 
-    cout << "NodeVL::turnOn -----> after mem overhead decrease" << endl;
-    cout << "NodeVL::turnOn ---> Free Mem ---->" << os->getFreeMemory() <<endl;
+ //   cout << "NodeVL::turnOn -----> after mem overhead decrease" << endl;
+ //   cout << "NodeVL::turnOn ---> Free Mem ---->" << os->getFreeMemory() <<endl;
 
 
     //turn on the node
@@ -219,7 +219,7 @@ void NodeVL::turnOn (){
 }
 
 void NodeVL::turnOff (){
-    cout <<  "NodeVL::turnOff -----> Full Name---->" << this->getFullName() << endl;
+ //   cout <<  "NodeVL::turnOff -----> Full Name---->" << this->getFullName() << endl;
 
     Node::turnOff();
 }

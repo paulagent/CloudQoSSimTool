@@ -807,9 +807,9 @@ VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
 
     VM* vm;
     vm = dynamic_cast<VM*>(cloneVm);
-    cout << "AbstractCloudManager::create_VM---->before call init" <<endl;
+  //  cout << "AbstractCloudManager::create_VM---->before call init" <<endl;
     vm->callInitialize();
-    cout << "AbstractCloudManager::create_VM---->after call init" <<endl;
+  //  cout << "AbstractCloudManager::create_VM---->after call init" <<endl;
     return vm;
 }
 

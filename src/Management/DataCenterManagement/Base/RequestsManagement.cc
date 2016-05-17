@@ -161,7 +161,7 @@ AbstractRequest* RequestsManagement::getRequestByIndex(unsigned int index) {
 }
 
 int RequestsManagement::numPendingRequests() {
-cout << "RequestsManagement::numPendingRequests" << requestsQueue.size()<<endl;
+//cout << "RequestsManagement::numPendingRequests" << requestsQueue.size()<<endl;
     return requestsQueue.size();
 
 }
@@ -226,7 +226,7 @@ void RequestsManagement::blockArrivalRequests(bool blocked) {
         //  AbstractRequest* req1= *requestsQueue.end();
         // cout << "RequestsManagement::blockArrivalRequests----> requestsQueue.size() " << requestsQueue.size() <<endl;
         //  unsigned int i=0;
-         cout << "RequestsManagement::blockArrivalRequests----> temporalRequestsQueue.size()" <<temporalRequestsQueue.size()<<endl;
+       //  cout << "RequestsManagement::blockArrivalRequests----> temporalRequestsQueue.size()" <<temporalRequestsQueue.size()<<endl;
         for (std::vector<AbstractRequest*>::iterator it =
                 temporalRequestsQueue.begin();
                 it != temporalRequestsQueue.end(); ++it) {
@@ -248,7 +248,7 @@ void RequestsManagement::blockArrivalRequests(bool blocked) {
 
         //  requestsQueue.push_back(*(temporalRequestsQueue.begin()+i));
 
-            cout << "RequestsManagement::blockArrivalRequests----> requestsQueue.size() " << requestsQueue.size() <<endl;
+      //      cout << "RequestsManagement::blockArrivalRequests----> requestsQueue.size() " << requestsQueue.size() <<endl;
 
         //cout << "RequestsManagement::blockArrivalRequests----> req->getUid()" << req->getUid() <<endl;
 

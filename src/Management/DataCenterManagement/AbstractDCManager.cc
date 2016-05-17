@@ -170,9 +170,9 @@ void AbstractDCManager::processSelfMessage (cMessage *msg){
     // Begin ..
         if(!strcmp (msg->getName(), SM_APP_ALARM.c_str())){
                //printf("call schedule");
-            cout << "AbstractDCManager::processSelfMessage before schedule()" << endl;
+           // cout << "AbstractDCManager::processSelfMessage before schedule()" << endl;
             schedule();
-            cout << "AbstractDCManager::processSelfMessage after schedule()" << endl;
+          //  cout << "AbstractDCManager::processSelfMessage after schedule()" << endl;
             if ((checkFinalization()) && (!simulationPerTime)){
                 cancelAndDelete(smAlarm);
                 finalizeManager();

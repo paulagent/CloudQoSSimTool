@@ -178,14 +178,14 @@ User_VirtualPort_Cell* PortAddressTranslation::searchUser(int uId) {
     found = false;
     user_cell = NULL;
 
-    cout << "PortAddressTranslation::searchUser : userID----->" << uId << endl;
-      cout << "PortAddressTranslation::searchUser : user_vm_ports.size()---->" << user_vm_ports.size() << endl;
+  // cout << "PortAddressTranslation::searchUser : userID----->" << uId << endl;
+   //   cout << "PortAddressTranslation::searchUser : user_vm_ports.size()---->" << user_vm_ports.size() << endl;
 
 
     for (vector<User_VirtualPort_Cell*>::iterator it = user_vm_ports.begin();
                it != user_vm_ports.end(); ++it) {
    //        cout <<" PortAddressTranslation::searchUser : userID---->" << (*it)->getUserID();
-           cout << '\n';
+    //       cout << '\n';
        }
 
 
