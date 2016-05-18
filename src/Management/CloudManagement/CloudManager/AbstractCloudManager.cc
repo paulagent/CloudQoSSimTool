@@ -1165,6 +1165,20 @@ void AbstractCloudManager::notifyFSFormatted(int uId, int pId,
         }
     }
 }
+void AbstractCloudManager:: freeResources (int uId, int pId, AbstractNode* computingNode) {
+
+       cout << "AbstractCloudManager:: freeResources :pid --ui ---> " << this->getFullName() <<endl;
+        cout << "AbstractCloudManager:: freeResources :pid --ui ---> " << pId  <<":" <<uId <<endl;
+        hypervisor->freeResources(pId,uId);
+        if (getNumOfLinkedVMs() == 0) computingNode->freeResources();
+
+
+
+
+}
+
+
+
 
 void AbstractCloudManager::notify_shutdown_vm(int uId, int pId,
         AbstractNode* node) {
