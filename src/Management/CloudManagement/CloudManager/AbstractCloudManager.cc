@@ -1167,10 +1167,15 @@ void AbstractCloudManager::notifyFSFormatted(int uId, int pId,
 }
 void AbstractCloudManager:: freeResources (int uId, int pId, AbstractNode* computingNode) {
 
+
+    NodeVL* node;
+
+    node = dynamic_cast<NodeVL*>(computingNode);
+
        cout << "AbstractCloudManager:: freeResources :pid --ui ---> " << this->getFullName() <<endl;
         cout << "AbstractCloudManager:: freeResources :pid --ui ---> " << pId  <<":" <<uId <<endl;
-        hypervisor->freeResources(pId,uId);
-        if (getNumOfLinkedVMs() == 0) computingNode->freeResources();
+        node->freeResources(pId,uId);
+        if (node->getNumOfLinkedVMs() == 0) computingNode->freeResources();
 
 
 

@@ -345,8 +345,8 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
                             // save the state
 
                             // erase from vector
-                            j=0;
-                            break;
+
+                          //  break;
                         } else {
                             ++j;
 
