@@ -701,6 +701,7 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
 
          printf("\n Method[Shutdown_VM]: -------> VM %s has added to pending shutdown queue\n", vm->getFullName());
 
+
     }
 }
 
@@ -1186,6 +1187,25 @@ void AbstractCloudManager::notifyFSFormatted(int uId, int pId,
         }
     }
 }
+void AbstractCloudManager:: freeResources (int uId, int pId, AbstractNode* computingNode) {
+
+
+    NodeVL* node;
+
+    node = dynamic_cast<NodeVL*>(computingNode);
+
+       cout << "AbstractCloudManager:: freeResources :pid --ui ---> " << this->getFullName() <<endl;
+        cout << "AbstractCloudManager:: freeResources :pid --ui ---> " << pId  <<":" <<uId <<endl;
+        node->freeResources(pId,uId);
+        if (node->getNumOfLinkedVMs() == 0) computingNode->freeResources();
+
+
+
+
+}
+
+
+
 
 void AbstractCloudManager::notify_shutdown_vm(int uId, int pId,
         AbstractNode* node) {
@@ -1224,7 +1244,7 @@ void AbstractCloudManager::notify_shutdown_vm(int uId, int pId,
         }
 
     }
-
+//uvic this method never implemented
     freeResources(uId, pId, node);
 
 }

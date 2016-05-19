@@ -297,8 +297,10 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
                     // vector<RunningVM*> runVM= AbstractCloudManager::runVM;
                      printf("\n\n\n\n Method[CLOUD_SCHEDULER_RR::selectNode]: -------> Before our loop\n");
                     // uvic add
+
                      cout << "Method[CLOUD_SCHEDULER_RR::selectNode]: while loop----> runvm size--------->" << AbstractCloudManager::runVM.size()<<endl;
                     while (j < int(AbstractCloudManager::runVM.size())) {
+
                         clock_t t = clock(); // we are not sure about current time
 
                     //     printf("\n Method[CLOUD_SCHEDULER_RR::selectNode]:NO_Runiing_VM -------> %ld \n", runVM.size());
@@ -364,21 +366,20 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
 
 
 
+                          //  break;
                         } else {
                             ++j;
 
                         }
 
                     }
-
-
-                    printf("\n Method[CLOUD_SCHEDULER_RR]: -------> After our loop\n");
+                   printf("\n Method[CLOUD_SCHEDULER_RR]: -------> After our loop\n");
 
                    if (j== int(AbstractCloudManager::runVM.size()) ){
                          printf("The algorithm has travel by all the values and it not reach a solution. So, the node is null.");
                          found = true;
                          node = NULL;
-                     //   break;
+                        break;
                           }
         }
          }
