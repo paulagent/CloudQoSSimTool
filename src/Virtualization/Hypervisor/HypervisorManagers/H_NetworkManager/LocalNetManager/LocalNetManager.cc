@@ -263,7 +263,6 @@ vector<icancloud_App_NET_Message*> LocalNetManager::manage_close_connections(int
 		sm_vector.clear();
 
 	// Delete the vm from the virtual manager ipUserSet
-		connectionIDs = getConnectionsIDs(uId, pId);
 		   cout << "LocalNetManager::manage_close_connection-----> Delete the vm from the virtual manager ipUserSet--->"<< endl;
 
 		netManagerPtr->deleteVirtualIP_by_VMID(pId, uId);
@@ -274,6 +273,7 @@ vector<icancloud_App_NET_Message*> LocalNetManager::manage_close_connections(int
 		netManagerPtr->freeAllPortsOfVM(ip_LocalNode.c_str(), pId, uId);
 
 	// get all the connectionIDs to close the connections from the Local net manager (PAT)..
+        connectionIDs = getConnectionsIDs(uId, pId);
 
         cout << "LocalNetManager::manage_close_connection----->connectionIDs.size()--->"<< connectionIDs.size()<< endl;
 
