@@ -112,6 +112,8 @@ void H_NET_SCHED_FIFO::schedulingNET(icancloud_Message *sm){
 
             else if (operation == SM_CLOSE_VM_CONNECTIONS){
 
+                cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->    operation == SM_CLOSE_VM_CONNECTIONS" << endl;
+
                 sm_close = localNetManager->manage_close_connections(vmID, userID);
 
                 for (i = 0; i < sm_close.size(); i++){

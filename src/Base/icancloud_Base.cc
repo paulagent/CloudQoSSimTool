@@ -177,14 +177,18 @@ void icancloud_Base::finish (){
 void icancloud_Base::sendRequestMessage (icancloud_Message *sm, cGate* gate){
 
 	// If trace is empty, add current hostName, module and request number
-   // cout << "icancloud_Base::sendRequestMessage  ----->ArrivalModule-----> "<< sm->getArrivalModule() << endl;
+  //  cout << "icancloud_Base::sendRequestMessage  ----->ArrivalModule-----> "<< sm->getArrivalModule() << endl;
+  //  cout << "icancloud_Base::sendRequestMessage  ----->message operation-----> "<< sm->getOperation() << endl;
 
 	if (sm->isTraceEmpty()){
 		sm->addNodeToTrace (getHostName());
 		updateMessageTrace (sm);
 	}
 	// Send the message!
+  //  cout << "icancloud_Base::sendRequestMessage  ----->Send the message to the gate!----> "<<  gate->getFullName() <<endl;
+
 	send (sm, gate);
+ //   cout << "icancloud_Base::sendRequestMessage  ----->Process next request!----> "<< endl;
 
 	// Process next request!
 	processCurrentRequestMessage ();
@@ -943,7 +947,9 @@ void icancloud_Base::processCurrentRequestMessage (){
 				sm = check_and_cast<icancloud_Message *>(unqueuedMessage);
 
 				// Process
-				//cout<<"icancloud_Base::processCurrentRequestMessage "<<endl;
+			//	cout<<"icancloud_Base::processCurrentRequestMessage ----------------> sm operation---------->"<< sm->getOperation() <<endl;
+            //    cout<<"icancloud_Base::processCurrentRequestMessage ----------------> processRequestMessage ---------->" <<endl;
+
 				processRequestMessage (sm);
 			}
 		}

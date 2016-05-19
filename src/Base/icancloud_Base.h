@@ -246,6 +246,11 @@ class icancloud_Base: public cSimpleModule{
          */
 		vector<string> divide(const char* inputString, char separator);
 
+		 /**
+		        * Get the hostname of the node that contains current module.
+		        * @return Node's hostname that contains the module which invoked this method.
+		        */
+		        string getHostName ();
 	protected:
 
 	   /**
@@ -254,11 +259,7 @@ class icancloud_Base: public cSimpleModule{
 		*/
 		void updateMessageTrace (icancloud_Message *sm);
 
-	   /**
-		* Get the hostname of the node that contains current module.
-		* @return Node's hostname that contains the module which invoked this method.
-		*/
-		string getHostName ();
+
 
 	   /**
 		* Get the out Gate to the module that sent <b>msg</b>.

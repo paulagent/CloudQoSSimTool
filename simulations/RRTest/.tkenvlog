@@ -221,7 +221,11 @@ Tcl error: moduleinspector.cc#631: ptr0x2faf7e0 not found
 ----------------------------------------------------------------------
 
 
+<<<<<<< HEAD
+Tcl error: moduleinspector.cc#631: ptr0x31f82d0 not found
+=======
 Tcl error: moduleinspector.cc#631: ptr0x3016d00 not found
+>>>>>>> d3a50367f37253e7db7198ea301392d32cc18dc9
     while executing
 "error "$tag not found""
     (procedure "ModuleInspector:getSubmodCoords" line 4)
@@ -229,6 +233,9 @@ Tcl error: moduleinspector.cc#631: ptr0x3016d00 not found
 "ModuleInspector:getSubmodCoords $c $modptr"
     (procedure "ModuleInspector:drawNextEventMarker" line 2)
     invoked from within
+<<<<<<< HEAD
+"ModuleInspector:drawNextEventMarker .network.c ptr0x31f82d0 1"
+=======
 "ModuleInspector:drawNextEventMarker .network.c ptr0x3016d00 1"
 
 
@@ -241,11 +248,15 @@ Tcl error: moduleinspector.cc#631: ptr0x4620d08 not found
     (procedure "ModuleInspector:drawNextEventMarker" line 2)
     invoked from within
 "ModuleInspector:drawNextEventMarker .network.c ptr0x4620d08 1"
+>>>>>>> d3a50367f37253e7db7198ea301392d32cc18dc9
 
 
 ----------------------------------------------------------------------
 
 
+<<<<<<< HEAD
+Tcl error: moduleinspector.cc#631: ptr0x31ec750 not found
+=======
 Tcl error: moduleinspector.cc#631: ptr0x30172b0 not found
     while executing
 "error "$tag not found""
@@ -269,6 +280,7 @@ Tcl error: moduleinspector.cc#631: ptr0x3039a00 not found
 
 
 Tcl error: moduleinspector.cc#631: ptr0x3039a00 not found
+>>>>>>> d3a50367f37253e7db7198ea301392d32cc18dc9
     while executing
 "error "$tag not found""
     (procedure "ModuleInspector:getSubmodCoords" line 4)
@@ -276,7 +288,11 @@ Tcl error: moduleinspector.cc#631: ptr0x3039a00 not found
 "ModuleInspector:getSubmodCoords $c $modptr"
     (procedure "ModuleInspector:drawNextEventMarker" line 2)
     invoked from within
+<<<<<<< HEAD
+"ModuleInspector:drawNextEventMarker .network.c ptr0x31ec750 1"
+=======
 "ModuleInspector:drawNextEventMarker .network.c ptr0x3039a00 2"
+>>>>>>> d3a50367f37253e7db7198ea301392d32cc18dc9
 
 
 ----------------------------------------------------------------------
