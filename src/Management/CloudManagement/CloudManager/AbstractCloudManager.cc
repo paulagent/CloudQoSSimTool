@@ -586,7 +586,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 //    started_VM=null;
                 started_VM->vm = vmNew;
                 started_VM->start_time = now;
-                started_VM->end_time = now + 2000000; //clocks per secs
+                started_VM->end_time = now + 500000; //clocks per secs
                 started_VM->userID = vmNew->getUid();
                 runVM.push_back(started_VM);
                 // If the linked is incorrect, Zahra: No, I think if the link is correct
@@ -648,6 +648,7 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
     while (req->getVMQuantity() != 0) {
 
         vm = req->getVM(0);
+        cout << "AbstractCloudManager::request_shutdown_vm-----> vm to be shutdown---->" << vm->getId() <<endl;
 
         // Dup the request to storage in the queue waiting for format FS and close connections
 
@@ -666,9 +667,18 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
             throw cRuntimeError(
                     "AbstractCloudManager::notify_shutdown_vm->Error(req_copy). Casting the request\n");
 
+
+        /*
+                     *  This method is invoked when a shutdown request is going to be executed. It has to return a
+                     *  vector with the nodes where the vm has remote storage, or an empty vector if it only has
+                     *  local storage. It is the scheduler responsibility, the managing and control of where are the vms allocated
+                     *  and which nodes it is using for remote storage.
+                     */
         nodes = remoteShutdown(base);
         nodes.push_back(
                 getNodeByIndex(vm->getNodeSetName(), vm->getNodeName()));
+
+        cout << "AbstractCloudManager::request_shutdown_vm-----> Storagenodes size ---->" << nodes.size() <<endl;
 
         // Remote storage control
         formatFSFromNodes(nodes, vm->getUid(), vm->getId(),
@@ -680,13 +690,16 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
         int id = vm->getId();
         for (int k = 0; k < (int) runVM.size(); ++k) {
             if (runVM.at(k)->vm->getId() == id) {
+                cout << "AbstractCloudManager::request_shutdown_vm-----> if vm job finishes before time slice elapse" << endl;
+
                 runVM.erase(runVM.begin() + k);
             }
         }
         // Delete the first VM and proceed if exists any one.
         req->eraseVM(0);
-         printf("\n Method[Shutdown_VM]: -------> VM %s has shutdown.\n",
-                 vm->getFullName());
+        cout << "AbstractCloudManager::request_shutdown_vm-----> Delete the first VM and proceed if exists any one. ---->" <<endl;
+
+         printf("\n Method[Shutdown_VM]: -------> VM %s has added to pending shutdown queue\n", vm->getFullName());
 
     }
 }
@@ -731,6 +744,7 @@ void AbstractCloudManager::closeVMConnections(vector<AbstractNode*> nodes,
     string nodeSetName;
     NodeVL* node;
     AbstractCloudManager::PendingConnectionDeletion* pendingConnectionUnit;
+    cout << "AbstractCloudManager::closeVMConnections----->" <<endl;
 
     // Init ..
     // Create the pending remote storage deletion element
@@ -738,17 +752,24 @@ void AbstractCloudManager::closeVMConnections(vector<AbstractNode*> nodes,
             new AbstractCloudManager::PendingConnectionDeletion();
     pendingConnectionUnit->uId = vm->getUid();
     pendingConnectionUnit->pId = vm->getPid();
+    cout << "AbstractCloudManager::closeVMConnections----->pendingConnectionUnit->uId = vm->getUid()-------->"<<pendingConnectionUnit->uId  <<endl;
+
+    cout << "AbstractCloudManager::closeVMConnections----->pendingConnectionUnit->pId = vm->getPid()-------->"<<pendingConnectionUnit->pId <<endl;
 
     // The remote nodes and the local.
     pendingConnectionUnit->connectionsQuantity = nodes.size();
+    cout << "AbstractCloudManager::closeVMConnections----->pendingConnectionUnit->connectionsQuantity-------->"<<pendingConnectionUnit->connectionsQuantity <<endl;
 
     // Insert into the pendingRemoteStorageDeletion vector
+
     connectionsDeletion.push_back(pendingConnectionUnit);
+    cout << "AbstractCloudManager::closeVMConnections-----> Insert into the connectionsDeletion vector"<<endl;
 
     // The vm has remote storage
 
     if (nodes.size() != 0) {
         for (i = 0; i < nodes.size(); i++) {
+            cout << "AbstractCloudManager::closeVMConnections-----> The vm has remote storage"<<endl;
 
             node = dynamic_cast<NodeVL*>((*(nodes.begin() + i)));
 
@@ -1180,7 +1201,7 @@ void AbstractCloudManager::notify_shutdown_vm(int uId, int pId,
     found = false;
 
 // Begin ..
-
+ cout << "AbstractCloudManager::notify_shutdown_vm" << endl;
     for (i = 0; (!found) && (i < (reqPendingToDelete.size()));) {
 
         req = (*(reqPendingToDelete.begin() + i));
@@ -1230,6 +1251,7 @@ void AbstractCloudManager::notifyVMConnectionsClosed(int uId, int pId,
     pending_found = false;
     pendingConnections = 0;
     pendingRSD = -1;
+    cout << "AbstractCloudManager::notifyVMConnectionsClosed" << endl;
 
     // Get if there are pending connections..
     for (it = connectionsDeletion.begin();

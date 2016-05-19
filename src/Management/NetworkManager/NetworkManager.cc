@@ -166,7 +166,7 @@ void NetworkManager::deleteVirtualIP_by_VMID(int vmID, int userID){
 	bool found;
 	int vm_id;
 	string hole;
-   // cout << "NetworkManager::deleteVirtualIP_by_VMID"  << endl;
+    cout << "NetworkManager::deleteVirtualIP_by_VMID"  << endl;
 
 	found = false;
 
