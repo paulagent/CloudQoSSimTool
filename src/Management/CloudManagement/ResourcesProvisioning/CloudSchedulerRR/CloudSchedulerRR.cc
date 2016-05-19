@@ -181,7 +181,7 @@ void CloudSchedulerRR::schedule() {
             req = getRequestByIndex(j);
 
         }
-
+        scheduleRR();
         schedulerUnblock();
     }
 
@@ -228,7 +228,7 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
                       //DANGER: INFINITE LOOP
          if (DEBUG_CLOUD_SCHED) printf("\n Method[SCHEDULER_ROUNDROBIN]:In Searching Loop \n");
          printf("\n Method[SCHEDULER_ROUNDROBIN]: setInitial1111------>%d \n", setInitial);
-         if (setInitial < getMapSize()) {
+
          positionInitial = currentNodeIndex;
         //    if (setInitial)
             printf("\n Method[SCHEDULER_ROUNDROBIN]: setInitial------>%d \n", setInitial);
@@ -272,101 +272,26 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
                 currentNodeType = setInitial;
             } else {
                 currentNodeType = 0;
-                //uvic
-              //  --setInitial;
+
 
             }
-         /*   if (setInitial == getMapSize()) {
-                break;
-            }*/
-        }}
-         printf("\n Method[SCHEDULER_ROUNDRO positionInitial,currentNodeIndex ------>%d, %d \n",positionInitial,currentNodeIndex);
-        // The algorithm has travel by all the values and it not reach a solution. So, the node is null.
-        //  if ((positionInitial == currentNodeIndex) && (currentNodeType == setInitial)){
-        if ((positionInitial >= currentNodeIndex) && (!found) && (setInitial == getMapSize())) {
-
-                       int    j = 0;
-                    // vector<RunningVM*> runVM= AbstractCloudManager::runVM;
-                     printf("\n\n\n\n Method[CLOUD_SCHEDULER_RR::selectNode]: -------> Before our loop\n");
-                    // uvic add
-                     cout << "Method[CLOUD_SCHEDULER_RR::selectNode]: while loop" << AbstractCloudManager::runVM.size()<<endl;
-                    while (j < int(AbstractCloudManager::runVM.size())&& AbstractCloudManager::runVM.size()!= 0) {
-                        clock_t t = clock(); // we are not sure about current time
-
-                          printf("\n Method[CLOUD_SCHEDULER_RR::selectNode]:NO_Runiing_VM -------> %ld \n", runVM.size());
-
-                        RunningVM* vm;
-                        vm = AbstractCloudManager::runVM.at(j);
-                        if (t >= vm->end_time)   // we need to shutdown vm
-                                {
-
-                              printf("\n Method[CLOUD_SCHEDULER_RR ::selectNode]: -------> t is greater than  vm end_time, we need to shut down vm\n");
-
-                            // make new request
-                            AbstractRequest* new_req;
-                            RequestVM* new_req_vm = new RequestVM();
-
-                            string a = vm->vm->getFullName();
-                            string delimeter = ":";
-                            string token = a.substr(0, a.find(delimeter));
-                            //      cout << " Method[CLOUD_SCHEDULER_RR]----> token --->" << token << endl;
-                            new_req_vm->setNewSelection(token.c_str(), 1);
-                            new_req_vm->setPid(vm->vm->getPid());
-                            new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
-                            // add new request to temp queue
-
-
-
-                            // if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to start VM has sent.\n");
-
-                            // shutdown VM
-
-                            RequestVM* new_req_vm2 = new RequestVM();
-                            new_req_vm2->setUid(vm->userID);
-                            new_req_vm2->setOperation(REQUEST_FREE_RESOURCES);
-                            vector<VM*> vSet;
-                            vSet.push_back(vm->vm);
-                            new_req_vm2->setVectorVM(vSet);
-                            // AbstractCloudManager::runVM.erase(AbstractCloudManager::runVM.begin()+j);
-                            //   if (DEBUG_CLOUD_SCHED){
-                            //      printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to Shutdown VM %s has been sent.\n",vm->vm->getFullName());
-
-                            //        }
-                            request_shutdown_vm(new_req_vm2);
-
-
-                            AbstractUser* user;
-                                                    AbstractCloudUser* cl_user;
-                                                    user = getUserById(vm->userID);
-                                                    cl_user = check_and_cast<AbstractCloudUser*>(user);
-                                                    cl_user->startVMs(new_req);   // Add new req to the end of the queue
-
-            // uvic add end
-                            // save the state
-
-                            // erase from vector
-
-                          //  break;
-                        } else {
-                            ++j;
-
-                        }
-
-                    }
-                    if ( int(AbstractCloudManager::runVM.size()) ==0 ){
-                                               printf(
-                                                               "The algorithm has travel by all the values and it not reach a solution. So, the node is null.");
-                                                                                    found = true;
-                                                                                    node = NULL;
-                                                                                    break;
-                                           }
-                     printf("\n Method[CLOUD_SCHEDULER_RR]: -------> After our loop\n");
-
-
 
         }
+
+        // The algorithm has travel by all the values and it not reach a solution. So, the node is null.
+        //  if ((positionInitial == currentNodeIndex) && (currentNodeType == setInitial)){
+        if ((positionInitial >= currentNodeIndex) && (!found)) {
+  printf( "The algorithm has travel by all the values and it not reach a solution. So, the node is null.");
+                                                                                           found = true;
+                                                                                           node = NULL;
+
+                                                  }
+
+
+
+
     }
-          printf("\n Method[SCHEDULER_ROUNDROBIN]: selectednode is:------> \n");
+
 
     return node;
 
@@ -832,3 +757,94 @@ int CloudSchedulerRR::selectNodeSet(string setName, int vmcpu, int vmmemory) {
 
 }
 
+
+void CloudSchedulerRR:: scheduleRR(){
+    int    j = 0;
+     // vector<RunningVM*> runVM= AbstractCloudManager::runVM;
+     printf("\n\n\n\n Method[CLOUD_SCHEDULER_RR::selectNode]: -------> Before our loop\n");
+                      // uvic add
+                       cout << "Method[CLOUD_SCHEDULER_RR::selectNode]: while loop" << AbstractCloudManager::runVM.size()<<endl;
+                      while (j < int(AbstractCloudManager::runVM.size()) && AbstractCloudManager::runVM.size() !=0 ) {
+                          clock_t t = clock(); // we are not sure about current time
+
+                            printf("\n Method[CLOUD_SCHEDULER_RR::selectNode]:NO_Runiing_VM -------> %ld \n", runVM.size());
+
+                          RunningVM* vm;
+                          vm = AbstractCloudManager::runVM.at(j);
+                          if (t >= vm->end_time)   // we need to shutdown vm
+                                  {
+
+                                printf("\n Method[CLOUD_SCHEDULER_RR ::selectNode]: -------> t is greater than  vm end_time, we need to shut down vm\n");
+
+                              // make new request
+                              AbstractRequest* new_req;
+                              RequestVM* new_req_vm = new RequestVM();
+
+                              string a = vm->vm->getFullName();
+                              string delimeter = ":";
+                              string token = a.substr(0, a.find(delimeter));
+                              //      cout << " Method[CLOUD_SCHEDULER_RR]----> token --->" << token << endl;
+                              new_req_vm->setNewSelection(token.c_str(), 1);
+                              new_req_vm->setPid(vm->vm->getPid());
+                              new_req_vm->setUid(vm->userID);
+                              new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
+                              // add new request to temp queue
+
+
+
+                              // if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to start VM has sent.\n");
+
+                              // shutdown VM
+
+                              RequestVM* new_req_vm2 = new RequestVM();
+                              new_req_vm2->setUid(vm->userID);
+                              new_req_vm2->setOperation(REQUEST_FREE_RESOURCES);
+                              vector<VM*> vSet;
+                              vSet.push_back(vm->vm);
+                              new_req_vm2->setVectorVM(vSet);
+                              // AbstractCloudManager::runVM.erase(AbstractCloudManager::runVM.begin()+j);
+                              //   if (DEBUG_CLOUD_SCHED){
+                              //      printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to Shutdown VM %s has been sent.\n",vm->vm->getFullName());
+
+                              //        }
+                              request_shutdown_vm(new_req_vm2);
+
+
+                              AbstractUser* user;
+                                                      AbstractCloudUser* cl_user;
+                                                      user = getUserById(vm->userID);
+                                                      cl_user = check_and_cast<AbstractCloudUser*>(user);
+                                                      cl_user->startVMs(new_req);   // Add new req to the end of the queue
+
+              // uvic add end
+                              // save the state
+
+                              // erase from vector
+
+                              //break;
+                          } else {
+                              ++j;
+
+                          }
+
+                      }
+                      printf("\n Method[CLOUD_SCHEDULER_RR]: -------> After our loop\n");
+}
+/*
+void CloudSchedulerRR:: handleMessage (cMessage *msg) {
+
+
+
+if(!strcmp (msg->getName(), SM_APP_ALARM.c_str())){
+             //printf("call schedule");
+         // cout << "AbstractDCManager::processSelfMessage before schedule()" << endl;
+          scheduleRR();
+          smAlarm = new cMessage (SM_APP_ALARM.c_str());
+        //  cout << "AbstractDCManager::processSelfMessage after schedule()" << endl;
+     //  if (!smAlarm->isScheduled())
+              scheduleAt(simTime()+timeBetweenScheduleEvents_s, smAlarm);
+
+      }
+
+}
+*/
