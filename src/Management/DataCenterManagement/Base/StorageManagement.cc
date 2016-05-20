@@ -222,7 +222,7 @@ void StorageManagement::formatFSFromNodes (vector<AbstractNode*> nodes, int uId,
     unsigned int i;
 
     // Init ..
-
+cout <<" StorageManagement::formatFSFromNodes"<<endl;
     // Create the pending remote storage deletion element
     pendingRemoteUnit = new PendingRemoteStorageDeletion();
     pendingRemoteUnit->uId = uId;
@@ -231,7 +231,7 @@ void StorageManagement::formatFSFromNodes (vector<AbstractNode*> nodes, int uId,
 
     // The vm has remote storage
     if (nodes.size() != 0){
-
+        cout <<" StorageManagement::formatFSFromNodes-----------> The vm has remote storage"<<endl;
         for (i = 0; i < nodes.size(); i++){
             (*(nodes.begin()+i))->deleteUserFSFiles(uId, pId);
             pendingRemoteUnit->remoteStorageQuantity++;
@@ -239,11 +239,15 @@ void StorageManagement::formatFSFromNodes (vector<AbstractNode*> nodes, int uId,
         }
 
         // Insert into the pendingRemoteStorageDeletion vector
+        cout <<" StorageManagement::formatFSFromNodes----------->  Insert into the pendingRemoteStorageDeletion vector"<<endl;
+
             pendingRemoteStorageDeletion.push_back(pendingRemoteUnit);
     }
     // The vm has only local storage
     else{
         // Insert into the pendingRemoteStorageDeletion vector
+        cout <<" StorageManagement::formatFSFromNodes-----------> The vm has only local storage"<<endl;
+
             pendingRemoteUnit->remoteStorageQuantity++;
             pendingRemoteStorageDeletion.push_back(pendingRemoteUnit);
             icancloud_Message* msg;
@@ -257,7 +261,10 @@ void StorageManagement::formatFSFromNodes (vector<AbstractNode*> nodes, int uId,
 }
 
 void StorageManagement::notifyManager(icancloud_Message* msg){
-    throw cRuntimeError ("StorageManagement->to be implemented");
+
+    cout <<" StorageManagement::notifyManager------------>to be implemented"<<endl;
+
+    //throw cRuntimeError ("StorageManagement->to be implemented");
 }
 
 void StorageManagement::connection_realized (StorageRequest* attendeed_req){
