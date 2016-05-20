@@ -181,7 +181,7 @@ void CloudSchedulerRR::schedule() {
             req = getRequestByIndex(j);
 
         }
-        scheduleRR();
+
         schedulerUnblock();
     }
 
@@ -291,7 +291,7 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
 
 
     }
-
+if (node ==NULL) scheduleRR();
 
     return node;
 
@@ -821,7 +821,7 @@ void CloudSchedulerRR:: scheduleRR(){
 
                               // erase from vector
 
-                              //break;
+                              break;
                           } else {
                               ++j;
 
