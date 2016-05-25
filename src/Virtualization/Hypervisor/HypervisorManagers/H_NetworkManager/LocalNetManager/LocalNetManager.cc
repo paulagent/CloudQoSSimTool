@@ -235,7 +235,7 @@ void LocalNetManager::connectionStablished(icancloud_Message* sm){
 		sm_net->setVirtual_localIP(localIP.c_str());
 
 	// Set the connection stablished in the port address translator of the local node
-		virtual_localPort = pat->pat_connectionStablished(sm);
+	//	virtual_localPort = pat->pat_connectionStablished(sm);
 
 	// Register the port in the net manager for possible ask for the port state by other nodes
 		netManagerPtr->registerPort(uId, ip_LocalNode, vmID, localPort, virtual_localPort, CONNECT);
@@ -263,6 +263,10 @@ vector<icancloud_App_NET_Message*> LocalNetManager::manage_close_connections(int
 		sm_vector.clear();
 
 	// Delete the vm from the virtual manager ipUserSet
+<<<<<<< HEAD
+=======
+
+>>>>>>> fixRR
 		   cout << "LocalNetManager::manage_close_connection-----> Delete the vm from the virtual manager ipUserSet--->"<< endl;
 
 		netManagerPtr->deleteVirtualIP_by_VMID(pId, uId);

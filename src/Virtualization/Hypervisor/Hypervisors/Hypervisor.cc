@@ -70,7 +70,9 @@ void Hypervisor::setVM(cGate** iGateCPU, cGate** oGateCPU, cGate* iGateMemI,
 
 }
 
-void Hypervisor::freeResources(int uId, int pId) {
+void Hypervisor::freeResources(int pId, int uId) {
+    cout << "Hypervisor::freeResources :pid --ui ---> " << pId  <<":" <<uId <<endl;
+
     cpuM->freeVM(uId, pId);
     memM->freeVM(uId, pId);
     netM->freeVM(uId, pId);

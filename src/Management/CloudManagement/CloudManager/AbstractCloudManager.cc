@@ -1194,7 +1194,7 @@ void AbstractCloudManager:: freeResources (int uId, int pId, AbstractNode* compu
 
     node = dynamic_cast<NodeVL*>(computingNode);
 
-       cout << "AbstractCloudManager:: freeResources :pid --ui ---> " << this->getFullName() <<endl;
+      // cout << "AbstractCloudManager:: freeResources :pid --ui ---> " << this->getFullName() <<endl;
         cout << "AbstractCloudManager:: freeResources :pid --ui ---> " << pId  <<":" <<uId <<endl;
         node->freeResources(pId,uId);
         if (node->getNumOfLinkedVMs() == 0) computingNode->freeResources();

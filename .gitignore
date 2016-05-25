@@ -39,3 +39,4 @@ out/
 *.vec
 *.log
 *.txt
+.tkenvlog

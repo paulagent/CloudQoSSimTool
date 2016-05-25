@@ -26,7 +26,8 @@ protected:
 
     int currentNodeIndex;
     int currentNodeType;
-
+   int timeBetweenScheduleEvents_s = 1;
+   cMessage *smAlarm;
      //Flags To control the energy printing
       //   bool printNodePowerConsumption;        // print Node instant consumption
       //   bool printNodeEnergyConsumed;          // print Node energy consumed
@@ -104,6 +105,10 @@ protected:
     */
     void finalizeScheduler();
 
+    //add uvic
+   // void processSelfMessage (cMessage *msg);
+   // void  handleMessage(cMessage *msg);
+
 private:
 
     /*
@@ -111,6 +116,8 @@ private:
     */
     int selectNodeSet  (string setName, int vmcpu, int vmmemory);
 
+    //add uvic for rr
+    void scheduleRR();
 
 
 };
