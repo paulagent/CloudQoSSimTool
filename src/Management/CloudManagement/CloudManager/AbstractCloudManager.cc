@@ -516,9 +516,11 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             //erase the rest of vms less the actual
 
             selectedNode = selectNode(reqA);
+         //   cout << "AbstractCloudManager::request_start_vm----->" << selectedNode->getFullName()<< endl;
             delete (reqSch);
 
             operation = req->getOperation();
+         //   cout << "AbstractCloudManager::request_start_vm----->operation" << operation  << endl;
 
             if (operation == REQUEST_ERROR) {
                 //TODO--
@@ -526,8 +528,8 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             } else if (selectedNode == NULL) { // There are not a node to allocate the request!
 
                 // Reenqueue to wait until exists enough resources.
-                //printf(
-                //        "MODULE[AbstractCloudManager::request_start_vm] selectedNode == NULL");
+              //  printf(
+              //         "MODULE[AbstractCloudManager::request_start_vm] selectedNode == NULL");
 
                 req->incrementTimesEnqueue();
                 req->setState(REQUEST_PENDING);
@@ -536,10 +538,10 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
 
             } // everything is ok.
             else {
-                //   printf(
+               //    printf(
                 //         "MODULE[AbstractCloudManager::request_start_vm] select node %s\n",
                 //          selectedNode->getFullName());
-                //  vm->initialize();
+                 // vm->initialize();
 
                 if (vm == NULL)
                     printf(
@@ -549,7 +551,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
 
                 // Start the node (if it is off)
                 if (!(selectedNode->isON())) {
-            cout << "AbstractCloudManager::request_start_vm -----> NODE WAS OFF" << endl;
+         //   cout << "AbstractCloudManager::request_start_vm -----> NODE WAS OFF" << endl;
                     selectedNode->turnOn();
                 }
 
@@ -571,12 +573,15 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 vmNew->cModule::setName(vmName.str().c_str());
                 vmNew->setName(vmName.str().c_str());
                 // vmNew-> t.start
+
                 nodeVL->testLinkVM(vmNew->getNumCores(),
                         vmNew->getMemoryCapacity(), vmNew->getStorageCapacity(),
                         vmNew->getNumNetworkIF(), vmNew->getTypeName(),
                         vmNew->getUid(), vmNew->getPid());
 
                 linkVM(nodeVL, vmNew);
+             //   cout << "check LinkVM "<< endl;
+
                 //uvic add
                 clock_t now = clock();
                 // simtime_t start_time;
@@ -800,9 +805,9 @@ VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
 
     // Here the kind of module is taken to create the module as image..
     vmPath << vmImage->getNedTypeName();
-    // printf(
-    //        "\n AbstractCloudManager::create_VM---->getNedTypeName from create vm ---->%s",
-    //        vmPath.str().c_str());
+     printf(
+            "\n AbstractCloudManager::create_VM---->getNedTypeName from create vm ---->%s",
+            vmPath.str().c_str());
 
     //create the vm module
     cModuleType *modVMType = cModuleType::get(vmPath.str().c_str());
@@ -815,9 +820,9 @@ VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
     for (i = 0; i < numParameters; i++) {
         cloneVm->par(i) = vmImage->par(i);
     }
-    //printf(
-    //        "MODULE[AbstractCloudManager::create_vm] before call getIndexForVM -----> %s \n",
-    //        vmName.c_str());
+    printf(
+            "MODULE[AbstractCloudManager::create_vm] before call getIndexForVM -----> %s \n",
+            vmName.c_str());
     int position = cfg->getIndexForVM(vmName.c_str());
     cloneVm->par("numCores") = cfg->getNumCores(position);
     cloneVm->par("memorySize_MB") = cfg->getMemorySize(position);
@@ -829,9 +834,9 @@ VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
 
     VM* vm;
     vm = dynamic_cast<VM*>(cloneVm);
-  //  cout << "AbstractCloudManager::create_VM---->before call init" <<endl;
+    cout << "AbstractCloudManager::create_VM---->before call init" <<endl;
     vm->callInitialize();
-  //  cout << "AbstractCloudManager::create_VM---->after call init" <<endl;
+    cout << "AbstractCloudManager::create_VM---->after call init" <<endl;
     return vm;
 }
 
@@ -1195,7 +1200,7 @@ void AbstractCloudManager:: freeResources (int uId, int pId, AbstractNode* compu
     node = dynamic_cast<NodeVL*>(computingNode);
 
       // cout << "AbstractCloudManager:: freeResources :pid --ui ---> " << this->getFullName() <<endl;
-        cout << "AbstractCloudManager:: freeResources :pid --ui ---> " << pId  <<":" <<uId <<endl;
+     //   cout << "AbstractCloudManager:: freeResources :pid --ui ---> " << pId  <<":" <<uId <<endl;
         node->freeResources(pId,uId);
         if (node->getNumOfLinkedVMs() == 0) computingNode->freeResources();
 

@@ -105,7 +105,7 @@ void NodeVL::unlinkVM (int vmMemory, int vmNumCores, int vmStorage, string virtu
 
 			if (((*vmIT)->getUser() == uId) && ((*vmIT)->getVMID() == pId) ){
 
-					hypervisor->freeResources(uId, pId);
+					hypervisor->freeResources(pId, uId);
 					instancedVMs.erase(vmIT);
 			}
 		}

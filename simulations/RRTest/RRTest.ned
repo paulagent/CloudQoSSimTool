@@ -126,7 +126,7 @@ network RRTest
         // ---------------------------------------------------------------
         //   Definition of Racks
         // ---------------------------------------------------------------
-        rc_0_Rack_A_16[5]: NodeVL {
+        rc_0_Rack_A_16[2]: NodeVL {
 
             @display("p=279,45");
         }
@@ -136,7 +136,7 @@ network RRTest
     connections allowunconnected:
 
         // Connections for rack rc_0_Rack_A_16
-           for i=0..4 {
+           for i=0..1 {
         rc_0_Rack_A_16[0].ethg++ <--> RackChannel_0_RRTest <--> rackSwitch_0.ethg++;
         }
 

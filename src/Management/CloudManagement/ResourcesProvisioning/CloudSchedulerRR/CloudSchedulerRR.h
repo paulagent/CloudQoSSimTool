@@ -117,7 +117,7 @@ private:
     int selectNodeSet  (string setName, int vmcpu, int vmmemory);
 
     //add uvic for rr
-    void scheduleRR();
+    AbstractNode* scheduleRR();
 
 
 };
