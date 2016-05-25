@@ -263,6 +263,7 @@ vector<icancloud_App_NET_Message*> LocalNetManager::manage_close_connections(int
 		sm_vector.clear();
 
 	// Delete the vm from the virtual manager ipUserSet
+
 		   cout << "LocalNetManager::manage_close_connection-----> Delete the vm from the virtual manager ipUserSet--->"<< endl;
 
 		netManagerPtr->deleteVirtualIP_by_VMID(pId, uId);

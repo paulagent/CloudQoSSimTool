@@ -98,6 +98,8 @@ void CloudSchedulerRR::schedule() {
 
     // Begin
     // Schedule..
+    cout<<endl;
+    cout << "---------------------SCHEDULE-------------------------"<<endl;
     if (schedulerBlock()) {
 
         req = getRequestByIndex(j);
@@ -107,7 +109,7 @@ void CloudSchedulerRR::schedule() {
         while ((j < (numPendingRequests()))) {
             // uvic:
             if (req == NULL) {
-                 cout << "Method[CLOUD_SCHEDULER_RR]: -------> req == NULL"<<endl;
+                cout << "Method[CLOUD_SCHEDULER_RR]: -------> req == NULL"<<endl;
                 eraseRequest(req);
                 requestErased = true;
             }
@@ -115,7 +117,8 @@ void CloudSchedulerRR::schedule() {
               printf("\n Method[CLOUD_SCHEDULER_RR]: ------->numPendingRequests------> %d \n", numPendingRequests());
               printf("\n Method[CLOUD_SCHEDULER_RR]: ------->userid------> %d \n", req->getUid());
               printf("\n Method[CLOUD_SCHEDULER_RR]: ------->REQUEST TYPE: %d \n", req->getOperation());
-                printf("\n Method[CLOUD_SCHEDULER_RR]: -------> inside request loop\n");
+              printf("\n Method[CLOUD_SCHEDULER_RR]: -------> inside request loop\n");
+
             req_st = dynamic_cast<StorageRequest*>(req);
             req_vm = dynamic_cast<RequestVM*>(req);
 
@@ -123,12 +126,15 @@ void CloudSchedulerRR::schedule() {
                 cout << "Method[CLOUD_SCHEDULER_RR]: -------> req_st is not NULL!" << endl;
                 machine = getNodeByIndex(req_st->getNodeSetId(),
                         req_st->getNodeId(), false);
+             //   cout << "Method[CLOUD_SCHEDULER_RR]: ------->Storagenode-----------> "<< machine->getFullName()<<endl;
 
                 node = check_and_cast<NodeVL*>(machine);
 
                 // Analyzes and create the connections vector in req_st depending on the selected fs
                 // This method will invoke selectStorageNodes
                 //TODO: Return the st_req and analyzes the error at sched
+              //  cout << "Method[CLOUD_SCHEDULER_RR]: ------->Storagenode----------->req--------> "<< req->getOperation()<<endl;
+
                 AbstractDCManager::userStorageRequest(req_st, node);
                 eraseRequest(req_st);
                 //uvic:
@@ -148,7 +154,7 @@ void CloudSchedulerRR::schedule() {
                 }
 
                 else if (req->getOperation() == REQUEST_FREE_RESOURCES) {
-                     printf("\n Method[CLOUD_SCHEDULER_RR]: -------> REQUEST_FREE_RESOURCES\n");
+                    printf("\n Method[CLOUD_SCHEDULER_RR]: -------> REQUEST_FREE_RESOURCES\n");
                     request_shutdown_vm(req_vm);
                     eraseRequest(req);
                     requestErased = true;
@@ -181,7 +187,7 @@ void CloudSchedulerRR::schedule() {
             req = getRequestByIndex(j);
 
         }
-     //   scheduleRR();
+
         schedulerUnblock();
     }
 
@@ -227,13 +233,14 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
     while (!found) {  // it continues until found is FALSE
                       //DANGER: INFINITE LOOP
          if (DEBUG_CLOUD_SCHED) printf("\n Method[SCHEDULER_ROUNDROBIN]:In Searching Loop \n");
-      //   printf("\n Method[SCHEDULER_ROUNDROBIN]: setInitial1111------>%d \n", setInitial);
+
+
 
          positionInitial = currentNodeIndex;
         //    if (setInitial)
-        //    printf("\n Method[SCHEDULER_ROUNDROBIN]: setInitial------>%d \n", setInitial);
+      //      printf("\n Method[SCHEDULER_ROUNDROBIN]: setInitial------>%d \n", setInitial);
 
-              printf("\n Method[SCHEDULER_ROUNDROBIN]: positionInitial------>%d \n", positionInitial);
+     //         printf("\n Method[SCHEDULER_ROUNDROBIN]: positionInitial------>%d \n", positionInitial);
 
         node = getNodeByIndex(setInitial, positionInitial);
 
@@ -262,22 +269,19 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
        //   printf("\n Method[SCHEDULER_ROUNDROBIN]:getSetSize(setInitial)------>%d \n",getSetSize(setInitial));
             printf("\n Method[SCHEDULER_ROUNDROBIN]: currentNodeIndex 222------>%d \n", currentNodeIndex);
 
+
         if ((unsigned int) currentNodeIndex
                 > ((unsigned int) getSetSize(setInitial) - 1)) {
             setInitial++;
             currentNodeIndex = 0;
-           printf("\n Method[SCHEDULER_ROUNDROBIN]:INSIDE IF PART: SetInitial,currentNodeIndex ------>%d, %d \n",setInitial,currentNodeIndex);
+     //      printf("\n Method[SCHEDULER_ROUNDROBIN]:INSIDE IF PART: SetInitial,currentNodeIndex ------>%d, %d \n",setInitial,currentNodeIndex);
 
             if (setInitial < getMapSize()) {
                 currentNodeType = setInitial;
             } else {
                 currentNodeType = 0;
 
-
             }
-
-        }
-
         // The algorithm has travel by all the values and it not reach a solution. So, the node is null.
         //  if ((positionInitial == currentNodeIndex) && (currentNodeType == setInitial)){
         if ((positionInitial >= currentNodeIndex) && (!found)) {
@@ -317,11 +321,23 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
                                                                                            node = NULL;
             }
 
+
                                                   }
 
+    }
 
 
 
+
+
+
+
+
+    if (node!=NULL)
+        {cout<<"Method[SCHEDULER_ROUNDROBIN]: selectednode is:------>"      << node->getFullName()<< endl;}
+    else {
+            scheduleRR();
+        }
     }
 
 
@@ -852,7 +868,7 @@ void CloudSchedulerRR:: scheduleRR(){
                               cout << "hostNode----->"<< node->getFullName();
                               printf("\n Method[SCHEDULER_ROUNDROBIN]: Free Memory: ------>%f \n", node->getFreeMemory());
 
-                              AbstractCloudManager::freeResources(vm->userID, vm->vm->getPid(),node);
+                        //      AbstractCloudManager::freeResources(vm->userID, vm->vm->getPid(),node);
                               runVM.erase(runVM.begin() + j);
                               cout <<"After Free Resources" << endl;
                               printf("\n Method[SCHEDULER_ROUNDROBIN]: Free Memory: ------>%f \n", node->getFreeMemory());
@@ -862,7 +878,7 @@ void CloudSchedulerRR:: scheduleRR(){
 
                               // erase from vector
 
-                              //break;
+                              break;
                           } else {
                               ++j;
 
