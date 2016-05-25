@@ -187,7 +187,8 @@ void CloudSchedulerRR::schedule() {
             req = getRequestByIndex(j);
 
         }
-
+        cout<<endl;
+        cout<< "-----------------------------END   SCHEDULE ------------------------------"<<endl;
         schedulerUnblock();
     }
 
@@ -819,11 +820,12 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                               //      cout << " Method[CLOUD_SCHEDULER_RR]----> token --->" << token << endl;
                               new_req_vm->setNewSelection(token.c_str(), 1);
                             //  new_req_vm->setPid(vm->vm->getPid());
+                              new_req_vm->setPid(111);
                               new_req_vm->setUid(vm->userID);
                               new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
                               // add new request to temp queue
-
-
+                           //   new_req->setOperation(REQUEST_START_VM);
+                            //  RequestsManagement::userSendRequest(new_req);
 
                               // if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to start VM has sent.\n");
 
@@ -834,14 +836,17 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                               user = getUserById(vm->userID);
                               cl_user = check_and_cast<AbstractCloudUser*>(user);
                               cl_user->startVMs(new_req);   // Add new req to the end of the queue
+
+
                               AbstractNode* node;
 
                               node= getNodeByIndex(vm->vm->getNodeSetName(),vm->vm->getNodeName(),false);
-                              cout << "hostNode----->"<< node->getFullName();
+                              cout << "hostNode----->"<< node->getFullName()<<endl;;
                         //      printf("\n Method[SCHEDULER_ROUNDROBIN]: Free Memory: ------>%f \n", node->getFreeMemory());
 
 
                               AbstractCloudManager::unlinkVM(node,vm->vm,false);
+                          //    VmMsgController::
                               vm->vm->callFinish();
 
 
@@ -867,21 +872,4 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                       printf("\n Method[CLOUD_SCHEDULER_RR]: -------> After our loop\n");
                       return NULL;
 }
-/*
-void CloudSchedulerRR:: handleMessage (cMessage *msg) {
 
-
-
-if(!strcmp (msg->getName(), SM_APP_ALARM.c_str())){
-             //printf("call schedule");
-         // cout << "AbstractDCManager::processSelfMessage before schedule()" << endl;
-          scheduleRR();
-          smAlarm = new cMessage (SM_APP_ALARM.c_str());
-        //  cout << "AbstractDCManager::processSelfMessage after schedule()" << endl;
-     //  if (!smAlarm->isScheduled())
-              scheduleAt(simTime()+timeBetweenScheduleEvents_s, smAlarm);
-
-      }
-
-}
-*/

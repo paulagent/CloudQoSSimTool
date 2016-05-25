@@ -91,10 +91,10 @@ void RequestsManagement::userSendRequest(AbstractRequest* request) {
     // Insert into the requestsQueue
     if (!schedulerQueueBlocked) {
         requestsQueue.push_back(request);
-        // cout << "RequestsManagement::userSendRequest --> NOT schedulerQueueBlocked --->requestsQueue.push_back(request)" << endl;
+         cout << "RequestsManagement::userSendRequest --> NOT schedulerQueueBlocked --->requestsQueue.push_back(request)" << endl;
     } else {
         temporalRequestsQueue.push_back(request);
-        //  cout << "RequestsManagement::userSendRequest -->  schedulerQueueBlocked  --->temporalRequestsQueue.push_back(request);" << endl;
+          cout << "RequestsManagement::userSendRequest -->  schedulerQueueBlocked  --->temporalRequestsQueue.push_back(request);" << endl;
 
     }
 

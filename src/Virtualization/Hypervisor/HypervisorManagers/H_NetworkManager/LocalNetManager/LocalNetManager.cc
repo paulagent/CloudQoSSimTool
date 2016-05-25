@@ -69,7 +69,7 @@ void LocalNetManager::createVM(icancloud_Message* sm){
 
 	// Init ..
 		sm_net = check_and_cast <icancloud_App_NET_Message*> (sm);
-        cout << "LocalNetManager::createVM ---> id----> "<<sm->getUid() << endl;
+        cout << "LocalNetManager::createVM ---> id----> "<<sm->getUid() << "----pid----->"<<sm->getPid()<<endl;
 
 	// create the user into the structure
 		pat->pat_createVM(sm->getUid(), sm->getPid(), sm_net->getLocalIP());
