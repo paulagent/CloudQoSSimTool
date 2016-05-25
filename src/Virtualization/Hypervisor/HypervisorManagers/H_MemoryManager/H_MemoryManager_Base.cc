@@ -273,6 +273,7 @@ void H_MemoryManager_Base::freeVM (int uId, int pId){
 
     bool found = false;
     vmControl* control;
+    cout << "H_MemoryManager_Base::freeVM----> vms size" << vms.size() << endl;
 
     for (int i = 0; (i < (int)vms.size()) && (!found); i++){
 

@@ -35,8 +35,8 @@ void NodeVL::finish(){
 }
 
 void NodeVL::freeResources (int pId, int uId){
- //   cout << "NodeVL::freeResources :pid --ui ---> " << this->getFullName() <<endl;
- //   cout << "NodeVL::freeResources :pid --ui ---> " << pId  <<":" <<uId <<endl;
+    cout << "NodeVL::freeResources :pid --ui ---> " << this->getFullName() <<endl;
+    cout << "NodeVL::freeResources :pid --ui ---> " << pId  <<":" <<uId <<endl;
     hypervisor->freeResources(pId,uId);
     if (getNumOfLinkedVMs() == 0) AbstractNode::freeResources();
 }

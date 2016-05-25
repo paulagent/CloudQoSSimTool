@@ -236,7 +236,8 @@ void H_CPUManager_Base::freeVM (int uId, int pId){
     vmControl* control;
     int gateIdx;
     int gatesSize;
-
+    cout << "H_CPUManager_Base::freeVM :pid --ui ---> " << pId  <<":" <<uId <<endl;
+    cout << "H_CPUManager_Base::freeVM----> vms size" << vms.size() << endl;
     for (int i = 0; (i < (int)vms.size()) && (!found); i++){
         control = (*(vms.begin() + i));
         if ((control->pId == pId) && (control->uId == uId)){
