@@ -76,7 +76,7 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
 
     icancloud_App_NET_Message *sm_net;
     int operation;
-    cout << "VmMsgController::processRequestMessage" << endl;
+    cout << "VmMsgController::processRequestMessage:    " <<msg->getFullName()<< endl;
 
     sm_net = dynamic_cast<icancloud_App_NET_Message *>(msg);
 
@@ -114,6 +114,7 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
         // Set as application id the arrival gate id (unique per job).
         if ((sm_net != NULL) && (sm_net->getCommId() != -1)) {
             insertCommId(uId, pId, msg->getCommId(), msg->getId());
+            cout << "VmMsgController::processRequestMessage:  insertCommId   " << endl;
         }
 
         if (migrateActive) {
@@ -368,7 +369,7 @@ void VmMsgController::insertCommId(int uId, int pId, int commId, int msgId) {
     bool found;
     commIdVector* comm;
     commIdVectorInternals* internals;
-
+    cout << "VmMsgController::insertCommId     --> " <<endl;
     // Initialize ..
     found = false;
 

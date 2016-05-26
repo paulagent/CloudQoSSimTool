@@ -38,7 +38,7 @@ VM::VM(elementType* el) {
     osMod = getSubmodule("osModule")->getSubmodule("syscallManager");
     os = dynamic_cast<VMSyscallManager*>(osMod);
 
-    printf("hi from Machine::con2 \n ");
+   // printf("hi from Machine::con2 \n ");
 
     type = new elementType();
 
