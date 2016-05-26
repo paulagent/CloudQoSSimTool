@@ -164,6 +164,7 @@ public:
 
             virtual void notifyManager(icancloud_Message* msg);
 
+            vector<RunningVM*> getRunVM();
 private:
 
          // ----------------------------------VM INTERNALS -------------------------------

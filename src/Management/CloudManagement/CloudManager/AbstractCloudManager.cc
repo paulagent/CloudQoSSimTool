@@ -1347,4 +1347,8 @@ void AbstractCloudManager::notifyVMConnectionsClosed(int uId, int pId,
 
     }
 }
+vector<RunningVM*> AbstractCloudManager::getRunVM()
+{
+    return runVM;
+}
 
