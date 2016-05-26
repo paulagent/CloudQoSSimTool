@@ -14,6 +14,7 @@
 // 
 
 #include "VmMsgController.h"
+#include "AbstractCloudManager.h"
 
 Define_Module(VmMsgController);
 
@@ -77,10 +78,20 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
     icancloud_App_NET_Message *sm_net;
     int operation;
     cout << "VmMsgController::processRequestMessage:    " <<msg->getFullName()<< endl;
-
+    int Pid;
+    Pid=msg->getPid();
+    cout << "PiD----->"<< Pid << endl;
+    if (Pid==-1)
+    {
+        delete (msg);
+    }
+    else
+    {
     sm_net = dynamic_cast<icancloud_App_NET_Message *>(msg);
 
     operation = msg->getOperation();
+
+    cout << "operation" << operation << endl;
 
     if (operation == SM_STOP_AND_DOWN_VM) {
 
@@ -156,6 +167,8 @@ cout << "VmMsgController::processRequestMessage--->fromApps--getIndex " <<msg->g
             }
 
         }
+    }
+
 
     }
 }

@@ -99,7 +99,7 @@ void CloudSchedulerRR::schedule() {
     // Begin
     // Schedule..
     cout<<endl;
-    cout << "---------------------SCHEDULE-------------------------"<<endl;
+    cout << "------------------------------------------SCHEDULE------------------------------------------"<<endl;
     if (schedulerBlock()) {
 
         req = getRequestByIndex(j);
@@ -188,7 +188,7 @@ void CloudSchedulerRR::schedule() {
 
         }
         cout<<endl;
-        cout<< "-----------------------------END   SCHEDULE ------------------------------"<<endl;
+        cout<< "-----------------------------------------END SCHEDULE --------------------------------------"<<endl;
         schedulerUnblock();
     }
 
@@ -222,7 +222,7 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
     vmMemory = el->getMemorySize();
     setInitial = currentNodeType;
     positionInitial = currentNodeIndex;
-    if (DEBUG_CLOUD_SCHED) printf("\n Method[SCHEDULER_ROUNDROBIN]:currentNodeIndex :  ------->%d \n", currentNodeIndex);
+    if (DEBUG_CLOUD_SCHED) printf("\n Method[SCHEDULER_ROUNDROBIN]:currentNodeIndex :  ------->   %d \n", currentNodeIndex);
 
     found = false;
 
@@ -248,9 +248,8 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
           printf("\n Method[SCHEDULER_ROUNDROBIN]: After getNodeByIndex: ------>%s \n", node->getFullName());
           printf("\n Method[SCHEDULER_ROUNDROBIN]: Free Memory: ------>%f \n", node->getFreeMemory());
           printf("\n Method[SCHEDULER_ROUNDROBIN]: vmMemory: ------>%d \n", vmMemory);
-
-           printf("\n Method[SCHEDULER_ROUNDROBIN]: Number of Cores: ------>%d \n", node->getNumCores());
-           printf("\n Method[SCHEDULER_ROUNDROBIN]: vmCPU: ------>%d \n", vmCPU);
+          printf("\n Method[SCHEDULER_ROUNDROBIN]: Number of Cores: ------>%d \n", node->getNumCores());
+          printf("\n Method[SCHEDULER_ROUNDROBIN]: vmCPU: ------>%d \n", vmCPU);
 
         if ((node->getFreeMemory() >= vmMemory)
                 && (node->getNumCores() >= vmCPU)) {
