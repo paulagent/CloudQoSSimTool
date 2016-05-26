@@ -578,9 +578,9 @@ bool AbstractCloudUser::eraseVMFromControlVector(VM* vm, int operation){
 	found = false;
 	VM* vm_;
 	unsigned int i = 0;
-
+cout<< "AbstractCloudUser::eraseVMFromControlVector--->" <<operation<< endl;
 	if (operation == REQUEST_START_VM) {
-
+cout << "pendingVmsAtStartup-->"<<pendingVmsAtStartup<<endl;
 	    pendingVmsAtStartup = pendingVmsAtStartup - 1;
 	    found = true;
 
@@ -679,8 +679,8 @@ void AbstractCloudUser::send_request_to_manager (AbstractRequest* req){
 	if ((request == NULL)  && (req_st == NULL)) throw cRuntimeError("AbstractCloudUser::send_request_to_manager->error during casting to RequestVM or StorageRequest\n");
 
 	if (req->getOperation() == REQUEST_START_VM){
-	   // cout << "AbstractCloudUser::send_request_to_manager --->REQUEST_START_VM" << endl;
-     //   cout << "AbstractCloudUser::send_request_to_manager --->REQUEST_START_VM  --->request->getDifferentTypesQuantity()-->" << request->getDifferentTypesQuantity() << endl;
+	    cout << "AbstractCloudUser::send_request_to_manager --->REQUEST_START_VM" << endl;
+        cout << "AbstractCloudUser::send_request_to_manager --->REQUEST_START_VM  --->request->getDifferentTypesQuantity()-->" << request->getDifferentTypesQuantity() << endl;
 
 	    for (int  i = 0; i < request->getDifferentTypesQuantity(); i++){
 

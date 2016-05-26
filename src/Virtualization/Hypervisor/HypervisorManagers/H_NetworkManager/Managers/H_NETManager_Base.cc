@@ -224,7 +224,7 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
       //  cout << "H_NETManager_Base::processRequestMessage ---> The message came from a vm application .."<< endl;
 
 		if(operation == SM_SET_IOR){
-	      //  cout << "H_NETManager_Base::processRequestMessage ---> create vm"<< endl;
+	        cout << "H_NETManager_Base::processRequestMessage ---> create vm"<< endl;
 
 			localNetManager->createVM(sm);
 			delete (sm);

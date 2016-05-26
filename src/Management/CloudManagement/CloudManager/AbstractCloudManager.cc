@@ -570,6 +570,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
 
                 vmName << req->getSelectionType(0).c_str() << ":u"
                         << req->getUid() << ":p" << vmNew->getPid() << "";
+                cout <<":u"  << req->getUid() << ":p" << vmNew->getPid() <<endl;
                 vmNew->cModule::setName(vmName.str().c_str());
                 vmNew->setName(vmName.str().c_str());
                 // vmNew-> t.start
@@ -578,9 +579,9 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                         vmNew->getMemoryCapacity(), vmNew->getStorageCapacity(),
                         vmNew->getNumNetworkIF(), vmNew->getTypeName(),
                         vmNew->getUid(), vmNew->getPid());
+                cout << "check LinkVM "<< endl;
 
                 linkVM(nodeVL, vmNew);
-             //   cout << "check LinkVM "<< endl;
 
                 //uvic add
                 clock_t now = clock();
@@ -805,9 +806,9 @@ VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
 
     // Here the kind of module is taken to create the module as image..
     vmPath << vmImage->getNedTypeName();
-     printf(
-            "\n AbstractCloudManager::create_VM---->getNedTypeName from create vm ---->%s",
-            vmPath.str().c_str());
+    // printf(
+    //        "\n AbstractCloudManager::create_VM---->getNedTypeName from create vm ---->%s",
+    //        vmPath.str().c_str());
 
     //create the vm module
     cModuleType *modVMType = cModuleType::get(vmPath.str().c_str());
@@ -834,9 +835,9 @@ VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
 
     VM* vm;
     vm = dynamic_cast<VM*>(cloneVm);
-    cout << "AbstractCloudManager::create_VM---->before call init" <<endl;
+  //  cout << "AbstractCloudManager::create_VM---->before call init" <<endl;
     vm->callInitialize();
-    cout << "AbstractCloudManager::create_VM---->after call init" <<endl;
+ //   cout << "AbstractCloudManager::create_VM---->after call init" <<endl;
     return vm;
 }
 

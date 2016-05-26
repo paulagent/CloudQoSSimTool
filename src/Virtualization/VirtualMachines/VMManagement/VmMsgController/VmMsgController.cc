@@ -69,6 +69,8 @@ void VmMsgController::finish(){
 
 void VmMsgController::processSelfMessage (cMessage *msg){
 	delete (msg);
+    cout << "VmMsgController::processSelfMessage" << endl;
+
 	std::ostringstream msgLine;
 	msgLine << "Unknown self message [" << msg->getName() << "]";
 	throw cRuntimeError(msgLine.str().c_str());
@@ -78,6 +80,7 @@ void VmMsgController::processRequestMessage (icancloud_Message *msg){
 
     icancloud_App_NET_Message *sm_net;
 	int operation;
+    cout << "VmMsgController::processRequestMessage" << endl;
 
 	sm_net = dynamic_cast<icancloud_App_NET_Message *>(msg);
 
@@ -158,6 +161,7 @@ void VmMsgController::processResponseMessage (icancloud_Message *sm){
 		// If msg arrive from OS
 
 	updateCounters(sm,-1);
+    cout << "VmMsgController::processResponseMessage" << endl;
 
 	if (migrateActive){
 		pushMessage(sm);
@@ -183,6 +187,7 @@ cGate* VmMsgController::getOutGate (cMessage *msg){
 		cGate* return_gate;
 		int i;
 		bool found;
+	    cout << "VmMsgController::getOutGate" << endl;
 
 	// Initialize ..
 		i = 0;
@@ -243,6 +248,7 @@ icancloud_Message* VmMsgController::popMessage(){
 
 void VmMsgController::sendPendingMessage (icancloud_Message* msg){
 	int smIndex;
+    cout << "VmMsgController::sendPendingMessage" << endl;
 
 	// The message is a Response message
 	if (msg->getIsResponse()) {
@@ -271,6 +277,8 @@ void VmMsgController::flushPendingMessages(){
 
 	// Extract all the messages and send to the destinations
 
+cout << "VmMsgController::flushPendingMessages()" << endl;
+
 	while (!pendingMessages.empty()){
 		msgIt = pendingMessages.begin();
 
@@ -289,6 +297,7 @@ void VmMsgController::updateCounters (icancloud_Message* msg, int quantity){
 	icancloud_App_IO_Message* ioMsg;
 	icancloud_App_MEM_Message* memMsg;
 	icancloud_App_NET_Message* netMsg;
+    cout << "VmMsgController::updateCounters" << endl;
 
 	cpuMsg = dynamic_cast<icancloud_App_CPU_Message*>(msg);
 	ioMsg = dynamic_cast<icancloud_App_IO_Message*>(msg);
@@ -312,6 +321,7 @@ void VmMsgController::updateCounters (icancloud_Message* msg, int quantity){
 void VmMsgController::linkNewApplication(cModule* jobAppModule, cGate* scToApp, cGate* scFromApp){
 
     // Connections to App
+    cout << "VmMsgController::linkNewApplication" << endl;
        int idxToApps = toApps->newGate("toApps");
        toApps->connectOut(jobAppModule->gate("fromOS"), idxToApps);
 
@@ -331,6 +341,7 @@ int VmMsgController::unlinkApplication(cModule* jobAppModule){
 
     int gateIdx = jobAppModule->gate("fromOS")->getPreviousGate()->getId();
     int position = toApps->searchGate(gateIdx);
+    cout << "VmMsgController::unlinkApplication" << endl;
 
         toOSApps->freeGate(position);
         toApps->freeGate(position);
