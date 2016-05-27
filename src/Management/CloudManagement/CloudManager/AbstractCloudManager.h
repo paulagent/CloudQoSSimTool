@@ -137,6 +137,11 @@ protected:
 	         * This method is invoked to attend a vm shutdown request;
 	         */
 	        void request_shutdown_vm(RequestVM* req);
+	        /*
+	         * uvic
+             * This method is invoked to attend a vm unfreez request;
+             */
+            bool request_unfreez_vm(RequestVM* req);
 
 
 		// ------------------------ operations with connections of vms --------------------

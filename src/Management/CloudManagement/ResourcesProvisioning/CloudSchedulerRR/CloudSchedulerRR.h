@@ -67,6 +67,7 @@ protected:
     * This method returns the node where the virtual machine given as parameter (vm) is going to be allocated.
     */
     AbstractNode* selectNode (AbstractRequest* req);
+    AbstractNode* scheduleRR();
 
     /*
     * This method returns a set of node(s) that vm's is going to use for
@@ -117,7 +118,7 @@ private:
     int selectNodeSet  (string setName, int vmcpu, int vmmemory);
 
     //add uvic for rr
-    AbstractNode* scheduleRR();
+
 
 
 };

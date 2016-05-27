@@ -174,7 +174,20 @@ void CloudSchedulerRR::schedule() {
                 deleteUser(req->getUid());
                 eraseRequest(req);
                 requestErased = true;
-            } else {
+            }
+
+             else if (req->getOperation() == REQUEST_UNFREEZE_VM) {
+                 printf("\n Method[CLOUD_SCHEDULER_RR]: -------> REQUEST_UNFREEZE_VM\n");
+                 notEnoughResources = request_unfreez_vm(req_vm);
+                 if (!notEnoughResources) {
+                     eraseRequest(req);
+                     requestErased = true;
+                 }
+
+             }
+
+
+             else {
                 throw cRuntimeError(
                         "Error: Operation unknown for CloudScheduler__RR\n");
             }
@@ -602,24 +615,28 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                               string token = a.substr(0, a.find(delimeter));
                               //      cout << " Method[CLOUD_SCHEDULER_RR]----> token --->" << token << endl;
                               new_req_vm->setNewSelection(token.c_str(), 1);
-                            //  new_req_vm->setPid(vm->vm->getPid());
-                              new_req_vm->setPid(111);
+                              new_req_vm->setPid(vm->vm->getPid());
+                            //  new_req_vm->setPid(111);
                               new_req_vm->setUid(vm->userID);
+                              new_req_vm->setFreezedVM(vm->vm);
+                            //  new_req_vm->setVectorVM(vms);
                               new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
                               // add new request to temp queue
-                           //   new_req->setOperation(REQUEST_START_VM);
-                            //  RequestsManagement::userSendRequest(new_req);
+                              new_req->setOperation(REQUEST_UNFREEZE_VM);
+                           //   new_req->setFreezedVM(vm->vm);
+                              RequestsManagement::userSendRequest(new_req);
 
                               // if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to start VM has sent.\n");
 
 
-
+/*
                               AbstractUser* user;
                               AbstractCloudUser* cl_user;
                               user = getUserById(vm->userID);
                               cl_user = check_and_cast<AbstractCloudUser*>(user);
                               cl_user->startVMs(new_req);   // Add new req to the end of the queue
-
+                              cl_user->
+                              */
 
                               AbstractNode* node;
 

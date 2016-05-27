@@ -34,7 +34,8 @@ private:
     typedef userVmType_t userVmType;
 
     vector<userVmType*> vmsToBeSelected;
-
+public:
+        VM* freezed_vm;
 public:
 
 	RequestVM();
@@ -70,7 +71,8 @@ public:
 	elementType* getSingleRequestType(){return (*(vmsToBeSelected.begin()))->type;};
 
 	RequestVM* dup ();
-
+	void setFreezedVM(VM* vm_){freezed_vm=vm_;};
+    VM* getFreezedVM(){return freezed_vm;};
 	bool compareReq(AbstractRequest* req);
 
 };

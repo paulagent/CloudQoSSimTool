@@ -1351,4 +1351,37 @@ vector<RunningVM*> AbstractCloudManager::getRunVM()
 {
     return runVM;
 }
+bool AbstractCloudManager::request_unfreez_vm(RequestVM* req)
+{
+    AbstractNode* node;
+    VM* vm;
+    int vmMemory;
+    int vmCPU;
+    cout <<"AbstractCloudManager::request_unfreez_vm" << endl;
+    vm=req->freezed_vm;
+    if (vm!= NULL)
+    {
+        cout << "vm->getNodeSetName()---->" <<vm->getNodeSetName() << "vm->getNodeName()---->" << vm->getNodeName()<< endl;
+        node= getNodeByIndex(vm->getNodeSetName(),vm->getNodeName(),false);
+        vmMemory=vm->getMemoryCapacity();
+        vmCPU=vm->getNumCores();
+        cout << "vmMemory"<<vmMemory<<endl;
+        cout << "vmCPU"<<vmCPU<<endl;
+        cout << "node->getFreeMemory()----->"<<node->getFreeMemory()<<endl;
+        cout << "node->getNumCores()------"<<node->getNumCores()<<endl;
 
+    }
+
+    if ((node->getFreeMemory() >= vmMemory) && (node->getNumCores() >= vmCPU))
+    {
+        cout<< "AbstractCloudManager::request_unfreez_vm" << endl;
+        linkVM(node,vm);
+        return false;
+
+    }
+    else
+    {
+       // scheduleR
+        return true;
+    }
+}
