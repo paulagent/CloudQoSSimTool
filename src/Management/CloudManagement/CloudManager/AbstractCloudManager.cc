@@ -1381,7 +1381,7 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req)
     }
     else
     {
-       // scheduleR
+       // scheduleRR();
         return true;
     }
 }
