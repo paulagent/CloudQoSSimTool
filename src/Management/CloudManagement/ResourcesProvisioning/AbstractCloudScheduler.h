@@ -40,7 +40,7 @@ class AbstractCloudScheduler : public AbstractCloudManager{
         * This method returns the node where the virtual machine given as parameter (vm) is going to be allocated.
         */
         AbstractNode* selectNode (AbstractRequest* req) = 0;
-
+       //void  scheduleRR() =0;
         /*
         * This method returns a set of node(s) that vm's is going to use for
         * storaging data. The parameter fsType is for selecting NFS, PVFS, or another type of

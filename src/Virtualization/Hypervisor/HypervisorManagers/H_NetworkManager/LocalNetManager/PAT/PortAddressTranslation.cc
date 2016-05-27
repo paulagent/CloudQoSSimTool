@@ -178,8 +178,8 @@ User_VirtualPort_Cell* PortAddressTranslation::searchUser(int uId) {
     found = false;
     user_cell = NULL;
 
-   cout << "PortAddressTranslation::searchUser : userID----->" << uId << endl;
-   cout << "PortAddressTranslation::searchUser : user_vm_ports.size()---->" << user_vm_ports.size() << endl;
+  // cout << "PortAddressTranslation::searchUser : userID----->" << uId << endl;
+   //cout << "PortAddressTranslation::searchUser : user_vm_ports.size()---->" << user_vm_ports.size() << endl;
 
 
     for (vector<User_VirtualPort_Cell*>::iterator it = user_vm_ports.begin();  it != user_vm_ports.end(); ++it) {
@@ -211,7 +211,7 @@ void PortAddressTranslation::deleteUser(int uId) {
     // Init ..
     found = false;
     //uvic
-    cout << "PortAddressTranslation::deleteUser --->" << uId << endl;
+   // cout << "PortAddressTranslation::deleteUser --->" << uId << endl;
     for (i = 0; (i < user_vm_ports.size()) && (!found);) {
 
         if ((*(user_vm_ports.begin() + i))->getUserID() == uId) {
