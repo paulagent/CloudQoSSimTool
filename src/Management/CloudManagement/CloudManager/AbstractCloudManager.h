@@ -1,20 +1,23 @@
 #ifndef __ABSTRACTMANAGER_BASE_H_
 #define __ABSTRACTMANAGER_BASE_H_
 
+
+#include "RunningVM.h"
 #include "AllocationManagement.h"
 #include "cfgCloud.h"
 #include "VM.h"
 #include "NodeVL.h"
 #include "RequestVM.h"
-#include "RunningVM.h"
+
 #include "time.h"
 
 class CfgCloud;
 class RequestVM;
+class RunningVM;
 
 class AbstractCloudManager : virtual public AllocationManagement{
-public:
-    vector <RunningVM*> runVM;
+
+
 
 protected:
 
@@ -38,7 +41,7 @@ protected:
     bool migrationActive;
 
     vector <RequestVM*> reqPendingToDelete;
-
+    vector <RunningVM*> runVM;
 protected:
 
 
@@ -170,7 +173,7 @@ public:
 
             virtual void notifyManager(icancloud_Message* msg);
 
-            vector<RunningVM*> getRunVM();
+            vector <RunningVM*> getRunVM();
 private:
 
          // ----------------------------------VM INTERNALS -------------------------------

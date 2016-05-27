@@ -521,9 +521,9 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                               cl_user->
                               */
 
-                        //      AbstractNode* node;
+                              AbstractNode* node;
 
-                        ///      node= getNodeByIndex(vm->vm->getNodeSetName(),vm->vm->getNodeName(),false);
+                             node= getNodeByIndex(vm->vm->getNodeSetName(),vm->vm->getNodeName(),false);
                        //       cout << "hostNode----->"<< node->getFullName()<<endl;;
                         //      printf("\n Method[SCHEDULER_ROUNDROBIN]: Free Memory: ------>%f \n", node->getFreeMemory());
 

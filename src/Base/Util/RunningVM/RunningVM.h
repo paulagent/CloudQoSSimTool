@@ -6,6 +6,7 @@
 #include "VM.h"
 #include "NodeVL.h"
 
+class NodeVL;
 /**
 
  *

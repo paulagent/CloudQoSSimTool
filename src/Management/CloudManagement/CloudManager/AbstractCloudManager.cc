@@ -516,7 +516,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             //erase the rest of vms less the actual
 
             selectedNode = selectNode(reqA);
-            cout << "AbstractCloudManager::request_start_vm----->" << selectedNode->getFullName()<< endl;
+           // cout << "AbstractCloudManager::request_start_vm----->" << selectedNode->getFullName()<< endl;
             delete (reqSch);
 
             operation = req->getOperation();
