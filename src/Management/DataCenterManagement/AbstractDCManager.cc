@@ -38,7 +38,7 @@ void AbstractDCManager::initialize(){
             time_t rawtime;
             struct tm * timeinfo;
             std::ostringstream file;
-            printf("\n Method[Abstract DC manager]: ------->start \n");
+
         // Initialize the superclasses
             // Finish the super-class
             DataCenterAPI::initialize();
@@ -146,7 +146,7 @@ void AbstractDCManager::initialize(){
       // Prepare the message waiting until all modules will be initialized-
           msg = new cMessage (SM_CALL_INITIALIZE.c_str());
           scheduleAt (simTime()+timeToStartManager, msg);
-cout <<"AbstractDCManager::initialize() --->start to initial" << endl;
+//cout <<"AbstractDCManager::initialize() --->start to initial" << endl;
           memorization = par ("memorization").boolValue();
 
 }
@@ -287,7 +287,7 @@ void AbstractDCManager::initManager (int totalNodes){
          Node* nodeChecked;
        //  printf("\n Method[Abstract DC manager_initmanagr]: ------->before test ifcfgloaded \n");
     if (!isCfgLoaded()){
-        printf("\n Method[Abstract DC manager_initmanagr]: ------->ifcfgloaded \n");
+      //  printf("\n Method[Abstract DC manager_initmanagr]: ------->ifcfgloaded \n");
             // Initialize structures and parameters
                 nodesMap = new MachinesMap();
                 storage_nodesMap = new MachinesMap();
@@ -347,7 +347,7 @@ void AbstractDCManager::initManager (int totalNodes){
 
                                       if (!found){
                                           cpu = new MemoSupport( component );
-                                          printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
+                                         // printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
                                           cpus.push_back(cpu);
                                       }
 
@@ -364,7 +364,7 @@ void AbstractDCManager::initManager (int totalNodes){
 
                                       if (!found){
                                           memory = new MemoSupport( component );
-                                          printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
+                                         // printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
                                           memories.push_back(memory);
                                       }
 
@@ -381,7 +381,7 @@ void AbstractDCManager::initManager (int totalNodes){
 
                                       if (!found){
                                           storage = new MemoSupport( component );
-                                          printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
+                                        //  printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
                                           storages.push_back(storage);
                                       }
 
@@ -398,7 +398,7 @@ void AbstractDCManager::initManager (int totalNodes){
 
                                       if (!found){
                                           network = new MemoSupport( component );
-                                          printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
+                                        //  printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
                                           networks.push_back(network);
                                       }
                               }
@@ -476,7 +476,7 @@ void AbstractDCManager::initManager (int totalNodes){
 
                                     if (!found){
                                         memory = new MemoSupport( component );
-                                        printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
+                                      //  printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
                                         memories.push_back(memory);
                                     }
 
@@ -493,7 +493,7 @@ void AbstractDCManager::initManager (int totalNodes){
 
                                     if (!found){
                                         storage = new MemoSupport( component );
-                                        printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
+                                       // printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
                                         storages.push_back(storage);
                                     }
 
@@ -510,7 +510,7 @@ void AbstractDCManager::initManager (int totalNodes){
 
                                         if (!found){
                                             network = new MemoSupport( component );
-                                            printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
+                                          //  printf ("AbstractMeterUnit::loadMemo()-> %s\n", component.c_str());
                                             networks.push_back(network);
                                         }
                                 }
@@ -606,7 +606,7 @@ void AbstractDCManager::initScheduler(){
  * Booking methods
  ***********************************************************************/
 int AbstractDCManager::bookComputeResources( int uid, int jobID, int nodeSet, int nodeID, int cores){
-    printf("\n Method[Abstract DC manager]: -------bookcomputerResources \n");
+   // printf("\n Method[Abstract DC manager]: -------bookcomputerResources \n");
     // Define ..
         AbstractNode* node;
         int messageID;

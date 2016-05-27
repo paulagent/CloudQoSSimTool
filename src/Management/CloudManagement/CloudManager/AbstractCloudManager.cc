@@ -14,7 +14,7 @@
 //
 
 #include "AbstractCloudManager.h"
-
+#include "CloudSchedulerRR.h"
 AbstractCloudManager::~AbstractCloudManager() {
 
     requestsQueue.clear();
@@ -516,7 +516,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             //erase the rest of vms less the actual
 
             selectedNode = selectNode(reqA);
-         //   cout << "AbstractCloudManager::request_start_vm----->" << selectedNode->getFullName()<< endl;
+            cout << "AbstractCloudManager::request_start_vm----->" << selectedNode->getFullName()<< endl;
             delete (reqSch);
 
             operation = req->getOperation();
@@ -528,8 +528,8 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             } else if (selectedNode == NULL) { // There are not a node to allocate the request!
 
                 // Reenqueue to wait until exists enough resources.
-              //  printf(
-              //         "MODULE[AbstractCloudManager::request_start_vm] selectedNode == NULL");
+                printf(
+                       " \n MODULE[AbstractCloudManager::request_start_vm] selectedNode == NULL\n");
 
                 req->incrementTimesEnqueue();
                 req->setState(REQUEST_PENDING);
@@ -571,6 +571,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 vmName << req->getSelectionType(0).c_str() << ":u"
                         << req->getUid() << ":p" << vmNew->getPid() << "";
                 cout <<"NEW VM  ------->  :u"  << req->getUid() << ":p" << vmNew->getPid() <<endl;
+
                 vmNew->cModule::setName(vmName.str().c_str());
                 vmNew->setName(vmName.str().c_str());
                 // vmNew-> t.start
@@ -579,7 +580,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                         vmNew->getMemoryCapacity(), vmNew->getStorageCapacity(),
                         vmNew->getNumNetworkIF(), vmNew->getTypeName(),
                         vmNew->getUid(), vmNew->getPid());
-                cout << "check LinkVM "<< endl;
+                //cout << "check LinkVM "<< endl;
 
                 linkVM(nodeVL, vmNew);
 
@@ -647,14 +648,14 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
 
     // Init ..
     nodes.clear();
-    printf(
-            "METHOD[AbstractCloudManager::request_shutdown_vm]: VMQuantity ---------------> %d ",
-            req->getVMQuantity());
+   // printf(
+    //        "METHOD[AbstractCloudManager::request_shutdown_vm]: VMQuantity ---------------> %d ",
+    //        req->getVMQuantity());
     // Get the first VM
     while (req->getVMQuantity() != 0) {
 
         vm = req->getVM(0);
-        cout << "AbstractCloudManager::request_shutdown_vm-----> vm to be shutdown---->" << vm->getId() <<endl;
+     //   cout << "AbstractCloudManager::request_shutdown_vm-----> vm to be shutdown---->" << vm->getId() <<endl;
 
         // Dup the request to storage in the queue waiting for format FS and close connections
 
@@ -684,7 +685,7 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
         nodes.push_back(
                 getNodeByIndex(vm->getNodeSetName(), vm->getNodeName()));
 
-        cout << "AbstractCloudManager::request_shutdown_vm-----> Storagenodes size ---->" << nodes.size() <<endl;
+      //  cout << "AbstractCloudManager::request_shutdown_vm-----> Storagenodes size ---->" << nodes.size() <<endl;
 
         // Remote storage control
         formatFSFromNodes(nodes, vm->getUid(), vm->getId(),
@@ -1381,7 +1382,8 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req)
     }
     else
     {
-       // scheduleR
+
+     // AbstractNode* node= scheduleRR();
         return true;
     }
 }

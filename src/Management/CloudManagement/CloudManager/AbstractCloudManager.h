@@ -83,6 +83,7 @@ protected:
              * This method returns the node where the virtual machine given as parameter (vm) is going to be allocated.
              */
             virtual AbstractNode* selectNode (AbstractRequest* req) = 0;
+           // virtual void  scheduleRR() =0;
 
             /*
              * This method returns the node(s) that vm's is going to use for
