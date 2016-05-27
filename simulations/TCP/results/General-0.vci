@@ -1,0 +1,293 @@
+file 10769 1464373309                                           
+version 2
+run General-0-20160527-11:21:38-302
+attr c1ber 0
+attr c2ber 0
+attr configname General
+attr datetime 20160527-11:21:38
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars "$c1ber=0, $c2ber=0"
+attr iterationvars2 "$c1ber=0, $c2ber=0, $repetition=0"
+attr measurement "$c1ber=0, $c2ber=0"
+attr network TCP_t
+attr processid 302
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 0  TCP_t.client1.pppg$o[0].channel  busy:vector  ETV
+attr interpolationmode  sample-hold
+attr source  channelBusy
+vector 2  TCP_t.client2.pppg$o[0].channel  busy:vector  ETV
+attr interpolationmode  sample-hold
+attr source  channelBusy
+vector 4  TCP_t.client3.pppg$o[0].channel  busy:vector  ETV
+attr interpolationmode  sample-hold
+attr source  channelBusy
+vector 9  TCP_t.server1.pppg$o[0].channel  busy:vector  ETV
+attr interpolationmode  sample-hold
+attr source  channelBusy
+vector 11  TCP_t.server2.pppg$o[0].channel  busy:vector  ETV
+attr interpolationmode  sample-hold
+attr source  channelBusy
+vector 1  TCP_t.router1.pppg$o[0].channel  busy:vector  ETV
+attr interpolationmode  sample-hold
+attr source  channelBusy
+vector 3  TCP_t.router1.pppg$o[1].channel  busy:vector  ETV
+attr interpolationmode  sample-hold
+attr source  channelBusy
+vector 5  TCP_t.router1.pppg$o[2].channel  busy:vector  ETV
+attr interpolationmode  sample-hold
+attr source  channelBusy
+vector 6  TCP_t.router1.pppg$o[3].channel  busy:vector  ETV
+attr interpolationmode  sample-hold
+attr source  channelBusy
+vector 7  TCP_t.router2.pppg$o[0].channel  busy:vector  ETV
+attr interpolationmode  sample-hold
+attr source  channelBusy
+vector 8  TCP_t.router2.pppg$o[1].channel  busy:vector  ETV
+attr interpolationmode  sample-hold
+attr source  channelBusy
+vector 10  TCP_t.router2.pppg$o[2].channel  busy:vector  ETV
+attr interpolationmode  sample-hold
+attr source  channelBusy
+vector 24  TCP_t.client1.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 25  TCP_t.client1.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 40  TCP_t.client2.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 41  TCP_t.client2.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 56  TCP_t.client3.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 57  TCP_t.client3.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 75  TCP_t.server1.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 76  TCP_t.server1.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 91  TCP_t.server2.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 92  TCP_t.server2.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 107  TCP_t.router1.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 108  TCP_t.router1.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 118  TCP_t.router1.ppp[1].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 119  TCP_t.router1.ppp[1].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 129  TCP_t.router1.ppp[2].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 130  TCP_t.router1.ppp[2].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 140  TCP_t.router1.ppp[3].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 141  TCP_t.router1.ppp[3].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 156  TCP_t.router2.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 157  TCP_t.router2.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 167  TCP_t.router2.ppp[1].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 168  TCP_t.router2.ppp[1].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 178  TCP_t.router2.ppp[2].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 179  TCP_t.router2.ppp[2].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 15  TCP_t.client1.tcpApp[0]  numActiveSessions:vector  ETV
+attr interpolationmode  sample-hold
+attr source  sum(connect)
+attr title  "number of active sessions, vector"
+vector 253  TCP_t.client1.tcp  tcpRcvQueueBytes  ETV
+vector 240  TCP_t.client1.tcp  "advertised window"  ETV
+vector 239  TCP_t.client1.tcp  "receive window"  ETV
+vector 242  TCP_t.client1.tcp  "sent ack"  ETV
+vector 21  TCP_t.client1.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 23  TCP_t.client1.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 30  TCP_t.client1.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 26  TCP_t.client1.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 110  TCP_t.router1.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 114  TCP_t.router1.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 137  TCP_t.router1.ppp[3].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 139  TCP_t.router1.ppp[3].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 146  TCP_t.router1.ppp[3].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 142  TCP_t.router1.ppp[3].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 159  TCP_t.router2.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 163  TCP_t.router2.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 164  TCP_t.router2.ppp[1].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 166  TCP_t.router2.ppp[1].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 173  TCP_t.router2.ppp[1].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 169  TCP_t.router2.ppp[1].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 78  TCP_t.server1.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 82  TCP_t.server1.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 195  TCP_t.server1.tcp  "rcvd seq"  ETV
+vector 196  TCP_t.server1.tcp  "rcvd ack"  ETV
+vector 192  TCP_t.server1.tcp  "advertised window"  ETV
+vector 190  TCP_t.server1.tcp  "send window"  ETV
+vector 205  TCP_t.server1.tcp  tcpRcvQueueBytes  ETV
+vector 191  TCP_t.server1.tcp  "receive window"  ETV
+vector 194  TCP_t.server1.tcp  "sent ack"  ETV
+vector 72  TCP_t.server1.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 74  TCP_t.server1.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 81  TCP_t.server1.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 77  TCP_t.server1.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+0	9569 33 0 26 0 0.000204 3 0 1 1 1
+1	9602 8 0 0 0 0 1 0 0 0 0
+2	9610 8 0 0 0 0 1 0 0 0 0
+3	9618 8 0 0 0 0 1 0 0 0 0
+4	9626 8 0 0 0 0 1 0 0 0 0
+5	9634 8 0 0 0 0 1 0 0 0 0
+6	9642 42 0 31 0 0.0003061 3 0 1 1 1
+7	9684 8 0 0 0 0 1 0 0 0 0
+8	9692 42 0 36 0 0.0004082 3 0 1 1 1
+9	9734 42 0 44 0 0.0005103 3 0 1 1 1
+10	9776 9 0 0 0 0 1 0 0 0 0
+11	9785 9 0 0 0 0 1 0 0 0 0
+15	9794 10 20 20 0 0 1 1 1 1 1
+21	9804 11 25 25 0 0 1 44 44 44 1936
+23	9815 10 25 25 0 0 1 0 0 0 0
+24	9825 9 0 0 0 0 1 0 0 0 0
+25	9834 36 0 27 0 0.000204 3 0 1 1 1
+26	9870 11 26 26 0 0 1 51 51 51 2601
+30	9881 11 26 26 0 0 1 44 44 44 1936
+40	9892 9 0 0 0 0 1 0 0 0 0
+41	9901 9 0 0 0 0 1 0 0 0 0
+56	9910 9 0 0 0 0 1 0 0 0 0
+57	9919 9 0 0 0 0 1 0 0 0 0
+72	9928 19 43 43 0.0004083 0.0004083 1 44 44 44 1936
+74	9947 18 43 43 0.0004083 0.0004083 1 0 0 0 0
+75	9965 9 0 0 0 0 1 0 0 0 0
+76	9974 27 0 44 0 0.0004083 2 0 1 1 1
+77	10001 19 44 44 0.0004083 0.0004083 1 51 51 51 2601
+78	10020 19 38 38 0.0004083 0.0004083 1 51 51 51 2601
+81	10039 19 44 44 0.0004083 0.0004083 1 44 44 44 1936
+82	10058 19 38 38 0.0004083 0.0004083 1 44 44 44 1936
+91	10077 9 0 0 0 0 1 0 0 0 0
+92	10086 9 0 0 0 0 1 0 0 0 0
+107	10095 10 0 0 0 0 1 0 0 0 0
+108	10105 10 0 0 0 0 1 0 0 0 0
+110	10115 20 28 28 0.0002041 0.0002041 1 51 51 51 2601
+114	10135 20 28 28 0.0002041 0.0002041 1 44 44 44 1936
+118	10155 10 0 0 0 0 1 0 0 0 0
+119	10165 10 0 0 0 0 1 0 0 0 0
+129	10175 10 0 0 0 0 1 0 0 0 0
+130	10185 10 0 0 0 0 1 0 0 0 0
+137	10195 20 30 30 0.0002041 0.0002041 1 44 44 44 1936
+139	10215 19 30 30 0.0002041 0.0002041 1 0 0 0 0
+140	10234 10 0 0 0 0 1 0 0 0 0
+141	10244 48 0 32 0 0.0003061 3 0 1 1 1
+142	10292 20 31 31 0.0002041 0.0002041 1 51 51 51 2601
+146	10312 20 31 31 0.0002041 0.0002041 1 44 44 44 1936
+156	10332 10 0 0 0 0 1 0 0 0 0
+157	10342 10 0 0 0 0 1 0 0 0 0
+159	10352 20 33 33 0.0003062 0.0003062 1 51 51 51 2601
+163	10372 20 33 33 0.0003062 0.0003062 1 44 44 44 1936
+164	10392 20 35 35 0.0003062 0.0003062 1 44 44 44 1936
+166	10412 19 35 35 0.0003062 0.0003062 1 0 0 0 0
+167	10431 10 0 0 0 0 1 0 0 0 0
+168	10441 48 0 37 0 0.0004082 3 0 1 1 1
+169	10489 20 36 36 0.0003062 0.0003062 1 51 51 51 2601
+173	10509 20 36 36 0.0003062 0.0003062 1 44 44 44 1936
+178	10529 10 0 0 0 0 1 0 0 0 0
+179	10539 10 0 0 0 0 1 0 0 0 0
+190	10549 23 40 40 0.0004083 0.0004083 1 65535 65535 65535 4294836225
+191	10572 23 40 40 0.0004083 0.0004083 1 65535 65535 65535 4294836225
+192	10595 46 40 40 0.0004083 0.0004083 2 65536 65536 131072 8589934592
+194	10641 19 40 40 0.0004083 0.0004083 1 1 1 1 1
+195	10660 19 40 40 0.0004083 0.0004083 1 0 0 0 0
+196	10679 19 40 40 0.0004083 0.0004083 1 0 0 0 0
+205	10698 19 40 40 0.0004083 0.0004083 1 0 0 0 0
+239	10717 15 23 23 0 0 1 65535 65535 65535 4294836225
+240	10732 15 23 23 0 0 1 65535 65535 65535 4294836225
+242	10747 11 23 23 0 0 1 0 0 0 0
+253	10758 11 23 23 0 0 1 0 0 0 0
