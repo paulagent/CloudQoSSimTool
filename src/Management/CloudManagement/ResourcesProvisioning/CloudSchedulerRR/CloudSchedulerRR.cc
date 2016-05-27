@@ -521,16 +521,17 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                               cl_user->
                               */
 
-                              AbstractNode* node;
+                        //      AbstractNode* node;
 
-                              node= getNodeByIndex(vm->vm->getNodeSetName(),vm->vm->getNodeName(),false);
-                              cout << "hostNode----->"<< node->getFullName()<<endl;;
+                        ///      node= getNodeByIndex(vm->vm->getNodeSetName(),vm->vm->getNodeName(),false);
+                       //       cout << "hostNode----->"<< node->getFullName()<<endl;;
                         //      printf("\n Method[SCHEDULER_ROUNDROBIN]: Free Memory: ------>%f \n", node->getFreeMemory());
 
+                             cout << "hostNode----->"<< vm->hostNodeVL->getFullName()<<endl;;
 
-                              AbstractCloudManager::unlinkVM(node,vm->vm,false);
+                              AbstractCloudManager::unlinkVM(vm->hostNodeVL,vm->vm,false);
                           //    VmMsgController::
-                              vm->vm->callFinish();
+                           //   vm->vm->callFinish();
 
 
                               runVM.erase(runVM.begin() + j);

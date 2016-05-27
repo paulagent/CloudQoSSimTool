@@ -13,6 +13,7 @@ RunningVM::RunningVM(){
         //   vmID.clear();
            start_time=0;
            end_time=0;
+       //    hostNodeVL=NULL;
 }
 RunningVM::~RunningVM(){
     vm->finish();

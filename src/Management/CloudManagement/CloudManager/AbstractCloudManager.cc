@@ -593,8 +593,10 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 //    started_VM=null;
                 started_VM->vm = vmNew;
                 started_VM->start_time = now;
-                started_VM->end_time = now + 500000; //clocks per secs
+                started_VM->end_time = now + 200000; //clocks per secs
                 started_VM->userID = vmNew->getUid();
+                started_VM->hostNodeVL=nodeVL;
+
                 runVM.push_back(started_VM);
                 // If the linked is incorrect, Zahra: No, I think if the link is correct
                 req->decreaseSelectionQuantity(i);
@@ -1356,28 +1358,140 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req)
 {
     AbstractNode* node;
     VM* vm;
+    NodeVL* nodeVL;
+
     int vmMemory;
     int vmCPU;
     cout <<"AbstractCloudManager::request_unfreez_vm" << endl;
     vm=req->freezed_vm;
+
     if (vm!= NULL)
     {
-        cout << "vm->getNodeSetName()---->" <<vm->getNodeSetName() << "vm->getNodeName()---->" << vm->getNodeName()<< endl;
+      //  cout << "vm->getNodeSetName()---->" <<vm->getNodeSetName() << "vm->getNodeName()---->" << vm->getNodeName()<< endl;
         node= getNodeByIndex(vm->getNodeSetName(),vm->getNodeName(),false);
+    //    nodeVL=vm->getOwner();
+
+        if (!(node->isON())) {
+                //   cout << "AbstractCloudManager::request_start_vm -----> NODE WAS OFF" << endl;
+               node->turnOn();
+        }
+
+        nodeVL = check_and_cast<NodeVL*>(node);
         vmMemory=vm->getMemoryCapacity();
         vmCPU=vm->getNumCores();
+
         cout << "vmMemory"<<vmMemory<<endl;
         cout << "vmCPU"<<vmCPU<<endl;
         cout << "node->getFreeMemory()----->"<<node->getFreeMemory()<<endl;
         cout << "node->getNumCores()------"<<node->getNumCores()<<endl;
+               // link the vm to the node
+        if (nodeVL->testLinkVM(vm->getNumCores(),
+                           vm->getMemoryCapacity(), vm->getStorageCapacity(),
+                           vm->getNumNetworkIF(), vm->getTypeName(),
+                           vm->getUid(), vm->getPid()))
+        {
+                       //cout << "check LinkVM "<< endl;
 
-    }
-
-    if ((node->getFreeMemory() >= vmMemory) && (node->getNumCores() >= vmCPU))
-    {
-        cout<< "AbstractCloudManager::request_unfreez_vm" << endl;
-        linkVM(node,vm);
+        linkVM(nodeVL, vm);
         return false;
+
+        }
+        else   // if there is not enough resources we check vms of that node
+        {
+                    int    j = 0;
+                    // vector<RunningVM*> runVM= AbstractCloudManager::runVM;
+                    printf("\n\n\n\n Method[AbstractCloudManager::request_unfreez_vm]: -------> Before our loop\n");
+                                     // uvic add
+                                     cout << "Method[AbstractCloudManager::request_unfreez_vm]: while loop--->" << runVM.size()<<endl;
+                                     while (j < int(runVM.size()) && runVM.size() !=0 ) {
+                                         clock_t t = clock(); // we are not sure about current time
+
+                                           printf("\n Method[AbstractCloudManager::request_unfreez_vm]:NO_Runiing_VM -------> %ld \n", runVM.size());
+
+                                         RunningVM* vm;
+                                         vm = runVM.at(j);
+                                         if (vm->hostNodeVL->getFullName()  ==  nodeVL->getFullName())   // I'm not sure if this equality works
+                                         {
+                                             if (t >= vm->end_time)   // we need to shutdown vm
+                                                  {
+
+                                                printf("\n Method[AbstractCloudManager::request_unfreez_vm]: -------> t is greater than  vm end_time, we need to shut down vm\n");
+
+                                              // make new request
+                                              AbstractRequest* new_req;
+                                              RequestVM* new_req_vm = new RequestVM();
+
+                                              string a = vm->vm->getFullName();
+                                              string delimeter = ":";
+                                              string token = a.substr(0, a.find(delimeter));
+                                              //      cout << " Method[CLOUD_SCHEDULER_RR]----> token --->" << token << endl;
+                                              new_req_vm->setNewSelection(token.c_str(), 1);
+                                              new_req_vm->setPid(vm->vm->getPid());
+                                            //  new_req_vm->setPid(111);
+                                              new_req_vm->setUid(vm->userID);
+                                              new_req_vm->setFreezedVM(vm->vm);
+                                            //  new_req_vm->setVectorVM(vms);
+                                              new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
+                                              // add new request to temp queue
+                                              new_req->setOperation(REQUEST_UNFREEZE_VM);
+                                           //   new_req->setFreezedVM(vm->vm);
+                                              RequestsManagement::userSendRequest(new_req);
+
+                                              // if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to start VM has sent.\n");
+
+
+                /*
+                                              AbstractUser* user;
+                                              AbstractCloudUser* cl_user;
+                                              user = getUserById(vm->userID);
+                                              cl_user = check_and_cast<AbstractCloudUser*>(user);
+                                              cl_user->startVMs(new_req);   // Add new req to the end of the queue
+                                              cl_user->
+                                              */
+
+                                         //     AbstractNode* node;
+
+                                        //      node= getNodeByIndex(vm->vm->getNodeSetName(),vm->vm->getNodeName(),false);
+                                          //    cout << "hostNode----->"<< node->getFullName()<<endl;;
+                                        //      printf("\n Method[SCHEDULER_ROUNDROBIN]: Free Memory: ------>%f \n", node->getFreeMemory());
+
+                                              cout << "hostNode----->"<< vm->hostNodeVL->getFullName()<<endl;;
+
+                                              unlinkVM(vm->hostNodeVL,vm->vm,false);
+                                          //    VmMsgController::
+                                           //   vm->vm->callFinish();
+
+
+                                              runVM.erase(runVM.begin() + j);
+                                              cout <<"After Free Resources" << endl;
+
+
+                                         //     printf("\n Method[SCHEDULER_ROUNDROBIN]: Free Memory: ------>%f \n", node->getFreeMemory());
+
+                              // uvic add end
+                                              // save the state
+
+                                              // erase from vector
+
+                                              return false;
+                                          }
+
+                                         }
+                                          else {
+                                             ++j;
+
+                                         }
+
+                                     }
+                                     return true;
+
+        }
+
+
+
+
+
+
 
     }
     else

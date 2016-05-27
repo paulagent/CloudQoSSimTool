@@ -13,6 +13,8 @@ class CfgCloud;
 class RequestVM;
 
 class AbstractCloudManager : virtual public AllocationManagement{
+public:
+    vector <RunningVM*> runVM;
 
 protected:
 
@@ -36,8 +38,6 @@ protected:
     bool migrationActive;
 
     vector <RequestVM*> reqPendingToDelete;
-public:
-    vector <RunningVM*> runVM;
 
 protected:
 
