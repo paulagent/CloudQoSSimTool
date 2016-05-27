@@ -19,21 +19,13 @@ Define_Module(CloudSchedulerRR);
 
 //-------------------Scheduling metods.------------------------------------
 
-ICCLog csrr_f;
+
 
 void CloudSchedulerRR::initialize() {
 
     AbstractCloudManager::initialize();
     minimum_percent_storageNode_free = 0.0;
-    /*
-     printNodePowerConsumption = false;
-     printNodeEnergyConsumed =  false;
-     printComponentsPowerConsumption = false;
-     printComponentsEnergyConsumed = false;
-     printDataCenterPowerConsumption = false;
-     printDataCenterEnergyConsumed = false;
 
-     dc_EnergyConsumed = 0.0; */
     maximum_number_of_processes_per_node = par("numberOfVMperNode");
     currentNodeIndex = 0;
     currentNodeType = 0;
@@ -45,29 +37,11 @@ void CloudSchedulerRR::setupScheduler() {
 
     minimum_percent_storageNode_free =
             par("minimum_percent_storageNode_free").doubleValue();
-    /*
-     printNodePowerConsumption = par("printNodePowerConsumed").boolValue();
-     printNodeEnergyConsumed = par("printNodeEnergyConsumed").boolValue();
-     printComponentsPowerConsumption = par("printComponentsPowerConsumed").boolValue();
-     printComponentsEnergyConsumed = par("printComponentsEnergyConsumed").boolValue();
-     printDataCenterPowerConsumption = par("printDataCenterPowerConsumed").boolValue();
-     printDataCenterEnergyConsumed = par("printDataCenterEnergyConsumed").boolValue();
 
-     dc_EnergyConsumed = 0.0; */
 
     AllocationManagement::setupStorageNodes();
 
-    // reconfigure if it will be needed..
-    /*
-     ofstream f;
-     if ((!printNodePowerConsumption) &&
-     (!printNodeEnergyConsumed) &&
-     (!printComponentsPowerConsumption) &&
-     (!printComponentsEnergyConsumed)
-     ){
-     csrr_f.Open(logName, par("outputCompression").boolValue());
 
-     } */
 }
 
 void CloudSchedulerRR::schedule() {
@@ -455,103 +429,12 @@ void CloudSchedulerRR::printEnergyValues() {
 
 void CloudSchedulerRR::finalizeScheduler() {
     // Define ..
-    // AbstractNode* nodeA;
-    // Node* node;
-    ostringstream data;
-    ostringstream file;
-    /* int i,j;
-     int computeNodeMapSize;
-     int storageNodeMapSize;
-     int storageNodeSetSize;
 
-     int computeNodeSetSize = 0;
-     int storageSetSize = 0;
-     int totalNumberNodes = 0; */
-    /*
-     double nodeEnergyConsumed = 0.0;
-     double cpuEnergyConsumed = 0.0;
-     double memoryEnergyConsumed = 0.0;
-     double nicEnergyConsumed = 0.0;
-     double storageEnergyConsumed = 0.0;
-     double psuEnergyConsumed = 0.0;
-     double dataCenterEnergyConsumed = 0.0;
-     vector<HeterogeneousSet*>::iterator setIt;
+   // ostringstream data;
+  //  ostringstream file;
 
-     if (printEnergyToFile){
 
-     // Print the totals
-     if (!printEnergyTrace){
 
-     // Compute nodes
-     for (i = 0; i < getMapSize(); i++)
-     computeNodeSetSize += getSetSize(i, false);
-
-     // Storage nodes
-     for (i = 0; i < getStorageMapSize(); i++)
-     storageSetSize += getSetSize(i, true);
-
-     totalNumberNodes = computeNodeSetSize + storageSetSize;
-
-     // print the mode and the number of nodes
-     file << "@Total-mode;" << totalNumberNodes << endl;
-     file << simTime() << endl;
-
-     // Init..
-     computeNodeMapSize = getMapSize();
-     storageNodeMapSize = getStorageMapSize();
-
-     // Compute nodes
-     for (i = 0; i < computeNodeMapSize; i++){
-
-     computeNodeSetSize = getSetSize(i, false);
-
-     for (j = 0; j < computeNodeSetSize; j++){
-
-     nodeA = getNodeByIndex(i,j, false);
-     node = dynamic_cast<Node*>(nodeA);
-     // Get all the data to variables
-     cpuEnergyConsumed = node->getCPUEnergyConsumed();
-     memoryEnergyConsumed = node->getMemoryEnergyConsumed();
-     storageEnergyConsumed = node->getStorageEnergyConsumed();
-     nicEnergyConsumed = node->getNICEnergyConsumed();
-     psuEnergyConsumed = node->getPSUConsumptionLoss();
-
-     nodeEnergyConsumed =  cpuEnergyConsumed + memoryEnergyConsumed + storageEnergyConsumed+ nicEnergyConsumed + psuEnergyConsumed;
-     data  << node->getFullName() << ";" << nodeEnergyConsumed << endl;
-     dataCenterEnergyConsumed += nodeEnergyConsumed;
-     }
-     }
-
-     // Storage nodes
-     for (i = 0; i < storageNodeMapSize; i++){
-
-     storageNodeSetSize = getSetSize(i, true);
-
-     for (j = 0; j < storageNodeSetSize; j++){
-     nodeA = getNodeByIndex(i,j, true);
-     node = dynamic_cast<Node*>(nodeA);
-
-     // Get all the data to variables
-     cpuEnergyConsumed = node->getCPUEnergyConsumed();
-     memoryEnergyConsumed = node->getMemoryEnergyConsumed();
-     storageEnergyConsumed = node->getStorageEnergyConsumed();
-     nicEnergyConsumed = node->getNICEnergyConsumed();
-     psuEnergyConsumed = node->getPSUConsumptionLoss();
-
-     nodeEnergyConsumed =  cpuEnergyConsumed + memoryEnergyConsumed + storageEnergyConsumed+ nicEnergyConsumed + psuEnergyConsumed;
-     data << node->getFullName() << ";" << nodeEnergyConsumed << endl;
-     dataCenterEnergyConsumed += nodeEnergyConsumed;
-     }
-     }
-
-     data << "#" << dataCenterEnergyConsumed << endl;
-
-     // print data to the file
-     csrr_f.Append(file.str().c_str()) ;
-     csrr_f.Close();
-     }
-     }
-     */
 }
 
 int CloudSchedulerRR::selectNodeSet(string setName, int vmcpu, int vmmemory) {
