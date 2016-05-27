@@ -570,7 +570,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
 
                 vmName << req->getSelectionType(0).c_str() << ":u"
                         << req->getUid() << ":p" << vmNew->getPid() << "";
-                cout <<":u"  << req->getUid() << ":p" << vmNew->getPid() <<endl;
+                cout <<"NEW VM  ------->  :u"  << req->getUid() << ":p" << vmNew->getPid() <<endl;
                 vmNew->cModule::setName(vmName.str().c_str());
                 vmNew->setName(vmName.str().c_str());
                 // vmNew-> t.start
