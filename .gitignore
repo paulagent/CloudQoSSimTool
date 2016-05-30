@@ -31,6 +31,7 @@
 *~
 #do not push auto generated msg cc and h files
 *_m.h
+*_m.cc
 # do not push out folder
 out/
 
