@@ -28,11 +28,13 @@ void DataCenterSchedulerFIFO::setupScheduler(){
 AbstractNode* DataCenterSchedulerFIFO::selectNode (AbstractRequest* req){
 
     // TODO
+    return NULL;
 }
 
 vector<AbstractNode*> DataCenterSchedulerFIFO::selectStorageNodes (AbstractRequest* st_req){
 
     // TODO
+    return NULL;
 }
 
 void DataCenterSchedulerFIFO::schedule (){
