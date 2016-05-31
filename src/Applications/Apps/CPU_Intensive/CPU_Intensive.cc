@@ -6,6 +6,7 @@
 Define_Module(CPU_Intensive);
 
 CPU_Intensive::~CPU_Intensive(){
+
 }
 
 
@@ -237,7 +238,9 @@ void CPU_Intensive::processResponseMessage (icancloud_Message *sm){
 			else if ((executeRead) || (executeWrite)){
 
 				if ((executeRead) && (currentIteration > iterations))
+				{  cout << "CPU_Intensive::processResponseMessage" <<endl;
 					printResults();
+				}
 				else
 					executeIOrequest(executeRead, executeWrite);
 			}
@@ -327,6 +330,7 @@ void CPU_Intensive::printResults (){
         addResults(jobResults);
 
     //Send results list to the cloudManager
+        cout << "CPU_Intensive::printResults --before call notify_UserJobHasFinished" << endl;
         userPtr->notify_UserJobHasFinished(this);
 }
 

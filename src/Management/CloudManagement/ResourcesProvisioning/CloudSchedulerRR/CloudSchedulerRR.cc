@@ -535,7 +535,7 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
 
 
                               runVM.erase(runVM.begin() + j);
-                              cout <<"After Free Resources" << endl;
+                              cout <<"CloudSchedulerRR:: scheduleRR()---->After Free Resources" << endl;
 
 
                          //     printf("\n Method[SCHEDULER_ROUNDROBIN]: Free Memory: ------>%f \n", node->getFreeMemory());

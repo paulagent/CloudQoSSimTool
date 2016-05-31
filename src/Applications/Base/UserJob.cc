@@ -58,7 +58,7 @@ UserJob* UserJob::cloneJob(cModule* userMod) {
 
     // Init ..
     appPath << this->getNedTypeName();
-
+cout << "UserJob::cloneJob --->" <<appPath.str() <<endl;
     // Create the app module
     modType = cModuleType::get(appPath.str().c_str());
 

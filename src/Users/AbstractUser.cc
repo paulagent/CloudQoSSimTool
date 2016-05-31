@@ -230,7 +230,7 @@ void AbstractUser::notify_UserJobHasFinished (jobBase* job){
 	if (getWQ_size() != 0) {
 
 //		executePendingJobs();
-
+	cout <<"  AbstractUser::notify_UserJobHasFinished " << endl;
 		schedule();
 
 	}
