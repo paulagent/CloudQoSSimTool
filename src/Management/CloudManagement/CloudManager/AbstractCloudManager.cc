@@ -611,7 +611,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
         }
         if (!notEnoughResources)
             req->eraseSelectionType(i);
-
+        cout << "AbstractCloudManager::request_start_vm -->check notEnoughResources is false 1 "<< endl;
     }
     // Send all attendeed requests
     attendedRequest = new RequestVM(req->getUid(), REQUEST_START_VM,
@@ -620,6 +620,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
 
         // At least one vm has been allocated
         if (attendedRequest_vms.size() > 0) {
+            cout << "AbstractCloudManager::request_start_vm -->check notEnoughResources is false 2 "<< endl;
             attendedRequest->setState(REQUEST_PENDING);
             user = getUserByModuleID(req->getUid());
             // uvic this could be a problem if we pass an RequestVM instance instead of AbstractRequest
@@ -631,9 +632,13 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
     }
     // All the request has been allocated.
     else {
+        cout << "AbstractCloudManager::request_start_vm -->check attendedRequest_vms.size() <= 0"<< endl;
         attendedRequest->setState(REQUEST_SUCCESS);
+        cout << "AbstractCloudManager::request_start_vm -->1"<< endl;
         user = getUserByModuleID(req->getUid());
+        cout << "AbstractCloudManager::request_start_vm -->2"<< endl;
         user->notify_UserRequestAttendeed(attendedRequest);
+        cout << "AbstractCloudManager::request_start_vm -->3"<< endl;
     }
 
     return notEnoughResources;
