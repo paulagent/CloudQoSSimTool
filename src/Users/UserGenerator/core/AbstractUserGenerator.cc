@@ -142,7 +142,7 @@ void AbstractUserGenerator::initialize(){
                     jobSel->appName = getParentModule()->getSubmodule("appDefinition")->getSubmodule("application",i)->par("name").stringValue();
                     auxMod = getParentModule()->getSubmodule("appDefinition")->getSubmodule("application",i)->getSubmodule("app");
                     jobSel->job = dynamic_cast<UserJob*> (auxMod);
-
+                    cout << "AbstractUserGenerator::initialize() -->" << jobSel->job->getClassName() <<endl;
                     jobSel->job->setOriginalName(jobSel->appName);
                     jobSel->job->setAppType(getParentModule()->getSubmodule("appDefinition")->getSubmodule("application",i)->par("appType").stringValue());
                     jobSel->job->setNumCopies(jobSel->replicas);

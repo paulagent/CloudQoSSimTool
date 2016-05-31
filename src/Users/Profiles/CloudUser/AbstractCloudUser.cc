@@ -228,7 +228,7 @@ int AbstractCloudUser::allocateJob(jobBase* job){
            syscallManager = osModule->getSubmodule("syscallManager");
 
            osCore = check_and_cast <VMSyscallManager*> (syscallManager);
-
+           cout << "AbstractCloudUser::allocateJob --create process:  "<<endl;
            commId =  osCore->createProcess(jobC, this->getId());
 
 
