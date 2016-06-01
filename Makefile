@@ -400,6 +400,7 @@ OBJS = \
     $O/src/Virtualization/Hypervisor/Hypervisors/Hypervisor.o \
     $O/src/Virtualization/VirtualMachines/VM.o \
     $O/src/Virtualization/VirtualMachines/Docker/Docker.o \
+    $O/src/Virtualization/VirtualMachines/Docker/DockerEngine.o \
     $O/src/Virtualization/VirtualMachines/SetDefinition/VmImage.o \
     $O/src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/VMSchedulerRR.o \
     $O/src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.o \
@@ -5899,6 +5900,8 @@ $O/src/Virtualization/VirtualMachines/VM.o: src/Virtualization/VirtualMachines/V
 	$(INET_PROJ)/src/transport/contract/TCPSocket.h
 $O/src/Virtualization/VirtualMachines/Docker/Docker.o: src/Virtualization/VirtualMachines/Docker/Docker.cc \
 	src/Virtualization/VirtualMachines/Docker/Docker.h
+$O/src/Virtualization/VirtualMachines/Docker/DockerEngine.o: src/Virtualization/VirtualMachines/Docker/DockerEngine.cc \
+	src/Virtualization/VirtualMachines/Docker/DockerEngine.h
 $O/src/Virtualization/VirtualMachines/SetDefinition/VmImage.o: src/Virtualization/VirtualMachines/SetDefinition/VmImage.cc \
 	src/Virtualization/VirtualMachines/SetDefinition/VmImage.h
 $O/src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/VMSchedulerRR.o: src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/VMSchedulerRR.cc \

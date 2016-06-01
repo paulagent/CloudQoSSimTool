@@ -146,6 +146,11 @@ protected:
              * This method is invoked to attend a vm unfreez request;
              */
             bool request_unfreez_vm(RequestVM* req);
+            /*
+                        * uvic
+                        * This method is invoked to attend a  request_start_docker_container request;
+                        */
+            bool    request_start_docker_container(RequestVM* req);
 
 
 		// ------------------------ operations with connections of vms --------------------

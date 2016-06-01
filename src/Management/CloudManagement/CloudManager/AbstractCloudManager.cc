@@ -1359,6 +1359,16 @@ vector<RunningVM*> AbstractCloudManager::getRunVM()
 {
     return runVM;
 }
+
+bool AbstractCloudManager::request_start_docker_container(RequestVM* req){
+// two situations
+    // one vm
+    VM* vm ;
+    vm = req->
+
+
+return true;
+}
 bool AbstractCloudManager::request_unfreez_vm(RequestVM* req)
 {
     AbstractNode* node;

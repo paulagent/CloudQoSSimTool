@@ -62,7 +62,7 @@ module VMManagerScheduler like IVMScheduler
         bool memorization = default (false);
         
         // .ned Name for the VMs that will be the images that user virtual machines will replicate.
-        string vmNedImageName = default ("BasicVM");
+        string vmNedImageName = default ("Docker");
         
         // compress the output files
         bool outputCompression = default (false);
@@ -71,7 +71,7 @@ module VMManagerScheduler like IVMScheduler
         @display("i=msg/job");
 
 	submodules:
-	    vmImage:<vmNedImageName> like IVM{
+	    dockerImage:<vmNedImageName> like IVM{
 	        numCores = 0;
 	        memorySize_MB = 0;
 	        storageSize_GB = 0;

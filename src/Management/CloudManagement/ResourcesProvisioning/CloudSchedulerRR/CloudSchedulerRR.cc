@@ -159,6 +159,15 @@ void CloudSchedulerRR::schedule() {
                  }
 
              }
+             else if (req->getOperation() == REQUEST_START_DOCKER_CONTAINER) {
+                             printf("\n Method[CLOUD_SCHEDULER_RR]: -------> REQUEST_START_DOCKER_CONTAINER\n");
+                             notEnoughResources = request_start_docker_container(req_vm);
+                             if (!notEnoughResources) {
+                                 eraseRequest(req);
+                                 requestErased = true;
+                             }
+
+                         }
 
 
              else {
