@@ -1364,7 +1364,7 @@ bool AbstractCloudManager::request_start_docker_container(RequestVM* req){
 // two situations
     // one vm
     VM* vm ;
-    vm = req->
+   // vm = req->
 
 
 return true;
