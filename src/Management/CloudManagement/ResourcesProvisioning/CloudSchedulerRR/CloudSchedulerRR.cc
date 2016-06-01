@@ -496,7 +496,7 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                           if (t >= vm->end_time)   // we need to shutdown vm
                                   {
 
-                                printf("\n Method[CLOUD_SCHEDULER_RR ::scheduleRR()]: -------> t is greater than  vm end_time, we need to shut down vm\n");
+                              printf("\n Method[CLOUD_SCHEDULER_RR ::scheduleRR()]: -------> t is greater than  vm end_time, we need to shut down vm\n");
 
                               // make new request
                               AbstractRequest* new_req;
@@ -505,61 +505,36 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                               string a = vm->vm->getFullName();
                               string delimeter = ":";
                               string token = a.substr(0, a.find(delimeter));
-                              //      cout << " Method[CLOUD_SCHEDULER_RR]----> token --->" << token << endl;
                               new_req_vm->setNewSelection(token.c_str(), 1);
                               new_req_vm->setPid(vm->vm->getPid());
-                            //  new_req_vm->setPid(111);
                               new_req_vm->setUid(vm->userID);
                               new_req_vm->setFreezedVM(vm->vm);
-                            //  new_req_vm->setVectorVM(vms);
-                              new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
+                              new_req_vm->set_is_freezed(true);
+
                               // add new request to temp queue
+
+                              new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
                               new_req->setOperation(REQUEST_UNFREEZE_VM);
-                           //   new_req->setFreezedVM(vm->vm);
+
                               RequestsManagement::userSendRequest(new_req);
 
-                              // if (DEBUG_CLOUD_SCHED) printf("\n Method[CLOUD_SCHEDULER_RR]: -------> New Req to start VM has sent.\n");
-
-
-/*
-                              AbstractUser* user;
-                              AbstractCloudUser* cl_user;
-                              user = getUserById(vm->userID);
-                              cl_user = check_and_cast<AbstractCloudUser*>(user);
-                              cl_user->startVMs(new_req);   // Add new req to the end of the queue
-                              cl_user->
-                              */
+                              // Freezing VM by unlink all resources
 
                               AbstractNode* node;
-
-                             node= getNodeByIndex(vm->vm->getNodeSetName(),vm->vm->getNodeName(),false);
-                       //       cout << "hostNode----->"<< node->getFullName()<<endl;;
-                        //      printf("\n Method[SCHEDULER_ROUNDROBIN]: Free Memory: ------>%f \n", node->getFreeMemory());
-
-                             cout << "hostNode----->"<< vm->hostNodeVL->getFullName()<<endl;;
+                              node=vm->hostNodeVL;
+                              cout << "hostNode----->" << vm->hostNodeVL->getFullName() << endl;;
 
                               AbstractCloudManager::unlinkVM(vm->hostNodeVL,vm->vm,false);
-                          //    VmMsgController::
-                           //   vm->vm->callFinish();
-
 
                               runVM.erase(runVM.begin() + j);
                               cout <<"CloudSchedulerRR:: scheduleRR()---->After Free Resources" << endl;
 
-
-                         //     printf("\n Method[SCHEDULER_ROUNDROBIN]: Free Memory: ------>%f \n", node->getFreeMemory());
-
-              // uvic add end
-                              // save the state
-
-                              // erase from vector
 
                               return node;
                           } else {
                               ++j;
 
                           }
-
                       }
 
                       printf("\n Method[CLOUD_SCHEDULER_RR]: -------> After our loop\n");

@@ -43,7 +43,8 @@ public:
     * Destructor
     */
     virtual ~VM();
-
+    VMRequestManager* vmreqmgr;
+    VMSchedulerRR* vmschrr;
     /*
     * Initialization of the module
     */

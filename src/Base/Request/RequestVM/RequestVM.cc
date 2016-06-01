@@ -39,6 +39,7 @@ RequestVM::RequestVM (int userID, int op, vector<VM*> newVMSet){
     jobId = -1;
     vmId = -1;
     connections.clear();
+    is_freezed=false;
 }
 
 RequestVM::~RequestVM() {

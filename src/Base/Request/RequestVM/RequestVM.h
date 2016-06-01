@@ -36,6 +36,7 @@ private:
     vector<userVmType*> vmsToBeSelected;
 public:
         VM* freezed_vm;
+        bool is_freezed;
 public:
 
 	RequestVM();
@@ -73,6 +74,8 @@ public:
 	RequestVM* dup ();
 	void setFreezedVM(VM* vm_){freezed_vm=vm_;};
     VM* getFreezedVM(){return freezed_vm;};
+    void set_is_freezed(bool flag){is_freezed=flag;};
+    bool get_is_freezed(){return is_freezed;};
 	bool compareReq(AbstractRequest* req);
 
 };

@@ -16,10 +16,12 @@
 #ifndef VMSCHEDULERRR_H_
 #define VMSCHEDULERRR_H_
 
+# include "VMRequestManager/VMRequestManager.h"
 class VMSchedulerRR {
 public:
     VMSchedulerRR();
     virtual ~VMSchedulerRR();
+    void schedule();
 };
 
 #endif /* VMSCHEDULERRR_H_ */
