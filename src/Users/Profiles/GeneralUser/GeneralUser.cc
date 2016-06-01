@@ -348,8 +348,8 @@ void GeneralUser::jobHasFinished(jobBase* job) {
 
 void GeneralUser::schedule() {
 
-    Enter_Method_Silent();
-
+    //Enter_Method_Silent();
+    Enter_Method("request()");
     // Define ..
 
     UserJob* job;

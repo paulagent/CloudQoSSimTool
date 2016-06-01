@@ -91,7 +91,7 @@ void UserGeneratorDay::processSelfMessage(cMessage *msg) {
 
         if (time_intervals_H != 0) {
             scheduleAt(simTime(), newHourEvent);
-                  printf("\n Method[UserGeneratorDay]: newHourEvent -------> \n");
+            printf("\n Method[UserGeneratorDay]: newHourEvent -------> \n");
 
         } else
             finalizeUserGenerator(false);

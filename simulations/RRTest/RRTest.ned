@@ -95,13 +95,15 @@ network RRTest
         userGenerator: UserGenerator {
             parameters:
                 numCells = 1;
-                @display("p=397,277");
+                @display("p=445,318");
         }
 
         // ---------------------------------------------------------------
         //   Definition of switches
         // ---------------------------------------------------------------
-        switch_0: EtherSwitch;
+        switch_0: EtherSwitch {
+            @display("p=146,203");
+        }
         rackSwitch_0: EtherSwitch {
             @display("p=241,117");
         }
@@ -136,8 +138,8 @@ network RRTest
     connections allowunconnected:
 
         // Connections for rack rc_0_Rack_A_16
-           for i=0..1 {
-        rc_0_Rack_A_16[0].ethg++ <--> RackChannel_0_RRTest <--> rackSwitch_0.ethg++;
+        for i=0..1 {
+            rc_0_Rack_A_16[0].ethg++ <--> RackChannel_0_RRTest <--> rackSwitch_0.ethg++;
         }
 
         rackSwitch_0.ethg++ <--> Channel_0_RRTest <--> switch_0.ethg++;

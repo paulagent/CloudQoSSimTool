@@ -35,7 +35,7 @@ module NodeVL like INode
         @class("NodeVL");
         @node;
         @labels(node,ethernet-node,wireless-node);
-        @display("i=old/telnet");
+        @display("i=old/telnet;bgb=713,599");
 
         // Default parameters
         int numExtInterfaces = default(0);														// Number of external interfaces
@@ -126,11 +126,11 @@ module NodeVL like INode
 
         eth[sizeof(ethg)]: <default("EthernetInterface")> like IWiredNic {
             parameters:
-                @display("p=378,475,row,60;q=txQueue");
+                @display("p=460,469,row,60;q=txQueue");
         }
         ppp[sizeof(pppg)]: <default("PPPInterface")> like IWiredNic {
             parameters:
-                @display("p=482,406,row,60;q=txQueue");
+                @display("p=593,412,row,60;q=txQueue");
         }
         ext[numExtInterfaces]: <default("ExtInterface")> like IExternalNic {
             parameters:
@@ -203,7 +203,7 @@ module NodeVL like INode
 
         notificationBoard: NotificationBoard {
             parameters:
-                @display("p=45,343;i=block/control");
+                @display("p=84,294;i=block/control");
 
 
         }
@@ -290,11 +290,11 @@ module NodeVL like INode
         osModule.fromOutputMemory <-- hypervisor.toVMMemoryO++;
         osModule.toOutputMemory --> hypervisor.fromVMMemoryO++;
 
-		//Conections of the CPU and Operative System
-		for i=0..numCores-1 {
-        osModule.fromCPU[i] <-- hypervisor.toVMCPU[i];
-        osModule.toCPU[i] --> hypervisor.fromVMCPU[i];
-		}
+        //Conections of the CPU and Operative System
+        for i=0..numCores-1 {
+            osModule.fromCPU[i] <-- hypervisor.toVMCPU[i];
+            osModule.toCPU[i] --> hypervisor.fromVMCPU[i];
+        }
         // Connections between Operating System and Network
         osModule.toNet_TCP --> hypervisor.fromVMNet++;
         osModule.fromNet_TCP <-- hypervisor.toVMNet++;

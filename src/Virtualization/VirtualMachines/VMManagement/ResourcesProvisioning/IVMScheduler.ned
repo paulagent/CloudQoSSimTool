@@ -1,0 +1,31 @@
+//
+// Module interface that represents a cloud scheduler
+//
+// @authors Gabriel Gonz&aacute;lez Casta&ntilde;&eacute
+// @date 2014-12-11
+
+package icancloud.src.Virtualization.VirtualMachines.VMManagement.ResourcesProvisioning;
+
+moduleinterface IVMScheduler
+{
+   parameters:
+        
+		string virtualIPsBasis; 					// The virtual ip that the cloud will give to the VMs. It will be increased by 1 each new VM.					           
+		double timeToStart; 						// The time that cloud waits until it starts
+        bool liveMigration;							// Parameters to migrate VMs
+        int dirtyingRate;							// The minimum quantity of data before disconnect the VM and reconnect it.
+        int numberOfPFSRemoteServers;				// The number of parallel servers used as remote storage
+        int timeBetweenScheduleEvents_s;			// Time until the scheduler is activated again 
+        double timeBetweenLogResults_s;				// Time between all data center is checked extracting the energy measurements.
+        bool printEnergyToFile;						// print the energy to a log file.     
+        bool printEnergyTrace;						// print each schedule event the consumption values of the nodes    	
+        bool printNodePowerConsumed;				// print Node instant consumption
+   
+        int remote_storage_VMs_per_node;			// THe maximum number of virtual machines allowed to access to a data server 
+        double minimum_percent_storageNode_free;	// The percent minimum that represents the amount of storage in a data server before select other.
+        int numberOfDockerperVM;						// The maximum number of virtual machines into a node
+        bool memorization;							// Parameter pending to test. Do not change the value
+        bool outputCompression;					    // compress the output files
+    	
+}
+

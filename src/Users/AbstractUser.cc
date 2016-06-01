@@ -240,6 +240,7 @@ void AbstractUser::notify_UserJobHasFinished (jobBase* job){
 void AbstractUser::notify_UserRequestAttendeed  (AbstractRequest* req){
 
     throw cRuntimeError ("void AbstractUser::notify_UserRequestAttendeed ->to be implemented\n");
+    cout << "AbstractUser::notify_UserRequestAttendeed getOperation() == REQUEST_RESOURCES " <<endl;
     // Define ..
 		vector<AbstractRequest*>::iterator reqIt;
 //		int i;
@@ -258,12 +259,12 @@ void AbstractUser::notify_UserRequestAttendeed  (AbstractRequest* req){
 
 	if (req->getOperation() == REQUEST_RESOURCES){
 		requestAttended (req);
-
+		cout << "AbstractUser::notify_UserRequestAttendeed getOperation() == REQUEST_RESOURCES " <<endl;
 		// This method (userBase) delete the request from the pending_requests vector.
 		requestArrival(req);
 	}
 
-//	DE AQUI EN ADELANTE, NO REVISADO!!
+
 	else if (req->getOperation() == REQUEST_FREE_RESOURCES){
 		requestAttended (req);
 	}
@@ -297,7 +298,7 @@ void AbstractUser::notify_UserRequestAttendeed  (AbstractRequest* req){
 //		}
 
 	}else if (req->getOperation() == REQUEST_LOCAL_STORAGE){
-
+	    cout << "AbstractUser::notify_UserRequestAttendeed getOperation() == REQUEST_LOCAL_STORAGE " <<endl;
 //        strReq = check_and_cast<StorageRequest>(req);
 //		storageConnectionSize = req->getConnectionSize();
 //
@@ -357,7 +358,11 @@ void AbstractUser::notify_UserRequestAttendeed  (AbstractRequest* req){
 //
 //
 
-	if (!userFinalizing)  schedule();
+	if (!userFinalizing)
+	    {
+	    cout << "AbstractUser::notify_UserRequestAttendeed call scheudle " <<endl;
+	    schedule();
+	    }
 }
 
 
