@@ -81,7 +81,8 @@ void VM::initialize() {
     osMod = getSubmodule("osModule")->getSubmodule("syscallManager");
     os = dynamic_cast<VMSyscallManager*>(osMod);
     Machine::changeState(MACHINE_STATE_OFF);
-    vmschrr->VMSchedulerRR();
+  //  vmschrr->VMSchedulerRR();
+    dockerset.clear();
 }
 
 void VM::finish() {

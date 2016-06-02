@@ -1358,7 +1358,7 @@ bool AbstractCloudManager::request_start_docker_container(RequestVM* req){
     {
         //pass req to vmRequestManager of the particular VM
 
-        req->getFreezedVM()->vmreqmgr->userSendRequest(req);
+        req->getVM(0)->vmreqmgr->userSendRequest(req);
         return false;
     }
     else                               // VM is Freezed

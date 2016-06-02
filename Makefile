@@ -58,8 +58,8 @@ INCLUDE_PATH = \
     -Isimulations/Cloud_A \
     -Isimulations/Cloud_A/results \
     -Isimulations/Cloud_B \
+    -Isimulations/Cloud_B/results \
     -Isimulations/Cloud_C \
-    -Isimulations/Final_TCP \
     -Isimulations/RRTest \
     -Isimulations/RRTest/results \
     -Isimulations/TCP_test \
@@ -236,7 +236,8 @@ INCLUDE_PATH = \
     -Isrc/Virtualization/VirtualMachines/VMManagement \
     -Isrc/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning \
     -Isrc/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR \
-    -Isrc/Virtualization/VirtualMachines/VMManagement/VmMsgController
+    -Isrc/Virtualization/VirtualMachines/VMManagement/VmMsgController \
+    -Isrc/Virtualization/VirtualMachines/VMRequestManager
 
 # Additional object and library files to link with
 EXTRA_OBJS =
@@ -259,14 +260,14 @@ OBJS = \
     $O/src/Applications/Apps/ServerApplication/ServerApplication.o \
     $O/src/Applications/Apps/TCPVideo/TCPAdaptiveVideoClientApp.o \
     $O/src/Applications/Apps/TCP_test/TCP_test.o \
-    $O/src/Applications/Base/jobBase.o \
     $O/src/Applications/Base/UserJob.o \
+    $O/src/Applications/Base/jobBase.o \
     $O/src/Applications/Base/Management/JobResults.o \
-    $O/src/Applications/Base/Management/JobResultsSet.o \
     $O/src/Applications/Base/Management/JobQueue.o \
+    $O/src/Applications/Base/Management/JobResultsSet.o \
     $O/src/Applications/Libraries_API/API_OS/API_OS.o \
-    $O/src/Applications/Libraries_API/MPI_Base/MPI_Base.o \
     $O/src/Applications/Libraries_API/MPI_Base/MPI_Call.o \
+    $O/src/Applications/Libraries_API/MPI_Base/MPI_Base.o \
     $O/src/Architecture/Machine/Machine.o \
     $O/src/Architecture/Node/AbstractNode.o \
     $O/src/Architecture/Node/Node/Node.o \
@@ -301,27 +302,27 @@ OBJS = \
     $O/src/Base/icancloud_Base.o \
     $O/src/Base/cGateManager.o \
     $O/src/Base/icancloud_MemoryBlock.o \
-    $O/src/Base/Messages/icancloud_App_CPU_Message.o \
-    $O/src/Base/Messages/icancloud_MPI_Message.o \
-    $O/src/Base/Messages/icancloud_File.o \
-    $O/src/Base/Messages/icancloud_Migration_Message.o \
     $O/src/Base/Messages/icancloud_Message.o \
-    $O/src/Base/Messages/icancloud_BlockList_Message.o \
     $O/src/Base/Messages/icancloud_App_IO_Message.o \
+    $O/src/Base/Messages/icancloud_BlockList_Message.o \
+    $O/src/Base/Messages/icancloud_Migration_Message.o \
     $O/src/Base/Messages/icancloud_App_NET_Message.o \
+    $O/src/Base/Messages/icancloud_File.o \
+    $O/src/Base/Messages/icancloud_MPI_Message.o \
     $O/src/Base/Messages/icancloud_App_MEM_Message.o \
-    $O/src/Base/Messages/SMS/SMS_MainMemory.o \
-    $O/src/Base/Messages/SMS/SplittingMessageSystem.o \
-    $O/src/Base/Messages/SMS/SMS_PFS.o \
+    $O/src/Base/Messages/icancloud_App_CPU_Message.o \
     $O/src/Base/Messages/SMS/icancloud_Request.o \
     $O/src/Base/Messages/SMS/SMS_Branch.o \
-    $O/src/Base/Messages/SMS/SMS_NFS.o \
+    $O/src/Base/Messages/SMS/SMS_PFS.o \
     $O/src/Base/Messages/SMS/SMS_RAID_0.o \
+    $O/src/Base/Messages/SMS/SMS_NFS.o \
+    $O/src/Base/Messages/SMS/SMS_MainMemory.o \
+    $O/src/Base/Messages/SMS/SplittingMessageSystem.o \
+    $O/src/Base/Parser/cfgDataCenter.o \
+    $O/src/Base/Parser/cfgCloud.o \
     $O/src/Base/Parser/cfgCommunications.o \
     $O/src/Base/Parser/cfgMPI.o \
     $O/src/Base/Parser/cfgPreloadFS.o \
-    $O/src/Base/Parser/cfgDataCenter.o \
-    $O/src/Base/Parser/cfgCloud.o \
     $O/src/Base/Request/AbstractRequest.o \
     $O/src/Base/Request/HPCRequest/PhysicalResourcesRequest.o \
     $O/src/Base/Request/RequestBase/RequestBase.o \
@@ -338,9 +339,9 @@ OBJS = \
     $O/src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/NetworkMeter/NetworkMeterCore/NetworkMeterCore.o \
     $O/src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/StorageMeter/StorageMeterCore/StorageMeterCore.o \
     $O/src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/Memoization_uthash.o \
+    $O/src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/EState.o \
     $O/src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/EnergyMeterStates.o \
     $O/src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/EnergyState.o \
-    $O/src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/EState.o \
     $O/src/EnergySystem/PSU/AbstractPSU.o \
     $O/src/EnergySystem/PSU/MainPSU/MainPSU.o \
     $O/src/Management/CloudManagement/Base/AllocationManagement.o \
@@ -350,24 +351,24 @@ OBJS = \
     $O/src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerRR/CloudSchedulerRR.o \
     $O/src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerRandom/CloudSchedulerRandom.o \
     $O/src/Management/DataCenterManagement/AbstractDCManager.o \
-    $O/src/Management/DataCenterManagement/Base/RequestsManagement.o \
     $O/src/Management/DataCenterManagement/Base/StorageManagement.o \
-    $O/src/Management/DataCenterManagement/Base/UserManagement.o \
+    $O/src/Management/DataCenterManagement/Base/RequestsManagement.o \
     $O/src/Management/DataCenterManagement/Base/DataCenterAPI.o \
+    $O/src/Management/DataCenterManagement/Base/UserManagement.o \
     $O/src/Management/DataCenterManagement/ResourcesProvisioning/DataCenterSchedulers/DataCenterSchedulerFIFO/DataCenterSchedulerFIFO.o \
-    $O/src/Management/MachinesStructure/ElementType.o \
-    $O/src/Management/MachinesStructure/MachinesMap.o \
     $O/src/Management/MachinesStructure/HeterogeneousSet.o \
+    $O/src/Management/MachinesStructure/MachinesMap.o \
+    $O/src/Management/MachinesStructure/ElementType.o \
     $O/src/Management/NetworkManager/NetworkManager.o \
-    $O/src/Management/NetworkManager/VirtualIPCell.o \
     $O/src/Management/NetworkManager/PortTable.o \
     $O/src/Management/NetworkManager/VirtualIPs.o \
+    $O/src/Management/NetworkManager/VirtualIPCell.o \
     $O/src/Management/Topology/ComputeNode.o \
     $O/src/Management/Topology/StorageNode.o \
     $O/src/Users/AbstractUser.o \
+    $O/src/Users/Base/userBase.o \
     $O/src/Users/Base/queuesManager.o \
     $O/src/Users/Base/userStorage.o \
-    $O/src/Users/Base/userBase.o \
     $O/src/Users/Profiles/CloudUser/AbstractCloudUser.o \
     $O/src/Users/Profiles/GeneralUser/GeneralUser.o \
     $O/src/Users/Profiles/SmartUser/SmartUser.o \
@@ -399,30 +400,31 @@ OBJS = \
     $O/src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/Schedulers/H_STORAGE_SCHED_FIFO/H_STORAGE_SCHED_FIFO.o \
     $O/src/Virtualization/Hypervisor/Hypervisors/Hypervisor.o \
     $O/src/Virtualization/VirtualMachines/VM.o \
-    $O/src/Virtualization/VirtualMachines/Docker/Docker.o \
     $O/src/Virtualization/VirtualMachines/Docker/DockerEngine.o \
+    $O/src/Virtualization/VirtualMachines/Docker/Docker.o \
     $O/src/Virtualization/VirtualMachines/SetDefinition/VmImage.o \
     $O/src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/VMSchedulerRR.o \
     $O/src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.o \
-    $O/src/Base/Messages/icancloud_App_CPU_Message_m.o \
-    $O/src/Base/Messages/icancloud_Message_m.o \
-    $O/src/Base/Messages/icancloud_Migration_Message_m.o \
-    $O/src/Base/Messages/icancloud_BlockList_Message_m.o \
-    $O/src/Base/Messages/icancloud_App_IO_Message_m.o \
-    $O/src/Base/Messages/icancloud_MPI_Message_m.o \
+    $O/src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.o \
     $O/src/Base/Messages/icancloud_App_NET_Message_m.o \
-    $O/src/Base/Messages/icancloud_App_MEM_Message_m.o
+    $O/src/Base/Messages/icancloud_App_MEM_Message_m.o \
+    $O/src/Base/Messages/icancloud_App_IO_Message_m.o \
+    $O/src/Base/Messages/icancloud_BlockList_Message_m.o \
+    $O/src/Base/Messages/icancloud_Migration_Message_m.o \
+    $O/src/Base/Messages/icancloud_Message_m.o \
+    $O/src/Base/Messages/icancloud_App_CPU_Message_m.o \
+    $O/src/Base/Messages/icancloud_MPI_Message_m.o
 
 # Message files
 MSGFILES = \
-    src/Base/Messages/icancloud_App_CPU_Message.msg \
-    src/Base/Messages/icancloud_Message.msg \
-    src/Base/Messages/icancloud_Migration_Message.msg \
-    src/Base/Messages/icancloud_BlockList_Message.msg \
-    src/Base/Messages/icancloud_App_IO_Message.msg \
-    src/Base/Messages/icancloud_MPI_Message.msg \
     src/Base/Messages/icancloud_App_NET_Message.msg \
-    src/Base/Messages/icancloud_App_MEM_Message.msg
+    src/Base/Messages/icancloud_App_MEM_Message.msg \
+    src/Base/Messages/icancloud_App_IO_Message.msg \
+    src/Base/Messages/icancloud_BlockList_Message.msg \
+    src/Base/Messages/icancloud_Migration_Message.msg \
+    src/Base/Messages/icancloud_Message.msg \
+    src/Base/Messages/icancloud_App_CPU_Message.msg \
+    src/Base/Messages/icancloud_MPI_Message.msg
 
 # Other makefile variables (-K)
 INET_PROJ=../inet
@@ -509,8 +511,8 @@ clean:
 	$(Q)-rm -f simulations/Cloud_A/*_m.cc simulations/Cloud_A/*_m.h
 	$(Q)-rm -f simulations/Cloud_A/results/*_m.cc simulations/Cloud_A/results/*_m.h
 	$(Q)-rm -f simulations/Cloud_B/*_m.cc simulations/Cloud_B/*_m.h
+	$(Q)-rm -f simulations/Cloud_B/results/*_m.cc simulations/Cloud_B/results/*_m.h
 	$(Q)-rm -f simulations/Cloud_C/*_m.cc simulations/Cloud_C/*_m.h
-	$(Q)-rm -f simulations/Final_TCP/*_m.cc simulations/Final_TCP/*_m.h
 	$(Q)-rm -f simulations/RRTest/*_m.cc simulations/RRTest/*_m.h
 	$(Q)-rm -f simulations/RRTest/results/*_m.cc simulations/RRTest/results/*_m.h
 	$(Q)-rm -f simulations/TCP_test/*_m.cc simulations/TCP_test/*_m.h
@@ -688,13 +690,14 @@ clean:
 	$(Q)-rm -f src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/*_m.cc src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/*_m.h
 	$(Q)-rm -f src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/*_m.cc src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/*_m.h
 	$(Q)-rm -f src/Virtualization/VirtualMachines/VMManagement/VmMsgController/*_m.cc src/Virtualization/VirtualMachines/VMManagement/VmMsgController/*_m.h
+	$(Q)-rm -f src/Virtualization/VirtualMachines/VMRequestManager/*_m.cc src/Virtualization/VirtualMachines/VMRequestManager/*_m.h
 
 cleanall: clean
 	$(Q)-rm -rf $(PROJECT_OUTPUT_DIR)
 
 depend:
 	$(qecho) Creating dependencies...
-	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc bin/*.cc doc/*.cc doc/html/*.cc doc/html/search/*.cc doc/rtf/*.cc simulations/*.cc simulations/Cloud_A/*.cc simulations/Cloud_A/results/*.cc simulations/Cloud_B/*.cc simulations/Cloud_C/*.cc simulations/Final_TCP/*.cc simulations/RRTest/*.cc simulations/RRTest/results/*.cc simulations/TCP_test/*.cc simulations/TCP_test/results/*.cc src/*.cc src/Applications/*.cc src/Applications/Apps/*.cc src/Applications/Apps/ApplicationCheckpoint/*.cc src/Applications/Apps/ApplicationHPC/*.cc src/Applications/Apps/ApplicationHTC/*.cc src/Applications/Apps/CPU_Intensive/*.cc src/Applications/Apps/ServerApplication/*.cc src/Applications/Apps/TCPVideo/*.cc src/Applications/Apps/TCP_test/*.cc src/Applications/Base/*.cc src/Applications/Base/Management/*.cc src/Applications/Libraries_API/*.cc src/Applications/Libraries_API/API_OS/*.cc src/Applications/Libraries_API/MPI_Base/*.cc src/Architecture/*.cc src/Architecture/Aggregation/*.cc src/Architecture/Machine/*.cc src/Architecture/Node/*.cc src/Architecture/Node/Node/*.cc src/Architecture/Node/NodeVL/*.cc src/Architecture/NodeComponents/*.cc src/Architecture/NodeComponents/Hardware/*.cc src/Architecture/NodeComponents/Hardware/CPUs/*.cc src/Architecture/NodeComponents/Hardware/CPUs/CPUController/*.cc src/Architecture/NodeComponents/Hardware/CPUs/CPUModules/*.cc src/Architecture/NodeComponents/Hardware/CPUs/CPUModules/CPUModule/*.cc src/Architecture/NodeComponents/Hardware/CPUs/CPUcores/*.cc src/Architecture/NodeComponents/Hardware/CPUs/CPUcores/CPUcore/*.cc src/Architecture/NodeComponents/Hardware/Memories/*.cc src/Architecture/NodeComponents/Hardware/Memories/Caches/*.cc src/Architecture/NodeComponents/Hardware/Memories/Caches/BlockCache/*.cc src/Architecture/NodeComponents/Hardware/Memories/Caches/NullCache/*.cc src/Architecture/NodeComponents/Hardware/Memories/MainMemories/*.cc src/Architecture/NodeComponents/Hardware/Memories/MainMemories/RAMMemory_BlockModel/*.cc src/Architecture/NodeComponents/Hardware/Memories/MainMemories/RAMmemory/*.cc src/Architecture/NodeComponents/Hardware/Storage/*.cc src/Architecture/NodeComponents/Hardware/Storage/Devices/*.cc src/Architecture/NodeComponents/Hardware/Storage/Devices/Disks/*.cc src/Architecture/NodeComponents/Hardware/Storage/Devices/Disks/Disk_LI/*.cc src/Architecture/NodeComponents/Hardware/Storage/Devices/Disks/SimpleDisk/*.cc src/Architecture/NodeComponents/Hardware/Storage/StorageController/*.cc src/Architecture/NodeComponents/Hardware/Storage/StorageSystems/*.cc src/Architecture/NodeComponents/Hardware/Storage/StorageSystems/StorageSystem/*.cc src/Architecture/NodeComponents/OperatingSystems/*.cc src/Architecture/NodeComponents/OperatingSystems/CPU_Schedulers/*.cc src/Architecture/NodeComponents/OperatingSystems/CPU_Schedulers/CPU_Scheduler_FIFO/*.cc src/Architecture/NodeComponents/OperatingSystems/CPU_Schedulers/CPU_Scheduler_RR/*.cc src/Architecture/NodeComponents/OperatingSystems/OperatingSystemModules/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/FileSystems/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/FileSystems/Basic_FileSystem/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/FileSystems/Node_FileSystem/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VirtualFileSystems/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VirtualFileSystems/NodeVirtualFileSystem/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VirtualFileSystems/VirtualFileSystem/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/StorageManagers/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/StorageManagers/NullStorageManager/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/StorageManagers/StorageManager/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/StorageSchedulers/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/StorageSchedulers/BranchScheduler/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/StorageSchedulers/NullStorageScheduler/*.cc src/Architecture/NodeComponents/OperatingSystems/SyscallManager/*.cc src/Architecture/NodeComponents/OperatingSystems/SyscallManager/NodeSyscallManager/*.cc src/Architecture/NodeComponents/OperatingSystems/SystemApps/*.cc src/Architecture/NodeComponents/OperatingSystems/SystemApps/RemoteStorageApp/*.cc src/Architecture/NodeComponents/OperatingSystems/SystemApps/StatesApplication/*.cc src/Architecture/NodeComponents/VirtualOS/*.cc src/Architecture/NodeComponents/VirtualOS/OperatingSystemModules/*.cc src/Architecture/NodeComponents/VirtualOS/SyscallManager/*.cc src/Base/*.cc src/Base/Messages/*.cc src/Base/Messages/SMS/*.cc src/Base/Parser/*.cc src/Base/Request/*.cc src/Base/Request/HPCRequest/*.cc src/Base/Request/RequestBase/*.cc src/Base/Request/RequestVM/*.cc src/Base/Request/StorageRequest/*.cc src/Base/Util/*.cc src/Base/Util/Log/*.cc src/Base/Util/ResourcesMeter/*.cc src/Base/Util/RunningVM/*.cc src/Base/VMID/*.cc src/Base/include/*.cc src/EnergySystem/*.cc src/EnergySystem/EnergyMeter/*.cc src/EnergySystem/EnergyMeter/EnergyMeterController/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/CPUMeter/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/CPUMeter/CPUMeterCore/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/MemoryMeter/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/MemoryMeter/MemoryMeterCore/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/NetworkMeter/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/NetworkMeter/NetworkMeterCore/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/StorageMeter/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/StorageMeter/StorageMeterCore/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/*.cc src/EnergySystem/PSU/*.cc src/EnergySystem/PSU/MainPSU/*.cc src/Management/*.cc src/Management/CloudManagement/*.cc src/Management/CloudManagement/Base/*.cc src/Management/CloudManagement/CloudManager/*.cc src/Management/CloudManagement/ResourcesProvisioning/*.cc src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerFCFS/*.cc src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerFCFS_gnup/*.cc src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerRR/*.cc src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerRandom/*.cc src/Management/DataCenterManagement/*.cc src/Management/DataCenterManagement/Base/*.cc src/Management/DataCenterManagement/ResourcesProvisioning/*.cc src/Management/DataCenterManagement/ResourcesProvisioning/DataCenterSchedulers/*.cc src/Management/DataCenterManagement/ResourcesProvisioning/DataCenterSchedulers/DataCenterSchedulerFIFO/*.cc src/Management/MachinesStructure/*.cc src/Management/NetworkManager/*.cc src/Management/Topology/*.cc src/Users/*.cc src/Users/Base/*.cc src/Users/Profiles/*.cc src/Users/Profiles/CloudUser/*.cc src/Users/Profiles/GeneralUser/*.cc src/Users/Profiles/SmartUser/*.cc src/Users/UserGenerator/*.cc src/Users/UserGenerator/AppDefinition/*.cc src/Users/UserGenerator/DistributionDefinition/*.cc src/Users/UserGenerator/FSUserDefinition/*.cc src/Users/UserGenerator/PreloadFilesDefinition/*.cc src/Users/UserGenerator/VmDefinition/*.cc src/Users/UserGenerator/VmDefinition/VMToRent/*.cc src/Users/UserGenerator/core/*.cc src/Users/UserGenerator/core/CustomGeneratorCells/*.cc src/Users/UserGenerator/core/CustomGeneratorCells/UserGeneratorDay/*.cc src/Virtualization/*.cc src/Virtualization/Hypervisor/*.cc src/Virtualization/Hypervisor/HypervisorManagers/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_CPUManager/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_CPUManager/Schedulers/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_CPUManager/Schedulers/H_CPU_SCHED_FIFO/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_MemoryManager/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_MemoryManager/Schedulers/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_MemoryManager/Schedulers/H_MEM_SCHED_FIFO/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/LocalNetManager/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/LocalNetManager/PAT/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/Managers/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/NetworkServices/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/NetworkServices/NetworkService/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/NetworkServices/TCP_Services/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/Schedulers/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/Schedulers/H_NET_SCHED_FIFO/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/HW_Cells/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/HW_Cells/Storage_cell_basic/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager/H_StorageManagerCore/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/FsType/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/Schedulers/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/Schedulers/H_STORAGE_SCHED_FIFO/*.cc src/Virtualization/Hypervisor/Hypervisors/*.cc src/Virtualization/Hypervisor/Hypervisors/HypervisorPreset/*.cc src/Virtualization/VirtualMachines/*.cc src/Virtualization/VirtualMachines/BasicVM/*.cc src/Virtualization/VirtualMachines/Docker/*.cc src/Virtualization/VirtualMachines/SetDefinition/*.cc src/Virtualization/VirtualMachines/VMManagement/*.cc src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/*.cc src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/*.cc src/Virtualization/VirtualMachines/VMManagement/VmMsgController/*.cc
+	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc bin/*.cc doc/*.cc doc/html/*.cc doc/html/search/*.cc doc/rtf/*.cc simulations/*.cc simulations/Cloud_A/*.cc simulations/Cloud_A/results/*.cc simulations/Cloud_B/*.cc simulations/Cloud_B/results/*.cc simulations/Cloud_C/*.cc simulations/RRTest/*.cc simulations/RRTest/results/*.cc simulations/TCP_test/*.cc simulations/TCP_test/results/*.cc src/*.cc src/Applications/*.cc src/Applications/Apps/*.cc src/Applications/Apps/ApplicationCheckpoint/*.cc src/Applications/Apps/ApplicationHPC/*.cc src/Applications/Apps/ApplicationHTC/*.cc src/Applications/Apps/CPU_Intensive/*.cc src/Applications/Apps/ServerApplication/*.cc src/Applications/Apps/TCPVideo/*.cc src/Applications/Apps/TCP_test/*.cc src/Applications/Base/*.cc src/Applications/Base/Management/*.cc src/Applications/Libraries_API/*.cc src/Applications/Libraries_API/API_OS/*.cc src/Applications/Libraries_API/MPI_Base/*.cc src/Architecture/*.cc src/Architecture/Aggregation/*.cc src/Architecture/Machine/*.cc src/Architecture/Node/*.cc src/Architecture/Node/Node/*.cc src/Architecture/Node/NodeVL/*.cc src/Architecture/NodeComponents/*.cc src/Architecture/NodeComponents/Hardware/*.cc src/Architecture/NodeComponents/Hardware/CPUs/*.cc src/Architecture/NodeComponents/Hardware/CPUs/CPUController/*.cc src/Architecture/NodeComponents/Hardware/CPUs/CPUModules/*.cc src/Architecture/NodeComponents/Hardware/CPUs/CPUModules/CPUModule/*.cc src/Architecture/NodeComponents/Hardware/CPUs/CPUcores/*.cc src/Architecture/NodeComponents/Hardware/CPUs/CPUcores/CPUcore/*.cc src/Architecture/NodeComponents/Hardware/Memories/*.cc src/Architecture/NodeComponents/Hardware/Memories/Caches/*.cc src/Architecture/NodeComponents/Hardware/Memories/Caches/BlockCache/*.cc src/Architecture/NodeComponents/Hardware/Memories/Caches/NullCache/*.cc src/Architecture/NodeComponents/Hardware/Memories/MainMemories/*.cc src/Architecture/NodeComponents/Hardware/Memories/MainMemories/RAMMemory_BlockModel/*.cc src/Architecture/NodeComponents/Hardware/Memories/MainMemories/RAMmemory/*.cc src/Architecture/NodeComponents/Hardware/Storage/*.cc src/Architecture/NodeComponents/Hardware/Storage/Devices/*.cc src/Architecture/NodeComponents/Hardware/Storage/Devices/Disks/*.cc src/Architecture/NodeComponents/Hardware/Storage/Devices/Disks/Disk_LI/*.cc src/Architecture/NodeComponents/Hardware/Storage/Devices/Disks/SimpleDisk/*.cc src/Architecture/NodeComponents/Hardware/Storage/StorageController/*.cc src/Architecture/NodeComponents/Hardware/Storage/StorageSystems/*.cc src/Architecture/NodeComponents/Hardware/Storage/StorageSystems/StorageSystem/*.cc src/Architecture/NodeComponents/OperatingSystems/*.cc src/Architecture/NodeComponents/OperatingSystems/CPU_Schedulers/*.cc src/Architecture/NodeComponents/OperatingSystems/CPU_Schedulers/CPU_Scheduler_FIFO/*.cc src/Architecture/NodeComponents/OperatingSystems/CPU_Schedulers/CPU_Scheduler_RR/*.cc src/Architecture/NodeComponents/OperatingSystems/OperatingSystemModules/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/FileSystems/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/FileSystems/Basic_FileSystem/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/FileSystems/Node_FileSystem/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VirtualFileSystems/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VirtualFileSystems/NodeVirtualFileSystem/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VirtualFileSystems/VirtualFileSystem/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/StorageManagers/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/StorageManagers/NullStorageManager/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/StorageManagers/StorageManager/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/StorageSchedulers/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/StorageSchedulers/BranchScheduler/*.cc src/Architecture/NodeComponents/OperatingSystems/Storage/VolumeManagers/StorageSchedulers/NullStorageScheduler/*.cc src/Architecture/NodeComponents/OperatingSystems/SyscallManager/*.cc src/Architecture/NodeComponents/OperatingSystems/SyscallManager/NodeSyscallManager/*.cc src/Architecture/NodeComponents/OperatingSystems/SystemApps/*.cc src/Architecture/NodeComponents/OperatingSystems/SystemApps/RemoteStorageApp/*.cc src/Architecture/NodeComponents/OperatingSystems/SystemApps/StatesApplication/*.cc src/Architecture/NodeComponents/VirtualOS/*.cc src/Architecture/NodeComponents/VirtualOS/OperatingSystemModules/*.cc src/Architecture/NodeComponents/VirtualOS/SyscallManager/*.cc src/Base/*.cc src/Base/Messages/*.cc src/Base/Messages/SMS/*.cc src/Base/Parser/*.cc src/Base/Request/*.cc src/Base/Request/HPCRequest/*.cc src/Base/Request/RequestBase/*.cc src/Base/Request/RequestVM/*.cc src/Base/Request/StorageRequest/*.cc src/Base/Util/*.cc src/Base/Util/Log/*.cc src/Base/Util/ResourcesMeter/*.cc src/Base/Util/RunningVM/*.cc src/Base/VMID/*.cc src/Base/include/*.cc src/EnergySystem/*.cc src/EnergySystem/EnergyMeter/*.cc src/EnergySystem/EnergyMeter/EnergyMeterController/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/CPUMeter/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/CPUMeter/CPUMeterCore/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/MemoryMeter/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/MemoryMeter/MemoryMeterCore/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/NetworkMeter/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/NetworkMeter/NetworkMeterCore/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/StorageMeter/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/ComponentsMeter/StorageMeter/StorageMeterCore/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/*.cc src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/*.cc src/EnergySystem/PSU/*.cc src/EnergySystem/PSU/MainPSU/*.cc src/Management/*.cc src/Management/CloudManagement/*.cc src/Management/CloudManagement/Base/*.cc src/Management/CloudManagement/CloudManager/*.cc src/Management/CloudManagement/ResourcesProvisioning/*.cc src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerFCFS/*.cc src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerFCFS_gnup/*.cc src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerRR/*.cc src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerRandom/*.cc src/Management/DataCenterManagement/*.cc src/Management/DataCenterManagement/Base/*.cc src/Management/DataCenterManagement/ResourcesProvisioning/*.cc src/Management/DataCenterManagement/ResourcesProvisioning/DataCenterSchedulers/*.cc src/Management/DataCenterManagement/ResourcesProvisioning/DataCenterSchedulers/DataCenterSchedulerFIFO/*.cc src/Management/MachinesStructure/*.cc src/Management/NetworkManager/*.cc src/Management/Topology/*.cc src/Users/*.cc src/Users/Base/*.cc src/Users/Profiles/*.cc src/Users/Profiles/CloudUser/*.cc src/Users/Profiles/GeneralUser/*.cc src/Users/Profiles/SmartUser/*.cc src/Users/UserGenerator/*.cc src/Users/UserGenerator/AppDefinition/*.cc src/Users/UserGenerator/DistributionDefinition/*.cc src/Users/UserGenerator/FSUserDefinition/*.cc src/Users/UserGenerator/PreloadFilesDefinition/*.cc src/Users/UserGenerator/VmDefinition/*.cc src/Users/UserGenerator/VmDefinition/VMToRent/*.cc src/Users/UserGenerator/core/*.cc src/Users/UserGenerator/core/CustomGeneratorCells/*.cc src/Users/UserGenerator/core/CustomGeneratorCells/UserGeneratorDay/*.cc src/Virtualization/*.cc src/Virtualization/Hypervisor/*.cc src/Virtualization/Hypervisor/HypervisorManagers/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_CPUManager/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_CPUManager/Schedulers/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_CPUManager/Schedulers/H_CPU_SCHED_FIFO/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_MemoryManager/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_MemoryManager/Schedulers/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_MemoryManager/Schedulers/H_MEM_SCHED_FIFO/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/LocalNetManager/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/LocalNetManager/PAT/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/Managers/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/NetworkServices/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/NetworkServices/NetworkService/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/NetworkServices/TCP_Services/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/Schedulers/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/Schedulers/H_NET_SCHED_FIFO/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/HW_Cells/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/HW_Cells/Storage_cell_basic/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager/H_StorageManagerCore/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/FsType/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/Schedulers/*.cc src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/Schedulers/H_STORAGE_SCHED_FIFO/*.cc src/Virtualization/Hypervisor/Hypervisors/*.cc src/Virtualization/Hypervisor/Hypervisors/HypervisorPreset/*.cc src/Virtualization/VirtualMachines/*.cc src/Virtualization/VirtualMachines/BasicVM/*.cc src/Virtualization/VirtualMachines/Docker/*.cc src/Virtualization/VirtualMachines/SetDefinition/*.cc src/Virtualization/VirtualMachines/VMManagement/*.cc src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/*.cc src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/*.cc src/Virtualization/VirtualMachines/VMManagement/VmMsgController/*.cc src/Virtualization/VirtualMachines/VMRequestManager/*.cc
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 $O/src/Applications/Apps/ApplicationCheckpoint/ApplicationCheckpoint.o: src/Applications/Apps/ApplicationCheckpoint/ApplicationCheckpoint.cc \
@@ -1445,8 +1448,10 @@ $O/src/Architecture/Node/Node/Node.o: src/Architecture/Node/Node/Node.cc \
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/UserGenerator/core/AbstractUserGenerator.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/ILifecycle.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
@@ -1544,8 +1549,10 @@ $O/src/Architecture/Node/NodeVL/NodeVL.o: src/Architecture/Node/NodeVL/NodeVL.cc
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/ILifecycle.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
@@ -2553,8 +2560,10 @@ $O/src/Architecture/NodeComponents/VirtualOS/SyscallManager/VMSyscallManager.o: 
 	src/Users/Base/userBase.h \
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
 	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
@@ -3037,8 +3046,10 @@ $O/src/Base/Request/RequestVM/RequestVM.o: src/Base/Request/RequestVM/RequestVM.
 	src/Users/Base/userBase.h \
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
 	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
@@ -3140,8 +3151,10 @@ $O/src/Base/Util/RunningVM/RunningVM.o: src/Base/Util/RunningVM/RunningVM.cc \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/ILifecycle.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
@@ -3206,8 +3219,10 @@ $O/src/Base/VMID/VMID.o: src/Base/VMID/VMID.cc \
 	src/Users/Base/userBase.h \
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
 	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
@@ -3610,8 +3625,10 @@ $O/src/Management/CloudManagement/Base/AllocationManagement.o: src/Management/Cl
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/UserGenerator/core/AbstractUserGenerator.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/ILifecycle.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
@@ -3711,8 +3728,10 @@ $O/src/Management/CloudManagement/CloudManager/AbstractCloudManager.o: src/Manag
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/ILifecycle.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
@@ -3812,8 +3831,10 @@ $O/src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerFCFS/Cloud
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/ILifecycle.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
@@ -3913,8 +3934,10 @@ $O/src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerFCFS_gnup/
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/ILifecycle.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
@@ -4014,8 +4037,10 @@ $O/src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerRR/CloudSc
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/ILifecycle.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
@@ -4115,8 +4140,10 @@ $O/src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerRandom/Clo
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/ILifecycle.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
@@ -4197,8 +4224,10 @@ $O/src/Management/DataCenterManagement/AbstractDCManager.o: src/Management/DataC
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/UserGenerator/core/AbstractUserGenerator.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/ILifecycle.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
@@ -4384,8 +4413,10 @@ $O/src/Management/DataCenterManagement/Base/UserManagement.o: src/Management/Dat
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/UserGenerator/core/AbstractUserGenerator.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
 	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
@@ -4463,8 +4494,10 @@ $O/src/Management/DataCenterManagement/ResourcesProvisioning/DataCenterScheduler
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/UserGenerator/core/AbstractUserGenerator.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/ILifecycle.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
@@ -4833,8 +4866,10 @@ $O/src/Users/Profiles/CloudUser/AbstractCloudUser.o: src/Users/Profiles/CloudUse
 	src/Users/Base/userBase.h \
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
 	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
@@ -4894,8 +4929,10 @@ $O/src/Users/Profiles/GeneralUser/GeneralUser.o: src/Users/Profiles/GeneralUser/
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/Profiles/GeneralUser/GeneralUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
 	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
@@ -4955,8 +4992,10 @@ $O/src/Users/Profiles/SmartUser/SmartUser.o: src/Users/Profiles/SmartUser/SmartU
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/Profiles/SmartUser/SmartUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
 	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
@@ -5025,8 +5064,10 @@ $O/src/Users/UserGenerator/core/AbstractUserGenerator.o: src/Users/UserGenerator
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/UserGenerator/core/AbstractUserGenerator.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
 	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
@@ -5088,8 +5129,10 @@ $O/src/Users/UserGenerator/core/CustomGeneratorCells/UserGeneratorDay/UserGenera
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/UserGenerator/core/AbstractUserGenerator.h \
 	src/Users/UserGenerator/core/CustomGeneratorCells/UserGeneratorDay/UserGeneratorDay.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
 	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
@@ -5824,8 +5867,10 @@ $O/src/Virtualization/Hypervisor/Hypervisors/Hypervisor.o: src/Virtualization/Hy
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/ILifecycle.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
@@ -5889,8 +5934,10 @@ $O/src/Virtualization/VirtualMachines/VM.o: src/Virtualization/VirtualMachines/V
 	src/Users/Base/userBase.h \
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
 	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
@@ -5905,7 +5952,68 @@ $O/src/Virtualization/VirtualMachines/Docker/DockerEngine.o: src/Virtualization/
 $O/src/Virtualization/VirtualMachines/SetDefinition/VmImage.o: src/Virtualization/VirtualMachines/SetDefinition/VmImage.cc \
 	src/Virtualization/VirtualMachines/SetDefinition/VmImage.h
 $O/src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/VMSchedulerRR.o: src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/VMSchedulerRR.cc \
-	src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/VMSchedulerRR.h
+	src/Applications/Base/Management/JobQueue.h \
+	src/Applications/Base/Management/JobResults.h \
+	src/Applications/Base/Management/JobResultsSet.h \
+	src/Applications/Base/UserJob.h \
+	src/Applications/Base/jobBase.h \
+	src/Applications/Libraries_API/API_OS/API_OS.h \
+	src/Architecture/Machine/Machine.h \
+	src/Architecture/Node/AbstractNode.h \
+	src/Architecture/NodeComponents/OperatingSystems/SyscallManager/AbstractSyscallManager.h \
+	src/Architecture/NodeComponents/OperatingSystems/SyscallManager/NodeSyscallManager/SyscallManager.h \
+	src/Architecture/NodeComponents/OperatingSystems/SystemApps/RemoteStorageApp/RemoteStorageApp.h \
+	src/Architecture/NodeComponents/OperatingSystems/SystemApps/StatesApplication/StatesApplication.h \
+	src/Architecture/NodeComponents/VirtualOS/SyscallManager/VMSyscallManager.h \
+	src/Base/Messages/icancloud_App_CPU_Message.h \
+	src/Base/Messages/icancloud_App_CPU_Message_m.h \
+	src/Base/Messages/icancloud_App_IO_Message.h \
+	src/Base/Messages/icancloud_App_IO_Message_m.h \
+	src/Base/Messages/icancloud_App_MEM_Message.h \
+	src/Base/Messages/icancloud_App_MEM_Message_m.h \
+	src/Base/Messages/icancloud_App_NET_Message.h \
+	src/Base/Messages/icancloud_App_NET_Message_m.h \
+	src/Base/Messages/icancloud_BlockList_Message.h \
+	src/Base/Messages/icancloud_BlockList_Message_m.h \
+	src/Base/Messages/icancloud_File.h \
+	src/Base/Messages/icancloud_MPI_Message.h \
+	src/Base/Messages/icancloud_MPI_Message_m.h \
+	src/Base/Messages/icancloud_Message.h \
+	src/Base/Messages/icancloud_Message_m.h \
+	src/Base/Messages/icancloud_Migration_Message.h \
+	src/Base/Messages/icancloud_Migration_Message_m.h \
+	src/Base/Parser/cfgMPI.h \
+	src/Base/Request/Request.h \
+	src/Base/Request/RequestVM/RequestVM.h \
+	src/Base/Util/Log/ICCLog.h \
+	src/Base/cGateManager.h \
+	src/Base/icancloud_Base.h \
+	src/Base/include/Constants.h \
+	src/Base/include/icancloud_debug.h \
+	src/Base/include/icancloud_types.h \
+	src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/Memoization_uthash.h \
+	src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/uthash.h \
+	src/Management/DataCenterManagement/Base/RequestsManagement.h \
+	src/Management/MachinesStructure/ElementType.h \
+	src/Management/MachinesStructure/HeterogeneousSet.h \
+	src/Management/MachinesStructure/MachinesMap.h \
+	src/Users/AbstractUser.h \
+	src/Users/Base/queuesManager.h \
+	src/Users/Base/userBase.h \
+	src/Users/Base/userStorage.h \
+	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
+	src/Virtualization/VirtualMachines/VM.h \
+	src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/VMSchedulerRR.h \
+	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
+	$(INET_PROJ)/src/base/Compat.h \
+	$(INET_PROJ)/src/base/INETDefs.h \
+	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
+	$(INET_PROJ)/src/networklayer/contract/IPv6Address.h \
+	$(INET_PROJ)/src/networklayer/contract/IPvXAddress.h \
+	$(INET_PROJ)/src/transport/contract/TCPCommand_m.h \
+	$(INET_PROJ)/src/transport/contract/TCPSocket.h
 $O/src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.o: src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.cc \
 	src/Applications/Base/Management/JobQueue.h \
 	src/Applications/Base/Management/JobResults.h \
@@ -5991,8 +6099,10 @@ $O/src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgControll
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/ILifecycle.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
@@ -6003,6 +6113,68 @@ $O/src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgControll
 	$(INET_PROJ)/src/networklayer/ipv4/IPv4Route.h \
 	$(INET_PROJ)/src/networklayer/ipv4/IRoutingTable.h \
 	$(INET_PROJ)/src/networklayer/ipv4/RoutingTable.h \
+	$(INET_PROJ)/src/transport/contract/TCPCommand_m.h \
+	$(INET_PROJ)/src/transport/contract/TCPSocket.h
+$O/src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.o: src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.cc \
+	src/Applications/Base/Management/JobQueue.h \
+	src/Applications/Base/Management/JobResults.h \
+	src/Applications/Base/Management/JobResultsSet.h \
+	src/Applications/Base/UserJob.h \
+	src/Applications/Base/jobBase.h \
+	src/Applications/Libraries_API/API_OS/API_OS.h \
+	src/Architecture/Machine/Machine.h \
+	src/Architecture/Node/AbstractNode.h \
+	src/Architecture/NodeComponents/OperatingSystems/SyscallManager/AbstractSyscallManager.h \
+	src/Architecture/NodeComponents/OperatingSystems/SyscallManager/NodeSyscallManager/SyscallManager.h \
+	src/Architecture/NodeComponents/OperatingSystems/SystemApps/RemoteStorageApp/RemoteStorageApp.h \
+	src/Architecture/NodeComponents/OperatingSystems/SystemApps/StatesApplication/StatesApplication.h \
+	src/Architecture/NodeComponents/VirtualOS/SyscallManager/VMSyscallManager.h \
+	src/Base/Messages/icancloud_App_CPU_Message.h \
+	src/Base/Messages/icancloud_App_CPU_Message_m.h \
+	src/Base/Messages/icancloud_App_IO_Message.h \
+	src/Base/Messages/icancloud_App_IO_Message_m.h \
+	src/Base/Messages/icancloud_App_MEM_Message.h \
+	src/Base/Messages/icancloud_App_MEM_Message_m.h \
+	src/Base/Messages/icancloud_App_NET_Message.h \
+	src/Base/Messages/icancloud_App_NET_Message_m.h \
+	src/Base/Messages/icancloud_BlockList_Message.h \
+	src/Base/Messages/icancloud_BlockList_Message_m.h \
+	src/Base/Messages/icancloud_File.h \
+	src/Base/Messages/icancloud_MPI_Message.h \
+	src/Base/Messages/icancloud_MPI_Message_m.h \
+	src/Base/Messages/icancloud_Message.h \
+	src/Base/Messages/icancloud_Message_m.h \
+	src/Base/Messages/icancloud_Migration_Message.h \
+	src/Base/Messages/icancloud_Migration_Message_m.h \
+	src/Base/Parser/cfgMPI.h \
+	src/Base/Request/Request.h \
+	src/Base/Request/RequestVM/RequestVM.h \
+	src/Base/Util/Log/ICCLog.h \
+	src/Base/cGateManager.h \
+	src/Base/icancloud_Base.h \
+	src/Base/include/Constants.h \
+	src/Base/include/icancloud_debug.h \
+	src/Base/include/icancloud_types.h \
+	src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/Memoization_uthash.h \
+	src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/uthash.h \
+	src/Management/DataCenterManagement/Base/RequestsManagement.h \
+	src/Management/MachinesStructure/ElementType.h \
+	src/Management/MachinesStructure/HeterogeneousSet.h \
+	src/Management/MachinesStructure/MachinesMap.h \
+	src/Users/AbstractUser.h \
+	src/Users/Base/queuesManager.h \
+	src/Users/Base/userBase.h \
+	src/Users/Base/userStorage.h \
+	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker.h \
+	src/Virtualization/VirtualMachines/VM.h \
+	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
+	$(INET_PROJ)/src/base/Compat.h \
+	$(INET_PROJ)/src/base/INETDefs.h \
+	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
+	$(INET_PROJ)/src/networklayer/contract/IPv6Address.h \
+	$(INET_PROJ)/src/networklayer/contract/IPvXAddress.h \
 	$(INET_PROJ)/src/transport/contract/TCPCommand_m.h \
 	$(INET_PROJ)/src/transport/contract/TCPSocket.h
 

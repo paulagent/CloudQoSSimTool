@@ -9,7 +9,10 @@
 #define VMREQUESTMANAGER_H_
 #include "Request.h"
 #include "icancloud_Base.h"
+#include "RequestVM.h"
 #include <vector>
+
+class RequestVM;
 class VMRequestManager: virtual public icancloud_Base{
 
 protected:
@@ -126,6 +129,9 @@ public:
      * Module ending.
      */
      virtual void finish();
+     void schedule();
+     bool request_start_docker_container(RequestVM* req_vm);
+
 
     /*********************************************************************************
      *                                      Methods
