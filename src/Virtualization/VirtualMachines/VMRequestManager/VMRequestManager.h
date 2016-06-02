@@ -13,8 +13,9 @@
 #include <vector>
 
 class RequestVM;
-class VMRequestManager: virtual public icancloud_Base{
+//class VMRequestManager: public icancloud_Base{
 
+class VMRequestManager{
 protected:
 
     /** Bool that control if the main queue does not receive messages */
@@ -119,16 +120,16 @@ public:
  //   RequestsManagement();
 
     VMRequestManager();
-    virtual ~VMRequestManager();
+     ~VMRequestManager();
     /*
      * Module initialization
      */
-     virtual void initialize();
+     void initialize();
 
      /**
      * Module ending.
      */
-     virtual void finish();
+   void finish();
      void schedule();
      bool request_start_docker_container(RequestVM* req_vm);
 

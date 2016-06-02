@@ -510,7 +510,7 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                               new_req_vm->setUid(vm->userID);
                               new_req_vm->setFreezedVM(vm->vm);
                               new_req_vm->set_is_freezed(true);
-
+                              vm->vm->is_freezed=true;
                               // add new request to temp queue
 
                               new_req = dynamic_cast<AbstractRequest*>(new_req_vm);

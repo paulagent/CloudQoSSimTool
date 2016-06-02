@@ -41,6 +41,7 @@ protected:
      vector<Docker*>  dockerset;                                       // Each state changed will generate a new vmStatesLog entry-
 
 public:
+     bool is_freezed;
      VM();
     VM( elementType* el);
     /*

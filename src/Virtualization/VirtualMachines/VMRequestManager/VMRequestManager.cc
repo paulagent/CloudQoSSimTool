@@ -34,30 +34,30 @@ VMRequestManager::~VMRequestManager() {
 //
 
 
-
-/*RequestsManagement::RequestsManagement()
+VMRequestManager::VMRequestManager()
  {
- printf("\n Method[RequestsManagement::initialize]: ------->initialize \n");
- schedulerQueueBlocked = false;
- requestsQueue.clear();
- temporalRequestsQueue.clear();
- executingRequests.clear();
- icancloud_Base::initialize();
- }*/
+// printf("\n Method[RequestsManagement::initialize]: ------->initialize \n");
+// schedulerQueueBlocked = false;
+// requestsQueue.clear();
+// temporalRequestsQueue.clear();
+// executingRequests.clear();
+// icancloud_Base::initialize();
+
+ }
 void VMRequestManager::initialize() {
     //printf("\n Method[RequestsManagement::initialize]: ------->initialize \n");
     schedulerQueueBlocked = false;
     requestsQueue.clear();
     temporalRequestsQueue.clear();
     executingRequests.clear();
-    icancloud_Base::initialize();
+ //   icancloud_Base::initialize();
 }
 
 void VMRequestManager::finish() {
     requestsQueue.clear();
     temporalRequestsQueue.clear();
     executingRequests.clear();
-    icancloud_Base::initialize();
+  //  icancloud_Base::initialize();
 }
 
 bool VMRequestManager::schedulerBlock() {

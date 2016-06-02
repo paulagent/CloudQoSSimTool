@@ -598,6 +598,23 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 started_VM->hostNodeVL=nodeVL;
 
                 runVM.push_back(started_VM);
+                cout<< "---------------------------------------------------------------------------------------------------------"<< endl;
+                cout<< "---------------------------------------------------------------------------------------------------------"<< endl;
+
+                cout << "Send req to start docker  from start new vm" << endl;
+                RequestVM* rqvm = new RequestVM();
+                vector<VM*> vm1;
+                vm1.push_back(vmNew);
+                //cout << " AbstractCloudManager::request_start_vm  vmNew->getPid()--->" <<vmNew->getPid()<<endl;
+                rqvm->setPid(vmNew->getPid());
+                rqvm->setUid(vmNew->getUid());
+                rqvm->setOperation(REQUEST_START_DOCKER_CONTAINER);
+
+                rqvm->setVectorVM(vm1);
+                AbstractRequest* new_req;
+                new_req = dynamic_cast<AbstractRequest*>(rqvm);
+                new_req->setOperation(REQUEST_START_DOCKER_CONTAINER);
+                RequestsManagement::userSendRequest(new_req);
                 // If the linked is incorrect, Zahra: No, I think if the link is correct
                 req->decreaseSelectionQuantity(i);
                 attendedRequest_vms.insert(attendedRequest_vms.end(), vmNew);
@@ -1353,13 +1370,17 @@ vector<RunningVM*> AbstractCloudManager::getRunVM()
 }
 
 bool AbstractCloudManager::request_start_docker_container(RequestVM* req){
+cout << "AbstractCloudManager::request_start_docker_container" << endl;
 
-    if (req->get_is_freezed()==false)   // VM is ON
+
+if (req->get_is_freezed()==false)   // VM is ON
     {
         //pass req to vmRequestManager of the particular VM
-
+   if (req->getVM(0) != NULL)  {
         req->getVM(0)->vmreqmgr->userSendRequest(req);
         return false;
+   }
+return true;
     }
     else                               // VM is Freezed
     {
@@ -1439,7 +1460,7 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req)
                                               new_req_vm->setUid(vmr->userID);
                                               new_req_vm->setFreezedVM(vmr->vm);
                                               new_req_vm->set_is_freezed(true);
-
+                                              vmr->vm->is_freezed=true;
                                               new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
                                               new_req->setOperation(REQUEST_UNFREEZE_VM);
                                               RequestsManagement::userSendRequest(new_req);
