@@ -128,7 +128,9 @@ void AbstractUser::initParameters(string userBehavior, string userId, string fil
 
 }
 
-void AbstractUser::addParsedJob (jobBase *job){waitingQueue->insert_job(job);};
+void AbstractUser::addParsedJob (jobBase *job){
+   // cout << "AbstractUser::addParsedJob--->call insert_job method" <<endl;
+    waitingQueue->insert_job(job);};
 
 void AbstractUser::start_up_job_execution (AbstractNode* destinationExecute, jobBase* job, JobQueue* qSrc, JobQueue* qDst, int qDst_pos){
     printf("TODO AbstractUser::start_up_job_execution\n");

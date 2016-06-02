@@ -33,16 +33,22 @@ JobQueue::~JobQueue() {
 }
 
 void JobQueue::insert_job (jobBase* job, int position){
-
+   // cout << "JobQueue::insert_job " <<endl;
 	int qSize;
 
 	qSize = idQueue.size();
 
-	if (position == -1) idQueue.push_back(job);
+	if (position == -1) {
+	   // cout <<"JobQueue::insert_job --->qSize  :" << qSize<<endl;
+	    idQueue.push_back(job);
+	}
+	else {
+	    if ((position <= qSize) && (position >= 0))
+	        {
+	        idQueue.insert(idQueue.begin()+position, job);
 
-	else
-	    if ((position <= qSize) && (position >= 0)) idQueue.insert(idQueue.begin()+position, job);
-
+	        }
+	}
 }
 
 jobBase* JobQueue::getJob (int index){

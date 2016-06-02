@@ -135,7 +135,7 @@ void AbstractUserGenerator::initialize(){
 
             // Get the app definition
                 numApps = getParentModule()->getSubmodule("appDefinition")->par("appQuantity").longValue();
-
+              cout <<"  AbstractUserGenerator::initialize() --->numapps " <<numApps <<endl;
                 for (int i = 0; i < numApps;i++){
                     jobSel = new jobSelection();
                     jobSel->replicas = getParentModule()->getSubmodule("appDefinition")->getSubmodule("application",i)->par("copies").longValue();
@@ -164,8 +164,10 @@ void AbstractUserGenerator::initialize(){
                         pr->fileName = (getParentModule()->getSubmodule("appDefinition")->getSubmodule("application",i)->getSubmodule("preloadFiles",j))->par("name").stringValue();
                         pr->fileSize = (getParentModule()->getSubmodule("appDefinition")->getSubmodule("application",i)->getSubmodule("preloadFiles",j))->par("size_KiB").longValue();
                         jobSel->job->setPreloadFile(pr);
-
+                        cout << "AbstractUserGenerator::initialize() check file name-->" << pr->fileName <<endl;
+                        cout << "AbstractUserGenerator::initialize() check filesize-->" << pr->fileSize <<endl;
                     }
+
                     userJobSet.push_back(jobSel);
                 }
 
@@ -185,7 +187,7 @@ void AbstractUserGenerator::finalizeUserGenerator(bool allowToExecute){
 };
 
 void AbstractUserGenerator::createUser (){
-
+cout << "AbstractUserGenerator::createUser  create new job for user" <<endl;
 	//Set up the behaviorMod
 		cModuleType *modBehavior;
 		cModule* behaviorMod;
@@ -227,7 +229,7 @@ void AbstractUserGenerator::createUser (){
 
                     // Get virtual machines selection
                        vmSelectionSize = vmSelect.size();
-                   //    printf("AbstractUserGenerator::createUser vmSelect %d \n", vmSelectionSize);
+                       printf("AbstractUserGenerator::createUser vmSelect %d \n", vmSelectionSize);
                        for (j = 0; ((int)j) < (vmSelectionSize); j++){
 
                            vmSelectionQuantity = (*(vmSelect.begin()+j))->quantity;
@@ -263,13 +265,14 @@ void AbstractUserGenerator::createUser (){
                             // Get the job
                                jobSelect = (*(userJobSet.begin()+j));
                                rep = jobSelect->replicas;
-
+                               cout << "AbstractUserGenerator::createUser () -->checkt replicas :" << rep<<endl;
                            for (k = 0; ((int)k) < rep ;k++){
                                // Clone the job
                                ostringstream appNameBuild;
                                appNameBuild << jobSelect->appName.c_str() << "_" << k << ":" << userID;
                                newJob = cloneJob (jobSelect->job, behaviorMod, appNameBuild.str().c_str());
                                // Insert into users waiting queue
+                               cout << "AbstractUserGenerator::createUser () -->call addParsedJob    " << appNameBuild.str().c_str()<<endl;
                                user->addParsedJob(newJob);
                            }
                        }

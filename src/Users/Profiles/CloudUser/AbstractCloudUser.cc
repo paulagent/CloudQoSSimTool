@@ -76,7 +76,7 @@ void AbstractCloudUser::createVMSet (int vmsQuantity, int numCores, int memorySi
     userVmType* vms;
     elementType* el;
     bool found = false;
-
+    cout <<"AbstractCloudUser::createVMSet  --->" <<endl;
     el = new elementType();
 
     for (int i = 0; (i < (int)vmsToBeSelected.size()) && (!found); i++){

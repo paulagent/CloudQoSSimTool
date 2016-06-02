@@ -19,7 +19,7 @@ moduleinterface IVMScheduler
         double timeBetweenLogResults_s;				// Time between all data center is checked extracting the energy measurements.
         bool printEnergyToFile;						// print the energy to a log file.     
         bool printEnergyTrace;						// print each schedule event the consumption values of the nodes    	
-        bool printNodePowerConsumed;				// print Node instant consumption
+        
    
         int remote_storage_VMs_per_node;			// THe maximum number of virtual machines allowed to access to a data server 
         double minimum_percent_storageNode_free;	// The percent minimum that represents the amount of storage in a data server before select other.

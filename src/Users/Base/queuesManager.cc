@@ -44,7 +44,12 @@ void queuesManager::initialize(){
 }
 
 
-void queuesManager::addParsedJob (jobBase *job){waitingQueue->insert_job(job);};
+void queuesManager::addParsedJob (jobBase *job){
+
+   // cout<<"queuesManager::addParsedJob" <<endl;
+    waitingQueue->insert_job(job);
+
+};
 
 
 int queuesManager::getWQ_size(){return waitingQueue->size();};

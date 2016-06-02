@@ -38,12 +38,13 @@ void GeneralUser::userInitialization() {
 
     // Define ..
     AbstractRequest* vms;
-
+  cout << "GeneralUser::userInitialization()" << endl;
     // Select the vms to start (all) and then send the request to the cloud manager.
     vms = selectVMs_ToStartUp();
 
     // Start all vms
     if (vms != NULL)
+
         startVMs(vms);
 }
 
@@ -140,7 +141,8 @@ AbstractRequest* GeneralUser::selectVMs_ToStartUp() {
     setSize = vmsToBeSelected.size();
     req = new RequestVM();
     reqFilled = false;
-
+    cout << "GeneralUser::selectVMs_ToStartUp()- maxNumVMsToRequest-->" << maxNumVMsToRequest <<endl;
+    cout << "GeneralUser::selectVMs_ToStartUp()- setSize-->" << setSize <<endl;
     /*
      *  Obtain all the VMs of the user. Initially all are into VM_NOT_REQUESTED state.
      *  Then, user request for the VMs change state to free, and that is task of the cloud manager.
