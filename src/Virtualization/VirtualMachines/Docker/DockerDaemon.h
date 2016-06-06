@@ -13,13 +13,16 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#ifndef DOCKER_DAEMON_H_
-#define DOCKER_DAEMON_H_
+#ifndef DOCKERDAEMON_H_
+#define DOCKERDAEMON_H_
 
-class Docker_Daemon {
+class DockerDaemon {
+
 public:
-    Docker_Daemon();
-    virtual ~Docker_Daemon();
+    DockerDaemon();
+
+    virtual ~DockerDaemon();
+    virtual void initialize();
 };
 
-#endif /* DOCKER_DAEMON_H_ */
+#endif /* DOCKERDAEMON_H_ */

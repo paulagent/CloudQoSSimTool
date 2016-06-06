@@ -13,14 +13,22 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#include "Docker_Daemon.h"
+#include "DockerDaemon.h"
 
-Docker_Daemon::Docker_Daemon() {
-    // TODO Auto-generated constructor stub
+Define_Module(DockerDaemon);
+
+
+DockerDaemon::~DockerDaemon() {
+    // TODO Auto-generated destructor stub
 
 }
 
-Docker_Daemon::~Docker_Daemon() {
-    // TODO Auto-generated destructor stub
+DockerDaemon::DockerDaemon() {
+    // TODO Auto-generated constructor stub
+
+
+}
+void DockerDaemon:: initialize(){
+
 }
 

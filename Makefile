@@ -1448,6 +1448,7 @@ $O/src/Architecture/Node/Node/Node.o: src/Architecture/Node/Node/Node.cc \
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/UserGenerator/core/AbstractUserGenerator.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -1548,6 +1549,7 @@ $O/src/Architecture/Node/NodeVL/NodeVL.o: src/Architecture/Node/NodeVL/NodeVL.cc
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -2558,6 +2560,7 @@ $O/src/Architecture/NodeComponents/VirtualOS/SyscallManager/VMSyscallManager.o: 
 	src/Users/Base/userBase.h \
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -3043,6 +3046,7 @@ $O/src/Base/Request/RequestVM/RequestVM.o: src/Base/Request/RequestVM/RequestVM.
 	src/Users/Base/userBase.h \
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -3147,6 +3151,7 @@ $O/src/Base/Util/RunningVM/RunningVM.o: src/Base/Util/RunningVM/RunningVM.cc \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -3214,6 +3219,7 @@ $O/src/Base/VMID/VMID.o: src/Base/VMID/VMID.cc \
 	src/Users/Base/userBase.h \
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -3619,6 +3625,7 @@ $O/src/Management/CloudManagement/Base/AllocationManagement.o: src/Management/Cl
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/UserGenerator/core/AbstractUserGenerator.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -3721,6 +3728,7 @@ $O/src/Management/CloudManagement/CloudManager/AbstractCloudManager.o: src/Manag
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -3823,6 +3831,7 @@ $O/src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerFCFS/Cloud
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -3925,6 +3934,7 @@ $O/src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerFCFS_gnup/
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -4027,6 +4037,7 @@ $O/src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerRR/CloudSc
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -4129,6 +4140,7 @@ $O/src/Management/CloudManagement/ResourcesProvisioning/CloudSchedulerRandom/Clo
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -4212,6 +4224,7 @@ $O/src/Management/DataCenterManagement/AbstractDCManager.o: src/Management/DataC
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/UserGenerator/core/AbstractUserGenerator.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -4400,6 +4413,7 @@ $O/src/Management/DataCenterManagement/Base/UserManagement.o: src/Management/Dat
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/UserGenerator/core/AbstractUserGenerator.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -4480,6 +4494,7 @@ $O/src/Management/DataCenterManagement/ResourcesProvisioning/DataCenterScheduler
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/UserGenerator/core/AbstractUserGenerator.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -4851,6 +4866,7 @@ $O/src/Users/Profiles/CloudUser/AbstractCloudUser.o: src/Users/Profiles/CloudUse
 	src/Users/Base/userBase.h \
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -4913,6 +4929,7 @@ $O/src/Users/Profiles/GeneralUser/GeneralUser.o: src/Users/Profiles/GeneralUser/
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/Profiles/GeneralUser/GeneralUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -4975,6 +4992,7 @@ $O/src/Users/Profiles/SmartUser/SmartUser.o: src/Users/Profiles/SmartUser/SmartU
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/Profiles/SmartUser/SmartUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -5046,6 +5064,7 @@ $O/src/Users/UserGenerator/core/AbstractUserGenerator.o: src/Users/UserGenerator
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/UserGenerator/core/AbstractUserGenerator.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -5110,6 +5129,7 @@ $O/src/Users/UserGenerator/core/CustomGeneratorCells/UserGeneratorDay/UserGenera
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Users/UserGenerator/core/AbstractUserGenerator.h \
 	src/Users/UserGenerator/core/CustomGeneratorCells/UserGeneratorDay/UserGeneratorDay.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -5847,6 +5867,7 @@ $O/src/Virtualization/Hypervisor/Hypervisors/Hypervisor.o: src/Virtualization/Hy
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -5913,6 +5934,7 @@ $O/src/Virtualization/VirtualMachines/VM.o: src/Virtualization/VirtualMachines/V
 	src/Users/Base/userBase.h \
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -5926,7 +5948,7 @@ $O/src/Virtualization/VirtualMachines/VM.o: src/Virtualization/VirtualMachines/V
 $O/src/Virtualization/VirtualMachines/Docker/Docker_Container.o: src/Virtualization/VirtualMachines/Docker/Docker_Container.cc \
 	src/Virtualization/VirtualMachines/Docker/Docker_Container.h
 $O/src/Virtualization/VirtualMachines/Docker/Docker_Daemon.o: src/Virtualization/VirtualMachines/Docker/Docker_Daemon.cc \
-	src/Virtualization/VirtualMachines/Docker/Docker_Daemon.h
+	src/Virtualization/VirtualMachines/Docker/DockerDaemon.h
 $O/src/Virtualization/VirtualMachines/SetDefinition/VmImage.o: src/Virtualization/VirtualMachines/SetDefinition/VmImage.cc \
 	src/Virtualization/VirtualMachines/SetDefinition/VmImage.h
 $O/src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/VMSchedulerRR.o: src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/VMSchedulerRR.cc \
@@ -5980,6 +6002,7 @@ $O/src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSched
 	src/Users/Base/userBase.h \
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/VMSchedulerRR.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
@@ -6076,6 +6099,7 @@ $O/src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgControll
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
 	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
@@ -6142,6 +6166,7 @@ $O/src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.o: src/V
 	src/Users/Base/userBase.h \
 	src/Users/Base/userStorage.h \
 	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
+	src/Virtualization/VirtualMachines/Docker/Docker_Container.h \
 	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
 	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \

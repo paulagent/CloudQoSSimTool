@@ -15,28 +15,28 @@
 
 package icancloud.src.Virtualization.VirtualMachines.Docker;
 
-module Docker_Daemon
+simple DockerDaemon
 {
     parameters:
 
-        int numCores;												// Number of CPUs
-        double memorySize_MB;										// Amount of memory in MiB
-        int storageSize_GB;											// Amount of storage in GiB
+       // int numCores;												// Number of CPUs
+       // double memorySize_MB;										// Amount of memory in MiB
+      //  int storageSize_GB;											// Amount of storage in GiB
 
-		int numStorageSystems = default(1);							// Number of Block Servers     
-        int numNetworkInterfaces = default(1);						// Number of network interfaces
+		//int numStorageSystems = default(1);							// Number of Block Servers     
+      //  int numNetworkInterfaces = default(1);						// Number of network interfaces
 
-        string hostName = default("");								// Node's hostname
+        string hostName = default("");								// VM's name
         //string osModuleType = default("VmOperatingSystemModule");  	// Operating System Module type            	
        // string cpuModuleType = default("CPU_Module");				// CPU Module type               
         
-        string ip = default("");								    // VM IP
-        bool IPForward = default(false);							// IP Forward
-        int namid = default(-1);									// Nam ID
-        string routingFile = default("");							// Routing File
+       // string ip = default("");								    // VM IP
+       // bool IPForward = default(false);							// IP Forward
+      //  int namid = default(-1);									// Nam ID
+       // string routingFile = default("");							// Routing File
 
         @dynamic(true);
-        @class("Docker");
+        @class("DockerDaemon");
         @display("i=device/docker");
 
     gates:
@@ -45,18 +45,19 @@ module Docker_Daemon
         output toNodeStorageSystem[numStorageSystems]@loose;
 
         //cpu        
-        input fromNodeCPU[numCores]@loose;
-        output toNodeCPU[numCores]@loose;
+        input fromVMCPU[numCores]@loose;
+        output toVMCPU[numCores]@loose;
 
 		//memory
-        input fromNodeMemoryI@loose;
-        input fromNodeMemoryO@loose;
-        output toNodeMemoryI@loose;
-        output toNodeMemoryO@loose;
+        input fromVMMemoryI@loose;
+        input fromVMMemoryO@loose;
+        output toVMMemoryI@loose;
+        output toVMMemoryO@loose;
 
         // network 
-        input fromNodeNet@loose;
-        output toNodeNet@loose;
+        input fromVMNet@loose;
+        output toVMNet@loose;
          
- 	connections allowunconnected:
+ //	connections allowunconnected:
+ 	    
 }

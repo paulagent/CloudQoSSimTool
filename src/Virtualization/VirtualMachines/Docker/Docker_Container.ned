@@ -15,18 +15,17 @@
 
 package icancloud.src.Virtualization.VirtualMachines.Docker;
 
-module Docker
+simple Docker_Container
 {
     parameters:
 
-        int numCores;												// Number of CPUs
-        double memorySize_MB;										// Amount of memory in MiB
-        int storageSize_GB;											// Amount of storage in GiB
+        //double memorySize_MB;										// Amount of memory in MiB
+        //int storageSize_GB;											// Amount of storage in GiB
 
-		int numStorageSystems = default(1);							// Number of Block Servers     
-        int numNetworkInterfaces = default(1);						// Number of network interfaces
+		//int numStorageSystems = default(1);							// Number of Block Servers     
+      //  int numNetworkInterfaces = default(1);						// Number of network interfaces
 
-        string hostName = default("");								// Node's hostname
+        string ContainerName = default("");								
         //string osModuleType = default("VmOperatingSystemModule");  	// Operating System Module type            	
        // string cpuModuleType = default("CPU_Module");				// CPU Module type               
         
@@ -58,5 +57,5 @@ module Docker
         input fromNodeNet@loose;
         output toNodeNet@loose;
          
- 	connections allowunconnected:
+ 	//connections allowunconnected:
 }

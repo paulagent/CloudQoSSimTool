@@ -12,6 +12,7 @@
 package icancloud.src.Virtualization.VirtualMachines.BasicVM;
 
 import icancloud.src.Architecture.NodeComponents.OperatingSystems.IOperatingSystem;
+import icancloud.src.Virtualization.VirtualMachines.Docker.DockerDaemon;
 import icancloud.src.Virtualization.VirtualMachines.VM;
 import icancloud.src.Virtualization.VirtualMachines.IVM;
 
@@ -19,8 +20,8 @@ module BasicVM extends VM like IVM
 {
     parameters:
         @labels(vm,ethernet-vm);
-        @display("i=old/telnet");
-		@loose;
+        @display("i=old/telnet;bgb=418,247");
+        @loose;
     submodules:
 
         osModule: <osModuleType> like IOperatingSystem {
@@ -44,8 +45,11 @@ module BasicVM extends VM like IVM
 
                 fromNet_TCP;						 // Input gate from Network (Ethernet TCP)
                 toNet_TCP;							 // Output gate to Network (Ethernet TCP)
-        }     
+        }
 
+        docker_Daemon: DockerDaemon {
+            @display("p=304,99");
+        }
     connections allowunconnected:
 
  		// Connections between CPU and Operating System
