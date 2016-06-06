@@ -15,7 +15,10 @@
 
 package icancloud.src.Virtualization.VirtualMachines.Docker;
 
-simple DockerDaemon
+
+
+module DockerDaemon
+
 {
     parameters:
 
@@ -23,28 +26,38 @@ simple DockerDaemon
        // double memorySize_MB;										// Amount of memory in MiB
       //  int storageSize_GB;											// Amount of storage in GiB
 
+
 		//int numStorageSystems = default(1);							// Number of Block Servers     
       //  int numNetworkInterfaces = default(1);						// Number of network interfaces
+
+        int numStorageSystems = default(1);							// Number of Block Servers     
+        int numNetworkInterfaces = default(1);						// Number of network interfaces
+
 
         string hostName = default("");								// VM's name
         //string osModuleType = default("VmOperatingSystemModule");  	// Operating System Module type            	
        // string cpuModuleType = default("CPU_Module");				// CPU Module type               
+
         
-       // string ip = default("");								    // VM IP
-       // bool IPForward = default(false);							// IP Forward
-      //  int namid = default(-1);									// Nam ID
-       // string routingFile = default("");							// Routing File
+      
+
+
+        string ip = default("");								    // VM IP
+        bool IPForward = default(false);							// IP Forward
+        int namid = default(-1);									// Nam ID
+        string routingFile = default("");							// Routing File
 
         @dynamic(true);
         @class("DockerDaemon");
+
         @display("i=device/docker");
 
     gates:
         //Storage system
-        input fromNodeStorageSystem[numStorageSystems]@loose;
-        output toNodeStorageSystem[numStorageSystems]@loose;
+        input fromNodeStorageSystem[numStorageSystems] @loose;
+        output toNodeStorageSystem[numStorageSystems] @loose;
 
-        //cpu        
+
         input fromVMCPU[numCores]@loose;
         output toVMCPU[numCores]@loose;
 
@@ -58,6 +71,8 @@ simple DockerDaemon
         input fromVMNet@loose;
         output toVMNet@loose;
          
- //	connections allowunconnected:
+ 	connections allowunconnected:
  	    
 }
+
+

@@ -15,47 +15,62 @@
 
 package icancloud.src.Virtualization.VirtualMachines.Docker;
 
-simple Docker_Container
+
+module Docker_Container
+
 {
     parameters:
 
         //double memorySize_MB;										// Amount of memory in MiB
         //int storageSize_GB;											// Amount of storage in GiB
 
+
 		//int numStorageSystems = default(1);							// Number of Block Servers     
       //  int numNetworkInterfaces = default(1);						// Number of network interfaces
+
+        int numStorageSystems = default(1);							// Number of Block Servers     
+        int numNetworkInterfaces = default(1);						// Number of network interfaces
+
 
         string ContainerName = default("");								
         //string osModuleType = default("VmOperatingSystemModule");  	// Operating System Module type            	
        // string cpuModuleType = default("CPU_Module");				// CPU Module type               
-        
+
         string ip = default("");								    // VM IP
         bool IPForward = default(false);							// IP Forward
         int namid = default(-1);									// Nam ID
         string routingFile = default("");							// Routing File
 
         @dynamic(true);
-        @class("Docker");
+        @class("Docker_Container");
         @display("i=device/docker");
 
     gates:
         //Storage system
-        input fromNodeStorageSystem[numStorageSystems]@loose;
-        output toNodeStorageSystem[numStorageSystems]@loose;
+        input fromNodeStorageSystem[numStorageSystems] @loose;
+        output toNodeStorageSystem[numStorageSystems] @loose;
 
         //cpu        
-        input fromNodeCPU[numCores]@loose;
-        output toNodeCPU[numCores]@loose;
+        input fromNodeCPU[numCores] @loose;
+        output toNodeCPU[numCores] @loose;
 
 		//memory
-        input fromNodeMemoryI@loose;
-        input fromNodeMemoryO@loose;
-        output toNodeMemoryI@loose;
-        output toNodeMemoryO@loose;
+        input fromNodeMemoryI @loose;
+        input fromNodeMemoryO @loose;
+        output toNodeMemoryI @loose;
+        output toNodeMemoryO @loose;
 
         // network 
+<<<<<<< HEAD:src/Virtualization/VirtualMachines/Docker/Docker_Container.ned
         input fromNodeNet@loose;
         output toNodeNet@loose;
          
  	//connections allowunconnected:
 }
+=======
+        input fromNodeNet @loose;
+        output toNodeNet @loose;
+
+    connections allowunconnected:
+}
+>>>>>>> 5e714912b74849ea69b7f47db6ace9be6e14f358:src/Virtualization/VirtualMachines/Docker/DockerContainer.ned

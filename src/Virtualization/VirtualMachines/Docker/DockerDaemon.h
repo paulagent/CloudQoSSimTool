@@ -13,16 +13,37 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#ifndef DOCKERDAEMON_H_
-#define DOCKERDAEMON_H_
+
+#ifndef DockerDaemon_H_
+#define DockerDaemon_H_
+
+#include <omnetpp.h>
+#include <errno.h>
+#include <assert.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <dirent.h>
+#include <fcntl.h>
+#include <string>
+#include <iostream>
+#include <sstream>
+#include <unistd.h>
+#include <stdexcept>
+#include <math.h>
+#include "stdio.h"
+#include "stdlib.h"
+#include "ICCLog.h"
+#include "Memoization_uthash.h"
+#include "DockerContainer.h"
+
 
 class DockerDaemon {
-
 public:
     DockerDaemon();
-
-    virtual ~DockerDaemon();
-    virtual void initialize();
+    ~DockerDaemon();
+    vector<DockerContainer *> containerSet;
+    void RunDocker(string image);
 };
 
-#endif /* DOCKERDAEMON_H_ */
+#endif /* DockerDaemon_H_ */
+
