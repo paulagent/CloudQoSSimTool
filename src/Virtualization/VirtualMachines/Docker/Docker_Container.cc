@@ -5,16 +5,16 @@
  *      Author: binggao
  */
 
-#include "Docker.h"
+#include "Docker_Container.h"
 
 //Define_Module(Docker);
 
-Docker::Docker() {
+Docker_Container::Docker_Container() {
     // TODO Auto-generated constructor stub
 
 }
 
-Docker::~Docker() {
+Docker_Container::~Docker_Container() {
     // TODO Auto-generated destructor stub
 }
 

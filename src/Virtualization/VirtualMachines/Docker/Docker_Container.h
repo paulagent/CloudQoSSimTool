@@ -5,14 +5,14 @@
  *      Author: binggao
  */
 
-#ifndef DOCKER_H_
-#define DOCKER_H_
+#ifndef DOCKER_CONTAINER_H_
+#define DOCKER_CONTAINER_H_
 
 
-class Docker {
+class Docker_Container {
 public:
-    Docker();
-    virtual ~Docker();
+    Docker_Container();
+    virtual ~Docker_Container();
 };
 
-#endif /* DOCKER_H_ */
+#endif /* DOCKER_CONTAINER_H_ */

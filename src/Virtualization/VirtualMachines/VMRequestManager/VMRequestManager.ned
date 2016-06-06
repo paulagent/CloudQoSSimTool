@@ -13,14 +13,24 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#include "Docker_Daemon.h"
+package icancloud.src.Virtualization.VirtualMachines.VMRequestManager;
+import icancloud.src.Architecture.NodeComponents.OperatingSystems.IOperatingSystem;
+import icancloud.src.Virtualization.VirtualMachines.VM;
+import icancloud.src.Virtualization.VirtualMachines.IVM;
 
-Docker_Daemon::Docker_Daemon() {
-    // TODO Auto-generated constructor stub
+module VMRequestManager 
+{
+    parameters:
+        @labels(vmm);
+        @display("i=device/terminal");
+		@loose;
+    
 
+    connections allowunconnected:
+
+ 		// Connections between CPU and Operating System
+
+     
 }
 
-Docker_Daemon::~Docker_Daemon() {
-    // TODO Auto-generated destructor stub
-}
 

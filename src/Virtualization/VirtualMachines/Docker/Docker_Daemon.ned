@@ -15,7 +15,7 @@
 
 package icancloud.src.Virtualization.VirtualMachines.Docker;
 
-module Docker
+module Docker_Daemon
 {
     parameters:
 
