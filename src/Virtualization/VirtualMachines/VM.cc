@@ -83,8 +83,10 @@ cout <<"VM::initialize()" << endl;
     os = dynamic_cast<VMSyscallManager*>(osMod);
     Machine::changeState(MACHINE_STATE_OFF);
   //  vmschrr->VMSchedulerRR();
-    dockerset.clear();
+  //  dockerset.clear();
     is_freezed=false;
+    has_dockers=false;
+    dockerDaemon=new DockerDaemon();
 }
 
 void VM::finish() {

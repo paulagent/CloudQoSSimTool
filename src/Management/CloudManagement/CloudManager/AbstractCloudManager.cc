@@ -601,7 +601,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 cout<< "---------------------------------------------------------------------------------------------------------"<< endl;
                 cout<< "---------------------------------------------------------------------------------------------------------"<< endl;
 
-                cout << "Send req to start docker  from start new vm" << endl;
+                cout << "Send req to start docker  from start new vm to the end of the queue" << endl;
                 RequestVM* rqvm = new RequestVM();
                 vector<VM*> vm1;
                 vm1.push_back(vmNew);
@@ -1499,7 +1499,27 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req)
 
                                                      runVM.push_back(started_VM);
                                                      cout << "uid:  "<< vm->getUid()<< "----- PiD:  " << vm->getPid() << endl;
-                                                      return false;
+
+                                                    cout<< "---------------------------------------------------------------------------------------------------------"<< endl;
+                                                    cout<< "---------------------------------------------------------------------------------------------------------"<< endl;
+
+                                                    cout << "Send req to start docker  from unfreez vm to the end of the queue" << endl;
+                                                    RequestVM* rqvm = new RequestVM();
+                                                    vector<VM*> vm1;
+                                                    vm1.push_back(vm);
+                                                    cout << " AbstractCloudManager::request_start_vm  vmNew->getPid()--->" <<vm->getPid()<<endl;
+                                                    rqvm->setPid(vm->getPid());
+                                                    rqvm->setUid(vm->getUid());
+                                                    rqvm->setOperation(REQUEST_START_DOCKER_CONTAINER);
+
+                                                    rqvm->setVectorVM(vm1);
+                                                    AbstractRequest* new_req2;
+                                                    new_req2 = dynamic_cast<AbstractRequest*>(rqvm);
+                                                    new_req2->setOperation(REQUEST_START_DOCKER_CONTAINER);
+                                                    RequestsManagement::userSendRequest(new_req2);
+
+                                                    return false;
+
                                                       }
                                           }
                                              else

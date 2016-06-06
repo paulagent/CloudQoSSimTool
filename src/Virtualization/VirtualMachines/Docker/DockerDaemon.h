@@ -13,13 +13,35 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#ifndef DOCKERENGINE_H_
-#define DOCKERENGINE_H_
+#ifndef DockerDaemon_H_
+#define DockerDaemon_H_
 
-class DockerEngine {
+#include <omnetpp.h>
+#include <errno.h>
+#include <assert.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <dirent.h>
+#include <fcntl.h>
+#include <string>
+#include <iostream>
+#include <sstream>
+#include <unistd.h>
+#include <stdexcept>
+#include <math.h>
+#include "stdio.h"
+#include "stdlib.h"
+#include "ICCLog.h"
+#include "Memoization_uthash.h"
+#include "DockerContainer.h"
+
+
+class DockerDaemon {
 public:
-    DockerEngine();
-    virtual ~DockerEngine();
+    DockerDaemon();
+    ~DockerDaemon();
+    vector<DockerContainer *> containerSet;
+    void RunDocker(string image);
 };
 
-#endif /* DOCKERENGINE_H_ */
+#endif /* DockerDaemon_H_ */
