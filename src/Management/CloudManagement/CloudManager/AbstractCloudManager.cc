@@ -605,7 +605,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 RequestVM* rqvm = new RequestVM();
                 vector<VM*> vm1;
                 vm1.push_back(vmNew);
-                //cout << " AbstractCloudManager::request_start_vm  vmNew->getPid()--->" <<vmNew->getPid()<<endl;
+                cout << " AbstractCloudManager::request_start_vm  vmNew->getPid()--->" <<vmNew->getPid()<<endl;
                 rqvm->setPid(vmNew->getPid());
                 rqvm->setUid(vmNew->getUid());
                 rqvm->setOperation(REQUEST_START_DOCKER_CONTAINER);
@@ -615,7 +615,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 new_req = dynamic_cast<AbstractRequest*>(rqvm);
                 new_req->setOperation(REQUEST_START_DOCKER_CONTAINER);
                 RequestsManagement::userSendRequest(new_req);
-                // If the linked is incorrect, Zahra: No, I think if the link is correct
+                // If the linked is incorrect,
                 req->decreaseSelectionQuantity(i);
                 attendedRequest_vms.insert(attendedRequest_vms.end(), vmNew);
                 // Put VM in running VM Vector
@@ -626,9 +626,10 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
 
             }
         }
-        if (!notEnoughResources)
+        if (!notEnoughResources){
             req->eraseSelectionType(i);
         cout << "AbstractCloudManager::request_start_vm -->check notEnoughResources is false 1 "<< endl;
+        }
     }
     // Send all attendeed requests
     attendedRequest = new RequestVM(req->getUid(), REQUEST_START_VM,
@@ -649,13 +650,13 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
     }
     // All the request has been allocated.
     else {
-        cout << "AbstractCloudManager::request_start_vm -->check attendedRequest_vms.size() <= 0"<< endl;
+        cout << "AbstractCloudManager::request_start_vm -->check attendedRequest_vms.size() <= 0------------ All the request has been allocated."<< endl;
         attendedRequest->setState(REQUEST_SUCCESS);
-        cout << "AbstractCloudManager::request_start_vm -->1"<< endl;
+      //  cout << "AbstractCloudManager::request_start_vm -->1"<< endl;
         user = getUserByModuleID(req->getUid());
-        cout << "AbstractCloudManager::request_start_vm -->2"<< endl;
+      //  cout << "AbstractCloudManager::request_start_vm -->2"<< endl;
         user->notify_UserRequestAttendeed(attendedRequest);
-        cout << "AbstractCloudManager::request_start_vm -->3"<< endl;
+     //   cout << "AbstractCloudManager::request_start_vm -->3"<< endl;
     }
 
     return notEnoughResources;
@@ -1400,7 +1401,7 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req)
 
     if (vm!= NULL)
     {
-      //  cout << "vm->getNodeSetName()---->" <<vm->getNodeSetName() << "vm->getNodeName()---->" << vm->getNodeName()<< endl;
+        cout << "vm->getNodeSetName()---->" <<vm->getNodeSetName() << "vm->getNodeName()---->" << vm->getNodeName()<< endl;
         node= getNodeByIndex(vm->getNodeSetName(),vm->getNodeName(),false);
     //    nodeVL=vm->getOwner();
 
@@ -1439,7 +1440,7 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req)
                                          clock_t t = clock(); // we are not sure about current time
 
                                          printf("\n Method[AbstractCloudManager::request_unfreez_vm]:NO_Runiing_VM -------> %ld \n", runVM.size());
-
+                                         cout << "------------------j  :"<< j<< endl;
                                          RunningVM* vmr;
                                          vmr = runVM.at(j);
                                          if (vmr->hostNodeVL->getFullName()  ==  nodeVL->getFullName())
@@ -1501,6 +1502,10 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req)
                                                       return false;
                                                       }
                                           }
+                                             else
+                                             {
+                                                 ++j;
+                                             }
 
                                          }
                                           else {

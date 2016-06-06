@@ -45,7 +45,7 @@ VMRequestManager::VMRequestManager()
 
  }
 void VMRequestManager::initialize() {
-    //printf("\n Method[RequestsManagement::initialize]: ------->initialize \n");
+  //  printf("\n Method[RequestsManagement::initialize]: ------->initialize \n");
     schedulerQueueBlocked = false;
     requestsQueue.clear();
     temporalRequestsQueue.clear();
@@ -81,7 +81,7 @@ bool VMRequestManager::schedulerBlock() {
 
 bool VMRequestManager::schedulerUnblock() {
 
-    Enter_Method_Silent();
+   // Enter_Method_Silent();
 
     bool result;
 
@@ -290,9 +290,9 @@ void VMRequestManager::schedule()
       vector<AbstractNode*> selectedNodes;
       vector<VM*> attendedRequest_vms;
     //  NodeVL* node;
-      Machine* machine;
+    //  Machine* machine;
       AbstractRequest* req;
-      StorageRequest* req_st;
+   //   StorageRequest* req_st;
       RequestVM* req_vm;
       string uid;
       string nodeState;

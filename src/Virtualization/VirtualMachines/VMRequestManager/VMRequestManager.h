@@ -82,7 +82,7 @@ protected:
       * This method is responsible for block the requestsQueue redirecting the
       * incoming requests to the temporalQueue.
       */
-         void blockArrivalRequests(bool blocked);
+      void blockArrivalRequests(bool blocked);
 
      /*****************************************************************
       *              Management of executing requests
@@ -97,7 +97,7 @@ protected:
          /*
           * Insert an executing request into the vector
           */
-         void insertExecutingRequest(AbstractRequest* req){executingRequests.push_back(req);};
+      void insertExecutingRequest(AbstractRequest* req){executingRequests.push_back(req);};
 
 
          /*
@@ -120,7 +120,7 @@ public:
  //   RequestsManagement();
 
     VMRequestManager();
-     ~VMRequestManager();
+    ~VMRequestManager();
     /*
      * Module initialization
      */
@@ -129,7 +129,7 @@ public:
      /**
      * Module ending.
      */
-   void finish();
+     void finish();
      void schedule();
      bool request_start_docker_container(RequestVM* req_vm);
 
