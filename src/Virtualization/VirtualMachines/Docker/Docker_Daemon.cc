@@ -15,7 +15,7 @@
 
 #include "DockerDaemon.h"
 
-Define_Module(DockerDaemon);
+//Define_Module(DockerDaemon);
 
 
 DockerDaemon::~DockerDaemon() {
