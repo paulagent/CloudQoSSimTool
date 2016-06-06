@@ -16,7 +16,7 @@
 package icancloud.src.Virtualization.VirtualMachines.Docker;
 
 
-module Docker_Container
+module DockerContainer
 
 {
     parameters:
@@ -42,7 +42,7 @@ module Docker_Container
         string routingFile = default("");							// Routing File
 
         @dynamic(true);
-        @class("Docker_Container");
+        @class("DockerContainer");
         @display("i=device/docker");
 
     gates:
@@ -61,16 +61,10 @@ module Docker_Container
         output toNodeMemoryO @loose;
 
         // network 
-<<<<<<< HEAD:src/Virtualization/VirtualMachines/Docker/Docker_Container.ned
-        input fromNodeNet@loose;
-        output toNodeNet@loose;
-         
- 	//connections allowunconnected:
-}
-=======
+
         input fromNodeNet @loose;
         output toNodeNet @loose;
 
     connections allowunconnected:
 }
->>>>>>> 5e714912b74849ea69b7f47db6ace9be6e14f358:src/Virtualization/VirtualMachines/Docker/DockerContainer.ned
+

@@ -15,6 +15,8 @@
 
 #include <DockerDaemon.h>
 #include <iostream>
+Define_Module(DockerDaemon);
+
 DockerDaemon::DockerDaemon() {
     // TODO Auto-generated constructor stu
     containerSet.clear();
