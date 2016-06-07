@@ -43,6 +43,8 @@ public:
     ~DockerDaemon();
     vector<DockerContainer *> containerSet;
     void RunDocker(string image);
+    void GetMem(int size);
+    void FreeMem(int size);
 };
 
 #endif /* DockerDaemon_H_ */
