@@ -58,8 +58,8 @@ module DockerDaemon
         output toNodeStorageSystem[numStorageSystems] @loose;
 
 
-        input fromVMCPU[numCores]@loose;
-        output toVMCPU[numCores]@loose;
+      //  input fromVMCPU[numCores]@loose;
+      //  output toVMCPU[numCores]@loose;
 
 		//memory
         input fromVMMemoryI@loose;

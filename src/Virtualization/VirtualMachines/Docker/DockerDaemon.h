@@ -37,7 +37,7 @@
 #include "DockerContainer.h"
 
 
-class DockerDaemon {
+class DockerDaemon : public cSimpleModule{
 public:
     DockerDaemon();
     ~DockerDaemon();
