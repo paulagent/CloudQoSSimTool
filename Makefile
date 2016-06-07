@@ -5973,11 +5973,22 @@ $O/src/Virtualization/VirtualMachines/Docker/DockerContainer.o: src/Virtualizati
 	src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/uthash.h \
 	src/Virtualization/VirtualMachines/Docker/DockerContainer.h
 $O/src/Virtualization/VirtualMachines/Docker/DockerDaemon.o: src/Virtualization/VirtualMachines/Docker/DockerDaemon.cc \
+	src/Base/Messages/icancloud_Message.h \
+	src/Base/Messages/icancloud_Message_m.h \
 	src/Base/Util/Log/ICCLog.h \
+	src/Base/include/icancloud_debug.h \
+	src/Base/include/icancloud_types.h \
 	src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/Memoization_uthash.h \
 	src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/uthash.h \
 	src/Virtualization/VirtualMachines/Docker/DockerContainer.h \
-	src/Virtualization/VirtualMachines/Docker/DockerDaemon.h
+	src/Virtualization/VirtualMachines/Docker/DockerDaemon.h \
+	$(INET_PROJ)/src/base/Compat.h \
+	$(INET_PROJ)/src/base/INETDefs.h \
+	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
+	$(INET_PROJ)/src/networklayer/contract/IPv6Address.h \
+	$(INET_PROJ)/src/networklayer/contract/IPvXAddress.h \
+	$(INET_PROJ)/src/transport/contract/TCPCommand_m.h \
+	$(INET_PROJ)/src/transport/contract/TCPSocket.h
 $O/src/Virtualization/VirtualMachines/SetDefinition/VmImage.o: src/Virtualization/VirtualMachines/SetDefinition/VmImage.cc \
 	src/Virtualization/VirtualMachines/SetDefinition/VmImage.h
 $O/src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/VMSchedulerRR.o: src/Virtualization/VirtualMachines/VMManagement/ResourcesProvisioning/VMSchedulerRR/VMSchedulerRR.cc \

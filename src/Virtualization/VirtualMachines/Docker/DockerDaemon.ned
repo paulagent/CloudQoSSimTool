@@ -54,22 +54,22 @@ module DockerDaemon
 
     gates:
         //Storage system
-        input fromNodeStorageSystem[numStorageSystems] @loose;
-        output toNodeStorageSystem[numStorageSystems] @loose;
+        //input fromNodeStorageSystem[numStorageSystems] @loose;
+        //output toNodeStorageSystem[numStorageSystems] @loose;
 
 
       //  input fromVMCPU[numCores]@loose;
       //  output toVMCPU[numCores]@loose;
 
 		//memory
-        input fromVMMemoryI @loose;
-        input fromVMMemoryO @loose;
-        output toVMMemoryI @loose;
-        output toVMMemoryO @loose;
+       // input fromVMMemoryI @loose;
+       // input fromVMMemoryO @loose;
+       // output toVMMemoryI @loose;
+       // output toVMMemoryO @loose;
 
         // network 
-        input fromVMNet @loose;
-        output toVMNet @loose;
+        input fromDaemonNet @loose;
+        output toDaemonNet @loose;
 
     submodules:
         dockerContainer: DockerContainer {

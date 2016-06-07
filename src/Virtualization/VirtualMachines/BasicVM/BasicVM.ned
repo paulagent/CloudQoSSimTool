@@ -49,6 +49,12 @@ module BasicVM extends VM like IVM
 
         docker_Daemon: DockerDaemon {
             @display("p=304,99");
+            
+            gates:
+            fromDaemonNet ;
+            toDaemonNet ;
+            
+            
         }
     connections allowunconnected:
 
@@ -77,5 +83,8 @@ module BasicVM extends VM like IVM
 
         osModule.fromNet_TCP <-- fromNodeNet;
         osModule.toNet_TCP --> toNodeNet;
+        
+        osModule.fromDaemon <-- fromDaemonNet;
+        osModule.toDaemon --> toDaemonNet;
 
 }
