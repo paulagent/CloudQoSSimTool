@@ -47,12 +47,12 @@ module DockerContainer
 
     gates:
         //Storage system
-        input fromNodeStorageSystem[numStorageSystems] @loose;
-        output toNodeStorageSystem[numStorageSystems] @loose;
+       // input fromNodeStorageSystem[numStorageSystems] @loose;
+       // output toNodeStorageSystem[numStorageSystems] @loose;
 
         //cpu        
-        input fromNodeCPU[numCores] @loose;
-        output toNodeCPU[numCores] @loose;
+       // input fromNodeCPU @loose;
+       // output toNodeCPU @loose;
 
 		//memory
         input fromNodeMemoryI @loose;

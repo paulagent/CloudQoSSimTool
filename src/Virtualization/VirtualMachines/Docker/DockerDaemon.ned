@@ -38,8 +38,8 @@ module DockerDaemon
         //string osModuleType = default("VmOperatingSystemModule");  	// Operating System Module type            	
        // string cpuModuleType = default("CPU_Module");				// CPU Module type               
 
-        
-      
+
+
 
 
         string ip = default("");								    // VM IP
@@ -62,17 +62,21 @@ module DockerDaemon
       //  output toVMCPU[numCores]@loose;
 
 		//memory
-        input fromVMMemoryI@loose;
-        input fromVMMemoryO@loose;
-        output toVMMemoryI@loose;
-        output toVMMemoryO@loose;
+        input fromVMMemoryI @loose;
+        input fromVMMemoryO @loose;
+        output toVMMemoryI @loose;
+        output toVMMemoryO @loose;
 
         // network 
-        input fromVMNet@loose;
-        output toVMNet@loose;
-         
- 	connections allowunconnected:
- 	    
+        input fromVMNet @loose;
+        output toVMNet @loose;
+
+    submodules:
+        dockerContainer: DockerContainer {
+            @display("p=145,98");
+        }
+    connections allowunconnected:
+
 }
 
 
