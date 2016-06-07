@@ -35,7 +35,7 @@
 #include "ICCLog.h"
 #include "Memoization_uthash.h"
 #include "DockerContainer.h"
-
+#include "icancloud_Message.h"
 
 class DockerDaemon : public cSimpleModule{
 public:
@@ -43,6 +43,23 @@ public:
     ~DockerDaemon();
     vector<DockerContainer *> containerSet;
     void RunDocker(string image);
+    /**
+           * Process a self message.
+           * @param msg Self message.
+           */
+   void processSelfMessage (cMessage *msg);
+
+          /**
+           * Process a request message.
+           * @param sm Request message.
+           */
+   void processRequestMessage (icancloud_Message *sm);
+           /**
+                 * Process a response message.
+                 * @param sm Request message.
+                 */
+  void processResponseMessage (icancloud_Message *sm);
+
 };
 
 #endif /* DockerDaemon_H_ */

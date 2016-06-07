@@ -49,7 +49,10 @@ module VmOperatingSystemModule like IOperatingSystem
         output toStorageSystem[];	// Output gates to Storage Servers
         output toNet_TCP;			// Output gate to Network (Ethernet TCP)
         output toCPU[];				// Output gates to CPU
-
+		
+		//docker 
+		input fromDaemon;
+		output toDaemon;
 
     submodules:
 

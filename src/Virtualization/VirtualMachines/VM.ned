@@ -59,6 +59,10 @@ module VM like IVM
         // network 
         input fromNodeNet@loose;
         output toNodeNet@loose;
+        
+        // to docker
+        input fromDaemonNet@loose;
+        output toDaemonNet@loose;
          
  	connections allowunconnected:
 }

@@ -27,5 +27,16 @@ void DockerContainer::initialize(string image, string name,int id)
     this->createdTime=clock();
     cout << "image:" << image << "----name:"<<name <<"-----id:"<<id<<"------createdTime:"<<createdTime<<endl;
 }
+void DockerContainer::handleMessage(cMessage* msg){
+    throw cRuntimeError ("VmImage::handleMessage->this module does not receive messages\n");
+}
+void DockerContainer:: stopDockerContainer (string containerID) {
 
+}
+void DockerContainer::startDockerContainer(string imagesID,string VMID){
 
+}
+
+void DockerContainer:: startExecution (){
+
+}

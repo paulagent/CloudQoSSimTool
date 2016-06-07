@@ -58,4 +58,16 @@ void DockerDaemon::RunDocker(string image)
     containerSet.push_back(dockerContainer);
 
 }
+void DockerDaemon::processSelfMessage (cMessage *msg){
 
+}
+
+void DockerDaemon::processRequestMessage (icancloud_Message *sm){
+
+}
+
+
+
+void  DockerDaemon::processResponseMessage (icancloud_Message *sm){
+
+}

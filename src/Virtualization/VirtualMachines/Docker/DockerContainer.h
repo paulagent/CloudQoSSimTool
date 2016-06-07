@@ -27,6 +27,7 @@
 #include "Memoization_uthash.h"
 
 class DockerContainer: public cSimpleModule {
+
 public:
     DockerContainer();
     ~DockerContainer();
@@ -37,6 +38,15 @@ public:
     clock_t createdTime;
     int status;  // running 1 / exited 0
 
+protected:
+    virtual void handleMessage(cMessage* msg);
+    virtual void finish(){};
+    void stopDockerContainer (string containerID);
+    void startDockerContainer(string imagesID,string VMID);
+    /**
+           * Start the container application execution.
+           */
+   virtual void startExecution ();
 };
 
 #endif /* DockerContainer */
