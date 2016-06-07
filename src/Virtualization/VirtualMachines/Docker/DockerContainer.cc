@@ -17,7 +17,7 @@ DockerContainer::DockerContainer() {
 DockerContainer::~DockerContainer() {
     // TODO Auto-generated destructor stub
 }
-void DockerContainer::initialize(string image, string name,int id)
+void DockerContainer::initialize(string image, string name,int id,int siz)
 {
     cout << "DockerContainer::initialize"<< endl;
     this->image=image;
@@ -25,6 +25,7 @@ void DockerContainer::initialize(string image, string name,int id)
     this->id=id;
     this->status=1;  //running
     this->createdTime=clock();
+    this->size=siz;
     cout << "image:" << image << "----name:"<<name <<"-----id:"<<id<<"------createdTime:"<<createdTime<<endl;
 }
 

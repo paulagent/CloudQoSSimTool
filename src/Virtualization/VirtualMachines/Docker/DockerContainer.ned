@@ -16,6 +16,10 @@
 package icancloud.src.Virtualization.VirtualMachines.Docker;
 
 
+import inet.linklayer.queue.DropTailQueue;
+import inet.networklayer.xMIPv6Support_None;
+
+
 module DockerContainer
 
 {
@@ -32,7 +36,7 @@ module DockerContainer
         int numNetworkInterfaces = default(1);						// Number of network interfaces
 
 
-        string ContainerName = default("");								
+        string ContainerName = default("");
         //string osModuleType = default("VmOperatingSystemModule");  	// Operating System Module type            	
        // string cpuModuleType = default("CPU_Module");				// CPU Module type               
 
@@ -65,6 +69,7 @@ module DockerContainer
         input fromNodeNet @loose;
         output toNodeNet @loose;
 
+    submodules:
     connections allowunconnected:
 }
 

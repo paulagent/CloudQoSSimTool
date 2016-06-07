@@ -30,11 +30,12 @@ class DockerContainer: public cSimpleModule {
 public:
     DockerContainer();
     ~DockerContainer();
-    void initialize(string image, string name,int id);
+    void initialize(string image, string name,int id, int siz);
     int id;
     string image;
     string name;
     clock_t createdTime;
+    int size;
     int status;  // running 1 / exited 0
 
 };

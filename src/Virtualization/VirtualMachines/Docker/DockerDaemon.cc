@@ -35,7 +35,8 @@ void DockerDaemon::RunDocker(string image)
     DockerContainer* dockerContainer;
     dockerContainer=new DockerContainer();
     string name;
-    int id;
+    int id,size;
+    size=100; //MB
     cout<< "DockerDaemon::RunDocker" <<endl;
 
     if (containerSet.empty())
@@ -46,7 +47,7 @@ void DockerDaemon::RunDocker(string image)
     }
     else
     {
-        id= containerSet.size()+1;
+        id= containerSet.size();
         cout<< "DockerDaemon::RunDocker------->containerSet is not empty()" <<endl;
 
     }
@@ -54,7 +55,7 @@ void DockerDaemon::RunDocker(string image)
     name="docker";
     cout<< "docker name--------->"<<name<<endl;
 
-    dockerContainer->initialize( image,  name,  id);
+    dockerContainer->initialize( image,  name,  id, size);
     containerSet.push_back(dockerContainer);
 
 }
