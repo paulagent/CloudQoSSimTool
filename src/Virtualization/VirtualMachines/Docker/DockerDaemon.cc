@@ -57,6 +57,15 @@ void DockerDaemon::RunDocker(string image)
 
     dockerContainer->initialize( image,  name,  id, size);
     containerSet.push_back(dockerContainer);
+    GetMem(size);
+
+}
+void DockerDaemon::GetMem(int size)
+{
+
+}
+void DockerDaemon::FreeMem(int size)
+{
 
 }
 void DockerDaemon::processSelfMessage (cMessage *msg){

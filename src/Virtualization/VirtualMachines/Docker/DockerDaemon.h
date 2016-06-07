@@ -43,6 +43,7 @@ public:
     ~DockerDaemon();
     vector<DockerContainer *> containerSet;
     void RunDocker(string image);
+
     /**
            * Process a self message.
            * @param msg Self message.
@@ -59,6 +60,10 @@ public:
                  * @param sm Request message.
                  */
   void processResponseMessage (icancloud_Message *sm);
+
+
+    void GetMem(int size);
+    void FreeMem(int size);
 
 };
 
