@@ -7,7 +7,7 @@
 
 #include "DockerContainer.h"
 
-//Define_Module(DockerContainer);
+Define_Module(DockerContainer);
 
 DockerContainer::DockerContainer() {
     // TODO Auto-generated constructor stub

@@ -26,7 +26,7 @@
 #include "ICCLog.h"
 #include "Memoization_uthash.h"
 
-class DockerContainer {
+class DockerContainer: public cSimpleModule {
 public:
     DockerContainer();
     ~DockerContainer();
