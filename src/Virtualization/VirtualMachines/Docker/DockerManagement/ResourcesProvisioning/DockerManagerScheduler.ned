@@ -9,12 +9,12 @@
 //@author bing gao
 //@date 2016-04-14
 
-package icancloud.src.Virtualization.VirtualMachines.VMManagement.ResourcesProvisioning;
+package icancloud.src.Virtualization.VirtualMachines.Docker.DockerManagement.ResourcesProvisioning;
 
-import icancloud.src.Virtualization.VirtualMachines.VMManagement.ResourcesProvisioning.IVMScheduler;
-import icancloud.src.Virtualization.VirtualMachines.IVM;
+import icancloud.src.Virtualization.VirtualMachines.Docker.DockerManagement.ResourcesProvisioning.IDockerScheduler;
+import icancloud.src.Virtualization.VirtualMachines.Docker.IDocker;
 
-module VMManagerScheduler like IVMScheduler
+module DockerManagerScheduler like IDockerScheduler
 {
     parameters:
         
@@ -62,16 +62,16 @@ module VMManagerScheduler like IVMScheduler
         bool memorization = default (false);
         
         // .ned Name for the VMs that will be the images that user virtual machines will replicate.
-        string vmNedImageName = default ("Docker");
+        string vmNedImageName = default ("DockerContainer");
         
         // compress the output files
         bool outputCompression = default (false);
         
-        @class(AbstractCloudManager);
+        @class(VMRequestManager);
         @display("i=msg/job");
 
 	submodules:
-	    dockerImage:<vmNedImageName> like IVM{
+	    dockerImage:<vmNedImageName> like IDocker {
 	        numCores = 0;
 	        memorySize_MB = 0;
 	        storageSize_GB = 0;

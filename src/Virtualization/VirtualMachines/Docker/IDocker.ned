@@ -13,4 +13,15 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package icancloud.src.Virtualization.VirtualMachines.VMManagement.ResourcesProvisioning.VMSchedulerRR;
+package icancloud.src.Virtualization.VirtualMachines.Docker;
+
+moduleinterface IDocker
+{
+    parameters:
+  
+        int numCores;												
+        double memorySize_MB;
+        int storageSize_GB;
+
+}
+

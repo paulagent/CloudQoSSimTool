@@ -27,7 +27,7 @@ module DockerDaemon
       //  int storageSize_GB;											// Amount of storage in GiB
 
 
-		//int numStorageSystems = default(1);							// Number of Block Servers     
+		int numofcontainer = default(1);							// Number of     
       //  int numNetworkInterfaces = default(1);						// Number of network interfaces
 
         int numStorageSystems = default(1);							// Number of Block Servers     
@@ -50,16 +50,16 @@ module DockerDaemon
         @dynamic(true);
         @class("DockerDaemon");
 
-        @display("i=device/docker");
+        @display("i=block/daemon");
 
     gates:
         //Storage system
         //input fromNodeStorageSystem[numStorageSystems] @loose;
         //output toNodeStorageSystem[numStorageSystems] @loose;
 
-
-      //  input fromVMCPU[numCores]@loose;
-      //  output toVMCPU[numCores]@loose;
+// to docker container gate
+        input fromContainer[numofcontainer]@loose;
+        output toContainer[numofcontainer]@loose;
 
 		//memory
        // input fromVMMemoryI @loose;
@@ -67,7 +67,7 @@ module DockerDaemon
        // output toVMMemoryI @loose;
        // output toVMMemoryO @loose;
 
-        // network 
+        // network to vm os module
         input fromDaemonNet @loose;
         output toDaemonNet @loose;
 

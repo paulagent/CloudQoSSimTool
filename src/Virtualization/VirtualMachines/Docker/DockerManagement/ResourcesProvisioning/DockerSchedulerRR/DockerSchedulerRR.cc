@@ -13,15 +13,18 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#ifndef VMSCHEDULERRR_H_
-#define VMSCHEDULERRR_H_
+#include "DockerSchedulerRR.h"
 
-# include "VMRequestManager/VMRequestManager.h"
-class VMSchedulerRR {
-public:
-    VMSchedulerRR();
-    virtual ~VMSchedulerRR();
-    void schedule();
-};
+DockerSchedulerRR::DockerSchedulerRR() {
+    // TODO Auto-generated constructor stub
 
-#endif /* VMSCHEDULERRR_H_ */
+}
+
+DockerSchedulerRR::~DockerSchedulerRR() {
+    // TODO Auto-generated destructor stub
+}
+
+
+void DockerSchedulerRR::schedule()
+{
+    }

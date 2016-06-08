@@ -4,9 +4,9 @@
 // @authors Gabriel Gonz&aacute;lez Casta&ntilde;&eacute
 // @date 2014-12-11
 
-package icancloud.src.Virtualization.VirtualMachines.VMManagement.ResourcesProvisioning;
+package icancloud.src.Virtualization.VirtualMachines.Docker.DockerManagement.ResourcesProvisioning;
 
-moduleinterface IVMScheduler
+moduleinterface IDockerScheduler
 {
    parameters:
         

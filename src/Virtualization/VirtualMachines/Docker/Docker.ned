@@ -14,13 +14,7 @@
 // 
 
 package icancloud.src.Virtualization.VirtualMachines.Docker;
-
-
-import inet.linklayer.queue.DropTailQueue;
-import inet.networklayer.xMIPv6Support_None;
-
-
-module DockerContainer
+module Docker
 
 {
     parameters:
@@ -47,7 +41,7 @@ module DockerContainer
 
         @dynamic(true);
         @class("DockerContainer");
-        @display("i=block/container");
+        @display("i=block/docker;bgb=514,218");
 
     gates:
         //Storage system
@@ -68,8 +62,17 @@ module DockerContainer
 
         input fromDockerDaemon @loose;
         output toDockerDaemon @loose;
+        
+        //to vm
+         input fromDockerNet @loose;
+       output toDockerNet @loose;
 
     submodules:
+        dockerContainer: DockerContainer {
+            @display("p=401,107");
+        }
+        dockerDaemon: DockerDaemon {
+            @display("p=91,88");
+        }
     connections allowunconnected:
 }
-
