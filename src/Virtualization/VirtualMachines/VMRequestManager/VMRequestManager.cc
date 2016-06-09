@@ -413,12 +413,13 @@ void VMRequestManager::schedule()
       }
 
 }
+
 bool VMRequestManager::request_start_docker_container(RequestVM* req_vm)
 {
     VM* vm;
     vm=req_vm->getVM(0);
     cout <<"request_start_docker_container---->vm->getFullName-------->"<<vm->getFullName()<<endl;
-    vm->dockerDaemon->RunDocker("test");
+    vm->dockerDaemon->startDockerContainer("test", vm->getFullName());
    // cout << vm->dockerDaemon->containerSet.end();
     cout<< "VMRequestManager::request_start_docker_container------------------> Container has started" << endl;
     return false;
