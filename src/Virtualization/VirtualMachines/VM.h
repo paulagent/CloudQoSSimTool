@@ -93,7 +93,7 @@ public:
     void setNodeName (int newNodeName){nodeName = newNodeName;};
     string getNodeSetName (){return nodeSetName;};
     void setNodeSetName (string newNodeSetName){nodeSetName = newNodeSetName;};
-    //int getFreeMemory();
+
     /*
      * Destroy the VM module and free the resources to be requested by other users to allocate new virtual machines
      */

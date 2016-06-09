@@ -9,15 +9,15 @@
  * @date 2016-31-05
  */
 
-#ifndef __VM_SCHEDULER_BASE_H_
-#define __VM_SCHEDULER_BASE_H_
+#ifndef __DOCKER_SCHEDULER_BASE_H_
+#define __DOCKER_SCHEDULER_BASE_H_
 
 #include <omnetpp.h>
 #include "AbstractCloudManager.h"
 
 
 
-class AbstractVMScheduler : public AbstractCloudManager{
+class AbstractDockerScheduler : public AbstractCloudManager{
 
 	protected:
 

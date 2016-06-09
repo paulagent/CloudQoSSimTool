@@ -14,33 +14,25 @@
 // 
 
 package icancloud.src.Virtualization.VirtualMachines.Docker;
-
-
-
-module DockerDaemon
+module Docker
 
 {
     parameters:
 
-       // int numCores;												// Number of CPUs
-       // double memorySize_MB;										// Amount of memory in MiB
-      //  int storageSize_GB;											// Amount of storage in GiB
+        //double memorySize_MB;										// Amount of memory in MiB
+        //int storageSize_GB;											// Amount of storage in GiB
 
 
-        int numofcontainer = default(1);							// Number of     
+		//int numStorageSystems = default(1);							// Number of Block Servers     
       //  int numNetworkInterfaces = default(1);						// Number of network interfaces
 
         int numStorageSystems = default(1);							// Number of Block Servers     
         int numNetworkInterfaces = default(1);						// Number of network interfaces
 
 
-        string hostName = default("");								// VM's name
+        string ContainerName = default("");
         //string osModuleType = default("VmOperatingSystemModule");  	// Operating System Module type            	
        // string cpuModuleType = default("CPU_Module");				// CPU Module type               
-
-
-
-
 
         string ip = default("");								    // VM IP
         bool IPForward = default(false);							// IP Forward
@@ -48,32 +40,36 @@ module DockerDaemon
         string routingFile = default("");							// Routing File
 
         @dynamic(true);
-        @class("DockerDaemon");
-
-        @display("i=block/daemon");
+        @class("DockerContainer");
+        @display("i=block/docker;bgb=514,218");
 
     gates:
         //Storage system
-        //input fromNodeStorageSystem[numStorageSystems] @loose;
-        //output toNodeStorageSystem[numStorageSystems] @loose;
+       // input fromNodeStorageSystem[numStorageSystems] @loose;
+       // output toNodeStorageSystem[numStorageSystems] @loose;
 
-        // to docker container gate
-        input fromContainer[numofcontainer] @loose;
-        output toContainer[numofcontainer] @loose;
+        //cpu        
+       // input fromNodeCPU @loose;
+       // output toNodeCPU @loose;
 
 		//memory
-       // input fromVMMemoryI @loose;
-       // input fromVMMemoryO @loose;
-       // output toVMMemoryI @loose;
-       // output toVMMemoryO @loose;
+        input fromNodeMemoryI @loose;
+        input fromNodeMemoryO @loose;
+        output toNodeMemoryI @loose;
+        output toNodeMemoryO @loose;
 
-        // network to vm os module
-        input fromDaemonNet @loose;
-        output toDaemonNet @loose;
+        // network 
+
+        input fromDockerDaemon @loose;
+        output toDockerDaemon @loose;
+
+        //to vm
+        input fromDockerNet @loose;
+        output toDockerNet @loose;
 
     submodules:
+        dockerDaemon: DockerDaemon {
+            @display("p=91,88");
+        }
     connections allowunconnected:
-
 }
-
-

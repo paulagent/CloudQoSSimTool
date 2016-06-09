@@ -9,12 +9,12 @@
 //@author bing gao
 //@date 2016-04-14
 
-package icancloud.src.Virtualization.VirtualMachines.VMManagement.ResourcesProvisioning;
+package icancloud.src.Virtualization.VirtualMachines.Docker.DockerManagement.ResourcesProvisioning;
 
-import icancloud.src.Virtualization.VirtualMachines.VMManagement.ResourcesProvisioning.IVMScheduler;
-import icancloud.src.Virtualization.VirtualMachines.IVM;
+import icancloud.src.Virtualization.VirtualMachines.Docker.DockerManagement.ResourcesProvisioning.IDockerScheduler;
+import icancloud.src.Virtualization.VirtualMachines.Docker.IDocker;
 
-module VMManagerScheduler like IVMScheduler
+module DockerManagerScheduler like IDockerScheduler
 {
     parameters:
         
@@ -23,10 +23,7 @@ module VMManagerScheduler like IVMScheduler
      
      	// The time that cloud waits until it starts
 		double timeToStart = default(0.0); // Time to start cloud manager
-        
-        // Parameters to migrate VMs
-        bool liveMigration = default(false);
-        
+       
         // The minimum quantity of data before disconnect the VM and reconnect it.
         int dirtyingRate = default(256);
         
@@ -42,36 +39,24 @@ module VMManagerScheduler like IVMScheduler
         // print the energy to a log file.
         bool printEnergyToFile = default(false);     
         
-        // print each schedule event the consumption values of the nodes
-        bool printEnergyTrace = default(false);    	
-        
-    
-    	
-    
-
-		// THe maximum number of virtual machines allowed to access to a data server 
-        int remote_storage_VMs_per_node = default(10000);
-        
-        // The percent minimum that represents the amount of storage in a data server before select other.
-        double minimum_percent_storageNode_free = default(0.5);
-        
+  
         // The maximum number of virtual machines into a node
         int numberOfDockerperVM = default(10);
         
         // Parameter pending to test. Do not change the value
-        bool memorization = default (false);
+       // bool memorization = default (false);
         
         // .ned Name for the VMs that will be the images that user virtual machines will replicate.
-        string vmNedImageName = default ("Docker");
+        string vmNedImageName = default ("DockerContainer");
         
         // compress the output files
-        bool outputCompression = default (false);
+     //   bool outputCompression = default (false);
         
-        @class(AbstractCloudManager);
+        @class(VMRequestManager);
         @display("i=msg/job");
 
 	submodules:
-	    dockerImage:<vmNedImageName> like IVM{
+	    dockerImage:<vmNedImageName> like IDocker {
 	        numCores = 0;
 	        memorySize_MB = 0;
 	        storageSize_GB = 0;

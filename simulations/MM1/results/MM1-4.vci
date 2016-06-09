@@ -1,8 +1,8 @@
-file 1886 1465504980                                            
+file 769 1465509547                                             
 version 2
-run MM1-4-20160609-13:37:54-3770
+run MM1-4-20160609-14:58:55-6029
 attr configname MM1
-attr datetime 20160609-13:37:54
+attr datetime 20160609-14:58:55
 attr experiment MM1
 attr inifile omnetpp.ini
 attr iterationvars $mean=1.25
@@ -10,7 +10,7 @@ attr iterationvars2 "$mean=1.25, $repetition=0"
 attr mean 1.25
 attr measurement $mean=1.25
 attr network MM1
-attr processid 3770
+attr processid 6029
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -24,5 +24,5 @@ vector 0  MM1.sink  lifeTime:vector  ETV
 attr interpolationmode  none
 attr title  "lifetime of arrived jobs, vector"
 attr unit  s
-0	638 434 4 76 5.849942369566 36.025508906121 12 1.584751970586 18.654073123846 125.67672383542 1616.2996556359
-1	1072 814 0 75 0 36.025508906121 36 0 15 274 2686
+0	638 34 4 4 5.849942369566 5.849942369566 1 1.584751970586 1.584751970586 1.584751970586 2.5114388082762
+1	672 97 0 14 0 12.549532678663 5 0 4 10 30

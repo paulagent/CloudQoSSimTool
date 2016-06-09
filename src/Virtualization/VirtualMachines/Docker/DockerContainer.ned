@@ -47,7 +47,7 @@ module DockerContainer
 
         @dynamic(true);
         @class("DockerContainer");
-        @display("i=device/docker");
+        @display("i=block/container");
 
     gates:
         //Storage system
@@ -66,8 +66,8 @@ module DockerContainer
 
         // network 
 
-        input fromNodeNet @loose;
-        output toNodeNet @loose;
+        input fromDockerDaemon @loose;
+        output toDockerDaemon @loose;
 
     submodules:
     connections allowunconnected:
