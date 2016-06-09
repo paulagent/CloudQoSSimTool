@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for libiCanCloud
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep --make-so -O out -I../inet/src/linklayer/ieee80211/radio -I../inet/src/networklayer/routing/aodv -I../inet/src/networklayer/common -I../inet/src -I../inet/src/networklayer/icmpv6 -I../inet/src/world/obstacles -I../inet/src/networklayer/xmipv6 -I../inet/src/networklayer/contract -I../inet/src/networklayer/autorouting/ipv4 -I../inet/src/util -I../inet/src/linklayer/common -I../inet/src/transport/contract -I../inet/src/status -I../inet/src/linklayer/radio/propagation -I../inet/src/linklayer/ieee80211/radio/errormodel -I../inet/src/linklayer/radio -I../inet/src/util/headerserializers/tcp -I../inet/src/networklayer/ipv4 -I../inet/src/mobility/contract -I../inet/src/util/headerserializers/ipv4 -I../inet/src/base -I../inet/src/util/headerserializers -I../inet/src/world/radio -I../inet/src/linklayer/ieee80211/mac -I../inet/src/networklayer/ipv6 -I../inet/src/transport/sctp -I../inet/src/util/headerserializers/udp -I../inet/src/networklayer/ipv6tunneling -I../inet/src/util/headerserializers/ipv6 -I../inet/src/applications/pingapp -I../inet/src/battery/models -I../inet/src/linklayer/contract -I../inet/src/util/headerserializers/sctp -I../inet/src/transport/tcp_common -I../inet/src/networklayer/arp -I../inet/src/transport/udp -I../inet/src/applications/tcpapp -I../inet/src/applications/ethernet -L../inet/out/$$\(CONFIGNAME\)/src -lz -linet -DINET_IMPORT -KINET_PROJ=../inet
+#  opp_makemake -f --deep --make-so -O out -I../inet/src/linklayer/ieee80211/radio -I../inet/src/networklayer/routing/aodv -I/home/nishant/Documents/omnetpp-4.6/samples/queueinglib -I../inet/src/networklayer/common -I../inet/src -I../inet/src/networklayer/icmpv6 -I../inet/src/world/obstacles -I../inet/src/networklayer/xmipv6 -I../inet/src/networklayer/contract -I../inet/src/networklayer/autorouting/ipv4 -I../inet/src/util -I../inet/src/linklayer/common -I../inet/src/transport/contract -I../inet/src/status -I../inet/src/linklayer/radio/propagation -I../inet/src/linklayer/ieee80211/radio/errormodel -I../inet/src/linklayer/radio -I../inet/src/util/headerserializers/tcp -I../inet/src/networklayer/ipv4 -I../inet/src/mobility/contract -I../inet/src/util/headerserializers/ipv4 -I../inet/src/base -I../inet/src/util/headerserializers -I../inet/src/world/radio -I../inet/src/linklayer/ieee80211/mac -I../inet/src/networklayer/ipv6 -I../inet/src/transport/sctp -I../inet/src/util/headerserializers/udp -I../inet/src/networklayer/ipv6tunneling -I../inet/src/util/headerserializers/ipv6 -I../inet/src/applications/pingapp -I../inet/src/battery/models -I../inet/src/linklayer/contract -I../inet/src/util/headerserializers/sctp -I../inet/src/transport/tcp_common -I../inet/src/networklayer/arp -I../inet/src/transport/udp -I../inet/src/applications/tcpapp -I../inet/src/applications/ethernet -L../inet/out/$$\(CONFIGNAME\)/src -L/home/nishant/Documents/omnetpp-4.6/samples/queueinglib/out/$$\(CONFIGNAME\) -lz -linet -lqueueinglib -DINET_IMPORT -DQUEUEING_IMPORT -KINET_PROJ=../inet -KQUEUEINGLIB_PROJ=/home/nishant/Documents/omnetpp-4.6/samples/queueinglib
 #
 
 # Name of target to be created (-o option)
@@ -12,6 +12,7 @@ TARGET = libiCanCloud$(SHARED_LIB_SUFFIX)
 INCLUDE_PATH = \
     -I../inet/src/linklayer/ieee80211/radio \
     -I../inet/src/networklayer/routing/aodv \
+    -I$(QUEUEINGLIB_PROJ) \
     -I../inet/src/networklayer/common \
     -I../inet/src \
     -I../inet/src/networklayer/icmpv6 \
@@ -246,8 +247,8 @@ INCLUDE_PATH = \
 EXTRA_OBJS =
 
 # Additional libraries (-L, -l options)
-LIBS = -L../inet/out/$(CONFIGNAME)/src  -lz -linet
-LIBS += -Wl,-rpath,`abspath ../inet/out/$(CONFIGNAME)/src`
+LIBS = -L../inet/out/$(CONFIGNAME)/src -L$(QUEUEINGLIB_PROJ)/out/$(CONFIGNAME)  -lz -linet -lqueueinglib
+LIBS += -Wl,-rpath,`abspath ../inet/out/$(CONFIGNAME)/src` -Wl,-rpath,`abspath $(QUEUEINGLIB_PROJ)/out/$(CONFIGNAME)`
 
 # Output directory
 PROJECT_OUTPUT_DIR = out
@@ -431,6 +432,7 @@ MSGFILES = \
 
 # Other makefile variables (-K)
 INET_PROJ=../inet
+QUEUEINGLIB_PROJ=/home/nishant/Documents/omnetpp-4.6/samples/queueinglib
 
 #------------------------------------------------------------------------------
 
@@ -456,7 +458,7 @@ include $(CONFIGFILE)
 OMNETPP_LIB_SUBDIR = $(OMNETPP_LIB_DIR)/$(TOOLCHAIN_NAME)
 OMNETPP_LIBS = -L"$(OMNETPP_LIB_SUBDIR)" -L"$(OMNETPP_LIB_DIR)" -loppenvir$D $(KERNEL_LIBS) $(SYS_LIBS)
 
-COPTS = $(CFLAGS) -DINET_IMPORT $(INCLUDE_PATH) -I$(OMNETPP_INCL_DIR)
+COPTS = $(CFLAGS) -DINET_IMPORT -DQUEUEING_IMPORT $(INCLUDE_PATH) -I$(OMNETPP_INCL_DIR)
 MSGCOPTS = $(INCLUDE_PATH)
 
 # we want to recompile everything if COPTS changes,
