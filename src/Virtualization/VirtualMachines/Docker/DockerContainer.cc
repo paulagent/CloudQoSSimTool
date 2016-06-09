@@ -6,7 +6,8 @@
  */
 
 #include "DockerContainer.h"
-
+#include "stdio.h"
+#include "stdlib.h"
 Define_Module(DockerContainer);
 
 DockerContainer::DockerContainer() {
@@ -17,7 +18,7 @@ DockerContainer::DockerContainer() {
 DockerContainer::~DockerContainer() {
     // TODO Auto-generated destructor stub
 }
-void DockerContainer::initialize(string image, string name,int id,int siz)
+void DockerContainer::initialize(string image, string name,string id,int siz, string fullName)
 {
     cout << "DockerContainer::initialize"<< endl;
     this->image=image;
@@ -26,18 +27,12 @@ void DockerContainer::initialize(string image, string name,int id,int siz)
     this->status=1;  //running
     this->createdTime=clock();
     this->size=siz;
+    fullName=fullName.append(":");
+    this->fullname=fullName.append(id);
+
     cout << "image:" << image << "----name:"<<name <<"-----id:"<<id<<"------createdTime:"<<createdTime<<endl;
 }
 void DockerContainer::handleMessage(cMessage* msg){
     throw cRuntimeError ("VmImage::handleMessage->this module does not receive messages\n");
 }
-void DockerContainer:: stopDockerContainer (string containerID) {
 
-}
-void DockerContainer::startDockerContainer(string imagesID,string VMID){
-
-}
-
-void DockerContainer:: startExecution (){
-
-}

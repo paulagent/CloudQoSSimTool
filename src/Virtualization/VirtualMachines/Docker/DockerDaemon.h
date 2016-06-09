@@ -42,7 +42,7 @@ public:
     DockerDaemon();
     ~DockerDaemon();
     vector<DockerContainer *> containerSet;
-    void RunDocker(string image);
+    void startDockerContainer(string image,string VMfullName);
 
     /**
            * Process a self message.
@@ -64,6 +64,17 @@ public:
 
     void GetMem(int size);
     void FreeMem(int size);
+    void KillDocker(string id);
+    void freeContainerResources(string id);
+    void stopDockerContainer (string id);
+    void pauseDockerContainer (string id);
+    void unPauseDockerContainer (string id);
+    void getDockerByName(string name);
+    void getDockerByImage(string image);
+    void getDockerById(string id);
+    void connectNetwork(string id);
+    void disconnectNetwork(string id);
+
 
 };
 
