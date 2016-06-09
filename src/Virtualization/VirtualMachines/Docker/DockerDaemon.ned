@@ -27,7 +27,7 @@ module DockerDaemon
       //  int storageSize_GB;											// Amount of storage in GiB
 
 
-		int numofcontainer = default(1);							// Number of     
+        int numofcontainer = default(1);							// Number of     
       //  int numNetworkInterfaces = default(1);						// Number of network interfaces
 
         int numStorageSystems = default(1);							// Number of Block Servers     
@@ -57,9 +57,9 @@ module DockerDaemon
         //input fromNodeStorageSystem[numStorageSystems] @loose;
         //output toNodeStorageSystem[numStorageSystems] @loose;
 
-// to docker container gate
-        input fromContainer[numofcontainer]@loose;
-        output toContainer[numofcontainer]@loose;
+        // to docker container gate
+        input fromContainer[numofcontainer] @loose;
+        output toContainer[numofcontainer] @loose;
 
 		//memory
        // input fromVMMemoryI @loose;
@@ -72,9 +72,6 @@ module DockerDaemon
         output toDaemonNet @loose;
 
     submodules:
-        dockerContainer: DockerContainer {
-            @display("p=145,98");
-        }
     connections allowunconnected:
 
 }

@@ -23,10 +23,7 @@ module DockerManagerScheduler like IDockerScheduler
      
      	// The time that cloud waits until it starts
 		double timeToStart = default(0.0); // Time to start cloud manager
-        
-        // Parameters to migrate VMs
-        bool liveMigration = default(false);
-        
+       
         // The minimum quantity of data before disconnect the VM and reconnect it.
         int dirtyingRate = default(256);
         
@@ -42,30 +39,18 @@ module DockerManagerScheduler like IDockerScheduler
         // print the energy to a log file.
         bool printEnergyToFile = default(false);     
         
-        // print each schedule event the consumption values of the nodes
-        bool printEnergyTrace = default(false);    	
-        
-    
-    	
-    
-
-		// THe maximum number of virtual machines allowed to access to a data server 
-        int remote_storage_VMs_per_node = default(10000);
-        
-        // The percent minimum that represents the amount of storage in a data server before select other.
-        double minimum_percent_storageNode_free = default(0.5);
-        
+  
         // The maximum number of virtual machines into a node
         int numberOfDockerperVM = default(10);
         
         // Parameter pending to test. Do not change the value
-        bool memorization = default (false);
+       // bool memorization = default (false);
         
         // .ned Name for the VMs that will be the images that user virtual machines will replicate.
         string vmNedImageName = default ("DockerContainer");
         
         // compress the output files
-        bool outputCompression = default (false);
+     //   bool outputCompression = default (false);
         
         @class(VMRequestManager);
         @display("i=msg/job");

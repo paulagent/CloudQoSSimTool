@@ -62,15 +62,12 @@ module Docker
 
         input fromDockerDaemon @loose;
         output toDockerDaemon @loose;
-        
+
         //to vm
-         input fromDockerNet @loose;
-       output toDockerNet @loose;
+        input fromDockerNet @loose;
+        output toDockerNet @loose;
 
     submodules:
-        dockerContainer: DockerContainer {
-            @display("p=401,107");
-        }
         dockerDaemon: DockerDaemon {
             @display("p=91,88");
         }
