@@ -1,17 +1,17 @@
-                                                                
+file 10268 1465509796                                           
 version 2
-run General-0-20160603-11:16:52-4343
+run General-0-20160609-15:02:59-6073
 attr c1ber 0
 attr c2ber 0
 attr configname General
-attr datetime 20160603-11:16:52
+attr datetime 20160609-15:02:59
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars "$c1ber=0, $c2ber=0"
 attr iterationvars2 "$c1ber=0, $c2ber=0, $repetition=0"
 attr measurement "$c1ber=0, $c2ber=0"
 attr network TCP_t
-attr processid 4343
+attr processid 6073
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -218,254 +218,71 @@ vector 175  TCP_t.router1.ppp[4].ppp  txPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetSentToLower
 attr title  "packets transmitted, vector(packetBytes)"
-vector 192  TCP_t.router2.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  rxPkOk
-attr title  "packets received OK, vector(packetBytes)"
-vector 196  TCP_t.router2.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToUpper
-attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 197  TCP_t.router2.ppp[1].queue  rcvdPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr title  "received packets, vector(packetBytes)"
-vector 199  TCP_t.router2.ppp[1].queue  queueingTime:vector  ETV
-attr interpolationmode  none
-attr title  "queueing time, vector"
-vector 206  TCP_t.router2.ppp[1].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetReceivedFromUpper
-attr title  "packets received from higher layer, vector(packetBytes)"
-vector 202  TCP_t.router2.ppp[1].ppp  txPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToLower
-attr title  "packets transmitted, vector(packetBytes)"
-vector 208  TCP_t.router2.ppp[2].queue  rcvdPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr title  "received packets, vector(packetBytes)"
-vector 210  TCP_t.router2.ppp[2].queue  queueingTime:vector  ETV
-attr interpolationmode  none
-attr title  "queueing time, vector"
-vector 217  TCP_t.router2.ppp[2].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetReceivedFromUpper
-attr title  "packets received from higher layer, vector(packetBytes)"
-vector 213  TCP_t.router2.ppp[2].ppp  txPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToLower
-attr title  "packets transmitted, vector(packetBytes)"
-vector 100  TCP_t.server1.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  rxPkOk
-attr title  "packets received OK, vector(packetBytes)"
-vector 104  TCP_t.server1.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToUpper
-attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 228  TCP_t.server1.tcp  "rcvd seq"  ETV
-vector 229  TCP_t.server1.tcp  "rcvd ack"  ETV
-vector 225  TCP_t.server1.tcp  "advertised window"  ETV
-vector 223  TCP_t.server1.tcp  "send window"  ETV
-vector 238  TCP_t.server1.tcp  tcpRcvQueueBytes  ETV
-vector 224  TCP_t.server1.tcp  "receive window"  ETV
-vector 227  TCP_t.server1.tcp  "sent ack"  ETV
-vector 94  TCP_t.server1.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr title  "received packets, vector(packetBytes)"
-vector 96  TCP_t.server1.ppp[0].queue  queueingTime:vector  ETV
-attr interpolationmode  none
-attr title  "queueing time, vector"
-vector 103  TCP_t.server1.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetReceivedFromUpper
-attr title  "packets received from higher layer, vector(packetBytes)"
-vector 99  TCP_t.server1.ppp[0].ppp  txPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToLower
-attr title  "packets transmitted, vector(packetBytes)"
-vector 116  TCP_t.server2.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  rxPkOk
-attr title  "packets received OK, vector(packetBytes)"
-vector 120  TCP_t.server2.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToUpper
-attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 110  TCP_t.server2.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr title  "received packets, vector(packetBytes)"
-vector 112  TCP_t.server2.ppp[0].queue  queueingTime:vector  ETV
-attr interpolationmode  none
-attr title  "queueing time, vector"
-vector 119  TCP_t.server2.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetReceivedFromUpper
-attr title  "packets received from higher layer, vector(packetBytes)"
-vector 115  TCP_t.server2.ppp[0].ppp  txPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToLower
-attr title  "packets transmitted, vector(packetBytes)"
-vector 203  TCP_t.router2.ppp[1].ppp  rxPkOk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  rxPkOk
-attr title  "packets received OK, vector(packetBytes)"
-vector 207  TCP_t.router2.ppp[1].ppp  passedUpPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToUpper
-attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 186  TCP_t.router2.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr title  "received packets, vector(packetBytes)"
-vector 188  TCP_t.router2.ppp[0].queue  queueingTime:vector  ETV
-attr interpolationmode  none
-attr title  "queueing time, vector"
-vector 195  TCP_t.router2.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetReceivedFromUpper
-attr title  "packets received from higher layer, vector(packetBytes)"
-vector 191  TCP_t.router2.ppp[0].ppp  txPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToLower
-attr title  "packets transmitted, vector(packetBytes)"
-vector 214  TCP_t.router2.ppp[2].ppp  rxPkOk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  rxPkOk
-attr title  "packets received OK, vector(packetBytes)"
-vector 218  TCP_t.router2.ppp[2].ppp  passedUpPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToUpper
-attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 176  TCP_t.router1.ppp[4].ppp  rxPkOk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  rxPkOk
-attr title  "packets received OK, vector(packetBytes)"
-vector 180  TCP_t.router1.ppp[4].ppp  passedUpPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToUpper
-attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 126  TCP_t.router1.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr title  "received packets, vector(packetBytes)"
-vector 128  TCP_t.router1.ppp[0].queue  queueingTime:vector  ETV
-attr interpolationmode  none
-attr title  "queueing time, vector"
-vector 135  TCP_t.router1.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetReceivedFromUpper
-attr title  "packets received from higher layer, vector(packetBytes)"
-vector 131  TCP_t.router1.ppp[0].ppp  txPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToLower
-attr title  "packets transmitted, vector(packetBytes)"
-vector 137  TCP_t.router1.ppp[1].queue  rcvdPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr title  "received packets, vector(packetBytes)"
-vector 139  TCP_t.router1.ppp[1].queue  queueingTime:vector  ETV
-attr interpolationmode  none
-attr title  "queueing time, vector"
-vector 146  TCP_t.router1.ppp[1].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetReceivedFromUpper
-attr title  "packets received from higher layer, vector(packetBytes)"
-vector 142  TCP_t.router1.ppp[1].ppp  txPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToLower
-attr title  "packets transmitted, vector(packetBytes)"
-vector 49  TCP_t.client2.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  rxPkOk
-attr title  "packets received OK, vector(packetBytes)"
-vector 53  TCP_t.client2.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToUpper
-attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 300  TCP_t.client2.tcp  "rcvd seq"  ETV
-vector 301  TCP_t.client2.tcp  "rcvd ack"  ETV
-296	17123 15 28 28 0 0 1 65535 65535 65535 4294836225
-297	17138 15 28 28 0 0 1 65535 65535 65535 4294836225
-299	17153 11 28 28 0 0 1 0 0 0 0
-300	17164 19 94 94 0.0007746 0.0007746 1 0 0 0 0
-301	17183 19 94 94 0.0007746 0.0007746 1 1 1 1 1
-310	17202 11 28 28 0 0 1 0 0 0 0
-vector 29  TCP_t.client1.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  rxPkOk
-attr title  "packets received OK, vector(packetBytes)"
-vector 33  TCP_t.client1.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToUpper
-attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 276  TCP_t.client1.tcp  "rcvd seq"  ETV
-vector 277  TCP_t.client1.tcp  "rcvd ack"  ETV
-vector 271  TCP_t.client1.tcp  "send window"  ETV
-vector 15  TCP_t.client1.tcpApp[0]  sentPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  sentPk
-attr title  "packets sent, vector(packetBytes)"
-vector 274  TCP_t.client1.tcp  "sent seq"  ETV
-vector 278  TCP_t.client1.tcp  "unacked bytes"  ETV
-vector 230  TCP_t.server1.tcp  "unacked bytes"  ETV
-vector 231  TCP_t.server1.tcp  "rcvd dupAcks"  ETV
-vector 86  TCP_t.server1.tcpApp[0]  rcvdPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  rcvdPk
-attr title  "packets received, vector(packetBytes)"
-vector 88  TCP_t.server1.tcpApp[0]  endToEndDelay:vector  ETV
-attr interpolationmode  none
-attr source  messageAge(rcvdPk)
-attr title  "end-to-end delay, vector"
-attr unit  s
-vector 87  TCP_t.server1.tcpApp[0]  sentPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  sentPk
-attr title  "packets sent, vector(packetBytes)"
-vector 226  TCP_t.server1.tcp  "sent seq"  ETV
-vector 290  TCP_t.client1.tcp  "measured RTT"  ETV
-vector 291  TCP_t.client1.tcp  "smoothed RTT"  ETV
-vector 292  TCP_t.client1.tcp  RTTVAR  ETV
-vector 293  TCP_t.client1.tcp  RTO  ETV
-vector 288  TCP_t.client1.tcp  cwnd  ETV
-vector 279  TCP_t.client1.tcp  "rcvd dupAcks"  ETV
-vector 14  TCP_t.client1.tcpApp[0]  rcvdPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  rcvdPk
-attr title  "packets received, vector(packetBytes)"
-vector 16  TCP_t.client1.tcpApp[0]  endToEndDelay:vector  ETV
-attr interpolationmode  none
-attr source  messageAge(rcvdPk)
-attr title  "end-to-end delay, vector"
-attr unit  s
-vector 242  TCP_t.server1.tcp  "measured RTT"  ETV
-vector 243  TCP_t.server1.tcp  "smoothed RTT"  ETV
-vector 244  TCP_t.server1.tcp  RTTVAR  ETV
-vector 245  TCP_t.server1.tcp  RTO  ETV
-vector 240  TCP_t.server1.tcp  cwnd  ETV
-240	19499 46 202 267 0.0070275 0.0081561 2 2904 4356 7260 27407952
-242	19545 28 202 202 0.0070275 0.0070275 1 0.0048466 0.0048466 0.0048466 2.348953156e-05
-243	19573 30 202 202 0.0070275 0.0070275 1 0.000605825 0.000605825 0.000605825 3.67023930625e-07
-244	19603 30 202 202 0.0070275 0.0070275 1 0.656855825 0.656855825 0.656855825 0.43145957483643
-245	19633 30 202 202 0.0070275 0.0070275 1 2.628029125 2.628029125 2.628029125 6.9065370818483
-223	19663 95 58 267 0.0004083 0.0081561 4 65535 65535 262140 17179344900
-224	19758 119 58 215 0.0004083 0.0072155 5 65535 65535 327675 21474181125
-225	19877 142 58 215 0.0004083 0.0072155 6 65536 65637 393618 25822535122
-226	20019 22 140 140 0.0021809 0.0021809 1 103 103 103 10609
-227	20041 107 58 215 0.0004083 0.0072155 5 1 102 407 41211
-228	20148 125 58 267 0.0004083 0.0081561 6 0 102 306 30808
-229	20273 129 58 267 0.0004083 0.0081561 6 0 604 2016 1113252
-230	20402 102 122 267 0.0011929 0.0081561 5 0 500 501 250001
-231	20504 80 137 267 0.0021809 0.0081561 4 0 0 0 0
-238	20584 119 58 215 0.0004083 0.0072155 6 0 0 0 0
-vector 358  TCP_t.client2.tcp  tcpRcvQueueBytes  ETV
-vector 345  TCP_t.client2.tcp  "advertised window"  ETV
-vector 344  TCP_t.client2.tcp  "receive window"  ETV
-vector 347  TCP_t.client2.tcp  "sent ack"  ETV
-vector 221  TCP_t.server2.ppp[0].outputHook[0]  "thruput (bit/sec)"  ETV
-vector 222  TCP_t.server2.ppp[0].outputHook[0]  packet/sec  ETV
-vector 348  TCP_t.client2.tcp  "rcvd seq"  ETV
-vector 349  TCP_t.client2.tcp  "rcvd ack"  ETV
-344	21143 24 270 270 1.0007746 1.0007746 1 65535 65535 65535 4294836225
-345	21167 24 270 270 1.0007746 1.0007746 1 65535 65535 65535 4294836225
-347	21191 20 270 270 1.0007746 1.0007746 1 0 0 0 0
-348	21211 20 305 305 1.0013992 1.0013992 1 0 0 0 0
-349	21231 25 305 305 1.0013992 1.0013992 1 250194 250194 250194 62597037636
-358	21256 20 270 270 1.0007746 1.0007746 1 0 0 0 0
+0	9317 33 0 33 0 0.000204 3 0 1 1 1
+1	9350 8 0 0 0 0 1 0 0 0 0
+2	9358 33 0 34 0 0.000204 3 0 1 1 1
+3	9391 8 0 0 0 0 1 0 0 0 0
+4	9399 8 0 0 0 0 1 0 0 0 0
+5	9407 8 0 0 0 0 1 0 0 0 0
+6	9415 8 0 0 0 0 1 0 0 0 0
+7	9423 8 0 0 0 0 1 0 0 0 0
+8	9431 42 0 43 0 0.0003061 3 0 1 1 1
+9	9473 8 0 0 0 0 1 0 0 0 0
+10	9481 9 0 0 0 0 1 0 0 0 0
+11	9490 9 0 0 0 0 1 0 0 0 0
+12	9499 9 0 0 0 0 1 0 0 0 0
+13	9508 9 0 0 0 0 1 0 0 0 0
+17	9517 10 23 23 0 0 1 1 1 1 1
+23	9527 11 31 31 0 0 1 44 44 44 1936
+25	9538 10 31 31 0 0 1 0 0 0 0
+26	9548 9 0 0 0 0 1 0 0 0 0
+27	9557 36 0 35 0 0.000204 3 0 1 1 1
+28	9593 11 33 33 0 0 1 51 51 51 2601
+32	9604 11 33 33 0 0 1 44 44 44 1936
+37	9615 10 24 24 0 0 1 1 1 1 1
+43	9625 11 32 32 0 0 1 44 44 44 1936
+45	9636 10 32 32 0 0 1 0 0 0 0
+46	9646 9 0 0 0 0 1 0 0 0 0
+47	9655 36 0 36 0 0.000204 3 0 1 1 1
+48	9691 11 34 34 0 0 1 51 51 51 2601
+52	9702 11 34 34 0 0 1 44 44 44 1936
+62	9713 9 0 0 0 0 1 0 0 0 0
+63	9722 9 0 0 0 0 1 0 0 0 0
+78	9731 9 0 0 0 0 1 0 0 0 0
+79	9740 9 0 0 0 0 1 0 0 0 0
+97	9749 9 0 0 0 0 1 0 0 0 0
+98	9758 9 0 0 0 0 1 0 0 0 0
+113	9767 10 0 0 0 0 1 0 0 0 0
+114	9777 10 0 0 0 0 1 0 0 0 0
+129	9787 10 0 0 0 0 1 0 0 0 0
+130	9797 10 0 0 0 0 1 0 0 0 0
+132	9807 20 37 37 0.0002041 0.0002041 1 51 51 51 2601
+136	9827 20 37 37 0.0002041 0.0002041 1 44 44 44 1936
+140	9847 10 0 0 0 0 1 0 0 0 0
+141	9857 10 0 0 0 0 1 0 0 0 0
+143	9867 20 38 38 0.0002041 0.0002041 1 51 51 51 2601
+147	9887 20 38 38 0.0002041 0.0002041 1 44 44 44 1936
+151	9907 10 0 0 0 0 1 0 0 0 0
+152	9917 10 0 0 0 0 1 0 0 0 0
+162	9927 10 0 0 0 0 1 0 0 0 0
+163	9937 10 0 0 0 0 1 0 0 0 0
+170	9947 40 41 42 0.0002041 0.0002041 2 44 44 88 3872
+172	9987 19 41 41 0.0002041 0.0002041 1 0 0 0 0
+173	10006 29 0 42 0 0.0002041 2 0 1 1 1
+174	10035 29 0 43 0 0.0002041 2 0 1 1 1
+175	10064 20 43 43 0.0002041 0.0002041 1 51 51 51 2601
+179	10084 20 43 43 0.0002041 0.0002041 1 44 44 44 1936
+189	10104 10 0 0 0 0 1 0 0 0 0
+190	10114 10 0 0 0 0 1 0 0 0 0
+200	10124 10 0 0 0 0 1 0 0 0 0
+201	10134 10 0 0 0 0 1 0 0 0 0
+211	10144 10 0 0 0 0 1 0 0 0 0
+212	10154 10 0 0 0 0 1 0 0 0 0
+272	10164 15 27 27 0 0 1 65535 65535 65535 4294836225
+273	10179 15 27 27 0 0 1 65535 65535 65535 4294836225
+275	10194 11 27 27 0 0 1 0 0 0 0
+286	10205 11 27 27 0 0 1 0 0 0 0
+296	10216 15 28 28 0 0 1 65535 65535 65535 4294836225
+297	10231 15 28 28 0 0 1 65535 65535 65535 4294836225
+299	10246 11 28 28 0 0 1 0 0 0 0
+310	10257 11 28 28 0 0 1 0 0 0 0
