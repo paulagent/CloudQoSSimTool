@@ -13,4 +13,18 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package src.Virtualization.Hypervisor.HypervisorManagers.H_CPUManager.Schedulers.H_CPU_SCHED_RR;
+package icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_CPUManager.Schedulers.H_CPU_SCHED_RR;
+import icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_CPUManager.IH_CPUManager;
+
+simple H_CPU_SCHED_RR like IH_CPUManager
+{
+    parameters:
+        int numCPUs;
+        double computingOverhead = default(0);
+    gates:
+        input fromVMCPU[];
+        output toVMCPU[];
+
+        input fromNodeCPU[numCPUs];
+        output toNodeCPU[numCPUs];
+}
