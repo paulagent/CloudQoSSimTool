@@ -21,6 +21,7 @@ simple H_CPU_SCHED_RR like IH_CPUManager
     parameters:
         int numCPUs;
         double computingOverhead = default(0);
+        double timeslice = default(2);
     gates:
         input fromVMCPU[];
         output toVMCPU[];
