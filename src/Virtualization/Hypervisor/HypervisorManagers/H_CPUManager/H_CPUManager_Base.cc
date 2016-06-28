@@ -126,6 +126,7 @@ void H_CPUManager_Base::processRequestMessage (icancloud_Message *sm){
 		}
 		// If operation is aimed to perform a computing block from a VM
 		else {
+		    cout <<"H_CPUManager_Base :processRequestMessage"<<endl;
 			schedulingCPU(sm_cpu);
 		}
 

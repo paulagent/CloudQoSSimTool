@@ -37,7 +37,7 @@ void H_CPU_SCHED_FIFO::finish(){
 }
 
 void H_CPU_SCHED_FIFO::schedulingCPU(icancloud_Message *msg){
-
+cout << "H_CPU_SCHED_FIFO::schedulingCPU" <<endl;
     // Define ..
     int core = -1;
     bool selected = false;
@@ -215,7 +215,7 @@ void H_CPU_SCHED_FIFO::schedulingCPU(icancloud_Message *msg){
 }
 
 void H_CPU_SCHED_FIFO::processHardwareResponse(icancloud_Message *msg){
-
+cout <<"H_CPU_SCHED_FIFO::processHardwareResponse" <<endl;
     // Manage the core state
     int core =  msg->getArrivalGate()->getIndex();
     (*(vmIDs.begin() + core)) = -1;
