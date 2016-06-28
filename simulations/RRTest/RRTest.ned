@@ -115,7 +115,7 @@ network RRTest
         //   Definition of Storage Nodes
         // ---------------------------------------------------------------
         ns_0_NodeStorage_C: NodeVL {
-            @display("p=165,251");
+            @display("p=160,318");
         }
         ns_1_NodeStorage_C: NodeVL {
             @display("p=330,230");

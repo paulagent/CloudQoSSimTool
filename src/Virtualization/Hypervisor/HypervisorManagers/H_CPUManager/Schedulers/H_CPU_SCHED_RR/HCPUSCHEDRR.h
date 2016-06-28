@@ -16,6 +16,7 @@
 #ifndef HCPUSCHEDRR_H_
 #define HCPUSCHEDRR_H_
 
+#include "H_CPUManager_Base.h"
 class H_CPU_SCHED_RR : public H_CPUManager_Base{
 
     protected:
@@ -43,7 +44,7 @@ public:
        void finish();
 
        /*
-        * Scheduler fifo
+        * Scheduler RR
         */
        void schedulingCPU(icancloud_Message *msg);
 
