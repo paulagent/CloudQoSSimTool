@@ -199,7 +199,7 @@ void H_CPUManager_Base::processResponseMessage (icancloud_Message *sm){
 }
 
 void H_CPUManager_Base::setVM (cGate** oGates, cGate** iGates, int numCores, int uId, int pId){
-
+    cout << "H_CPUManager_Base::setVM :---> " <<endl;
 
     int idxToVM;
     int idxFromVM;
