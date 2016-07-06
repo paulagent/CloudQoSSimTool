@@ -51,12 +51,103 @@ void CPU_Intensive::initialize(){
 
 }
 
-
 void CPU_Intensive::finish(){
     // Finish the super-class
    UserJob::finish();
 
 }
+
+// create Connection method for TCP
+void CPU_Intensive::createConnection(icancloud_Message *sm){
+
+    clientTCP_Connector newConnection;
+        icancloud_App_NET_Message *sm_net;
+
+
+            // Cast to icancloud_App_NET_Message
+            sm_net = dynamic_cast<icancloud_App_NET_Message *>(sm);
+
+            // Wrong message?
+            if (sm_net == NULL)
+                networkService->showErrorMessage ("[createConnection] Error while casting to icancloud_App_NET_Message!");
+
+            // Attach the message to the corresponding connection
+            newConnection.msg = sm;
+
+            // Create the socket
+            newConnection.socket = new TCPSocket();
+            newConnection.socket->setDataTransferMode(TCP_TRANSFER_OBJECT);
+            newConnection.socket->bind(*(localIP.c_str()) ? IPvXAddress(localIP.c_str()) : IPvXAddress(), -1);
+            //newConnection.socket->setCallbackObject(this);
+            newConnection.socket->setOutputGate(outGate_TCP);
+            newConnection.socket->renewSocket();
+
+            // Add new socket to socketMap
+            socketMap.addSocket (newConnection.socket);
+
+            // Add new connection to vector
+            connections.push_back (newConnection);
+
+            // Debug...
+            if (DEBUG_TCP_Service_Client)
+                networkService->showDebugMessage ("[createConnection] local IP:%s ---> %s:%d. %s",
+                                                    localIP.c_str(),
+                                                    sm_net->getDestinationIP(),
+                                                    sm_net->getDestinationPort(),
+                                                    sm_net->contentsToString(DEBUG_TCP_Service_MSG_Client).c_str());
+
+
+            // Establish Connection
+            newConnection.socket->connect(IPvXAddressResolver().resolve(sm_net->getDestinationIP()), sm_net->getDestinationPort());
+
+}
+// Method to sendPacket to the Server Side
+void CPU_Intensive::sendPacketToServer(icancloud_Message *sm){
+    int index;
+            // Search for the connection...
+            index = searchConnectionByConnId (sm->getConnectionId());
+
+            // Connection not found?
+            if (index == NOT_FOUND)
+                networkService->showErrorMessage ("[sendPacketToServer] Socket not found!");
+
+            else{
+
+                if (DEBUG_TCP_Service_Client)
+                    networkService->showDebugMessage ("[sendPacketToServer] Sending message to %s:%d. %s",
+                                                        connections[index].socket->getRemoteAddress().str().c_str(),
+                                                        connections[index].socket->getRemotePort(),
+                                                        sm->contentsToString(DEBUG_TCP_Service_MSG_Client).c_str());
+
+                connections[index].socket->send(sm);
+            }
+}
+
+void CPU_Intensive::closeConnection(icancloud_Message *sm){
+    TCPSocket *socket;
+
+            // Search for the socket
+            socket = socketMap.findSocketFor(sm);
+
+                 if (!socket)
+                    networkService->showErrorMessage ("[closeConnection] Socket not found to send the message: %s\n", sm->contentsToString(true).c_str());
+                 else{
+
+                    if (DEBUG_TCP_Service_Client)
+                        networkService->showDebugMessage ("Closing connection %s:%d. %s",
+                                                    socket->getRemoteAddress().str().c_str(),
+                                                    socket->getRemotePort(),
+                                                    sm->contentsToString(DEBUG_TCP_Service_MSG_Client).c_str());
+                    socket->close();
+
+                    socket = socketMap.removeSocket(socket);
+
+                    delete(socket);
+                 }
+
+                 delete (sm);
+}
+
 
 void CPU_Intensive::startExecution (){
 

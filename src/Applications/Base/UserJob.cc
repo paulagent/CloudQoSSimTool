@@ -111,3 +111,5 @@ void UserJob::setUpUser(AbstractUser *user) {
 
     userPtr = user;
 }
+
+

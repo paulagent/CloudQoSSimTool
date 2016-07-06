@@ -4,6 +4,12 @@
 #include <omnetpp.h>
 #include "UserJob.h"
 
+#include "TCPSocket.h"
+#include "IPvXAddressResolver.h"
+#include "TCPSocketMap.h"
+#include "NetworkService.h"
+#include "icancloud_Message.h"
+
 /**
  * @class CPU_Intensive CPU_Intensive.h "CPU_Intensive.h"
  *
@@ -23,8 +29,25 @@
  */
 class CPU_Intensive : public UserJob{
 
+    //changes for TCP
+    struct icancloud_TCP_Client_Connector{
+            TCPSocket *socket;
+            cPacket *msg;
+        };
+        typedef struct icancloud_TCP_Client_Connector clientTCP_Connector;
+
+    struct icancloud_TCP_Server_Connector{
+                int port;
+                int appIndex;
+            };
+            typedef struct icancloud_TCP_Server_Connector serverTCP_Connector; //changes for TCP end
+
 	
 	protected:
+
+    simsignal_t processingTime;
+    simtime_t departureTime;
+    simtime_t arrivalTime;
 
 		/** Size of data chunk to read in each iteration */
 		int inputSizeMB;
@@ -137,6 +160,34 @@ class CPU_Intensive : public UserJob{
 
 
 		void changeState(string newState);
+
+		//changes for tcp
+        /** Client connections vector*/
+        vector <clientTCP_Connector> connections;
+
+        /** Socket map to manage TCP sockets*/
+        TCPSocketMap socketMap;
+
+        /** Pointer to NetworkService object */
+        NetworkService *networkService;
+
+        /** Local IP */
+        string localIP;
+
+        /** Output gate to TCP */
+        cGate* outGate_TCP; //changes tcp
+
+	public:
+
+        //new functions for tcp
+		void createConnection(icancloud_Message *sm);
+
+		void sendPacketToServer(icancloud_Message *sm);
+
+		int searchConnectionByConnId(int connId);
+
+		void closeConnection(icancloud_Message *sm);
+
 
 	private:			    
 

@@ -15,6 +15,7 @@
 
 package icancloud.simulations.TCP;
 import inet.applications.ITCPApp;
+import inet.nodes.bgp.BGPRouter;
 import inet.nodes.inet.StandardHost;
 import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
 import ned.DatarateChannel;
@@ -107,10 +108,10 @@ network TCP_t
             parameters:
                 @display("p=149,34");
         }
-        netAnimTrace: NetAnimTrace {
-            parameters:
-                @display("p=248,34");
-        }
+//        netAnimTrace: NetAnimTrace {
+//            parameters:
+//                @display("p=248,34");
+//        }
         controller: HttpController {
             parameters:
                 @display("p=341,34;i=block/cogwheel_s");

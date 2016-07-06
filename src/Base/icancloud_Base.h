@@ -246,6 +246,11 @@ class icancloud_Base: public cSimpleModule{
          */
 		vector<string> divide(const char* inputString, char separator);
 
+		virtual void socketDataArrived(int connId, void *yourPtr, cPacket *msg, bool urgent);
+
+		virtual void sendPacket(icancloud_Message *sm, cGate* gate,int numBytes, int expectedReplyBytes, bool serverClose=false);
+
+
 	protected:
 
 	   /**
@@ -285,9 +290,10 @@ class icancloud_Base: public cSimpleModule{
 		*/
 		virtual void processResponseMessage (icancloud_Message *sm) = 0;
 
-
 	    template <typename C, typename T>
-	   /**
+
+
+	    /**
 		* Parses a T type into a string.
 		*
 		* @param x Value to parse.

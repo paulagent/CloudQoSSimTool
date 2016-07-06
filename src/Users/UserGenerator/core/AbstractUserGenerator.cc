@@ -217,8 +217,16 @@ void AbstractUserGenerator::createUser (){
 
 			// the user behaviorMod is created in the root of the cloud (cloud.manager.userGenerator.user)
                 modBehavior = cModuleType::get (behaviorPath.str().c_str());
-
+                cout<<"Test mod behaviorMod"<< modBehavior->getFullName() << endl;
+                cout<<"Test Bug"<<endl;
+                cout << "getParentModule()" <<getParentModule()->getFullName()<< endl;
+                cout << "getParentModule()" <<getParentModule()->getParentModule()->getFullName()<< endl;
+                cout << "getParentModule()" <<getParentModule()->getParentModule()->getParentModule()->getFullName()<< endl;
                 behaviorMod = modBehavior->create(userID.c_str(), getParentModule()->getParentModule()->getParentModule());
+                cout<<"Test Bug 1"<<endl;
+
+
+
                 behaviorMod->setName(userID.c_str());
                 behaviorMod->finalizeParameters();
                 behaviorMod->buildInside();
