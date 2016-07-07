@@ -470,6 +470,10 @@ if(found) {
                << endl;
     return false;
 }
+else {
+    cout <<"there is no enough resources" <<endl;
+    return true;
+}
     // cout << vm->dockerDaemon->containerSet.end();
 
     return false;
