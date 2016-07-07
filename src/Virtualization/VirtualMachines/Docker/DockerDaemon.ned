@@ -17,21 +17,16 @@ package icancloud.src.Virtualization.VirtualMachines.Docker;
 
 
 
-module DockerDaemon
+module DockerDaemon 
 
 {
     parameters:
 
-       // int numCores;												// Number of CPUs
-       // double memorySize_MB;										// Amount of memory in MiB
-      //  int storageSize_GB;											// Amount of storage in GiB
+     
 
 
-        int numofcontainer = default(1);							// Number of     
+        int numofcontainer = default(0);							// Number of     
       //  int numNetworkInterfaces = default(1);						// Number of network interfaces
-
-        int numStorageSystems = default(1);							// Number of Block Servers     
-        int numNetworkInterfaces = default(1);						// Number of network interfaces
 
 
         string hostName = default("");								// VM's name
@@ -71,7 +66,7 @@ module DockerDaemon
         input fromDaemonNet @loose;
         output toDaemonNet @loose;
 
-    submodules:
+   
     connections allowunconnected:
 
 }

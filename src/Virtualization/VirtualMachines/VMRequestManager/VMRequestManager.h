@@ -11,16 +11,18 @@
 #include "icancloud_Base.h"
 #include "RequestVM.h"
 #include <vector>
-
+#include "RunningContainer.h"
+#include <omnetpp.h>
 class RequestVM;
 //class VMRequestManager: public icancloud_Base{
 
-class VMRequestManager{
+class VMRequestManager: public cSimpleModule{
 protected:
 
     /** Bool that control if the main queue does not receive messages */
         bool schedulerQueueBlocked;
-
+        int dockermem;
+        vector <RunningContainer*> rContainer;
     /** If schedulerQueueBlocked = false, the requests are allocated in this queue */
         vector <AbstractRequest*> requestsQueue;
 
@@ -117,9 +119,6 @@ protected:
 
 
 public:
- //   RequestsManagement();
-
-    VMRequestManager();
     ~VMRequestManager();
     /*
      * Module initialization
@@ -143,6 +142,7 @@ public:
      * request queue waiting until it will be processed.
      */
     void userSendRequest(AbstractRequest* request);
+    void scheduleRR();
 };
 
 #endif /* VMREQUESTMANAGER_H_ */

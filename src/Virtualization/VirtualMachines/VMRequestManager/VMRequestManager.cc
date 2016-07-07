@@ -1,24 +1,12 @@
 /*
- * VMRequestManager.cpp
+ * VMRequestManager.cc
  *
  *  Created on: Jun 1, 2016
  *      Author: zahra
  */
 
-#include <VMRequestManager/VMRequestManager.h>
 
-/*VMRequestManager::VMRequestManager() {
-    // TODO Auto-generated constructor stub
-
-}*/
-
-VMRequestManager::~VMRequestManager() {
-    // TODO Auto-generated destructor stub
-    requestsQueue.clear();
-    temporalRequestsQueue.clear();
-    executingRequests.clear();
-}
-//
+/*
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -31,19 +19,25 @@ VMRequestManager::~VMRequestManager() {
 //
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program.  If not, see http://www.gnu.org/licenses/.
-//
+*/
+
+#include <VMRequestManager/VMRequestManager.h>
 
 
-VMRequestManager::VMRequestManager()
- {
-// printf("\n Method[RequestsManagement::initialize]: ------->initialize \n");
-// schedulerQueueBlocked = false;
-// requestsQueue.clear();
-// temporalRequestsQueue.clear();
-// executingRequests.clear();
-// icancloud_Base::initialize();
+/*VMRequestManager::VMRequestManager() {
+    // TODO Auto-generated constructor stub
 
- }
+}*/
+
+VMRequestManager::~VMRequestManager() {
+    // TODO Auto-generated destructor stub
+    requestsQueue.clear();
+    temporalRequestsQueue.clear();
+    executingRequests.clear();
+}
+
+
+
 void VMRequestManager::initialize() {
   //  printf("\n Method[RequestsManagement::initialize]: ------->initialize \n");
     schedulerQueueBlocked = false;
@@ -51,6 +45,25 @@ void VMRequestManager::initialize() {
     temporalRequestsQueue.clear();
     executingRequests.clear();
  //   icancloud_Base::initialize();
+
+    cModule* dockerSet = getParentModule()->getSubmodule("dockerSet");
+  //  if (dockerSet == NULL)
+  //      throw cRuntimeError(
+ //               "VMRequestManager::initialize() -> Error during initialization. There is no dockerSet\n");
+
+    int dockerSetSize = dockerSet->par("dockerImageQuantity").longValue();
+       for (int i = 0; i < dockerSetSize; i++) {
+           cModule* dockerImage = dockerSet->getSubmodule("dockerImage", i);
+
+          // cfg->setVMType(vmImage->par("id").stringValue(),
+          //         vmImage->par("numCores"),
+             dockermem=  dockerImage->par("memorySize_MB").doubleValue();
+
+             cout <<"VMRequestManager::initialize()--->dockermem " << dockermem <<endl;
+                //   vmImage->par("storageSize_GB").doubleValue());
+           // Parameters are correct so far
+       }
+
 }
 
 void VMRequestManager::finish() {
@@ -419,6 +432,17 @@ bool VMRequestManager::request_start_docker_container(RequestVM* req_vm)
     VM* vm;
     vm=req_vm->getVM(0);
     cout <<"request_start_docker_container---->vm->getFullName-------->"<<vm->getFullName()<<endl;
+
+   double freem = vm->getFreeMemory();
+   int mem =  vm->getMemoryCapacity();
+    RunningContainer* started_Container = new RunningContainer();
+
+                    clock_t now = clock();
+                    started_Container->start_time = now;
+                    started_Container->end_time = now + 200000; //clocks per secs
+                    started_Container->vmID = vm->getFullName();
+
+                    rContainer.push_back(started_Container);
     vm->dockerDaemon->startDockerContainer("test", vm->getFullName());
    // cout << vm->dockerDaemon->containerSet.end();
     cout<< "VMRequestManager::request_start_docker_container------------------> Container has started" << endl;

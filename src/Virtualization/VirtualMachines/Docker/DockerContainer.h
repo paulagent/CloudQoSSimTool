@@ -8,6 +8,7 @@
 #ifndef DockerContainer_H_
 #define DockerContainer_H_
 
+
 #include <omnetpp.h>
 #include <errno.h>
 #include <assert.h>
@@ -16,6 +17,7 @@
 #include <dirent.h>
 #include <fcntl.h>
 #include <string>
+#include "time.h"
 #include <iostream>
 #include <sstream>
 #include <unistd.h>
@@ -25,8 +27,10 @@
 #include "stdlib.h"
 #include "ICCLog.h"
 #include "Memoization_uthash.h"
+#include "Machine.h"
 
-class DockerContainer: public cSimpleModule {
+
+class DockerContainer : public Machine{
 
 public:
     DockerContainer();
