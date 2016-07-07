@@ -25,25 +25,32 @@ module DockerContainer
 {
     parameters:
 
-        //double memorySize_MB;										// Amount of memory in MiB
+
+      //  int numCores;												// Number of CPUs
+      //  double memorySize_MB;										// Amount of memory in MiB
         //int storageSize_GB;											// Amount of storage in GiB
 
-
-		//int numStorageSystems = default(1);							// Number of Block Servers     
-      //  int numNetworkInterfaces = default(1);						// Number of network interfaces
-
-        int numStorageSystems = default(1);							// Number of Block Servers     
+		int numStorageSystems = default(1);							// Number of Block Servers     
         int numNetworkInterfaces = default(1);						// Number of network interfaces
-
-
+	
         string ContainerName = default("");
-        //string osModuleType = default("VmOperatingSystemModule");  	// Operating System Module type            	
-       // string cpuModuleType = default("CPU_Module");				// CPU Module type               
-
+        string hostName = default("");								// Node's hostname
+        string osModuleType = default("VmOperatingSystemModule");  	// Operating System Module type            	
+        string cpuModuleType = default("CPU_Module");				// CPU Module type               
+        
         string ip = default("");								    // VM IP
         bool IPForward = default(false);							// IP Forward
         int namid = default(-1);									// Nam ID
         string routingFile = default("");							// Routing File
+
+    
+
+
+        //string osModuleType = default("VmOperatingSystemModule");  	// Operating System Module type            	
+       // string cpuModuleType = default("CPU_Module");				// CPU Module type               
+
+      
+      
 
         @dynamic(true);
         @class("DockerContainer");
@@ -69,7 +76,7 @@ module DockerContainer
         input fromDockerDaemon @loose;
         output toDockerDaemon @loose;
 
-    submodules:
+   
     connections allowunconnected:
 }
 

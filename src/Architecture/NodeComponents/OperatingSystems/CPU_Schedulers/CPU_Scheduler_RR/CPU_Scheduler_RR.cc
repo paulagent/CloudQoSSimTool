@@ -100,9 +100,9 @@ void CPU_Scheduler_RR::processRequestMessage(icancloud_Message *sm) {
     // All CPUs are busy
     if (cpuIndex == NOT_FOUND) {
 
-        //	if (DEBUG_CPU_Scheduler_RR)
-        //		showDebugMessage ("Enqueing computing block. All CPUs are busy: %s", sm_cpu->contentsToString(DEBUG_MSG_CPU_Scheduler_RR).c_str());
-        //		cout << "CPU_Scheduler_RR::processRequestMessage All CPUs are busy   " <<endl;
+        	if (DEBUG_CPU_Scheduler_RR)
+        		showDebugMessage ("Enqueing computing block. All CPUs are busy: %s", sm_cpu->contentsToString(DEBUG_MSG_CPU_Scheduler_RR).c_str());
+        		cout << "CPU_Scheduler_RR::processRequestMessage All CPUs are busy   " <<endl;
         // Enqueue current computing block
         requestsQueue.insert(sm_cpu);
         queueSize++;
@@ -112,9 +112,9 @@ void CPU_Scheduler_RR::processRequestMessage(icancloud_Message *sm) {
     // At least, one cpu core is idle
     else {
 
-        //	if (DEBUG_CPU_Scheduler_RR)
-        //showDebugMessage ("Sending computing block to CPU[%d]:%s", cpuIndex, sm_cpu->contentsToString(DEBUG_MSG_CPU_Scheduler_RR).c_str());
-        //cout << "CPU_Scheduler_RR::processRequestMessage : At least, one cpu core is idle   " <<endl;
+        	if (DEBUG_CPU_Scheduler_RR)
+        showDebugMessage ("Sending computing block to CPU[%d]:%s", cpuIndex, sm_cpu->contentsToString(DEBUG_MSG_CPU_Scheduler_RR).c_str());
+        cout << "CPU_Scheduler_RR::processRequestMessage : At least, one cpu core is idle   " <<endl;
         // Assign cpu core
         sm_cpu->setNextModuleIndex(cpuIndex);
 
@@ -139,9 +139,8 @@ void CPU_Scheduler_RR::processResponseMessage(icancloud_Message *sm) {
 
     // Update cpu state!
     cpuIndex = sm_cpu->getNextModuleIndex();
-    //cout
-           // << "CPU_Scheduler_RR::processResponseMessage ---->msg sender module name"
-        //    << sm_cpu->getSenderModule()->getFullName() << endl;
+
+    cout << "CPU_Scheduler_RR::processResponseMessage ---->msg sender module name"<< sm_cpu->getSenderModule()->getFullName() << endl;
     if ((cpuIndex >= numCPUs) || (cpuIndex < 0))
         showErrorMessage(
                 "CPU index error (%d). There are %d CPUs attached. %s\n",
@@ -193,6 +192,7 @@ void CPU_Scheduler_RR::processResponseMessage(icancloud_Message *sm) {
 
 int CPU_Scheduler_RR::searchIdleCPU() {
 
+    cout << "CPU_Scheduler_RR::searchIdleCPU" <<endl;
     unsigned int i;
     bool found;
     int result;

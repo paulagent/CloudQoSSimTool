@@ -20,12 +20,13 @@
 #include "ElementType.h"
 #include "VMSyscallManager.h"
 
-#include "DockerContainer.h"
+//#include "DockerContainer.h"
 
 #include "VMRequestManager.h"
 #include "DockerDaemon.h"
 
 class VMRequestManager;
+class DockerContainer;
 
 class VM : public Machine{
 

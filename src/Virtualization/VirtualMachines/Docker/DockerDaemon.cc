@@ -91,7 +91,7 @@ void  DockerDaemon::processResponseMessage (icancloud_Message *sm){
 }
 void DockerDaemon::KillDocker(string id){
     bool found=false;
-    for(int i=0; i< containerSet.size() and found==false;++i)
+    for(unsigned int i=0; i< containerSet.size() and found==false;++i)
     {
         if (containerSet.at(i)->id==id)
         {

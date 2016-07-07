@@ -8,6 +8,7 @@
 #include "DockerContainer.h"
 #include "stdio.h"
 #include "stdlib.h"
+#include "VM.h"
 Define_Module(DockerContainer);
 
 DockerContainer::DockerContainer() {

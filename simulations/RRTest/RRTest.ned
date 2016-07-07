@@ -14,6 +14,8 @@
 // 
 
 package icancloud.simulations.RRTest;
+import icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_NetworkManager.NetworkServices.NetworkService.NetworkService;
+import icancloud.src.Virtualization.VirtualMachines.SetDefinition.DockerSet;
 import ned.DatarateChannel;
 import inet.nodes.ethernet.EtherSwitch;
 import icancloud.src.Architecture.Node.NodeVL.NodeVL;
@@ -57,7 +59,7 @@ channel RackChannel_0_RRTest extends DatarateChannel
 // ---------------------------------------------------------------
 network RRTest
 {
-    @display("bgb=746,395");
+    @display("bgb=1035,403");
     // -------------------------------------------------------
     //   Definition of main modules
     // -------------------------------------------------------
@@ -76,7 +78,10 @@ network RRTest
         // ---------------------------------------------------------------
         //    Network Manager
         // ---------------------------------------------------------------
-        networkManager: NetworkManager;
+        networkManager: NetworkManager {
+
+            @display("p=870,45");
+        }
         // ---------------------------------------------------------------
         //   Definition of cloud scheduler
         // ---------------------------------------------------------------
@@ -86,7 +91,7 @@ network RRTest
                 remote_storage_VMs_per_node = 2;
                 minimum_percent_storageNode_free = 0.15;
                 virtualIPsBasis = "10.0.0.1";
-                @display("p=397,164");
+                @display("p=445,156");
         }
 
         // ---------------------------------------------------------------
@@ -115,7 +120,7 @@ network RRTest
         //   Definition of Storage Nodes
         // ---------------------------------------------------------------
         ns_0_NodeStorage_C: NodeVL {
-            @display("p=165,251");
+            @display("p=160,318");
         }
         ns_1_NodeStorage_C: NodeVL {
             @display("p=330,230");
@@ -123,8 +128,15 @@ network RRTest
         //------------------------------------------------------
         // Modules that defines the topology and the set of VMs 
         //------------------------------------------------------
-        vmSet: VmSet;
-        topology: Topology;
+        vmSet: VmSet {
+            @display("p=651,75");
+        }
+        topology: Topology {
+            @display("p=545,204");
+        }
+        dockerSet: DockerSet {
+            @display("p=794,302");
+        }
         // ---------------------------------------------------------------
         //   Definition of Racks
         // ---------------------------------------------------------------
@@ -132,6 +144,8 @@ network RRTest
 
             @display("p=279,45");
         }
+
+
     // ---------------------------------------------------------------
     //   Connections section
     // ---------------------------------------------------------------

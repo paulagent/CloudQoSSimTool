@@ -49,14 +49,8 @@ module BasicVM extends VM like IVM
                 toNet_TCP;							 // Output gate to Network (Ethernet TCP)
         }
 
-        docker_engine: Docker {
-            @display("p=304,99");
-
-            gates:
-                fromDockerNet;
-                toDockerNet;
-
-
+        dockerDaemon: DockerDaemon {
+            @display("p=289,99");
         }
     connections allowunconnected:
 
@@ -86,7 +80,6 @@ module BasicVM extends VM like IVM
         osModule.fromNet_TCP <-- fromNodeNet;
         osModule.toNet_TCP --> toNodeNet;
 
-        osModule.fromDaemon <-- docker_engine.toDockerNet;
-        osModule.toDaemon --> docker_engine.fromDockerNet;
-
+        dockerDaemon.toDaemonNet --> osModule.fromDaemon;
+        osModule.toDaemon --> dockerDaemon.fromDaemonNet;
 }
