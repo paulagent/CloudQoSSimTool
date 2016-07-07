@@ -18,7 +18,7 @@
 RunningContainer::RunningContainer() {
     // TODO Auto-generated constructor stub
     vmID ="";
-    containerID = 0;
+    containerID = "";
     container = NULL;
            //   vmID.clear();
               start_time=0;
@@ -34,7 +34,7 @@ RunningContainer::~RunningContainer() {
 
 void RunningContainer::initialize(){
     vmID ="";
-       containerID = 0;
+       containerID = "";
     container = NULL;
         //   vmID.clear();
            start_time=0;

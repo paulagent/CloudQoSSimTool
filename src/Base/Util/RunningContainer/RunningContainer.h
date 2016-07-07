@@ -25,7 +25,7 @@ class RunningContainer {
 public:
 
 
-    int containerID;
+    string containerID;
     string vmID;
     DockerContainer *container;
     //  vector<VM*> vmID;

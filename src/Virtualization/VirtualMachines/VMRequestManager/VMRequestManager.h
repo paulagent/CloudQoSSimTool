@@ -13,6 +13,7 @@
 #include <vector>
 #include "RunningContainer.h"
 #include <omnetpp.h>
+#include "RequestsManagement.h"
 class RequestVM;
 //class VMRequestManager: public icancloud_Base{
 

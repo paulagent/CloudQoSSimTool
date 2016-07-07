@@ -5,29 +5,27 @@
  *      Author: zahra
  */
 
-
 /*
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Lesser General Public License for more details.
-//
-// You should have received a copy of the GNU Lesser General Public License
-// along with this program.  If not, see http://www.gnu.org/licenses/.
-*/
+ // This program is free software: you can redistribute it and/or modify
+ // it under the terms of the GNU Lesser General Public License as published by
+ // the Free Software Foundation, either version 3 of the License, or
+ // (at your option) any later version.
+ //
+ // This program is distributed in the hope that it will be useful,
+ // but WITHOUT ANY WARRANTY; without even the implied warranty of
+ // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ // GNU Lesser General Public License for more details.
+ //
+ // You should have received a copy of the GNU Lesser General Public License
+ // along with this program.  If not, see http://www.gnu.org/licenses/.
+ */
 
 #include <VMRequestManager/VMRequestManager.h>
 
-
 /*VMRequestManager::VMRequestManager() {
-    // TODO Auto-generated constructor stub
+ // TODO Auto-generated constructor stub
 
-}*/
+ }*/
 
 VMRequestManager::~VMRequestManager() {
     // TODO Auto-generated destructor stub
@@ -36,33 +34,32 @@ VMRequestManager::~VMRequestManager() {
     executingRequests.clear();
 }
 
-
-
 void VMRequestManager::initialize() {
-  //  printf("\n Method[RequestsManagement::initialize]: ------->initialize \n");
+    //  printf("\n Method[RequestsManagement::initialize]: ------->initialize \n");
     schedulerQueueBlocked = false;
     requestsQueue.clear();
     temporalRequestsQueue.clear();
     executingRequests.clear();
- //   icancloud_Base::initialize();
+    //   icancloud_Base::initialize();
 
     cModule* dockerSet = getParentModule()->getSubmodule("dockerSet");
-  //  if (dockerSet == NULL)
-  //      throw cRuntimeError(
- //               "VMRequestManager::initialize() -> Error during initialization. There is no dockerSet\n");
+    //  if (dockerSet == NULL)
+    //      throw cRuntimeError(
+    //               "VMRequestManager::initialize() -> Error during initialization. There is no dockerSet\n");
 
     int dockerSetSize = dockerSet->par("dockerImageQuantity").longValue();
-       for (int i = 0; i < dockerSetSize; i++) {
-           cModule* dockerImage = dockerSet->getSubmodule("dockerImage", i);
+    for (int i = 0; i < dockerSetSize; i++) {
+        cModule* dockerImage = dockerSet->getSubmodule("dockerImage", i);
 
-          // cfg->setVMType(vmImage->par("id").stringValue(),
-          //         vmImage->par("numCores"),
-             dockermem=  dockerImage->par("memorySize_MB").doubleValue();
+        // cfg->setVMType(vmImage->par("id").stringValue(),
+        //         vmImage->par("numCores"),
+        dockermem = dockerImage->par("memorySize_MB").doubleValue();
 
-             cout <<"VMRequestManager::initialize()--->dockermem " << dockermem <<endl;
-                //   vmImage->par("storageSize_GB").doubleValue());
-           // Parameters are correct so far
-       }
+        cout << "VMRequestManager::initialize()--->dockermem " << dockermem
+                << endl;
+        //   vmImage->par("storageSize_GB").doubleValue());
+        // Parameters are correct so far
+    }
 
 }
 
@@ -70,7 +67,7 @@ void VMRequestManager::finish() {
     requestsQueue.clear();
     temporalRequestsQueue.clear();
     executingRequests.clear();
-  //  icancloud_Base::initialize();
+    //  icancloud_Base::initialize();
 }
 
 bool VMRequestManager::schedulerBlock() {
@@ -94,7 +91,7 @@ bool VMRequestManager::schedulerBlock() {
 
 bool VMRequestManager::schedulerUnblock() {
 
-   // Enter_Method_Silent();
+    // Enter_Method_Silent();
 
     bool result;
 
@@ -118,35 +115,37 @@ void VMRequestManager::userSendRequest(AbstractRequest* request) {
     // Insert into the requestsQueue
     if (!schedulerQueueBlocked) {
         requestsQueue.push_back(request);
-        cout << "VMRequestManager::userSendRequest --> NOT schedulerQueueBlocked --->requestsQueue.push_back(request)" << endl;
+        cout
+                << "VMRequestManager::userSendRequest --> NOT schedulerQueueBlocked --->requestsQueue.push_back(request)"
+                << endl;
         schedule();
 
         //call schedule() in here  why?
 
     } else {
         temporalRequestsQueue.push_back(request);
-       //   cout << "RequestsManagement::userSendRequest -->  schedulerQueueBlocked  --->temporalRequestsQueue.push_back(request);" << endl;
+        //   cout << "RequestsManagement::userSendRequest -->  schedulerQueueBlocked  --->temporalRequestsQueue.push_back(request);" << endl;
 
     }
 
 }
 /*
-void RequestsManagement::reinsertRequest(AbstractRequest* req,
-        unsigned int index) {
+ void RequestsManagement::reinsertRequest(AbstractRequest* req,
+ unsigned int index) {
 
-    // Define ...
-    vector<AbstractRequest*>::iterator it;
+ // Define ...
+ vector<AbstractRequest*>::iterator it;
 
-    // Insert ..
-    if ((index >= 0) && (index < requestsQueue.size())) {
-        if (requestsQueue.size() > 0)
-            requestsQueue.insert(requestsQueue.begin() + index, req);
-    } else {
-        req->incrementTimesEnqueue();
-        requestsQueue.push_back(req);
-    }
-}
-*/
+ // Insert ..
+ if ((index >= 0) && (index < requestsQueue.size())) {
+ if (requestsQueue.size() > 0)
+ requestsQueue.insert(requestsQueue.begin() + index, req);
+ } else {
+ req->incrementTimesEnqueue();
+ requestsQueue.push_back(req);
+ }
+ }
+ */
 vector<AbstractRequest*> VMRequestManager::getRequestByUserID(int userModID) {
 
     //Define...
@@ -257,14 +256,13 @@ void VMRequestManager::blockArrivalRequests(bool blocked) {
         //  AbstractRequest* req1= *requestsQueue.end();
         // cout << "RequestsManagement::blockArrivalRequests----> requestsQueue.size() " << requestsQueue.size() <<endl;
         //  unsigned int i=0;
-       //  cout << "RequestsManagement::blockArrivalRequests----> temporalRequestsQueue.size()" <<temporalRequestsQueue.size()<<endl;
+        //  cout << "RequestsManagement::blockArrivalRequests----> temporalRequestsQueue.size()" <<temporalRequestsQueue.size()<<endl;
         for (std::vector<AbstractRequest*>::iterator it =
                 temporalRequestsQueue.begin();
                 it != temporalRequestsQueue.end(); ++it) {
             /* std::cout << *it; ... */
-          //  AbstractRequest* req1 = *it;
+            //  AbstractRequest* req1 = *it;
             //     cout << "RequestsManagement::blockArrivalRequests---->from temporal: req1->getPid()" << req1->getUid() << "operation" <<req1->getOperation()  << endl;
-
             requestsQueue.push_back(*it);
         }
 
@@ -279,7 +277,7 @@ void VMRequestManager::blockArrivalRequests(bool blocked) {
 
         //  requestsQueue.push_back(*(temporalRequestsQueue.begin()+i));
 
-      //      cout << "RequestsManagement::blockArrivalRequests----> requestsQueue.size() " << requestsQueue.size() <<endl;
+        //      cout << "RequestsManagement::blockArrivalRequests----> requestsQueue.size() " << requestsQueue.size() <<endl;
 
         //cout << "RequestsManagement::blockArrivalRequests----> req->getUid()" << req->getUid() <<endl;
 
@@ -288,178 +286,257 @@ void VMRequestManager::blockArrivalRequests(bool blocked) {
         // }
         temporalRequestsQueue.clear();
         //  cout << "RequestsManagement::blockArrivalRequests----> temporalRequestsQueue.size() after erase " << temporalRequestsQueue.size() <<endl;
-       // for (std::vector<AbstractRequest*>::iterator it = requestsQueue.begin();
-         //       it != requestsQueue.end(); ++it) {
-            /* std::cout << *it; ... */
-           // AbstractRequest* req = *it;
-            //   cout << "RequestsManagement::blockArrivalRequests---->from requestQueue req->getUid()" << req->getUid() <<": "<< req->getPid() <<":"<< req->getOperation() <<endl;
-      //  }
-
+        // for (std::vector<AbstractRequest*>::iterator it = requestsQueue.begin();
+        //       it != requestsQueue.end(); ++it) {
+        /* std::cout << *it; ... */
+        // AbstractRequest* req = *it;
+        //   cout << "RequestsManagement::blockArrivalRequests---->from requestQueue req->getUid()" << req->getUid() <<": "<< req->getPid() <<":"<< req->getOperation() <<endl;
+        //  }
     }
 
     schedulerQueueBlocked = blocked;
 }
-void VMRequestManager::schedule()
-{
+void VMRequestManager::schedule() {
     //Define ...
-      vector<AbstractNode*> selectedNodes;
-      vector<VM*> attendedRequest_vms;
+    vector<AbstractNode*> selectedNodes;
+    vector<VM*> attendedRequest_vms;
     //  NodeVL* node;
     //  Machine* machine;
-      AbstractRequest* req;
-   //   StorageRequest* req_st;
-      RequestVM* req_vm;
-      string uid;
-      string nodeState;
+    AbstractRequest* req;
+    //   StorageRequest* req_st;
+    RequestVM* req_vm;
+    string uid;
+    string nodeState;
 
-      bool notEnoughResources;
-      bool requestErased;
-      int j;
+    bool notEnoughResources;
+    bool requestErased;
+    int j;
 
-      // Init ..
+    // Init ..
 
-      notEnoughResources = false;
-      requestErased = false;
+    notEnoughResources = false;
+    requestErased = false;
 
-      req = NULL;
+    req = NULL;
     //  selectedNodes.clear();
-     // attendedRequest_vms.clear();
-      j = 0;
+    // attendedRequest_vms.clear();
+    j = 0;
 
-      // Begin
-      // Schedule..
-      cout<<endl;
+    // Begin
+    // Schedule..
+    cout << endl;
 
-      cout << "------------------------------------------VIRTUAL MACHINE SCHEDULER------------------------------------------"<<endl;
-      if (schedulerBlock()) {
+    cout
+            << "------------------------------------------VIRTUAL MACHINE SCHEDULER------------------------------------------"
+            << endl;
+    if (schedulerBlock()) {
 
-          req = getRequestByIndex(j);
-          // Start with the vm allocation
+        req = getRequestByIndex(j);
+        // Start with the vm allocation
 
-          //  while ((j < (numPendingRequests())) && (req != NULL)){
-          while ((j < (numPendingRequests()))) {
-              // uvic:
-              if (req == NULL) {
-                  cout << "Method[VMRequestManager::schedule()]: -------> req == NULL"<<endl;
-                  eraseRequest(req);
-                  requestErased = true;
-              }
-              //uvic
-                printf("\n Method[VMRequestManager::schedule()]: ------->numPendingRequests------> %d \n", numPendingRequests());
-                printf("\n Method[VMRequestManager::schedule()]: ------->userid------> %d \n", req->getUid());
-                printf("\n Method[VMRequestManager::schedule()]: ------->REQUEST TYPE: %d \n", req->getOperation());
-                printf("\n Method[VMRequestManager::schedule()]: -------> inside request loop\n");
+        //  while ((j < (numPendingRequests())) && (req != NULL)){
+        while ((j < (numPendingRequests()))) {
+            // uvic:
+            if (req == NULL) {
+                cout
+                        << "Method[VMRequestManager::schedule()]: -------> req == NULL"
+                        << endl;
+                eraseRequest(req);
+                requestErased = true;
+            }
+            //uvic
+            printf(
+                    "\n Method[VMRequestManager::schedule()]: ------->numPendingRequests------> %d \n",
+                    numPendingRequests());
+            printf(
+                    "\n Method[VMRequestManager::schedule()]: ------->userid------> %d \n",
+                    req->getUid());
+            printf(
+                    "\n Method[VMRequestManager::schedule()]: ------->REQUEST TYPE: %d \n",
+                    req->getOperation());
+            printf(
+                    "\n Method[VMRequestManager::schedule()]: -------> inside request loop\n");
 
-              req_vm = dynamic_cast<RequestVM*>(req);
+            req_vm = dynamic_cast<RequestVM*>(req);
 
-             if (req_vm != NULL) {
-                  cout << "Method[VMRequestManager::schedule()]: -------> req_vm is not NULL!" << endl;
-            /*      if (req->getOperation() == REQUEST_START_VM) {
-                       printf("\n Method[CLOUD_SCHEDULER_RR]: -------> REQUEST_START_VM\n");
-                      notEnoughResources = request_start_vm(req_vm);
-                      if (!notEnoughResources) {
-                          eraseRequest(req);
-                          requestErased = true;
-                      }
+            if (req_vm != NULL) {
+                cout
+                        << "Method[VMRequestManager::schedule()]: -------> req_vm is not NULL!"
+                        << endl;
+                /*      if (req->getOperation() == REQUEST_START_VM) {
+                 printf("\n Method[CLOUD_SCHEDULER_RR]: -------> REQUEST_START_VM\n");
+                 notEnoughResources = request_start_vm(req_vm);
+                 if (!notEnoughResources) {
+                 eraseRequest(req);
+                 requestErased = true;
+                 }
 
-                  }
+                 }
 
-                  else if (req->getOperation() == REQUEST_FREE_RESOURCES) {
-                      printf("\n Method[CLOUD_SCHEDULER_RR]: -------> REQUEST_FREE_RESOURCES\n");
-                      request_shutdown_vm(req_vm);
-                      eraseRequest(req);
-                      requestErased = true;
-                  }
+                 else if (req->getOperation() == REQUEST_FREE_RESOURCES) {
+                 printf("\n Method[CLOUD_SCHEDULER_RR]: -------> REQUEST_FREE_RESOURCES\n");
+                 request_shutdown_vm(req_vm);
+                 eraseRequest(req);
+                 requestErased = true;
+                 }
 
-               else if (req->getOperation() == REQUEST_ABANDON_SYSTEM) {
-                    printf("\n Method[CLOUD_SCHEDULER_RR]: -------> REQUEST_ABANDON_SYSTEM\n");
-                  // To perform management operations..
-                  AbstractUser* user;
-                  AbstractCloudUser* cl_user;
+                 else if (req->getOperation() == REQUEST_ABANDON_SYSTEM) {
+                 printf("\n Method[CLOUD_SCHEDULER_RR]: -------> REQUEST_ABANDON_SYSTEM\n");
+                 // To perform management operations..
+                 AbstractUser* user;
+                 AbstractCloudUser* cl_user;
 
-                  user = getUserById(req->getUid());
+                 user = getUserById(req->getUid());
 
-                  cl_user = check_and_cast<AbstractCloudUser*>(user);
-                  cl_user->deleteAllVMs();
-                  user->callFinish();
-                  deleteUser(req->getUid());
-                  eraseRequest(req);
-                  requestErased = true;
-              }
+                 cl_user = check_and_cast<AbstractCloudUser*>(user);
+                 cl_user->deleteAllVMs();
+                 user->callFinish();
+                 deleteUser(req->getUid());
+                 eraseRequest(req);
+                 requestErased = true;
+                 }
 
-               else if (req->getOperation() == REQUEST_UNFREEZE_VM) {
-                   printf("\n Method[CLOUD_SCHEDULER_RR]: -------> REQUEST_UNFREEZE_VM\n");
-                   notEnoughResources = request_unfreez_vm(req_vm);
-                   if (!notEnoughResources) {
-                       eraseRequest(req);
-                       requestErased = true;
-                   }
+                 else if (req->getOperation() == REQUEST_UNFREEZE_VM) {
+                 printf("\n Method[CLOUD_SCHEDULER_RR]: -------> REQUEST_UNFREEZE_VM\n");
+                 notEnoughResources = request_unfreez_vm(req_vm);
+                 if (!notEnoughResources) {
+                 eraseRequest(req);
+                 requestErased = true;
+                 }
 
-               }
-               else
-               */
-                  if (req->getOperation() == REQUEST_START_DOCKER_CONTAINER) {
-                               printf("\n Method[VMRequestManager::schedule()]: -------> REQUEST_START_DOCKER_CONTAINER\n");
-                               notEnoughResources = request_start_docker_container(req_vm);
-                               if (!notEnoughResources) {
-                                   eraseRequest(req);
-                                   requestErased = true;
-                               }
+                 }
+                 else
+                 */
+                if (req->getOperation() == REQUEST_START_DOCKER_CONTAINER) {
+                    printf(
+                            "\n Method[VMRequestManager::schedule()]: -------> REQUEST_START_DOCKER_CONTAINER\n");
+                    notEnoughResources = request_start_docker_container(req_vm);
+                    if (!notEnoughResources) {
+                        eraseRequest(req);
+                        requestErased = true;
+                    }
 
-                           }
+                }
 
+                else {
+                    throw cRuntimeError(
+                            "Error: Operation unknown for CloudScheduler__RR\n");
+                }
+            }
+            if (!requestErased) {
+                j++;
 
-               else {
-                  throw cRuntimeError(
-                          "Error: Operation unknown for CloudScheduler__RR\n");
-              }
-              }
-              if (!requestErased) {
-                  j++;
+            }
+            requestErased = false;
+            req = getRequestByIndex(j);
 
-              }
-              requestErased = false;
-              req = getRequestByIndex(j);
-
-          }
-          cout<<endl;
-          cout<< "-----------------------------------------END SCHEDULE --------------------------------------"<<endl;
-          schedulerUnblock();
-      }
+        }
+        cout << endl;
+        cout
+                << "-----------------------------------------END SCHEDULE --------------------------------------"
+                << endl;
+        schedulerUnblock();
+    }
 
 }
 
-bool VMRequestManager::request_start_docker_container(RequestVM* req_vm)
-{
+bool VMRequestManager::request_start_docker_container(RequestVM* req_vm) {
     VM* vm;
-    vm=req_vm->getVM(0);
-    cout <<"request_start_docker_container---->vm->getFullName-------->"<<vm->getFullName()<<endl;
+    vm = req_vm->getVM(0);
+    cout << "request_start_docker_container---->vm->getFullName-------->"
+            << vm->getFullName() << endl;
     RunningContainer* started_Container = new RunningContainer();
-   double freem = vm->getFreeMemory();
-   int mem =  vm->getMemoryCapacity();
+    double freem = vm->getFreeMemory();
+    int mem = vm->getMemoryCapacity();
+    bool found = false;
+    if (freem > dockermem) {
 
-   if (freem > dockermem){
+        vm->setFreeMemory(freem - dockermem);
+        vm->dockerDaemon->startDockerContainer("test", vm->getFullName());
+        found =true;
+    } else {
 
-       vm->setFreeMemory(freem-dockermem);
-
-   }
-   else {
-
-       scheduleRR();
-   }
-
-
-    vm->dockerDaemon->startDockerContainer("test", vm->getFullName());
-
+        scheduleRR();
+    }
+if(found) {
     clock_t now = clock();
     started_Container->start_time = now;
     started_Container->end_time = now + 200000; //clocks per secs   this should be change to parameter defined in ini file, so customer can change at anytime, not hardcode.
     started_Container->vmID = vm->getFullName();
+    started_Container->containerID = vm->getFullName() + 1;
     rContainer.push_back(started_Container);
-   // cout << vm->dockerDaemon->containerSet.end();
-    cout<< "VMRequestManager::request_start_docker_container------------------> Container has started" << endl;
+    cout
+               << "VMRequestManager::request_start_docker_container------------------> Container has started"
+               << endl;
     return false;
 }
+    // cout << vm->dockerDaemon->containerSet.end();
 
+    return false;
+}
+void VMRequestManager::scheduleRR() {
+    int j = 0;
 
+    printf(
+            "\n\n\n\n Method[VMRequestManager_SCHEDULER_RR::scheduleRR()]: -------> Before our loop\n");
+
+    cout << "Method[VMRequestManager_SCHEDULER_RR::scheduleRR()]: while loop"
+            << rContainer.size() << endl;
+    while (j < int(rContainer.size()) && rContainer.size() != 0) {
+        clock_t t = clock(); // we are not sure about current time
+
+        printf(
+                "\n Method[VMRequestManager_SCHEDULER_RR::scheduleRR()]:NO_Runiing_VM -------> %ld \n",
+                runVM.size());
+
+        RunningContainer* rc;
+        rc = rContainer.at(j);
+        if (t >= rc->end_time)   // we need to shutdown vm
+                {
+
+            printf(
+                    "\n Method[VMRequestManager_SCHEDULER_RR ::scheduleRR()]: -------> t is greater than  container end_time, we need to shut down container\n");
+
+            // make new request
+            AbstractRequest* new_req;
+            RequestVM* new_req_c = new RequestVM();
+
+            string a = vm->vm->getFullName();
+            string delimeter = ":";
+            string token = a.substr(0, a.find(delimeter));
+            new_req_vm->setNewSelection(token.c_str(), 1);
+            new_req_vm->setPid(vm->vm->getPid());
+            new_req_vm->setUid(vm->userID);
+            new_req_vm->setFreezedVM(vm->vm);
+            new_req_vm->set_is_freezed(true);
+            vm->vm->is_freezed = true;
+            // add new request to temp queue
+
+            new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
+            new_req->setOperation(REQUEST_UNFREEZE_VM);
+
+            RequestsManagement::userSendRequest(new_req);
+
+            // Freezing VM by unlink all resources
+
+            AbstractNode* node;
+            node = vm->hostNodeVL;
+            cout << "hostNode----->" << vm->hostNodeVL->getFullName() << endl;
+            ;
+
+            AbstractCloudManager::unlinkVM(vm->hostNodeVL, vm->vm, false);
+
+            rContainer.erase(rContainer.begin() + j);
+            cout << "VMRequestManager_SCHEDULER_RR:: scheduleRR()---->After Free Resources"
+                    << endl;
+
+        } else {
+            ++j;
+
+        }
+    }
+
+    printf("\n Method[VMRequestManager_SCHEDULER_RR]: -------> After our loop\n");
+
+}
 

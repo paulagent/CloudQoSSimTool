@@ -502,7 +502,7 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                               AbstractRequest* new_req;
                               RequestVM* new_req_vm = new RequestVM();
 
-                              string a = vm->vm->getFullName();
+                              string a = rc->container ->getFullName();
                               string delimeter = ":";
                               string token = a.substr(0, a.find(delimeter));
                               new_req_vm->setNewSelection(token.c_str(), 1);
@@ -514,7 +514,7 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                               // add new request to temp queue
 
                               new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
-                              new_req->setOperation(REQUEST_UNFREEZE_VM);
+                              new_req->setOperation(REQUEST_UNFREEZE_CONTAINER);
 
                               RequestsManagement::userSendRequest(new_req);
 
