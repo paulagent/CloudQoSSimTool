@@ -121,6 +121,8 @@ void VMRequestManager::userSendRequest(AbstractRequest* request) {
         cout << "VMRequestManager::userSendRequest --> NOT schedulerQueueBlocked --->requestsQueue.push_back(request)" << endl;
         schedule();
 
+        //call schedule() in here  why?
+
     } else {
         temporalRequestsQueue.push_back(request);
        //   cout << "RequestsManagement::userSendRequest -->  schedulerQueueBlocked  --->temporalRequestsQueue.push_back(request);" << endl;
@@ -432,18 +434,28 @@ bool VMRequestManager::request_start_docker_container(RequestVM* req_vm)
     VM* vm;
     vm=req_vm->getVM(0);
     cout <<"request_start_docker_container---->vm->getFullName-------->"<<vm->getFullName()<<endl;
-
+    RunningContainer* started_Container = new RunningContainer();
    double freem = vm->getFreeMemory();
    int mem =  vm->getMemoryCapacity();
-    RunningContainer* started_Container = new RunningContainer();
 
-                    clock_t now = clock();
-                    started_Container->start_time = now;
-                    started_Container->end_time = now + 200000; //clocks per secs
-                    started_Container->vmID = vm->getFullName();
+   if (freem > dockermem){
 
-                    rContainer.push_back(started_Container);
+       vm->setFreeMemory(freem-dockermem);
+
+   }
+   else {
+
+       scheduleRR();
+   }
+
+
     vm->dockerDaemon->startDockerContainer("test", vm->getFullName());
+
+    clock_t now = clock();
+    started_Container->start_time = now;
+    started_Container->end_time = now + 200000; //clocks per secs   this should be change to parameter defined in ini file, so customer can change at anytime, not hardcode.
+    started_Container->vmID = vm->getFullName();
+    rContainer.push_back(started_Container);
    // cout << vm->dockerDaemon->containerSet.end();
     cout<< "VMRequestManager::request_start_docker_container------------------> Container has started" << endl;
     return false;
