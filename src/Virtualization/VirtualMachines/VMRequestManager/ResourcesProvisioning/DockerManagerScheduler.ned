@@ -9,9 +9,9 @@
 //@author bing gao
 //@date 2016-04-14
 
-package icancloud.src.Virtualization.VirtualMachines.Docker.DockerManagement.ResourcesProvisioning;
+package icancloud.src.Virtualization.VirtualMachines.VMRequestManager.ResourcesProvisioning;
 
-import icancloud.src.Virtualization.VirtualMachines.Docker.DockerManagement.ResourcesProvisioning.IDockerScheduler;
+import icancloud.src.Virtualization.VirtualMachines.VMRequestManager.ResourcesProvisioning.IDockerScheduler;
 import icancloud.src.Virtualization.VirtualMachines.Docker.IDocker;
 
 module DockerManagerScheduler like IDockerScheduler

@@ -14,7 +14,7 @@
 #include "RunningContainer.h"
 #include <omnetpp.h>
 #include "RequestsManagement.h"
-
+#include "NetworkManager.h"
 class RequestVM;
 //class VMRequestManager: public icancloud_Base{
 
@@ -28,6 +28,8 @@ protected:
         vector <RunningContainer*> rContainer;
     /** If schedulerQueueBlocked = false, the requests are allocated in this queue */
         vector <AbstractRequest*> requestsQueue;
+        /** Pointer to manage the network connections between nodes and VMs */
+               NetworkManager* networkManager;
 
     /*************************************************************************************
       *                               Requests Management

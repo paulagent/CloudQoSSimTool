@@ -42,23 +42,19 @@ void VMRequestManager::initialize() {
     executingRequests.clear();
     //   icancloud_Base::initialize();
 
-    string initialVIP;
+cout<< "VMRequestManager::initialize()" <<endl;
        cModule* networkManagerMod;
 
 
-
-
-       initialVIP = par("virtualIPsBasis").stringValue();
-
        networkManagerMod = getParentModule()->getSubmodule("networkManager");
        networkManager = check_and_cast<NetworkManager*>(networkManagerMod);
-       networkManager->setIPBasis(initialVIP.c_str());
+
 
 
     cModule* dockerSet = getParentModule()->getSubmodule("dockerSet");
-    //  if (dockerSet == NULL)
-    //      throw cRuntimeError(
-    //               "VMRequestManager::initialize() -> Error during initialization. There is no dockerSet\n");
+      if (dockerSet == NULL)
+          throw cRuntimeError(
+                   "VMRequestManager::initialize() -> Error during initialization. There is no dockerSet\n");
 
     int dockerSetSize = dockerSet->par("dockerImageQuantity").longValue();
     for (int i = 0; i < dockerSetSize; i++) {
