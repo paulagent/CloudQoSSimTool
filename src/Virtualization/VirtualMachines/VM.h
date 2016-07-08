@@ -112,6 +112,9 @@ public:
      */
     void setManager(icancloud_Base* manager);
 
+    void sleep(VM *vm,DockerContainer *containerID);
+    void wakeup(VM *vm,DockerContainer *containerID);
+
 };
 
 #endif /* VM_H_ */
