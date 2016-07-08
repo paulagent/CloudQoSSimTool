@@ -42,6 +42,19 @@ void VMRequestManager::initialize() {
     executingRequests.clear();
     //   icancloud_Base::initialize();
 
+    string initialVIP;
+       cModule* networkManagerMod;
+
+
+
+
+       initialVIP = par("virtualIPsBasis").stringValue();
+
+       networkManagerMod = getParentModule()->getSubmodule("networkManager");
+       networkManager = check_and_cast<NetworkManager*>(networkManagerMod);
+       networkManager->setIPBasis(initialVIP.c_str());
+
+
     cModule* dockerSet = getParentModule()->getSubmodule("dockerSet");
     //  if (dockerSet == NULL)
     //      throw cRuntimeError(
@@ -54,7 +67,7 @@ void VMRequestManager::initialize() {
         // cfg->setVMType(vmImage->par("id").stringValue(),
         //         vmImage->par("numCores"),
         dockermem = dockerImage->par("memorySize_MB").doubleValue();
-        id = dockerImage->par("id");
+        id = dockerImage->par("id").stringValue();
         cout << "VMRequestManager::initialize()--->dockermem " << dockermem
                 << endl;
         //   vmImage->par("storageSize_GB").doubleValue());
@@ -452,7 +465,7 @@ bool VMRequestManager::request_start_docker_container(RequestVM* req_vm) {
     if (freem > dockermem) {
 
         vm->setFreeMemory(freem - dockermem);
-        vm->dockerDaemon->startDockerContainer("test", vm->getFullName());
+        vm->dockerDaemon->startDockerContainer(id, vm->getFullName());
         found =true;
     } else {
 
