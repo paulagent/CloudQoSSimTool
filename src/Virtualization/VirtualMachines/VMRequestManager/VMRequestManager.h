@@ -14,6 +14,7 @@
 #include "RunningContainer.h"
 #include <omnetpp.h>
 #include "RequestsManagement.h"
+
 class RequestVM;
 //class VMRequestManager: public icancloud_Base{
 
@@ -143,7 +144,7 @@ public:
      * request queue waiting until it will be processed.
      */
     void userSendRequest(AbstractRequest* request);
-    void scheduleRR();
+    void scheduleRR(VM* vm);
 };
 
 #endif /* VMREQUESTMANAGER_H_ */

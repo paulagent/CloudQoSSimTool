@@ -456,7 +456,7 @@ bool VMRequestManager::request_start_docker_container(RequestVM* req_vm) {
         found =true;
     } else {
 
-        scheduleRR();
+        scheduleRR( vm);
     }
 if(found) {
     clock_t now = clock();
@@ -478,7 +478,7 @@ else {
 
     return false;
 }
-void VMRequestManager::scheduleRR() {
+void VMRequestManager::scheduleRR(VM* vm) {
     int j = 0;
 
     printf(
@@ -491,7 +491,7 @@ void VMRequestManager::scheduleRR() {
 
         printf(
                 "\n Method[VMRequestManager_SCHEDULER_RR::scheduleRR()]:NO_Runiing_VM -------> %ld \n",
-                runVM.size());
+                rContainer.size());
 
         RunningContainer* rc;
         rc = rContainer.at(j);
@@ -505,30 +505,29 @@ void VMRequestManager::scheduleRR() {
             AbstractRequest* new_req;
             RequestVM* new_req_c = new RequestVM();
 
-            string a = vm->vm->getFullName();
+            string a = rc->container->getFullName();
             string delimeter = ":";
             string token = a.substr(0, a.find(delimeter));
-            new_req_vm->setNewSelection(token.c_str(), 1);
-            new_req_vm->setPid(vm->vm->getPid());
-            new_req_vm->setUid(vm->userID);
-            new_req_vm->setFreezedVM(vm->vm);
-            new_req_vm->set_is_freezed(true);
-            vm->vm->is_freezed = true;
+
+            new_req_c->setPid(vm->getPid());
+            new_req_c->setUid(vm->userID);
+
+
             // add new request to temp queue
 
-            new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
+            new_req = dynamic_cast<AbstractRequest*>(new_req_c);
             new_req->setOperation(REQUEST_UNFREEZE_VM);
 
-            RequestsManagement::userSendRequest(new_req);
+            //RequestsManagement::userSendRequest(new_req);
 
             // Freezing VM by unlink all resources
 
-            AbstractNode* node;
-            node = vm->hostNodeVL;
-            cout << "hostNode----->" << vm->hostNodeVL->getFullName() << endl;
-            ;
+           // AbstractNode* node;
+          //  node = vm->hostNodeVL;
+           // cout << "hostNode----->" << vm->hostNodeVL->getFullName() << endl;
 
-            AbstractCloudManager::unlinkVM(vm->hostNodeVL, vm->vm, false);
+
+           // AbstractCloudManager::unlinkVM(vm->hostNodeVL, vm->vm, false);
 
             rContainer.erase(rContainer.begin() + j);
             cout << "VMRequestManager_SCHEDULER_RR:: scheduleRR()---->After Free Resources"

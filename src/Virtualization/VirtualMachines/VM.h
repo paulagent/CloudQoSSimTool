@@ -34,7 +34,7 @@ protected:
 
      int pending_operation;             // defined as: PENDING_STORAGE || PENDING_SHUTDOWN || PENDING_STARTUP
      string vmName;                     // Virtual machine type
-     int userID;                        // User identification obtained from getId() from omnetpp.
+
 
      //identify where is the VM and who is its property.
      int nodeName;											    // To identify which node is.
@@ -49,6 +49,7 @@ protected:
 
 
 public:
+     int userID;                        // User identification obtained from getId() from omnetpp.
      bool is_freezed;
      DockerDaemon* dockerDaemon;
      bool has_dockers;

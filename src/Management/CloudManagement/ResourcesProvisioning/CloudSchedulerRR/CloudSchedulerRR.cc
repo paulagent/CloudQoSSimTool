@@ -502,7 +502,7 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                               AbstractRequest* new_req;
                               RequestVM* new_req_vm = new RequestVM();
 
-                              string a = rc->container ->getFullName();
+                              string a = vm->vm->getFullName();
                               string delimeter = ":";
                               string token = a.substr(0, a.find(delimeter));
                               new_req_vm->setNewSelection(token.c_str(), 1);
