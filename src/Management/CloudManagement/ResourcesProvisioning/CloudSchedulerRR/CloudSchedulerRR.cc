@@ -514,7 +514,7 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                               // add new request to temp queue
 
                               new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
-                              new_req->setOperation(REQUEST_UNFREEZE_CONTAINER);
+                              new_req->setOperation(REQUEST_UNFREEZE_VM);
 
                               RequestsManagement::userSendRequest(new_req);
 

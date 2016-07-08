@@ -506,6 +506,7 @@ void VMRequestManager::scheduleRR(VM* vm) {
             RequestVM* new_req_c = new RequestVM();
 
             string a = rc->container->getFullName();
+            cout << "container full name" <<a <<endl;
             string delimeter = ":";
             string token = a.substr(0, a.find(delimeter));
 
