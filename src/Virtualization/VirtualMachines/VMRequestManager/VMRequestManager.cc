@@ -54,7 +54,7 @@ void VMRequestManager::initialize() {
         // cfg->setVMType(vmImage->par("id").stringValue(),
         //         vmImage->par("numCores"),
         dockermem = dockerImage->par("memorySize_MB").doubleValue();
-
+        id = dockerImage->par("id");
         cout << "VMRequestManager::initialize()--->dockermem " << dockermem
                 << endl;
         //   vmImage->par("storageSize_GB").doubleValue());
@@ -517,7 +517,7 @@ void VMRequestManager::scheduleRR(VM* vm) {
             // add new request to temp queue
 
             new_req = dynamic_cast<AbstractRequest*>(new_req_c);
-            new_req->setOperation(REQUEST_UNFREEZE_VM);
+            new_req->setOperation(REQUEST_UNFREEZE_CONTAINER);
 
             //RequestsManagement::userSendRequest(new_req);
 

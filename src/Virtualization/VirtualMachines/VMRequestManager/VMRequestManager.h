@@ -24,6 +24,7 @@ protected:
     /** Bool that control if the main queue does not receive messages */
         bool schedulerQueueBlocked;
         int dockermem;
+        string id;
         vector <RunningContainer*> rContainer;
     /** If schedulerQueueBlocked = false, the requests are allocated in this queue */
         vector <AbstractRequest*> requestsQueue;
