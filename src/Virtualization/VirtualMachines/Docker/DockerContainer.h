@@ -30,8 +30,8 @@
 #include "Machine.h"
 
 
-class DockerContainer : public Machine{
-
+//class DockerContainer : public Machine{
+class DockerContainer : public cSimpleModule{
 public:
     DockerContainer();
     ~DockerContainer();
