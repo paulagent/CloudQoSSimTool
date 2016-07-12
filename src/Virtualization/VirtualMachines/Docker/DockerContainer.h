@@ -52,6 +52,8 @@ protected:
     /**
            * Start the container application execution.
            */
+    // Returns the unique identifier given by omnet to this module
+       int getContainerId(){return this->getId();};
 };
 
 #endif /* DockerContainer */
