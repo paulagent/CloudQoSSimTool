@@ -425,7 +425,15 @@ void VMRequestManager::schedule() {
                         requestErased = true;
                     }
 
-                }
+                } else if (req->getOperation() == REQUEST_UNFREEZE_CONTAINER) {
+                    printf("\n Method[VMRequestManager::schedule()]: -------> REQUEST_UNFREEZE_CONTAINER\n");
+                    notEnoughResources = request_unfreez_container(req_vm);
+                    if (!notEnoughResources) {
+                    eraseRequest(req);
+                    requestErased = true;
+                    }
+
+                    }
 
                 else {
                     throw cRuntimeError(
@@ -448,6 +456,16 @@ void VMRequestManager::schedule() {
     }
 
 }
+bool VMRequestManager::request_unfreez_container(RequestVM* req_vm){
+
+    VM* vm;
+        vm = req_vm->getVM(0);
+
+        vm->wakeup()
+
+}
+
+
 
 bool VMRequestManager::request_start_docker_container(RequestVM* req_vm) {
     VM* vm;
@@ -506,11 +524,13 @@ void VMRequestManager::scheduleRR(VM* vm) {
         rc = rContainer.at(j);
         if (t >= rc->end_time)   // we need to shutdown vm
                 {
-
+            vm->sleep(rc->containerID);
             printf(
                     "\n Method[VMRequestManager_SCHEDULER_RR ::scheduleRR()]: -------> t is greater than  container end_time, we need to shut down container\n");
 
             // make new request
+
+
             AbstractRequest* new_req;
             RequestVM* new_req_c = new RequestVM();
 

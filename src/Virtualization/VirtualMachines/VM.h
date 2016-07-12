@@ -43,7 +43,7 @@ protected:
 
      vector <vmStatesLog_t*> states_log;    // To log the states of the vms (composed by the code of the state and when a change is perfomed (in minutes).
 
-     vector<DockerContainer*>  dockerset;                                       // Each state changed will generate a new vmStatesLog entry-
+     vector<DockerContainer*>  dockerset;                                       // all containers exist in vm
 
     // vector<Docker*>  dockerset;                                       // Each state changed will generate a new vmStatesLog entry-
 
@@ -112,8 +112,8 @@ public:
      */
     void setManager(icancloud_Base* manager);
 
-    void sleep(VM *vm,DockerContainer *containerID);
-    void wakeup(VM *vm,DockerContainer *containerID);
+    void sleep(string containerID);
+    void wakeup(string containerID);
 
 };
 

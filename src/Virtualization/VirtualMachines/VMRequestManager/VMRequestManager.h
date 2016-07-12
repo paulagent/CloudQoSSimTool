@@ -136,7 +136,7 @@ public:
      void finish();
      void schedule();
      bool request_start_docker_container(RequestVM* req_vm);
-
+     bool request_unfreez_container(RequestVM* req_vm);
 
     /*********************************************************************************
      *                                      Methods
