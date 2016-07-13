@@ -117,11 +117,27 @@ void DockerDaemon::freeContainerResources(string id)
 
 void DockerDaemon::pauseDockerContainer (string id)
     {
+    DockerContainer *dc;
+    dc=getDockerById(id);
+ if (dc==NULL) {
+     throw cRuntimeError("DockerDaemon::can not found this container in this vm...\n");
+ }else {
+
+   int mem =  dc->getMemSize();
+   FreeMem(mem);
+ }
 
     }
 void DockerDaemon::unPauseDockerContainer (string id)
     {
+    DockerContainer *dc = getDockerById(id);
+     if (dc==NULL) {
+         throw cRuntimeError("DockerDaemon::can not found this container in this vm...\n");
+     }else {
 
+
+
+     }
     }
 void DockerDaemon::getDockerByName(string name)
     {
@@ -142,9 +158,28 @@ void DockerDaemon::getDockerByImage(string image)
     {
 
     }
-void DockerDaemon::getDockerById(string id)
+DockerContainer* DockerDaemon::getDockerById(string id)
     {
 
+    DockerContainer* dc ;
+
+    bool found=false;
+          for(unsigned int i=0; i< containerSet.size() and found==false;++i)
+             {
+
+                 if (containerSet.at(i)->getContainerId() ==id)
+                 {
+                     //FreeMem(containerSet.at(i)->size);
+                   //  containerSet.erase(containerSet.begin()+i);
+                     dc = containerSet.at(i);
+                     found=true;
+                 }
+             }
+if (found)
+    return dc;
+else{
+    return NULL;
+}
     }
 void DockerDaemon::connectNetwork(string id)
     {

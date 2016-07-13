@@ -71,7 +71,7 @@ public:
     void unPauseDockerContainer (string id);
     void getDockerByName(string name);
     void getDockerByImage(string image);
-    void getDockerById(string id);
+    DockerContainer* getDockerById(string id);
     void connectNetwork(string id);
     void disconnectNetwork(string id);
 

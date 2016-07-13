@@ -460,9 +460,11 @@ bool VMRequestManager::request_unfreez_container(RequestVM* req_vm){
 
     VM* vm;
         vm = req_vm->getVM(0);
-
-        vm->wakeup()
-
+        id = req_vm->getContainerID();
+        vm->wakeup(id);
+        double freem = vm->getFreeMemory();
+        vm->setFreeMemory(freem - dockermem);
+        return false;
 }
 
 
@@ -474,7 +476,7 @@ bool VMRequestManager::request_start_docker_container(RequestVM* req_vm) {
             << vm->getFullName() << endl;
     RunningContainer* started_Container = new RunningContainer();
     double freem = vm->getFreeMemory();
-    int mem = vm->getMemoryCapacity();
+
     bool found = false;
     if (freem > dockermem) {
 
@@ -534,14 +536,22 @@ void VMRequestManager::scheduleRR(VM* vm) {
             AbstractRequest* new_req;
             RequestVM* new_req_c = new RequestVM();
 
-            string a = rc->container->getFullName();
-            cout << "container full name" <<a <<endl;
-            string delimeter = ":";
-            string token = a.substr(0, a.find(delimeter));
+            string  id= rc->container->getContainerId();
+
+            //string id;          // string which will contain the result
+
+           // ostringstream convert;   // stream used for the conversion
+
+        //    convert << a;      // insert the textual representation of 'Number' in the characters in the stream
+
+         //   id = convert.str();
+         //   cout << "container full name" <<a <<endl;
+        //    string delimeter = ":";
+        //    string token = a.substr(0, a.find(delimeter));
 
             new_req_c->setPid(vm->getPid());
             new_req_c->setUid(vm->userID);
-
+            new_req_c ->setContainerID(id);
 
             // add new request to temp queue
 

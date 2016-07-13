@@ -150,9 +150,15 @@ void VM::setManager(icancloud_Base* manager) {
     Machine::setManager(manager);
     os->setManager(manager);
 }
-void VM::sleep(DockerContainer *containerID){
+void VM::sleep(string containerID){
+    //call pause container function
+   dockerDaemon-> pauseDockerContainer(containerID);
+
 
 }
-    void VM:: wakeup(DockerContainer *containerID){
+    void VM:: wakeup(string containerID){
 
+//call unPauseDockerContainer  function from daemon
+
+        dockerDaemon->unPauseDockerContainer(containerID);
     }
