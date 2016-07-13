@@ -57,7 +57,7 @@ public:
                      id = convert.str();
                      return id;};
 
-      int getMemSize() {return size;};
+      double getMemSize() {return size;};
 protected:
     virtual void handleMessage(cMessage* msg);
     virtual void finish(){};

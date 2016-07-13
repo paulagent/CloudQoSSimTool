@@ -26,7 +26,9 @@ DockerDaemon::DockerDaemon() {
     containerSet.clear();
     cout << "DockerDaemon::DockerDaemon()"<<endl;
 }
-
+void DockerDaemon::initialize(VM* vmp){
+vm =vmp;
+}
 DockerDaemon::~DockerDaemon() {
     // TODO Auto-generated destructor stub
     containerSet.clear();
@@ -68,13 +70,17 @@ void DockerDaemon::startDockerContainer(string image,string VMfullName)
     GetMem(size);
 
 }
-void DockerDaemon::GetMem(int size)
+void DockerDaemon::GetMem(double size)
 {
+double tmp = vm->getFreeMemory();
 
+vm->setFreeMemory(tmp-size);
 }
-void DockerDaemon::FreeMem(int size)
+void DockerDaemon::FreeMem(double size)
 {
+    double tmp = vm->getFreeMemory();
 
+    vm->setFreeMemory(tmp+size);
 }
 void DockerDaemon::processSelfMessage (cMessage *msg){
 
@@ -123,7 +129,7 @@ void DockerDaemon::pauseDockerContainer (string id)
      throw cRuntimeError("DockerDaemon::can not found this container in this vm...\n");
  }else {
 
-   int mem =  dc->getMemSize();
+   double mem =  dc->getMemSize();
    FreeMem(mem);
  }
 
@@ -135,8 +141,8 @@ void DockerDaemon::unPauseDockerContainer (string id)
          throw cRuntimeError("DockerDaemon::can not found this container in this vm...\n");
      }else {
 
-
-
+         double mem =  dc->getMemSize();
+         GetMem(mem);
      }
     }
 void DockerDaemon::getDockerByName(string name)

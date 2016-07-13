@@ -27,6 +27,8 @@
 
 class VMRequestManager;
 class DockerContainer;
+class DockerDaemon;
+
 
 class VM : public Machine{
 

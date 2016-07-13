@@ -6188,8 +6188,19 @@ $O/src/Virtualization/VirtualMachines/Docker/DockerContainer.o: src/Virtualizati
 	$(INET_PROJ)/src/transport/contract/TCPCommand_m.h \
 	$(INET_PROJ)/src/transport/contract/TCPSocket.h
 $O/src/Virtualization/VirtualMachines/Docker/DockerDaemon.o: src/Virtualization/VirtualMachines/Docker/DockerDaemon.cc \
+	src/Applications/Base/Management/JobQueue.h \
+	src/Applications/Base/Management/JobResults.h \
+	src/Applications/Base/Management/JobResultsSet.h \
+	src/Applications/Base/UserJob.h \
+	src/Applications/Base/jobBase.h \
+	src/Applications/Libraries_API/API_OS/API_OS.h \
 	src/Architecture/Machine/Machine.h \
+	src/Architecture/Node/AbstractNode.h \
 	src/Architecture/NodeComponents/OperatingSystems/SyscallManager/AbstractSyscallManager.h \
+	src/Architecture/NodeComponents/OperatingSystems/SyscallManager/NodeSyscallManager/SyscallManager.h \
+	src/Architecture/NodeComponents/OperatingSystems/SystemApps/RemoteStorageApp/RemoteStorageApp.h \
+	src/Architecture/NodeComponents/OperatingSystems/SystemApps/StatesApplication/StatesApplication.h \
+	src/Architecture/NodeComponents/VirtualOS/SyscallManager/VMSyscallManager.h \
 	src/Base/Messages/icancloud_App_CPU_Message.h \
 	src/Base/Messages/icancloud_App_CPU_Message_m.h \
 	src/Base/Messages/icancloud_App_IO_Message.h \
@@ -6207,7 +6218,11 @@ $O/src/Virtualization/VirtualMachines/Docker/DockerDaemon.o: src/Virtualization/
 	src/Base/Messages/icancloud_Message_m.h \
 	src/Base/Messages/icancloud_Migration_Message.h \
 	src/Base/Messages/icancloud_Migration_Message_m.h \
+	src/Base/Parser/cfgMPI.h \
+	src/Base/Request/Request.h \
+	src/Base/Request/RequestVM/RequestVM.h \
 	src/Base/Util/Log/ICCLog.h \
+	src/Base/Util/RunningContainer/RunningContainer.h \
 	src/Base/cGateManager.h \
 	src/Base/icancloud_Base.h \
 	src/Base/include/Constants.h \
@@ -6215,9 +6230,24 @@ $O/src/Virtualization/VirtualMachines/Docker/DockerDaemon.o: src/Virtualization/
 	src/Base/include/icancloud_types.h \
 	src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/Memoization_uthash.h \
 	src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/uthash.h \
+	src/Management/DataCenterManagement/Base/RequestsManagement.h \
 	src/Management/MachinesStructure/ElementType.h \
+	src/Management/MachinesStructure/HeterogeneousSet.h \
+	src/Management/MachinesStructure/MachinesMap.h \
+	src/Management/NetworkManager/NetworkManager.h \
+	src/Management/NetworkManager/PortTable.h \
+	src/Management/NetworkManager/VirtualIPCell.h \
+	src/Management/NetworkManager/VirtualIPs.h \
+	src/Users/AbstractUser.h \
+	src/Users/Base/queuesManager.h \
+	src/Users/Base/userBase.h \
+	src/Users/Base/userStorage.h \
+	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
 	src/Virtualization/VirtualMachines/Docker/DockerContainer.h \
 	src/Virtualization/VirtualMachines/Docker/DockerDaemon.h \
+	src/Virtualization/VirtualMachines/VM.h \
+	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
+	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
 	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
