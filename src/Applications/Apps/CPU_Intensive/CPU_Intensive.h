@@ -9,6 +9,7 @@
 #include "TCPSocketMap.h"
 #include "NetworkService.h"
 #include "icancloud_Message.h"
+#include "TCP_ClientSideService.h"
 
 /**
  * @class CPU_Intensive CPU_Intensive.h "CPU_Intensive.h"
@@ -27,20 +28,22 @@
  * @date 2013-12-17
  *
  */
+
+
 class CPU_Intensive : public UserJob{
 
-    //changes for TCP
-    struct icancloud_TCP_Client_Connector{
-            TCPSocket *socket;
-            cPacket *msg;
-        };
-        typedef struct icancloud_TCP_Client_Connector clientTCP_Connector;
-
-    struct icancloud_TCP_Server_Connector{
-                int port;
-                int appIndex;
-            };
-            typedef struct icancloud_TCP_Server_Connector serverTCP_Connector; //changes for TCP end
+//    //changes for TCP
+//    struct icancloud_TCP_Client_Connector{
+//            TCPSocket *socket;
+//            cPacket *msg;
+//        };
+//        typedef struct icancloud_TCP_Client_Connector clientTCP_Connector;
+//
+//    struct icancloud_TCP_Server_Connector{
+//                int port;
+//                int appIndex;
+//            };
+//            typedef struct icancloud_TCP_Server_Connector serverTCP_Connector; //changes for TCP end
 
 	
 	protected:
@@ -163,31 +166,50 @@ class CPU_Intensive : public UserJob{
 
 		//changes for tcp
         /** Client connections vector*/
-        vector <clientTCP_Connector> connections;
+//        vector <clientTCP_Connector> connections;
+//
+//        vector <serverTCP_Connector> connection;
+//
+//        /** Socket map to manage TCP sockets*/
+//        TCPSocketMap socketMap;
+//
+//        /** Pointer to NetworkService object */
+//        NetworkService *networkService;
+//
+//        /** Local IP */
+//        string localIP;
+//
+//        /** Output gate to TCP */
+//        cGate* outGate_TCP; //changes tcp
+//
+//        cGate* outGate_icancloudAPI;
 
-        /** Socket map to manage TCP sockets*/
-        TCPSocketMap socketMap;
-
-        /** Pointer to NetworkService object */
-        NetworkService *networkService;
-
-        /** Local IP */
-        string localIP;
-
-        /** Output gate to TCP */
-        cGate* outGate_TCP; //changes tcp
-
-	public:
+	//public:
 
         //new functions for tcp
-		void createConnection(icancloud_Message *sm);
+//		void createConnection(icancloud_Message *sm);
+//
+//		void sendPacketToServer(icancloud_Message *sm);
+//
+//		int searchConnectionByConnId(int connId);
+//
+//		void closeConnection(icancloud_Message *sm);
+//
+//		void newListenConnection (icancloud_Message *sm_net);
+//
+//		bool existsConnection (int port);
+//
+//		void arrivesIncommingConnection (cMessage *msg);
 
-		void sendPacketToServer(icancloud_Message *sm);
 
-		int searchConnectionByConnId(int connId);
-
-		void closeConnection(icancloud_Message *sm);
-
+//	protected:
+//
+//		virtual void socketEstablished(int connId, void *yourPtr);
+//		virtual void socketDataArrived(int connId, void *yourPtr, cPacket *msg, bool urgent);
+//		virtual void socketPeerClosed(int connId, void *yourPtr);
+//		virtual void socketClosed(int connId, void *yourPtr);
+//		virtual void socketFailure(int connId, void *yourPtr, int code);
+//		virtual void socketStatusArrived(int connId, void *yourPtr, TCPStatusInfo *status) {delete status;}
 
 	private:			    
 

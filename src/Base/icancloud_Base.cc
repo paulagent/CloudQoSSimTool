@@ -38,6 +38,8 @@ icancloud_Base::~icancloud_Base(){
 
 void icancloud_Base::initialize(){
 
+
+  //  TCP_ClientSideService TCP_service = new TCP_ClientSideService();
     char module_path [NAME_SIZE];
 	char currentHostName [NAME_SIZE];
 	string currentRunPath;
@@ -186,6 +188,12 @@ void icancloud_Base::sendRequestMessage (icancloud_Message *sm, cGate* gate){
 	// Send the message!
 	send (sm, gate);
 
+	//TCP_service->createConnection(sm);
+
+	icancloud_App_NET_Message *sm_net;
+	        sm_net = dynamic_cast <icancloud_App_NET_Message *> (sm);
+    string ip = sm_net->getLocalIP();
+    cout<<"IP:"<<ip<<endl;
 	// Process next request!
 	processCurrentRequestMessage ();
 }
@@ -196,8 +204,10 @@ void icancloud_Base::sendResponseMessage (icancloud_Message *sm){
     int gateId;
   //  cout << "icancloud_Base::sendResponseMessage ----->ArrivalModule-----> "<< sm->getArrivalModule() << endl;
 
+
 		// Get the gateId to send back the message
 		gateId = sm->getLastGateId ();
+
 
 		// Removes the current module from trace...
 		sm->removeLastModuleFromTrace ();
