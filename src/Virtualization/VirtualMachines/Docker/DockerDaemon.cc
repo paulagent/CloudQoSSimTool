@@ -42,7 +42,7 @@ void DockerDaemon::startDockerContainer(string image,string VMfullName)
     string id,name;
     stringstream ss;
     int size;
-    size=100; //MB
+    size=128; //MB
     cout<< "DockerDaemon::RunDocker" <<endl;
 
     if (containerSet.empty())
