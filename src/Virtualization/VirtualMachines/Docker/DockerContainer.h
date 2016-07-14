@@ -53,7 +53,6 @@ public:
                      ostringstream convert;   // stream used for the conversion
 
                      convert << a;      // insert the textual representation of 'Number' in the characters in the stream
-
                      id = convert.str();
                      return id;};
 

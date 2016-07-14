@@ -471,12 +471,13 @@ bool VMRequestManager::request_unfreez_container(RequestVM* req_vm){
 
 bool VMRequestManager::request_start_docker_container(RequestVM* req_vm) {
     VM* vm;
+
     vm = req_vm->getVM(0);
     cout << "request_start_docker_container---->vm->getFullName-------->"
             << vm->getFullName() << endl;
     RunningContainer* started_Container = new RunningContainer();
     double freem = vm->getFreeMemory();
-
+    vm->dockerDaemon->initialize(vm);
     bool found = false;
     if (freem > dockermem) {
 
