@@ -21,7 +21,7 @@
  */
 
 #include <VMRequestManager/VMRequestManager.h>
-
+Define_Module(VMRequestManager);
 /*VMRequestManager::VMRequestManager() {
  // TODO Auto-generated constructor stub
 
@@ -63,6 +63,7 @@ cout<< "VMRequestManager::initialize()" <<endl;
         // cfg->setVMType(vmImage->par("id").stringValue(),
         //         vmImage->par("numCores"),
         dockermem = dockerImage->par("memorySize_MB").doubleValue();
+        cout << "VMRequestManager::initialize()" <<dockermem <<endl;
         id = dockerImage->par("id").stringValue();
         cout << "VMRequestManager::initialize()--->dockermem " << dockermem
                 << endl;
@@ -501,7 +502,7 @@ if(found) {
     started_Container->start_time = now;
     started_Container->end_time = now + 200000; //clocks per secs   this should be change to parameter defined in ini file, so customer can change at anytime, not hardcode.
     started_Container->vmID = vm->getFullName();
-    started_Container->containerID = vm->getFullName() + 1;
+    started_Container->containerID = vm->getFullName() + 1;//to fix this how to get container id
     rContainer.push_back(started_Container);
     cout
                << "VMRequestManager::request_start_docker_container------------------> Container has started"

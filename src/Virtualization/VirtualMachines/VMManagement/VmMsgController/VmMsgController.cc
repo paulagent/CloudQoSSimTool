@@ -37,7 +37,7 @@ bool VmMsgController::migrationPrepared() {
 }
 
 void VmMsgController::initialize() {
-
+cout << " VmMsgController::initialize()"<<endl;
     icancloud_Base::initialize();
 
     std::ostringstream osStream;
