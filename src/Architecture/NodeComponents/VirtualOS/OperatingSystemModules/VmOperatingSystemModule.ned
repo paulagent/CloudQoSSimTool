@@ -18,6 +18,8 @@ import icancloud.src.Architecture.NodeComponents.OperatingSystems.Storage.Virtua
 import icancloud.src.Architecture.NodeComponents.OperatingSystems.Storage.FileSystems.FSModule;
 import icancloud.src.Architecture.NodeComponents.OperatingSystems.Storage.VolumeManagers.VolumeManagerModule;
 import icancloud.src.Virtualization.VirtualMachines.VMManagement.VmMsgController.VmMsgController;
+import icancloud.src.Virtualization.VirtualMachines.VMRequestManager.VMRequestManager;
+
 
 module VmOperatingSystemModule like IOperatingSystem
 {
@@ -49,10 +51,10 @@ module VmOperatingSystemModule like IOperatingSystem
         output toStorageSystem[];	// Output gates to Storage Servers
         output toNet_TCP;			// Output gate to Network (Ethernet TCP)
         output toCPU[];				// Output gates to CPU
-		
-		//docker 
-		input fromDaemon;
-		output toDaemon;
+
+        //docker 
+        input fromDaemon;
+        output toDaemon;
 
     submodules:
 
@@ -111,6 +113,9 @@ module VmOperatingSystemModule like IOperatingSystem
                 toApps[];
         }
 
+        vmRequestManager: VMRequestManager {
+            @display("p=493,324");
+        }
     connections allowunconnected:
 
         // Connections between Service Redirector and Network

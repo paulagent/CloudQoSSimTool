@@ -43,11 +43,11 @@ void VMRequestManager::initialize() {
     //   icancloud_Base::initialize();
 
 cout<< "VMRequestManager::initialize()" <<endl;
-       cModule* networkManagerMod;
-
-
-       networkManagerMod = getParentModule()->getSubmodule("networkManager");
-       networkManager = check_and_cast<NetworkManager*>(networkManagerMod);
+//       cModule* networkManagerMod;
+//
+//
+//       networkManagerMod = getParentModule()->getSubmodule("networkManager");
+//       networkManager = check_and_cast<NetworkManager*>(networkManagerMod);
 
 
 

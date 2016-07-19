@@ -135,7 +135,7 @@ network RRTest
             @display("p=545,204");
         }
         dockerSet: DockerSet {
-            @display("p=794,302");
+            @display("p=712,243");
         }
         // ---------------------------------------------------------------
         //   Definition of Racks
