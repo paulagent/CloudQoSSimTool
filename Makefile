@@ -977,7 +977,48 @@ $O/src/Applications/Apps/ServerApplication/ServerApplication.o: src/Applications
 	$(INET_PROJ)/src/networklayer/contract/IPvXAddress.h \
 	$(INET_PROJ)/src/transport/contract/TCPCommand_m.h \
 	$(INET_PROJ)/src/transport/contract/TCPSocket.h
-$O/src/Applications/Apps/TCP_New/TCP_New.o: src/Applications/Apps/TCP_New/TCP_New.cc
+$O/src/Applications/Apps/TCP_New/TCP_New.o: src/Applications/Apps/TCP_New/TCP_New.cc \
+	src/Applications/Apps/TCP_New/TCP_New.h \
+	src/Architecture/NodeComponents/Hardware/HWEnergyInterface.h \
+	src/Base/Messages/icancloud_App_CPU_Message.h \
+	src/Base/Messages/icancloud_App_CPU_Message_m.h \
+	src/Base/Messages/icancloud_App_IO_Message.h \
+	src/Base/Messages/icancloud_App_IO_Message_m.h \
+	src/Base/Messages/icancloud_App_MEM_Message.h \
+	src/Base/Messages/icancloud_App_MEM_Message_m.h \
+	src/Base/Messages/icancloud_App_NET_Message.h \
+	src/Base/Messages/icancloud_App_NET_Message_m.h \
+	src/Base/Messages/icancloud_BlockList_Message.h \
+	src/Base/Messages/icancloud_BlockList_Message_m.h \
+	src/Base/Messages/icancloud_File.h \
+	src/Base/Messages/icancloud_MPI_Message.h \
+	src/Base/Messages/icancloud_MPI_Message_m.h \
+	src/Base/Messages/icancloud_Message.h \
+	src/Base/Messages/icancloud_Message_m.h \
+	src/Base/Messages/icancloud_Migration_Message.h \
+	src/Base/Messages/icancloud_Migration_Message_m.h \
+	src/Base/Util/Log/ICCLog.h \
+	src/Base/cGateManager.h \
+	src/Base/icancloud_Base.h \
+	src/Base/include/Constants.h \
+	src/Base/include/icancloud_debug.h \
+	src/Base/include/icancloud_types.h \
+	src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/Memoization_uthash.h \
+	src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/uthash.h \
+	src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/EnergyMeterStates.h \
+	src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/EnergyState.h \
+	src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/NetworkServices/NetworkService/NetworkService.h \
+	src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/NetworkServices/TCP_Services/TCP_ClientSideService.h \
+	src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/NetworkServices/TCP_Services/TCP_ServerSideService.h \
+	$(INET_PROJ)/src/base/Compat.h \
+	$(INET_PROJ)/src/base/INETDefs.h \
+	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
+	$(INET_PROJ)/src/networklayer/contract/IPv6Address.h \
+	$(INET_PROJ)/src/networklayer/contract/IPvXAddress.h \
+	$(INET_PROJ)/src/networklayer/contract/IPvXAddressResolver.h \
+	$(INET_PROJ)/src/transport/contract/TCPCommand_m.h \
+	$(INET_PROJ)/src/transport/contract/TCPSocket.h \
+	$(INET_PROJ)/src/transport/contract/TCPSocketMap.h
 $O/src/Applications/Base/UserJob.o: src/Applications/Base/UserJob.cc \
 	src/Applications/Base/Management/JobQueue.h \
 	src/Applications/Base/Management/JobResults.h \

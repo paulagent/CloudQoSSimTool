@@ -13,13 +13,13 @@
 #include "IPvXAddressResolver.h"
 #include "TCPSocketMap.h"
 #include "NetworkService.h"
-//#include "icancloud_Message.h"
+#include "icancloud_Message.h"
 #include "INETDefs.h"
 #include "icancloud_App_NET_Message.h"
 
 class NetworkService;
 
-class TCP_New : public TCPSocket::CallbackInterface{
+class TCP_New : public TCPSocket::CallbackInterface, public cSimpleModule{
 
     struct icancloud_TCP_Client_Connector{
             TCPSocket *socket;
@@ -27,10 +27,19 @@ class TCP_New : public TCPSocket::CallbackInterface{
         };
         typedef struct icancloud_TCP_Client_Connector clientTCP_Connector;
 
+    struct icancloud_TCP_Server_Connector{
+               int port;
+               int appIndex;
+           };
+           typedef struct icancloud_TCP_Server_Connector serverTCP_Connector;
+
+
 protected:
 
         /** Client connections vector*/
         vector <clientTCP_Connector> connections;
+
+        vector <serverTCP_Connector> connection;
 
         /** Socket map to manage TCP sockets*/
         TCPSocketMap socketMap;
@@ -44,20 +53,39 @@ protected:
         /** Output gate to TCP */
         cGate* outGate_TCP;
 
+        cGate* outGate_icancloudAPI;
+
 public:
         TCP_New(string newLocalIP, cGate* toTCP, NetworkService *netService);
 
+        TCP_New();
+
+        TCP_New(string newLocalIP, cGate* toTCP, cGate* toicancloudAPI, NetworkService *netService);
+
         virtual ~TCP_New();
 
-        void createConnection(icancloud_App_NET_Message *sm_net);
+        void createConnection(icancloud_Message *sm);
 
-        void sendPacketToServer(icancloud_App_NET_Message *sm_net);
+        void sendPacketToServer(icancloud_Message *sm);
 
-        void closeConnection(icancloud_App_NET_Message *sm_net);
+        void closeConnection(icancloud_Message *sm);
 
         int searchConnectionByConnId(int connId);
 
         TCPSocket* getInvolvedSocket (cMessage *msg);
+
+        void newListenConnection (icancloud_Message *sm);
+
+        void arrivesIncommingConnection (cMessage *msg);
+
+        void sendPacketToClient(icancloud_Message *sm);
+
+        bool existsConnection (int port);
+
+        int getAppIndexFromPort (int port);
+
+        void closeConnectionReceived(cMessage *sm);
+
 
 protected:
 
@@ -66,7 +94,7 @@ protected:
         virtual void socketPeerClosed(int connId, void *yourPtr);
         virtual void socketClosed(int connId, void *yourPtr);
         virtual void socketFailure(int connId, void *yourPtr, int code);
-        virtual void socketStatusArrived(int connId, void *yourPtr, TCPStatusInfo *status) {delete status;}
+        //virtual void socketStatusArrived(int connId, void *yourPtr, TCPStatusInfo *status) {delete status;}
 };
 
 

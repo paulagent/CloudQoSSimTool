@@ -15,15 +15,20 @@
 
 package icancloud.src.Applications.Apps.TCP_New;
 
-moduleinterface TCP_New
+import icancloud.src.Applications.Apps.IAPP;
+
+simple TCP_New like IAPP
 {
     parameters:
         string localIP;
         
         gates:
-        input fromNetManager;
-        input fromNetTCP;
+        input fromNetManager @loose;	
+        input fromNetTCP @loose;	
+        input fromOS @loose;	
         
-        output toNetManager;
-        output toNetTCP; 
+        output toNetManager @loose;	
+        output toNetTCP @loose;	 
+        output toOS @loose;	
+        
 }
