@@ -78,7 +78,7 @@ cout <<"VM::initialize()" << endl;
     nodeSetName = "";
     vmName = "";
     vmreqmgr = new VMRequestManager();
-   // vmreqmgr->initialize();
+   // vmreqmgr->callInitialize();
     osMod = getSubmodule("osModule")->getSubmodule("syscallManager");
     os = dynamic_cast<VMSyscallManager*>(osMod);
     Machine::changeState(MACHINE_STATE_OFF);

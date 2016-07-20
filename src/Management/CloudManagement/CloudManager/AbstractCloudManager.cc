@@ -777,7 +777,7 @@ void AbstractCloudManager::closeVMConnections(vector<AbstractNode*> nodes,
     string nodeSetName;
     NodeVL* node;
     AbstractCloudManager::PendingConnectionDeletion* pendingConnectionUnit;
-    cout << "AbstractCloudManager::closeVMConnections----->" <<endl;
+    //cout << "AbstractCloudManager::closeVMConnections----->" <<endl;
 
     // Init ..
     // Create the pending remote storage deletion element

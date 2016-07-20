@@ -16,6 +16,7 @@
 #include "RequestsManagement.h"
 #include "NetworkManager.h"
 class RequestVM;
+
 //class VMRequestManager: public icancloud_Base{
 
 class VMRequestManager: public cSimpleModule{

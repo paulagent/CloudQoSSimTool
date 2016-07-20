@@ -30,11 +30,11 @@ module VMRequestManager
 
     submodules:
         dockerImage: DockerImage {
-            @display("p=96,46");
+           @display("p=96,46");
             numCores = 0;
-            memorySize_MB = 0;
+          memorySize_MB = 0;
             storageSize_GB = 0;
-        }
+       }
     connections allowunconnected:
 
  		// Connections between CPU and Operating System

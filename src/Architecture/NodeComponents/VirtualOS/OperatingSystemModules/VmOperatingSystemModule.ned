@@ -17,6 +17,7 @@ import icancloud.src.Architecture.NodeComponents.OperatingSystems.CPU_Schedulers
 import icancloud.src.Architecture.NodeComponents.OperatingSystems.Storage.VirtualFileSystems.IVirtualFileSystem;
 import icancloud.src.Architecture.NodeComponents.OperatingSystems.Storage.FileSystems.FSModule;
 import icancloud.src.Architecture.NodeComponents.OperatingSystems.Storage.VolumeManagers.VolumeManagerModule;
+import icancloud.src.Virtualization.VirtualMachines.Docker.DockerDaemon;
 import icancloud.src.Virtualization.VirtualMachines.VMManagement.VmMsgController.VmMsgController;
 import icancloud.src.Virtualization.VirtualMachines.VMRequestManager.VMRequestManager;
 
@@ -33,7 +34,7 @@ module VmOperatingSystemModule like IOperatingSystem
         string fsModuleType = default("Basic_FileSystem");				// File System module type
         string vmModuleType = default("VolumeManagerModule");		// Volume Manager module type
         string syscallManagerType = default("VMSyscallManager");
-        string cpuSchedulerType = default("CPU_Scheduler_RR");		// CPU Service type   
+        string cpuSchedulerType = default("CPU_Scheduler_FIFO");		// CPU Service type   
 
         @display("i=icons/OOSS;bgb=720,431");
     gates:
@@ -113,8 +114,8 @@ module VmOperatingSystemModule like IOperatingSystem
                 toApps[];
         }
 
-        vmRequestManager: VMRequestManager {
-            @display("p=493,324");
+        dockerDaemon: DockerDaemon {
+            @display("p=511,295");
         }
     connections allowunconnected:
 

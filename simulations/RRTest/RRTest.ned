@@ -16,6 +16,7 @@
 package icancloud.simulations.RRTest;
 import icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_NetworkManager.NetworkServices.NetworkService.NetworkService;
 import icancloud.src.Virtualization.VirtualMachines.SetDefinition.DockerSet;
+import icancloud.src.Virtualization.VirtualMachines.VMRequestManager.VMRequestManager;
 import ned.DatarateChannel;
 import inet.nodes.ethernet.EtherSwitch;
 import icancloud.src.Architecture.Node.NodeVL.NodeVL;
@@ -146,6 +147,9 @@ network RRTest
         }
 
 
+        vmRequestManager: VMRequestManager {
+            @display("p=857,174");
+        }
     // ---------------------------------------------------------------
     //   Connections section
     // ---------------------------------------------------------------

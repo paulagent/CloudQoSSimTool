@@ -50,7 +50,7 @@ cout<< "VMRequestManager::initialize()" <<endl;
 //       networkManager = check_and_cast<NetworkManager*>(networkManagerMod);
 
 
-
+   // cModule* Image2 = getSubmodule("vmImage");
     cModule* dockerSet = getParentModule()->getSubmodule("dockerSet");
       if (dockerSet == NULL)
           throw cRuntimeError(
