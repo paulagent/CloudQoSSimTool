@@ -19,6 +19,8 @@
 
 class NetworkService;
 
+class UserJob;
+
 class TCP_New : public TCPSocket::CallbackInterface, public cSimpleModule{
 
     struct icancloud_TCP_Client_Connector{
@@ -54,6 +56,51 @@ protected:
         cGate* outGate_TCP;
 
         cGate* outGate_icancloudAPI;
+
+        simtime_t simStartTime;
+                simtime_t simEndTime;
+                time_t runStartTime;
+                time_t runEndTime;
+
+                simtime_t startServiceCPU;
+                simtime_t endServiceCPU;
+                simtime_t total_service_CPU;
+
+                simsignal_t processingTime;
+                simtime_t departureTime;
+                simtime_t arrivalTime;
+
+                    /** Size of data chunk to read in each iteration */
+                    int inputSizeMB;
+
+                    /** Size of data chunk to write in each iteration */
+                    int outputSizeMB;
+
+                    /** Number of Instructions to execute */
+                    int MIs;
+
+                    /** Number of iterations */
+                    unsigned int currentIteration;
+
+                    /** Total iterations */
+                    unsigned int iterations;
+
+                    /** Starting time delay */
+                    unsigned int startDelay;
+
+        virtual void initialize();
+
+        virtual void finish();
+
+        virtual void startExecution();
+
+        void processSelfMessage(cMessage *msg);
+
+        void processRequestMessage(icancloud_App_NET_Message *sm_net);
+
+        void processResponseMessage(icancloud_App_NET_Message *sm_net);
+
+
 
 public:
         TCP_New(string newLocalIP, cGate* toTCP, NetworkService *netService);

@@ -31,6 +31,40 @@ TCP_New::~TCP_New(){
     connections.clear();
 }
 
+void TCP_New::initialize(){
+    startDelay = par ("startDelay");
+    inputSizeMB  = par ("inputSize");
+    outputSizeMB  = par ("outputSize");
+    MIs  = par ("MIs");
+
+    iterations  = par ("iterations");
+    currentIteration = 1;
+
+    total_service_CPU =0.0;
+    startServiceCPU = 0.0;
+    endServiceCPU = 0.0;
+}
+
+void TCP_New::finish(){
+
+}
+
+void TCP_New::startExecution(){
+
+}
+
+void TCP_New::processSelfMessage(cMessage *msg){
+
+}
+
+void TCP_New::processRequestMessage(icancloud_App_NET_Message *sm_net){
+
+}
+
+void TCP_New::processResponseMessage(icancloud_App_NET_Message *sm_net){
+
+}
+
 void TCP_New::createConnection(icancloud_Message *sm){
 
     clientTCP_Connector newConnection;
