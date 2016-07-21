@@ -51,6 +51,8 @@ simple SyscallManager like ISyscallManager
         input fromMemory;				// Input gate from Memory
         input fromNet;				// Input gate from Network
         input fromCPU;				// Input gate from CPU
+input fromDocker;
+output toDocker;
 
         output toApps[];				// Output gates to Applications
         output toMemory;				// Output gate to Memory

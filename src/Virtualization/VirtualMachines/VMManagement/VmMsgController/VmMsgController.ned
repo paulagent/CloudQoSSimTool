@@ -22,6 +22,9 @@ simple VmMsgController
     gates:
         input fromOSApps[];
 	    input fromApps[];
+	    //docker
+	    input fromDocker[];
+        output toDocker[];
         
         output toOSApps[];
         output toApps[];

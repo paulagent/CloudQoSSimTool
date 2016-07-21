@@ -54,8 +54,8 @@ module VmOperatingSystemModule like IOperatingSystem
         output toCPU[];				// Output gates to CPU
 
         //docker 
-        input fromDaemon;
-        output toDaemon;
+      //  input fromDaemon;
+       // output toDaemon;
 
     submodules:
 
@@ -63,8 +63,8 @@ module VmOperatingSystemModule like IOperatingSystem
             parameters:
                 @display("p=74,147");
             gates:
-                fromApps[];
-                toApps[];
+                fromApps[50];
+                toApps[50];
         }
 
         cpuScheduler: <cpuSchedulerType> like ICPU_Scheduler {
@@ -115,7 +115,10 @@ module VmOperatingSystemModule like IOperatingSystem
         }
 
         dockerDaemon: DockerDaemon {
-            @display("p=511,295");
+            @display("p=312,155");
+            gates:
+                fromDaemonNet;
+                toDaemonNet;
         }
     connections allowunconnected:
 
@@ -160,4 +163,6 @@ module VmOperatingSystemModule like IOperatingSystem
         }
 
 
+        syscallManager.toDocker --> dockerDaemon.fromDaemonNet;
+        dockerDaemon.toDaemonNet --> syscallManager.fromDocker;
 }

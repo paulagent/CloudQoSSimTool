@@ -33,15 +33,6 @@ module DockerDaemon
         //string osModuleType = default("VmOperatingSystemModule");  	// Operating System Module type            	
        // string cpuModuleType = default("CPU_Module");				// CPU Module type               
 
-
-
-
-
-        string ip = default("");								    // VM IP
-        bool IPForward = default(false);							// IP Forward
-        int namid = default(-1);									// Nam ID
-        string routingFile = default("");							// Routing File
-
         @dynamic(true);
         @class("DockerDaemon");
 

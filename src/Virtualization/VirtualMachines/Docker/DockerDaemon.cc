@@ -123,6 +123,7 @@ void DockerDaemon::freeContainerResources(string id)
 
 void DockerDaemon::pauseDockerContainer (string id)
     {
+    cout <<"DockerDaemon::PauseDockerContainer " <<endl;
     DockerContainer *dc;
     dc=getDockerById(id);
  if (dc==NULL) {
@@ -136,6 +137,7 @@ void DockerDaemon::pauseDockerContainer (string id)
     }
 void DockerDaemon::unPauseDockerContainer (string id)
     {
+    cout <<"DockerDaemon::unPauseDockerContainer " <<endl;
     DockerContainer *dc = getDockerById(id);
      if (dc==NULL) {
          throw cRuntimeError("DockerDaemon::can not found this container in this vm...\n");
