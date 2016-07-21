@@ -44,6 +44,6 @@ moduleinterface IOperatingSystem
         output toOutputMemory;		// Output gate to output
         
         // for docker 
-        input fromDaemon @loose;
-        output toDaemon @loose;
+      //  input fromDaemon @loose;
+       // output toDaemon @loose;
 }

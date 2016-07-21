@@ -19,8 +19,8 @@ module Docker
 {
     parameters:
 
-        //double memorySize_MB;										// Amount of memory in MiB
-        //int storageSize_GB;											// Amount of storage in GiB
+        double memorySize_MB;										// Amount of memory in MiB
+        int storageSize_GB;											// Amount of storage in GiB
 
 
 		//int numStorageSystems = default(1);							// Number of Block Servers     

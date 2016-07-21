@@ -78,7 +78,7 @@ cout <<"VM::initialize()" << endl;
     nodeSetName = "";
     vmName = "";
     vmreqmgr = new VMRequestManager();
-    vmreqmgr->initialize();
+   // vmreqmgr->callInitialize();
     osMod = getSubmodule("osModule")->getSubmodule("syscallManager");
     os = dynamic_cast<VMSyscallManager*>(osMod);
     Machine::changeState(MACHINE_STATE_OFF);
@@ -86,7 +86,8 @@ cout <<"VM::initialize()" << endl;
   //  dockerset.clear();
     is_freezed=false;
     has_dockers=false;
-    dockerDaemon=new DockerDaemon();
+   dockerDaemon=new DockerDaemon();
+
 }
 
 void VM::finish() {
@@ -150,3 +151,15 @@ void VM::setManager(icancloud_Base* manager) {
     Machine::setManager(manager);
     os->setManager(manager);
 }
+void VM::sleep(string containerID){
+    //call pause container function
+   dockerDaemon-> pauseDockerContainer(containerID);
+
+
+}
+    void VM:: wakeup(string containerID){
+
+//call unPauseDockerContainer  function from daemon
+
+        dockerDaemon->unPauseDockerContainer(containerID);
+    }

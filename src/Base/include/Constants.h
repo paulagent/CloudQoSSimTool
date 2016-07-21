@@ -30,6 +30,8 @@
 
 #define REQUEST_UNFREEZE_VM  111       // This request is invoked when a user unfreeze the vm
 #define REQUEST_START_DOCKER_CONTAINER 112  // This request is invoked when a user start docker container
+#define REQUEST_UNFREEZE_CONTAINER 113      // This request is invoked when a user unfreeze the container
+
 // ---------------- Storage Operations -------------------
 #define FS_NFS                                   "NFS"
 #define FS_PFS                                   "PFS"

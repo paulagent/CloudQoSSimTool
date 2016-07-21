@@ -37,7 +37,7 @@ bool VmMsgController::migrationPrepared() {
 }
 
 void VmMsgController::initialize() {
-
+cout << " VmMsgController::initialize()"<<endl;
     icancloud_Base::initialize();
 
     std::ostringstream osStream;
@@ -345,6 +345,7 @@ void VmMsgController::linkNewApplication(cModule* jobAppModule, cGate* scToApp,
     fromApps->connectIn(jobAppModule->gate("toOS"), idxFromApps);
 
     // Connections to SyscallManager
+    cout << "VmMsgController::here is problem" << endl;
     int idxToOs = toOSApps->newGate("toOSApps");
     toOSApps->connectOut(scFromApp, idxToOs);
 

@@ -17,7 +17,10 @@ import icancloud.src.Architecture.NodeComponents.OperatingSystems.CPU_Schedulers
 import icancloud.src.Architecture.NodeComponents.OperatingSystems.Storage.VirtualFileSystems.IVirtualFileSystem;
 import icancloud.src.Architecture.NodeComponents.OperatingSystems.Storage.FileSystems.FSModule;
 import icancloud.src.Architecture.NodeComponents.OperatingSystems.Storage.VolumeManagers.VolumeManagerModule;
+import icancloud.src.Virtualization.VirtualMachines.Docker.DockerDaemon;
 import icancloud.src.Virtualization.VirtualMachines.VMManagement.VmMsgController.VmMsgController;
+import icancloud.src.Virtualization.VirtualMachines.VMRequestManager.VMRequestManager;
+
 
 module VmOperatingSystemModule like IOperatingSystem
 {
@@ -49,10 +52,10 @@ module VmOperatingSystemModule like IOperatingSystem
         output toStorageSystem[];	// Output gates to Storage Servers
         output toNet_TCP;			// Output gate to Network (Ethernet TCP)
         output toCPU[];				// Output gates to CPU
-		
-		//docker 
-		input fromDaemon;
-		output toDaemon;
+
+        //docker 
+      //  input fromDaemon;
+       // output toDaemon;
 
     submodules:
 
@@ -60,8 +63,8 @@ module VmOperatingSystemModule like IOperatingSystem
             parameters:
                 @display("p=74,147");
             gates:
-                fromApps[];
-                toApps[];
+                fromApps[50];
+                toApps[50];
         }
 
         cpuScheduler: <cpuSchedulerType> like ICPU_Scheduler {
@@ -111,6 +114,12 @@ module VmOperatingSystemModule like IOperatingSystem
                 toApps[];
         }
 
+        dockerDaemon: DockerDaemon {
+            @display("p=312,155");
+            gates:
+                fromDaemonNet;
+                toDaemonNet;
+        }
     connections allowunconnected:
 
         // Connections between Service Redirector and Network
@@ -154,4 +163,6 @@ module VmOperatingSystemModule like IOperatingSystem
         }
 
 
+        syscallManager.toDocker --> dockerDaemon.fromDaemonNet;
+        dockerDaemon.toDaemonNet --> syscallManager.fromDocker;
 }

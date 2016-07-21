@@ -13,33 +13,19 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package icancloud.src.Virtualization.VirtualMachines.VMRequestManager;
-import icancloud.src.Architecture.NodeComponents.OperatingSystems.IOperatingSystem;
+package icancloud.src.Virtualization.VirtualMachines.SetDefinition;
 import icancloud.src.Virtualization.VirtualMachines.SetDefinition.DockerImage;
-import icancloud.src.Virtualization.VirtualMachines.VM;
-import icancloud.src.Virtualization.VirtualMachines.IVM;
 
-module VMRequestManager
+module DockerSet
 {
     parameters:
-        @labels(vmm);
-        @display("i=device/terminal;bgb=624,288");
-        @loose;
-        @class(VMRequestManager);
 
-
+        int dockerImageQuantity;
+        @display("bgb=587,385");
     submodules:
-        dockerImage: DockerImage {
-           @display("p=96,46");
-            numCores = 0;
-          memorySize_MB = 0;
-            storageSize_GB = 0;
-       }
-    connections allowunconnected:
 
- 		// Connections between CPU and Operating System
-
-
+        dockerImage[dockerImageQuantity]: DockerImage {
+            parameters:
+                @display("i=msg/job;p=260,148,row");
+        }
 }
-
-

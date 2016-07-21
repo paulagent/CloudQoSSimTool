@@ -20,12 +20,15 @@
 #include "ElementType.h"
 #include "VMSyscallManager.h"
 
-#include "DockerContainer.h"
+//#include "DockerContainer.h"
 
 #include "VMRequestManager.h"
 #include "DockerDaemon.h"
 
 class VMRequestManager;
+class DockerContainer;
+class DockerDaemon;
+
 
 class VM : public Machine{
 
@@ -33,7 +36,7 @@ protected:
 
      int pending_operation;             // defined as: PENDING_STORAGE || PENDING_SHUTDOWN || PENDING_STARTUP
      string vmName;                     // Virtual machine type
-     int userID;                        // User identification obtained from getId() from omnetpp.
+
 
      //identify where is the VM and who is its property.
      int nodeName;											    // To identify which node is.
@@ -42,12 +45,13 @@ protected:
 
      vector <vmStatesLog_t*> states_log;    // To log the states of the vms (composed by the code of the state and when a change is perfomed (in minutes).
 
-     vector<DockerContainer*>  dockerset;                                       // Each state changed will generate a new vmStatesLog entry-
+     vector<DockerContainer*>  dockerset;                                       // all containers exist in vm
 
     // vector<Docker*>  dockerset;                                       // Each state changed will generate a new vmStatesLog entry-
 
 
 public:
+     int userID;                        // User identification obtained from getId() from omnetpp.
      bool is_freezed;
      DockerDaemon* dockerDaemon;
      bool has_dockers;
@@ -109,6 +113,9 @@ public:
      * Setter for manager
      */
     void setManager(icancloud_Base* manager);
+
+    void sleep(string containerID);
+    void wakeup(string containerID);
 
 };
 

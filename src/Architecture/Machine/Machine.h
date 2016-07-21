@@ -79,6 +79,8 @@ public:
             // Returns the free memory of the node
             virtual double getFreeMemory (){return os->getFreeMemory();};
 
+
+
             // Get the total memory size of the node
             int getMemoryCapacity(){return  type->getMemorySize();};
 
@@ -187,6 +189,8 @@ public:
      */
     void removeAllProcesses (){os->removeAllProcesses();};
 
+
+    void setFreeMemory (double newValue){os->setFreeMemory(newValue);};
 
 };
 

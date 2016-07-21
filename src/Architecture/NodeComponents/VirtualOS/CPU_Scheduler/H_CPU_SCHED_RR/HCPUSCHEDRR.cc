@@ -13,17 +13,17 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#include "H_CPU_SCHED_FIFO.h"
+#include <HCPUSCHEDRR.h>
 
-Define_Module(H_CPU_SCHED_FIFO);
+H_CPU_SCHED_RR::H_CPU_SCHED_RR() {
+    // TODO Auto-generated constructor stub
 
-H_CPU_SCHED_FIFO::~H_CPU_SCHED_FIFO() {
-    coreQueue.clear();
 }
 
-void H_CPU_SCHED_FIFO::initialize(){
-
-    cout<< "H_CPU_SCHED_FIFO::initialize()"<<endl;
+H_CPU_SCHED_RR::~H_CPU_SCHED_RR() {
+    // TODO Auto-generated destructor stub
+}
+void H_CPU_SCHED_RR::initialize(){
     H_CPUManager_Base::initialize();
 
     for (int i = 0; i < (int)numCPUs; i++){
@@ -33,13 +33,12 @@ void H_CPU_SCHED_FIFO::initialize(){
     coreQueue.clear();
 }
 
-void H_CPU_SCHED_FIFO::finish(){
+void H_CPU_SCHED_RR::finish(){
     coreQueue.clear();
     H_CPUManager_Base::finish();
 }
+void H_CPU_SCHED_RR::schedulingCPU(icancloud_Message *msg){
 
-void H_CPU_SCHED_FIFO::schedulingCPU(icancloud_Message *msg){
-cout << "H_CPU_SCHED_FIFO::schedulingCPU" <<endl;
     // Define ..
     int core = -1;
     bool selected = false;
@@ -216,8 +215,8 @@ cout << "H_CPU_SCHED_FIFO::schedulingCPU" <<endl;
 
 }
 
-void H_CPU_SCHED_FIFO::processHardwareResponse(icancloud_Message *msg){
-cout <<"H_CPU_SCHED_FIFO::processHardwareResponse" <<endl;
+void H_CPU_SCHED_RR::processHardwareResponse(icancloud_Message *msg){
+
     // Manage the core state
     int core =  msg->getArrivalGate()->getIndex();
     (*(vmIDs.begin() + core)) = -1;
@@ -229,4 +228,3 @@ cout <<"H_CPU_SCHED_FIFO::processHardwareResponse" <<endl;
         schedulingCPU(enqueuedMsg);
     }
 }
-

@@ -8,6 +8,7 @@
 #ifndef DockerContainer_H_
 #define DockerContainer_H_
 
+
 #include <omnetpp.h>
 #include <errno.h>
 #include <assert.h>
@@ -16,6 +17,7 @@
 #include <dirent.h>
 #include <fcntl.h>
 #include <string>
+#include "time.h"
 #include <iostream>
 #include <sstream>
 #include <unistd.h>
@@ -25,9 +27,11 @@
 #include "stdlib.h"
 #include "ICCLog.h"
 #include "Memoization_uthash.h"
+#include "Machine.h"
 
-class DockerContainer: public cSimpleModule {
 
+//class DockerContainer : public Machine{
+class DockerContainer : public cSimpleModule{
 public:
     DockerContainer();
     ~DockerContainer();
@@ -40,6 +44,19 @@ public:
     int size;
     int status;  // running 1 / exited 0
 
+    // Returns the unique identifier given by omnet to this module
+      string getContainerId(){
+               int a = this->getId();
+
+           string id;          // string which will contain the result
+
+                     ostringstream convert;   // stream used for the conversion
+
+                     convert << a;      // insert the textual representation of 'Number' in the characters in the stream
+                     id = convert.str();
+                     return id;};
+
+      double getMemSize() {return size;};
 protected:
     virtual void handleMessage(cMessage* msg);
     virtual void finish(){};
@@ -48,6 +65,8 @@ protected:
     /**
            * Start the container application execution.
            */
+
+
 };
 
 #endif /* DockerContainer */

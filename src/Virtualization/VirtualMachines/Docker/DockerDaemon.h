@@ -36,10 +36,13 @@
 #include "Memoization_uthash.h"
 #include "DockerContainer.h"
 #include "icancloud_Message.h"
+#include "VM.h"
 
 class DockerDaemon : public cSimpleModule{
 public:
+    VM* vm ; //host vm
     DockerDaemon();
+    void initialize(VM* vm);
     ~DockerDaemon();
     vector<DockerContainer *> containerSet;
     void startDockerContainer(string image,string VMfullName);
@@ -62,8 +65,8 @@ public:
   void processResponseMessage (icancloud_Message *sm);
 
 
-    void GetMem(int size);
-    void FreeMem(int size);
+    void GetMem(double size);
+    void FreeMem(double size);
     void KillDocker(string id);
     void freeContainerResources(string id);
     void stopDockerContainer (string id);
@@ -71,7 +74,7 @@ public:
     void unPauseDockerContainer (string id);
     void getDockerByName(string name);
     void getDockerByImage(string image);
-    void getDockerById(string id);
+    DockerContainer* getDockerById(string id);
     void connectNetwork(string id);
     void disconnectNetwork(string id);
 

@@ -26,7 +26,9 @@ DockerDaemon::DockerDaemon() {
     containerSet.clear();
     cout << "DockerDaemon::DockerDaemon()"<<endl;
 }
-
+void DockerDaemon::initialize(VM* vmp){
+vm =vmp;
+}
 DockerDaemon::~DockerDaemon() {
     // TODO Auto-generated destructor stub
     containerSet.clear();
@@ -40,7 +42,7 @@ void DockerDaemon::startDockerContainer(string image,string VMfullName)
     string id,name;
     stringstream ss;
     int size;
-    size=100; //MB
+    size=128; //MB
     cout<< "DockerDaemon::RunDocker" <<endl;
 
     if (containerSet.empty())
@@ -68,13 +70,17 @@ void DockerDaemon::startDockerContainer(string image,string VMfullName)
     GetMem(size);
 
 }
-void DockerDaemon::GetMem(int size)
+void DockerDaemon::GetMem(double size)
 {
+double tmp = vm->getFreeMemory();
 
+vm->setFreeMemory(tmp-size);
 }
-void DockerDaemon::FreeMem(int size)
+void DockerDaemon::FreeMem(double size)
 {
+    double tmp = vm->getFreeMemory();
 
+    vm->setFreeMemory(tmp+size);
 }
 void DockerDaemon::processSelfMessage (cMessage *msg){
 
@@ -91,7 +97,7 @@ void  DockerDaemon::processResponseMessage (icancloud_Message *sm){
 }
 void DockerDaemon::KillDocker(string id){
     bool found=false;
-    for(int i=0; i< containerSet.size() and found==false;++i)
+    for(unsigned int i=0; i< containerSet.size() and found==false;++i)
     {
         if (containerSet.at(i)->id==id)
         {
@@ -117,11 +123,29 @@ void DockerDaemon::freeContainerResources(string id)
 
 void DockerDaemon::pauseDockerContainer (string id)
     {
+    cout <<"DockerDaemon::PauseDockerContainer " <<endl;
+    DockerContainer *dc;
+    dc=getDockerById(id);
+ if (dc==NULL) {
+     throw cRuntimeError("DockerDaemon::can not found this container in this vm...\n");
+ }else {
+
+   double mem =  dc->getMemSize();
+   FreeMem(mem);
+ }
 
     }
 void DockerDaemon::unPauseDockerContainer (string id)
     {
+    cout <<"DockerDaemon::unPauseDockerContainer " <<endl;
+    DockerContainer *dc = getDockerById(id);
+     if (dc==NULL) {
+         throw cRuntimeError("DockerDaemon::can not found this container in this vm...\n");
+     }else {
 
+         double mem =  dc->getMemSize();
+         GetMem(mem);
+     }
     }
 void DockerDaemon::getDockerByName(string name)
     {
@@ -142,9 +166,28 @@ void DockerDaemon::getDockerByImage(string image)
     {
 
     }
-void DockerDaemon::getDockerById(string id)
+DockerContainer* DockerDaemon::getDockerById(string id)
     {
 
+    DockerContainer* dc ;
+
+    bool found=false;
+          for(unsigned int i=0; i< containerSet.size() and found==false;++i)
+             {
+
+                 if (containerSet.at(i)->getContainerId() ==id)
+                 {
+                     //FreeMem(containerSet.at(i)->size);
+                   //  containerSet.erase(containerSet.begin()+i);
+                     dc = containerSet.at(i);
+                     found=true;
+                 }
+             }
+if (found)
+    return dc;
+else{
+    return NULL;
+}
     }
 void DockerDaemon::connectNetwork(string id)
     {
