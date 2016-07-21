@@ -486,10 +486,10 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             //it tries to cast the pointer via dynamic_cast,
             //and if it fails it stops the simulation with an error message
             cModule* vmSet = getParentModule()->getSubmodule("vmSet");
-            vmImage = vmSet->getSubmodule("vmImage", 0);
+            vmImage = vmSet->getSubmodule("vmImage", j);
 
-            cModule* vmImage2 = getSubmodule("vmImage");
-
+            cModule* vmImage2 = getParentModule()->getSubmodule("vmSet")->getSubmodule("vmImage",j);
+            cout << "AbstractCloudManager::request_start_vm" <<vmImage2->par("memorySize_MB").longValue()<<endl;
             VM* vm2 = dynamic_cast<VM*>(vmImage2);
             // uvic add end
 
@@ -503,6 +503,8 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             elementType* el;
             el = new elementType();
             el->setMemorySize(vmImage->par("memorySize_MB").longValue() * 1024);
+
+            cout << "AbstractCloudManager::request_start_vM " << el->getMemorySize()<<endl;
             el->setType(vmImage->par("id").stringValue());
             el->setNumCores(vmImage->par("numCores"));
             el->setDiskSize(
@@ -863,6 +865,7 @@ VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
     vm = dynamic_cast<VM*>(cloneVm);
   //  cout << "AbstractCloudManager::create_VM---->before call init" <<endl;
     vm->callInitialize();
+   cout << "AbstractCloudManager::create_VM" << vm->getFreeMemory()<<endl;
  //   cout << "AbstractCloudManager::create_VM---->after call init" <<endl;
     return vm;
 }
@@ -1378,6 +1381,8 @@ if (req->get_is_freezed()==false)   // VM is ON
     {
         //pass req to vmRequestManager of the particular VM
    if (req->getVM(0) != NULL)  {
+       VM* v = req->getVM(0);
+       cout <<"AbstractCloudManager::request_start_docker_container" << v->getFreeMemory()<<endl;
         req->getVM(0)->vmreqmgr->userSendRequest(req);
         return false;
    }

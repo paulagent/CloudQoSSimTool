@@ -34,7 +34,7 @@ module VmOperatingSystemModule like IOperatingSystem
         string fsModuleType = default("Basic_FileSystem");				// File System module type
         string vmModuleType = default("VolumeManagerModule");		// Volume Manager module type
         string syscallManagerType = default("VMSyscallManager");
-        string cpuSchedulerType = default("CPU_Scheduler_RR");		// CPU Service type   
+        string cpuSchedulerType = default("CPU_Scheduler_FIFO");		// CPU Service type   
 
         @display("i=icons/OOSS;bgb=720,431");
     gates:
