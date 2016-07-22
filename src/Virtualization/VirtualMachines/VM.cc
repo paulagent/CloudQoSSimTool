@@ -22,7 +22,7 @@ VM::VM() {
 }
 
 VM::VM(elementType* el) {
-    //printf("hi from Vm construtor::VM() \n ");
+    printf("hi from Vm construtor::VM() \n ");
     // Define ..
     cModule* osMod;
     string vmTypeName;
@@ -40,18 +40,18 @@ VM::VM(elementType* el) {
 
    // printf("hi from Machine::con2 \n ");
 
-    type = new elementType();
+   // type = new elementType();
 
-    type->setDiskSize(el->getStorageSize());
+   // type->setDiskSize(el->getStorageSize());
 
-    type->setMemorySize(el->getMemorySize());
+   // type->setMemorySize(el->getMemorySize());
 
     // os->setFreeMemory (el->getMemorySize());
     // os->setFreeStorage (el->getStorageSize());
 
-    type->setNumCores(el->getNumCores());
-    type->setNumStorageDevices(el->getNumStorageDevices());
-    type->setType(el->getType());
+   // type->setNumCores(el->getNumCores());
+   // type->setNumStorageDevices(el->getNumStorageDevices());
+   // type->setType(el->getType());
     //  printf("hi from Machine::con3 \n ");
 
     //changeState(MACHINE_STATE_OFF);

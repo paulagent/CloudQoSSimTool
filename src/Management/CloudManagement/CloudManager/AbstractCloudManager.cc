@@ -456,6 +456,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
     RequestVM* attendedRequest;
 
     VM* vm = new VM();
+    VM* vm2;
     VM* vmNew;
     string uid;
 
@@ -488,9 +489,9 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             cModule* vmSet = getParentModule()->getSubmodule("vmSet");
             vmImage = vmSet->getSubmodule("vmImage", j);
 
-            cModule* vmImage2 = getParentModule()->getSubmodule("vmSet")->getSubmodule("vmImage",j);
-            cout << "AbstractCloudManager::request_start_vm" <<vmImage2->par("memorySize_MB").longValue()<<endl;
-            VM* vm2 = dynamic_cast<VM*>(vmImage2);
+            //cModule* vmImage2 = getParentModule()->getSubmodule("vmSet")->getSubmodule("vmImage",j);
+          //  cout << "AbstractCloudManager::request_start_vm" <<vmImage->par("memorySize_MB").longValue()<<endl;
+            //VM* vm2 = dynamic_cast<VM*>(vmImage2);
             // uvic add end
 
             // Create the request for scheduling selecting node method
@@ -504,7 +505,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             el = new elementType();
             el->setMemorySize(vmImage->par("memorySize_MB").longValue() * 1024);
 
-            cout << "AbstractCloudManager::request_start_vM " << el->getMemorySize()<<endl;
+
             el->setType(vmImage->par("id").stringValue());
             el->setNumCores(vmImage->par("numCores"));
             el->setDiskSize(
@@ -515,10 +516,11 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             reqSch->setForSingleRequest(el);
             reqA = check_and_cast<AbstractRequest*>(reqSch);
 
+
             //erase the rest of vms less the actual
 
             selectedNode = selectNode(reqA);
-           // cout << "AbstractCloudManager::request_start_vm----->" << selectedNode->getFullName()<< endl;
+          //  cout << "AbstractCloudManager::request_start_vm----->" << selectedNode->getFullName()<< endl;
             delete (reqSch);
 
             operation = req->getOperation();
@@ -544,7 +546,10 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 //         "MODULE[AbstractCloudManager::request_start_vm] select node %s\n",
                 //          selectedNode->getFullName());
                  // vm->initialize();
+                vm2 = new VM(el);
+               // vm2->callInitialize();
 
+                cout << "MODULE[AbstractCloudManager::request_start_vm] " << vm2->getFreeMemory()<<endl;
                 if (vm == NULL)
                     printf(
                             "MODULE[AbstractCloudManager: initial vm not successful");
@@ -565,9 +570,10 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 //        "MODULE[AbstractCloudManager::request_start_vm] -----> %s \n",
                 //        req->getSelectionType(0).c_str());
                 // uvic add change vm to vm2
+                cout <<"MODULE[AbstractCloudManager:before call create_VM" <<endl;
                 vmNew = create_VM(vm2, req->getSelectionType(0).c_str(),
                         nodeVL->getHypervisor());
-
+                cout <<"MODULE[AbstractCloudManager:after call create_VM" <<endl;
                 vmNew->setUid(req->getUid());
 
                 vmName << req->getSelectionType(0).c_str() << ":u"
@@ -819,7 +825,7 @@ void AbstractCloudManager::closeVMConnections(vector<AbstractNode*> nodes,
 
 VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
         cModule* parent) {
-
+    //cout << "AbstractCloudManager::create_VM" << vmImage->getFreeMemory()<<endl;
     //Define ...
 
     cModule *cloneVm;
@@ -865,7 +871,7 @@ VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
     vm = dynamic_cast<VM*>(cloneVm);
   //  cout << "AbstractCloudManager::create_VM---->before call init" <<endl;
     vm->callInitialize();
-   cout << "AbstractCloudManager::create_VM" << vm->getFreeMemory()<<endl;
+
  //   cout << "AbstractCloudManager::create_VM---->after call init" <<endl;
     return vm;
 }
