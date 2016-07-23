@@ -489,9 +489,9 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             cModule* vmSet = getParentModule()->getSubmodule("vmSet");
             vmImage = vmSet->getSubmodule("vmImage", j);
 
-            //cModule* vmImage2 = getParentModule()->getSubmodule("vmSet")->getSubmodule("vmImage",j);
+            cModule* vmImage2 = getSubmodule("vmImage");
           //  cout << "AbstractCloudManager::request_start_vm" <<vmImage->par("memorySize_MB").longValue()<<endl;
-            //VM* vm2 = dynamic_cast<VM*>(vmImage2);
+             vm2 = dynamic_cast<VM*>(vmImage2);
             // uvic add end
 
             // Create the request for scheduling selecting node method
@@ -504,12 +504,9 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             elementType* el;
             el = new elementType();
             el->setMemorySize(vmImage->par("memorySize_MB").longValue() * 1024);
-
-
             el->setType(vmImage->par("id").stringValue());
             el->setNumCores(vmImage->par("numCores"));
-            el->setDiskSize(
-                    vmImage->par("storageSize_GB").longValue() * 1024 * 1024);
+            el->setDiskSize(vmImage->par("storageSize_GB").longValue() * 1024 * 1024);
 
             //printf("\n el->getMemorySize----->%d", el->getMemorySize());
             //printf("\n el->getNumCores()---->%d", el->getNumCores());
@@ -546,10 +543,10 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 //         "MODULE[AbstractCloudManager::request_start_vm] select node %s\n",
                 //          selectedNode->getFullName());
                  // vm->initialize();
-                vm2 = new VM(el);
+              //  vm2 = new VM(el);
                // vm2->callInitialize();
 
-                cout << "MODULE[AbstractCloudManager::request_start_vm] " << vm2->getFreeMemory()<<endl;
+
                 if (vm == NULL)
                     printf(
                             "MODULE[AbstractCloudManager: initial vm not successful");
@@ -570,7 +567,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 //        "MODULE[AbstractCloudManager::request_start_vm] -----> %s \n",
                 //        req->getSelectionType(0).c_str());
                 // uvic add change vm to vm2
-                cout <<"MODULE[AbstractCloudManager:before call create_VM" <<endl;
+                cout <<"MODULE[AbstractCloudManager:before call create_VM" << (vm2 == NULL) <<endl;
                 vmNew = create_VM(vm2, req->getSelectionType(0).c_str(),
                         nodeVL->getHypervisor());
                 cout <<"MODULE[AbstractCloudManager:after call create_VM" <<endl;
@@ -840,27 +837,29 @@ VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
 
     // Here the kind of module is taken to create the module as image..
     vmPath << vmImage->getNedTypeName();
-    // printf(
-    //        "\n AbstractCloudManager::create_VM---->getNedTypeName from create vm ---->%s",
-    //        vmPath.str().c_str());
+     printf(
+            "\n AbstractCloudManager::create_VM---->getNedTypeName from create vm ---->%s \n",
+            vmPath.str().c_str());
 
     //create the vm module
     cModuleType *modVMType = cModuleType::get(vmPath.str().c_str());
 
     //I create the VM out of the module.
     cloneVm = modVMType->create(vmImage->getTypeName().c_str(), parent);
-
+cout << "AbstractCloudManager::create_VM vmImage->getTypeName().c_str()" <<vmImage->getTypeName().c_str() <<endl;
     //configure the main parameters
     numParameters = vmImage->getNumParams();
+    cout << "AbstractCloudManager::create_VM numParameters" <<numParameters <<endl;
     for (i = 0; i < numParameters; i++) {
+
         cloneVm->par(i) = vmImage->par(i);
     }
-    printf(
-            "MODULE[AbstractCloudManager::create_vm] before call getIndexForVM -----> %s \n",
-            vmName.c_str());
+
     int position = cfg->getIndexForVM(vmName.c_str());
     cloneVm->par("numCores") = cfg->getNumCores(position);
+    cout << "AbstractCloudManager::create_VM---->after call init " << cfg->getMemorySize(position)<<endl;
     cloneVm->par("memorySize_MB") = cfg->getMemorySize(position);
+    cout << "AbstractCloudManager::create_VM---->after call init " <<  cloneVm->par("memorySize_MB").doubleValue()<<endl;
     cloneVm->par("storageSize_GB") = cfg->getStorageSize(position);
 
     //finalize and build the module
@@ -869,10 +868,10 @@ VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
 
     VM* vm;
     vm = dynamic_cast<VM*>(cloneVm);
-  //  cout << "AbstractCloudManager::create_VM---->before call init" <<endl;
+    //cout << "AbstractCloudManager::create_VM----vm meme" << vm->getFreeMemory() <<endl;
     vm->callInitialize();
 
- //   cout << "AbstractCloudManager::create_VM---->after call init" <<endl;
+    cout << "AbstractCloudManager::create_VM---->vm->getFullName() " << vm->getFullName() <<endl;
     return vm;
 }
 
