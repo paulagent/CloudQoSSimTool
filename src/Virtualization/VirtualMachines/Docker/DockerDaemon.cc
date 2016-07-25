@@ -24,7 +24,7 @@ Define_Module(DockerDaemon);
 DockerDaemon::DockerDaemon() {
     // TODO Auto-generated constructor stu
     containerSet.clear();
-    cout << "DockerDaemon::DockerDaemon()"<<endl;
+    cout << "DockerDaemon::DockerDaemon()cont"<<endl;
 }
 void DockerDaemon::initialize(VM* vmp){
 vm =vmp;

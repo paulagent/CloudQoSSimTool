@@ -868,9 +868,11 @@ cout << "AbstractCloudManager::create_VM vmImage->getTypeName().c_str()" <<vmIma
 
     VM* vm;
     vm = dynamic_cast<VM*>(cloneVm);
-    //cout << "AbstractCloudManager::create_VM----vm meme" << vm->getFreeMemory() <<endl;
-    vm->callInitialize();
 
+    vm->callInitialize();
+    vm->setFreeMemory(cloneVm->par("memorySize_MB").doubleValue());
+    cout << "AbstractCloudManager::create_VM----vm meme" << vm->getFreeMemory() <<endl;
+    cout << "AbstractCloudManager::create_VM----vm cores" << vm->getNumCores() <<endl;
     cout << "AbstractCloudManager::create_VM---->vm->getFullName() " << vm->getFullName() <<endl;
     return vm;
 }
