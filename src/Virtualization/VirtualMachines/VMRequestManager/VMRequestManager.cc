@@ -67,8 +67,8 @@ cModule* dockerSet = getParentModule()->getSubmodule("dockerSet");
 
     //    cout << "VMRequestManager::initialize()" <<dockermem <<endl;
       //  id = dockerImage->par("id").stringValue();
-  //      cout << "VMRequestManager::initialize()--->dockermem " << dockermem
-   //             << endl;
+       cout << "VMRequestManager::initialize()--->dockermem " << dockermem
+               << endl;
         //   vmImage->par("storageSize_GB").doubleValue());
         // Parameters are correct so far
   //  }

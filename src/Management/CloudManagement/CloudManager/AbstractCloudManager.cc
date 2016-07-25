@@ -849,7 +849,7 @@ VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
 cout << "AbstractCloudManager::create_VM vmImage->getTypeName().c_str()" <<vmImage->getTypeName().c_str() <<endl;
     //configure the main parameters
     numParameters = vmImage->getNumParams();
-    cout << "AbstractCloudManager::create_VM numParameters" <<numParameters <<endl;
+
     for (i = 0; i < numParameters; i++) {
 
         cloneVm->par(i) = vmImage->par(i);
@@ -857,9 +857,9 @@ cout << "AbstractCloudManager::create_VM vmImage->getTypeName().c_str()" <<vmIma
 
     int position = cfg->getIndexForVM(vmName.c_str());
     cloneVm->par("numCores") = cfg->getNumCores(position);
-    cout << "AbstractCloudManager::create_VM---->after call init " << cfg->getMemorySize(position)<<endl;
+
     cloneVm->par("memorySize_MB") = cfg->getMemorySize(position);
-    cout << "AbstractCloudManager::create_VM---->after call init " <<  cloneVm->par("memorySize_MB").doubleValue()<<endl;
+
     cloneVm->par("storageSize_GB") = cfg->getStorageSize(position);
 
     //finalize and build the module
@@ -873,7 +873,7 @@ cout << "AbstractCloudManager::create_VM vmImage->getTypeName().c_str()" <<vmIma
     vm->setFreeMemory(cloneVm->par("memorySize_MB").doubleValue());
     cout << "AbstractCloudManager::create_VM----vm meme" << vm->getFreeMemory() <<endl;
     cout << "AbstractCloudManager::create_VM----vm cores" << vm->getNumCores() <<endl;
-    cout << "AbstractCloudManager::create_VM---->vm->getFullName() " << vm->getFullName() <<endl;
+
     return vm;
 }
 
