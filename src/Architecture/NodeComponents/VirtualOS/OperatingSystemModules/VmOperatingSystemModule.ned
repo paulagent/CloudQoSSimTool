@@ -115,7 +115,7 @@ module VmOperatingSystemModule like IOperatingSystem
         }
 
         dockerDaemon: DockerDaemon {
-            @display("p=312,155");
+            @display("p=230,87");
             gates:
                 fromDaemonNet;
                 toDaemonNet;
