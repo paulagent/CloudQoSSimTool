@@ -28,6 +28,8 @@ DockerDaemon::DockerDaemon() {
 }
 void DockerDaemon::initialize(VM* vmp){
 vm =vmp;
+
+
 }
 DockerDaemon::~DockerDaemon() {
     // TODO Auto-generated destructor stub

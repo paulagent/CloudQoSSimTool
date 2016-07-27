@@ -35,7 +35,7 @@ void AbstractCloudManager::initialize() {
     // Initialize the migration parameters
     dirtyingRate = par("dirtyingRate");
     migrationVector.clear();
-
+a = 42;
     initialVIP = par("virtualIPsBasis").stringValue();
 
     networkManagerMod = getParentModule()->getSubmodule("networkManager");
@@ -567,7 +567,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 //        "MODULE[AbstractCloudManager::request_start_vm] -----> %s \n",
                 //        req->getSelectionType(0).c_str());
                 // uvic add change vm to vm2
-                cout <<"MODULE[AbstractCloudManager:before call create_VM" << (vm2 == NULL) <<endl;
+                cout <<"MODULE[AbstractCloudManager:before call create_VM " << (vm2 != NULL) <<endl;
                 vmNew = create_VM(vm2, req->getSelectionType(0).c_str(),
                         nodeVL->getHypervisor());
                 cout <<"MODULE[AbstractCloudManager:after call create_VM" <<endl;
@@ -822,7 +822,7 @@ void AbstractCloudManager::closeVMConnections(vector<AbstractNode*> nodes,
 
 VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
         cModule* parent) {
-    //cout << "AbstractCloudManager::create_VM" << vmImage->getFreeMemory()<<endl;
+    cout << "AbstractCloudManager::create_VM a-->   " << a<<endl;
     //Define ...
 
     cModule *cloneVm;
@@ -1389,7 +1389,7 @@ if (req->get_is_freezed()==false)   // VM is ON
         //pass req to vmRequestManager of the particular VM
    if (req->getVM(0) != NULL)  {
        VM* v = req->getVM(0);
-       cout <<"AbstractCloudManager::request_start_docker_container" << v->getFreeMemory()<<endl;
+       cout <<"AbstractCloudManager::request_start_docker_container " << v->getFreeMemory()<<endl;
         req->getVM(0)->vmreqmgr->userSendRequest(req);
         return false;
    }
