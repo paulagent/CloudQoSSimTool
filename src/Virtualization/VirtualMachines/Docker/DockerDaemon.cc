@@ -74,13 +74,25 @@ void DockerDaemon::GetMem(double size)
 {
 double tmp = vm->getFreeMemory();
 
+cout << "DockerDaemon::GetMem---->free memory before:   " << vm->getFreeMemory();
+cout << "DockerDaemon::GetMem---->memory size:   " << size;
+
 vm->setFreeMemory(tmp-size);
+
+cout << "DockerDaemon::GetMem---->free memory after :   " << vm->getFreeMemory();
 }
+
 void DockerDaemon::FreeMem(double size)
+
 {
+    cout << "DockerDaemon::FreeMem---->free memory before:   " << vm->getFreeMemory();
+    cout << "DockerDaemon::FreeMem---->memory size:   " << size;
+
     double tmp = vm->getFreeMemory();
 
     vm->setFreeMemory(tmp+size);
+    cout << "DockerDaemon::FreeMem---->free memory after :   " << vm->getFreeMemory();
+
 }
 void DockerDaemon::processSelfMessage (cMessage *msg){
 

@@ -484,11 +484,11 @@ bool VMRequestManager::request_start_docker_container(RequestVM* req_vm) {
 
 
 int cores = vm->getNumCores();
-cout << "VMRequestManager::request_start_docker_container getNumCores" <<cores <<endl;
+cout << "VMRequestManager::request_start_docker_container getNumCores--->" <<cores <<endl;
 
-    cout << "VMRequestManager::request_start_docker_container ip" <<ip <<endl;
-    cout << "VMRequestManager::request_start_docker_container vm->getFreeMemory " <<freem <<endl;
-    cout << "VMRequestManager::request_start_docker_container dockermem" <<dockermem <<endl;
+    cout << "VMRequestManager::request_start_docker_container ip--->" <<ip <<endl;
+    cout << "VMRequestManager::request_start_docker_container vm->getFreeMemory --->" <<freem <<endl;
+    cout << "VMRequestManager::request_start_docker_container dockermem--->" <<dockermem <<endl;
     vm->dockerDaemon->initialize(vm);
     bool found = false;
     if (freem >= dockermem) {

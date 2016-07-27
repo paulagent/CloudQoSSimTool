@@ -31,7 +31,7 @@ void DockerContainer::initialize(string image, string name,string id,int siz, st
     fullName=fullName.append(":");
     this->fullname=fullName.append(id);
 
-    cout << "image:" << image << "----name:"<<name <<"-----id:"<<id<<"------createdTime:"<<createdTime<<endl;
+    cout << "DockerContainer::initialize---->image:" << image << "----name:"<<name <<"-----id:"<<id<<"------createdTime:"<<createdTime<<endl;
 }
 void DockerContainer::handleMessage(cMessage* msg){
     throw cRuntimeError ("VmImage::handleMessage->this module does not receive messages\n");
