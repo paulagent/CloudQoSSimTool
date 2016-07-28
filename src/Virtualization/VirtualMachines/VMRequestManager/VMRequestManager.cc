@@ -49,7 +49,7 @@ cout<< "VMRequestManager::initialize() testnumber  " << testnumber <<endl;
 //       networkManagerMod = getParentModule()->getSubmodule("networkManager");
 //       networkManager = check_and_cast<NetworkManager*>(networkManagerMod);
 
-cModule* dockerSet = getParentModule()->getSubmodule("dockerSet");
+cModule* dockerSet =getParentModule()->getSubmodule("dockerSet");
        if (dockerSet == NULL)
            throw cRuntimeError(
                     "VMRequestManager::initialize() dup-> Error during initialization. There is no dockerSet\n");
@@ -69,7 +69,7 @@ cModule* dockerSet = getParentModule()->getSubmodule("dockerSet");
       //  id = dockerImage->par("id").stringValue();
 
 
-       dockermem = 128;
+
        cout << "VMRequestManager::initialize()--->dockermem " << dockermem
                     << endl;
         //   vmImage->par("storageSize_GB").doubleValue());

@@ -52,9 +52,6 @@ module BasicVM extends VM like IVM
         }
 
 
-        vmRequestManager: VMRequestManager {
-            @display("p=298,123");
-        }
     //
     //        dockerDaemon: DockerDaemon {
     //            @display("p=289,99");

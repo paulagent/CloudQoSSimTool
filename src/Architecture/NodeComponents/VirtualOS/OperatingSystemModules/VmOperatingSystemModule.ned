@@ -106,7 +106,7 @@ module VmOperatingSystemModule like IOperatingSystem
 
         vmMsgController: VmMsgController {
             parameters:
-                @display("p=624,125");
+                @display("p=513,131");
             gates:
                 fromOSApps[];
                 toOSApps[];
@@ -119,6 +119,9 @@ module VmOperatingSystemModule like IOperatingSystem
             gates:
                 fromDaemonNet;
                 toDaemonNet;
+        }
+        vmRequestManager: VMRequestManager {
+            @display("p=446,206");
         }
     connections allowunconnected:
 
