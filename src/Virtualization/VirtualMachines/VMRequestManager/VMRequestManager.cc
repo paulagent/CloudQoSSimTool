@@ -480,29 +480,23 @@ bool VMRequestManager::request_unfreez_container(RequestVM* req_vm){
 bool VMRequestManager::request_start_docker_container(RequestVM* req_vm) {
     VM* vm;
 
-
-
-
-
+    DockerContainer* dc ;
     vm = req_vm->getVM(0);
     cout << " VMRequestManager::request_start_docker_container---->vm->getFullName-------->"
             << vm->getFullName() << endl;
     RunningContainer* started_Container = new RunningContainer();
    // double freem = vm->getFreeMemory();
-    string ip = vm->getIP();
 
 
-int cores = vm->getNumCores();
-cout << "VMRequestManager::request_start_docker_container getNumCores--->" <<cores <<endl;
 
 
     vm->dockerDaemon->initialize(vm);
     bool found = false;
-    if (rContainer.size() < vm->getNumCores()) {
+    if ( rContainer.size() <  vm->getNumCores()) {
 
         //vm->setFreeMemory(freem - dockermem);
     cout << "VMRequestManager::request_start_docker_container inside if "  <<endl;
-        vm->dockerDaemon->startDockerContainer(id, vm->getFullName());
+      dc=  vm->dockerDaemon->startDockerContainer(id, vm->getFullName());
         found =true;
     } else {
 
@@ -513,7 +507,7 @@ if(found) {
     started_Container->start_time = now;
     started_Container->end_time = now + 200000; //clocks per secs   this should be change to parameter defined in ini file, so customer can change at anytime, not hardcode.
     started_Container->vmID = vm->getFullName();
-    started_Container->containerID = vm->getFullName() + 1;//to fix this how to get container id
+    started_Container->containerID = vm->dockerDaemon->getContianerId(dc) ;//to fix this how to get container id
     rContainer.push_back(started_Container);
     cout
                << "VMRequestManager::request_start_docker_container------------------> Container has started"

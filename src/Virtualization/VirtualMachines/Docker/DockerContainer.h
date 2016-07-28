@@ -46,14 +46,15 @@ public:
 
     // Returns the unique identifier given by omnet to this module
       string getContainerId(){
-               int a = this->getId();
 
-           string id;          // string which will contain the result
+           //    int a = this->getId();
 
-                     ostringstream convert;   // stream used for the conversion
+          // string id;          // string which will contain the result
 
-                     convert << a;      // insert the textual representation of 'Number' in the characters in the stream
-                     id = convert.str();
+                   //  ostringstream convert;   // stream used for the conversion
+
+                   // convert << a;      // insert the textual representation of 'Number' in the characters in the stream
+                   ///  id = convert.str();
                      return id;};
 
       double getMemSize() {return size;};

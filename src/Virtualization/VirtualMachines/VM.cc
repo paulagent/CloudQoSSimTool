@@ -153,6 +153,7 @@ void VM::setManager(icancloud_Base* manager) {
 }
 void VM::sleep(string containerID){
     //call pause container function
+    cout << "VM::sleep containerID    " << containerID <<endl;
    dockerDaemon-> pauseDockerContainer(containerID);
 
 

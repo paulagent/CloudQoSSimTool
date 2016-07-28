@@ -45,7 +45,7 @@ public:
     void initialize(VM* vm);
     ~DockerDaemon();
     vector<DockerContainer *> containerSet;
-    void startDockerContainer(string image,string VMfullName);
+    DockerContainer* startDockerContainer(string image,string VMfullName);
 
     /**
            * Process a self message.
@@ -75,6 +75,7 @@ public:
     void getDockerByName(string name);
     void getDockerByImage(string image);
     DockerContainer* getDockerById(string id);
+    string getContianerId(DockerContainer * dc);
     void connectNetwork(string id);
     void disconnectNetwork(string id);
 

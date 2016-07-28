@@ -36,16 +36,16 @@ DockerDaemon::~DockerDaemon() {
     containerSet.clear();
 
 }
-void DockerDaemon::startDockerContainer(string image,string VMfullName)
+DockerContainer* DockerDaemon::startDockerContainer(string image,string VMfullName)
 {
-    cout<< "DockerDaemon::RunDocker" <<endl;
+    cout<< "DockerDaemon::startDockercontainer" <<endl;
     DockerContainer* dockerContainer;
     dockerContainer=new DockerContainer();
     string id,name;
     stringstream ss;
     int size;
     size=128; //MB
-    cout<< "DockerDaemon::RunDocker" <<endl;
+
 
     if (containerSet.empty())
     {
@@ -67,10 +67,10 @@ void DockerDaemon::startDockerContainer(string image,string VMfullName)
     name="docker";
     cout<< "docker name--------->"<<name<<endl;
 
-    dockerContainer->initialize( image,  name,  id, size,VMfullName);
+    dockerContainer->initialize( image,  name,  id, size, VMfullName);
     containerSet.push_back(dockerContainer);
     GetMem(size);
-
+ return dockerContainer;
 }
 void DockerDaemon::GetMem(double size)
 {
@@ -184,15 +184,16 @@ DockerContainer* DockerDaemon::getDockerById(string id)
     {
 
     DockerContainer* dc ;
-
+cout << "DockerDaemon::getDockerById containerSet size " <<containerSet.size() <<endl;
+cout << "DockerDaemon::getDockerById id " << id <<endl;
     bool found=false;
           for(unsigned int i=0; i< containerSet.size() and found==false;++i)
              {
-
+cout << "DockerDaemon::getDockerById" << containerSet.at(i)->getContainerId() <<endl;
                  if (containerSet.at(i)->getContainerId() ==id)
                  {
                      //FreeMem(containerSet.at(i)->size);
-                   //  containerSet.erase(containerSet.begin()+i);
+                     containerSet.erase(containerSet.begin()+i);
                      dc = containerSet.at(i);
                      found=true;
                  }
@@ -212,3 +213,7 @@ void DockerDaemon::disconnectNetwork(string id)
 
     }
 
+string DockerDaemon::getContianerId(DockerContainer * dc){
+
+     return dc->id;
+}
