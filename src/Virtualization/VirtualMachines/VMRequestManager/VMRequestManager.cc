@@ -35,34 +35,35 @@ VMRequestManager::~VMRequestManager() {
 }
 
 void VMRequestManager::initialize() {
-    //  printf("\n Method[RequestsManagement::initialize]: ------->initialize \n");
+
     schedulerQueueBlocked = false;
     requestsQueue.clear();
     temporalRequestsQueue.clear();
     executingRequests.clear();
     //   icancloud_Base::initialize();
-testnumber =42;
-cout<< "VMRequestManager::initialize() testnumber  " << testnumber <<endl;
+
+cout<< "VMRequestManager::initialize() testnumber  "  <<endl;
 //       cModule* networkManagerMod;
 //
 //
 //       networkManagerMod = getParentModule()->getSubmodule("networkManager");
 //       networkManager = check_and_cast<NetworkManager*>(networkManagerMod);
 
-cModule* dockerSet =getParentModule()->getSubmodule("dockerSet");
-       if (dockerSet == NULL)
-           throw cRuntimeError(
-                    "VMRequestManager::initialize() dup-> Error during initialization. There is no dockerSet\n");
+//cModule* dockerSet =getParentModule()->getSubmodule("dockerSet");
 
-     int dockerSetSize = dockerSet->par("dockerImageQuantity").longValue();
-     for (int i = 0; i < dockerSetSize; i++) {
-         cModule* dockerImage = dockerSet->getSubmodule("dockerImage", i);
+    //   if (dockerSet == NULL)
+    //       throw cRuntimeError(
+     //               "VMRequestManager::initialize() dup-> Error during initialization. There is no dockerSet\n");
+//
+   //  int dockerSetSize = dockerSet->par("dockerImageQuantity").longValue();
+   //  for (int i = 0; i < dockerSetSize; i++) {
+  //       cModule* dockerImage = dockerSet->getSubmodule("dockerImage", i);
 
          // cfg->setVMType(vmImage->par("id").stringValue(),
          //         vmImage->par("numCores"),
-         dockermem = dockerImage->par("memorySize_MB").doubleValue();
+      //   dockermem = dockerImage->par("memorySize_MB").doubleValue();
 
-     }
+   //  }
    // cModule* Image2 = getSubmodule("vmImage");
 
     //    cout << "VMRequestManager::initialize()" <<dockermem <<endl;
@@ -70,8 +71,8 @@ cModule* dockerSet =getParentModule()->getSubmodule("dockerSet");
 
 
 
-       cout << "VMRequestManager::initialize()--->dockermem " << dockermem
-                    << endl;
+     //  cout << "VMRequestManager::initialize()--->dockermem " << dockermem
+     //               << endl;
         //   vmImage->par("storageSize_GB").doubleValue());
         // Parameters are correct so far
   //  }
@@ -426,7 +427,7 @@ void VMRequestManager::schedule() {
                     printf(
                             "\n Method[VMRequestManager::schedule()]: -------> REQUEST_START_DOCKER_CONTAINER\n");
                     notEnoughResources = request_start_docker_container(req_vm);
-                    testnumber =43;
+
                     if (!notEnoughResources) {
                         eraseRequest(req);
                         requestErased = true;
@@ -469,8 +470,8 @@ bool VMRequestManager::request_unfreez_container(RequestVM* req_vm){
         vm = req_vm->getVM(0);
         id = req_vm->getContainerID();
         vm->wakeup(id);
-        double freem = vm->getFreeMemory();
-        vm->setFreeMemory(freem + dockermem);
+       // double freem = vm->getFreeMemory();
+        //vm->setFreeMemory(freem + dockermem);
         return false;
 }
 
@@ -478,17 +479,16 @@ bool VMRequestManager::request_unfreez_container(RequestVM* req_vm){
 
 bool VMRequestManager::request_start_docker_container(RequestVM* req_vm) {
     VM* vm;
-    cout << "VMRequestManager::start_docker()--->dockermem " << dockermem
-                  << endl;
 
-    cout << "VMRequestManager::start_docker()--->test " << testnumber << endl;
+
+
 
 
     vm = req_vm->getVM(0);
     cout << " VMRequestManager::request_start_docker_container---->vm->getFullName-------->"
             << vm->getFullName() << endl;
     RunningContainer* started_Container = new RunningContainer();
-    double freem = vm->getFreeMemory();
+   // double freem = vm->getFreeMemory();
     string ip = vm->getIP();
 
 
@@ -498,10 +498,10 @@ cout << "VMRequestManager::request_start_docker_container getNumCores--->" <<cor
 
     vm->dockerDaemon->initialize(vm);
     bool found = false;
-    if (freem >= dockermem) {
+    if (rContainer.size() < vm->getNumCores()) {
 
-        vm->setFreeMemory(freem - dockermem);
-    cout << "VMRequestManager::request_start_docker_container inside if " << vm->getFreeMemory() <<endl;
+        //vm->setFreeMemory(freem - dockermem);
+    cout << "VMRequestManager::request_start_docker_container inside if "  <<endl;
         vm->dockerDaemon->startDockerContainer(id, vm->getFullName());
         found =true;
     } else {

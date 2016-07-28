@@ -125,9 +125,9 @@ protected:
 
 public:
 
-         double  dockermem;
+
          string id;
-         int testnumber;
+
     ~VMRequestManager();
     /*
      * Module initialization
