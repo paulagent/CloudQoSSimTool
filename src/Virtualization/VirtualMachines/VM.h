@@ -52,9 +52,9 @@ protected:
 
 public:
      int userID;                        // User identification obtained from getId() from omnetpp.
-     bool is_freezed;
+     bool is_freezed;                     // flag to detect the VM is freeze or not
      DockerDaemon* dockerDaemon;
-     bool has_dockers;
+     bool has_dockers;                  // flag to indicate this vm run docker or not
      VM();
     VM( elementType* el);
     /*
@@ -112,9 +112,20 @@ public:
     /*
      * Setter for manager
      */
+
     void setManager(icancloud_Base* manager);
 
+    /*
+            * input: docker container id
+            * output None
+            * this function will make docker container process go to sleep and release all the resources.
+            */
     void sleep(string containerID);
+    /*
+           * input : docker container id
+           * output : None
+           * this function will restart previous sleep container
+           */
     void wakeup(string containerID);
 
 };
