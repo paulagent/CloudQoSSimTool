@@ -64,18 +64,69 @@ public:
                  */
   void processResponseMessage (icancloud_Message *sm);
 
-
+  /**
+                 * Process a response message.
+                 * @param sm Request message.
+                 */
     void GetMem(double size);
+    /**
+                   * Process a response message.
+                   * @param sm Request message.
+                   */
     void FreeMem(double size);
+    /**
+                   * Process a response message.
+                   * @param sm Request message.
+                   */
     void KillDocker(string id);
+    /**
+                   * Process a response message.
+                   * @param sm Request message.
+                   */
     void freeContainerResources(string id);
+    /**
+                   * Process a response message.
+                   * @param sm Request message.
+                   */
     void stopDockerContainer (string id);
+    /**
+                   * pause container by given id
+                   * @param id container id
+                   * output : none
+                   */
     void pauseDockerContainer (string id);
+    /**
+                   * Process a response message.
+                   * @param sm Request message.
+                   */
     void unPauseDockerContainer (string id);
+    /**
+                   * Process a response message.
+                   * @param sm Request message.
+                   */
     void getDockerByName(string name);
+    /**
+                   * Process a response messa
+                   * @param image name
+                   */
     void getDockerByImage(string image);
+    /**
+                   * Given a dockercontainer id and return docker container instance
+                   * @param id docker container id.
+                   * output : return dockercontainer instance
+                   */
     DockerContainer* getDockerById(string id);
+    /**
+                   * Given a docker container and return this container's id
+                   * @param dc instance of dockercontainer
+                   * output : container ID
+                   *
+                   */
     string getContianerId(DockerContainer * dc);
+
+
+
+
     void connectNetwork(string id);
     void disconnectNetwork(string id);
 

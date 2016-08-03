@@ -11,7 +11,9 @@
 //
 // @author Gabriel Gonz&aacute;lez Casta&ntilde;&eacute
 // @date 2012-10-23
-//
+// @author Bing, Zahra
+// update VM to support docker container technology
+// @date 2016-08-02
 
 #ifndef VM_H_
 #define VM_H_

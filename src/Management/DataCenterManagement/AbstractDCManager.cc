@@ -594,7 +594,7 @@ void AbstractDCManager::finalizeDCManager(){
 }
 
 void AbstractDCManager::initScheduler(){
-    //printf("\n Method[Abstract DC manager]: ------->initScheduler \n");
+    printf("\n Method[Abstract DC manager]: ------->initScheduler \n");
     setupScheduler();
     schedule();
     if (!smAlarm->isScheduled()) scheduleAt(simTime()+timeBetweenScheduleEvents_s, smAlarm);
