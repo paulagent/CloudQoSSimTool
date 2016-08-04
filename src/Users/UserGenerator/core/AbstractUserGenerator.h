@@ -45,9 +45,15 @@ protected:
             string vmtype;                          //Type VM (TypeVMID)
             int quantity;                           //Quantity
         };
+        vector <vmSelection*> vmSelect;
+        // vm selected by user
+        struct dockerSelection{
+            string dockertype;                          //Type VM (TypeVMID)
+            int quantity;                           //Quantity
+        };
 
-        // Structure of vms of a user
-            vector <vmSelection*> vmSelect;         // VMMAP
+        // Structure of docker container of a user
+            vector <dockerSelection*> dockerSelect;
 //
         // vm selected by user
         struct jobSelection{
@@ -58,6 +64,17 @@ protected:
 
         // Structures of jobs of user
             vector <jobSelection*> userJobSet;
+
+            // vm selected by user
+               struct containerSelection{
+                   string appName;                         // Application Name
+                   UserJob* job;                          // Job definition
+                   int replicas;                           // Quantity
+               };
+
+               // Structures of jobs of user
+                   vector <containerSelection*> userContainerSet;
+
 
 	// To create the remote servers
 		string remoteFileSystemType;
@@ -114,6 +131,13 @@ protected:
     * allowToExecute = false means that the execution has finished the time and it is forced to finish
     */
     void finalizeUserGenerator(bool allowToExecute);
+
+
+    /*
+       * This function will create user based on configuration. Then it will assign jobs to this user. the job number(number of
+       * request) will attract from INI file (already add to userJobSet vector).
+       *
+       */
 
 	void createUser ();
 

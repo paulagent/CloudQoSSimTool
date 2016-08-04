@@ -53,9 +53,8 @@ public:
     int size;
     int status;  // running 1 / exited 0
 
-    // Returns the unique identifier given by omnet to this module
     /*
-     * Finalization of the module
+     * Returns the unique identifier given by omnet to this module
      */
     string getContainerId() {
 

@@ -35,7 +35,6 @@ void AbstractCloudManager::initialize() {
     // Initialize the migration parameters
     dirtyingRate = par("dirtyingRate");
     migrationVector.clear();
-a = 42;
     initialVIP = par("virtualIPsBasis").stringValue();
 
     networkManagerMod = getParentModule()->getSubmodule("networkManager");
@@ -603,9 +602,9 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 started_VM->hostNodeVL=nodeVL;
 
                 runVM.push_back(started_VM);
+               /* cout<< "---------------------------------------------------------------------------------------------------------"<< endl;
                 cout<< "---------------------------------------------------------------------------------------------------------"<< endl;
-                cout<< "---------------------------------------------------------------------------------------------------------"<< endl;
-
+// this part should removed  and generate docker container request should be done in
                 cout << "Send req to start docker  from start new vm to the end of the queue" << endl;
                 RequestVM* rqvm = new RequestVM();
                 vector<VM*> vm1;
@@ -619,7 +618,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 AbstractRequest* new_req;
                 new_req = dynamic_cast<AbstractRequest*>(rqvm);
                 new_req->setOperation(REQUEST_START_DOCKER_CONTAINER);
-                RequestsManagement::userSendRequest(new_req);
+                RequestsManagement::userSendRequest(new_req);*/
                 // If the linked is incorrect,
                 req->decreaseSelectionQuantity(i);
                 attendedRequest_vms.insert(attendedRequest_vms.end(), vmNew);
@@ -822,7 +821,7 @@ void AbstractCloudManager::closeVMConnections(vector<AbstractNode*> nodes,
 
 VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
         cModule* parent) {
-    cout << "AbstractCloudManager::create_VM a-->   " << a<<endl;
+
     //Define ...
 
     cModule *cloneVm;

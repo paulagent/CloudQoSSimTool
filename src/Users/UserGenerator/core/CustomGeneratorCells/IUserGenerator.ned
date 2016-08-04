@@ -17,6 +17,7 @@ moduleinterface IUserGenerator
         int repetitions; 										// # Repetitions of the behavior. -1 infinite.        
         string remoteServers;           						// The name of the remote servers that user will choose
         int vmsToRentTypesQuantity;								// the quantity of different vms that are selected by user	
+        int containersToRentTypesQuantity;		
         double time_creation;									// The amount of time that this module will continue creating tenants.
         bool printResults;										// Flag to print results to a file.
 }

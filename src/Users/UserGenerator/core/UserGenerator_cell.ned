@@ -12,6 +12,7 @@
 
 package icancloud.src.Users.UserGenerator.core;
 
+import icancloud.src.Users.UserGenerator.DockerDefinition.DockerDefinition;
 import icancloud.src.Users.UserGenerator.VmDefinition.VmDefinition;
 import icancloud.src.Users.UserGenerator.DistributionDefinition.DistributionDefinition;
 import icancloud.src.Users.UserGenerator.AppDefinition.AppDefinition;
@@ -30,7 +31,7 @@ module UserGenerator_cell
         string remoteServers = default("LOCAL");
 
         int vmsToRentTypesQuantity;
-
+		int containersToRentTypesQuantity;
         bool printResults = default(true);
 
         string cell_type;
@@ -65,9 +66,15 @@ module UserGenerator_cell
                 time_creation = time_creation;									// Time creation in hours of users in the system in hours
                 remoteServers = remoteServers;
                 vmsToRentTypesQuantity = vmsToRentTypesQuantity;
+                containersToRentTypesQuantity = containersToRentTypesQuantity;
                 printResults = printResults;
                 repetitions = repetitions;
                 @display("p=226,171;is=vl");
         }
 
+      //  dockerDefinition: DockerDefinition {
+     //       
+      //     containersToRentTypesQuantity= containersToRentTypesQuantity;
+     //       @display("p=138,128");
+     //   }
 }
