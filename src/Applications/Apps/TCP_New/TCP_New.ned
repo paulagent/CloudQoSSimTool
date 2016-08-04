@@ -20,7 +20,14 @@ import icancloud.src.Applications.Apps.IAPP;
 simple TCP_New like IAPP
 {
     parameters:
+        string application_netType = default ("INET");
         string localIP;
+        double startDelay;									// Starting delay time!        
+        int inputSize;										// Input size of data
+        int outputSize;										// Output size of data
+        int MIs;											// Number of MIs to execute
+        int iterations = default (0);						// Number of iterations
+        @display("i=msg/job");
         
         gates:
         input fromNetManager @loose;	

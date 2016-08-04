@@ -6,6 +6,10 @@
  */
 
 #include "TCP_New.h"
+#define INPUT_FILE "/input.dat"
+#define OUTPUT_FILE "/output.dat"
+#define MAX_FILE_SIZE 2000000000
+
 Define_Module(TCP_New);
 
 TCP_New::TCP_New(){
@@ -32,6 +36,8 @@ TCP_New::~TCP_New(){
 }
 
 void TCP_New::initialize(){
+
+    //cSimpleModule::initialize();
     startDelay = par ("startDelay");
     inputSizeMB  = par ("inputSize");
     outputSizeMB  = par ("outputSize");
@@ -43,26 +49,87 @@ void TCP_New::initialize(){
     total_service_CPU =0.0;
     startServiceCPU = 0.0;
     endServiceCPU = 0.0;
+
+    total_service_IO = 0.0;
+    startServiceIO = 0.0;
+    endServiceIO = 0.0;
+
+    executeCPU = executeRead = executeWrite = false;
+
+
 }
 
 void TCP_New::finish(){
 
+    //cSimpleModule::finish();
 }
 
-void TCP_New::startExecution(){
+void TCP_New::startExecution(UserJob *job){
+UserJob *jobaux;
 
+jobaux = dynamic_cast<UserJob*>(job);
+jobaux->setJob_startTime();
+jobaux->startExecution();
+
+cMessage *waitToExecuteMsg = new cMessage(SM_WAIT_TO_EXECUTE.c_str());
+
+scheduleAt(simTime()+startDelay, waitToExecuteMsg);
 }
 
 void TCP_New::processSelfMessage(cMessage *msg){
 
+    if (!strcmp (msg->getName(), SM_WAIT_TO_EXECUTE.c_str())){
+
+        simStartTime = simTime();
+        runStartTime = time (NULL);
+
+        startServiceIO = simTime();
+
+        executeIOrequest (false, true);
+    }
+    else {
+       showErrorMessage ("Unknown self message [%s]", msg->getName());
+
+    }
+            delete (msg);
 }
 
-void TCP_New::processRequestMessage(icancloud_App_NET_Message *sm_net){
+void TCP_New::processRequestMessage(icancloud_Message *sm){
 
 }
 
-void TCP_New::processResponseMessage(icancloud_App_NET_Message *sm_net){
+void TCP_New::processResponseMessage(icancloud_Message *sm){
 
+}
+
+void TCP_New::executeIOrequest(bool executeRead, bool executeWrite){
+    startServiceIO = simTime();
+
+        // Executes I/O operation
+        if (executeRead){
+
+            if ((readOffset+(inputSizeMB*MB))>=MAX_FILE_SIZE)
+                readOffset = 0;
+
+            if (DEBUG_Application)
+                showDebugMessage ("[%d/%d] Executing (Read) Offset:%d; dataSize:%d", currentIteration, iterations, readOffset,  inputSizeMB*MB);
+
+            icancloud_request_read (INPUT_FILE, readOffset, inputSizeMB*MB);
+            readOffset += (inputSizeMB*MB);
+
+
+        }
+        else{
+
+            if ((writeOffset+(outputSizeMB*MB))>=MAX_FILE_SIZE)
+                writeOffset = 0;
+
+            if (DEBUG_Application)
+                showDebugMessage ("[%d/%d] Executing (Write) Offset:%d; dataSize:%d", currentIteration, iterations, writeOffset,  outputSizeMB*MB);
+
+            icancloud_request_write (OUTPUT_FILE, writeOffset, outputSizeMB*MB);
+            writeOffset += (outputSizeMB*MB);
+        }
 }
 
 void TCP_New::createConnection(icancloud_Message *sm){
@@ -299,31 +366,7 @@ void TCP_New::sendPacketToClient(icancloud_Message *sm){
 
 
 
-void TCP_New::socketEstablished(int connId, void *ptr){
 
-}
-
-void TCP_New::socketDataArrived(int connId, void *ptr, cPacket *msg, bool urgent){
-
-}
-
-
-void TCP_New::socketPeerClosed(int, void *){
-    if (DEBUG_TCP_Service_Client)
-        networkService->showDebugMessage ("Socket Peer closed");
-}
-
-
-void TCP_New::socketClosed(int connId, void *ptr){
-    if (DEBUG_TCP_Service_Client)
-        networkService->showDebugMessage ("Socket closed");
-}
-
-
-void TCP_New::socketFailure(int connId, void *ptr, int code){
-    if (DEBUG_TCP_Service_Client)
-        networkService->showDebugMessage ("Socket Failure");
-}
 
 
 

@@ -16,12 +16,17 @@
 #include "icancloud_Message.h"
 #include "INETDefs.h"
 #include "icancloud_App_NET_Message.h"
+#include "jobBase.h"
+#include "UserJob.h"
+#include "API_OS.h"
+#include "icancloud_Base.h"
+#include "icancloud_debug.h"
 
 class NetworkService;
 
 class UserJob;
 
-class TCP_New : public TCPSocket::CallbackInterface, public cSimpleModule{
+class TCP_New : public TCPSocket::CallbackInterface,public API_OS{
 
     struct icancloud_TCP_Client_Connector{
             TCPSocket *socket;
@@ -57,7 +62,7 @@ protected:
 
         cGate* outGate_icancloudAPI;
 
-        simtime_t simStartTime;
+                simtime_t simStartTime;
                 simtime_t simEndTime;
                 time_t runStartTime;
                 time_t runEndTime;
@@ -65,6 +70,10 @@ protected:
                 simtime_t startServiceCPU;
                 simtime_t endServiceCPU;
                 simtime_t total_service_CPU;
+
+                simtime_t startServiceIO;
+                simtime_t endServiceIO;
+                simtime_t total_service_IO;
 
                 simsignal_t processingTime;
                 simtime_t departureTime;
@@ -88,18 +97,42 @@ protected:
                     /** Starting time delay */
                     unsigned int startDelay;
 
-        virtual void initialize();
+                    /** Execute CPU */
+                     bool executeCPU;
 
-        virtual void finish();
+                    /** Execute read operation */
+                     bool executeRead;
 
-        virtual void startExecution();
+                    /** Execute write operation */
+                     bool executeWrite;
+
+                     int readOffset;
+
+                     int writeOffset;
+
+         void initialize();
+
+         void finish();
+         void handleMessage (cMessage *msg){}
+
+         void startExecution(UserJob *job);
+         void sendRequestMessage (icancloud_Message *sm, cGate* gate){}
+         void sendResponseMessage (icancloud_Message *sm){}
+         bool isPendingRequest (){}
+         void processCurrentRequestMessage (){}
+         cGate* getOutGate (cMessage *msg);
+
 
         void processSelfMessage(cMessage *msg);
 
-        void processRequestMessage(icancloud_App_NET_Message *sm_net);
+        void processRequestMessage(icancloud_Message *sm);
 
-        void processResponseMessage(icancloud_App_NET_Message *sm_net);
+        void processResponseMessage(icancloud_Message *sm);
 
+private:
+        void executeIOrequest(bool executeRead, bool executeWrtie);
+
+        void executeCPUrequest();
 
 
 public:
@@ -136,12 +169,12 @@ public:
 
 protected:
 
-        virtual void socketEstablished(int connId, void *yourPtr);
-        virtual void socketDataArrived(int connId, void *yourPtr, cPacket *msg, bool urgent);
-        virtual void socketPeerClosed(int connId, void *yourPtr);
-        virtual void socketClosed(int connId, void *yourPtr);
-        virtual void socketFailure(int connId, void *yourPtr, int code);
-        //virtual void socketStatusArrived(int connId, void *yourPtr, TCPStatusInfo *status) {delete status;}
+         void socketEstablished(int connId, void *yourPtr){}
+        void socketDataArrived(int connId, void *yourPtr, cPacket *msg, bool urgent){}
+         void socketPeerClosed(int connId, void *yourPtr){}
+         void socketClosed(int connId, void *yourPtr){}
+         void socketFailure(int connId, void *yourPtr, int code){}
+         void socketStatusArrived(int connId, void *yourPtr, TCPStatusInfo *status) {delete status;}
 };
 
 
