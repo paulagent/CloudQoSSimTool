@@ -26,7 +26,7 @@ simple UserGeneratorDay like IUserGenerator {
         string remoteServers = default("LOCAL");   
         
         int vmsToRentTypesQuantity;
-        
+       int  containersToRentTypesQuantity;
         bool printResults = default(true);
         @display("i=abstract/person");
 
