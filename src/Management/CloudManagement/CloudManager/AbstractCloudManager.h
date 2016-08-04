@@ -29,8 +29,7 @@ protected:
 
     // The dirtying rate in KB
     int dirtyingRate;
-    //test purpose will delete before publish
-int a ;
+
     struct MigrationStructure{
             AbstractNode* host;
             AbstractNode* target;
