@@ -5,6 +5,7 @@ package icancloud.src.Architecture.Aggregation;
 
 import icancloud.src.Architecture.Node.INode;
 import inet.nodes.ethernet.EtherSwitch;
+import icancloud.src.Architecture.Node.NodeVL.NodeVL;
 import ned.DatarateChannel;
 
 channel ethernet_bladeChannel extends DatarateChannel

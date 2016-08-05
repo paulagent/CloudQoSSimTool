@@ -50,7 +50,7 @@ void SmartUser::userInitialization(){
             AbstractRequest* vms;
 
 	    // Select the vms to start (all) and then send the request to the cloud manager.
-	        vms = selectVMs_ToStartUp ();
+	        vms = selectVMs_ToStartUp();
 
         // Start all vms
 	        if (vms != NULL){
@@ -132,7 +132,7 @@ void SmartUser::userFinalization (){
  * ------------------------ Interact with VMs -------------------------
  * --------------------------------------------------------------------
  */
-AbstractRequest* SmartUser::selectVMs_ToStartUp (){
+AbstractRequest* SmartUser::selectVMs_ToStartUp(){
 
     //Define...
         unsigned int i;

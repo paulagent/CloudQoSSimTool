@@ -30,7 +30,7 @@ AbstractDCManager::~AbstractDCManager() {
 }
 
 void AbstractDCManager::initialize(){
-
+cout <<"AbstractDCManager::initialize()" <<endl;
         // Define ..
             cMessage *msg;
             cModule* networkManagerMod;
@@ -170,7 +170,7 @@ void AbstractDCManager::processSelfMessage (cMessage *msg){
     // Begin ..
         if(!strcmp (msg->getName(), SM_APP_ALARM.c_str())){
                //printf("call schedule");
-           // cout << "AbstractDCManager::processSelfMessage before schedule()" << endl;
+            cout << "AbstractDCManager::processSelfMessage before schedule()" << endl;
             schedule();
           //  cout << "AbstractDCManager::processSelfMessage after schedule()" << endl;
             if ((checkFinalization()) && (!simulationPerTime)){
@@ -197,7 +197,7 @@ void AbstractDCManager::processSelfMessage (cMessage *msg){
         }
 
         else if (!strcmp (msg->getName(), SM_CALL_INITIALIZE.c_str())){
-
+            cout << "AbstractDCManager::SM_CALL_INITIALIZE" << endl;
             // Delete the incoming message
             cancelAndDelete(msg);
 
