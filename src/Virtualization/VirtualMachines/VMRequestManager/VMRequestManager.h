@@ -126,7 +126,7 @@ protected:
 public:
 
 
-         string id;
+     string id;  // container id
 
     ~VMRequestManager();
     /*
@@ -151,7 +151,7 @@ public:
      * request queue waiting until it will be processed.
      */
     void userSendRequest(AbstractRequest* request);
-    void scheduleRR(VM* vm);
+    bool scheduleRR(VM* vm);
 };
 
 #endif /* VMREQUESTMANAGER_H_ */
