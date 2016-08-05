@@ -74,6 +74,7 @@ DockerContainer* DockerDaemon::startDockerContainer(string image,string VMfullNa
 }
 void DockerDaemon::GetMem(double size)
 {
+    cout<< vm->getFullName()<<endl;
 double tmp = vm->getFreeMemory();
 
 cout << "DockerDaemon::GetMem---->free memory before:   " << vm->getFreeMemory();

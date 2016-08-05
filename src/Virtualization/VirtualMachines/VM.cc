@@ -87,6 +87,7 @@ cout <<"VM::initialize()" << endl;
     is_freezed=false;
     has_dockers=false;
    dockerDaemon=new DockerDaemon();
+   dockerDaemon->initialize(this);
 
 }
 
