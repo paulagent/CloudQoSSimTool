@@ -221,7 +221,7 @@ void H_CPUManager_Base::setVM (cGate** oGates, cGate** iGates, int numCores, int
     }
 
     // Connect to input gates
-
+    cout << "H_CPUManager_Base::setVM :---> end" <<endl;
     for (int i = 0; i < (int)numCores; i++){
         idxFromVM = fromVMCPU->newGate("fromVMCPU");
         fromVMCPU->connectIn(oGates[i],idxFromVM);

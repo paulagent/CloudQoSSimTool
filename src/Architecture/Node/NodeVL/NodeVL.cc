@@ -23,7 +23,7 @@ NodeVL::~NodeVL() {
 }
 
 void NodeVL::initialize(){
-
+    cout << "NodeVL::freeResources :initial " <<endl;
         instancedVMs.clear();
         Node::initialize();
 

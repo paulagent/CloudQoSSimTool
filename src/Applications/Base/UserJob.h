@@ -89,6 +89,10 @@ public:
          */
         void setMachine (Machine* m);
         Machine* getMachine (){return mPtr;};
+
+        void setContainerReq();
+
+
 };
 
 #endif /* UserJob_H_ */

@@ -119,12 +119,15 @@ void AbstractUserGenerator::initialize(){
 	    // Initialize ..
 		    vmSelection* vm;
 	        int vmsQuantity;
+	        int dockerQuantity;
 	        jobSelection* jobSel;
 	        int numApps;
 
 
 	        // Get vms configuration
 	            vmsQuantity = getParentModule()->getSubmodule("vmDefinition")->par("vmsToRentTypesQuantity").longValue();
+
+	         //   dockerQuantity = getParentModule()->getSubmodule("dockerDefinition")->par("containersToRentTypesQuantity").longValue();
 
 	            for (int i = 0; i < vmsQuantity; i++){
 	                vm = new vmSelection();
@@ -166,6 +169,8 @@ void AbstractUserGenerator::initialize(){
                         jobSel->job->setPreloadFile(pr);
 
                     }
+
+
                     userJobSet.push_back(jobSel);
                 }
 

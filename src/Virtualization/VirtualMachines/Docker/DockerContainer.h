@@ -8,7 +8,6 @@
 #ifndef DockerContainer_H_
 #define DockerContainer_H_
 
-
 #include <omnetpp.h>
 #include <errno.h>
 #include <assert.h>
@@ -29,13 +28,23 @@
 #include "Memoization_uthash.h"
 #include "Machine.h"
 
-
 //class DockerContainer : public Machine{
-class DockerContainer : public cSimpleModule{
+class DockerContainer: public cSimpleModule {
 public:
+    /*
+     * constructor of the module
+     */
     DockerContainer();
+    /*
+     * deconstructor of the module
+     */
     ~DockerContainer();
-    void initialize(string image, string name,string id, int siz, string fullName);
+
+    /*
+     * Finalization of the module
+     */
+    void initialize(string image, string name, string id, int siz,
+            string fullName);
     string id;
     string image;
     string name;
@@ -44,29 +53,41 @@ public:
     int size;
     int status;  // running 1 / exited 0
 
-    // Returns the unique identifier given by omnet to this module
-      string getContainerId(){
+    /*
+     * Returns the unique identifier given by omnet to this module
+     */
+    string getContainerId() {
 
-           //    int a = this->getId();
+        //    int a = this->getId();
 
-          // string id;          // string which will contain the result
+        // string id;          // string which will contain the result
 
-                   //  ostringstream convert;   // stream used for the conversion
+        //  ostringstream convert;   // stream used for the conversion
 
-                   // convert << a;      // insert the textual representation of 'Number' in the characters in the stream
-                   ///  id = convert.str();
-                     return id;};
+        // convert << a;      // insert the textual representation of 'Number' in the characters in the stream
+        ///  id = convert.str();
+        return id;
+    }
+    ;
 
-      double getMemSize() {return size;};
+    double getMemSize() {
+        return size;
+    }
+    ;
+
 protected:
     virtual void handleMessage(cMessage* msg);
-    virtual void finish(){};
- //   void stopDockerContainer (string containerID);
- //   void startDockerContainer(string imagesID,string VMID);
+    /*
+     * Finalization of the module
+     */
+    virtual void finish() {
+    }
+    ;
+    //   void stopDockerContainer (string containerID);
+    //   void startDockerContainer(string imagesID,string VMID);
     /**
-           * Start the container application execution.
-           */
-
+     * Start the container application execution.
+     */
 
 };
 
