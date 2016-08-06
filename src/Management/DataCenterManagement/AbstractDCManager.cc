@@ -88,7 +88,7 @@ void AbstractDCManager::initialize(){
 
         // Get the time before start
             timeToStartManager = par("timeToStart").doubleValue();
-
+            cout << "AbstractDCManager::initialize()-->timeToStartManager  " << timeToStartManager<<endl;
         // Initialize the structures
             requestsQueue.clear();
             temporalRequestsQueue.clear();

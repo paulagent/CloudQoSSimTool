@@ -92,6 +92,7 @@ network RRTest
                 remote_storage_VMs_per_node = 2;
                 minimum_percent_storageNode_free = 0.15;
                 virtualIPsBasis = "10.0.0.1";
+                timeToStart = 5.0;
                 @display("p=445,156");
         }
 
