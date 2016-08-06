@@ -7,7 +7,7 @@ import icancloud.src.Architecture.Node.INode;
 import inet.nodes.ethernet.EtherSwitch;
 import icancloud.src.Architecture.Node.NodeVL.NodeVL;
 import ned.DatarateChannel;
-import icancloud.src.Architecture.Node.NodeVL.NodeVL;
+
 
 channel ethernet_bladeChannel extends DatarateChannel
 {
@@ -16,7 +16,7 @@ channel ethernet_bladeChannel extends DatarateChannel
         delay = default(75.0us);
         datarate = default(1000Mbps);					// 1Gbps
 
-        string nodeType =default ("NodeVL");
+        //string nodeType =default ("NodeVL");
 }
 
 

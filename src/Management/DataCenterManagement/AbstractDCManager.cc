@@ -45,6 +45,11 @@ cout <<"AbstractDCManager::initialize()" <<endl;
             if (configDone != true) configDone = false;
         // Initialize the network manager
             networkManagerMod = getParentModule()->getSubmodule("networkManager");
+
+
+            if (networkManagerMod== NULL) {
+                    cout <<"AbstractDCManager::initialize() networkManagerMod is null " <<endl;
+                }
             networkManager = check_and_cast <NetworkManager*> (networkManagerMod);
 
         // Users ..

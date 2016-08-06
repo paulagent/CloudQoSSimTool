@@ -39,6 +39,10 @@ void AbstractCloudManager::initialize() {
     initialVIP = par("virtualIPsBasis").stringValue();
 
     networkManagerMod = getParentModule()->getSubmodule("networkManager");
+    if (networkManagerMod== NULL) {
+        cout <<"AbstractCloudManager::initialize() networkManagerMod is null " <<endl;
+    }
+
     networkManager = check_and_cast<NetworkManager*>(networkManagerMod);
     networkManager->setIPBasis(initialVIP.c_str());
 
