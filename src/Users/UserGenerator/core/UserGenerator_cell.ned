@@ -72,9 +72,9 @@ module UserGenerator_cell
                 @display("p=226,171;is=vl");
         }
 
-      //  dockerDefinition: DockerDefinition {
-     //       
-      //     containersToRentTypesQuantity= containersToRentTypesQuantity;
-     //       @display("p=138,128");
-     //   }
+        dockerDefinition: DockerDefinition {
+           
+          containersToRentTypesQuantity= containersToRentTypesQuantity;
+            @display("p=138,128");
+        }
 }

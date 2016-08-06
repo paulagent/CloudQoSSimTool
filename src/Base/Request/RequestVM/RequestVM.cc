@@ -40,6 +40,8 @@ RequestVM::RequestVM (int userID, int op, vector<VM*> newVMSet){
     vmId = -1;
     connections.clear();
     is_freezed=false;
+    containerID="0";
+    containerImageID="os";
 }
 
 RequestVM::~RequestVM() {

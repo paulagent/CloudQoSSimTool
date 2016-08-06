@@ -140,7 +140,8 @@ protected:
 
 public:
 
-    string id;
+     string id;  // container id
+
 
     ~VMRequestManager();
     /*
@@ -181,6 +182,7 @@ public:
      * request queue waiting until it will be processed.
      */
     void userSendRequest(AbstractRequest* request);
+
     /**
          * input:.
          * output : None
@@ -188,7 +190,7 @@ public:
          * vector running container to find time out container, if it can located one, it will make it sleep, otherwise
          * it will tell caller there is no enough resource.
          */
-    void scheduleRR(VM* vm);
+    bool scheduleRR(VM* vm);
 };
 
 #endif /* VMREQUESTMANAGER_H_ */

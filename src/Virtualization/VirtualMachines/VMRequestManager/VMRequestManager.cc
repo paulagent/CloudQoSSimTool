@@ -479,28 +479,38 @@ bool VMRequestManager::request_unfreez_container(RequestVM* req_vm){
 
 bool VMRequestManager::request_start_docker_container(RequestVM* req_vm) {
     VM* vm;
-
+// it's possible that a request wants to start several containers
     DockerContainer* dc ;
     vm = req_vm->getVM(0);
-    cout << " VMRequestManager::request_start_docker_container---->vm->getFullName-------->"
-            << vm->getFullName() << endl;
+    string image_id=req_vm->getContainerImageID(); // the image name eg. ubuntu
+   // cout << " VMRequestManager::request_start_docker_container---->vm->getFullName-------->"<< this->getOwner();
+    cout << " VMRequestManager::request_start_docker_container---->vm->getFullName-------->"<< vm->getFullName() << endl;
     RunningContainer* started_Container = new RunningContainer();
    // double freem = vm->getFreeMemory();
-
-
-
-
-    vm->dockerDaemon->initialize(vm);
+ //  vm->dockerDaemon->initialize(vm);
     bool found = false;
-    if ( rContainer.size() <  vm->getNumCores()) {
-
+  // if ( rContainer.size() <  vm->getNumCores()) {
+if(vm->getFreeMemory()> 128)
+{
         //vm->setFreeMemory(freem - dockermem);
+    cout << "VMRequestManager::request_start_docker_containe---->vm free memory--->"<< vm->getFreeMemory()<<endl;
     cout << "VMRequestManager::request_start_docker_container inside if "  <<endl;
-      dc=  vm->dockerDaemon->startDockerContainer(id, vm->getFullName());
-        found =true;
-    } else {
+    dc=  vm->dockerDaemon->startDockerContainer(image_id, vm->getFullName());
+    found =true;
+    }
+else {
 
-        scheduleRR( vm);
+     found=scheduleRR( vm);
+     if (found)
+     {
+         if(vm->getFreeMemory()> 128)
+         {
+                 //vm->setFreeMemory(freem - dockermem);
+             cout << "VMRequestManager::request_start_docker_containe---->vm free memory--->"<< vm->getFreeMemory()<<endl;
+             cout << "VMRequestManager::request_start_docker_container inside if "  <<endl;
+             dc=  vm->dockerDaemon->startDockerContainer(image_id, vm->getFullName());
+             }
+     }
     }
 if(found) {
     clock_t now = clock();
@@ -509,8 +519,7 @@ if(found) {
     started_Container->vmID = vm->getFullName();
     started_Container->containerID = vm->dockerDaemon->getContianerId(dc) ;//to fix this how to get container id
     rContainer.push_back(started_Container);
-    cout
-               << "VMRequestManager::request_start_docker_container------------------> Container has started"
+    cout<< "VMRequestManager::request_start_docker_container------------------> Container has started"
                << endl;
     return false;
 }
@@ -522,19 +531,19 @@ else {
 
     return false;
 }
-void VMRequestManager::scheduleRR(VM* vm) {
+bool VMRequestManager::scheduleRR(VM* vm) {
     int j = 0;
 
     printf(
             "\n\n\n\n Method[VMRequestManager_SCHEDULER_RR::scheduleRR()]: -------> Before our loop\n");
 
-    cout << "Method[VMRequestManager_SCHEDULER_RR::scheduleRR()]: while loop"
+    cout << "Method[VMRequestManager_SCHEDULER_RR::scheduleRR()]: while loop---> Container size-->"
             << rContainer.size() << endl;
     while (j < int(rContainer.size()) && rContainer.size() != 0) {
         clock_t t = clock(); // we are not sure about current time
 
         printf(
-                "\n Method[VMRequestManager_SCHEDULER_RR::scheduleRR()]:NO_Runiing_VM -------> %ld \n",
+                "\n Method[VMRequestManager_SCHEDULER_RR::scheduleRR()]:NO_Runiing_container -------> %ld \n",
                 rContainer.size());
 
         RunningContainer* rc;
@@ -552,17 +561,6 @@ void VMRequestManager::scheduleRR(VM* vm) {
             RequestVM* new_req_c = new RequestVM();
 
             string  id= rc->container->getContainerId();
-
-            //string id;          // string which will contain the result
-
-           // ostringstream convert;   // stream used for the conversion
-
-        //    convert << a;      // insert the textual representation of 'Number' in the characters in the stream
-
-         //   id = convert.str();
-         //   cout << "container full name" <<a <<endl;
-        //    string delimeter = ":";
-        //    string token = a.substr(0, a.find(delimeter));
 
             new_req_c->setPid(vm->getPid());
             new_req_c->setUid(vm->userID);
@@ -585,15 +583,15 @@ void VMRequestManager::scheduleRR(VM* vm) {
            // AbstractCloudManager::unlinkVM(vm->hostNodeVL, vm->vm, false);
 
             rContainer.erase(rContainer.begin() + j);
-            cout << "VMRequestManager_SCHEDULER_RR:: scheduleRR()---->After Free Resources"
-                    << endl;
+            cout << "VMRequestManager_SCHEDULER_RR:: scheduleRR()---->After Free Resources" << endl;
+            return true;
 
         } else {
             ++j;
 
         }
     }
-
+    return false;
     printf("\n Method[VMRequestManager_SCHEDULER_RR]: -------> After our loop\n");
 
 }

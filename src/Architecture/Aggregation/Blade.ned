@@ -5,7 +5,9 @@ package icancloud.src.Architecture.Aggregation;
 
 import icancloud.src.Architecture.Node.INode;
 import inet.nodes.ethernet.EtherSwitch;
+import icancloud.src.Architecture.Node.NodeVL.NodeVL;
 import ned.DatarateChannel;
+
 
 channel ethernet_bladeChannel extends DatarateChannel
 {
@@ -14,7 +16,7 @@ channel ethernet_bladeChannel extends DatarateChannel
         delay = default(75.0us);
         datarate = default(1000Mbps);					// 1Gbps
 
-        string nodeType =default ("NodeVL");
+        //string nodeType =default ("NodeVL");
 }
 
 
@@ -26,13 +28,15 @@ module Blade
         @display("i=old/drive2;bgb=405,277");
 
     gates:
-        inout ethg;		// Gates
+        inout ethg  @labels(EtherFrame-conn);		// Gates
 
 
     submodules:
 
         // Node array
-        node[numNodes]: <nodeType> like INode {
+     //   node[numNodes]: <nodeType> like INode {
+        node[numNodes]: NodeVL {
+     
             parameters:
                 @display("i=old/drive1;p=72,40,row,50");
         }

@@ -189,7 +189,7 @@ void AbstractUserGenerator::finalizeUserGenerator(bool allowToExecute){
     userManagementPtr->finalizeUserGenerator(this, allowToExecute);
 };
 
-void AbstractUserGenerator::createUser (){
+void AbstractUserGenerator::createUser(){
 
 	//Set up the behaviorMod
 		cModuleType *modBehavior;

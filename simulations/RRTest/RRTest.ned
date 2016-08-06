@@ -14,6 +14,7 @@
 // 
 
 package icancloud.simulations.RRTest;
+import icancloud.src.Architecture.Aggregation.Rack;
 import icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_NetworkManager.NetworkServices.NetworkService.NetworkService;
 import icancloud.src.Virtualization.VirtualMachines.SetDefinition.DockerSet;
 import icancloud.src.Virtualization.VirtualMachines.VMRequestManager.VMRequestManager;
@@ -23,7 +24,7 @@ import icancloud.src.Architecture.Node.NodeVL.NodeVL;
 import icancloud.src.Management.CloudManagement.ResourcesProvisioning.**.*;
 import icancloud.src.Management.NetworkManager.NetworkManager;
 import icancloud.src.Management.Topology.Topology;
-import icancloud.src.Management.NetworkManager.NetworkManager;
+
 import icancloud.src.Users.UserGenerator.UserGenerator;
 import icancloud.src.Virtualization.VirtualMachines.SetDefinition.VmSet;
 import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
@@ -148,6 +149,9 @@ network RRTest
         }
 
 
+        rack1: Rack {
+            @display("p=78,54;is=l");
+        }
     // ---------------------------------------------------------------
     //   Connections section
     // ---------------------------------------------------------------
@@ -162,5 +166,6 @@ network RRTest
         ns_0_NodeStorage_C.ethg++ <--> Channel_1_RRTest <--> switch_0.ethg++;
         ns_1_NodeStorage_C.ethg++ <--> Channel_1_RRTest <--> switch_0.ethg++;
 
+        rack1.ethg[0]<-->rackSwitch_0.ethg++;
 }
 
