@@ -6,6 +6,7 @@ package icancloud.src.Architecture.Aggregation;
 import icancloud.src.Architecture.Node.INode;
 import inet.nodes.ethernet.EtherSwitch;
 import icancloud.src.Architecture.Node.NodeVL.NodeVL;
+import icancloud.src.Architecture.Node.Node.Node;
 import ned.DatarateChannel;
 
 
@@ -35,7 +36,7 @@ module Blade
 
         // Node array
      //   node[numNodes]: <nodeType> like INode {
-        node[numNodes]: NodeVL {
+        node[numNodes]: Node {
      
             parameters:
                 @display("i=old/drive1;p=72,40,row,50");
