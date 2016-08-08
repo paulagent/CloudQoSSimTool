@@ -51,10 +51,25 @@ void LocalNetManager::initializePAT (string nodeIP){
 	ip_LocalNode = nodeIP;
 	pat->pat_initialize(nodeIP);
 
-	cModule* networkmanager_mod;
+	cModule* networkmanager_mod1;
+    cModule* networkmanager_mod2;
 
-	networkmanager_mod =  getParentModule()->getParentModule()->getParentModule()->getParentModule()->getSubmodule("networkManager");
-	netManagerPtr = check_and_cast <NetworkManager*> (networkmanager_mod);
+	networkmanager_mod1 =  getParentModule()->getParentModule()->getParentModule()->getParentModule()->getSubmodule("networkManager");
+	if (networkmanager_mod1)
+	{
+	    netManagerPtr = check_and_cast <NetworkManager*> (networkmanager_mod1);
+        cout << "LocalNetManager::initializePAT --->"<< networkmanager_mod1->getFullName() <<endl;
+
+	}
+	else
+	{
+	    networkmanager_mod2 =  getParentModule()->getParentModule()->getParentModule()->getParentModule()->getParentModule()->getParentModule()->getSubmodule("networkManager");
+
+	    netManagerPtr = check_and_cast <NetworkManager*> (networkmanager_mod2);
+	            cout << "LocalNetManager::initializePAT --->"<< networkmanager_mod2->getFullName() <<endl;
+
+	}
+
 
 	if (netManagerPtr == NULL){
 		showErrorMessage("LocalNetManager::initializePAT --> Error. Net Manager Pointer is null .. ");

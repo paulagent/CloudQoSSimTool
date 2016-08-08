@@ -113,7 +113,9 @@ void AbstractUserGenerator::initialize(){
 
 	// Get the cloud manager pointer
         auxMod = getParentModule()->getParentModule()->getParentModule()->getSubmodule("manager");
+        cout << "AbstractUserGenerator::initialize()-----> before casting"<<endl;
 		userManagementPtr = check_and_cast <UserManagement*> (auxMod);
+        cout << "AbstractUserGenerator::initialize()---> after casting"<<endl;
 
 	// Create the user core!
 	    // Initialize ..

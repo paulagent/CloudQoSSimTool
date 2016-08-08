@@ -36,7 +36,7 @@ module Blade
 
         // Node array
      //   node[numNodes]: <nodeType> like INode {
-        node[numNodes]: Node {
+        node[numNodes]: NodeVL {
      
             parameters:
                 @display("i=old/drive1;p=72,40,row,50");

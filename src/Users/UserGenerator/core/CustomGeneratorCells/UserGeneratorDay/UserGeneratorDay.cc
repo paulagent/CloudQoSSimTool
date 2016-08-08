@@ -27,7 +27,6 @@ void UserGeneratorDay::initialize() {
 
     // Init the superclass
     AbstractUserGenerator::initialize();
-
     // Get the ned parameters
     time_intervals_H = par("time_creation").longValue();
     quantity_user_preloaded = par("quantity_user_preloaded").longValue();
@@ -73,17 +72,17 @@ void UserGeneratorDay::processSelfMessage(cMessage *msg) {
                 createUser();
 
         if (strcmp(distribution.c_str(), "no_distribution") == 0) {
-            //   printf("\n Method[UserGeneratorDay]: -------> noDistribution\n");
-            //    printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
+               printf("\n Method[UserGeneratorDay]: -------> noDistribution\n");
+                printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
 
             for (i = 0; (int) i < total_users; i++)
                 createUser();
-            //   printf("\n Method[UserGeneratorDay]: -------> noDistribution  --> user creation finished\n");
+               printf("\n Method[UserGeneratorDay]: -------> noDistribution  --> user creation finished\n");
 
         } else {
-            //   printf("\n Method[UserGeneratorDay]: -------> Prepare to user arrivals\n");
-            //    printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
-            //     printf("\n Method[UserGeneratorDay]: total_users %d-------> \n", total_users);
+               printf("\n Method[UserGeneratorDay]: -------> Prepare to user arrivals\n");
+               printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
+               printf("\n Method[UserGeneratorDay]: total_users %d-------> \n", total_users);
 
             // Prepare to user arrival .. !!
             userCreateGroups(time_intervals_H, total_users);
@@ -97,6 +96,8 @@ void UserGeneratorDay::processSelfMessage(cMessage *msg) {
             finalizeUserGenerator(false);
 
     } else if (!strcmp(msg->getName(), "intervalEvent")) {
+
+        printf("\n Method[UserGeneratorDay]: intervalEvent -------> \n");
 
         cancelEvent(newIntervalEvent);
 
@@ -115,6 +116,8 @@ void UserGeneratorDay::processSelfMessage(cMessage *msg) {
     } else if (!strcmp(msg->getName(), "hourEvent")) {
 
         // if hour == time intervals, the time limit for user's creation has been reached.
+        printf("\n Method[UserGeneratorDay]: if hour == time intervals, the time limit for user's creation has been reached. -------> \n");
+
 
         if (hour == time_intervals_H) {
 
