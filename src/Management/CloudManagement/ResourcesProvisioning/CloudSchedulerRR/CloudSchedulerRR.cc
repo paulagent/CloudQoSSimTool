@@ -249,11 +249,12 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
 
         if ((node->getFreeMemory() >= vmMemory)
                 && (node->getNumCores() >= vmCPU)) {
-            //printf("\n Method[SCHEDULER_ROUNDROBIN]: INSIDE IF PART -----> Really assign a node");
+            printf("\n Method[SCHEDULER_ROUNDROBIN]: INSIDE IF PART -----> Really assign a node");
 
             NodeVL* node_vl = check_and_cast<NodeVL*>(node);
             numProcesses = node_vl->getNumOfLinkedVMs();
             if (numProcesses < maximum_number_of_processes_per_node) {
+
                 node = check_and_cast<Node*>(node_vl);
                 found = true;
             }

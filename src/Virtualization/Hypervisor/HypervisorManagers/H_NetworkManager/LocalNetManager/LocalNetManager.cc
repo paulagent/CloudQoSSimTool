@@ -55,18 +55,18 @@ void LocalNetManager::initializePAT (string nodeIP){
     cModule* networkmanager_mod2;
 
 	networkmanager_mod1 =  getParentModule()->getParentModule()->getParentModule()->getParentModule()->getSubmodule("networkManager");
-	if (networkmanager_mod1)
+	if (networkmanager_mod1) // for normal nodes
 	{
 	    netManagerPtr = check_and_cast <NetworkManager*> (networkmanager_mod1);
-        cout << "LocalNetManager::initializePAT --->"<< networkmanager_mod1->getFullName() <<endl;
+      //  cout << "LocalNetManager::initializePAT --->"<< networkmanager_mod1->getFullName() <<endl;
 
 	}
-	else
+	else // for racks
 	{
 	    networkmanager_mod2 =  getParentModule()->getParentModule()->getParentModule()->getParentModule()->getParentModule()->getParentModule()->getSubmodule("networkManager");
 
 	    netManagerPtr = check_and_cast <NetworkManager*> (networkmanager_mod2);
-	            cout << "LocalNetManager::initializePAT --->"<< networkmanager_mod2->getFullName() <<endl;
+	  //          cout << "LocalNetManager::initializePAT --->"<< networkmanager_mod2->getFullName() <<endl;
 
 	}
 

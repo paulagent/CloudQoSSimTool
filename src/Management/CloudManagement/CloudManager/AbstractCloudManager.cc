@@ -474,26 +474,36 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
     operation = REQUEST_NOP;
     selectedNode = NULL;
     attendedRequest_vms.clear();
-
+    printf(
+                   "MODULE[AbstractCloudManager::request_start_vm] vmQuantity----------------> %d",
+                  vmQuantity);
     for (int i = 0;
             ((i < req->getDifferentTypesQuantity()) && (!notEnoughResources));
             ) {
 
         vmQuantity = req->getSelectionQuantity(i);
-        //printf(
-        //        "MODULE[AbstractCloudManager::request_start_vm] vmQuantity----------------> %d",
-        //        vmQuantity);
+        printf(
+                "MODULE[AbstractCloudManager::request_start_vm] vmQuantity----------------> %d",
+               vmQuantity);
         for (int j = 0; (j < vmQuantity) && !notEnoughResources; j++) {
 
             //uvic add Get the original virtual machine image
             //C++ offers a solution which is called dynamic_cast. Here we use check_and_cast<>() which is provided by OMNeT++:
             //it tries to cast the pointer via dynamic_cast,
             //and if it fails it stops the simulation with an error message
-            cModule* vmSet = getParentModule()->getSubmodule("vmSet");
-            vmImage = vmSet->getSubmodule("vmImage", j);
-
+            cModule* vmSet1 = getParentModule()->getSubmodule("vmSet");
+            vmImage = vmSet1->getSubmodule("vmImage", j);
+            if (vmImage)
+            {
+                cout << "AbstractCloudManager::request_start_vm--->vmImage memory--->" <<vmImage->par("memorySize_MB").longValue()<<endl;
+            }
+            else
+            {
+                cModule* vmSet2 = getParentModule()->getParentModule()->getParentModule()->getSubmodule("vmSet");
+                vmImage = vmSet2->getSubmodule("vmImage", j);
+                cout << "AbstractCloudManager::request_start_vm--->vmImage memory--->" <<vmImage->par("memorySize_MB").longValue()<<endl;
+            }
             cModule* vmImage2 = getSubmodule("vmImage");
-            //  cout << "AbstractCloudManager::request_start_vm" <<vmImage->par("memorySize_MB").longValue()<<endl;
             vm2 = dynamic_cast<VM*>(vmImage2);
             // uvic add end
 
@@ -610,10 +620,10 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 runVM.push_back(started_VM);
 
                 cout
-                        << "---------------------------------------------------------------------------------------------------------"
+                        << "---------------------------------AbstractCloudManager::request_start_vm------------------------------------------------------------------------"
                         << endl;
                 cout
-                        << "---------------------------------------------------------------------------------------------------------"
+                        << "---------------------------------AbstractCloudManager::request_start_vm------------------------------------------------------------------------"
                         << endl;
 
               //  cout
@@ -1555,10 +1565,10 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req) {
                                     << vm->getPid() << endl;
 
                             cout
-                                    << "---------------------------------------------------------------------------------------------------------"
+                                    << "------------------------------------------AbstractCloudManager::request_unfreez_vm---------------------------------------------------------------"
                                     << endl;
                             cout
-                                    << "---------------------------------------------------------------------------------------------------------"
+                                    << "------------------------------------------AbstractCloudManager::request_unfreez_vm---------------------------------------------------------------"
                                     << endl;
 
                             cout

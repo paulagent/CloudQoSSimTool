@@ -271,7 +271,7 @@ cGate* AbstractDCManager::getOutGate (cMessage *msg){
 ICCLog acs_f;
 
 void AbstractDCManager::initManager (int totalNodes){
-    //printf("\n Method[Abstract DC manager]: ------->initmanager \n");
+    printf("\n Method[Abstract DC manager]: ------->initManager \n");
     // Define.
         std::ofstream line;
         string file;
@@ -279,7 +279,6 @@ void AbstractDCManager::initManager (int totalNodes){
         int computeNodeSetSize = 0;
         int storageSetSize = 0;
         int totalNumberNodes = 0;
-
     // Definition for parse
         // Nodes
             vector<string> nodeNames;
@@ -287,7 +286,9 @@ void AbstractDCManager::initManager (int totalNodes){
             HeterogeneousSet* hetNodeSet;
 
     // Define auxiliar variables to link the module to the object
-         cModule* nodeMod;
+         cModule* nodeMod1;
+         cModule* nodeMod2;
+
          string nodeName;
          Node* nodeChecked;
        //  printf("\n Method[Abstract DC manager_initmanagr]: ------->before test ifcfgloaded \n");
@@ -306,7 +307,7 @@ void AbstractDCManager::initManager (int totalNodes){
                MemoSupport* storage;
                MemoSupport* network;
                string component;
-
+               string state;
                bool componentsLoaded;
 
                // Memorization init
@@ -331,10 +332,27 @@ void AbstractDCManager::initManager (int totalNodes){
                           for (i = 0 ; i < (int)nodeNames.size(); i++){
 
                               nodeName = (*(nodeNames.begin() + i));
+                              cout << "AbstractDCManager::initManager" << nodeName.c_str()<< endl;
 
-                              nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+                              nodeMod1 = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+                              if (nodeMod1)
+                              {
+                                  cout << "nodeMod1---->" <<  nodeMod1->getFullName() <<endl;
+                                  nodeChecked = check_and_cast<Node*>(nodeMod1);
+                                  state = (nodeMod1->par("initialState").stringValue());
 
-                              nodeChecked = check_and_cast<Node*>(nodeMod);
+                              }
+                              else
+                              {
+
+                                  nodeMod2 = getParentModule()->getParentModule()->getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+                                  cout << "nodeMod2---->" <<  nodeMod2->getFullName() <<endl;
+                                  nodeChecked = check_and_cast<Node*>(nodeMod2);
+                                  state = (nodeMod2->par("initialState").stringValue());
+
+
+
+                              }
                               nodeChecked->initNode();
 
                               if ((memorization) && (!componentsLoaded)){
@@ -409,7 +427,6 @@ void AbstractDCManager::initManager (int totalNodes){
                               }
                               nodeChecked->loadMemo(cpu,memory,storage,network);
 
-                              string state = (nodeMod->par("initialState").stringValue());
                               if (strcmp(state.c_str(), MACHINE_STATE_OFF) == 0) nodeChecked->turnOff();
                               else nodeChecked->turnOn();
 
@@ -444,9 +461,27 @@ void AbstractDCManager::initManager (int totalNodes){
 
                           nodeName = (*(nodeNames.begin() + i));
 
-                          nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+                    //      nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+                          nodeMod1 = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+                                                        if (nodeMod1)
+                                                        {
+                                                            cout << "nodeMod1---->" <<  nodeMod1->getFullName() <<endl;
+                                                            nodeChecked = check_and_cast<Node*>(nodeMod1);
+                                                             state = (nodeMod1->par("initialState").stringValue());
 
-                          nodeChecked = check_and_cast<Node*>(nodeMod);
+                                                        }
+                                                        else
+                                                        {
+
+                                                            nodeMod2 = getParentModule()->getParentModule()->getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+                                                            cout << "nodeMod2---->" <<  nodeMod2->getFullName() <<endl;
+                                                            nodeChecked = check_and_cast<Node*>(nodeMod2);
+                                                             state = (nodeMod2->par("initialState").stringValue());
+
+
+
+                                                        }
+                      //    nodeChecked = check_and_cast<Node*>(nodeMod);
                           nodeChecked->initNode();
 
                           if ((memorization) && (!componentsLoaded)){
@@ -521,7 +556,7 @@ void AbstractDCManager::initManager (int totalNodes){
                                 }
                           nodeChecked->loadMemo(cpu,memory,storage,network);
 
-                          string state = (nodeMod->par("initialState").stringValue());
+               //           string state = (nodeMod->par("initialState").stringValue());
                           if (strcmp(state.c_str(), MACHINE_STATE_OFF) == 0) nodeChecked->turnOff();
                           else nodeChecked->turnOn();
 
