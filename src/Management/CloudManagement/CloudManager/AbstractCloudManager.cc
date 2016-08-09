@@ -107,6 +107,7 @@ void AbstractCloudManager::initialize() {
 
 void AbstractCloudManager::initManager(int totalNodes) {
 
+    cout << "AbstractCloudManager::initManager(int totalNodes)"<< endl;
     migrationActive = false;
 
     // Define.
@@ -125,6 +126,8 @@ void AbstractCloudManager::initManager(int totalNodes) {
     HeterogeneousSet* hetNodeSet;
 
     // Define auxiliar variables to link the module to the object
+  //  cModule* nodeMod1;
+  //  cModule* nodeMod2;
     cModule* nodeMod;
     string nodeName;
     Node* nodeChecked;
@@ -133,9 +136,9 @@ void AbstractCloudManager::initManager(int totalNodes) {
     // Create the cfgCloud object!
 
     if (!isCfgLoaded()) {
-        //    printf(
-        //          "\n MODULE[AbstractCloudManager::initManager]: cfg is not loaded ");
-//
+            printf(
+                 "\n MODULE[AbstractCloudManager::initManager]: cfg is not loaded ");
+
         // Initialize structures and parameters
         nodesMap = new MachinesMap();
         storage_nodesMap = new MachinesMap();
@@ -172,15 +175,30 @@ void AbstractCloudManager::initManager(int totalNodes) {
             componentsLoaded = false;
 
             // link all the created nodes by omnet in the vector nodeSet.
+            cout << "nodeNames.size()------>"<<nodeNames.size() << endl;
             for (i = 0; i < (int) nodeNames.size(); i++) {
 
                 nodeName = (*(nodeNames.begin() + i));
-                // printf(
-                //        "\n MODULE[AbstractCloudManager::initManager]: nodeName:------->%s",
-                //        nodeName.c_str());
+                 printf(
+                        "\n MODULE[AbstractCloudManager::initManager]: nodeName:------->%s \n",
+                        nodeName.c_str());
 
                 nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+                if (nodeMod)
+                 {
+                    cout<<"nodeMod->getFullName()--->"<<nodeMod->getFullName()<<endl;
+                    cout<<"nodeMod->getFullPath()--->"<< nodeMod->getFullPath()<<endl;
+                     cout << "if--->just test---->nodeName.c_str()" << nodeName.c_str()<<endl;
+                 }
+                 else
+                 {
+                     cout << "else --->just test---->nodeName.c_str()" << nodeName.c_str()<<endl;
+
+                     nodeMod =getParentModule()->getParentModule()->getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+
+                 }
                 nodeChecked = check_and_cast<Node*>(nodeMod);
+
                 nodeChecked->initNode();
 
                 if ((memorization) && (!componentsLoaded)) {
@@ -303,10 +321,22 @@ void AbstractCloudManager::initManager(int totalNodes) {
             for (i = 0; i < (int) nodeNames.size(); i++) {
 
                 nodeName = (*(nodeNames.begin() + i));
-                nodeMod = getParentModule()->getParentModule()->getModuleByPath(
-                        nodeName.c_str());
+                nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+                               if (nodeMod)
+                               {
+                                   cout << "just test---->nodeName.c_str()" << nodeName.c_str()<<endl;
+                               }
+                               else
+                               {
+                                   cout << "else2--->just test---->nodeName.c_str()" << nodeName.c_str()<<endl;
+
+                                 //  nodeMod = getParentModule()->getParentModule()->getParentModule()->getParentModule()->getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+                                  nodeMod =getParentModule()->getParentModule()->getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+
+                               }
 
                 nodeChecked = check_and_cast<Node*>(nodeMod);
+
                 nodeChecked->initNode();
 
                 if ((memorization) && (!componentsLoaded)) {

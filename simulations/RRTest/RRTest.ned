@@ -143,10 +143,10 @@ network RRTest
         // ---------------------------------------------------------------
         //   Definition of Racks
         // ---------------------------------------------------------------
-        //rc_0_Rack_A_16[2]: NodeVL {
+        rc_0_Rack_A_16[2]: NodeVL {
 
-        //    @display("p=279,45");
-      //  }
+            @display("p=279,45");
+        }
 
 
         rack1: Rack {
@@ -158,9 +158,9 @@ network RRTest
     connections allowunconnected:
 
         // Connections for rack rc_0_Rack_A_16
-   //     for i=0..1 {
-   //         rc_0_Rack_A_16[0].ethg++ <--> RackChannel_0_RRTest <--> rackSwitch_0.ethg++;
-   //     }
+        for i=0..1 {
+            rc_0_Rack_A_16[0].ethg++ <--> RackChannel_0_RRTest <--> rackSwitch_0.ethg++;
+        }
 
         rackSwitch_0.ethg++ <--> Channel_0_RRTest <--> switch_0.ethg++;
         ns_0_NodeStorage_C.ethg++ <--> Channel_1_RRTest <--> switch_0.ethg++;

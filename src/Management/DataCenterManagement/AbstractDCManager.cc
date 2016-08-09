@@ -151,7 +151,7 @@ cout <<"AbstractDCManager::initialize()" <<endl;
       // Prepare the message waiting until all modules will be initialized-
           msg = new cMessage (SM_CALL_INITIALIZE.c_str());
           scheduleAt (simTime()+timeToStartManager, msg);
-//cout <<"AbstractDCManager::initialize() --->start to initial" << endl;
+          cout <<"AbstractDCManager::initialize() --->start to initial" << endl;
           memorization = par ("memorization").boolValue();
 
 }
@@ -205,12 +205,14 @@ void AbstractDCManager::processSelfMessage (cMessage *msg){
             cout << "AbstractDCManager::SM_CALL_INITIALIZE" << endl;
             // Delete the incoming message
             cancelAndDelete(msg);
-
+            cout << "AbstractDCManager::after cancelAndDelete(msg)" << endl;
             // Initialize the manager
             initManager();
+            cout << "AbstractDCManager::after init manager" << endl;
 
             // Create an alarm to log the energy data events
             scheduleAt (simTime()+timeBetweenLogResults_s, logAlarm);
+            cout << "AbstractDCManager::after scheduleAt " << endl;
 
 
             initScheduler();
@@ -272,7 +274,7 @@ ICCLog acs_f;
 
 void AbstractDCManager::initManager (int totalNodes){
     printf("\n Method[Abstract DC manager]: ------->initManager \n");
-    // Define.
+   // Define.
         std::ofstream line;
         string file;
         int i;
@@ -286,11 +288,12 @@ void AbstractDCManager::initManager (int totalNodes){
             HeterogeneousSet* hetNodeSet;
 
     // Define auxiliar variables to link the module to the object
-         cModule* nodeMod1;
-         cModule* nodeMod2;
+         cModule* nodeMod;
+     //    cModule* nodeMod2;
 
          string nodeName;
          Node* nodeChecked;
+
        //  printf("\n Method[Abstract DC manager_initmanagr]: ------->before test ifcfgloaded \n");
     if (!isCfgLoaded()){
       //  printf("\n Method[Abstract DC manager_initmanagr]: ------->ifcfgloaded \n");
@@ -333,26 +336,19 @@ void AbstractDCManager::initManager (int totalNodes){
 
                               nodeName = (*(nodeNames.begin() + i));
                               cout << "AbstractDCManager::initManager" << nodeName.c_str()<< endl;
+                              nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+                                             if (!nodeMod)
+                                             {
+                                                 nodeMod = getParentModule()->getParentModule()->getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+                                                 cout << "nodeMod---->" <<  nodeMod->getFullName() <<endl;
 
-                              nodeMod1 = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
-                              if (nodeMod1)
-                              {
-                                  cout << "nodeMod1---->" <<  nodeMod1->getFullName() <<endl;
-                                  nodeChecked = check_and_cast<Node*>(nodeMod1);
-                                  state = (nodeMod1->par("initialState").stringValue());
-
-                              }
-                              else
-                              {
-
-                                  nodeMod2 = getParentModule()->getParentModule()->getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
-                                  cout << "nodeMod2---->" <<  nodeMod2->getFullName() <<endl;
-                                  nodeChecked = check_and_cast<Node*>(nodeMod2);
-                                  state = (nodeMod2->par("initialState").stringValue());
+                                             }
 
 
 
-                              }
+
+
+                             nodeChecked = check_and_cast<Node*>(nodeMod);
                               nodeChecked->initNode();
 
                               if ((memorization) && (!componentsLoaded)){
@@ -461,28 +457,17 @@ void AbstractDCManager::initManager (int totalNodes){
 
                           nodeName = (*(nodeNames.begin() + i));
 
-                    //      nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
-                          nodeMod1 = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
-                                                        if (nodeMod1)
-                                                        {
-                                                            cout << "nodeMod1---->" <<  nodeMod1->getFullName() <<endl;
-                                                            nodeChecked = check_and_cast<Node*>(nodeMod1);
-                                                             state = (nodeMod1->par("initialState").stringValue());
 
-                                                        }
-                                                        else
-                                                        {
+                          nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+                          if (!nodeMod)
+                          {
+                              nodeMod = getParentModule()->getParentModule()->getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
+                              cout << "nodeMod---->" <<  nodeMod->getFullName() <<endl;
 
-                                                            nodeMod2 = getParentModule()->getParentModule()->getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
-                                                            cout << "nodeMod2---->" <<  nodeMod2->getFullName() <<endl;
-                                                            nodeChecked = check_and_cast<Node*>(nodeMod2);
-                                                             state = (nodeMod2->par("initialState").stringValue());
-
-
-
-                                                        }
-                      //    nodeChecked = check_and_cast<Node*>(nodeMod);
+                          }
+                          nodeChecked = check_and_cast<Node*>(nodeMod);
                           nodeChecked->initNode();
+
 
                           if ((memorization) && (!componentsLoaded)){
                                 componentsLoaded = true;
@@ -556,7 +541,7 @@ void AbstractDCManager::initManager (int totalNodes){
                                 }
                           nodeChecked->loadMemo(cpu,memory,storage,network);
 
-               //           string state = (nodeMod->par("initialState").stringValue());
+                          string state = (nodeMod->par("initialState").stringValue());
                           if (strcmp(state.c_str(), MACHINE_STATE_OFF) == 0) nodeChecked->turnOff();
                           else nodeChecked->turnOn();
 
@@ -589,6 +574,7 @@ void AbstractDCManager::initManager (int totalNodes){
              acs_f.Close();
 
    }
+
 }
 
 void AbstractDCManager::finalizeDCManager(){
