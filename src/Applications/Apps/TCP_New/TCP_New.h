@@ -118,9 +118,9 @@ protected:
          void startExecution(UserJob *job);
          void sendRequestMessage (icancloud_Message *sm, cGate* gate){}
          void sendResponseMessage (icancloud_Message *sm){}
-         bool isPendingRequest (){}
+         //bool isPendingRequest (){}
          void processCurrentRequestMessage (){}
-         cGate* getOutGate (cMessage *msg);
+         //cGate* getOutGate (cMessage *msg);
 
 
         void processSelfMessage(cMessage *msg);

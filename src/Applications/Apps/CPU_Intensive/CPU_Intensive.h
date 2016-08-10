@@ -34,9 +34,9 @@ class CPU_Intensive : public UserJob{
 	
 	protected:
 
-    simsignal_t processingTime;
-    simtime_t departureTime;
-    simtime_t arrivalTime;
+//    simsignal_t processingTime;
+//    simtime_t departureTime;
+//    simtime_t arrivalTime;
 
 		/** Size of data chunk to read in each iteration */
 		int inputSizeMB;
