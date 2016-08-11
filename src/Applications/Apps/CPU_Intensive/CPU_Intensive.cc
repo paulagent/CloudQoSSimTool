@@ -273,6 +273,8 @@ void CPU_Intensive::executeIOrequest(bool executeRead, bool executeWrite){
 			showDebugMessage ("[%d/%d] Executing (Read) Offset:%d; dataSize:%d", currentIteration, iterations, readOffset,  inputSizeMB*MB);
 		
 		icancloud_request_read (INPUT_FILE, readOffset, inputSizeMB*MB);
+
+
 		readOffset += (inputSizeMB*MB);
 
 

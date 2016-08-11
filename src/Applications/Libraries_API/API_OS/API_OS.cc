@@ -110,7 +110,9 @@ void API_OS::icancloud_request_read (const char* fileName, unsigned int offset, 
 			showDebugMessage ("[AppSystemRequests] Read data %s", sm_io->contentsToString(DEBUG_MSG_AppSystem).c_str());
 		
 		// Send the request to the Operating System
-		sendRequestMessage (sm_io, toOSGate);
+
+		icancloud_request_sendDataToNetwork(sm_io,1);
+		//sendRequestMessage (sm_io, toOSGate);
 }
 		
 		
@@ -511,6 +513,7 @@ void API_OS::icancloud_request_sendDataToNetwork (icancloud_Message *sm, int id)
 				showDebugMessage ("[AppSystemRequests] Send data to server %s", sm->contentsToString(DEBUG_MSG_AppSystem).c_str());
 						
 			// Send to OS
+
 			sendRequestMessage (sm, toOSGate);
 		}
 }

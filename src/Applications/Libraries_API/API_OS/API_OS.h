@@ -52,7 +52,7 @@ class API_OS: virtual public icancloud_Base{
 
 		/** Output gate to OS. */
 		cGate* toOSGate;
-
+		cGate* toNet_TCP;;
 
 	   /** connector vector that contains the corresponding data to establish connection with servers.
     	* Note: Must be initialized on derived classes.
