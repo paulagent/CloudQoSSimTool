@@ -548,7 +548,7 @@ bool VMRequestManager::scheduleRR(VM* vm) {
 
         RunningContainer* rc;
         rc = rContainer.at(j);
-        if (t >= rc->end_time)   // we need to shutdown vm
+        if (t >= rc->end_time)   // we need to shutdown container
                 {
             vm->sleep(rc->containerID);
             printf(

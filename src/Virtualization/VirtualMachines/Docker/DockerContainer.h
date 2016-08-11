@@ -63,7 +63,7 @@ public:
         // string id;          // string which will contain the result
 
         //  ostringstream convert;   // stream used for the conversion
-
+cout << "DockerContainer id" <<endl;
         // convert << a;      // insert the textual representation of 'Number' in the characters in the stream
         ///  id = convert.str();
         return id;
