@@ -16,7 +16,8 @@ module VmSet
 {
     parameters:
 
-		int vmImageQuantity;
+        int vmImageQuantity;
+        @display("bgb=285,293");
     submodules:
 
         vmImage[vmImageQuantity]: VmImage {

@@ -42,6 +42,7 @@ cout <<"AbstractDCManager::initialize()" <<endl;
         // Initialize the superclasses
             // Finish the super-class
             DataCenterAPI::initialize();
+          //  cout << "AbstractDCManager::initialize()---->configDone"<< configDone<<endl;
             if (configDone != true) configDone = false;
         // Initialize the network manager
             networkManagerMod = getParentModule()->getSubmodule("networkManager");
@@ -205,14 +206,14 @@ void AbstractDCManager::processSelfMessage (cMessage *msg){
             cout << "AbstractDCManager::SM_CALL_INITIALIZE" << endl;
             // Delete the incoming message
             cancelAndDelete(msg);
-            cout << "AbstractDCManager::after cancelAndDelete(msg)" << endl;
+           // cout << "AbstractDCManager::after cancelAndDelete(msg)" << endl;
             // Initialize the manager
             initManager();
-            cout << "AbstractDCManager::after init manager" << endl;
+           // cout << "AbstractDCManager::after init manager" << endl;
 
             // Create an alarm to log the energy data events
             scheduleAt (simTime()+timeBetweenLogResults_s, logAlarm);
-            cout << "AbstractDCManager::after scheduleAt " << endl;
+           // cout << "AbstractDCManager::after scheduleAt " << endl;
 
 
             initScheduler();
@@ -273,7 +274,7 @@ cGate* AbstractDCManager::getOutGate (cMessage *msg){
 ICCLog acs_f;
 
 void AbstractDCManager::initManager (int totalNodes){
-    printf("\n Method[Abstract DC manager]: ------->initManager \n");
+    //printf("\n Method[Abstract DC manager]: ------->initManager \n");
    // Define.
         std::ofstream line;
         string file;
@@ -294,9 +295,10 @@ void AbstractDCManager::initManager (int totalNodes){
          string nodeName;
          Node* nodeChecked;
 
-       //  printf("\n Method[Abstract DC manager_initmanagr]: ------->before test ifcfgloaded \n");
+        // printf("\n Method[Abstract DC manager_initmanagr]: ------->before test iscfgloaded \n");
+         //cout << "iscfgloaded---->"<<isCfgLoaded()<< endl;
     if (!isCfgLoaded()){
-      //  printf("\n Method[Abstract DC manager_initmanagr]: ------->ifcfgloaded \n");
+        printf("\n Method[Abstract DC manager_initmanagr]: ------->iscfgloaded \n");
             // Initialize structures and parameters
                 nodesMap = new MachinesMap();
                 storage_nodesMap = new MachinesMap();
@@ -335,7 +337,7 @@ void AbstractDCManager::initManager (int totalNodes){
                           for (i = 0 ; i < (int)nodeNames.size(); i++){
 
                               nodeName = (*(nodeNames.begin() + i));
-                              cout << "AbstractDCManager::initManager" << nodeName.c_str()<< endl;
+                            //  cout << "AbstractDCManager::initManager" << nodeName.c_str()<< endl;
                               nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
                                              if (!nodeMod)
                                              {
@@ -556,7 +558,7 @@ void AbstractDCManager::initManager (int totalNodes){
         }
 
     //Configure the compute nodes
-
+cout <<"nodesMap->getMapQuantity()"<<nodesMap->getMapQuantity()<<endl;
        configureMap (nodesMap);
 
    // Configure the storage nodes
@@ -620,7 +622,7 @@ void AbstractDCManager::finalizeDCManager(){
 }
 
 void AbstractDCManager::initScheduler(){
-    printf("\n Method[Abstract DC manager]: ------->initScheduler \n");
+    //printf("\n Method[Abstract DC manager]: ------->initScheduler \n");
     setupScheduler();
     schedule();
     if (!smAlarm->isScheduled()) scheduleAt(simTime()+timeBetweenScheduleEvents_s, smAlarm);
@@ -1021,7 +1023,7 @@ void AbstractDCManager::deleteUser (int userId){
 }
 
 void AbstractDCManager::configureMap (MachinesMap* map){
-
+cout <<"AbstractDCManager::configureMap"<< endl;
     // Define ...
         int size;
         int i,j;
@@ -1036,22 +1038,28 @@ void AbstractDCManager::configureMap (MachinesMap* map){
         size = map->size();
 
     // To check the network
-    if (networkManager != NULL)
+    if (networkManager != NULL){
+        cout <<"AbstractDCManager::configureMap-----> if (networkManager != NULL)"<< endl;
+
        for (i = 0; i < size; i++){
 
             nodeSetQuantity = map->getSetQuantity(i);
+            cout <<"AbstractDCManager::configureMap---->nodeSetQuantity -->"<<nodeSetQuantity << endl;
 
             for (j = 0; j < nodeSetQuantity;j++){
 
                 anode = map->getMachineByIndex(i,j);
+               cout <<"anode name -->"<<anode->getFullName() << endl;
+               cout <<"anode path -->"<<anode->getFullPath() << endl;
 
                 node = dynamic_cast<Node*>(anode);
 
                 //Activate network nodes
 
                 nodeMod = getParentModule()->getSubmodule(node->getName(), j);
-
+               // nodeMod = getParentModule()->getSubmodule(node->getFullPath().c_str(),j);
                 if (nodeMod != NULL){
+                    cout <<"nodemod---->"<<nodeMod->getFullName()<<endl;
 
                     // Obtain the ip parameter
                     nodeip = nodeMod->par("ip").stringValue();
@@ -1065,10 +1073,29 @@ void AbstractDCManager::configureMap (MachinesMap* map){
 
                 }
                 else{
+                    //nodeMod = getParentModule()->getParentModule()->getParentModule()->getSubmodule(node->getName(), j);
+                    nodeMod = getParentModule()->getModuleByPath(node->getFullPath().c_str());
+                    if (nodeMod != NULL){
+                                       cout <<"nodemod---->"<<nodeMod->getFullName()<<endl;
+
+                                       // Obtain the ip parameter
+                                       nodeip = nodeMod->par("ip").stringValue();
+
+                                       // register the node at network manager
+                                       networkManager->registerNode(nodeip);
+
+                                       //set the manager at OS of the node for returning finish operations
+
+                                       node->setManager(this);
+
+                                   }
+                                   else{
                     throw cRuntimeError("Error when ip has been collected from node at AbstractDCManager::configureMap\n");
+                }
                 }
             } // end for by node
         } // end for by map set
+    } // end if
     else{
         throw cRuntimeError("Error. Network manager is NULL! [AbstractDCManager::configureMap]\n");
 

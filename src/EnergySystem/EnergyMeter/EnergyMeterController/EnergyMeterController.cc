@@ -40,20 +40,29 @@ void EnergyMeterController::initialize(){
 
 void EnergyMeterController::init(){
 
+  //  cout << "EnergyMeterController::init()" << endl;
     activeEnergyMeter = getParentModule()->par("activeEnergyMeter").boolValue();
+//    cout << "activeEnergyMeter--->"<< activeEnergyMeter<<endl;
 
     cpu = dynamic_cast <AbstractMeterUnit*>(getParentModule()->getSubmodule("cpuMeter")->getSubmodule("core"));
+ //   cout << "cpu--->"<< cpu<<endl;
 
     memory = dynamic_cast <AbstractMeterUnit*>(getParentModule()->getSubmodule("memoryMeter")->getSubmodule("core"));
+//    cout << "memory--->"<< memory<<endl;
 
     storage = dynamic_cast <AbstractMeterUnit*>(getParentModule()->getSubmodule("storageMeter")->getSubmodule("core"));
+//    cout << "storage--->"<< storage<<endl;
 
     network = dynamic_cast <AbstractMeterUnit*>(getParentModule()->getSubmodule("networkMeter")->getSubmodule("core"));
+//    cout << "network--->"<< network<<endl;
 
     psu = dynamic_cast <AbstractPSU*>(getParentModule()->getParentModule()->getSubmodule("psu"));
+ //   cout << "psu--->"<< psu<<endl;
+
 }
 
 void EnergyMeterController::registerMemorization(bool memo){
+ //   cout << "EnergyMeterController::registerMemorization" << endl;
 
     memorization = memo;
     cpu ->activeMemorization(memorization);

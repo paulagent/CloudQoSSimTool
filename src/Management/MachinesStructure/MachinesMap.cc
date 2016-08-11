@@ -48,7 +48,7 @@ int MachinesMap::isSet(string typeName){
 void MachinesMap::increaseInstances (vector<Machine*> machines, string typeName){
 
     // Define ..
-
+cout <<"MachinesMap::increaseInstances"<< endl;
         HeterogeneousSet* set;
         elementType* elt;
         int position = isSet(typeName);
@@ -562,11 +562,11 @@ Machine* MachinesMap::getMachineByIndex (string machineSetId, int machineIndex){
 }
 
 Machine* MachinesMap::getMachineByIndex (int machineSetIndex, int machineIndex){
+    //cout << "MachinesMap::getMachineByIndex (int machineSetIndex, int machineIndex" << endl;
 
 	// Define ..
 		Machine* result;
 		int machineMapSize;
-		//cout << "MachinesMap::getMachineByIndex (int machineSetIndex, int machineIndex" << endl;
 
 	// Init ..
 		result = NULL;

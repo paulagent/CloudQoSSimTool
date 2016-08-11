@@ -186,13 +186,13 @@ void AbstractCloudManager::initManager(int totalNodes) {
                 nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
                 if (nodeMod)
                  {
-                    cout<<"nodeMod->getFullName()--->"<<nodeMod->getFullName()<<endl;
-                    cout<<"nodeMod->getFullPath()--->"<< nodeMod->getFullPath()<<endl;
-                     cout << "if--->just test---->nodeName.c_str()" << nodeName.c_str()<<endl;
+             cout<<"nodeMod->getFullName()--->"<<nodeMod->getFullName()<< endl;
+             cout<<"nodeMod->getFullPath()--->"<< nodeMod->getFullPath()<< endl;
+             cout << "if--->just test---->" << nodeName.c_str()<<endl;
                  }
                  else
                  {
-                     cout << "else --->just test---->nodeName.c_str()" << nodeName.c_str()<<endl;
+                     cout << "else --->just test---->" << nodeName.c_str()<<endl;
 
                      nodeMod =getParentModule()->getParentModule()->getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
 
@@ -298,6 +298,7 @@ void AbstractCloudManager::initManager(int totalNodes) {
                 }
 
                 machine = check_and_cast<Machine*>(nodeChecked);
+                cout << "MODULE[AbstractCloudManager::initManager]:machine--->"<< machine->getFullName()<<endl;
                 hetNodeSet->initMachine(machine);
                 totalNodes++;
             }
@@ -326,16 +327,17 @@ void AbstractCloudManager::initManager(int totalNodes) {
                                {
                                    cout << "just test---->nodeName.c_str()" << nodeName.c_str()<<endl;
                                }
-                               else
+                       /*        else
                                {
                                    cout << "else2--->just test---->nodeName.c_str()" << nodeName.c_str()<<endl;
 
                                  //  nodeMod = getParentModule()->getParentModule()->getParentModule()->getParentModule()->getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
                                   nodeMod =getParentModule()->getParentModule()->getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
 
-                               }
+                               }*/
 
                 nodeChecked = check_and_cast<Node*>(nodeMod);
+                cout << "nodeChecked"<< nodeChecked->getFullName()<<endl;
 
                 nodeChecked->initNode();
 
@@ -505,15 +507,15 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
     selectedNode = NULL;
     attendedRequest_vms.clear();
     printf(
-                   "MODULE[AbstractCloudManager::request_start_vm] vmQuantity----------------> %d",
-                  vmQuantity);
+                   "\n MODULE[AbstractCloudManager::request_start_vm] req->getDifferentTypesQuantity()----------------> %d",
+                   req->getDifferentTypesQuantity());
     for (int i = 0;
             ((i < req->getDifferentTypesQuantity()) && (!notEnoughResources));
             ) {
 
         vmQuantity = req->getSelectionQuantity(i);
         printf(
-                "MODULE[AbstractCloudManager::request_start_vm] vmQuantity----------------> %d",
+                "\n MODULE[AbstractCloudManager::request_start_vm] vmQuantity----------------> %d",
                vmQuantity);
         for (int j = 0; (j < vmQuantity) && !notEnoughResources; j++) {
 
@@ -522,16 +524,20 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             //it tries to cast the pointer via dynamic_cast,
             //and if it fails it stops the simulation with an error message
             cModule* vmSet1 = getParentModule()->getSubmodule("vmSet");
-            vmImage = vmSet1->getSubmodule("vmImage", j);
+            cout << "vmSet1--->"<<vmSet1->getFullName()<<endl;
+            vmImage = vmSet1->getSubmodule("vmImage", 0);
             if (vmImage)
             {
-                cout << "AbstractCloudManager::request_start_vm--->vmImage memory--->" <<vmImage->par("memorySize_MB").longValue()<<endl;
+                cout << endl<<"AbstractCloudManager::request_start_vm--->vmImage memory--->" <<vmImage->par("memorySize_MB").longValue()<<endl;
             }
             else
             {
-                cModule* vmSet2 = getParentModule()->getParentModule()->getParentModule()->getSubmodule("vmSet");
-                vmImage = vmSet2->getSubmodule("vmImage", j);
-                cout << "AbstractCloudManager::request_start_vm--->vmImage memory--->" <<vmImage->par("memorySize_MB").longValue()<<endl;
+             //   cModule* vmSet2 = getParentModule()->getParentModule()->getParentModule()->getSubmodule("vmSet");
+             //   vmImage = vmSet2->getSubmodule("vmImage", j);
+            //    vmImage = vmSet1->getModuleByPath(RR);
+             //   cout << endl<<"AbstractCloudManager::request_start_vm--->vmImage memory--->" <<vmImage->par("memorySize_MB").longValue()<<endl;
+            cout << "------------------------------error------------------------------"<<endl;
+
             }
             cModule* vmImage2 = getSubmodule("vmImage");
             vm2 = dynamic_cast<VM*>(vmImage2);
