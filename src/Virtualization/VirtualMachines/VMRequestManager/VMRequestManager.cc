@@ -548,7 +548,7 @@ bool VMRequestManager::scheduleRR(VM* vm) {
 
         RunningContainer* rc;
         rc = rContainer.at(j);
-        if (t >= rc->end_time)   // we need to shutdown container
+        if (t > rc->end_time)   // we need to shutdown container
                 {
             vm->sleep(rc->containerID);
             printf(
@@ -560,12 +560,13 @@ bool VMRequestManager::scheduleRR(VM* vm) {
             AbstractRequest* new_req;
             RequestVM* new_req_c = new RequestVM();
 
-            string  id= rc->container->getContainerId();
+          //  string  id= rc->container->getContainerId();
 
+            cout<< "container id is --->" <<id <<endl;
             new_req_c->setPid(vm->getPid());
             new_req_c->setUid(vm->userID);
-            new_req_c ->setContainerID(id);
-
+            new_req_c ->setContainerID(rc->containerID);
+            cout<< "container after set id  --->" <<endl;
             // add new request to temp queue
 
             new_req = dynamic_cast<AbstractRequest*>(new_req_c);
