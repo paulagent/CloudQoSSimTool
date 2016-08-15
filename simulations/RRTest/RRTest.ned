@@ -153,7 +153,7 @@ network RRTest
             @display("p=78,54;is=l");
         }
         rack2: Rack {
-            @display("p=401,50");
+            @display("p=330,44;is=l");
         }
     // ---------------------------------------------------------------
     //   Connections section
@@ -170,6 +170,6 @@ network RRTest
         ns_1_NodeStorage_C.ethg++ <--> Channel_1_RRTest <--> switch_0.ethg++;
 
         rack1.ethg[0] <--> rackSwitch_0.ethg++;
-         rack2.ethg[0] <--> rackSwitch_0.ethg++;
+        rack2.ethg[0] <--> rackSwitch_0.ethg++;
 }
 

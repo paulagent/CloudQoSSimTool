@@ -191,7 +191,7 @@ void CloudSchedulerRR::schedule() {
 }
 
 AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
-    if (DEBUG_CLOUD_SCHED) printf("\n Method[SCHEDULER_ROUNDROBIN]: -------> select_nodes\n");
+    if (DEBUG_CLOUD_SCHED) printf("\n Method[CloudSchedulerRR::selectNode]: -------> select_nodes\n");
 
     // Define ..
     AbstractNode* node;
@@ -218,7 +218,7 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
     vmMemory = el->getMemorySize();
     setInitial = currentNodeType;
     positionInitial = currentNodeIndex;
-    if (DEBUG_CLOUD_SCHED) printf("\n Method[SCHEDULER_ROUNDROBIN]:currentNodeIndex :  ------->   %d \n", currentNodeIndex);
+    if (DEBUG_CLOUD_SCHED) printf("\n Method[CloudSchedulerRR::selectNode]:currentNodeIndex :  ------->   %d \n", currentNodeIndex);
 
     found = false;
 
@@ -229,7 +229,7 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
     //       positionInitial = currentNodeIndex;
     while (!found) {  // it continues until found is FALSE
                       //DANGER: INFINITE LOOP
-         if (DEBUG_CLOUD_SCHED) printf("\n Method[SCHEDULER_ROUNDROBIN]:In Searching Loop \n");
+         if (DEBUG_CLOUD_SCHED) printf("\n Method[CloudSchedulerRR::selectNode]:In Searching Loop \n");
 
 
 
@@ -241,22 +241,27 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
 
         node = getNodeByIndex(setInitial, positionInitial);
 
-          printf("\n Method[SCHEDULER_ROUNDROBIN]: After getNodeByIndex: ------>%s \n", node->getFullName());
-          printf("\n Method[SCHEDULER_ROUNDROBIN]: Free Memory: ------>%f \n", node->getFreeMemory());
-          printf("\n Method[SCHEDULER_ROUNDROBIN]: vmMemory: ------>%d \n", vmMemory);
-          printf("\n Method[SCHEDULER_ROUNDROBIN]: Number of Cores: ------>%d \n", node->getNumCores());
-          printf("\n Method[SCHEDULER_ROUNDROBIN]: vmCPU: ------>%d \n", vmCPU);
+          printf("\n Method[CloudSchedulerRR::selectNode]: Node Name: ------>%s \n", node->getFullName());
+          printf("\n Method[CloudSchedulerRR::selectNode]: Node Free Memory: ------>%f \n", node->getFreeMemory());
+          printf("\n Method[CloudSchedulerRR::selectNode]: vmMemory: ------>%d \n", vmMemory);
+          printf("\n Method[CloudSchedulerRR::selectNode]: Node Number of Cores: ------>%d \n", node->getNumCores());
+          printf("\n Method[CloudSchedulerRR::selectNode]: vmCPU: ------>%d \n", vmCPU);
 
         if ((node->getFreeMemory() >= vmMemory)
                 && (node->getNumCores() >= vmCPU)) {
-            printf("\n Method[SCHEDULER_ROUNDROBIN]: INSIDE IF PART -----> Really assign a node");
+            printf("\n Method[CloudSchedulerRR::selectNode]: INSIDE IF PART ");
 
             NodeVL* node_vl = check_and_cast<NodeVL*>(node);
             numProcesses = node_vl->getNumOfLinkedVMs();
+            printf("\n Method[CloudSchedulerRR::selectNode]: INSIDE IF PART -----> numProcesses:%d",numProcesses);
+            printf("\n Method[CloudSchedulerRR::selectNode]: INSIDE IF PART -----> maximum_number_of_processes_per_node:%d",maximum_number_of_processes_per_node);
+
             if (numProcesses < maximum_number_of_processes_per_node) {
 
                 node = check_and_cast<Node*>(node_vl);
                 found = true;
+                printf("\n Method[CloudSchedulerRR::selectNode]: INSIDE IF PART -----> Really assign a node");
+
             }
 
 
@@ -264,7 +269,7 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
 
         currentNodeIndex++;
        //   printf("\n Method[SCHEDULER_ROUNDROBIN]:getSetSize(setInitial)------>%d \n",getSetSize(setInitial));
-            printf("\n Method[SCHEDULER_ROUNDROBIN]: currentNodeIndex 222------>%d \n", currentNodeIndex);
+            printf("\n Method[CloudSchedulerRR::selectNode]: the next node : \n -------> currentNodeIndex ------>%d \n", currentNodeIndex);
 
 
         if ((unsigned int) currentNodeIndex
@@ -282,7 +287,7 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
         // The algorithm has travel by all the values and it not reach a solution. So, the node is null.
         //  if ((positionInitial == currentNodeIndex) && (currentNodeType == setInitial)){
         if ((positionInitial >= currentNodeIndex) && (!found)) {
-
+cout << "Method[CloudSchedulerRR::selectNode]: The algorithm has travel by all the values and it not reach a solution. --> ROUND ROBIN"<<endl;
            // node= scheduleRR();
          //   NodeVL* node_vl2;
             node=scheduleRR();
@@ -318,8 +323,8 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
 
     }
 
-    if (node!=NULL)
-        {cout<<"Method[SCHEDULER_ROUNDROBIN]: selectednode is:------>"      << node->getFullName()<< endl;}
+    if (node!=NULL && found)
+        {cout<<"Method[CloudSchedulerRR::selectNode]: selectednode is:------>"      << node->getFullName()<< endl;}
     else {
         printf( "The algorithm has travel by all the values and it not reach a solution. So, the node is null.");
         }
