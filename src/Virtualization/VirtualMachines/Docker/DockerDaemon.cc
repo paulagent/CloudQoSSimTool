@@ -188,11 +188,12 @@ DockerContainer* DockerDaemon::getDockerById(string id)
 cout << "DockerDaemon::getDockerById containerSet size " <<containerSet.size() <<endl;
 cout << "DockerDaemon::getDockerById id " << id <<endl;
     bool found=false;
-          for(unsigned int i=0; i< containerSet.size() and found==false;++i)
+          for(unsigned int i=0; i< containerSet.size() && found==false;i++)
              {
-cout << "DockerDaemon::getDockerById" << containerSet.at(i)->getContainerId() <<endl;
+cout << "DockerDaemon::getDockerById -->" << containerSet.at(i)->getContainerId() <<endl;
                  if (containerSet.at(i)->getContainerId() ==id)
                  {
+                     cout<< "DockerDaemon::getDockerById found" <<endl;
                      //FreeMem(containerSet.at(i)->size);
                      containerSet.erase(containerSet.begin()+i);
                      dc = containerSet.at(i);

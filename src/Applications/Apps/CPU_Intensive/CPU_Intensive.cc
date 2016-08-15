@@ -62,7 +62,7 @@ void CPU_Intensive::finish(){
 void CPU_Intensive::startExecution (){
 
     API_OS::startExecution();
-    cout << " CPU_Intensive::startExecution()---simulation start>"<<endl;
+  //  cout << " CPU_Intensive::startExecution()---simulation start>"<<endl;
     Enter_Method_Silent();
     // Create SM_WAIT_TO_EXECUTE message for delaying the execution of this application
     cMessage *waitToExecuteMsg = new cMessage (SM_WAIT_TO_EXECUTE.c_str());
@@ -273,6 +273,8 @@ void CPU_Intensive::executeIOrequest(bool executeRead, bool executeWrite){
 			showDebugMessage ("[%d/%d] Executing (Read) Offset:%d; dataSize:%d", currentIteration, iterations, readOffset,  inputSizeMB*MB);
 		
 		icancloud_request_read (INPUT_FILE, readOffset, inputSizeMB*MB);
+
+
 		readOffset += (inputSizeMB*MB);
 
 
