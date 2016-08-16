@@ -63,7 +63,7 @@ class API_OS: virtual public icancloud_Base{
 		// Flag to know if the application has to be finalized
 		bool   flagFinalize;
 
-
+		int Pid ;
 	   /**
 		* Destructor
 		*/
@@ -82,7 +82,7 @@ class API_OS: virtual public icancloud_Base{
         /**
          * Start the app execution.
          */
-        virtual void startExecution ();
+        virtual void startExecution (int pid);
 
 	   /**
 		* Process a self message.

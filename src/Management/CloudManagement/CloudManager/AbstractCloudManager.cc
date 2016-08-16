@@ -1500,7 +1500,7 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req) {
 
     if (vm != NULL) {
         cout << "vm->getNodeSetName()---->" << vm->getNodeSetName()
-                << "vm->getNodeName()---->" << vm->getNodeName() << endl;
+                << "---vm->getNodeName()---->" << vm->getNodeName() << endl;
         node = getNodeByIndex(vm->getNodeSetName(), vm->getNodeName(), false);
         //    nodeVL=vm->getOwner();
 
@@ -1538,10 +1538,10 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req) {
             while (j < int(runVM.size()) && runVM.size() != 0) {
                 clock_t t = clock(); // we are not sure about current time
 
-                printf(
-                        "\n Method[AbstractCloudManager::request_unfreez_vm]:NO_Runiing_VM -------> %ld \n",
-                        runVM.size());
-                cout << "------------------j  :" << j << endl;
+                //printf(
+                //        "\n Method[AbstractCloudManager::request_unfreez_vm]:NO_Runiing_VM -------> %ld \n",
+                //        runVM.size());
+                //cout << "------------------j  :" << j << endl;
                 RunningVM* vmr;
                 vmr = runVM.at(j);
                 if (vmr->hostNodeVL->getFullName() == nodeVL->getFullName()) {

@@ -40,7 +40,7 @@ void CPU_Intensive::initialize(){
 	startServiceCPU = 0.0;
 	endServiceCPU = 0.0;
 	readOffset = writeOffset = 0;
-
+	Pid = 0;
 	// Boolean variables
 	executeCPU = executeRead = executeWrite = false;
 
@@ -59,15 +59,15 @@ void CPU_Intensive::finish(){
 
 }
 
-void CPU_Intensive::startExecution (){
-
-    API_OS::startExecution();
+void CPU_Intensive::startExecution (int pid){
+    Pid = pid;
+    API_OS::startExecution(Pid);
   //  cout << " CPU_Intensive::startExecution()---simulation start>"<<endl;
     Enter_Method_Silent();
     // Create SM_WAIT_TO_EXECUTE message for delaying the execution of this application
     cMessage *waitToExecuteMsg = new cMessage (SM_WAIT_TO_EXECUTE.c_str());
     scheduleAt (simTime()+startDelay, waitToExecuteMsg);
-    cout << " CPU_Intensive::startExecution()---self schedule at simTime()+startDelay time>"<<endl;
+  //  cout << " CPU_Intensive::startExecution()---self schedule at simTime()+startDelay time>"<<endl;
 }
 
 void CPU_Intensive::processSelfMessage (cMessage *msg){
@@ -83,6 +83,7 @@ void CPU_Intensive::processSelfMessage (cMessage *msg){
 
         executeIOrequest (false, true);
 
+        executeCPUrequest();
     }else
 
         showErrorMessage ("Unknown self message [%s]", msg->getName());
@@ -97,6 +98,9 @@ void CPU_Intensive::processRequestMessage (icancloud_Message *sm){
 
 
 void CPU_Intensive::processResponseMessage (icancloud_Message *sm){
+cout << "CPU_Intensive::processResponseMessage" <<endl;
+
+
 
 	icancloud_App_IO_Message *sm_io;
 	icancloud_App_CPU_Message *sm_cpu;
@@ -231,6 +235,7 @@ void CPU_Intensive::processResponseMessage (icancloud_Message *sm){
 			else if (executeCPU){
 					
 				// Execute CPU!
+			    cout << "executeCPU 1" <<endl;
 				executeCPUrequest ();								
 			}
 			
@@ -238,7 +243,8 @@ void CPU_Intensive::processResponseMessage (icancloud_Message *sm){
 			else if ((executeRead) || (executeWrite)){
 
 				if ((executeRead) && (currentIteration > iterations))
-				{  cout << "CPU_Intensive::processResponseMessage" <<endl;
+				{
+				    cout << "CPU_Intensive::processResponseMessage" <<endl;
 					printResults();
 				}
 				else
@@ -260,6 +266,7 @@ void CPU_Intensive::changeState(string newState){
 
 void CPU_Intensive::executeIOrequest(bool executeRead, bool executeWrite){
 
+    cout << "CPU_Intensive::executeIOrequest" <<endl;
 	// Reset timer!
 	startServiceIO = simTime();
 
@@ -294,7 +301,7 @@ void CPU_Intensive::executeIOrequest(bool executeRead, bool executeWrite){
 
 
 void CPU_Intensive::executeCPUrequest(){
-
+//cout << "CPU_Intensive::executeCPUrequest()" <<endl;
 	// Debug?
 	if (DEBUG_Application)
 		showDebugMessage ("[%d/%d] Executing (CPU) MIs:%d", currentIteration, iterations, MIs);

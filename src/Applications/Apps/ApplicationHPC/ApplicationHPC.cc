@@ -74,7 +74,7 @@ void ApplicationHPC::finish(){
 
 }
 
-void ApplicationHPC::startExecution(){
+void ApplicationHPC::startExecution(int pid){
 
   // Define ..
     std::ostringstream osStream;
@@ -84,7 +84,7 @@ void ApplicationHPC::startExecution(){
         CfgMPI *mpiCfg = userPtr->getMPIEnv();
         numProcesses = mpiCfg->getNumProcesses();
 
-        MPI_Base::startExecution ();
+        MPI_Base::startExecution (pid);
 
         // Set the moduleIdName
         osStream << "ApplicationHPC." << getId();

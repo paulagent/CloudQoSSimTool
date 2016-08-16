@@ -312,7 +312,8 @@ void AbstractCloudUser::start_up_job_execution (VM* vmToExecute, UserJob* job, J
 
         // Start scope and app
             vm->changeState(MACHINE_STATE_RUNNING);
-            jobAux->startExecution ();
+          int pid =  vm->getPid();
+            jobAux->startExecution (pid);
 
 }
 

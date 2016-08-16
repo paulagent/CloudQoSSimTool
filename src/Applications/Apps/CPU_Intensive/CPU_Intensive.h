@@ -25,7 +25,7 @@ class CPU_Intensive : public UserJob{
 
 	
 	protected:
-
+        int Pid;
 		/** Size of data chunk to read in each iteration */
 		int inputSizeMB;
 
@@ -109,7 +109,7 @@ class CPU_Intensive : public UserJob{
         /**
          * Start the app execution.
          */
-        virtual void startExecution ();
+        virtual void startExecution (int pid);
 
 	   /**
 		* Process a self message.

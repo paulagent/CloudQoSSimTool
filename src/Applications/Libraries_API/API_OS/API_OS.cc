@@ -20,8 +20,9 @@ void API_OS::finish(){
 	icancloud_Base::finish();
 }
 
-void API_OS::startExecution(){
-cout << "API_OS::startExecution()---simulation start>"<<endl;
+void API_OS::startExecution(int pid){
+cout << "API_OS::startExecution()---simulation start Pid---->"<< pid<<endl;
+Pid = pid;
     fromOSGate = gate ("fromOS");
     toOSGate = gate ("toOS");
 }
@@ -102,6 +103,7 @@ void API_OS::icancloud_request_read (const char* fileName, unsigned int offset, 
 		sm_io->setFileName(fileName);
 		sm_io->setOffset (offset);
 		sm_io->setSize (size);
+		sm_io->setPid(Pid);
 		
 		// Update message length
 		sm_io->updateLength ();
@@ -111,8 +113,8 @@ void API_OS::icancloud_request_read (const char* fileName, unsigned int offset, 
 		
 		// Send the request to the Operating System
 
-		icancloud_request_sendDataToNetwork(sm_io,1);
-		//sendRequestMessage (sm_io, toOSGate);
+		//icancloud_request_sendDataToNetwork(sm_io,1);
+		sendRequestMessage (sm_io, toOSGate);
 }
 		
 		
@@ -129,6 +131,7 @@ void API_OS::icancloud_request_write (const char* fileName, unsigned int offset,
 		sm_io->setFileName(fileName);
 		sm_io->setOffset (offset);
 		sm_io->setSize (size);
+		sm_io->setPid(Pid);
 
 		// Update message length
 		sm_io->updateLength ();
@@ -226,15 +229,18 @@ void API_OS::icancloud_request_cpu (unsigned int MIs){
 		// Creates the message
 		sm_cpu = new icancloud_App_CPU_Message ();
 		sm_cpu->setOperation (SM_CPU_EXEC);
-		
+		cout << "API_OS::icancloud_request_cpu  MI--->" << MIs <<endl;
+
 		// Set the corresponding parameters
 		sm_cpu->setTotalMIs(MIs);
 		sm_cpu->setRemainingMIs(MIs);
 		sm_cpu->setCpuTime(0.000000);
-
+		sm_cpu->setPid(Pid);
 		// Update message length
 		sm_cpu->updateLength ();
 		
+		cout << "API_OS::icancloud_request_cpu  --->"  << sm_cpu->getPid()<<endl;
+		        cout << "API_OS::icancloud_request_cpu  --->"  << sm_cpu->getUid()<<endl;
 		if (DEBUG_AppSystem)
 			showDebugMessage ("[AppSystemRequests] Computing (CPU) %s", sm_cpu->contentsToString(DEBUG_MSG_AppSystem).c_str());
 		

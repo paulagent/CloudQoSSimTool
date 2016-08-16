@@ -41,6 +41,7 @@ protected:
 
 
      //identify where is the VM and who is its property.
+     //for example rack1.blade[0].node[0]. the nodesetname is node, nodename is 0.
      int nodeName;											    // To identify which node is.
      string nodeSetName;										// To identify the set.
      string ip;                                                 // IP address of the VM

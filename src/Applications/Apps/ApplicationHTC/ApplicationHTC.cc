@@ -19,13 +19,13 @@ void ApplicationHTC::initialize(){
     MPI_Base::initialize();
 }
 
-void ApplicationHTC::startExecution(){
+void ApplicationHTC::startExecution(int pid){
 
 	std::ostringstream osStream;	
 	
 
 		// Init the super-class
-        MPI_Base::startExecution ();
+        MPI_Base::startExecution (pid);
 		
 		// Set the moduleIdName
 		osStream << "ApplicationHTC." << getId();

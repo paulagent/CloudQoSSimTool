@@ -37,7 +37,7 @@ bool VmMsgController::migrationPrepared() {
 }
 
 void VmMsgController::initialize() {
-cout << " VmMsgController::initialize()"<<endl;
+//cout << " VmMsgController::initialize()"<<endl;
     icancloud_Base::initialize();
 
     std::ostringstream osStream;
@@ -66,7 +66,7 @@ void VmMsgController::finish() {
 
 void VmMsgController::processSelfMessage(cMessage *msg) {
     delete (msg);
-    cout << "VmMsgController::processSelfMessage" << endl;
+    //cout << "VmMsgController::processSelfMessage" << endl;
 
     std::ostringstream msgLine;
     msgLine << "Unknown self message [" << msg->getName() << "]";
@@ -78,10 +78,13 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
     icancloud_App_NET_Message *sm_net;
     int operation;
     cout << "VmMsgController::processRequestMessage:    " <<msg->getFullName()<< endl;
-    int Pid;
+    int Pid, Uid;
     Pid=msg->getPid();
+    Uid = msg->getUid();
     cout << "PiD----->"<< Pid << endl;
-    if (Pid==-1)
+
+    cout << "UiD----->"<< Uid << endl;
+    if (Pid==-1 )
     {
         delete (msg);
     }
@@ -91,7 +94,7 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
 
     operation = msg->getOperation();
 
-    cout << "operation" << operation << endl;
+    cout << "operation-->" << operation << endl;
 
     if (operation == SM_STOP_AND_DOWN_VM) {
 
@@ -124,8 +127,9 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
 
         // Set as application id the arrival gate id (unique per job).
         if ((sm_net != NULL) && (sm_net->getCommId() != -1)) {
+            cout << "run this part" <<endl;
             insertCommId(uId, pId, msg->getCommId(), msg->getId());
-            cout << "VmMsgController::processRequestMessage:  insertCommId   " << endl;
+       //     cout << "VmMsgController::processRequestMessage:  insertCommId   " << endl;
         }
 
         if (migrateActive) {
@@ -140,6 +144,7 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
             }
 
             else if (msg->arrivedOn("fromApps")) {
+
                 updateCounters(msg, 1);
 cout << "VmMsgController::processRequestMessage--->fromApps--getIndex " <<msg->getArrivalGate()->getIndex() <<endl;
                 msg->setCommId(msg->getArrivalGate()->getIndex());
@@ -151,15 +156,12 @@ cout << "VmMsgController::processRequestMessage--->fromApps--getIndex " <<msg->g
                         sm_net->setVirtual_user(msg->getUid());
                     }
 
-                    sm_net->setVirtual_destinationIP(
-                            sm_net->getDestinationIP());
-                    sm_net->setVirtual_destinationPort(
-                            sm_net->getDestinationPort());
+                    sm_net->setVirtual_destinationIP(sm_net->getDestinationIP());
+                    sm_net->setVirtual_destinationPort(sm_net->getDestinationPort());
                     sm_net->setVirtual_localIP(sm_net->getLocalIP());
                     sm_net->setVirtual_localPort(sm_net->getLocalPort());
                 }
-                cout << "msg->arrivedOn(\"fromApps\") -->gate id  is "
-                        << msg->getCommId() << endl;
+                cout << "msg->arrivedOn(\"fromApps\") -->gate id  is "<< msg->getCommId() << endl;
                // cout << "msg->arrivedOn(\"fromApps\") -->gate nameis "
               //          << toOSApps->getGate(msg->getCommId())->getFullName()
               //          << endl;
@@ -204,7 +206,7 @@ cGate* VmMsgController::getOutGate(cMessage *msg) {
     cGate* return_gate;
     int i;
     bool found;
-    cout << "VmMsgController::getOutGate" << endl;
+   // cout << "VmMsgController::getOutGate" << endl;
 
     // Initialize ..
     i = 0;
@@ -345,7 +347,7 @@ void VmMsgController::linkNewApplication(cModule* jobAppModule, cGate* scToApp,
     fromApps->connectIn(jobAppModule->gate("toOS"), idxFromApps);
 
     // Connections to SyscallManager
-    cout << "VmMsgController::here is problem" << endl;
+   // cout << "VmMsgController::here is problem" << endl;
     int idxToOs = toOSApps->newGate("toOSApps");
     toOSApps->connectOut(scFromApp, idxToOs);
 

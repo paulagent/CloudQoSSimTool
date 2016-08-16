@@ -111,7 +111,7 @@ class MPI_Base: public UserJob{
         /**
          * Start the app execution.
          */
-        virtual void startExecution ();
+        virtual void startExecution (int pid);
 
 	   /**
 		* Process a self message.
