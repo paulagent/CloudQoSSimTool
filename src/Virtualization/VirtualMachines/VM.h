@@ -131,6 +131,11 @@ public:
            */
     void wakeup(string containerID);
 
+    //TCP
+    void send_tcp_msg(string* msg, string* dest_ip);
+    void receive_tcp_msg();
+
+
 };
 
 #endif /* VM_H_ */
