@@ -236,7 +236,8 @@ void H_CPUManager_Base::freeVM (int uId, int pId){
     vmControl* control;
     int gateIdx;
     int gatesSize;
-
+    cout << "H_CPUManager_Base::freeVM :pid --ui ---> " << pId  <<":" <<uId <<endl;
+    cout << "H_CPUManager_Base::freeVM----> vms size" << vms.size() << endl;
     for (int i = 0; (i < (int)vms.size()) && (!found); i++){
         control = (*(vms.begin() + i));
         if ((control->pId == pId) && (control->uId == uId)){
@@ -245,11 +246,23 @@ void H_CPUManager_Base::freeVM (int uId, int pId){
                 gateIdx = (*(control->gates.begin() + j));
                 fromVMCPU->freeGate (gateIdx);
                 toVMCPU->freeGate (gateIdx);
+
+
+
             }
+
             vms.erase(vms.begin()+i);
             found = true;
         }
     }
+    /*/uvic
+                cout << "numcpu:  "<< numCPUs <<endl;
+                for (int i=0; i<numCPUs; i++){
+
+               cout << toNodeCPU [i]->getFullName()<<endl;
+               toNodeCPU[i]->disconnect();
+               fromNodeCPU[i]->disconnect();
+                } //uvic*/
 
     if (!found) throw cRuntimeError ("H_CPUManager_Base::freeVM--> (id = %i) not exists at hypervisor\n", pId);
 }

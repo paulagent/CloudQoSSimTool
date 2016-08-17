@@ -69,7 +69,7 @@ void LocalNetManager::createVM(icancloud_Message* sm){
 
 	// Init ..
 		sm_net = check_and_cast <icancloud_App_NET_Message*> (sm);
-        cout << "LocalNetManager::createVM ---> id----> "<<sm->getUid() << endl;
+        cout << "LocalNetManager::createVM ---> id----> "<<sm->getUid() << "----pid----->"<<sm->getPid()<<endl;
 
 	// create the user into the structure
 		pat->pat_createVM(sm->getUid(), sm->getPid(), sm_net->getLocalIP());
@@ -256,26 +256,32 @@ vector<icancloud_App_NET_Message*> LocalNetManager::manage_close_connections(int
 	vector<int> connectionIDs;
 	unsigned int i;
 	vector<icancloud_App_NET_Message*> sm_vector;
-    //cout << "LocalNetManager::manage_close_connection-----> uid--->"<< uId<< endl;
-    //cout << "LocalNetManager::manage_close_connection-----> pid--->"<< pId<< endl;
+    cout << "LocalNetManager::manage_close_connection-----> uid--->"<< uId<< endl;
+   cout << "LocalNetManager::manage_close_connection-----> pid--->"<< pId<< endl;
 	// Init ..
 		connectionIDs.clear();
 		sm_vector.clear();
 
 	// Delete the vm from the virtual manager ipUserSet
+
+		 //  cout << "LocalNetManager::manage_close_connection-----> Delete the vm from the virtual manager ipUserSet--->"<< endl;
+
 		netManagerPtr->deleteVirtualIP_by_VMID(pId, uId);
 
 	// Delete port entries associated to the vm from the virtual manager port table.
+       // cout << "LocalNetManager::manage_close_connection-----> Delete port entries associated to the vm from the virtual manager port table.--->"<< endl;
+
 		netManagerPtr->freeAllPortsOfVM(ip_LocalNode.c_str(), pId, uId);
 
 	// get all the connectionIDs to close the connections from the Local net manager (PAT)..
-		connectionIDs = getConnectionsIDs(uId, pId);
-       // cout << "LocalNetManager::manage_close_connection----->connectionIDs.size()--->"<< connectionIDs.size()<< endl;
+        connectionIDs = getConnectionsIDs(uId, pId);
+
+      //  cout << "LocalNetManager::manage_close_connection----->connectionIDs.size()--->"<< connectionIDs.size()<< endl;
 
 		for (i = 0; i < connectionIDs.size();i++){
 			// Build the message for closing connection (node host)
 			sm_close_connection =  new icancloud_App_NET_Message ();
-		//    cout << "LocalNetManager::manage_close_connection----->new icancloud_App_NET_Message--->"<<  endl;
+		    cout << "LocalNetManager::manage_close_connection----->new icancloud_App_NET_Message--->"<<  endl;
 
 			sm_close_connection ->setOperation(SM_CLOSE_CONNECTION);
 			sm_close_connection -> setUid(uId);

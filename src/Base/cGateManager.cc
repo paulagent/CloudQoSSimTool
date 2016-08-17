@@ -100,6 +100,7 @@ cGate* cGateManager::freeGate(int index){
     } else {
         gateSt->gateHit = false;
         gate = gateSt->gate;
+  //      std::cout << "cGateManager::freeGate----> gateName"<< gate->getFullName() <<endl;
         gate -> disconnect();
         holes.push_back(index);
 

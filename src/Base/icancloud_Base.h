@@ -249,6 +249,12 @@ class icancloud_Base: public cSimpleModule{
          */
 		vector<string> divide(const char* inputString, char separator);
 
+		 /**
+		        * Get the hostname of the node that contains current module.
+		        * @return Node's hostname that contains the module which invoked this method.
+		        */
+		        string getHostName ();
+
 	//	virtual void socketDataArrived(int connId, void *yourPtr, cPacket *msg, bool urgent);
 
 	//	virtual void sendPacket(icancloud_Message *sm, cGate* gate,int numBytes, int expectedReplyBytes, bool serverClose=false);
@@ -262,11 +268,7 @@ class icancloud_Base: public cSimpleModule{
 		*/
 		void updateMessageTrace (icancloud_Message *sm);
 
-	   /**
-		* Get the hostname of the node that contains current module.
-		* @return Node's hostname that contains the module which invoked this method.
-		*/
-		string getHostName ();
+
 
 	   /**
 		* Get the out Gate to the module that sent <b>msg</b>.

@@ -28,6 +28,8 @@
 #define REQUEST_FREE_RESOURCES  5           // This is a request for free resources
 #define REQUEST_ABANDON_SYSTEM  6           // This request is invoked when a user left the system
 
+#define REQUEST_UNFREEZE_VM  111       // This request is invoked when a user unfreeze the vm
+#define REQUEST_START_DOCKER_CONTAINER 112  // This request is invoked when a user start docker container
 // ---------------- Storage Operations -------------------
 #define FS_NFS                                   "NFS"
 #define FS_PFS                                   "PFS"

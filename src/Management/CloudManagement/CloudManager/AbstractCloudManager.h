@@ -1,18 +1,23 @@
 #ifndef __ABSTRACTMANAGER_BASE_H_
 #define __ABSTRACTMANAGER_BASE_H_
 
+
+#include "RunningVM.h"
 #include "AllocationManagement.h"
 #include "cfgCloud.h"
 #include "VM.h"
 #include "NodeVL.h"
 #include "RequestVM.h"
-#include "RunningVM.h"
+
 #include "time.h"
 
 class CfgCloud;
 class RequestVM;
+class RunningVM;
 
 class AbstractCloudManager : virtual public AllocationManagement{
+
+
 
 protected:
 
@@ -36,9 +41,7 @@ protected:
     bool migrationActive;
 
     vector <RequestVM*> reqPendingToDelete;
-public:
     vector <RunningVM*> runVM;
-
 protected:
 
 
@@ -83,6 +86,7 @@ protected:
              * This method returns the node where the virtual machine given as parameter (vm) is going to be allocated.
              */
             virtual AbstractNode* selectNode (AbstractRequest* req) = 0;
+           // virtual void  scheduleRR() =0;
 
             /*
              * This method returns the node(s) that vm's is going to use for
@@ -137,6 +141,16 @@ protected:
 	         * This method is invoked to attend a vm shutdown request;
 	         */
 	        void request_shutdown_vm(RequestVM* req);
+	        /*
+	         * uvic
+             * This method is invoked to attend a vm unfreez request;
+             */
+            bool request_unfreez_vm(RequestVM* req);
+            /*
+                        * uvic
+                        * This method is invoked to attend a  request_start_docker_container request;
+                        */
+            bool    request_start_docker_container(RequestVM* req);
 
 
 		// ------------------------ operations with connections of vms --------------------
@@ -164,6 +178,7 @@ public:
 
             virtual void notifyManager(icancloud_Message* msg);
 
+            vector <RunningVM*> getRunVM();
 private:
 
          // ----------------------------------VM INTERNALS -------------------------------

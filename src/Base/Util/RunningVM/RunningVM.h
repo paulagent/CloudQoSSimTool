@@ -4,19 +4,18 @@
 #include <omnetpp.h>
 #include <string.h>
 #include "VM.h"
+#include "NodeVL.h"
 
+class NodeVL;
 /**
- * @class ResourcesMeter ResourcesMeter.h "ResourcesMeter.h"
+
  *
- * This module performs measures of resources like RAM, CPU, etc...
- *
- * @author Alberto N&uacute;&ntilde;ez Covarrubias
- * @date 02-10-2007
  */
 class RunningVM{
 public:
     int userID;
     VM* vm;
+    NodeVL* hostNodeVL;
   //  vector<VM*> vmID;
     clock_t start_time;
     clock_t end_time;

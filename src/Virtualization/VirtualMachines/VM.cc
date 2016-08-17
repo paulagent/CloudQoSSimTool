@@ -38,7 +38,7 @@ VM::VM(elementType* el) {
     osMod = getSubmodule("osModule")->getSubmodule("syscallManager");
     os = dynamic_cast<VMSyscallManager*>(osMod);
 
-    printf("hi from Machine::con2 \n ");
+   // printf("hi from Machine::con2 \n ");
 
     type = new elementType();
 
@@ -69,7 +69,7 @@ void VM::initialize() {
     cModule* osMod;
     string vmTypeName;
     Machine::initialize();
-
+cout <<"VM::initialize()" << endl;
     // Init ..
     states_log.clear();
     pending_operation = NOT_PENDING_OPS;
@@ -77,11 +77,16 @@ void VM::initialize() {
     nodeName = -1;
     nodeSetName = "";
     vmName = "";
-
+    vmreqmgr = new VMRequestManager();
+    vmreqmgr->initialize();
     osMod = getSubmodule("osModule")->getSubmodule("syscallManager");
     os = dynamic_cast<VMSyscallManager*>(osMod);
     Machine::changeState(MACHINE_STATE_OFF);
-
+  //  vmschrr->VMSchedulerRR();
+  //  dockerset.clear();
+    is_freezed=false;
+    has_dockers=false;
+    dockerDaemon=new DockerDaemon();
 }
 
 void VM::finish() {

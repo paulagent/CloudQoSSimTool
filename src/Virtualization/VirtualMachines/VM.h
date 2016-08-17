@@ -20,6 +20,13 @@
 #include "ElementType.h"
 #include "VMSyscallManager.h"
 
+#include "DockerContainer.h"
+
+#include "VMRequestManager.h"
+#include "DockerDaemon.h"
+
+class VMRequestManager;
+
 class VM : public Machine{
 
 protected:
@@ -34,16 +41,24 @@ protected:
      string ip;                                                 // IP address of the VM
 
      vector <vmStatesLog_t*> states_log;    // To log the states of the vms (composed by the code of the state and when a change is perfomed (in minutes).
-                                            // Each state changed will generate a new vmStatesLog entry-
+
+     vector<DockerContainer*>  dockerset;                                       // Each state changed will generate a new vmStatesLog entry-
+
+    // vector<Docker*>  dockerset;                                       // Each state changed will generate a new vmStatesLog entry-
+
 
 public:
+     bool is_freezed;
+     DockerDaemon* dockerDaemon;
+     bool has_dockers;
      VM();
     VM( elementType* el);
     /*
     * Destructor
     */
     virtual ~VM();
-
+    VMRequestManager* vmreqmgr;
+ //   VMSchedulerRR* vmschrr;
     /*
     * Initialization of the module
     */

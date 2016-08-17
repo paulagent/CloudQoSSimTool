@@ -42,7 +42,7 @@ public:
                 cGate* oGateNet, cGate* iGateStorage, cGate* oGateStorage, int numCores, string virtualIP,
                 int requestedMemoryKB, int requestedStorageKB, int uId, int pId);
 
-    void freeResources (int uId, int pId);
+    void freeResources (int pId, int uId);
 
     double getMemoryOverhead(){return memM->getMemoryOverhead();};
 };
