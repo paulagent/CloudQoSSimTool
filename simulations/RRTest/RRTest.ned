@@ -14,6 +14,7 @@
 // 
 
 package icancloud.simulations.RRTest;
+import inet.transport.tcp.TCP;
 import ned.DatarateChannel;
 import inet.nodes.ethernet.EtherSwitch;
 import icancloud.src.Architecture.Node.NodeVL.NodeVL;
@@ -129,6 +130,9 @@ network RRTest
         rc_0_Rack_A_16[1]: NodeVL {
 
             @display("p=279,45");
+        }
+        tcp: TCP {
+            @display("p=634,167");
         }
     // ---------------------------------------------------------------
     //   Connections section

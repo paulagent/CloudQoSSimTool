@@ -56,6 +56,8 @@ void TCP_New::initialize(){
 
     executeCPU = executeRead = executeWrite = false;
 
+    clientTCP_Services = new TCP_ClientSideService (localIP, outGate_TCP ,networkService);
+    serverTCP_Services = new TCP_ServerSideService (localIP, outGate_TCP, outGate_icancloudAPI, networkService);
 
 }
 
@@ -96,16 +98,23 @@ void TCP_New::processSelfMessage(cMessage *msg){
 
 void TCP_New::processRequestMessage(icancloud_Message *sm){
 
+}
+
+
+void TCP_New::processResponseMessage(icancloud_Message *sm){
     icancloud_App_NET_Message *sm_net;
     sm_net = dynamic_cast<icancloud_App_NET_Message *>(sm);
     sm_net->getLocalIP();
     sm_net->getArrivalGate();
 
+    clientTCP_Services->createConnection(sm);
 
-}
+    clientTCP_Services->sendPacketToServer(sm);
 
 
-void TCP_New::processResponseMessage(icancloud_Message *sm){
+
+
+
 
 }
 
@@ -268,47 +277,6 @@ TCPSocket* TCP_New::getInvolvedSocket (cMessage *msg){
 
 void TCP_New::newListenConnection (icancloud_Message *sm){
 
-    TCPSocket *newSocket;
-    icancloud_App_NET_Message *sm_net;
-    serverTCP_Connector newConnection;
-
-
-        // Cast to icancloud_App_NET_Message
-        sm_net = dynamic_cast<icancloud_App_NET_Message *>(sm);
-
-        // Wrong message?
-        if (sm_net == NULL)
-            networkService->showErrorMessage ("[TCP_ServerSideService::newListenConnection] Error while casting to icancloud_App_NET_Message!");
-
-        // Exists a previous connection listening at the same port
-        if (existsConnection(sm_net->getLocalPort()))
-            networkService->showErrorMessage ("[TCP_ServerSideService::newListenConnection] This connection already exists. Port:%d!", sm_net->getLocalPort());
-
-        // Connection entry
-        newConnection.port = sm_net->getLocalPort();
-        newConnection.appIndex = sm_net->getNextModuleIndex();
-        connection.push_back (newConnection);
-
-        // Create a new socket
-        newSocket = new TCPSocket();
-
-        // Listen...
-
-        newSocket->setOutputGate(outGate_TCP);
-        newSocket->setDataTransferMode(TCP_TRANSFER_OBJECT);
-        newSocket->bind(*(localIP.c_str()) ? IPvXAddress(localIP.c_str()) : IPvXAddress(), sm_net->getLocalPort());
-        newSocket->setCallbackObject(this);
-        newSocket->listen();
-
-        // Debug...
-        if (DEBUG_TCP_Service_Server)
-            networkService->showDebugMessage ("[TCP_ServerSideService] New connection for App[%d] is listening on %s:%d",
-                                                sm_net->getNextModuleIndex(),
-                                                localIP.c_str(),
-                                                sm_net->getLocalPort());
-
-        // Delete msg
-        delete (sm);
 }
 
 void TCP_New::arrivesIncommingConnection (cMessage *msg){
