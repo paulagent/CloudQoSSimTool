@@ -84,7 +84,9 @@ cGate* cGateManager::getGate(int index){
     if (!(*(gates.begin() + index))->gateHit){
         cRuntimeError("Error at position [%i] ->gateData::getGate\n", index);
     } else {
+
         gate = (*(gates.begin() + index))->gate;
+        std::cout << "cGateManager::getGate--->" <<gate->getFullName() << "--->" <<gate->getFullPath() <<endl;
     }
     return gate;
 }

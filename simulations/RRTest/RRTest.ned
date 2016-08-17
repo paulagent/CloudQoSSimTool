@@ -93,7 +93,7 @@ network RRTest
                 remote_storage_VMs_per_node = 2;
                 minimum_percent_storageNode_free = 0.15;
                 virtualIPsBasis = "10.0.0.1";
-                timeToStart = 5.0;
+               // timeToStart = 1.0;
                 @display("p=445,156");
         }
 
@@ -143,7 +143,7 @@ network RRTest
         // ---------------------------------------------------------------
         //   Definition of Racks
         // ---------------------------------------------------------------
-       // rc_0_Rack_A_16[2]: NodeVL {
+      //  rc_0_Rack_A_16[16]: NodeVL {
 
        //     @display("p=279,45");
       //  }
@@ -161,8 +161,8 @@ network RRTest
     connections allowunconnected:
 
         // Connections for rack rc_0_Rack_A_16
-       // for i=0..1 {
-     //       rc_0_Rack_A_16[0].ethg++ <--> RackChannel_0_RRTest <--> rackSwitch_0.ethg++;
+      //  for i=0..15 {
+      ////      rc_0_Rack_A_16[i].ethg++ <--> RackChannel_0_RRTest <--> rackSwitch_0.ethg++;
       //  }
 
         rackSwitch_0.ethg++ <--> Channel_0_RRTest <--> switch_0.ethg++;

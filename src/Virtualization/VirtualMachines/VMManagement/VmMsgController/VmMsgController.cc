@@ -84,7 +84,10 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
     cout << "PiD----->"<< Pid << endl;
 
     cout << "UiD----->"<< Uid << endl;
-    if (Uid==-1 )
+
+
+    if (Pid==-1  )
+
     {
         delete (msg);
     }
@@ -147,6 +150,7 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
 
                 updateCounters(msg, 1);
 cout << "VmMsgController::processRequestMessage--->fromApps--getIndex " <<msg->getArrivalGate()->getIndex() <<endl;
+
                 msg->setCommId(msg->getArrivalGate()->getIndex());
 
                 if (sm_net != NULL) {
