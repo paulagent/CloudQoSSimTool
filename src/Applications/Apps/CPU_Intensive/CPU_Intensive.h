@@ -4,6 +4,13 @@
 #include <omnetpp.h>
 #include "UserJob.h"
 
+#include "TCPSocket.h"
+#include "IPvXAddressResolver.h"
+#include "TCPSocketMap.h"
+#include "NetworkService.h"
+#include "icancloud_Message.h"
+#include "TCP_ClientSideService.h"
+
 /**
  * @class CPU_Intensive CPU_Intensive.h "CPU_Intensive.h"
  *
@@ -21,10 +28,15 @@
  * @date 2013-12-17
  *
  */
-class CPU_Intensive : public UserJob{
 
+
+class CPU_Intensive : public UserJob{
 	
 	protected:
+
+    simsignal_t processingTime;
+    simtime_t departureTime;
+    simtime_t arrivalTime;
 
 		/** Size of data chunk to read in each iteration */
 		int inputSizeMB;
@@ -138,7 +150,7 @@ class CPU_Intensive : public UserJob{
 
 		void changeState(string newState);
 
-	private:			    
+			private:
 
 	   /**
 		* Method that creates and sends a new I/O request.

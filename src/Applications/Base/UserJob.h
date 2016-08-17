@@ -18,6 +18,7 @@
 #include "AbstractUser.h"
 #include "jobBase.h"
 
+
 class Machine;
 class AbstractUser;
 

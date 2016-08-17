@@ -50,14 +50,15 @@ void CPU_Intensive::initialize(){
     jobResults->newJobResultSet("Real run-time");
     jobResults->newJobResultSet("Simulation time");
 
-}
 
+}
 
 void CPU_Intensive::finish(){
     // Finish the super-class
    UserJob::finish();
 
 }
+
 
 void CPU_Intensive::startExecution (){
 

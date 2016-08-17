@@ -238,6 +238,7 @@ void API_OS::icancloud_request_cpu (unsigned int MIs){
 		
 		// Send the request to the Operating System
 		sendRequestMessage (sm_cpu, toOSGate);
+
 }
 
 
