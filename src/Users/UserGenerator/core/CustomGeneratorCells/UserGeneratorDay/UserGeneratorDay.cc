@@ -80,9 +80,9 @@ void UserGeneratorDay::processSelfMessage(cMessage *msg) {
                printf("\n Method[UserGeneratorDay]: -------> noDistribution  --> user creation finished\n");
 
         } else {
-      //         printf("\n Method[UserGeneratorDay]: -------> Prepare to user arrivals\n");
-      //         printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
-      //         printf("\n Method[UserGeneratorDay]: total_users %d-------> \n", total_users);
+              // printf("\n Method[UserGeneratorDay]: -------> Prepare to user arrivals\n");
+              printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
+            //  printf("\n Method[UserGeneratorDay]: total_users %d-------> \n", total_users);
 
             // Prepare to user arrival .. !!
             userCreateGroups(time_intervals_H, total_users);
@@ -90,14 +90,14 @@ void UserGeneratorDay::processSelfMessage(cMessage *msg) {
 
         if (time_intervals_H != 0) {
             scheduleAt(simTime(), newHourEvent);
-     //       printf("\n Method[UserGeneratorDay]: newHourEvent -------> \n");
+            printf("\n Method[UserGeneratorDay]: newHourEvent 1-------> \n");
 
         } else
             finalizeUserGenerator(false);
 
     } else if (!strcmp(msg->getName(), "intervalEvent")) {
 
-    //    printf("\n Method[UserGeneratorDay]: intervalEvent -------> \n");
+        printf("\n Method[UserGeneratorDay]: intervalEvent 1-------> \n");
 
         cancelEvent(newIntervalEvent);
 
@@ -116,11 +116,11 @@ void UserGeneratorDay::processSelfMessage(cMessage *msg) {
     } else if (!strcmp(msg->getName(), "hourEvent")) {
 
         // if hour == time intervals, the time limit for user's creation has been reached.
-    //    printf("\n Method[UserGeneratorDay]: if hour == time intervals, the time limit for user's creation has been reached. -------> \n");
+
 
 
         if (hour == time_intervals_H) {
-
+            printf("\n Method[UserGeneratorDay]: if hour == time intervals, the time limit for user's creation has been reached. -------> \n");
             // If repetitions != 0, repeat the process
             if (repetitions != 0) {
                 repetitions--;
@@ -154,12 +154,14 @@ void UserGeneratorDay::processSelfMessage(cMessage *msg) {
 
                 // there are not users at this interval
                 if (j == 0) {
-
+                    printf("\n Method[UserGeneratorDay]: newHourEvent 2-------> \n");
                     scheduleAt(simTime() + 3600, newHourEvent);
 
                     // There are only one user. So only it is needed to create a user
                 } else if (j == 1) {
+                    printf("\n Method[UserGeneratorDay]: newHourEvent 3-------> \n");
                     scheduleAt(simTime() + 3600, newHourEvent);
+                    printf("\n Method[UserGeneratorDay]: newIntervalEvent 3-------> \n");
                     scheduleAt(simTime(), newIntervalEvent);
 
                     // There are a group of users to distribute along the subintervals created by granularity..
@@ -174,8 +176,9 @@ void UserGeneratorDay::processSelfMessage(cMessage *msg) {
                         nextEvent += k;
                         subinterval_per_granularity.push_back(nextEvent);
                     }
-
+                    printf("\n Method[UserGeneratorDay]: newHourEvent 4-------> \n");
                     scheduleAt(simTime() + 3600, newHourEvent);
+                    printf("\n Method[UserGeneratorDay]: newIntervalEvent 3-------> \n");
                     scheduleAt(simTime(), newIntervalEvent);
                 }
 
@@ -183,7 +186,7 @@ void UserGeneratorDay::processSelfMessage(cMessage *msg) {
 
                 // Schedule the next event, for no distribution when all the time intervals (in hours 60 * 60 = 3600) has passed.
             } else {
-
+                printf("\n Method[UserGeneratorDay]: newHourEvent 5-------> \n");
                 scheduleAt(simTime() + (3600 * time_intervals_H), newHourEvent);
             }
         } else {
