@@ -25,13 +25,13 @@ module AppBase
         app: <appType> like IAPP {
             @display("p=65,103");
         }
-        
+
         FSConfig[numFSRoutes]: FSUserDefinition {
-            @display("p=332,103");
+            @display("p=359,118");
         }
-        
+
         preloadFiles[numFiles]: PreloadFilesDefinition {
-            @display("p=186,103");
+            @display("p=216,39");
         }
 }
 
