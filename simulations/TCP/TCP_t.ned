@@ -108,10 +108,10 @@ network TCP_t
             parameters:
                 @display("p=149,34");
         }
-//        netAnimTrace: NetAnimTrace {
-//            parameters:
-//                @display("p=248,34");
-//        }
+        //        netAnimTrace: NetAnimTrace {
+        //            parameters:
+        //                @display("p=248,34");
+        //        }
         controller: HttpController {
             parameters:
                 @display("p=341,34;i=block/cogwheel_s");

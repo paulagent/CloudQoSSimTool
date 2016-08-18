@@ -39,10 +39,7 @@ protected:
     	 */
     	~UserJob();
 
-        /**
-         * Module initialization.
-         */
-         virtual void initialize();
+
 
         /**
          * Module ending.
@@ -68,6 +65,10 @@ protected:
          virtual void processResponseMessage (icancloud_Message *sm) = 0;
 
 public:
+         /**
+                  * Module initialization.
+                  */
+                  virtual void initialize();
 
        /**
         * Start the app execution.

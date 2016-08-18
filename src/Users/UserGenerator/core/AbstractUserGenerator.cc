@@ -141,9 +141,11 @@ void AbstractUserGenerator::initialize(){
                     jobSel->replicas = getParentModule()->getSubmodule("appDefinition")->getSubmodule("application",i)->par("copies").longValue();
                     jobSel->appName = getParentModule()->getSubmodule("appDefinition")->getSubmodule("application",i)->par("name").stringValue();
                     auxMod = getParentModule()->getSubmodule("appDefinition")->getSubmodule("application",i)->getSubmodule("app");
+
                     jobSel->job = dynamic_cast<UserJob*> (auxMod);
-
-
+                    if(jobSel->job == NULL)//changes made by nishant
+                    jobSel->job = ConvertApptoUser(auxMod);//changes made by nishant
+                    //cout<<"App name"<<(jobSel->appName)<<endl;
                     cout<<"Select appName"<< (jobSel->job == NULL) <<endl;
 
                     cout << "AbstractUserGenerator::initialize() -->" << jobSel->job->getClassName() <<endl;
@@ -174,6 +176,22 @@ void AbstractUserGenerator::initialize(){
                     userJobSet.push_back(jobSel);
                 }
 
+}
+
+UserJob* AbstractUserGenerator::ConvertApptoUser(cModule* auxMod){
+UserJob* job;
+job->initialize();
+
+job->setAppType("TCP_New");
+
+//auxMod->get
+//job->getAppType();
+//job->getClassName();
+//job->getJobId();
+//job->getFullName();
+//job->getFSComplete();
+//job->getFSSize();
+return job;
 }
 
 void AbstractUserGenerator::finish(){

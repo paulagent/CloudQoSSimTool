@@ -249,19 +249,17 @@ class icancloud_Base: public cSimpleModule{
          */
 		vector<string> divide(const char* inputString, char separator);
 
-<<<<<<< HEAD
 		 /**
 		        * Get the hostname of the node that contains current module.
 		        * @return Node's hostname that contains the module which invoked this method.
 		        */
 		        string getHostName ();
-=======
+
 	//	virtual void socketDataArrived(int connId, void *yourPtr, cPacket *msg, bool urgent);
 
 	//	virtual void sendPacket(icancloud_Message *sm, cGate* gate,int numBytes, int expectedReplyBytes, bool serverClose=false);
 
 
->>>>>>> 31a100f0d6c5398e12e1104b91489073a3b9f570
 	protected:
 
 	   /**
