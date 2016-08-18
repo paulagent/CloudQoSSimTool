@@ -21,7 +21,7 @@ simple TCP_New like IAPP
 {
     parameters:
         string application_netType = default ("INET");
-        string localIP;
+      //  string localIP;
         double startDelay;									// Starting delay time!        
         int inputSize;										// Input size of data
         int outputSize;										// Output size of data
