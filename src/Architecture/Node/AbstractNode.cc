@@ -43,5 +43,6 @@ void AbstractNode::initialize_syscallManager(int localPort) {
 void AbstractNode::closeConnections(int uId, int pId) {
     SyscallManager* sc;
     sc = check_and_cast<SyscallManager*>(os);
+//cout << "AbstractNode::closeConnections"<<endl;
     sc->closeConnection(uId, pId);
 }

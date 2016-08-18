@@ -42,7 +42,7 @@ using std::string;
 
 //// TRACE_LOCAL_APPLICATION
 
-	#define DEBUG_Application true			        // Shows basic debug messages
+	#define DEBUG_Application false			        // Shows basic debug messages
 	#define DEBUG_MSG_BasicApplication false		// Shows all messages enterely (including all parameters)
 
 
@@ -124,7 +124,7 @@ using std::string;
 
 /************************* CPU Cores *************************/
 
-	#define DEBUG_CPUcore true					// Shows basic debug messages
+	#define DEBUG_CPUcore false					// Shows basic debug messages
 	#define DEBUG_MSG_CPUcore false				// Shows all messages enterely (including all parameters)
 
 

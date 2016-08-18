@@ -38,6 +38,8 @@ icancloud_Base::~icancloud_Base(){
 
 void icancloud_Base::initialize(){
 
+
+  //  TCP_ClientSideService TCP_service = new TCP_ClientSideService();
     char module_path [NAME_SIZE];
 	char currentHostName [NAME_SIZE];
 	string currentRunPath;
@@ -177,15 +179,25 @@ void icancloud_Base::finish (){
 void icancloud_Base::sendRequestMessage (icancloud_Message *sm, cGate* gate){
 
 	// If trace is empty, add current hostName, module and request number
-   // cout << "icancloud_Base::sendRequestMessage  ----->ArrivalModule-----> "<< sm->getArrivalModule() << endl;
+  //  cout << "icancloud_Base::sendRequestMessage  ----->ArrivalModule-----> "<< sm->getArrivalModule() << endl;
+  //  cout << "icancloud_Base::sendRequestMessage  ----->message operation-----> "<< sm->getOperation() << endl;
 
 	if (sm->isTraceEmpty()){
 		sm->addNodeToTrace (getHostName());
 		updateMessageTrace (sm);
 	}
 	// Send the message!
-	send (sm, gate);
+  //  cout << "icancloud_Base::sendRequestMessage  ----->Send the message to the gate!----> "<<  gate->getFullName() <<endl;
 
+	send (sm, gate);
+ //   cout << "icancloud_Base::sendRequestMessage  ----->Process next request!----> "<< endl;
+
+	//TCP_service->createConnection(sm);
+
+	icancloud_App_NET_Message *sm_net;
+	        sm_net = dynamic_cast <icancloud_App_NET_Message *> (sm);
+    string ip = sm_net->getLocalIP();
+    cout<<"IP:"<<ip<<endl;
 	// Process next request!
 	processCurrentRequestMessage ();
 }
@@ -196,8 +208,10 @@ void icancloud_Base::sendResponseMessage (icancloud_Message *sm){
     int gateId;
   //  cout << "icancloud_Base::sendResponseMessage ----->ArrivalModule-----> "<< sm->getArrivalModule() << endl;
 
+
 		// Get the gateId to send back the message
 		gateId = sm->getLastGateId ();
+
 
 		// Removes the current module from trace...
 		sm->removeLastModuleFromTrace ();
@@ -943,7 +957,9 @@ void icancloud_Base::processCurrentRequestMessage (){
 				sm = check_and_cast<icancloud_Message *>(unqueuedMessage);
 
 				// Process
-				//cout<<"icancloud_Base::processCurrentRequestMessage "<<endl;
+			//	cout<<"icancloud_Base::processCurrentRequestMessage ----------------> sm operation---------->"<< sm->getOperation() <<endl;
+            //    cout<<"icancloud_Base::processCurrentRequestMessage ----------------> processRequestMessage ---------->" <<endl;
+
 				processRequestMessage (sm);
 			}
 		}

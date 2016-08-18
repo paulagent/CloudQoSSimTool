@@ -1,22 +1,88 @@
-file 10769 1464373309                                           
+<<<<<<< HEAD
+file 21276 1464978149                                           
 version 2
-run General-0-20160527-11:21:38-302
+run General-0-20160603-11:16:52-4343
 attr c1ber 0
 attr c2ber 0
 attr configname General
-attr datetime 20160527-11:21:38
+attr datetime 20160603-11:16:52
+=======
+file 163252 1467156633                                          
+version 2
+run General-0-20160628-16:16:38-9371
+attr c1ber 0
+attr c2ber 0
+attr configname General
+attr datetime 20160628-16:16:38
+>>>>>>> 31a100f0d6c5398e12e1104b91489073a3b9f570
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars "$c1ber=0, $c2ber=0"
 attr iterationvars2 "$c1ber=0, $c2ber=0, $repetition=0"
 attr measurement "$c1ber=0, $c2ber=0"
 attr network TCP_t
-attr processid 302
+<<<<<<< HEAD
+attr processid 4343
+=======
+attr processid 9371
+>>>>>>> 31a100f0d6c5398e12e1104b91489073a3b9f570
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
+<<<<<<< HEAD
+vector 297  TCP_t.client2.tcp  "advertised window"  ETV
+297	17138 15 28 28 0 0 1 65535 65535 65535 4294836225
+vector 296  TCP_t.client2.tcp  "receive window"  ETV
+296	17123 15 28 28 0 0 1 65535 65535 65535 4294836225
+vector 299  TCP_t.client2.tcp  "sent ack"  ETV
+299	17153 11 28 28 0 0 1 0 0 0 0
+vector 228  TCP_t.server1.tcp  "rcvd seq"  ETV
+228	20148 125 58 267 0.0004083 0.0081561 6 0 102 306 30808
+vector 229  TCP_t.server1.tcp  "rcvd ack"  ETV
+229	20273 129 58 267 0.0004083 0.0081561 6 0 604 2016 1113252
+vector 225  TCP_t.server1.tcp  "advertised window"  ETV
+225	19877 142 58 215 0.0004083 0.0072155 6 65536 65637 393618 25822535122
+vector 223  TCP_t.server1.tcp  "send window"  ETV
+223	19663 95 58 267 0.0004083 0.0081561 4 65535 65535 262140 17179344900
+vector 224  TCP_t.server1.tcp  "receive window"  ETV
+224	19758 119 58 215 0.0004083 0.0072155 5 65535 65535 327675 21474181125
+vector 227  TCP_t.server1.tcp  "sent ack"  ETV
+227	20041 107 58 215 0.0004083 0.0072155 5 1 102 407 41211
+vector 300  TCP_t.client2.tcp  "rcvd seq"  ETV
+300	17164 19 94 94 0.0007746 0.0007746 1 0 0 0 0
+vector 301  TCP_t.client2.tcp  "rcvd ack"  ETV
+301	17183 19 94 94 0.0007746 0.0007746 1 1 1 1 1
+vector 230  TCP_t.server1.tcp  "unacked bytes"  ETV
+230	20402 102 122 267 0.0011929 0.0081561 5 0 500 501 250001
+vector 231  TCP_t.server1.tcp  "rcvd dupAcks"  ETV
+231	20504 80 137 267 0.0021809 0.0081561 4 0 0 0 0
+vector 226  TCP_t.server1.tcp  "sent seq"  ETV
+226	20019 22 140 140 0.0021809 0.0021809 1 103 103 103 10609
+vector 242  TCP_t.server1.tcp  "measured RTT"  ETV
+242	19545 28 202 202 0.0070275 0.0070275 1 0.0048466 0.0048466 0.0048466 2.348953156e-05
+vector 243  TCP_t.server1.tcp  "smoothed RTT"  ETV
+243	19573 30 202 202 0.0070275 0.0070275 1 0.000605825 0.000605825 0.000605825 3.67023930625e-07
+vector 244  TCP_t.server1.tcp  RTTVAR  ETV
+244	19603 30 202 202 0.0070275 0.0070275 1 0.656855825 0.656855825 0.656855825 0.43145957483643
+vector 245  TCP_t.server1.tcp  RTO  ETV
+245	19633 30 202 202 0.0070275 0.0070275 1 2.628029125 2.628029125 2.628029125 6.9065370818483
+vector 240  TCP_t.server1.tcp  cwnd  ETV
+240	19499 46 202 267 0.0070275 0.0081561 2 2904 4356 7260 27407952
+vector 358  TCP_t.client2.tcp  tcpRcvQueueBytes  ETV
+358	21256 20 270 270 1.0007746 1.0007746 1 0 0 0 0
+vector 345  TCP_t.client2.tcp  "advertised window"  ETV
+345	21167 24 270 270 1.0007746 1.0007746 1 65535 65535 65535 4294836225
+vector 344  TCP_t.client2.tcp  "receive window"  ETV
+344	21143 24 270 270 1.0007746 1.0007746 1 65535 65535 65535 4294836225
+vector 347  TCP_t.client2.tcp  "sent ack"  ETV
+347	21191 20 270 270 1.0007746 1.0007746 1 0 0 0 0
+vector 348  TCP_t.client2.tcp  "rcvd seq"  ETV
+348	21211 20 305 305 1.0013992 1.0013992 1 0 0 0 0
+vector 349  TCP_t.client2.tcp  "rcvd ack"  ETV
+349	21231 25 305 305 1.0013992 1.0013992 1 250194 250194 250194 62597037636
+=======
 
 vector 0  TCP_t.client1.pppg$o[0].channel  busy:vector  ETV
 attr interpolationmode  sample-hold
@@ -27,10 +93,13 @@ attr source  channelBusy
 vector 4  TCP_t.client3.pppg$o[0].channel  busy:vector  ETV
 attr interpolationmode  sample-hold
 attr source  channelBusy
-vector 9  TCP_t.server1.pppg$o[0].channel  busy:vector  ETV
+vector 6  TCP_t.client4.pppg$o[0].channel  busy:vector  ETV
 attr interpolationmode  sample-hold
 attr source  channelBusy
-vector 11  TCP_t.server2.pppg$o[0].channel  busy:vector  ETV
+vector 11  TCP_t.server1.pppg$o[0].channel  busy:vector  ETV
+attr interpolationmode  sample-hold
+attr source  channelBusy
+vector 13  TCP_t.server2.pppg$o[0].channel  busy:vector  ETV
 attr interpolationmode  sample-hold
 attr source  channelBusy
 vector 1  TCP_t.router1.pppg$o[0].channel  busy:vector  ETV
@@ -42,252 +111,1275 @@ attr source  channelBusy
 vector 5  TCP_t.router1.pppg$o[2].channel  busy:vector  ETV
 attr interpolationmode  sample-hold
 attr source  channelBusy
-vector 6  TCP_t.router1.pppg$o[3].channel  busy:vector  ETV
+vector 7  TCP_t.router1.pppg$o[3].channel  busy:vector  ETV
 attr interpolationmode  sample-hold
 attr source  channelBusy
-vector 7  TCP_t.router2.pppg$o[0].channel  busy:vector  ETV
+vector 8  TCP_t.router1.pppg$o[4].channel  busy:vector  ETV
 attr interpolationmode  sample-hold
 attr source  channelBusy
-vector 8  TCP_t.router2.pppg$o[1].channel  busy:vector  ETV
+vector 9  TCP_t.router2.pppg$o[0].channel  busy:vector  ETV
 attr interpolationmode  sample-hold
 attr source  channelBusy
-vector 10  TCP_t.router2.pppg$o[2].channel  busy:vector  ETV
+vector 10  TCP_t.router2.pppg$o[1].channel  busy:vector  ETV
 attr interpolationmode  sample-hold
 attr source  channelBusy
-vector 24  TCP_t.client1.ppp[0].queue  queueLength:vector  ETV
+vector 12  TCP_t.router2.pppg$o[2].channel  busy:vector  ETV
+attr interpolationmode  sample-hold
+attr source  channelBusy
+vector 26  TCP_t.client1.ppp[0].queue  queueLength:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "queue length, vector"
-vector 25  TCP_t.client1.ppp[0].ppp  txState:vector  ETV
+vector 27  TCP_t.client1.ppp[0].ppp  txState:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "tx state, vector"
-vector 40  TCP_t.client2.ppp[0].queue  queueLength:vector  ETV
+vector 46  TCP_t.client2.ppp[0].queue  queueLength:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "queue length, vector"
-vector 41  TCP_t.client2.ppp[0].ppp  txState:vector  ETV
+vector 47  TCP_t.client2.ppp[0].ppp  txState:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "tx state, vector"
-vector 56  TCP_t.client3.ppp[0].queue  queueLength:vector  ETV
+vector 62  TCP_t.client3.ppp[0].queue  queueLength:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "queue length, vector"
-vector 57  TCP_t.client3.ppp[0].ppp  txState:vector  ETV
+vector 63  TCP_t.client3.ppp[0].ppp  txState:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "tx state, vector"
-vector 75  TCP_t.server1.ppp[0].queue  queueLength:vector  ETV
+vector 78  TCP_t.client4.ppp[0].queue  queueLength:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "queue length, vector"
-vector 76  TCP_t.server1.ppp[0].ppp  txState:vector  ETV
+vector 79  TCP_t.client4.ppp[0].ppp  txState:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "tx state, vector"
-vector 91  TCP_t.server2.ppp[0].queue  queueLength:vector  ETV
+vector 97  TCP_t.server1.ppp[0].queue  queueLength:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "queue length, vector"
-vector 92  TCP_t.server2.ppp[0].ppp  txState:vector  ETV
+vector 98  TCP_t.server1.ppp[0].ppp  txState:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "tx state, vector"
-vector 107  TCP_t.router1.ppp[0].queue  queueLength:vector  ETV
+vector 113  TCP_t.server2.ppp[0].queue  queueLength:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "queue length, vector"
-vector 108  TCP_t.router1.ppp[0].ppp  txState:vector  ETV
+vector 114  TCP_t.server2.ppp[0].ppp  txState:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "tx state, vector"
-vector 118  TCP_t.router1.ppp[1].queue  queueLength:vector  ETV
+vector 129  TCP_t.router1.ppp[0].queue  queueLength:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "queue length, vector"
-vector 119  TCP_t.router1.ppp[1].ppp  txState:vector  ETV
+vector 130  TCP_t.router1.ppp[0].ppp  txState:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "tx state, vector"
-vector 129  TCP_t.router1.ppp[2].queue  queueLength:vector  ETV
+vector 140  TCP_t.router1.ppp[1].queue  queueLength:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "queue length, vector"
-vector 130  TCP_t.router1.ppp[2].ppp  txState:vector  ETV
+vector 141  TCP_t.router1.ppp[1].ppp  txState:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "tx state, vector"
-vector 140  TCP_t.router1.ppp[3].queue  queueLength:vector  ETV
+vector 151  TCP_t.router1.ppp[2].queue  queueLength:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "queue length, vector"
-vector 141  TCP_t.router1.ppp[3].ppp  txState:vector  ETV
+vector 152  TCP_t.router1.ppp[2].ppp  txState:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "tx state, vector"
-vector 156  TCP_t.router2.ppp[0].queue  queueLength:vector  ETV
+vector 162  TCP_t.router1.ppp[3].queue  queueLength:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "queue length, vector"
-vector 157  TCP_t.router2.ppp[0].ppp  txState:vector  ETV
+vector 163  TCP_t.router1.ppp[3].ppp  txState:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "tx state, vector"
-vector 167  TCP_t.router2.ppp[1].queue  queueLength:vector  ETV
+vector 173  TCP_t.router1.ppp[4].queue  queueLength:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "queue length, vector"
-vector 168  TCP_t.router2.ppp[1].ppp  txState:vector  ETV
+vector 174  TCP_t.router1.ppp[4].ppp  txState:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "tx state, vector"
-vector 178  TCP_t.router2.ppp[2].queue  queueLength:vector  ETV
+vector 189  TCP_t.router2.ppp[0].queue  queueLength:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "queue length, vector"
-vector 179  TCP_t.router2.ppp[2].ppp  txState:vector  ETV
+vector 190  TCP_t.router2.ppp[0].ppp  txState:vector  ETV
 attr interpolationmode  sample-hold
 attr title  "tx state, vector"
-vector 15  TCP_t.client1.tcpApp[0]  numActiveSessions:vector  ETV
+vector 200  TCP_t.router2.ppp[1].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 201  TCP_t.router2.ppp[1].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 211  TCP_t.router2.ppp[2].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 212  TCP_t.router2.ppp[2].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 17  TCP_t.client1.tcpApp[0]  numActiveSessions:vector  ETV
 attr interpolationmode  sample-hold
 attr source  sum(connect)
 attr title  "number of active sessions, vector"
-vector 253  TCP_t.client1.tcp  tcpRcvQueueBytes  ETV
-vector 240  TCP_t.client1.tcp  "advertised window"  ETV
-vector 239  TCP_t.client1.tcp  "receive window"  ETV
-vector 242  TCP_t.client1.tcp  "sent ack"  ETV
-vector 21  TCP_t.client1.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+vector 37  TCP_t.client2.tcpApp[0]  numActiveSessions:vector  ETV
+attr interpolationmode  sample-hold
+attr source  sum(connect)
+attr title  "number of active sessions, vector"
+vector 286  TCP_t.client1.tcp  tcpRcvQueueBytes  ETV
+vector 273  TCP_t.client1.tcp  "advertised window"  ETV
+vector 272  TCP_t.client1.tcp  "receive window"  ETV
+vector 275  TCP_t.client1.tcp  "sent ack"  ETV
+vector 310  TCP_t.client2.tcp  tcpRcvQueueBytes  ETV
+vector 297  TCP_t.client2.tcp  "advertised window"  ETV
+vector 296  TCP_t.client2.tcp  "receive window"  ETV
+vector 299  TCP_t.client2.tcp  "sent ack"  ETV
+vector 23  TCP_t.client1.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr title  "received packets, vector(packetBytes)"
-vector 23  TCP_t.client1.ppp[0].queue  queueingTime:vector  ETV
+vector 25  TCP_t.client1.ppp[0].queue  queueingTime:vector  ETV
 attr interpolationmode  none
 attr title  "queueing time, vector"
-vector 30  TCP_t.client1.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+vector 43  TCP_t.client2.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 45  TCP_t.client2.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 32  TCP_t.client1.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetReceivedFromUpper
 attr title  "packets received from higher layer, vector(packetBytes)"
-vector 26  TCP_t.client1.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+vector 28  TCP_t.client1.ppp[0].ppp  txPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetSentToLower
 attr title  "packets transmitted, vector(packetBytes)"
-vector 110  TCP_t.router1.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+vector 52  TCP_t.client2.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 48  TCP_t.client2.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 132  TCP_t.router1.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, vector(packetBytes)"
-vector 114  TCP_t.router1.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+vector 136  TCP_t.router1.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 137  TCP_t.router1.ppp[3].queue  rcvdPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr title  "received packets, vector(packetBytes)"
-vector 139  TCP_t.router1.ppp[3].queue  queueingTime:vector  ETV
-attr interpolationmode  none
-attr title  "queueing time, vector"
-vector 146  TCP_t.router1.ppp[3].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetReceivedFromUpper
-attr title  "packets received from higher layer, vector(packetBytes)"
-vector 142  TCP_t.router1.ppp[3].ppp  txPk:vector(packetBytes)  ETV
-attr interpolationmode  none
-attr source  packetSentToLower
-attr title  "packets transmitted, vector(packetBytes)"
-vector 159  TCP_t.router2.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+vector 143  TCP_t.router1.ppp[1].ppp  rxPkOk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, vector(packetBytes)"
-vector 163  TCP_t.router2.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+vector 147  TCP_t.router1.ppp[1].ppp  passedUpPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 164  TCP_t.router2.ppp[1].queue  rcvdPk:vector(packetBytes)  ETV
+vector 170  TCP_t.router1.ppp[4].queue  rcvdPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr title  "received packets, vector(packetBytes)"
-vector 166  TCP_t.router2.ppp[1].queue  queueingTime:vector  ETV
+vector 172  TCP_t.router1.ppp[4].queue  queueingTime:vector  ETV
 attr interpolationmode  none
 attr title  "queueing time, vector"
-vector 173  TCP_t.router2.ppp[1].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+vector 179  TCP_t.router1.ppp[4].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetReceivedFromUpper
 attr title  "packets received from higher layer, vector(packetBytes)"
-vector 169  TCP_t.router2.ppp[1].ppp  txPk:vector(packetBytes)  ETV
+vector 175  TCP_t.router1.ppp[4].ppp  txPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetSentToLower
 attr title  "packets transmitted, vector(packetBytes)"
-vector 78  TCP_t.server1.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+vector 192  TCP_t.router2.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  rxPkOk
 attr title  "packets received OK, vector(packetBytes)"
-vector 82  TCP_t.server1.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+vector 196  TCP_t.router2.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetSentToUpper
 attr title  "packets passed to higher layer, vector(packetBytes)"
-vector 195  TCP_t.server1.tcp  "rcvd seq"  ETV
-vector 196  TCP_t.server1.tcp  "rcvd ack"  ETV
-vector 192  TCP_t.server1.tcp  "advertised window"  ETV
-vector 190  TCP_t.server1.tcp  "send window"  ETV
-vector 205  TCP_t.server1.tcp  tcpRcvQueueBytes  ETV
-vector 191  TCP_t.server1.tcp  "receive window"  ETV
-vector 194  TCP_t.server1.tcp  "sent ack"  ETV
-vector 72  TCP_t.server1.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+vector 197  TCP_t.router2.ppp[1].queue  rcvdPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr title  "received packets, vector(packetBytes)"
-vector 74  TCP_t.server1.ppp[0].queue  queueingTime:vector  ETV
+vector 199  TCP_t.router2.ppp[1].queue  queueingTime:vector  ETV
 attr interpolationmode  none
 attr title  "queueing time, vector"
-vector 81  TCP_t.server1.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+vector 206  TCP_t.router2.ppp[1].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetReceivedFromUpper
 attr title  "packets received from higher layer, vector(packetBytes)"
-vector 77  TCP_t.server1.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+vector 202  TCP_t.router2.ppp[1].ppp  txPk:vector(packetBytes)  ETV
 attr interpolationmode  none
 attr source  packetSentToLower
 attr title  "packets transmitted, vector(packetBytes)"
-0	9569 33 0 26 0 0.000204 3 0 1 1 1
-1	9602 8 0 0 0 0 1 0 0 0 0
-2	9610 8 0 0 0 0 1 0 0 0 0
-3	9618 8 0 0 0 0 1 0 0 0 0
-4	9626 8 0 0 0 0 1 0 0 0 0
-5	9634 8 0 0 0 0 1 0 0 0 0
-6	9642 42 0 31 0 0.0003061 3 0 1 1 1
-7	9684 8 0 0 0 0 1 0 0 0 0
-8	9692 42 0 36 0 0.0004082 3 0 1 1 1
-9	9734 42 0 44 0 0.0005103 3 0 1 1 1
-10	9776 9 0 0 0 0 1 0 0 0 0
-11	9785 9 0 0 0 0 1 0 0 0 0
-15	9794 10 20 20 0 0 1 1 1 1 1
-21	9804 11 25 25 0 0 1 44 44 44 1936
-23	9815 10 25 25 0 0 1 0 0 0 0
-24	9825 9 0 0 0 0 1 0 0 0 0
-25	9834 36 0 27 0 0.000204 3 0 1 1 1
-26	9870 11 26 26 0 0 1 51 51 51 2601
-30	9881 11 26 26 0 0 1 44 44 44 1936
-40	9892 9 0 0 0 0 1 0 0 0 0
-41	9901 9 0 0 0 0 1 0 0 0 0
-56	9910 9 0 0 0 0 1 0 0 0 0
-57	9919 9 0 0 0 0 1 0 0 0 0
-72	9928 19 43 43 0.0004083 0.0004083 1 44 44 44 1936
-74	9947 18 43 43 0.0004083 0.0004083 1 0 0 0 0
-75	9965 9 0 0 0 0 1 0 0 0 0
-76	9974 27 0 44 0 0.0004083 2 0 1 1 1
-77	10001 19 44 44 0.0004083 0.0004083 1 51 51 51 2601
-78	10020 19 38 38 0.0004083 0.0004083 1 51 51 51 2601
-81	10039 19 44 44 0.0004083 0.0004083 1 44 44 44 1936
-82	10058 19 38 38 0.0004083 0.0004083 1 44 44 44 1936
-91	10077 9 0 0 0 0 1 0 0 0 0
-92	10086 9 0 0 0 0 1 0 0 0 0
-107	10095 10 0 0 0 0 1 0 0 0 0
-108	10105 10 0 0 0 0 1 0 0 0 0
-110	10115 20 28 28 0.0002041 0.0002041 1 51 51 51 2601
-114	10135 20 28 28 0.0002041 0.0002041 1 44 44 44 1936
-118	10155 10 0 0 0 0 1 0 0 0 0
-119	10165 10 0 0 0 0 1 0 0 0 0
-129	10175 10 0 0 0 0 1 0 0 0 0
-130	10185 10 0 0 0 0 1 0 0 0 0
-137	10195 20 30 30 0.0002041 0.0002041 1 44 44 44 1936
-139	10215 19 30 30 0.0002041 0.0002041 1 0 0 0 0
-140	10234 10 0 0 0 0 1 0 0 0 0
-141	10244 48 0 32 0 0.0003061 3 0 1 1 1
-142	10292 20 31 31 0.0002041 0.0002041 1 51 51 51 2601
-146	10312 20 31 31 0.0002041 0.0002041 1 44 44 44 1936
-156	10332 10 0 0 0 0 1 0 0 0 0
-157	10342 10 0 0 0 0 1 0 0 0 0
-159	10352 20 33 33 0.0003062 0.0003062 1 51 51 51 2601
-163	10372 20 33 33 0.0003062 0.0003062 1 44 44 44 1936
-164	10392 20 35 35 0.0003062 0.0003062 1 44 44 44 1936
-166	10412 19 35 35 0.0003062 0.0003062 1 0 0 0 0
-167	10431 10 0 0 0 0 1 0 0 0 0
-168	10441 48 0 37 0 0.0004082 3 0 1 1 1
-169	10489 20 36 36 0.0003062 0.0003062 1 51 51 51 2601
-173	10509 20 36 36 0.0003062 0.0003062 1 44 44 44 1936
-178	10529 10 0 0 0 0 1 0 0 0 0
-179	10539 10 0 0 0 0 1 0 0 0 0
-190	10549 23 40 40 0.0004083 0.0004083 1 65535 65535 65535 4294836225
-191	10572 23 40 40 0.0004083 0.0004083 1 65535 65535 65535 4294836225
-192	10595 46 40 40 0.0004083 0.0004083 2 65536 65536 131072 8589934592
-194	10641 19 40 40 0.0004083 0.0004083 1 1 1 1 1
-195	10660 19 40 40 0.0004083 0.0004083 1 0 0 0 0
-196	10679 19 40 40 0.0004083 0.0004083 1 0 0 0 0
-205	10698 19 40 40 0.0004083 0.0004083 1 0 0 0 0
-239	10717 15 23 23 0 0 1 65535 65535 65535 4294836225
-240	10732 15 23 23 0 0 1 65535 65535 65535 4294836225
-242	10747 11 23 23 0 0 1 0 0 0 0
-253	10758 11 23 23 0 0 1 0 0 0 0
+vector 208  TCP_t.router2.ppp[2].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 210  TCP_t.router2.ppp[2].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 217  TCP_t.router2.ppp[2].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 213  TCP_t.router2.ppp[2].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 100  TCP_t.server1.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 104  TCP_t.server1.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 228  TCP_t.server1.tcp  "rcvd seq"  ETV
+vector 229  TCP_t.server1.tcp  "rcvd ack"  ETV
+vector 225  TCP_t.server1.tcp  "advertised window"  ETV
+vector 223  TCP_t.server1.tcp  "send window"  ETV
+vector 238  TCP_t.server1.tcp  tcpRcvQueueBytes  ETV
+vector 224  TCP_t.server1.tcp  "receive window"  ETV
+vector 227  TCP_t.server1.tcp  "sent ack"  ETV
+vector 94  TCP_t.server1.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 96  TCP_t.server1.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 103  TCP_t.server1.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 99  TCP_t.server1.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 116  TCP_t.server2.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 120  TCP_t.server2.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 110  TCP_t.server2.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 112  TCP_t.server2.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 119  TCP_t.server2.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 115  TCP_t.server2.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 203  TCP_t.router2.ppp[1].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 207  TCP_t.router2.ppp[1].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 186  TCP_t.router2.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 188  TCP_t.router2.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 195  TCP_t.router2.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 191  TCP_t.router2.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 214  TCP_t.router2.ppp[2].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 218  TCP_t.router2.ppp[2].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 176  TCP_t.router1.ppp[4].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 180  TCP_t.router1.ppp[4].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 126  TCP_t.router1.ppp[0].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 128  TCP_t.router1.ppp[0].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 135  TCP_t.router1.ppp[0].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 131  TCP_t.router1.ppp[0].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 137  TCP_t.router1.ppp[1].queue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 139  TCP_t.router1.ppp[1].queue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 146  TCP_t.router1.ppp[1].ppp  rcvdPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetReceivedFromUpper
+attr title  "packets received from higher layer, vector(packetBytes)"
+vector 142  TCP_t.router1.ppp[1].ppp  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToLower
+attr title  "packets transmitted, vector(packetBytes)"
+vector 49  TCP_t.client2.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 53  TCP_t.client2.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 300  TCP_t.client2.tcp  "rcvd seq"  ETV
+vector 301  TCP_t.client2.tcp  "rcvd ack"  ETV
+296	17123 15 28 28 0 0 1 65535 65535 65535 4294836225
+297	17138 15 28 28 0 0 1 65535 65535 65535 4294836225
+299	17153 11 28 28 0 0 1 0 0 0 0
+300	17164 19 94 94 0.0007746 0.0007746 1 0 0 0 0
+301	17183 19 94 94 0.0007746 0.0007746 1 1 1 1 1
+310	17202 11 28 28 0 0 1 0 0 0 0
+vector 29  TCP_t.client1.ppp[0].ppp  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 33  TCP_t.client1.ppp[0].ppp  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 276  TCP_t.client1.tcp  "rcvd seq"  ETV
+vector 277  TCP_t.client1.tcp  "rcvd ack"  ETV
+vector 271  TCP_t.client1.tcp  "send window"  ETV
+vector 15  TCP_t.client1.tcpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 274  TCP_t.client1.tcp  "sent seq"  ETV
+vector 278  TCP_t.client1.tcp  "unacked bytes"  ETV
+vector 230  TCP_t.server1.tcp  "unacked bytes"  ETV
+vector 231  TCP_t.server1.tcp  "rcvd dupAcks"  ETV
+vector 86  TCP_t.server1.tcpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 88  TCP_t.server1.tcpApp[0]  endToEndDelay:vector  ETV
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, vector"
+attr unit  s
+vector 87  TCP_t.server1.tcpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 226  TCP_t.server1.tcp  "sent seq"  ETV
+vector 290  TCP_t.client1.tcp  "measured RTT"  ETV
+vector 291  TCP_t.client1.tcp  "smoothed RTT"  ETV
+vector 292  TCP_t.client1.tcp  RTTVAR  ETV
+vector 293  TCP_t.client1.tcp  RTO  ETV
+vector 288  TCP_t.client1.tcp  cwnd  ETV
+vector 279  TCP_t.client1.tcp  "rcvd dupAcks"  ETV
+vector 14  TCP_t.client1.tcpApp[0]  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 16  TCP_t.client1.tcpApp[0]  endToEndDelay:vector  ETV
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "end-to-end delay, vector"
+attr unit  s
+vector 242  TCP_t.server1.tcp  "measured RTT"  ETV
+vector 243  TCP_t.server1.tcp  "smoothed RTT"  ETV
+vector 244  TCP_t.server1.tcp  RTTVAR  ETV
+vector 245  TCP_t.server1.tcp  RTO  ETV
+vector 240  TCP_t.server1.tcp  cwnd  ETV
+240	19499 46 202 267 0.0070275 0.0081561 2 2904 4356 7260 27407952
+242	19545 28 202 202 0.0070275 0.0070275 1 0.0048466 0.0048466 0.0048466 2.348953156e-05
+243	19573 30 202 202 0.0070275 0.0070275 1 0.000605825 0.000605825 0.000605825 3.67023930625e-07
+244	19603 30 202 202 0.0070275 0.0070275 1 0.656855825 0.656855825 0.656855825 0.43145957483643
+245	19633 30 202 202 0.0070275 0.0070275 1 2.628029125 2.628029125 2.628029125 6.9065370818483
+223	19663 95 58 267 0.0004083 0.0081561 4 65535 65535 262140 17179344900
+224	19758 119 58 215 0.0004083 0.0072155 5 65535 65535 327675 21474181125
+225	19877 142 58 215 0.0004083 0.0072155 6 65536 65637 393618 25822535122
+226	20019 22 140 140 0.0021809 0.0021809 1 103 103 103 10609
+227	20041 107 58 215 0.0004083 0.0072155 5 1 102 407 41211
+228	20148 125 58 267 0.0004083 0.0081561 6 0 102 306 30808
+229	20273 129 58 267 0.0004083 0.0081561 6 0 604 2016 1113252
+230	20402 102 122 267 0.0011929 0.0081561 5 0 500 501 250001
+231	20504 80 137 267 0.0021809 0.0081561 4 0 0 0 0
+238	20584 119 58 215 0.0004083 0.0072155 6 0 0 0 0
+vector 358  TCP_t.client2.tcp  tcpRcvQueueBytes  ETV
+vector 345  TCP_t.client2.tcp  "advertised window"  ETV
+vector 344  TCP_t.client2.tcp  "receive window"  ETV
+vector 347  TCP_t.client2.tcp  "sent ack"  ETV
+vector 221  TCP_t.server2.ppp[0].outputHook[0]  "thruput (bit/sec)"  ETV
+vector 222  TCP_t.server2.ppp[0].outputHook[0]  packet/sec  ETV
+vector 348  TCP_t.client2.tcp  "rcvd seq"  ETV
+vector 349  TCP_t.client2.tcp  "rcvd ack"  ETV
+344	21143 24 270 270 1.0007746 1.0007746 1 65535 65535 65535 4294836225
+345	21167 24 270 270 1.0007746 1.0007746 1 65535 65535 65535 4294836225
+347	21191 20 270 270 1.0007746 1.0007746 1 0 0 0 0
+348	21211 20 305 305 1.0013992 1.0013992 1 0 0 0 0
+349	21231 25 305 305 1.0013992 1.0013992 1 250194 250194 250194 62597037636
+358	21256 20 270 270 1.0007746 1.0007746 1 0 0 0 0
+vector 382  TCP_t.client1.tcp  tcpRcvQueueBytes  ETV
+vector 369  TCP_t.client1.tcp  "advertised window"  ETV
+vector 368  TCP_t.client1.tcp  "receive window"  ETV
+vector 371  TCP_t.client1.tcp  "sent ack"  ETV
+vector 324  TCP_t.server1.tcp  "rcvd seq"  ETV
+vector 325  TCP_t.server1.tcp  "rcvd ack"  ETV
+vector 321  TCP_t.server1.tcp  "advertised window"  ETV
+vector 319  TCP_t.server1.tcp  "send window"  ETV
+vector 334  TCP_t.server1.tcp  tcpRcvQueueBytes  ETV
+vector 320  TCP_t.server1.tcp  "receive window"  ETV
+vector 323  TCP_t.server1.tcp  "sent ack"  ETV
+vector 219  TCP_t.server1.ppp[0].outputHook[0]  "thruput (bit/sec)"  ETV
+vector 220  TCP_t.server1.ppp[0].outputHook[0]  packet/sec  ETV
+vector 372  TCP_t.client1.tcp  "rcvd seq"  ETV
+vector 373  TCP_t.client1.tcp  "rcvd ack"  ETV
+vector 367  TCP_t.client1.tcp  "send window"  ETV
+vector 370  TCP_t.client1.tcp  "sent seq"  ETV
+vector 374  TCP_t.client1.tcp  "unacked bytes"  ETV
+vector 326  TCP_t.server1.tcp  "unacked bytes"  ETV
+vector 327  TCP_t.server1.tcp  "rcvd dupAcks"  ETV
+vector 322  TCP_t.server1.tcp  "sent seq"  ETV
+vector 386  TCP_t.client1.tcp  "measured RTT"  ETV
+vector 387  TCP_t.client1.tcp  "smoothed RTT"  ETV
+vector 388  TCP_t.client1.tcp  RTTVAR  ETV
+vector 389  TCP_t.client1.tcp  RTO  ETV
+vector 384  TCP_t.client1.tcp  cwnd  ETV
+vector 375  TCP_t.client1.tcp  "rcvd dupAcks"  ETV
+vector 338  TCP_t.server1.tcp  "measured RTT"  ETV
+vector 339  TCP_t.server1.tcp  "smoothed RTT"  ETV
+vector 340  TCP_t.server1.tcp  RTTVAR  ETV
+vector 341  TCP_t.server1.tcp  RTO  ETV
+vector 336  TCP_t.server1.tcp  cwnd  ETV
+336	22871 46 446 511 1.0148073 1.0159359 2 2904 4356 7260 27407952
+338	22917 28 446 446 1.0148073 1.0148073 1 0.0048466 0.0048466 0.0048466 2.348953156e-05
+339	22945 30 446 446 1.0148073 1.0148073 1 0.000605825 0.000605825 0.000605825 3.67023930625e-07
+340	22975 30 446 446 1.0148073 1.0148073 1 0.656855825 0.656855825 0.656855825 0.43145957483643
+341	23005 30 446 446 1.0148073 1.0148073 1 2.628029125 2.628029125 2.628029125 6.9065370818483
+319	23035 96 326 511 1.0081881 1.0159359 4 65535 65535 262140 17179344900
+320	23131 120 326 459 1.0081881 1.0149953 5 65535 65535 327675 21474181125
+321	23251 150 326 459 1.0081881 1.0149953 6 317480 317581 1905282 605016596722
+322	23401 25 384 384 1.0099607 1.0099607 1 252048 252048 252048 63528194304
+323	23426 125 326 459 1.0081881 1.0149953 5 251945 252046 1260127 317584019307
+324	23551 150 326 511 1.0081881 1.0159359 6 251944 252046 1511970 381008895352
+325	23701 145 326 511 1.0081881 1.0159359 6 0 252549 1261741 318398370617
+326	23846 102 366 511 1.0089727 1.0159359 5 0 500 501 250001
+327	23948 80 381 511 1.0099607 1.0159359 4 0 0 0 0
+334	24028 120 326 459 1.0081881 1.0149953 6 0 0 0 0
+vector 430  TCP_t.client2.tcp  tcpRcvQueueBytes  ETV
+vector 417  TCP_t.client2.tcp  "advertised window"  ETV
+vector 416  TCP_t.client2.tcp  "receive window"  ETV
+vector 419  TCP_t.client2.tcp  "sent ack"  ETV
+vector 420  TCP_t.client2.tcp  "rcvd seq"  ETV
+vector 421  TCP_t.client2.tcp  "rcvd ack"  ETV
+416	24451 24 514 514 2.0013992 2.0013992 1 65535 65535 65535 4294836225
+417	24475 24 514 514 2.0013992 2.0013992 1 65535 65535 65535 4294836225
+419	24499 20 514 514 2.0013992 2.0013992 1 0 0 0 0
+420	24519 20 549 549 2.0020238 2.0020238 1 0 0 0 0
+421	24539 25 549 549 2.0020238 2.0020238 1 500350 500350 500350 250350122500
+430	24564 20 514 514 2.0013992 2.0013992 1 0 0 0 0
+vector 454  TCP_t.client1.tcp  tcpRcvQueueBytes  ETV
+vector 441  TCP_t.client1.tcp  "advertised window"  ETV
+vector 440  TCP_t.client1.tcp  "receive window"  ETV
+vector 443  TCP_t.client1.tcp  "sent ack"  ETV
+vector 396  TCP_t.server1.tcp  "rcvd seq"  ETV
+vector 397  TCP_t.server1.tcp  "rcvd ack"  ETV
+vector 393  TCP_t.server1.tcp  "advertised window"  ETV
+vector 391  TCP_t.server1.tcp  "send window"  ETV
+vector 406  TCP_t.server1.tcp  tcpRcvQueueBytes  ETV
+vector 392  TCP_t.server1.tcp  "receive window"  ETV
+vector 395  TCP_t.server1.tcp  "sent ack"  ETV
+vector 444  TCP_t.client1.tcp  "rcvd seq"  ETV
+vector 445  TCP_t.client1.tcp  "rcvd ack"  ETV
+vector 439  TCP_t.client1.tcp  "send window"  ETV
+vector 442  TCP_t.client1.tcp  "sent seq"  ETV
+vector 446  TCP_t.client1.tcp  "unacked bytes"  ETV
+vector 398  TCP_t.server1.tcp  "unacked bytes"  ETV
+vector 399  TCP_t.server1.tcp  "rcvd dupAcks"  ETV
+vector 394  TCP_t.server1.tcp  "sent seq"  ETV
+vector 458  TCP_t.client1.tcp  "measured RTT"  ETV
+vector 459  TCP_t.client1.tcp  "smoothed RTT"  ETV
+vector 460  TCP_t.client1.tcp  RTTVAR  ETV
+vector 461  TCP_t.client1.tcp  RTO  ETV
+vector 456  TCP_t.client1.tcp  cwnd  ETV
+vector 447  TCP_t.client1.tcp  "rcvd dupAcks"  ETV
+vector 410  TCP_t.server1.tcp  "measured RTT"  ETV
+vector 411  TCP_t.server1.tcp  "smoothed RTT"  ETV
+vector 412  TCP_t.server1.tcp  RTTVAR  ETV
+vector 413  TCP_t.server1.tcp  RTO  ETV
+vector 408  TCP_t.server1.tcp  cwnd  ETV
+408	26042 46 690 755 2.0225871 2.0237157 2 2904 4356 7260 27407952
+410	26088 28 690 690 2.0225871 2.0225871 1 0.0048466 0.0048466 0.0048466 2.348953156e-05
+411	26116 30 690 690 2.0225871 2.0225871 1 0.000605825 0.000605825 0.000605825 3.67023930625e-07
+412	26146 30 690 690 2.0225871 2.0225871 1 0.656855825 0.656855825 0.656855825 0.43145957483643
+413	26176 30 690 690 2.0225871 2.0225871 1 2.628029125 2.628029125 2.628029125 6.9065370818483
+391	26206 96 570 755 2.0159679 2.0237157 4 65535 65535 262140 17179344900
+392	26302 120 570 703 2.0159679 2.0227751 5 65535 65535 327675 21474181125
+393	26422 150 570 703 2.0159679 2.0227751 6 569425 569526 3416952 1945926841852
+394	26572 25 628 628 2.0177405 2.0177405 1 503992 503992 503992 254007936064
+395	26597 125 570 703 2.0159679 2.0227751 5 503890 503991 2519852 1269930828462
+396	26722 150 570 755 2.0159679 2.0237157 6 503889 503991 3023640 1523733156802
+397	26872 145 570 755 2.0159679 2.0237157 6 0 504493 2521461 1271553415305
+398	27017 102 610 755 2.0167525 2.0237157 5 0 500 501 250001
+399	27119 80 625 755 2.0177405 2.0237157 4 0 0 0 0
+406	27199 120 570 703 2.0159679 2.0227751 6 0 0 0 0
+vector 502  TCP_t.client2.tcp  tcpRcvQueueBytes  ETV
+vector 489  TCP_t.client2.tcp  "advertised window"  ETV
+vector 488  TCP_t.client2.tcp  "receive window"  ETV
+vector 491  TCP_t.client2.tcp  "sent ack"  ETV
+vector 492  TCP_t.client2.tcp  "rcvd seq"  ETV
+vector 493  TCP_t.client2.tcp  "rcvd ack"  ETV
+488	27622 24 758 758 3.0020238 3.0020238 1 65535 65535 65535 4294836225
+489	27646 24 758 758 3.0020238 3.0020238 1 65535 65535 65535 4294836225
+491	27670 20 758 758 3.0020238 3.0020238 1 0 0 0 0
+492	27690 20 793 793 3.0026484 3.0026484 1 0 0 0 0
+493	27710 25 793 793 3.0026484 3.0026484 1 750506 750506 750506 563259256036
+502	27735 20 758 758 3.0020238 3.0020238 1 0 0 0 0
+vector 526  TCP_t.client1.tcp  tcpRcvQueueBytes  ETV
+vector 513  TCP_t.client1.tcp  "advertised window"  ETV
+vector 512  TCP_t.client1.tcp  "receive window"  ETV
+vector 515  TCP_t.client1.tcp  "sent ack"  ETV
+vector 468  TCP_t.server1.tcp  "rcvd seq"  ETV
+vector 469  TCP_t.server1.tcp  "rcvd ack"  ETV
+vector 465  TCP_t.server1.tcp  "advertised window"  ETV
+vector 463  TCP_t.server1.tcp  "send window"  ETV
+vector 478  TCP_t.server1.tcp  tcpRcvQueueBytes  ETV
+vector 464  TCP_t.server1.tcp  "receive window"  ETV
+vector 467  TCP_t.server1.tcp  "sent ack"  ETV
+vector 516  TCP_t.client1.tcp  "rcvd seq"  ETV
+vector 517  TCP_t.client1.tcp  "rcvd ack"  ETV
+vector 511  TCP_t.client1.tcp  "send window"  ETV
+vector 514  TCP_t.client1.tcp  "sent seq"  ETV
+vector 518  TCP_t.client1.tcp  "unacked bytes"  ETV
+vector 470  TCP_t.server1.tcp  "unacked bytes"  ETV
+vector 471  TCP_t.server1.tcp  "rcvd dupAcks"  ETV
+vector 466  TCP_t.server1.tcp  "sent seq"  ETV
+vector 530  TCP_t.client1.tcp  "measured RTT"  ETV
+vector 531  TCP_t.client1.tcp  "smoothed RTT"  ETV
+vector 532  TCP_t.client1.tcp  RTTVAR  ETV
+vector 533  TCP_t.client1.tcp  RTO  ETV
+vector 528  TCP_t.client1.tcp  cwnd  ETV
+vector 519  TCP_t.client1.tcp  "rcvd dupAcks"  ETV
+vector 482  TCP_t.server1.tcp  "measured RTT"  ETV
+vector 483  TCP_t.server1.tcp  "smoothed RTT"  ETV
+vector 484  TCP_t.server1.tcp  RTTVAR  ETV
+vector 485  TCP_t.server1.tcp  RTO  ETV
+vector 480  TCP_t.server1.tcp  cwnd  ETV
+480	29213 46 934 999 3.0303669 3.0314955 2 2904 4356 7260 27407952
+482	29259 28 934 934 3.0303669 3.0303669 1 0.0048466 0.0048466 0.0048466 2.348953156e-05
+483	29287 30 934 934 3.0303669 3.0303669 1 0.000605825 0.000605825 0.000605825 3.67023930625e-07
+484	29317 30 934 934 3.0303669 3.0303669 1 0.656855825 0.656855825 0.656855825 0.43145957483643
+485	29347 30 934 934 3.0303669 3.0303669 1 2.628029125 2.628029125 2.628029125 6.9065370818483
+463	29377 96 814 999 3.0237477 3.0314955 4 65535 65535 262140 17179344900
+464	29473 120 814 947 3.0237477 3.0305549 5 65535 65535 327675 21474181125
+465	29593 150 814 947 3.0237477 3.0305549 6 821370 821471 4928622 4048552483282
+466	29743 25 872 872 3.0255203 3.0255203 1 755937 755937 755937 571440747969
+467	29768 125 814 947 3.0237477 3.0305549 5 755835 755936 3779577 2857040467867
+468	29893 150 814 999 3.0237477 3.0314955 6 755834 755936 4535310 3428172814552
+469	30043 145 814 999 3.0237477 3.0314955 6 0 756438 3781186 2859473813720
+470	30188 102 854 999 3.0245323 3.0314955 5 0 500 501 250001
+471	30290 80 869 999 3.0255203 3.0314955 4 0 0 0 0
+478	30370 120 814 947 3.0237477 3.0305549 6 0 0 0 0
+vector 574  TCP_t.client2.tcp  tcpRcvQueueBytes  ETV
+vector 561  TCP_t.client2.tcp  "advertised window"  ETV
+vector 560  TCP_t.client2.tcp  "receive window"  ETV
+vector 563  TCP_t.client2.tcp  "sent ack"  ETV
+vector 564  TCP_t.client2.tcp  "rcvd seq"  ETV
+vector 565  TCP_t.client2.tcp  "rcvd ack"  ETV
+560	30793 25 1002 1002 4.0026484 4.0026484 1 65535 65535 65535 4294836225
+561	30818 25 1002 1002 4.0026484 4.0026484 1 65535 65535 65535 4294836225
+563	30843 21 1002 1002 4.0026484 4.0026484 1 0 0 0 0
+564	30864 20 1037 1037 4.003273 4.003273 1 0 0 0 0
+565	30884 26 1037 1037 4.003273 4.003273 1 1000663 1000663 1000663 1001326439569
+574	30910 21 1002 1002 4.0026484 4.0026484 1 0 0 0 0
+vector 598  TCP_t.client1.tcp  tcpRcvQueueBytes  ETV
+vector 585  TCP_t.client1.tcp  "advertised window"  ETV
+vector 584  TCP_t.client1.tcp  "receive window"  ETV
+vector 587  TCP_t.client1.tcp  "sent ack"  ETV
+vector 540  TCP_t.server1.tcp  "rcvd seq"  ETV
+vector 541  TCP_t.server1.tcp  "rcvd ack"  ETV
+vector 537  TCP_t.server1.tcp  "advertised window"  ETV
+vector 535  TCP_t.server1.tcp  "send window"  ETV
+vector 550  TCP_t.server1.tcp  tcpRcvQueueBytes  ETV
+vector 536  TCP_t.server1.tcp  "receive window"  ETV
+vector 539  TCP_t.server1.tcp  "sent ack"  ETV
+vector 588  TCP_t.client1.tcp  "rcvd seq"  ETV
+vector 589  TCP_t.client1.tcp  "rcvd ack"  ETV
+vector 583  TCP_t.client1.tcp  "send window"  ETV
+vector 586  TCP_t.client1.tcp  "sent seq"  ETV
+vector 590  TCP_t.client1.tcp  "unacked bytes"  ETV
+vector 542  TCP_t.server1.tcp  "unacked bytes"  ETV
+vector 543  TCP_t.server1.tcp  "rcvd dupAcks"  ETV
+vector 538  TCP_t.server1.tcp  "sent seq"  ETV
+vector 602  TCP_t.client1.tcp  "measured RTT"  ETV
+vector 603  TCP_t.client1.tcp  "smoothed RTT"  ETV
+vector 604  TCP_t.client1.tcp  RTTVAR  ETV
+vector 605  TCP_t.client1.tcp  RTO  ETV
+vector 600  TCP_t.client1.tcp  cwnd  ETV
+vector 591  TCP_t.client1.tcp  "rcvd dupAcks"  ETV
+vector 554  TCP_t.server1.tcp  "measured RTT"  ETV
+vector 555  TCP_t.server1.tcp  "smoothed RTT"  ETV
+vector 556  TCP_t.server1.tcp  RTTVAR  ETV
+vector 557  TCP_t.server1.tcp  RTO  ETV
+vector 552  TCP_t.server1.tcp  cwnd  ETV
+552	32389 48 1178 1243 4.0381467 4.0392753 2 2904 4356 7260 27407952
+554	32437 29 1178 1178 4.0381467 4.0381467 1 0.0048466 0.0048466 0.0048466 2.348953156e-05
+555	32466 31 1178 1178 4.0381467 4.0381467 1 0.000605825 0.000605825 0.000605825 3.67023930625e-07
+556	32497 31 1178 1178 4.0381467 4.0381467 1 0.656855825 0.656855825 0.656855825 0.43145957483643
+557	32528 31 1178 1178 4.0381467 4.0381467 1 2.628029125 2.628029125 2.628029125 6.9065370818483
+535	32559 100 1058 1243 4.0315275 4.0392753 4 65535 65535 262140 17179344900
+536	32659 125 1058 1191 4.0315275 4.0383347 5 65535 65535 327675 21474181125
+537	32784 162 1058 1191 4.0315275 4.0383347 6 1073315 1073416 6440292 6912893521012
+538	32946 27 1116 1116 4.0333001 4.0333001 1 1007882 1007882 1007882 1015826125924
+539	32973 135 1058 1191 4.0315275 4.0383347 5 1007780 1007881 5039302 5078912937522
+540	33108 162 1058 1243 4.0315275 4.0392753 6 1007779 1007881 6046980 6094327868602
+541	33270 156 1058 1243 4.0315275 4.0392753 6 0 1008383 5040911 5082157042385
+542	33426 107 1098 1243 4.0323121 4.0392753 5 0 500 501 250001
+543	33533 84 1113 1243 4.0333001 4.0392753 4 0 0 0 0
+550	33617 126 1058 1191 4.0315275 4.0383347 6 0 0 0 0
+vector 646  TCP_t.client2.tcp  tcpRcvQueueBytes  ETV
+vector 633  TCP_t.client2.tcp  "advertised window"  ETV
+vector 632  TCP_t.client2.tcp  "receive window"  ETV
+vector 635  TCP_t.client2.tcp  "sent ack"  ETV
+vector 636  TCP_t.client2.tcp  "rcvd seq"  ETV
+vector 637  TCP_t.client2.tcp  "rcvd ack"  ETV
+632	34046 24 1246 1246 5.003273 5.003273 1 65535 65535 65535 4294836225
+633	34070 24 1246 1246 5.003273 5.003273 1 65535 65535 65535 4294836225
+635	34094 20 1246 1246 5.003273 5.003273 1 0 0 0 0
+636	34114 21 1281 1281 5.0038976 5.0038976 1 0 0 0 0
+637	34135 27 1281 1281 5.0038976 5.0038976 1 1250819 1250819 1250819 1564548170761
+646	34162 20 1246 1246 5.003273 5.003273 1 0 0 0 0
+vector 670  TCP_t.client1.tcp  tcpRcvQueueBytes  ETV
+vector 657  TCP_t.client1.tcp  "advertised window"  ETV
+vector 656  TCP_t.client1.tcp  "receive window"  ETV
+vector 659  TCP_t.client1.tcp  "sent ack"  ETV
+vector 612  TCP_t.server1.tcp  "rcvd seq"  ETV
+vector 613  TCP_t.server1.tcp  "rcvd ack"  ETV
+vector 609  TCP_t.server1.tcp  "advertised window"  ETV
+vector 607  TCP_t.server1.tcp  "send window"  ETV
+vector 622  TCP_t.server1.tcp  tcpRcvQueueBytes  ETV
+vector 608  TCP_t.server1.tcp  "receive window"  ETV
+vector 611  TCP_t.server1.tcp  "sent ack"  ETV
+vector 660  TCP_t.client1.tcp  "rcvd seq"  ETV
+vector 661  TCP_t.client1.tcp  "rcvd ack"  ETV
+vector 655  TCP_t.client1.tcp  "send window"  ETV
+vector 658  TCP_t.client1.tcp  "sent seq"  ETV
+vector 662  TCP_t.client1.tcp  "unacked bytes"  ETV
+vector 614  TCP_t.server1.tcp  "unacked bytes"  ETV
+vector 615  TCP_t.server1.tcp  "rcvd dupAcks"  ETV
+vector 610  TCP_t.server1.tcp  "sent seq"  ETV
+vector 674  TCP_t.client1.tcp  "measured RTT"  ETV
+vector 675  TCP_t.client1.tcp  "smoothed RTT"  ETV
+vector 676  TCP_t.client1.tcp  RTTVAR  ETV
+vector 677  TCP_t.client1.tcp  RTO  ETV
+vector 672  TCP_t.client1.tcp  cwnd  ETV
+vector 663  TCP_t.client1.tcp  "rcvd dupAcks"  ETV
+vector 626  TCP_t.server1.tcp  "measured RTT"  ETV
+vector 627  TCP_t.server1.tcp  "smoothed RTT"  ETV
+vector 628  TCP_t.server1.tcp  RTTVAR  ETV
+vector 629  TCP_t.server1.tcp  RTO  ETV
+vector 624  TCP_t.server1.tcp  cwnd  ETV
+624	35640 48 1422 1487 5.0459265 5.0470551 2 2904 4356 7260 27407952
+626	35688 29 1422 1422 5.0459265 5.0459265 1 0.0048466 0.0048466 0.0048466 2.348953156e-05
+627	35717 31 1422 1422 5.0459265 5.0459265 1 0.000605825 0.000605825 0.000605825 3.67023930625e-07
+628	35748 31 1422 1422 5.0459265 5.0459265 1 0.656855825 0.656855825 0.656855825 0.43145957483643
+629	35779 31 1422 1422 5.0459265 5.0459265 1 2.628029125 2.628029125 2.628029125 6.9065370818483
+607	35810 100 1302 1487 5.0393073 5.0470551 4 65535 65535 262140 17179344900
+608	35910 125 1302 1435 5.0393073 5.0461145 5 65535 65535 327675 21474181125
+609	36035 162 1302 1435 5.0393073 5.0461145 6 1325260 1325361 7951962 10538949955042
+610	36197 27 1360 1360 5.0410799 5.0410799 1 1259827 1259827 1259827 1587164069929
+611	36224 135 1302 1435 5.0393073 5.0461145 5 1259725 1259826 6299027 7935548237427
+612	36359 162 1302 1487 5.0393073 5.0470551 6 1259724 1259826 7558650 9522198318952
+613	36521 156 1302 1487 5.0393073 5.0470551 6 0 1260328 6300636 7939603101300
+614	36677 107 1342 1487 5.0400919 5.0470551 5 0 500 501 250001
+615	36784 84 1357 1487 5.0410799 5.0470551 4 0 0 0 0
+622	36868 126 1302 1435 5.0393073 5.0461145 6 0 0 0 0
+vector 718  TCP_t.client2.tcp  tcpRcvQueueBytes  ETV
+vector 705  TCP_t.client2.tcp  "advertised window"  ETV
+vector 704  TCP_t.client2.tcp  "receive window"  ETV
+vector 707  TCP_t.client2.tcp  "sent ack"  ETV
+vector 708  TCP_t.client2.tcp  "rcvd seq"  ETV
+vector 709  TCP_t.client2.tcp  "rcvd ack"  ETV
+704	37297 25 1490 1490 6.0038976 6.0038976 1 65535 65535 65535 4294836225
+705	37322 25 1490 1490 6.0038976 6.0038976 1 65535 65535 65535 4294836225
+707	37347 21 1490 1490 6.0038976 6.0038976 1 0 0 0 0
+708	37368 21 1525 1525 6.0045222 6.0045222 1 0 0 0 0
+709	37389 27 1525 1525 6.0045222 6.0045222 1 1500975 1500975 1500975 2252925950625
+718	37416 21 1490 1490 6.0038976 6.0038976 1 0 0 0 0
+vector 742  TCP_t.client1.tcp  tcpRcvQueueBytes  ETV
+vector 729  TCP_t.client1.tcp  "advertised window"  ETV
+vector 728  TCP_t.client1.tcp  "receive window"  ETV
+vector 731  TCP_t.client1.tcp  "sent ack"  ETV
+vector 684  TCP_t.server1.tcp  "rcvd seq"  ETV
+vector 685  TCP_t.server1.tcp  "rcvd ack"  ETV
+vector 681  TCP_t.server1.tcp  "advertised window"  ETV
+vector 679  TCP_t.server1.tcp  "send window"  ETV
+vector 694  TCP_t.server1.tcp  tcpRcvQueueBytes  ETV
+vector 680  TCP_t.server1.tcp  "receive window"  ETV
+vector 683  TCP_t.server1.tcp  "sent ack"  ETV
+vector 732  TCP_t.client1.tcp  "rcvd seq"  ETV
+vector 733  TCP_t.client1.tcp  "rcvd ack"  ETV
+vector 727  TCP_t.client1.tcp  "send window"  ETV
+vector 730  TCP_t.client1.tcp  "sent seq"  ETV
+vector 734  TCP_t.client1.tcp  "unacked bytes"  ETV
+vector 686  TCP_t.server1.tcp  "unacked bytes"  ETV
+vector 687  TCP_t.server1.tcp  "rcvd dupAcks"  ETV
+vector 682  TCP_t.server1.tcp  "sent seq"  ETV
+vector 746  TCP_t.client1.tcp  "measured RTT"  ETV
+vector 747  TCP_t.client1.tcp  "smoothed RTT"  ETV
+vector 748  TCP_t.client1.tcp  RTTVAR  ETV
+vector 749  TCP_t.client1.tcp  RTO  ETV
+vector 744  TCP_t.client1.tcp  cwnd  ETV
+vector 735  TCP_t.client1.tcp  "rcvd dupAcks"  ETV
+vector 698  TCP_t.server1.tcp  "measured RTT"  ETV
+vector 699  TCP_t.server1.tcp  "smoothed RTT"  ETV
+vector 700  TCP_t.server1.tcp  RTTVAR  ETV
+vector 701  TCP_t.server1.tcp  RTO  ETV
+vector 696  TCP_t.server1.tcp  cwnd  ETV
+696	38895 48 1666 1731 6.0537063 6.0548349 2 2904 4356 7260 27407952
+698	38943 29 1666 1666 6.0537063 6.0537063 1 0.0048466 0.0048466 0.0048466 2.348953156e-05
+699	38972 31 1666 1666 6.0537063 6.0537063 1 0.000605825 0.000605825 0.000605825 3.67023930625e-07
+700	39003 31 1666 1666 6.0537063 6.0537063 1 0.656855825 0.656855825 0.656855825 0.43145957483643
+701	39034 31 1666 1666 6.0537063 6.0537063 1 2.628029125 2.628029125 2.628029125 6.9065370818483
+679	39065 100 1546 1731 6.0470871 6.0548349 4 65535 65535 262140 17179344900
+680	39165 125 1546 1679 6.0470871 6.0538943 5 65535 65535 327675 21474181125
+681	39290 162 1546 1679 6.0470871 6.0538943 6 1577205 1577306 9463632 14926721785372
+682	39452 27 1604 1604 6.0488597 6.0488597 1 1511772 1511772 1511772 2285454579984
+683	39479 135 1546 1679 6.0470871 6.0538943 5 1511670 1511771 7558752 11426946367582
+684	39614 162 1546 1731 6.0470871 6.0548349 6 1511669 1511771 9070320 13711784165602
+685	39776 156 1546 1731 6.0470871 6.0548349 6 0 1512273 7560361 11431811990465
+686	39932 107 1586 1731 6.0478717 6.0548349 5 0 500 501 250001
+687	40039 84 1601 1731 6.0488597 6.0548349 4 0 0 0 0
+694	40123 126 1546 1679 6.0470871 6.0538943 6 0 0 0 0
+vector 790  TCP_t.client2.tcp  tcpRcvQueueBytes  ETV
+vector 777  TCP_t.client2.tcp  "advertised window"  ETV
+vector 776  TCP_t.client2.tcp  "receive window"  ETV
+vector 779  TCP_t.client2.tcp  "sent ack"  ETV
+vector 780  TCP_t.client2.tcp  "rcvd seq"  ETV
+vector 781  TCP_t.client2.tcp  "rcvd ack"  ETV
+776	40552 25 1734 1734 7.0045222 7.0045222 1 65535 65535 65535 4294836225
+777	40577 25 1734 1734 7.0045222 7.0045222 1 65535 65535 65535 4294836225
+779	40602 21 1734 1734 7.0045222 7.0045222 1 0 0 0 0
+780	40623 21 1769 1769 7.0051468 7.0051468 1 0 0 0 0
+781	40644 27 1769 1769 7.0051468 7.0051468 1 1751131 1751131 1751131 3066459779161
+790	40671 21 1734 1734 7.0045222 7.0045222 1 0 0 0 0
+vector 814  TCP_t.client1.tcp  tcpRcvQueueBytes  ETV
+vector 801  TCP_t.client1.tcp  "advertised window"  ETV
+vector 800  TCP_t.client1.tcp  "receive window"  ETV
+vector 803  TCP_t.client1.tcp  "sent ack"  ETV
+vector 756  TCP_t.server1.tcp  "rcvd seq"  ETV
+vector 757  TCP_t.server1.tcp  "rcvd ack"  ETV
+vector 753  TCP_t.server1.tcp  "advertised window"  ETV
+vector 751  TCP_t.server1.tcp  "send window"  ETV
+vector 766  TCP_t.server1.tcp  tcpRcvQueueBytes  ETV
+vector 752  TCP_t.server1.tcp  "receive window"  ETV
+vector 755  TCP_t.server1.tcp  "sent ack"  ETV
+vector 804  TCP_t.client1.tcp  "rcvd seq"  ETV
+vector 805  TCP_t.client1.tcp  "rcvd ack"  ETV
+vector 799  TCP_t.client1.tcp  "send window"  ETV
+vector 802  TCP_t.client1.tcp  "sent seq"  ETV
+vector 806  TCP_t.client1.tcp  "unacked bytes"  ETV
+vector 758  TCP_t.server1.tcp  "unacked bytes"  ETV
+vector 759  TCP_t.server1.tcp  "rcvd dupAcks"  ETV
+vector 754  TCP_t.server1.tcp  "sent seq"  ETV
+vector 818  TCP_t.client1.tcp  "measured RTT"  ETV
+vector 819  TCP_t.client1.tcp  "smoothed RTT"  ETV
+vector 820  TCP_t.client1.tcp  RTTVAR  ETV
+vector 821  TCP_t.client1.tcp  RTO  ETV
+vector 816  TCP_t.client1.tcp  cwnd  ETV
+vector 807  TCP_t.client1.tcp  "rcvd dupAcks"  ETV
+vector 770  TCP_t.server1.tcp  "measured RTT"  ETV
+vector 771  TCP_t.server1.tcp  "smoothed RTT"  ETV
+vector 772  TCP_t.server1.tcp  RTTVAR  ETV
+vector 773  TCP_t.server1.tcp  RTO  ETV
+vector 768  TCP_t.server1.tcp  cwnd  ETV
+768	42150 48 1910 1975 7.0614861 7.0626147 2 2904 4356 7260 27407952
+770	42198 29 1910 1910 7.0614861 7.0614861 1 0.0048466 0.0048466 0.0048466 2.348953156e-05
+771	42227 31 1910 1910 7.0614861 7.0614861 1 0.000605825 0.000605825 0.000605825 3.67023930625e-07
+772	42258 31 1910 1910 7.0614861 7.0614861 1 0.656855825 0.656855825 0.656855825 0.43145957483643
+773	42289 31 1910 1910 7.0614861 7.0614861 1 2.628029125 2.628029125 2.628029125 6.9065370818483
+751	42320 100 1790 1975 7.0548669 7.0626147 4 65535 65535 262140 17179344900
+752	42420 125 1790 1923 7.0548669 7.0616741 5 65535 65535 327675 21474181125
+753	42545 162 1790 1923 7.0548669 7.0616741 6 1829150 1829251 10975302 20076209012002
+754	42707 27 1848 1848 7.0566395 7.0566395 1 1763717 1763717 1763717 3110697656089
+755	42734 135 1790 1923 7.0548669 7.0616741 5 1763615 1763716 8818477 15553107327987
+756	42869 162 1790 1975 7.0548669 7.0626147 6 1763614 1763716 10581990 18663085408552
+757	43031 156 1790 1975 7.0548669 7.0626147 6 0 1764218 8820086 15558783709880
+758	43187 107 1830 1975 7.0556515 7.0626147 5 0 500 501 250001
+759	43294 84 1845 1975 7.0566395 7.0626147 4 0 0 0 0
+766	43378 126 1790 1923 7.0548669 7.0616741 6 0 0 0 0
+vector 862  TCP_t.client2.tcp  tcpRcvQueueBytes  ETV
+vector 849  TCP_t.client2.tcp  "advertised window"  ETV
+vector 848  TCP_t.client2.tcp  "receive window"  ETV
+vector 851  TCP_t.client2.tcp  "sent ack"  ETV
+vector 852  TCP_t.client2.tcp  "rcvd seq"  ETV
+vector 853  TCP_t.client2.tcp  "rcvd ack"  ETV
+848	43807 25 1978 1978 8.0051468 8.0051468 1 65535 65535 65535 4294836225
+849	43832 25 1978 1978 8.0051468 8.0051468 1 65535 65535 65535 4294836225
+851	43857 21 1978 1978 8.0051468 8.0051468 1 0 0 0 0
+852	43878 21 2013 2013 8.0057714 8.0057714 1 0 0 0 0
+853	43899 27 2013 2013 8.0057714 8.0057714 1 2001287 2001287 2001287 4005149656369
+862	43926 21 1978 1978 8.0051468 8.0051468 1 0 0 0 0
+vector 886  TCP_t.client1.tcp  tcpRcvQueueBytes  ETV
+vector 873  TCP_t.client1.tcp  "advertised window"  ETV
+vector 872  TCP_t.client1.tcp  "receive window"  ETV
+vector 875  TCP_t.client1.tcp  "sent ack"  ETV
+vector 828  TCP_t.server1.tcp  "rcvd seq"  ETV
+vector 829  TCP_t.server1.tcp  "rcvd ack"  ETV
+vector 825  TCP_t.server1.tcp  "advertised window"  ETV
+vector 823  TCP_t.server1.tcp  "send window"  ETV
+vector 838  TCP_t.server1.tcp  tcpRcvQueueBytes  ETV
+vector 824  TCP_t.server1.tcp  "receive window"  ETV
+vector 827  TCP_t.server1.tcp  "sent ack"  ETV
+vector 876  TCP_t.client1.tcp  "rcvd seq"  ETV
+vector 877  TCP_t.client1.tcp  "rcvd ack"  ETV
+vector 871  TCP_t.client1.tcp  "send window"  ETV
+vector 874  TCP_t.client1.tcp  "sent seq"  ETV
+vector 878  TCP_t.client1.tcp  "unacked bytes"  ETV
+vector 830  TCP_t.server1.tcp  "unacked bytes"  ETV
+vector 831  TCP_t.server1.tcp  "rcvd dupAcks"  ETV
+vector 826  TCP_t.server1.tcp  "sent seq"  ETV
+vector 890  TCP_t.client1.tcp  "measured RTT"  ETV
+vector 891  TCP_t.client1.tcp  "smoothed RTT"  ETV
+vector 892  TCP_t.client1.tcp  RTTVAR  ETV
+vector 893  TCP_t.client1.tcp  RTO  ETV
+vector 888  TCP_t.client1.tcp  cwnd  ETV
+vector 879  TCP_t.client1.tcp  "rcvd dupAcks"  ETV
+vector 842  TCP_t.server1.tcp  "measured RTT"  ETV
+vector 843  TCP_t.server1.tcp  "smoothed RTT"  ETV
+vector 844  TCP_t.server1.tcp  RTTVAR  ETV
+vector 845  TCP_t.server1.tcp  RTO  ETV
+vector 840  TCP_t.server1.tcp  cwnd  ETV
+840	45405 48 2154 2219 8.0692659 8.0703945 2 2904 4356 7260 27407952
+842	45453 29 2154 2154 8.0692659 8.0692659 1 0.0048466 0.0048466 0.0048466 2.348953156e-05
+843	45482 31 2154 2154 8.0692659 8.0692659 1 0.000605825 0.000605825 0.000605825 3.67023930625e-07
+844	45513 31 2154 2154 8.0692659 8.0692659 1 0.656855825 0.656855825 0.656855825 0.43145957483643
+845	45544 31 2154 2154 8.0692659 8.0692659 1 2.628029125 2.628029125 2.628029125 6.9065370818483
+823	45575 100 2034 2219 8.0626467 8.0703945 4 65535 65535 262140 17179344900
+824	45675 125 2034 2167 8.0626467 8.0694539 5 65535 65535 327675 21474181125
+825	45800 162 2034 2167 8.0626467 8.0694539 6 2081095 2081196 12486972 25987411634932
+826	45962 27 2092 2092 8.0644193 8.0644193 1 2015662 2015662 2015662 4062893298244
+827	45989 135 2034 2167 8.0626467 8.0694539 5 2015560 2015661 10078202 20314031118642
+828	46124 162 2034 2219 8.0626467 8.0703945 6 2015559 2015661 12093660 24376102047802
+829	46286 156 2034 2219 8.0626467 8.0703945 6 0 2016163 10079811 20320518259545
+830	46442 107 2074 2219 8.0634313 8.0703945 5 0 500 501 250001
+831	46549 84 2089 2219 8.0644193 8.0703945 4 0 0 0 0
+838	46633 126 2034 2167 8.0626467 8.0694539 6 0 0 0 0
+vector 934  TCP_t.client2.tcp  tcpRcvQueueBytes  ETV
+vector 921  TCP_t.client2.tcp  "advertised window"  ETV
+vector 920  TCP_t.client2.tcp  "receive window"  ETV
+vector 923  TCP_t.client2.tcp  "sent ack"  ETV
+vector 924  TCP_t.client2.tcp  "rcvd seq"  ETV
+vector 925  TCP_t.client2.tcp  "rcvd ack"  ETV
+920	47062 25 2222 2222 9.0057714 9.0057714 1 65535 65535 65535 4294836225
+921	47087 25 2222 2222 9.0057714 9.0057714 1 65535 65535 65535 4294836225
+923	47112 21 2222 2222 9.0057714 9.0057714 1 0 0 0 0
+924	47133 20 2257 2257 9.006396 9.006396 1 0 0 0 0
+925	47153 26 2257 2257 9.006396 9.006396 1 2251443 2251443 2251443 5068995582249
+934	47179 21 2222 2222 9.0057714 9.0057714 1 0 0 0 0
+vector 958  TCP_t.client1.tcp  tcpRcvQueueBytes  ETV
+vector 945  TCP_t.client1.tcp  "advertised window"  ETV
+vector 944  TCP_t.client1.tcp  "receive window"  ETV
+vector 947  TCP_t.client1.tcp  "sent ack"  ETV
+vector 900  TCP_t.server1.tcp  "rcvd seq"  ETV
+vector 901  TCP_t.server1.tcp  "rcvd ack"  ETV
+vector 897  TCP_t.server1.tcp  "advertised window"  ETV
+vector 895  TCP_t.server1.tcp  "send window"  ETV
+vector 910  TCP_t.server1.tcp  tcpRcvQueueBytes  ETV
+vector 896  TCP_t.server1.tcp  "receive window"  ETV
+vector 899  TCP_t.server1.tcp  "sent ack"  ETV
+vector 948  TCP_t.client1.tcp  "rcvd seq"  ETV
+vector 949  TCP_t.client1.tcp  "rcvd ack"  ETV
+vector 943  TCP_t.client1.tcp  "send window"  ETV
+vector 946  TCP_t.client1.tcp  "sent seq"  ETV
+vector 950  TCP_t.client1.tcp  "unacked bytes"  ETV
+vector 902  TCP_t.server1.tcp  "unacked bytes"  ETV
+vector 903  TCP_t.server1.tcp  "rcvd dupAcks"  ETV
+vector 898  TCP_t.server1.tcp  "sent seq"  ETV
+vector 962  TCP_t.client1.tcp  "measured RTT"  ETV
+vector 963  TCP_t.client1.tcp  "smoothed RTT"  ETV
+vector 964  TCP_t.client1.tcp  RTTVAR  ETV
+vector 965  TCP_t.client1.tcp  RTO  ETV
+vector 960  TCP_t.client1.tcp  cwnd  ETV
+vector 951  TCP_t.client1.tcp  "rcvd dupAcks"  ETV
+vector 914  TCP_t.server1.tcp  "measured RTT"  ETV
+vector 915  TCP_t.server1.tcp  "smoothed RTT"  ETV
+vector 916  TCP_t.server1.tcp  RTTVAR  ETV
+vector 917  TCP_t.server1.tcp  RTO  ETV
+vector 912  TCP_t.server1.tcp  cwnd  ETV
+912	48658 48 2398 2463 9.0770457 9.0781743 2 2904 4356 7260 27407952
+914	48706 29 2398 2398 9.0770457 9.0770457 1 0.0048466 0.0048466 0.0048466 2.348953156e-05
+915	48735 31 2398 2398 9.0770457 9.0770457 1 0.000605825 0.000605825 0.000605825 3.67023930625e-07
+916	48766 31 2398 2398 9.0770457 9.0770457 1 0.656855825 0.656855825 0.656855825 0.43145957483643
+917	48797 31 2398 2398 9.0770457 9.0770457 1 2.628029125 2.628029125 2.628029125 6.9065370818483
+895	48828 100 2278 2463 9.0704265 9.0781743 4 65535 65535 262140 17179344900
+896	48928 125 2278 2411 9.0704265 9.0772337 5 65535 65535 327675 21474181125
+897	49053 162 2278 2411 9.0704265 9.0772337 6 2333040 2333141 13998642 32660329654162
+898	49215 27 2336 2336 9.0721991 9.0721991 1 2267607 2267607 2267607 5142041506449
+899	49242 135 2278 2411 9.0704265 9.0772337 5 2267505 2267606 11337927 25709717739547
+900	49377 162 2278 2463 9.0704265 9.0781743 6 2267504 2267606 13605330 30850834083352
+901	49539 156 2278 2463 9.0704265 9.0781743 6 0 2268108 11339536 25717015639460
+902	49695 107 2318 2463 9.0712111 9.0781743 5 0 500 501 250001
+903	49802 84 2333 2463 9.0721991 9.0781743 4 0 0 0 0
+910	49886 126 2278 2411 9.0704265 9.0772337 6 0 0 0 0
+vector 1006  TCP_t.client2.tcp  tcpRcvQueueBytes  ETV
+vector 993  TCP_t.client2.tcp  "advertised window"  ETV
+vector 992  TCP_t.client2.tcp  "receive window"  ETV
+vector 995  TCP_t.client2.tcp  "sent ack"  ETV
+vector 996  TCP_t.client2.tcp  "rcvd seq"  ETV
+vector 997  TCP_t.client2.tcp  "rcvd ack"  ETV
+992	50316 25 2466 2466 10.006396 10.006396 1 65535 65535 65535 4294836225
+993	50341 25 2466 2466 10.006396 10.006396 1 65535 65535 65535 4294836225
+995	50366 21 2466 2466 10.006396 10.006396 1 0 0 0 0
+996	50387 22 2501 2501 10.0070206 10.0070206 1 0 0 0 0
+997	50409 28 2501 2501 10.0070206 10.0070206 1 2501600 2501600 2501600 6258002560000
+1006	50437 22 2466 2466 10.006396 10.006396 1 0 0 0 0
+vector 1030  TCP_t.client1.tcp  tcpRcvQueueBytes  ETV
+vector 1017  TCP_t.client1.tcp  "advertised window"  ETV
+vector 1016  TCP_t.client1.tcp  "receive window"  ETV
+vector 1019  TCP_t.client1.tcp  "sent ack"  ETV
+vector 972  TCP_t.server1.tcp  "rcvd seq"  ETV
+vector 973  TCP_t.server1.tcp  "rcvd ack"  ETV
+vector 969  TCP_t.server1.tcp  "advertised window"  ETV
+vector 967  TCP_t.server1.tcp  "send window"  ETV
+vector 982  TCP_t.server1.tcp  tcpRcvQueueBytes  ETV
+vector 968  TCP_t.server1.tcp  "receive window"  ETV
+vector 971  TCP_t.server1.tcp  "sent ack"  ETV
+vector 1020  TCP_t.client1.tcp  "rcvd seq"  ETV
+vector 1021  TCP_t.client1.tcp  "rcvd ack"  ETV
+vector 1015  TCP_t.client1.tcp  "send window"  ETV
+vector 1018  TCP_t.client1.tcp  "sent seq"  ETV
+vector 1022  TCP_t.client1.tcp  "unacked bytes"  ETV
+vector 974  TCP_t.server1.tcp  "unacked bytes"  ETV
+vector 975  TCP_t.server1.tcp  "rcvd dupAcks"  ETV
+vector 970  TCP_t.server1.tcp  "sent seq"  ETV
+vector 1034  TCP_t.client1.tcp  "measured RTT"  ETV
+vector 1035  TCP_t.client1.tcp  "smoothed RTT"  ETV
+vector 1036  TCP_t.client1.tcp  RTTVAR  ETV
+vector 1037  TCP_t.client1.tcp  RTO  ETV
+vector 1032  TCP_t.client1.tcp  cwnd  ETV
+vector 1023  TCP_t.client1.tcp  "rcvd dupAcks"  ETV
+vector 986  TCP_t.server1.tcp  "measured RTT"  ETV
+vector 987  TCP_t.server1.tcp  "smoothed RTT"  ETV
+vector 988  TCP_t.server1.tcp  RTTVAR  ETV
+vector 989  TCP_t.server1.tcp  RTO  ETV
+vector 984  TCP_t.server1.tcp  cwnd  ETV
+984	51932 50 2642 2707 10.0848255 10.0859541 2 2904 4356 7260 27407952
+986	51982 30 2642 2642 10.0848255 10.0848255 1 0.0048466 0.0048466 0.0048466 2.348953156e-05
+987	52012 32 2642 2642 10.0848255 10.0848255 1 0.000605825 0.000605825 0.000605825 3.67023930625e-07
+988	52044 32 2642 2642 10.0848255 10.0848255 1 0.656855825 0.656855825 0.656855825 0.43145957483643
+989	52076 32 2642 2642 10.0848255 10.0848255 1 2.628029125 2.628029125 2.628029125 6.9065370818483
+967	52108 104 2522 2707 10.0782063 10.0859541 4 65535 65535 262140 17179344900
+968	52212 130 2522 2655 10.0782063 10.0850135 5 65535 65535 327675 21474181125
+969	52342 168 2522 2655 10.0782063 10.0850135 6 2584985 2585086 15510312 40094963069692
+970	52510 28 2580 2580 10.0799789 10.0799789 1 2519552 2519552 2519552 6348142280704
+971	52538 140 2522 2655 10.0782063 10.0850135 5 2519450 2519551 12597652 31740167190702
+972	52678 168 2522 2707 10.0782063 10.0859541 6 2519449 2519551 15117000 38087281515202
+973	52846 162 2522 2707 10.0782063 10.0859541 6 0 2520053 12599261 31748275849625
+974	53008 112 2562 2707 10.0789909 10.0859541 5 0 500 501 250001
+975	53120 88 2577 2707 10.0799789 10.0859541 4 0 0 0 0
+982	53208 132 2522 2655 10.0782063 10.0850135 6 0 0 0 0
+vector 1078  TCP_t.client2.tcp  tcpRcvQueueBytes  ETV
+vector 1065  TCP_t.client2.tcp  "advertised window"  ETV
+vector 1064  TCP_t.client2.tcp  "receive window"  ETV
+vector 1067  TCP_t.client2.tcp  "sent ack"  ETV
+0	53553 2444 0 2693 0 10.0857658 133 0 1 66 66
+1	55997 2066 0 2682 0 10.0855777 111 0 1 55 55
+2	58063 443 0 2713 0 11.0072246 25 0 1 12 12
+3	58506 418 0 2497 0 10.0070205 23 0 1 11 11
+4	58924 8 0 0 0 0 1 0 0 0 0
+5	58932 8 0 0 0 0 1 0 0 0 0
+6	58940 8 0 0 0 0 1 0 0 0 0
+7	58948 8 0 0 0 0 1 0 0 0 0
+8	58956 2888 0 2698 0 10.0858599 155 0 1 77 77
+9	61844 2446 0 2672 0 10.0852956 133 0 1 66 66
+10	64290 2581 0 2703 0 10.085954 133 0 1 66 66
+11	66871 2177 0 2662 0 10.0852015 111 0 1 55 55
+12	69048 436 0 2479 0 10.0068042 23 0 1 11 11
+13	69484 441 0 2487 0 10.0068583 23 0 1 11 11
+14	69925 236 176 2616 0.0066512 10.0844492 11 500 500 5500 2750000
+15	70161 237 102 2542 0.0008166 10.0786146 11 100 100 1100 110000
+16	70398 302 176 2616 0.0066512 10.0844492 11 0.0058346 0.0058346 0.0641806 0.00037446812876
+17	70700 420 23 2616 0 10.0844492 22 0 1 11 11
+23	71120 1356 31 2692 0 10.0855778 66 40 140 3784 307296
+25	72476 1434 31 2692 0 10.0855778 66 0 0.000188 0.004136 7.77568e-07
+26	73910 868 0 2623 0 10.0846372 45 0 1 22 22
+27	74778 2577 0 2694 0 10.0857658 133 0 1 66 66
+28	77355 1357 33 2693 0 10.0855778 66 47 147 4246 363506
+29	78712 1138 98 2687 0.0008166 10.0855778 55 47 547 8129 3392807
+32	79850 1357 33 2693 0 10.0855778 66 40 140 3784 307296
+33	81207 1138 98 2687 0.0008166 10.0855778 55 40 540 7744 3281696
+37	82345 230 24 2709 0 11.0070206 12 1 12 78 650
+43	82575 239 32 2712 0 11.0070206 12 44 44 528 23232
+45	82814 227 32 2712 0 11.0070206 12 0 0 0 0
+46	83041 9 0 0 0 0 1 0 0 0 0
+47	83050 468 0 2714 0 11.0072246 25 0 1 12 12
+48	83518 239 34 2713 0 11.0070206 12 51 51 612 31212
+49	83757 225 92 2499 0.0007746 10.0070206 11 27 27 297 8019
+52	83982 239 34 2713 0 11.0070206 12 44 44 528 23232
+53	84221 225 92 2499 0.0007746 10.0070206 11 20 20 220 4400
+62	84446 9 0 0 0 0 1 0 0 0 0
+63	84455 9 0 0 0 0 1 0 0 0 0
+78	84464 9 0 0 0 0 1 0 0 0 0
+79	84473 9 0 0 0 0 1 0 0 0 0
+86	84482 239 138 2578 0.0021809 10.0799789 11 100 100 1100 110000
+87	84721 239 138 2578 0.0021809 10.0799789 11 500 500 5500 2750000
+88	84960 305 138 2578 0.0021809 10.0799789 11 0.0013643 0.0013643 0.0150073 2.047445939e-05
+94	85265 1150 61 2660 0.0004083 10.0850135 55 40 540 7744 3281696
+96	86415 1216 61 2661 0.0004083 10.0851075 55 0 9.4e-05 0.002068 1.94392e-07
+97	87631 877 0 2661 0 10.0851075 45 0 1 22 22
+98	88508 2177 0 2667 0 10.0852015 111 0 1 55 55
+99	90685 1150 62 2662 0.0004083 10.0851075 55 47 547 8129 3392807
+100	91835 1444 56 2705 0.0004083 10.0859541 66 47 147 4246 363506
+103	93279 1205 62 2662 0.0004083 10.0851075 55 40 540 7744 3281696
+104	94484 1444 56 2705 0.0004083 10.0859541 66 40 140 3784 307296
+110	95928 238 70 2486 0.0005103 10.0068043 11 20 20 220 4400
+112	96166 227 70 2486 0.0005103 10.0068043 11 0 0 0 0
+113	96393 10 0 0 0 0 1 0 0 0 0
+114	96403 464 0 2488 0 10.0068583 23 0 1 11 11
+115	96867 238 71 2487 0.0005103 10.0068043 11 27 27 297 8019
+116	97105 238 64 2481 0.0005103 10.0068043 11 51 51 561 28611
+119	97343 238 71 2487 0.0005103 10.0068043 11 20 20 220 4400
+120	97581 238 64 2481 0.0005103 10.0068043 11 44 44 484 21296
+126	97819 1205 84 2680 0.0006125 10.0852957 55 40 540 7744 3281696
+128	99024 1205 84 2681 0.0006125 10.0853897 55 0 9.4e-05 0.001034 9.7196e-08
+129	100229 466 0 2681 0 10.0853897 23 0 1 11 11
+130	100695 2288 0 2686 0 10.0855777 111 0 1 55 55
+131	102983 1205 85 2682 0.0006125 10.0853897 55 47 547 8129 3392807
+132	104188 1444 37 2695 0.0002041 10.0857659 66 47 147 4246 363506
+135	105632 1205 85 2682 0.0006125 10.0853897 55 40 540 7744 3281696
+136	106837 1444 37 2695 0.0002041 10.0857659 66 40 140 3784 307296
+137	108281 238 89 2496 0.0006665 10.0069125 11 20 20 220 4400
+139	108519 227 89 2496 0.0006665 10.0069125 11 0 0 0 0
+140	108746 10 0 0 0 0 1 0 0 0 0
+141	108756 464 0 2498 0 10.0070205 23 0 1 11 11
+142	109220 238 90 2497 0.0006665 10.0069125 11 27 27 297 8019
+143	109458 238 38 2471 0.0002041 10.0066001 11 51 51 561 28611
+146	109696 238 90 2497 0.0006665 10.0069125 11 20 20 220 4400
+147	109934 238 38 2471 0.0002041 10.0066001 11 44 44 484 21296
+151	110172 10 0 0 0 0 1 0 0 0 0
+152	110182 10 0 0 0 0 1 0 0 0 0
+162	110192 10 0 0 0 0 1 0 0 0 0
+163	110202 10 0 0 0 0 1 0 0 0 0
+170	110212 1682 41 2697 0.0002041 10.0857659 77 40 140 4268 328592
+172	111894 1601 41 2697 0.0002041 10.0857659 77 0 0.000102 0.000102 1.0404e-08
+173	113495 48 0 44 0 0.0003061 3 0 1 1 1
+174	113543 3198 0 2699 0 10.0858599 155 0 1 77 77
+175	116741 1682 43 2698 0.0002041 10.0857659 77 47 147 4807 392117
+176	118423 1443 82 2678 0.0006125 10.0852957 66 27 547 8426 3400826
+179	119866 1682 43 2698 0.0002041 10.0857659 77 40 140 4268 328592
+180	121548 1443 82 2678 0.0006125 10.0852957 66 20 540 7964 3286096
+186	122991 1427 74 2671 0.0005104 10.0852016 66 20 540 7964 3286096
+188	124418 1356 74 2671 0.0005104 10.0852016 66 0 4.8e-05 4.8e-05 2.304e-09
+189	125774 48 0 80 0 0.0006124 3 0 1 1 1
+190	125822 2712 0 2677 0 10.0852956 133 0 1 66 66
+191	128534 1427 75 2672 0.0005104 10.0852016 66 27 547 8426 3400826
+192	129961 1664 46 2700 0.0003062 10.08586 77 47 147 4807 392117
+195	131625 1427 75 2672 0.0005104 10.0852016 66 20 540 7964 3286096
+196	133052 1664 46 2700 0.0003062 10.08586 77 40 140 4268 328592
+197	134716 1429 48 2702 0.0003062 10.08586 66 40 140 3784 307296
+199	136145 1352 48 2702 0.0003062 10.08586 66 0 0 0 0
+200	137497 10 0 0 0 0 1 0 0 0 0
+201	137507 2714 0 2704 0 10.085954 133 0 1 66 66
+202	140221 1429 49 2703 0.0003062 10.08586 66 47 147 4246 363506
+203	141650 1192 72 2668 0.0005104 10.0852016 55 47 547 8129 3392807
+206	142842 1429 49 2703 0.0003062 10.08586 66 40 140 3784 307296
+207	144271 1192 72 2668 0.0005104 10.0852016 55 40 540 7744 3281696
+208	145463 235 54 2478 0.0004082 10.0067022 11 44 44 484 21296
+210	145698 224 54 2478 0.0004082 10.0067022 11 0 0 0 0
+211	145922 10 0 0 0 0 1 0 0 0 0
+212	145932 459 0 2480 0 10.0068042 23 0 1 11 11
+213	146391 235 55 2479 0.0004082 10.0067022 11 51 51 561 28611
+214	146626 235 77 2489 0.0005644 10.0068584 11 27 27 297 8019
+217	146861 235 55 2479 0.0004082 10.0067022 11 44 44 484 21296
+218	147096 235 77 2489 0.0005644 10.0068584 11 20 20 220 4400
+219	147331 339 328 2524 0 9.0704265 10 5586.2591514421 5588.5224133288 55882.960871401 312290536.18557
+220	147670 339 328 2524 0 9.0704265 10 4.9593920023456 4.9614012902422 49.612003614525 246.13509389828
+221	148009 339 289 2485 0 9.0061797 10 159.81095961587 159.90012638106 1598.9120970454 255651.99656346
+222	148348 349 289 2485 0 9.0061797 10 0.99881849759919 0.99937578988164 9.9932006065339 9.9864061157603
+271	148697 72 100 245 0.0008166 0.0075918 3 65535 65535 196605 12884508675
+272	148769 135 27 249 0 0.0077798 6 65535 65535 393210 25769017350
+273	148904 159 27 249 0 0.0077798 7 65535 66139 460864 30342714766
+274	149063 20 104 104 0.0008166 0.0008166 1 1 1 1 1
+275	149083 121 27 249 0 0.0077798 6 0 604 2016 1113252
+276	149204 110 100 249 0.0008166 0.0077798 5 102 603 1514 758840
+277	149314 108 100 249 0.0008166 0.0077798 5 1 102 407 41211
+278	149422 82 104 245 0.0008166 0.0075918 4 0 100 101 10001
+279	149504 80 161 249 0.0025572 0.0077798 4 0 0 0 0
+286	149584 131 27 249 0 0.0077798 7 0 0 0 0
+288	149715 46 161 245 0.0025572 0.0075918 2 2904 4356 7260 27407952
+290	149761 28 161 161 0.0025572 0.0025572 1 0.0017406 0.0017406 0.0017406 3.02968836e-06
+291	149789 30 161 161 0.0025572 0.0025572 1 0.000217575 0.000217575 0.000217575 4.7338880625e-08
+292	149819 30 161 161 0.0025572 0.0025572 1 0.656467575 0.656467575 0.656467575 0.43094967702638
+293	149849 30 161 161 0.0025572 0.0025572 1 2.626087875 2.626087875 2.626087875 6.896337527222
+367	149879 71 344 489 1.0085964 1.0153716 3 65535 65535 196605 12884508675
+368	149950 142 309 493 1.0077798 1.0155596 6 65535 65535 393210 25769017350
+369	150092 172 309 493 1.0077798 1.0155596 7 65535 318084 1972534 610402742726
+370	150264 25 348 348 1.0085964 1.0085964 1 251945 251945 251945 63476283025
+371	150289 143 309 493 1.0077798 1.0155596 6 0 252549 1261741 318398370617
+372	150432 123 344 493 1.0085964 1.0155596 5 252047 252548 1261239 318145063425
+373	150555 123 344 493 1.0085964 1.0155596 5 251945 252046 1260127 317584019307
+374	150678 80 348 489 1.0085964 1.0153716 4 0 100 101 10001
+375	150758 78 405 493 1.010337 1.0155596 4 0 0 0 0
+382	150836 137 309 493 1.0077798 1.0155596 7 0 0 0 0
+384	150973 45 405 489 1.010337 1.0153716 2 2904 4356 7260 27407952
+386	151018 27 405 405 1.010337 1.010337 1 0.0017406 0.0017406 0.0017406 3.02968836e-06
+387	151045 29 405 405 1.010337 1.010337 1 0.000217575 0.000217575 0.000217575 4.7338880625e-08
+388	151074 29 405 405 1.010337 1.010337 1 0.656467575 0.656467575 0.656467575 0.43094967702638
+389	151103 29 405 405 1.010337 1.010337 1 2.626087875 2.626087875 2.626087875 6.896337527222
+439	151132 72 588 733 2.0163762 2.0231514 3 65535 65535 196605 12884508675
+440	151204 144 553 737 2.0155596 2.0233394 6 65535 65535 393210 25769017350
+441	151348 174 553 737 2.0155596 2.0233394 7 65535 570028 3484198 1952171329654
+442	151522 25 592 592 2.0163762 2.0163762 1 503890 503890 503890 253905132100
+443	151547 145 553 737 2.0155596 2.0233394 6 0 504493 2521461 1271553415305
+444	151692 125 588 737 2.0163762 2.0233394 5 503991 504492 2520959 1271047156337
+445	151817 125 588 737 2.0163762 2.0233394 5 503890 503991 2519852 1269930828462
+446	151942 82 592 733 2.0163762 2.0231514 4 0 100 101 10001
+447	152024 80 649 737 2.0181168 2.0233394 4 0 0 0 0
+454	152104 140 553 737 2.0155596 2.0233394 7 0 0 0 0
+456	152244 46 649 733 2.0181168 2.0231514 2 2904 4356 7260 27407952
+458	152290 28 649 649 2.0181168 2.0181168 1 0.0017406 0.0017406 0.0017406 3.02968836e-06
+459	152318 30 649 649 2.0181168 2.0181168 1 0.000217575 0.000217575 0.000217575 4.7338880625e-08
+460	152348 30 649 649 2.0181168 2.0181168 1 0.656467575 0.656467575 0.656467575 0.43094967702638
+461	152378 30 649 649 2.0181168 2.0181168 1 2.626087875 2.626087875 2.626087875 6.896337527222
+511	152408 71 832 977 3.024156 3.0309312 3 65535 65535 196605 12884508675
+512	152479 142 797 981 3.0233394 3.0311192 6 65535 65535 393210 25769017350
+513	152621 171 797 981 3.0233394 3.0311192 7 65535 821973 4995868 4055659126874
+514	152792 24 836 836 3.024156 3.024156 1 755835 755835 755835 571286547225
+515	152816 143 797 981 3.0233394 3.0311192 6 0 756438 3781186 2859473813720
+516	152959 124 832 981 3.024156 3.0311192 5 755936 756437 3780684 2858714601972
+517	153083 124 832 981 3.024156 3.0311192 5 755835 755936 3779577 2857040467867
+518	153207 81 836 977 3.024156 3.0309312 4 0 100 101 10001
+519	153288 80 893 981 3.0258966 3.0311192 4 0 0 0 0
+526	153368 138 797 981 3.0233394 3.0311192 7 0 0 0 0
+528	153506 46 893 977 3.0258966 3.0309312 2 2904 4356 7260 27407952
+530	153552 28 893 893 3.0258966 3.0258966 1 0.0017406 0.0017406 0.0017406 3.02968836e-06
+531	153580 30 893 893 3.0258966 3.0258966 1 0.000217575 0.000217575 0.000217575 4.7338880625e-08
+532	153610 30 893 893 3.0258966 3.0258966 1 0.656467575 0.656467575 0.656467575 0.43094967702638
+533	153640 30 893 893 3.0258966 3.0258966 1 2.626087875 2.626087875 2.626087875 6.896337527222
+583	153670 74 1076 1221 4.0319358 4.038711 3 65535 65535 196605 12884508675
+584	153744 149 1041 1225 4.0311192 4.038899 6 65535 65535 393210 25769017350
+585	153893 186 1041 1225 4.0311192 4.038899 7 65535 1073918 6507538 6920862320394
+586	154079 27 1080 1080 4.0319358 4.0319358 1 1007780 1007780 1007780 1015620528400
+587	154106 155 1041 1225 4.0311192 4.038899 6 0 1008383 5040911 5082157042385
+588	154261 133 1076 1225 4.0319358 4.038899 5 1007881 1008382 5040409 5081144877857
+589	154394 133 1076 1225 4.0319358 4.038899 5 1007780 1007881 5039302 5078912937522
+590	154527 85 1080 1221 4.0319358 4.038711 4 0 100 101 10001
+591	154612 82 1137 1225 4.0336764 4.038899 4 0 0 0 0
+598	154694 146 1041 1225 4.0311192 4.038899 7 0 0 0 0
+600	154840 47 1137 1221 4.0336764 4.038711 2 2904 4356 7260 27407952
+602	154887 29 1137 1137 4.0336764 4.0336764 1 0.0017406 0.0017406 0.0017406 3.02968836e-06
+603	154916 31 1137 1137 4.0336764 4.0336764 1 0.000217575 0.000217575 0.000217575 4.7338880625e-08
+604	154947 31 1137 1137 4.0336764 4.0336764 1 0.656467575 0.656467575 0.656467575 0.43094967702638
+605	154978 31 1137 1137 4.0336764 4.0336764 1 2.626087875 2.626087875 2.626087875 6.896337527222
+655	155009 75 1320 1465 5.0397156 5.0464908 3 65535 65535 196605 12884508675
+656	155084 149 1285 1469 5.038899 5.0466788 6 65535 65535 393210 25769017350
+657	155233 186 1285 1469 5.038899 5.0466788 7 65535 1325863 8019208 10547780910214
+658	155419 27 1324 1324 5.0397156 5.0397156 1 1259725 1259725 1259725 1586907075625
+659	155446 155 1285 1469 5.038899 5.0466788 6 0 1260328 6300636 7939603101300
+660	155601 135 1320 1469 5.0397156 5.0466788 5 1259826 1260327 6300134 7938337983992
+661	155736 135 1320 1469 5.0397156 5.0466788 5 1259725 1259826 6299027 7935548237427
+662	155871 86 1324 1465 5.0397156 5.0464908 4 0 100 101 10001
+663	155957 84 1381 1469 5.0414562 5.0466788 4 0 0 0 0
+670	156041 146 1285 1469 5.038899 5.0466788 7 0 0 0 0
+672	156187 48 1381 1465 5.0414562 5.0464908 2 2904 4356 7260 27407952
+674	156235 29 1381 1381 5.0414562 5.0414562 1 0.0017406 0.0017406 0.0017406 3.02968836e-06
+675	156264 31 1381 1381 5.0414562 5.0414562 1 0.000217575 0.000217575 0.000217575 4.7338880625e-08
+676	156295 31 1381 1381 5.0414562 5.0414562 1 0.656467575 0.656467575 0.656467575 0.43094967702638
+677	156326 31 1381 1381 5.0414562 5.0414562 1 2.626087875 2.626087875 2.626087875 6.896337527222
+727	156357 74 1564 1709 6.0474954 6.0542706 3 65535 65535 196605 12884508675
+728	156431 146 1529 1713 6.0466788 6.0544586 6 65535 65535 393210 25769017350
+729	156577 183 1529 1713 6.0466788 6.0544586 7 65535 1577808 9530878 14936414896334
+730	156760 27 1568 1568 6.0474954 6.0474954 1 1511670 1511670 1511670 2285146188900
+731	156787 152 1529 1713 6.0466788 6.0544586 6 0 1512273 7560361 11431811990465
+732	156939 132 1564 1713 6.0474954 6.0544586 5 1511771 1512272 7559859 11430293920377
+733	157071 132 1564 1713 6.0474954 6.0544586 5 1511670 1511771 7558752 11426946367582
+734	157203 83 1568 1709 6.0474954 6.0542706 4 0 100 101 10001
+735	157286 81 1625 1713 6.049236 6.0544586 4 0 0 0 0
+742	157367 141 1529 1713 6.0466788 6.0544586 7 0 0 0 0
+744	157508 47 1625 1709 6.049236 6.0542706 2 2904 4356 7260 27407952
+746	157555 28 1625 1625 6.049236 6.049236 1 0.0017406 0.0017406 0.0017406 3.02968836e-06
+747	157583 30 1625 1625 6.049236 6.049236 1 0.000217575 0.000217575 0.000217575 4.7338880625e-08
+748	157613 30 1625 1625 6.049236 6.049236 1 0.656467575 0.656467575 0.656467575 0.43094967702638
+749	157643 30 1625 1625 6.049236 6.049236 1 2.626087875 2.626087875 2.626087875 6.896337527222
+799	157673 75 1808 1953 7.0552752 7.0620504 3 65535 65535 196605 12884508675
+800	157748 150 1773 1957 7.0544586 7.0622384 6 65535 65535 393210 25769017350
+801	157898 187 1773 1957 7.0544586 7.0622384 7 65535 1829753 11042548 20086764278754
+802	158085 27 1812 1812 7.0552752 7.0552752 1 1763615 1763615 1763615 3110337868225
+803	158112 156 1773 1957 7.0544586 7.0622384 6 0 1764218 8820086 15558783709880
+804	158268 135 1808 1957 7.0552752 7.0622384 5 1763716 1764217 8819584 15557012687012
+805	158403 135 1808 1957 7.0552752 7.0622384 5 1763615 1763716 8818477 15553107327987
+806	158538 86 1812 1953 7.0552752 7.0620504 4 0 100 101 10001
+807	158624 84 1869 1957 7.0570158 7.0622384 4 0 0 0 0
+814	158708 147 1773 1957 7.0544586 7.0622384 7 0 0 0 0
+816	158855 48 1869 1953 7.0570158 7.0620504 2 2904 4356 7260 27407952
+818	158903 29 1869 1869 7.0570158 7.0570158 1 0.0017406 0.0017406 0.0017406 3.02968836e-06
+819	158932 31 1869 1869 7.0570158 7.0570158 1 0.000217575 0.000217575 0.000217575 4.7338880625e-08
+820	158963 31 1869 1869 7.0570158 7.0570158 1 0.656467575 0.656467575 0.656467575 0.43094967702638
+821	158994 31 1869 1869 7.0570158 7.0570158 1 2.626087875 2.626087875 2.626087875 6.896337527222
+871	159025 74 2052 2197 8.063055 8.0698302 3 65535 65535 196605 12884508675
+872	159099 148 2017 2201 8.0622384 8.0700182 6 65535 65535 393210 25769017350
+873	159247 184 2017 2201 8.0622384 8.0700182 7 65535 2081698 12554218 25998829057474
+874	159431 26 2056 2056 8.063055 8.063055 1 2015560 2015560 2015560 4062482113600
+875	159457 154 2017 2201 8.0622384 8.0700182 6 0 2016163 10079811 20320518259545
+876	159611 134 2052 2201 8.063055 8.0700182 5 2015661 2016162 10079309 20318494283897
+877	159745 134 2052 2201 8.063055 8.0700182 5 2015560 2015661 10078202 20314031118642
+878	159879 85 2056 2197 8.063055 8.0698302 4 0 100 101 10001
+879	159964 84 2113 2201 8.0647956 8.0700182 4 0 0 0 0
+886	160048 145 2017 2201 8.0622384 8.0700182 7 0 0 0 0
+888	160193 48 2113 2197 8.0647956 8.0698302 2 2904 4356 7260 27407952
+890	160241 29 2113 2113 8.0647956 8.0647956 1 0.0017406 0.0017406 0.0017406 3.02968836e-06
+891	160270 31 2113 2113 8.0647956 8.0647956 1 0.000217575 0.000217575 0.000217575 4.7338880625e-08
+892	160301 31 2113 2113 8.0647956 8.0647956 1 0.656467575 0.656467575 0.656467575 0.43094967702638
+893	160332 31 2113 2113 8.0647956 8.0647956 1 2.626087875 2.626087875 2.626087875 6.896337527222
+943	160363 73 2296 2441 9.0708348 9.07761 3 65535 65535 196605 12884508675
+944	160436 149 2261 2445 9.0700182 9.077798 6 65535 65535 393210 25769017350
+945	160585 186 2261 2445 9.0700182 9.077798 7 65535 2333643 14065888 32672609232494
+946	160771 27 2300 2300 9.0708348 9.0708348 1 2267505 2267505 2267505 5141578925025
+947	160798 155 2261 2445 9.0700182 9.077798 6 0 2268108 11339536 25717015639460
+948	160953 132 2296 2445 9.0708348 9.077798 5 2267606 2268107 11339034 25714738711032
+949	161085 132 2296 2445 9.0708348 9.077798 5 2267505 2267606 11337927 25709717739547
+950	161217 84 2300 2441 9.0708348 9.07761 4 0 100 101 10001
+951	161301 81 2357 2445 9.0725754 9.077798 4 0 0 0 0
+958	161382 146 2261 2445 9.0700182 9.077798 7 0 0 0 0
+960	161528 46 2357 2441 9.0725754 9.07761 2 2904 4356 7260 27407952
+962	161574 29 2357 2357 9.0725754 9.0725754 1 0.0017406 0.0017406 0.0017406 3.02968836e-06
+963	161603 31 2357 2357 9.0725754 9.0725754 1 0.000217575 0.000217575 0.000217575 4.7338880625e-08
+964	161634 31 2357 2357 9.0725754 9.0725754 1 0.656467575 0.656467575 0.656467575 0.43094967702638
+965	161665 31 2357 2357 9.0725754 9.0725754 1 2.626087875 2.626087875 2.626087875 6.896337527222
+1015	161696 81 2540 2685 10.0786146 10.0853898 3 65535 65535 196605 12884508675
+1016	161777 161 2505 2689 10.077798 10.0855778 6 65535 65535 393210 25769017350
+1017	161938 200 2505 2689 10.077798 10.0855778 7 65535 2585588 15577558 40108104803814
+1018	162138 29 2544 2544 10.0786146 10.0786146 1 2519450 2519450 2519450 6347628302500
+1019	162167 167 2505 2689 10.077798 10.0855778 6 0 2520053 12599261 31748275849625
+1020	162334 145 2540 2689 10.0786146 10.0855778 5 2519551 2520052 12598759 31745745968417
+1021	162479 145 2540 2689 10.0786146 10.0855778 5 2519450 2519551 12597652 31740167190702
+1022	162624 94 2544 2685 10.0786146 10.0853898 4 0 100 101 10001
+1023	162718 92 2601 2689 10.0803552 10.0855778 4 0 0 0 0
+1030	162810 160 2505 2689 10.077798 10.0855778 7 0 0 0 0
+1032	162970 52 2601 2685 10.0803552 10.0853898 2 2904 4356 7260 27407952
+1034	163022 31 2601 2601 10.0803552 10.0803552 1 0.0017406 0.0017406 0.0017406 3.02968836e-06
+1035	163053 33 2601 2601 10.0803552 10.0803552 1 0.000217575 0.000217575 0.000217575 4.7338880625e-08
+1036	163086 33 2601 2601 10.0803552 10.0803552 1 0.656467575 0.656467575 0.656467575 0.43094967702638
+1037	163119 33 2601 2601 10.0803552 10.0803552 1 2.626087875 2.626087875 2.626087875 6.896337527222
+1064	163152 27 2710 2710 11.0070206 11.0070206 1 65535 65535 65535 4294836225
+1065	163179 27 2710 2710 11.0070206 11.0070206 1 65535 65535 65535 4294836225
+1067	163206 23 2710 2710 11.0070206 11.0070206 1 0 0 0 0
+1078	163229 23 2710 2710 11.0070206 11.0070206 1 0 0 0 0
+>>>>>>> 31a100f0d6c5398e12e1104b91489073a3b9f570

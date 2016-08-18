@@ -106,7 +106,7 @@ int DataCenterAPI::getSetSize(int nodeIndex, bool storage) {
         result = storage_nodesMap->getSetQuantity(nodeIndex);
     else
     {
-        cout <<"DataCenterAPI::getSetSize  ------------------>  result = nodesMap->getSetQuantity(nodeIndex)" << endl;
+      //  cout <<"DataCenterAPI::getSetSize  ------------------>  result = nodesMap->getSetQuantity(nodeIndex)" << endl;
         result = nodesMap->getSetQuantity(nodeIndex);
     }
 
@@ -375,12 +375,19 @@ vector<AbstractNode*> DataCenterAPI::getOFFNodes(int setIndex, bool storage) {
 AbstractNode* DataCenterAPI::getNodeByIP(string ip) {
     Machine* result;
     AbstractNode* node;
-
+    cout << "DataCenterAPI::getNodeByIP-------> IP:" << ip << endl;
     result = storage_nodesMap->getMachineByIP(ip);
     if (result == NULL)
         result = nodesMap->getMachineByIP(ip);
 
     node = dynamic_cast<AbstractNode*>(result);
+
+    if (result != NULL)
+    cout << "DataCenterAPI::getNodeByIP-------> node name:" << result->getFullName()<< endl;
+    else
+        cout << "DataCenterAPI::getNodeByIP-------> node name:" << result << endl;
+
+//    cout << "DataCenterAPI::getNodeByIP-------> node name:" << node->getFullName()<< endl;
 
     return node;
 }

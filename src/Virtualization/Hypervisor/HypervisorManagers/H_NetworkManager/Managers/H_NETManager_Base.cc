@@ -221,10 +221,10 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 
 	// The message came from a vm application ..
 	else if (sm->arrivedOn("fromVMNet")){
-     //   cout << "H_NETManager_Base::processRequestMessage ---> The message came from a vm application .."<< endl;
+      //  cout << "H_NETManager_Base::processRequestMessage ---> The message came from a vm application .."<< endl;
 
 		if(operation == SM_SET_IOR){
-	   //     cout << "H_NETManager_Base::processRequestMessage ---> create vm"<< endl;
+	        cout << "H_NETManager_Base::processRequestMessage ---> create vm"<< endl;
 
 			localNetManager->createVM(sm);
 			delete (sm);
@@ -308,11 +308,11 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 
 		}
 		else if (operation == SM_CLOSE_VM_CONNECTIONS){
-          //  cout << "H_NETManager_Base::processRequestMessage ---> SM_CLOSE_VM_CONNECTIONS"<< endl;
+         //   cout << "H_NETManager_Base::processRequestMessage ---> SM_CLOSE_VM_CONNECTIONS"<< endl;
 
 		    sm_close = localNetManager->manage_close_connections(sm->getUid(), sm->getPid());
 
-          //  cout << "H_NETManager_Base::processRequestMessage ---> size of sm--->> "<<  sm_close.size()<<endl;
+         //   cout << "H_NETManager_Base::processRequestMessage ---> size of sm--->> "<<  sm_close.size()<<endl;
 
 
 		    for (int i = 0; i < (int)sm_close.size(); i++){

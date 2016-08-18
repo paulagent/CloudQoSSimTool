@@ -179,18 +179,17 @@ User_VirtualPort_Cell* PortAddressTranslation::searchUser(int uId) {
     user_cell = NULL;
 
   // cout << "PortAddressTranslation::searchUser : userID----->" << uId << endl;
-   //   cout << "PortAddressTranslation::searchUser : user_vm_ports.size()---->" << user_vm_ports.size() << endl;
+   //cout << "PortAddressTranslation::searchUser : user_vm_ports.size()---->" << user_vm_ports.size() << endl;
 
 
-    for (vector<User_VirtualPort_Cell*>::iterator it = user_vm_ports.begin();
-               it != user_vm_ports.end(); ++it) {
-   //        cout <<" PortAddressTranslation::searchUser : userID---->" << (*it)->getUserID();
-    //       cout << '\n';
+    for (vector<User_VirtualPort_Cell*>::iterator it = user_vm_ports.begin();  it != user_vm_ports.end(); ++it) {
+        //   cout <<" PortAddressTranslation::searchUser : userID---->" << (*it)->getUserID();
+         //  cout << '\n';
        }
 
 
     for (i = 0; (i < user_vm_ports.size()) && (!found);) {
-        // cout << "PortAddressTranslation::searchUser : userID----->" << (*(user_vm_ports.begin()+i))->getUserID() << endl;
+       //  cout << "PortAddressTranslation::searchUser :IN FOR ---->  userID----->" << (*(user_vm_ports.begin()+i))->getUserID() << endl;
 
         if ((*(user_vm_ports.begin() + i))->getUserID() == uId) {
             found = true;
@@ -233,14 +232,14 @@ User_VirtualPort_Cell* PortAddressTranslation::newUser(int uId) {
     user = new User_VirtualPort_Cell();
     //uvic add
 
-  //cout << "PortAddressTranslation::newUser ----> push back user :   " << uId << "  to user_vm_ports" << endl;
+// cout << "PortAddressTranslation::newUser ----> push back user :   " << uId << "  to user_vm_ports" << endl;
    // user = searchUser(uId);
    // if (user == NULL) {
     user->setUserID(uId);
     user_vm_ports.push_back(user);
 
-    //cout << "PortAddressTranslation::newUser ----> user_vm_ports size :   "
-    //        << user_vm_ports.size() << endl;
+   // cout << "PortAddressTranslation::newUser ----> user_vm_ports size :   "
+      //      << user_vm_ports.size() << endl;
 /*
     for (vector<User_VirtualPort_Cell*>::iterator it = user_vm_ports.begin();
             it != user_vm_ports.end(); ++it) {

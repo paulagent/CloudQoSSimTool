@@ -30,6 +30,7 @@
 #include "Constants.h"
 #include "icancloud_types.h"
 
+
 using std::vector;
 using std::string;
 
@@ -59,7 +60,7 @@ public:
 
     void incrementTimesEnqueue(){timesEnqueue++;};
     int getTimesEnqueue(){return timesEnqueue;};
-    void setTimesEnqueue(int times){timesEnqueue=times;}
+    void setTimesEnqueue(int times){timesEnqueue=times;};
 
     void setUid(int uid){userId = uid;};
     int getUid(){return userId;};
@@ -73,6 +74,7 @@ public:
 
     string getIp() {return ip;};
     void setIp(string ip_) {ip = ip_;};
+
 
     virtual AbstractRequest* dup () = 0;
     virtual bool compareReq(AbstractRequest* req) = 0;

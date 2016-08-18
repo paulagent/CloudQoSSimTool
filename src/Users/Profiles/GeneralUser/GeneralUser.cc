@@ -348,9 +348,8 @@ void GeneralUser::jobHasFinished(jobBase* job) {
 
 void GeneralUser::schedule() {
 
-    Enter_Method_Silent
-    ();
-
+    //Enter_Method_Silent();
+    Enter_Method("request()");
     // Define ..
 
     UserJob* job;
@@ -374,7 +373,7 @@ void GeneralUser::schedule() {
     quantityVMFree = 0;
     waitingQSize = 0;
     breakScheduling = false;
-
+cout <<"GeneralUser::schedule() ---call from abstract user class" <<endl;
     // Begin the behavior of the user.
     job = selectJob();
 

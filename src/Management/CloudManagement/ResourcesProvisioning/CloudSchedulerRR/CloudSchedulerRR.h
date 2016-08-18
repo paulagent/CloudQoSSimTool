@@ -26,7 +26,8 @@ protected:
 
     int currentNodeIndex;
     int currentNodeType;
-
+   int timeBetweenScheduleEvents_s = 1;
+   cMessage *smAlarm;
      //Flags To control the energy printing
       //   bool printNodePowerConsumption;        // print Node instant consumption
       //   bool printNodeEnergyConsumed;          // print Node energy consumed
@@ -66,6 +67,7 @@ protected:
     * This method returns the node where the virtual machine given as parameter (vm) is going to be allocated.
     */
     AbstractNode* selectNode (AbstractRequest* req);
+    AbstractNode* scheduleRR();
 
     /*
     * This method returns a set of node(s) that vm's is going to use for
@@ -104,12 +106,18 @@ protected:
     */
     void finalizeScheduler();
 
+    //add uvic
+   // void processSelfMessage (cMessage *msg);
+   // void  handleMessage(cMessage *msg);
+
 private:
 
     /*
     * This method, selects the heterogeneous node set that is able to allocate an amount of memory and a set of cores..
     */
     int selectNodeSet  (string setName, int vmcpu, int vmmemory);
+
+    //add uvic for rr
 
 
 
