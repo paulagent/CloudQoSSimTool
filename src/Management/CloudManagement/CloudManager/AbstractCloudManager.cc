@@ -107,7 +107,7 @@ void AbstractCloudManager::initialize() {
 
 void AbstractCloudManager::initManager(int totalNodes) {
 
-    cout << "AbstractCloudManager::initManager(int totalNodes)"<< endl;
+
     migrationActive = false;
 
     // Define.
@@ -126,8 +126,7 @@ void AbstractCloudManager::initManager(int totalNodes) {
     HeterogeneousSet* hetNodeSet;
 
     // Define auxiliar variables to link the module to the object
-  //  cModule* nodeMod1;
-  //  cModule* nodeMod2;
+
     cModule* nodeMod;
     string nodeName;
     Node* nodeChecked;
@@ -137,7 +136,7 @@ void AbstractCloudManager::initManager(int totalNodes) {
 
     if (!isCfgLoaded()) {
             printf(
-                 "\n MODULE[AbstractCloudManager::initManager]: cfg is not loaded ");
+                 "\n MODULE[AbstractCloudManager::initManager]: cfg is not loaded \n ");
 
         // Initialize structures and parameters
         nodesMap = new MachinesMap();

@@ -200,7 +200,7 @@ void icancloud_Base::sendRequestMessage (icancloud_Message *sm, cGate* gate){
 	icancloud_App_NET_Message *sm_net;
 	        sm_net = dynamic_cast <icancloud_App_NET_Message *> (sm);
     string ip = sm_net->getLocalIP();
-    cout<<"IP:"<<ip<<endl;
+
 	// Process next request!
 	processCurrentRequestMessage ();
 }
