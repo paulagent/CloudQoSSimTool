@@ -18,6 +18,7 @@ import icancloud.src.Virtualization.VirtualMachines.VM;
 import icancloud.src.Virtualization.VirtualMachines.IVM;
 import icancloud.src.Virtualization.VirtualMachines.VMRequestManager.VMRequestManager;
 import inet.applications.ITCPApp;
+import inet.applications.tcpapp.TCPSessionApp;
 
 
 module BasicVM extends VM like IVM
@@ -53,9 +54,6 @@ module BasicVM extends VM like IVM
         }
 
 
-        itcpApp: <paramName> like ITCPApp {
-            @display("p=138,228;b=97,74");
-        }
     //
     //        dockerDaemon: DockerDaemon {
     //            @display("p=289,99");
@@ -88,8 +86,4 @@ module BasicVM extends VM like IVM
         osModule.fromNet_TCP <-- fromNodeNet;
         osModule.toNet_TCP --> toNodeNet;
 
-    //    dockerDaemon.toDaemonNet --> osModule.fromDaemon;
-   //     osModule.toDaemon --> dockerDaemon.fromDaemonNet;
-        osModule.toApps[0] --> itcpApp.tcpIn;
-        itcpApp.tcpOut --> osModule.fromApps[0];
 }
