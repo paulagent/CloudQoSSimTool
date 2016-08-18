@@ -50,8 +50,8 @@ void CPU_Intensive::initialize(){
     jobResults->newJobResultSet("Real run-time");
     jobResults->newJobResultSet("Simulation time");
 
-}
 
+}
 
 void CPU_Intensive::finish(){
     // Finish the super-class
@@ -59,10 +59,12 @@ void CPU_Intensive::finish(){
 
 }
 
+
 void CPU_Intensive::startExecution (int pid){
     Pid = pid;
     API_OS::startExecution(Pid);
   //  cout << " CPU_Intensive::startExecution()---simulation start>"<<endl;
+
     Enter_Method_Silent();
     // Create SM_WAIT_TO_EXECUTE message for delaying the execution of this application
     cMessage *waitToExecuteMsg = new cMessage (SM_WAIT_TO_EXECUTE.c_str());

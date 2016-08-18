@@ -13,35 +13,42 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package icancloud.simulations.TCP_test;
+package icancloud.simulations.TCP;
+import inet.applications.ITCPApp;
+import inet.nodes.bgp.BGPRouter;
 import inet.nodes.inet.StandardHost;
 import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
 import ned.DatarateChannel;
 import inet.nodes.inet.Router;
 import inet.util.NetAnimTrace;
+import inet.world.httptools.HttpController;
 
-network router_scenario
+//
+// TODO Auto-generated network
+//
+network TCP_t
 {
     parameters:
+
         // Channel 1 parameters (to be redefined in .ini file)
-        double C1_datarate @unit(bps) = default(2Mbps);        
-        double C1_delay @unit(s) = default(0.1us);        
-        double C1_per = default(0);        
+        double C1_datarate @unit(bps) = default(2Mbps);
+        double C1_delay @unit(s) = default(0.1us);
+        double C1_per = default(0);
         double C1_ber = default(0);
-        
+
         // Channel 2 parameters (to be redefined in .ini file)
         double C2_datarate @unit(bps) = default(4Mbps);
         double C2_delay @unit(s) = default(0.1us);
         double C2_per = default(0);
         double C2_ber = default(0);
-        
+
         // Channel 3 parameters (to be redefined in .ini file)
         double C3_datarate @unit(bps) = default(4Mbps);
         double C3_delay @unit(s) = default(0.1us);
         double C3_per = default(0);
         double C3_ber = default(0);
-        
-        @display("bgb=500,200");
+
+        @display("bgb=785,403");
     types:
         channel C1 extends DatarateChannel
         {
@@ -71,29 +78,50 @@ network router_scenario
         }
         client2: StandardHost {
             parameters:
-                @display("p=50,150");
+                @display("p=66,202");
         }
-        server: StandardHost {
+        client3: StandardHost {
             parameters:
-                @display("p=400,120;i=device/server");
+                @display("p=118,286");
+        }
+        client4: StandardHost {
+            parameters:
+                @display("p=196,308");
+        }
+        server1: StandardHost {
+            parameters:
+                @display("p=517,41;i=device/server");
+        }
+        server2: StandardHost {
+            parameters:
+                @display("p=527,188;i=device/server");
         }
         router1: Router {
             parameters:
-                @display("p=180,120");
+                @display("p=235,115");
         }
         router2: Router {
             parameters:
-                @display("p=300,120");
+                @display("p=428,120");
         }
         configurator: IPv4NetworkConfigurator {
-            @display("p=179,34");
+            parameters:
+                @display("p=149,34");
         }
-        netAnimTrace: NetAnimTrace {
-            @display("p=250,34");
+//        netAnimTrace: NetAnimTrace {
+//            parameters:
+//                @display("p=248,34");
+//        }
+        controller: HttpController {
+            parameters:
+                @display("p=341,34;i=block/cogwheel_s");
         }
     connections:
         client1.pppg++ <--> C1 <--> router1.pppg++;
         client2.pppg++ <--> C1 <--> router1.pppg++;
+        client3.pppg++ <--> C1 <--> router1.pppg++;
+        client4.pppg++ <--> C1 <--> router1.pppg++;
         router1.pppg++ <--> C2 <--> router2.pppg++;
-        router2.pppg++ <--> C3 <--> server.pppg++;
+        router2.pppg++ <--> C3 <--> server1.pppg++;
+        router2.pppg++ <--> C3 <--> server2.pppg++;
 }
