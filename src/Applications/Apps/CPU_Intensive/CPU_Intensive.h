@@ -34,6 +34,7 @@ class CPU_Intensive : public UserJob{
 	
 	protected:
 
+
         int Pid;
 
 

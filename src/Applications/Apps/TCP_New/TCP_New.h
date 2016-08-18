@@ -22,6 +22,7 @@
 #include "icancloud_Base.h"
 #include "icancloud_debug.h"
 
+
 class NetworkService;
 
 class UserJob;
@@ -42,6 +43,9 @@ class TCP_New : public TCPSocket::CallbackInterface,public API_OS{
 
 
 protected:
+           TCP_ClientSideService *clientTCP_Services;
+
+           TCP_ServerSideService *serverTCP_Services;
 
         /** Client connections vector*/
         vector <clientTCP_Connector> connections;
@@ -119,8 +123,12 @@ protected:
          void sendRequestMessage (icancloud_Message *sm, cGate* gate){}
          void sendResponseMessage (icancloud_Message *sm){}
 
+
+
+         //bool isPendingRequest (){}
+
          void processCurrentRequestMessage (){}
-         cGate* getOutGate (cMessage *msg);
+         //cGate* getOutGate (cMessage *msg);
 
 
         void processSelfMessage(cMessage *msg);

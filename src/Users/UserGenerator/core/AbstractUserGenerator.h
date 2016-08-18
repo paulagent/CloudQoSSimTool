@@ -145,6 +145,8 @@ protected:
 
     virtual void userCreateGroups(int intervals, int nusers) = 0;
 
+    UserJob* ConvertApptoUser(cModule* auxMod);
+
 private:
     UserJob* cloneJob (UserJob* app, cModule* userMod, string appName);
 
