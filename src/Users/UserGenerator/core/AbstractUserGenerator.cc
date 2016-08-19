@@ -148,8 +148,8 @@ void AbstractUserGenerator::initialize(){
                     auxMod = getParentModule()->getSubmodule("appDefinition")->getSubmodule("application",i)->getSubmodule("app");
 
                     jobSel->job = dynamic_cast<UserJob*> (auxMod);
-                    if(jobSel->job == NULL)//changes made by nishant
-                    jobSel->job = ConvertApptoUser(auxMod);//changes made by nishant
+                   // if(jobSel->job == NULL)//changes made by nishant
+                    //jobSel->job = ConvertApptoUser(auxMod);//changes made by nishant
                     //cout<<"App name"<<(jobSel->appName)<<endl;
                     cout<<"Select appName"<< (jobSel->job == NULL) <<endl;
 
@@ -187,11 +187,16 @@ void AbstractUserGenerator::initialize(){
 
 UserJob* AbstractUserGenerator::ConvertApptoUser(cModule* auxMod){
 UserJob* job;
+
 cout<<"Initialize Covert"<<endl;
 job->initialize();
 
 job->setAppType("TCP_New");
 cout<<"Initialize Covert 1"<<endl;
+
+//job = new UserJob();
+//job->setAppType("TCP_New");
+
 
 return job;
 }
