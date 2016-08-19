@@ -1013,7 +1013,19 @@ $O/src/Applications/Apps/TCPVideo/TCPAdaptiveVideoClientApp.o: src/Applications/
 	$(INET_PROJ)/src/transport/contract/TCPSocket.h
 $O/src/Applications/Apps/TCP_test/TCP_test.o: src/Applications/Apps/TCP_test/TCP_test.cc \
 	src/Applications/Apps/TCP_test/TCP_test.h \
+	src/Applications/Base/Management/JobQueue.h \
+	src/Applications/Base/Management/JobResults.h \
+	src/Applications/Base/Management/JobResultsSet.h \
+	src/Applications/Base/UserJob.h \
+	src/Applications/Base/jobBase.h \
+	src/Applications/Libraries_API/API_OS/API_OS.h \
+	src/Architecture/Machine/Machine.h \
+	src/Architecture/Node/AbstractNode.h \
 	src/Architecture/NodeComponents/Hardware/HWEnergyInterface.h \
+	src/Architecture/NodeComponents/OperatingSystems/SyscallManager/AbstractSyscallManager.h \
+	src/Architecture/NodeComponents/OperatingSystems/SyscallManager/NodeSyscallManager/SyscallManager.h \
+	src/Architecture/NodeComponents/OperatingSystems/SystemApps/RemoteStorageApp/RemoteStorageApp.h \
+	src/Architecture/NodeComponents/OperatingSystems/SystemApps/StatesApplication/StatesApplication.h \
 	src/Base/Messages/icancloud_App_CPU_Message.h \
 	src/Base/Messages/icancloud_App_CPU_Message_m.h \
 	src/Base/Messages/icancloud_App_IO_Message.h \
@@ -1031,6 +1043,8 @@ $O/src/Applications/Apps/TCP_test/TCP_test.o: src/Applications/Apps/TCP_test/TCP
 	src/Base/Messages/icancloud_Message_m.h \
 	src/Base/Messages/icancloud_Migration_Message.h \
 	src/Base/Messages/icancloud_Migration_Message_m.h \
+	src/Base/Parser/cfgMPI.h \
+	src/Base/Request/Request.h \
 	src/Base/Util/Log/ICCLog.h \
 	src/Base/cGateManager.h \
 	src/Base/icancloud_Base.h \
@@ -1041,6 +1055,12 @@ $O/src/Applications/Apps/TCP_test/TCP_test.o: src/Applications/Apps/TCP_test/TCP
 	src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/uthash.h \
 	src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/EnergyMeterStates.h \
 	src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/EnergyState.h \
+	src/Management/DataCenterManagement/Base/RequestsManagement.h \
+	src/Management/MachinesStructure/ElementType.h \
+	src/Users/AbstractUser.h \
+	src/Users/Base/queuesManager.h \
+	src/Users/Base/userBase.h \
+	src/Users/Base/userStorage.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/NetworkServices/NetworkService/NetworkService.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/NetworkServices/TCP_Services/TCP_ClientSideService.h \
 	src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/NetworkServices/TCP_Services/TCP_ServerSideService.h \

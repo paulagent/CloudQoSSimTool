@@ -14,16 +14,17 @@
 #include "TCP_ServerSideService.h"
 #include "icancloud_App_NET_Message.h"
 
+#include "UserJob.h"
 #define     NETWORK_ON  "network_on"
 #define     NETWORK_OFF "network_off"
 
 class TCP_ClientSideService;
 class TCP_ServerSideService;
 
-class TCP_test : public NetworkService{
+class TCP_test : public UserJob{
     /** Local IP address */
             string localIP;
-
+            unsigned int startDelay;
             /** TCP Client-side Services */
             TCP_ClientSideService *clientTCP_Services;
 
@@ -43,7 +44,7 @@ class TCP_test : public NetworkService{
             cGate* toNetTCPGate;
 
             /** Node state */
-            string nodeState;
+        //    string nodeState;
 
             vector <icancloud_Message*> sm_vector;
             int lastOp;
@@ -64,7 +65,8 @@ class TCP_test : public NetworkService{
             void finish();
 
             //void startExcecution();
-
+            void startExecution (int pid);
+            void changeState (string energyState,unsigned componentIndex = 0);
 
         private:
 
@@ -118,7 +120,7 @@ class TCP_test : public NetworkService{
             /*
              *  Change the energy state of the memory
              */
-            void changeState (string energyState,unsigned componentIndex = 0);
+
 
 };
 

@@ -21,11 +21,10 @@ void TCP_test :: initialize(){
             moduleIdName = osStream.str();
 
             // Init the super-class
-            HWEnergyInterface::initialize();
-
+            UserJob::initialize();
             // Module parameters
             localIP = (const char*) par ("localIP");
-
+            startDelay = par ("startDelay");
             // Module gates
             fromNetManagerGate = gate ("fromNetManager");
             fromNetTCPGate = gate ("fromNetTCP");
@@ -33,15 +32,27 @@ void TCP_test :: initialize(){
             toNetTCPGate = gate ("toNetTCP");
 
             // Service objects
-           clientTCP_Services = new TCP_ClientSideService (localIP, toNetTCPGate, this);
-           serverTCP_Services = new TCP_ServerSideService (localIP, toNetTCPGate, toNetManagerGate, this);
+      //     clientTCP_Services = new TCP_ClientSideService (localIP, toNetTCPGate, this);
+      //     serverTCP_Services = new TCP_ServerSideService (localIP, toNetTCPGate, toNetManagerGate, this);
 
-            nodeState = MACHINE_STATE_OFF;
+       //     nodeState = MACHINE_STATE_OFF;
 
             sm_vector.clear();
             lastOp = 0;
 
 }
+void TCP_test::startExecution (int pid){
+
+    API_OS::startExecution(pid);
+    // Create SM_WAIT_TO_EXECUTE message for delaying the execution of this application
+    // Initialize ..
+    cout << " TCP_test::startExecution()---simulation start>"<<endl;
+
+  //  newIntervalEvent = new cMessage ("intervalEvent");
+    cMessage *waitToExecuteMsg = new cMessage (SM_WAIT_TO_EXECUTE.c_str());
+    scheduleAt (simTime()+startDelay, waitToExecuteMsg);
+}
+
 
 void TCP_test::finish(){
 
@@ -49,18 +60,9 @@ void TCP_test::finish(){
     lastOp = 0;
 
     // Finish the super-class
-    HWEnergyInterface::finish();
+    UserJob::finish();
 }
-/*
-void TCP_test::startExecution(){
 
-    API_OS::startEcecution();
-    Enter_Method_Silent();
-
-    cMessage *waitToExecuteMsg = new cMessage (SM_WAIT_TO_EXECUTE.c_str());
-    scheduleAt (simTime()+startDelay, waitToExecuteMsg);
-
-}*/
 
 void TCP_test::handleMessage(cMessage *msg){
 
@@ -343,7 +345,7 @@ void TCP_test::receivedEstablishedConnection (cMessage *msg){
             serverTCP_Services->arrivesIncommingConnection(msg);
 }
 
-
+/*
 void TCP_test::changeDeviceState (string state,unsigned componentIndex){
 
     if (strcmp (state.c_str(),MACHINE_STATE_IDLE ) == 0) {
@@ -363,15 +365,15 @@ void TCP_test::changeDeviceState (string state,unsigned componentIndex){
 
     }
 }
-
+*/
 void TCP_test::changeState (string energyState,unsigned componentIndex){
 
-    if (strcmp (nodeState.c_str(),MACHINE_STATE_OFF ) == 0) {
+ /*   if (strcmp (nodeState.c_str(),MACHINE_STATE_OFF ) == 0) {
         energyState = NETWORK_OFF;
-    }
+    }*/
 
 
-    e_changeState (energyState);
+ //  icancloud_request_changeState_network(energyState,componentIndex);
 
 }
 
