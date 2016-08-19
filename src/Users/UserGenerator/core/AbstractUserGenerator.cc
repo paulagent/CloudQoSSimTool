@@ -180,17 +180,12 @@ void AbstractUserGenerator::initialize(){
 
 UserJob* AbstractUserGenerator::ConvertApptoUser(cModule* auxMod){
 UserJob* job;
+cout<<"Initialize Covert"<<endl;
 job->initialize();
 
 job->setAppType("TCP_New");
+cout<<"Initialize Covert 1"<<endl;
 
-//auxMod->get
-//job->getAppType();
-//job->getClassName();
-//job->getJobId();
-//job->getFullName();
-//job->getFSComplete();
-//job->getFSSize();
 return job;
 }
 
