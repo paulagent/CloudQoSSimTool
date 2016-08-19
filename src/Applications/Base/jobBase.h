@@ -74,7 +74,7 @@ public:
         /**
         * Start the app execution.
         */
-        virtual void startExecution () = 0;
+        virtual void startExecution (int pid) = 0;
 
         /*
         * Getters and setters for routes at file system

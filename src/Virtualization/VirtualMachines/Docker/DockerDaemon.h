@@ -36,13 +36,16 @@
 #include "Memoization_uthash.h"
 #include "DockerContainer.h"
 #include "icancloud_Message.h"
+#include "VM.h"
 
 class DockerDaemon : public cSimpleModule{
 public:
+    VM* vm ; //host vm
     DockerDaemon();
+    void initialize(VM* vm);
     ~DockerDaemon();
     vector<DockerContainer *> containerSet;
-    void startDockerContainer(string image,string VMfullName);
+    DockerContainer* startDockerContainer(string image,string VMfullName);
 
     /**
            * Process a self message.
@@ -61,17 +64,69 @@ public:
                  */
   void processResponseMessage (icancloud_Message *sm);
 
-
-    void GetMem(int size);
-    void FreeMem(int size);
+  /**
+                 * Process a response message.
+                 * @param sm Request message.
+                 */
+    void GetMem(double size);
+    /**
+                   * Process a response message.
+                   * @param sm Request message.
+                   */
+    void FreeMem(double size);
+    /**
+                   * Process a response message.
+                   * @param sm Request message.
+                   */
     void KillDocker(string id);
+    /**
+                   * Process a response message.
+                   * @param sm Request message.
+                   */
     void freeContainerResources(string id);
+    /**
+                   * Process a response message.
+                   * @param sm Request message.
+                   */
     void stopDockerContainer (string id);
+    /**
+                   * pause container by given id
+                   * @param id container id
+                   * output : none
+                   */
     void pauseDockerContainer (string id);
+    /**
+                   * Process a response message.
+                   * @param sm Request message.
+                   */
     void unPauseDockerContainer (string id);
+    /**
+                   * Process a response message.
+                   * @param sm Request message.
+                   */
     void getDockerByName(string name);
+    /**
+                   * Process a response messa
+                   * @param image name
+                   */
     void getDockerByImage(string image);
-    void getDockerById(string id);
+    /**
+                   * Given a dockercontainer id and return docker container instance
+                   * @param id docker container id.
+                   * output : return dockercontainer instance
+                   */
+    DockerContainer* getDockerById(string id);
+    /**
+                   * Given a docker container and return this container's id
+                   * @param dc instance of dockercontainer
+                   * output : container ID
+                   *
+                   */
+    string getContianerId(DockerContainer * dc);
+
+
+
+
     void connectNetwork(string id);
     void disconnectNetwork(string id);
 

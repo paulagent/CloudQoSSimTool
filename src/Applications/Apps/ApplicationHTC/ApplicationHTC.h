@@ -71,7 +71,7 @@ class ApplicationHTC : public MPI_Base{
         /*
          * Starts the app execution
          */
-        virtual void startExecution();
+        virtual void startExecution(int pid);
 
 	   /**
  		* Module ending.

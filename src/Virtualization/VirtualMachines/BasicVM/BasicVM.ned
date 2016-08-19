@@ -12,18 +12,22 @@
 package icancloud.src.Virtualization.VirtualMachines.BasicVM;
 
 import icancloud.src.Architecture.NodeComponents.OperatingSystems.IOperatingSystem;
-import icancloud.src.Virtualization.VirtualMachines.Docker.Docker;
+
 import icancloud.src.Virtualization.VirtualMachines.Docker.DockerDaemon;
 import icancloud.src.Virtualization.VirtualMachines.VM;
 import icancloud.src.Virtualization.VirtualMachines.IVM;
+import icancloud.src.Virtualization.VirtualMachines.VMRequestManager.VMRequestManager;
+import inet.applications.ITCPApp;
+import inet.applications.tcpapp.TCPSessionApp;
+
 
 module BasicVM extends VM like IVM
 {
     parameters:
         @labels(vm,ethernet-vm);
-        @display("i=old/telnet;bgb=418,247");
+        @display("i=old/telnet;bgb=418,362");
         @loose;
-       // @class(VM);
+
     submodules:
 
         osModule: <osModuleType> like IOperatingSystem {
@@ -49,15 +53,11 @@ module BasicVM extends VM like IVM
                 toNet_TCP;							 // Output gate to Network (Ethernet TCP)
         }
 
-        docker_engine: Docker {
-            @display("p=304,99");
 
-            gates:
-                fromDockerNet;
-                toDockerNet;
-
-
-        }
+    //
+    //        dockerDaemon: DockerDaemon {
+    //            @display("p=289,99");
+    //        }
     connections allowunconnected:
 
  		// Connections between CPU and Operating System
@@ -85,8 +85,5 @@ module BasicVM extends VM like IVM
 
         osModule.fromNet_TCP <-- fromNodeNet;
         osModule.toNet_TCP --> toNodeNet;
-
-        osModule.fromDaemon <-- docker_engine.toDockerNet;
-        osModule.toDaemon --> docker_engine.fromDockerNet;
 
 }

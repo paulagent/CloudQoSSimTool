@@ -1,5 +1,5 @@
 /*
- * VMID.cpp
+ * VMID.cc
  *
  *  Created on: Oct 18, 2012
  *      Author: gabriel

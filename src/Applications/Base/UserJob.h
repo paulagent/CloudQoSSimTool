@@ -73,7 +73,7 @@ public:
        /**
         * Start the app execution.
         */
-        virtual void startExecution ();
+        virtual void startExecution (int pid);
 
         /*
          * This method returns a copy of the job
@@ -91,6 +91,10 @@ public:
          */
         void setMachine (Machine* m);
         Machine* getMachine (){return mPtr;};
+
+        void setContainerReq();
+
+
 };
 
 #endif /* UserJob_H_ */

@@ -14,14 +14,21 @@
 // 
 
 package icancloud.simulations.RRTest;
+import icancloud.src.Management.NetworkManager.NetworkManager;
+import icancloud.src.Architecture.Aggregation.Rack;
+import icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_NetworkManager.NetworkServices.NetworkService.NetworkService;
+import icancloud.src.Virtualization.VirtualMachines.SetDefinition.DockerSet;
+import icancloud.src.Virtualization.VirtualMachines.VMRequestManager.VMRequestManager;
+
 import inet.transport.tcp.TCP;
+
 import ned.DatarateChannel;
 import inet.nodes.ethernet.EtherSwitch;
 import icancloud.src.Architecture.Node.NodeVL.NodeVL;
 import icancloud.src.Management.CloudManagement.ResourcesProvisioning.**.*;
 
 import icancloud.src.Management.Topology.Topology;
-import icancloud.src.Management.NetworkManager.NetworkManager;
+
 import icancloud.src.Users.UserGenerator.UserGenerator;
 import icancloud.src.Virtualization.VirtualMachines.SetDefinition.VmSet;
 import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
@@ -58,7 +65,7 @@ channel RackChannel_0_RRTest extends DatarateChannel
 // ---------------------------------------------------------------
 network RRTest
 {
-    @display("bgb=746,395");
+    @display("bgb=1035,403");
     // -------------------------------------------------------
     //   Definition of main modules
     // -------------------------------------------------------
@@ -77,7 +84,10 @@ network RRTest
         // ---------------------------------------------------------------
         //    Network Manager
         // ---------------------------------------------------------------
-        networkManager: NetworkManager;
+        networkManager: NetworkManager {
+
+            @display("p=870,45");
+        }
         // ---------------------------------------------------------------
         //   Definition of cloud scheduler
         // ---------------------------------------------------------------
@@ -87,7 +97,8 @@ network RRTest
                 remote_storage_VMs_per_node = 2;
                 minimum_percent_storageNode_free = 0.15;
                 virtualIPsBasis = "10.0.0.1";
-                @display("p=397,164");
+               // timeToStart = 1.0;
+                @display("p=445,156");
         }
 
         // ---------------------------------------------------------------
@@ -116,7 +127,7 @@ network RRTest
         //   Definition of Storage Nodes
         // ---------------------------------------------------------------
         ns_0_NodeStorage_C: NodeVL {
-            @display("p=165,251");
+            @display("p=160,318");
         }
         ns_1_NodeStorage_C: NodeVL {
             @display("p=330,230");
@@ -124,14 +135,29 @@ network RRTest
         //------------------------------------------------------
         // Modules that defines the topology and the set of VMs 
         //------------------------------------------------------
-        vmSet: VmSet;
-        topology: Topology;
+        vmSet: VmSet {
+            @display("p=651,75");
+        }
+        topology: Topology {
+            @display("p=545,204");
+        }
+        dockerSet: DockerSet {
+            @display("p=712,243");
+        }
         // ---------------------------------------------------------------
         //   Definition of Racks
         // ---------------------------------------------------------------
-        rc_0_Rack_A_16[2]: NodeVL {
+      //  rc_0_Rack_A_16[16]: NodeVL {
 
-            @display("p=279,45");
+       //     @display("p=279,45");
+      //  }
+
+
+        rack1: Rack {
+            @display("p=78,54;is=l");
+        }
+        rack2: Rack {
+            @display("p=330,44;is=l");
         }
     // ---------------------------------------------------------------
     //   Connections section
@@ -139,13 +165,15 @@ network RRTest
     connections allowunconnected:
 
         // Connections for rack rc_0_Rack_A_16
-        for i=0..1 {
-            rc_0_Rack_A_16[0].ethg++ <--> RackChannel_0_RRTest <--> rackSwitch_0.ethg++;
-        }
+      //  for i=0..15 {
+      ////      rc_0_Rack_A_16[i].ethg++ <--> RackChannel_0_RRTest <--> rackSwitch_0.ethg++;
+      //  }
 
         rackSwitch_0.ethg++ <--> Channel_0_RRTest <--> switch_0.ethg++;
         ns_0_NodeStorage_C.ethg++ <--> Channel_1_RRTest <--> switch_0.ethg++;
         ns_1_NodeStorage_C.ethg++ <--> Channel_1_RRTest <--> switch_0.ethg++;
 
+        rack1.ethg[0] <--> rackSwitch_0.ethg++;
+        rack2.ethg[0] <--> rackSwitch_0.ethg++;
 }
 

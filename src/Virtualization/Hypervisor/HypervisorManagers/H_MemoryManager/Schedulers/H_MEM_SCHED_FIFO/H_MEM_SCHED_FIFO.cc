@@ -45,7 +45,7 @@ void H_MEM_SCHED_FIFO::finish(){
 }
 
 void H_MEM_SCHED_FIFO::schedulingMemory(icancloud_Message *msg){
-
+    cout << "H_MEM_SCHED_FIFO::schedulingMemory"<<endl;
     memoryCell* cell;
     bool found = false;
     int operation = msg->getOperation();

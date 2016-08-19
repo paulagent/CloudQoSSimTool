@@ -79,6 +79,7 @@ void Storage_cell_basic::processRequestMessage (icancloud_Message *sm){
 		// Configuration message
 		if (sm_net != NULL){
 		    if (sm_net->getOperation() == SM_SET_HBS_TO_REMOTE){
+		        cout << "Storage_cell_basic::processRequestMessage " << endl;
 		        setRemoteData(sm_net);
 		    }
 
@@ -89,7 +90,7 @@ void Storage_cell_basic::processRequestMessage (icancloud_Message *sm){
             // Set the size in the message for the remote system
             sm_io = check_and_cast <icancloud_App_IO_Message*> (sm);
             sm_io->setNfs_requestSize_KB(sm_io->getSize());
-
+cout <<"Storage_cell_basic::processRequestMessage sm_net is null" << sm_io->getFullPath() <<endl;
             remote_storage_cell = getRemoteStorage_byPosition(0);
 
             if (remote_storage_cell == NULL){
@@ -174,8 +175,10 @@ void Storage_cell_basic::processResponseMessage (icancloud_Message *sm){
 
 
       if (sm_net != NULL)
+      {
+         cout << "Storage_cell_basic::processResponseMessage " << endl;
           setRemoteData(sm_net);
-      else{
+      }  else{
             // Parent request
               parentRequest = sm_io->getParentRequest();
 
@@ -257,6 +260,7 @@ bool Storage_cell_basic::setRemoteData (icancloud_App_NET_Message* sm_net){
 
             // NFS Exists.. a second app from a VM is trying to open the same connection
             if (position != -1){
+                cout << "Storage_cell_basic::setRemoteData1 " <<endl;
                 remote_cell = getRemoteStorage_byPosition(position);
                 if (!remote_cell->existsConnection(destAddress, destPort)){
                     active_remote_storage(sm_net->getPid(), sm_net->getDestinationIP(), sm_net->getDestinationPort(), sm_net->getConnectionId(), "INET");
@@ -285,7 +289,7 @@ bool Storage_cell_basic::setRemoteData (icancloud_App_NET_Message* sm_net){
 
             // PFS Exists.. a second app from a VM is trying to open the same connection
             if (position != -1){
-
+                cout << "Storage_cell_basic::setRemoteData2 " <<endl;
                 remote_cell = getRemoteStorage_byPosition(position);
 
                 if (remote_cell->existsConnection(destAddress, destPort)){
@@ -327,6 +331,7 @@ bool Storage_cell_basic::setRemoteData (icancloud_App_NET_Message* sm_net){
                 else {
 
                     if (sm_net->getIsResponse() ){
+                        cout << "Storage_cell_basic::setRemoteData3 " <<endl;
                         remote_cell = getRemoteStorage_byPosition(position);
                         if (active_remote_storage(sm_net->getPid(), sm_net->getDestinationIP(), sm_net->getDestinationPort(), sm_net->getConnectionId(), "INET")){
                             // Send the request to create the connection..
@@ -354,6 +359,7 @@ bool Storage_cell_basic::setRemoteData (icancloud_App_NET_Message* sm_net){
                             delete(sm_net);
                     }else{
                         // 2nd to 'n'nd - Other requests for file systems with more than 1 target node
+                        cout << "Storage_cell_basic::setRemoteData4 " <<endl;
                         remote_cell = getRemoteStorage_byPosition(position);
                         remote_cell -> setConnection(destAddress, destPort, netType, connectionID);
                         // Send the request to create the connection..

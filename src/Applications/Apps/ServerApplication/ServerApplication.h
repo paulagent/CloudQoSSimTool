@@ -95,7 +95,7 @@ class ServerApplication: public UserJob{
         /**
          * Start the app execution.
          */
-	    void startExecution();
+	    void startExecution(int pid);
 
 	   /**
  		* Module ending.

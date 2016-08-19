@@ -71,7 +71,7 @@ UserJob *jobaux;
 
 jobaux = dynamic_cast<UserJob*>(job);
 jobaux->setJob_startTime();
-jobaux->startExecution();
+//jobaux->startExecution();
 
 cMessage *waitToExecuteMsg = new cMessage(SM_WAIT_TO_EXECUTE.c_str());
 

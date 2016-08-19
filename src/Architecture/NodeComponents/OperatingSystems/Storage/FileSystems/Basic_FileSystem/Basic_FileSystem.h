@@ -14,7 +14,7 @@
  * @class Basic_FileSystem Basic_FileSystem.h "Basic_FileSystem.h"
  *
  * This module translates an I/O file request expressed as (fileName, offset, requestSize) to a list of disk blocks.
- * This module only is useful with one tenant at system. It is not able to distinguish between more ones.
+ * This module only is useful with one tenant at system. It is not able to distinguish between more than ones.
  *
  * @author Alberto N&uacute;&ntilde;ez Covarrubias
  * @date 2009-03-11

@@ -24,24 +24,28 @@ Define_Module(DockerDaemon);
 DockerDaemon::DockerDaemon() {
     // TODO Auto-generated constructor stu
     containerSet.clear();
-    cout << "DockerDaemon::DockerDaemon()"<<endl;
+    cout << "DockerDaemon::DockerDaemon()cont"<<endl;
 }
+void DockerDaemon::initialize(VM* vmp){
+vm =vmp;
 
+
+}
 DockerDaemon::~DockerDaemon() {
     // TODO Auto-generated destructor stub
     containerSet.clear();
 
 }
-void DockerDaemon::startDockerContainer(string image,string VMfullName)
+DockerContainer* DockerDaemon::startDockerContainer(string image,string VMfullName)
 {
-    cout<< "DockerDaemon::RunDocker" <<endl;
+    cout<< "DockerDaemon::startDockercontainer" <<endl;
     DockerContainer* dockerContainer;
     dockerContainer=new DockerContainer();
     string id,name;
     stringstream ss;
     int size;
-    size=100; //MB
-    cout<< "DockerDaemon::RunDocker" <<endl;
+    size=128; //MB
+
 
     if (containerSet.empty())
     {
@@ -63,17 +67,34 @@ void DockerDaemon::startDockerContainer(string image,string VMfullName)
     name="docker";
     cout<< "docker name--------->"<<name<<endl;
 
-    dockerContainer->initialize( image,  name,  id, size,VMfullName);
+    dockerContainer->initialize( image,  name,  id, size, VMfullName);
     containerSet.push_back(dockerContainer);
     GetMem(size);
-
+ return dockerContainer;
 }
-void DockerDaemon::GetMem(int size)
+void DockerDaemon::GetMem(double size)
 {
+    cout<< vm->getFullName()<<endl;
+double tmp = vm->getFreeMemory();
 
+cout << "DockerDaemon::GetMem---->free memory before:   " << vm->getFreeMemory();
+cout << "DockerDaemon::GetMem---->memory size:   " << size;
+
+vm->setFreeMemory(tmp-size);
+
+cout << "DockerDaemon::GetMem---->free memory after :   " << vm->getFreeMemory();
 }
-void DockerDaemon::FreeMem(int size)
+
+void DockerDaemon::FreeMem(double size)
+
 {
+    cout << "DockerDaemon::FreeMem---->free memory before:   " << vm->getFreeMemory();
+    cout << "DockerDaemon::FreeMem---->memory size:   " << size;
+
+    double tmp = vm->getFreeMemory();
+
+    vm->setFreeMemory(tmp+size);
+    cout << "DockerDaemon::FreeMem---->free memory after :   " << vm->getFreeMemory();
 
 }
 void DockerDaemon::processSelfMessage (cMessage *msg){
@@ -91,7 +112,7 @@ void  DockerDaemon::processResponseMessage (icancloud_Message *sm){
 }
 void DockerDaemon::KillDocker(string id){
     bool found=false;
-    for(int i=0; i< containerSet.size() and found==false;++i)
+    for(unsigned int i=0; i< containerSet.size() and found==false;++i)
     {
         if (containerSet.at(i)->id==id)
         {
@@ -117,11 +138,29 @@ void DockerDaemon::freeContainerResources(string id)
 
 void DockerDaemon::pauseDockerContainer (string id)
     {
+    cout <<"DockerDaemon::PauseDockerContainer " <<endl;
+    DockerContainer *dc;
+    dc=getDockerById(id);
+ if (dc==NULL) {
+     throw cRuntimeError("DockerDaemon::can not found this container in this vm...\n");
+ }else {
+
+   double mem =  dc->getMemSize();
+   FreeMem(mem);
+ }
 
     }
 void DockerDaemon::unPauseDockerContainer (string id)
     {
+    cout <<"DockerDaemon::unPauseDockerContainer " <<endl;
+    DockerContainer *dc = getDockerById(id);
+     if (dc==NULL) {
+         throw cRuntimeError("DockerDaemon::can not found this container in this vm...\n");
+     }else {
 
+         double mem =  dc->getMemSize();
+         GetMem(mem);
+     }
     }
 void DockerDaemon::getDockerByName(string name)
     {
@@ -142,9 +181,30 @@ void DockerDaemon::getDockerByImage(string image)
     {
 
     }
-void DockerDaemon::getDockerById(string id)
+DockerContainer* DockerDaemon::getDockerById(string id)
     {
 
+    DockerContainer* dc ;
+cout << "DockerDaemon::getDockerById containerSet size " <<containerSet.size() <<endl;
+cout << "DockerDaemon::getDockerById id " << id <<endl;
+    bool found=false;
+          for(unsigned int i=0; i< containerSet.size() && found==false;i++)
+             {
+cout << "DockerDaemon::getDockerById -->" << containerSet.at(i)->getContainerId() <<endl;
+                 if (containerSet.at(i)->getContainerId() ==id)
+                 {
+                     cout<< "DockerDaemon::getDockerById found" <<endl;
+                     //FreeMem(containerSet.at(i)->size);
+                     containerSet.erase(containerSet.begin()+i);
+                     dc = containerSet.at(i);
+                     found=true;
+                 }
+             }
+if (found)
+    return dc;
+else{
+    return NULL;
+}
     }
 void DockerDaemon::connectNetwork(string id)
     {
@@ -155,3 +215,7 @@ void DockerDaemon::disconnectNetwork(string id)
 
     }
 
+string DockerDaemon::getContianerId(DockerContainer * dc){
+
+     return dc->id;
+}

@@ -102,13 +102,13 @@ module NodeVL like INode
         // network layer
         networkLayer: NetworkLayer {
             parameters:
-                @display("p=333,304;q=queue");
+                @display("p=339,309;q=queue");
                 proxyARP = default(false);
         }
 
         routingTable: RoutingTable {
             parameters:
-                @display("p=147,532;is=s");
+                @display("p=296,542;is=s");
                 IPForward = IPForward;
                 forwardMulticast = forwardMulticast;
                 routingFile = routingFile;
@@ -117,7 +117,7 @@ module NodeVL like INode
         // linklayer
         interfaceTable: InterfaceTable {
             parameters:
-                @display("p=45,532;is=s");
+                @display("p=126,532;is=s");
         }
 
         lo0: LoopbackInterface {
@@ -126,25 +126,25 @@ module NodeVL like INode
 
         eth[sizeof(ethg)]: <default("EthernetInterface")> like IWiredNic {
             parameters:
-                @display("p=460,469,row,60;q=txQueue");
+                @display("p=481,445,row,60;q=txQueue");
         }
         ppp[sizeof(pppg)]: <default("PPPInterface")> like IWiredNic {
             parameters:
-                @display("p=593,412,row,60;q=txQueue");
+                @display("p=571,361,row,60;q=txQueue");
         }
         ext[numExtInterfaces]: <default("ExtInterface")> like IExternalNic {
             parameters:
-                @display("p=275,412,row,10;q=txQueue;i=block/ifcard");
+                @display("p=280,445,row,10;q=txQueue;i=block/ifcard");
         }
 
         energyMeter: EnergyMeter {
             parameters:
                 activeEnergyMeter = activeEnergyMeter;
-                @display("p=45,459");
+                @display("p=65,470");
         }
 
         psu: <psuModuleType> like IPSU {
-            @display("p=45,400");
+            @display("p=55,373");
         }
 
         tcp: <tcpType> like ITCP {

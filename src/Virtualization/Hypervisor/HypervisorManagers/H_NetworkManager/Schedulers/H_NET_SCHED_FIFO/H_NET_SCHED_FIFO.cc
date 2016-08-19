@@ -22,6 +22,8 @@ H_NET_SCHED_FIFO::~H_NET_SCHED_FIFO() {
 
 void H_NET_SCHED_FIFO::initialize(){
     H_NETManager_Base::initialize();
+    cout << "H_NET_SCHED_FIFO   -------------->    initialise" << endl;
+
 
 }
 
@@ -46,6 +48,7 @@ void H_NET_SCHED_FIFO::schedulingNET(icancloud_Message *sm){
         icancloud_App_NET_Message* sm_net;
         icancloud_App_IO_Message *sm_io;
         icancloud_MPI_Message* sm_mpi;
+        cout << "H_NET_SCHED_FIFO::schedulingNET   --------------> begining" << endl;
 
         vector<icancloud_App_NET_Message*> sm_close;
 
@@ -53,6 +56,8 @@ void H_NET_SCHED_FIFO::schedulingNET(icancloud_Message *sm){
             sm_net = dynamic_cast <icancloud_App_NET_Message*> (sm);
             sm_io = dynamic_cast<icancloud_App_IO_Message *>(sm);
             sm_mpi = dynamic_cast<icancloud_MPI_Message *>(sm);
+            cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->    after casting" << endl;
+
 
             userID = sm->getUid();
             vmID = sm->getPid();
@@ -183,6 +188,8 @@ void H_NET_SCHED_FIFO::schedulingNET(icancloud_Message *sm){
 }
 
 void H_NET_SCHED_FIFO::processResponseMessage(icancloud_Message *msg){
+    cout << "H_NET_SCHED_FIFO::processResponseMessage" << endl;
+
     H_NETManager_Base::processResponseMessage(msg);
 }
 

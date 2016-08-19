@@ -82,7 +82,7 @@ class ApplicationHPC : public MPI_Base{
 	    /*
 	     * Starts the app execution
 	     */
-	    virtual void startExecution();
+	    virtual void startExecution(int pid);
 
 	   /**
 		* Process a self message.

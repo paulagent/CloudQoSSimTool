@@ -98,9 +98,9 @@ void icancloud_App_CPU_Message::updateLength (){
 void icancloud_App_CPU_Message::executeMIs (unsigned int numberMIs){
 	
     int test;
-
+    std::cout << "icancloud_App_CPU_Message::executeMIs numberMIs--->" << numberMIs << endl;
 	test = (getRemainingMIs() - numberMIs);
-
+    std::cout << "icancloud_App_CPU_Message::executeMIs test --->"  << test <<endl;
 	if (test > 0)
 		setRemainingMIs (test);
 	else 

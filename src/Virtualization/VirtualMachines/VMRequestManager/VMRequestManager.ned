@@ -15,22 +15,31 @@
 
 package icancloud.src.Virtualization.VirtualMachines.VMRequestManager;
 import icancloud.src.Architecture.NodeComponents.OperatingSystems.IOperatingSystem;
+import icancloud.src.Virtualization.VirtualMachines.SetDefinition.DockerImage;
 import icancloud.src.Virtualization.VirtualMachines.VM;
 import icancloud.src.Virtualization.VirtualMachines.IVM;
 
-module VMRequestManager 
+module VMRequestManager
 {
     parameters:
         @labels(vmm);
-        @display("i=device/terminal");
-		@loose;
-    
+        @display("i=device/terminal;bgb=624,288");
+        @loose;
+        @class(VMRequestManager);
 
+
+    submodules:
+        dockerImage: DockerImage {
+           @display("p=96,46");
+            numCores = 0;
+          memorySize_MB = 0;
+            storageSize_GB = 0;
+       }
     connections allowunconnected:
 
  		// Connections between CPU and Operating System
 
-     
+
 }
 
 

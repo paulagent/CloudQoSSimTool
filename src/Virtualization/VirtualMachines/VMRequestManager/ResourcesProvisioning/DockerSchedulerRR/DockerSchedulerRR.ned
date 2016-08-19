@@ -13,7 +13,7 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package icancloud.src.Virtualization.VirtualMachines.Docker.DockerManagement.ResourcesProvisioning.DockerSchedulerRR;
+package icancloud.src.Virtualization.VirtualMachines.VMRequestManager.ResourcesProvisioning.DockerSchedulerRR;
 
 //
 // Module that is the core of a cloud manager scheduler
@@ -26,9 +26,8 @@ package icancloud.src.Virtualization.VirtualMachines.Docker.DockerManagement.Res
 //@author bing gao
 //@date 2016-04-14
 
-package icancloud.src.Management.CloudManagement.ResourcesProvisioning;
 
-import icancloud.src.Virtualization.VirtualMachines.Docker.DockerManagement.ResourcesProvisioning.DockerManagerScheduler;
+import icancloud.src.Virtualization.VirtualMachines.VMRequestManager.ResourcesProvisioning.DockerManagerScheduler;
 
 
 module DockerSchedulerRR extends DockerManagerScheduler

@@ -11,7 +11,9 @@
 //
 // @author Gabriel Gonz&aacute;lez Casta&ntilde;&eacute
 // @date 2012-10-23
-//
+// @author Bing, Zahra
+// update VM to support docker container technology
+// @date 2016-08-02
 
 #ifndef VM_H_
 #define VM_H_
@@ -20,12 +22,15 @@
 #include "ElementType.h"
 #include "VMSyscallManager.h"
 
-#include "DockerContainer.h"
+//#include "DockerContainer.h"
 
 #include "VMRequestManager.h"
 #include "DockerDaemon.h"
 
 class VMRequestManager;
+class DockerContainer;
+class DockerDaemon;
+
 
 class VM : public Machine{
 
@@ -33,24 +38,26 @@ protected:
 
      int pending_operation;             // defined as: PENDING_STORAGE || PENDING_SHUTDOWN || PENDING_STARTUP
      string vmName;                     // Virtual machine type
-     int userID;                        // User identification obtained from getId() from omnetpp.
+
 
      //identify where is the VM and who is its property.
+     //for example rack1.blade[0].node[0]. the nodesetname is node, nodename is 0.
      int nodeName;											    // To identify which node is.
      string nodeSetName;										// To identify the set.
      string ip;                                                 // IP address of the VM
 
      vector <vmStatesLog_t*> states_log;    // To log the states of the vms (composed by the code of the state and when a change is perfomed (in minutes).
 
-     vector<DockerContainer*>  dockerset;                                       // Each state changed will generate a new vmStatesLog entry-
+     vector<DockerContainer*>  dockerset;                                       // all containers exist in vm
 
     // vector<Docker*>  dockerset;                                       // Each state changed will generate a new vmStatesLog entry-
 
 
 public:
-     bool is_freezed;
+     int userID;                        // User identification obtained from getId() from omnetpp.
+     bool is_freezed;                     // flag to detect the VM is freeze or not
      DockerDaemon* dockerDaemon;
-     bool has_dockers;
+     bool has_dockers;                  // flag to indicate this vm run docker or not
      VM();
     VM( elementType* el);
     /*
@@ -108,7 +115,26 @@ public:
     /*
      * Setter for manager
      */
+
     void setManager(icancloud_Base* manager);
+
+    /*
+            * input: docker container id
+            * output None
+            * this function will make docker container process go to sleep and release all the resources.
+            */
+    void sleep(string containerID);
+    /*
+           * input : docker container id
+           * output : None
+           * this function will restart previous sleep container
+           */
+    void wakeup(string containerID);
+
+    //TCP
+    void send_tcp_msg(string* msg, string* dest_ip);
+    void receive_tcp_msg();
+
 
 };
 

@@ -11,7 +11,7 @@ void MPI_Base::initialize(){
     UserJob::initialize();
 }
 
-void MPI_Base::startExecution (){
+void MPI_Base::startExecution (int pid){
 
 	std::ostringstream osStream;
 
@@ -56,7 +56,7 @@ void MPI_Base::startExecution (){
 		barriers = new int [numProcesses];
 		initBarriers ();		
 
-    UserJob::startExecution();
+    UserJob::startExecution(pid);
 
     Enter_Method_Silent();
     // Create SM_WAIT_TO_EXECUTE and wait startDelay to sent it!

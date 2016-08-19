@@ -17,35 +17,21 @@ package icancloud.src.Virtualization.VirtualMachines.Docker;
 
 
 
-module DockerDaemon
+module DockerDaemon 
 
 {
     parameters:
 
-       // int numCores;												// Number of CPUs
-       // double memorySize_MB;										// Amount of memory in MiB
-      //  int storageSize_GB;											// Amount of storage in GiB
+     
 
 
-        int numofcontainer = default(1);							// Number of     
+        int numofcontainer = default(0);							// Number of     
       //  int numNetworkInterfaces = default(1);						// Number of network interfaces
-
-        int numStorageSystems = default(1);							// Number of Block Servers     
-        int numNetworkInterfaces = default(1);						// Number of network interfaces
 
 
         string hostName = default("");								// VM's name
         //string osModuleType = default("VmOperatingSystemModule");  	// Operating System Module type            	
        // string cpuModuleType = default("CPU_Module");				// CPU Module type               
-
-
-
-
-
-        string ip = default("");								    // VM IP
-        bool IPForward = default(false);							// IP Forward
-        int namid = default(-1);									// Nam ID
-        string routingFile = default("");							// Routing File
 
         @dynamic(true);
         @class("DockerDaemon");
@@ -71,7 +57,7 @@ module DockerDaemon
         input fromDaemonNet @loose;
         output toDaemonNet @loose;
 
-    submodules:
+   
     connections allowunconnected:
 
 }

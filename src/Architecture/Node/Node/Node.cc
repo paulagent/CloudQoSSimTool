@@ -98,8 +98,9 @@ void Node::initNode() {
 
         energyMeterPtr = check_and_cast<EnergyMeterController*>(mod);
         energyMeterPtr->init();
-        energyMeterPtr->registerMemorization(
-                getParentModule()->getSubmodule("manager")->par("memorization").boolValue());
+   //     energyMeterPtr->registerMemorization(
+   //             getParentModule()->getSubmodule("manager")->par("memorization").boolValue());
+        energyMeterPtr->registerMemorization(false);
         energyMeterPtr->activateMeters();
 
         // initialize system apps

@@ -22,7 +22,7 @@ VM::VM() {
 }
 
 VM::VM(elementType* el) {
-    //printf("hi from Vm construtor::VM() \n ");
+    printf("hi from Vm construtor::VM() \n ");
     // Define ..
     cModule* osMod;
     string vmTypeName;
@@ -40,18 +40,18 @@ VM::VM(elementType* el) {
 
    // printf("hi from Machine::con2 \n ");
 
-    type = new elementType();
+   // type = new elementType();
 
-    type->setDiskSize(el->getStorageSize());
+   // type->setDiskSize(el->getStorageSize());
 
-    type->setMemorySize(el->getMemorySize());
+   // type->setMemorySize(el->getMemorySize());
 
     // os->setFreeMemory (el->getMemorySize());
     // os->setFreeStorage (el->getStorageSize());
 
-    type->setNumCores(el->getNumCores());
-    type->setNumStorageDevices(el->getNumStorageDevices());
-    type->setType(el->getType());
+   // type->setNumCores(el->getNumCores());
+   // type->setNumStorageDevices(el->getNumStorageDevices());
+   // type->setType(el->getType());
     //  printf("hi from Machine::con3 \n ");
 
     //changeState(MACHINE_STATE_OFF);
@@ -78,7 +78,7 @@ cout <<"VM::initialize()" << endl;
     nodeSetName = "";
     vmName = "";
     vmreqmgr = new VMRequestManager();
-    vmreqmgr->initialize();
+   // vmreqmgr->callInitialize();
     osMod = getSubmodule("osModule")->getSubmodule("syscallManager");
     os = dynamic_cast<VMSyscallManager*>(osMod);
     Machine::changeState(MACHINE_STATE_OFF);
@@ -86,7 +86,9 @@ cout <<"VM::initialize()" << endl;
   //  dockerset.clear();
     is_freezed=false;
     has_dockers=false;
-    dockerDaemon=new DockerDaemon();
+   dockerDaemon=new DockerDaemon();
+   dockerDaemon->initialize(this);
+
 }
 
 void VM::finish() {
@@ -150,3 +152,24 @@ void VM::setManager(icancloud_Base* manager) {
     Machine::setManager(manager);
     os->setManager(manager);
 }
+void VM::sleep(string containerID){
+    //call pause container function
+    cout << "VM::sleep containerID    " << containerID <<endl;
+   dockerDaemon-> pauseDockerContainer(containerID);
+
+
+}
+    void VM:: wakeup(string containerID){
+
+//call unPauseDockerContainer  function from daemon
+
+        dockerDaemon->unPauseDockerContainer(containerID);
+    }
+   void send_tcp_msg(string msg, string dest_ip)
+   {
+
+   }
+   void receive_tcp_msg()
+   {
+
+   }

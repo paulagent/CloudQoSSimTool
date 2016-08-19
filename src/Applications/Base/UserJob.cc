@@ -33,8 +33,8 @@ void UserJob::initialize() {
 
 }
 
-void UserJob::startExecution() {
-    API_OS::startExecution();
+void UserJob::startExecution(int pid) {
+    API_OS::startExecution(pid);
 }
 
 void UserJob::finish() {

@@ -58,9 +58,9 @@ void ServerApplication::initialize(){
 
 }
 
-void ServerApplication::startExecution (){
+void ServerApplication::startExecution (int pid){
 
-    API_OS::startExecution();
+    API_OS::startExecution(pid);
 	// Create SM_WAIT_TO_EXECUTE message for delaying the execution of this application
     // Initialize ..
     newIntervalEvent = new cMessage ("intervalEvent");

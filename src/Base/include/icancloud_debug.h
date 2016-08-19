@@ -182,12 +182,12 @@ using std::string;
 
 /************************* NETWORK SERVICES *************************/
 
-	#define DEBUG_Network_Service false				// Shows basic debug messages
-	#define DEBUG_MSG_Network_Service false			// Shows all messages enterely (including all parameters)
-	#define DEBUG_TCP_Service_Client false			// Shows basic debug messages
-	#define DEBUG_TCP_Service_MSG_Client false		// Shows all messages enterely (including all parameters)
-	#define DEBUG_TCP_Service_Server false			// Shows basic debug messages
-	#define DEBUG_TCP_Service_MSG_Server false		// Shows all messages enterely (including all parameters)
+	#define DEBUG_Network_Service true				// Shows basic debug messages
+	#define DEBUG_MSG_Network_Service true			// Shows all messages enterely (including all parameters)
+	#define DEBUG_TCP_Service_Client true			// Shows basic debug messages
+	#define DEBUG_TCP_Service_MSG_Client true		// Shows all messages enterely (including all parameters)
+	#define DEBUG_TCP_Service_Server true			// Shows basic debug messages
+	#define DEBUG_TCP_Service_MSG_Server true		// Shows all messages enterely (including all parameters)
 
 
 /************************* STORAGE MANAGERS *************************/

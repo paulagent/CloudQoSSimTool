@@ -34,9 +34,14 @@ class CPU_Intensive : public UserJob{
 	
 	protected:
 
-//    simsignal_t processingTime;
-//    simtime_t departureTime;
-//    simtime_t arrivalTime;
+
+        int Pid;
+
+
+    simsignal_t processingTime;
+    simtime_t departureTime;
+    simtime_t arrivalTime;
+
 
 		/** Size of data chunk to read in each iteration */
 		int inputSizeMB;
@@ -121,7 +126,7 @@ class CPU_Intensive : public UserJob{
         /**
          * Start the app execution.
          */
-        virtual void startExecution ();
+        virtual void startExecution (int pid);
 
 	   /**
 		* Process a self message.

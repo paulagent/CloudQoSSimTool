@@ -113,18 +113,23 @@ void AbstractUserGenerator::initialize(){
 
 	// Get the cloud manager pointer
         auxMod = getParentModule()->getParentModule()->getParentModule()->getSubmodule("manager");
+        cout << "AbstractUserGenerator::initialize()-----> before casting"<<endl;
 		userManagementPtr = check_and_cast <UserManagement*> (auxMod);
+        cout << "AbstractUserGenerator::initialize()---> after casting"<<endl;
 
 	// Create the user core!
 	    // Initialize ..
 		    vmSelection* vm;
 	        int vmsQuantity;
+	        int dockerQuantity;
 	        jobSelection* jobSel;
 	        int numApps;
 
 
 	        // Get vms configuration
 	            vmsQuantity = getParentModule()->getSubmodule("vmDefinition")->par("vmsToRentTypesQuantity").longValue();
+
+	         //   dockerQuantity = getParentModule()->getSubmodule("dockerDefinition")->par("containersToRentTypesQuantity").longValue();
 
 	            for (int i = 0; i < vmsQuantity; i++){
 	                vm = new vmSelection();
@@ -173,6 +178,8 @@ void AbstractUserGenerator::initialize(){
                         jobSel->job->setPreloadFile(pr);
 
                     }
+
+
                     userJobSet.push_back(jobSel);
                 }
 
@@ -202,7 +209,7 @@ void AbstractUserGenerator::finalizeUserGenerator(bool allowToExecute){
     userManagementPtr->finalizeUserGenerator(this, allowToExecute);
 };
 
-void AbstractUserGenerator::createUser (){
+void AbstractUserGenerator::createUser(){
 
 	//Set up the behaviorMod
 		cModuleType *modBehavior;

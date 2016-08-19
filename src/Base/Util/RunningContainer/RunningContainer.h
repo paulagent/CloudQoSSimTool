@@ -13,30 +13,28 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package icancloud.simulations.MM1;
-import org.omnetpp.queueing.Queue;
-import org.omnetpp.queueing.Sink;
-import org.omnetpp.queueing.Source;
+#ifndef RUNNINGCONTAINER_H_
+#define RUNNINGCONTAINER_H_
+
+#include <omnetpp.h>
+#include <string.h>
+#include "DockerContainer.h"
 
 
-//
-// TODO Auto-generated network
-//
-network MM1
-{
-    parameters:
-        @display("i=block/network2;bgb=569,345");
-    submodules:
-        sink: Sink {
-            @display("p=294,79");
-        }
-        source: Source {
-            @display("p=50.0,79.0");
-        }
-        queue: Queue {
-            @display("p=174,79");
-        }
-    connections:
-        source.out --> queue.in++;
-        queue.out --> sink.in++;
-}
+class RunningContainer {
+public:
+
+
+    string containerID;
+    string vmID;
+    DockerContainer *container;
+    //  vector<VM*> vmID;
+      clock_t start_time;
+      clock_t end_time;
+      void initialize();
+    RunningContainer();
+    virtual ~RunningContainer();
+
+};
+
+#endif /* RUNNINGCONTAINER_H_ */

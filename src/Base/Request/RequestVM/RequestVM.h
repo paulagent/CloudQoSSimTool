@@ -37,6 +37,8 @@ private:
 public:
         VM* freezed_vm;
         bool is_freezed;
+        string containerID;
+        string containerImageID;
 public:
 
 	RequestVM();
@@ -76,6 +78,13 @@ public:
     VM* getFreezedVM(){return freezed_vm;};
     void set_is_freezed(bool flag){is_freezed=flag;};
     bool get_is_freezed(){return is_freezed;};
+
+    void setContainerID(string id) {containerID = id;};
+    void setContainerImageID(string id) {containerImageID = id;};
+
+    string getContainerID() {return containerID;};
+    string getContainerImageID() {return containerImageID;};
+
 	bool compareReq(AbstractRequest* req);
 
 };

@@ -32,6 +32,7 @@ void CPUController::finish(){
 
 void CPUController::registerCore (ICore* core, int coreIndex){
 
+
    (*(complementaryCores.begin()+coreIndex)) = core;
 
 }

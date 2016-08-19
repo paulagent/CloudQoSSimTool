@@ -126,6 +126,7 @@ void H_CPUManager_Base::processRequestMessage (icancloud_Message *sm){
 		}
 		// If operation is aimed to perform a computing block from a VM
 		else {
+		    cout <<"H_CPUManager_Base :processRequestMessage"<<endl;
 			schedulingCPU(sm_cpu);
 		}
 
@@ -198,7 +199,7 @@ void H_CPUManager_Base::processResponseMessage (icancloud_Message *sm){
 }
 
 void H_CPUManager_Base::setVM (cGate** oGates, cGate** iGates, int numCores, int uId, int pId){
-
+    cout << "H_CPUManager_Base::setVM :---> " <<endl;
 
     int idxToVM;
     int idxFromVM;
@@ -220,7 +221,7 @@ void H_CPUManager_Base::setVM (cGate** oGates, cGate** iGates, int numCores, int
     }
 
     // Connect to input gates
-
+    cout << "H_CPUManager_Base::setVM :---> end" <<endl;
     for (int i = 0; i < (int)numCores; i++){
         idxFromVM = fromVMCPU->newGate("fromVMCPU");
         fromVMCPU->connectIn(oGates[i],idxFromVM);

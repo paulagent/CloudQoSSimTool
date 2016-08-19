@@ -6,7 +6,7 @@ import icancloud.src.Architecture.Node.NodeVL.NodeVL;
 import icancloud.src.Management.CloudManagement.ResourcesProvisioning.**.*; 
 import icancloud.src.Management.NetworkManager.NetworkManager; 
 import icancloud.src.Management.Topology.Topology; 
-import icancloud.src.Management.NetworkManager.NetworkManager; 
+
 import icancloud.src.Users.UserGenerator.UserGenerator; 
 import icancloud.src.Virtualization.VirtualMachines.SetDefinition.VmSet; 
 import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator; 

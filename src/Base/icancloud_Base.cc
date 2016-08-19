@@ -189,7 +189,10 @@ void icancloud_Base::sendRequestMessage (icancloud_Message *sm, cGate* gate){
 	// Send the message!
   //  cout << "icancloud_Base::sendRequestMessage  ----->Send the message to the gate!----> "<<  gate->getFullName() <<endl;
 
+
+
 	send (sm, gate);
+	//
  //   cout << "icancloud_Base::sendRequestMessage  ----->Process next request!----> "<< endl;
 
 	//TCP_service->createConnection(sm);
