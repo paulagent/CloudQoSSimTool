@@ -347,22 +347,15 @@ void TCP_test::receivedEstablishedConnection (cMessage *msg){
 
 /*
 void TCP_test::changeDeviceState (string state,unsigned componentIndex){
-
     if (strcmp (state.c_str(),MACHINE_STATE_IDLE ) == 0) {
-
         nodeState = MACHINE_STATE_IDLE;
         changeState (NETWORK_ON);
-
     } else if (strcmp (state.c_str(),MACHINE_STATE_RUNNING ) == 0) {
-
         nodeState = MACHINE_STATE_RUNNING;
         changeState (NETWORK_ON);
-
     } else if (strcmp (state.c_str(),MACHINE_STATE_OFF ) == 0) {
-
         nodeState = MACHINE_STATE_OFF;
         changeState (NETWORK_OFF);
-
     }
 }
 */
@@ -376,6 +369,3 @@ void TCP_test::changeState (string energyState,unsigned componentIndex){
  //  icancloud_request_changeState_network(energyState,componentIndex);
 
 }
-
-
-

@@ -146,9 +146,16 @@ void AbstractUserGenerator::initialize(){
                     jobSel->replicas = getParentModule()->getSubmodule("appDefinition")->getSubmodule("application",i)->par("copies").longValue();
                     jobSel->appName = getParentModule()->getSubmodule("appDefinition")->getSubmodule("application",i)->par("name").stringValue();
                     auxMod = getParentModule()->getSubmodule("appDefinition")->getSubmodule("application",i)->getSubmodule("app");
+
                     jobSel->job = dynamic_cast<UserJob*> (auxMod);
+                   // if(jobSel->job == NULL)//changes made by nishant
+                    //jobSel->job = ConvertApptoUser(auxMod);//changes made by nishant
+                    //cout<<"App name"<<(jobSel->appName)<<endl;
+                    cout<<"Select appName"<< (jobSel->job == NULL) <<endl;
+
                     cout << "AbstractUserGenerator::initialize() -->" << jobSel->job->getClassName() <<endl;
                     jobSel->job->setOriginalName(jobSel->appName);
+                    //cout<<"Anything";
                     jobSel->job->setAppType(getParentModule()->getSubmodule("appDefinition")->getSubmodule("application",i)->par("appType").stringValue());
                     jobSel->job->setNumCopies(jobSel->replicas);
 
@@ -176,6 +183,21 @@ void AbstractUserGenerator::initialize(){
                     userJobSet.push_back(jobSel);
                 }
 
+}
+
+UserJob* AbstractUserGenerator::ConvertApptoUser(cModule* auxMod){
+UserJob* job;
+//job = new UserJob();
+//job->setAppType("TCP_New");
+
+//auxMod->get
+//job->getAppType();
+//job->getClassName();
+//job->getJobId();
+//job->getFullName();
+//job->getFSComplete();
+//job->getFSSize();
+return job;
 }
 
 void AbstractUserGenerator::finish(){
@@ -220,8 +242,16 @@ void AbstractUserGenerator::createUser(){
 
 			// the user behaviorMod is created in the root of the cloud (cloud.manager.userGenerator.user)
                 modBehavior = cModuleType::get (behaviorPath.str().c_str());
-
+                cout<<"Test mod behaviorMod"<< modBehavior->getFullName() << endl;
+                cout<<"Test Bug"<<endl;
+                cout << "getParentModule()" <<getParentModule()->getFullName()<< endl;
+                cout << "getParentModule()" <<getParentModule()->getParentModule()->getFullName()<< endl;
+                cout << "getParentModule()" <<getParentModule()->getParentModule()->getParentModule()->getFullName()<< endl;
                 behaviorMod = modBehavior->create(userID.c_str(), getParentModule()->getParentModule()->getParentModule());
+                cout<<"Test Bug 1"<<endl;
+
+
+
                 behaviorMod->setName(userID.c_str());
                 behaviorMod->finalizeParameters();
                 behaviorMod->buildInside();
