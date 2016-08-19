@@ -187,8 +187,7 @@ void AbstractUserGenerator::initialize(){
 
 UserJob* AbstractUserGenerator::ConvertApptoUser(cModule* auxMod){
 UserJob* job;
-//job->initialize();
-
+//job = new UserJob();
 //job->setAppType("TCP_New");
 
 //auxMod->get
