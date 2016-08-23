@@ -17,6 +17,7 @@ import icancloud.src.Architecture.NodeComponents.OperatingSystems.OperatingSyste
 import icancloud.src.EnergySystem.EnergyMeter.EnergyMeter;
 import icancloud.src.EnergySystem.PSU.IPSU;
 import icancloud.src.Virtualization.Hypervisor.IHypervisor;
+import inet.applications.tcpapp.TCPBasicClientApp;
 import inet.base.NotificationBoard;
 import inet.linklayer.IExternalNic;
 import inet.linklayer.IWiredNic;
@@ -149,7 +150,7 @@ module NodeVL like INode
         psu: <psuModuleType> like IPSU {
             @display("p=55,373");
         }
-        tcpApp[numTcpApps]: <> like ITCPApp {
+            tcpApp[numTcpApps]: <> like ITCPApp {
             parameters:
                 @display("p=532,119,row,60");
         }
