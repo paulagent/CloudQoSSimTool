@@ -223,7 +223,7 @@ Abstract_Remote_FS* AbstractStorageCell::getRemoteStorage_byPosition (unsigned i
 		if ((position > remote_storage_cells.size()) || (position < 0)){
 			showErrorMessage("position at Storage_cell::getRemoteStorage_byPosition is incorrect: %i", position);
 		}
-
+		cout << "AbstractStorageCell::getRemoteStorage_byPosition---> position--->"<< position << endl;
 		cell = (*(remote_storage_cells.begin() + position));
 	return cell;
 

@@ -13,8 +13,8 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package icancloud.simulations.TCP_test;
-import inet.nodes.inet.Router;
+package icancloud.simulations.TCP_NodeVL;
+import icancloud.src.Architecture.Aggregation.Rack;
 import ned.DatarateChannel;
 import inet.nodes.ethernet.EtherSwitch;
 import icancloud.src.Architecture.Node.NodeVL.NodeVL;
@@ -26,9 +26,10 @@ import icancloud.src.Users.UserGenerator.UserGenerator;
 import icancloud.src.Virtualization.VirtualMachines.SetDefinition.VmSet;
 import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
 
-
-
-channel Channel_0_RRTest extends DatarateChannel
+// ---------------------------------------------------------------
+//   Definition of channels
+// ---------------------------------------------------------------
+channel Channel_0_TCP_NodeVL extends DatarateChannel
 {
     delay = 1.25E-4us;
     datarate = 10Gbps;
@@ -36,7 +37,7 @@ channel Channel_0_RRTest extends DatarateChannel
     per = 0.0;
 }
 
-channel Channel_1_RRTest extends DatarateChannel
+channel Channel_1_TCP_NodeVL extends DatarateChannel
 {
     delay = 1.25E-4us;
     datarate = 10Gbps;
@@ -44,7 +45,7 @@ channel Channel_1_RRTest extends DatarateChannel
     per = 0.0;
 }
 
-channel RackChannel_0_RRTest extends DatarateChannel
+channel RackChannel_0_TCP_NodeVL extends DatarateChannel
 {
     delay = 1.25E-4us;
     datarate = 10Gbps;// RackChannelBandwidth
@@ -55,12 +56,9 @@ channel RackChannel_0_RRTest extends DatarateChannel
 //
 // TODO Auto-generated network
 //
-network TCP_test
+network TCP_NodeVL
 {
-    @display("bgb=746,395");
-    // -------------------------------------------------------
-    //   Definition of main modules
-    // -------------------------------------------------------
+    @display("bgb=1010,450");
     submodules:
 
 
@@ -69,14 +67,16 @@ network TCP_test
         // ---------------------------------------------------------------
         configurator: IPv4NetworkConfigurator {
             parameters:
-                config = xml("<config><interface hosts='**' address='192.168.x.x' netmask='255.x.x.x'/></config>");
-                @display("p=495,67");
+                config = xml("<config><interface hosts='rc_0_Rack_A_16*' address='192.168.0.x' netmask='255.255.255.252'/><interface hosts='rc_0_Rack_B_16*' address='192.168.1.x' netmask='255.255.255.252'/><interface hosts='*' address='10.x.x.x' netmask='255.x.x.0'/></config>");
+                @display("p=689,48");
         }
 
         // ---------------------------------------------------------------
         //    Network Manager
         // ---------------------------------------------------------------
-        networkManager: NetworkManager;
+        networkManager: NetworkManager {
+            @display("p=689,171");
+        }
         // ---------------------------------------------------------------
         //   Definition of cloud scheduler
         // ---------------------------------------------------------------
@@ -86,7 +86,7 @@ network TCP_test
                 remote_storage_VMs_per_node = 2;
                 minimum_percent_storageNode_free = 0.15;
                 virtualIPsBasis = "10.0.0.1";
-                @display("p=397,164");
+                @display("p=558,171");
         }
 
         // ---------------------------------------------------------------
@@ -95,17 +95,20 @@ network TCP_test
         userGenerator: UserGenerator {
             parameters:
                 numCells = 1;
-                @display("p=397,277");
         }
 
         // ---------------------------------------------------------------
         //   Definition of switches
         // ---------------------------------------------------------------
-        switch_0: EtherSwitch;
-        rackSwitch_0: EtherSwitch {
-            @display("p=241,117");
+        switch_0: EtherSwitch {
+            @display("p=177,253");
         }
-
+        rackSwitch_0: EtherSwitch {
+            @display("p=291,164");
+        }
+        rackSwitch_1: EtherSwitch {
+            @display("p=129,170");
+        }
         // ---------------------------------------------------------------
         //   Definition of Computing Nodes
         // ---------------------------------------------------------------
@@ -113,27 +116,22 @@ network TCP_test
         //   Definition of Storage Nodes
         // ---------------------------------------------------------------
         ns_0_NodeStorage_C: NodeVL {
-            @display("p=165,251");
+            @display("p=59,330");
         }
-        
         //------------------------------------------------------
         // Modules that defines the topology and the set of VMs 
         //------------------------------------------------------
-        vmSet: VmSet;
-        topology: Topology;
-        // ---------------------------------------------------------------
-        //   Definition of Racks
-        // ---------------------------------------------------------------
-        rc_0_Rack_A_16[6]: NodeVL {
-
-            @display("p=279,45");
+        vmSet: VmSet {
+            @display("p=436,357");
         }
-        // ---------------------------------------------------------------
-        //   Definition of Racks
-        // ---------------------------------------------------------------
-        
-        router: Router {
-            @display("p=135,161");
+        topology: Topology {
+            @display("p=513,363");
+        }
+        rc_0_Rack_A_16[2]: NodeVL {
+            @display("p=120,48");
+        }
+        rc_0_Rack_B_16[2]: NodeVL {
+            @display("p=322,50");
         }
     // ---------------------------------------------------------------
     //   Connections section
@@ -141,18 +139,13 @@ network TCP_test
     connections allowunconnected:
 
         // Connections for rack rc_0_Rack_A_16
-        for i=0..5 {
-            rc_0_Rack_A_16[i].ethg++ <--> RackChannel_0_RRTest <--> rackSwitch_0.ethg++;
-            
-
+        for i=0..1 {
+            rc_0_Rack_A_16[i].ethg++ <--> RackChannel_0_TCP_NodeVL <--> rackSwitch_1.ethg++;
         }
-
-        //rackSwitch_0.ethg++ <--> Channel_0_RRTest <--> switch_0.ethg++;
-        rackSwitch_0.ethg++ <--> Channel_0_RRTest <--> router.ethg++;
-        switch_0.ethg++ <--> Channel_1_RRTest <--> router.ethg++;
-        ns_0_NodeStorage_C.ethg++ <--> Channel_1_RRTest <--> switch_0.ethg++;
-        
-
+        for i=0..1 {
+            rc_0_Rack_B_16[i].ethg++ <--> RackChannel_0_TCP_NodeVL <--> rackSwitch_0.ethg++;
+        }
+        rackSwitch_0.ethg++ <--> Channel_0_TCP_NodeVL <--> switch_0.ethg++;
+        ns_0_NodeStorage_C.ethg++ <--> Channel_1_TCP_NodeVL <--> switch_0.ethg++;
+        rackSwitch_1.ethg++ <--> Channel_1_TCP_NodeVL <--> switch_0.ethg++;
 }
-
-
