@@ -25,7 +25,7 @@ import icancloud.src.Management.NetworkManager.NetworkManager;
 import icancloud.src.Users.UserGenerator.UserGenerator;
 import icancloud.src.Virtualization.VirtualMachines.SetDefinition.VmSet;
 import inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator;
-
+import icancloud.src.Architecture.Node.Node.Node;
 // ---------------------------------------------------------------
 //   Definition of channels
 // ---------------------------------------------------------------
