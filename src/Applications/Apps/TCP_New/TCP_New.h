@@ -25,9 +25,9 @@
 
 class NetworkService;
 
-class UserJob;
+//class UserJob;
 
-class TCP_New : public TCPSocket::CallbackInterface,public API_OS{
+class TCP_New : public TCPSocket::CallbackInterface,public UserJob{
 
     struct icancloud_TCP_Client_Connector{
             TCPSocket *socket;

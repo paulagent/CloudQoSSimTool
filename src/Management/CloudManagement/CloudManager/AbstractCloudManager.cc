@@ -200,6 +200,7 @@ void AbstractCloudManager::initManager(int totalNodes) {
 
                 nodeChecked->initNode();
 
+
                 if ((memorization) && (!componentsLoaded)) {
                     componentsLoaded = true;
                     bool found = false;
@@ -627,6 +628,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 cout << "NEW VM  ------->  :u" << req->getUid() << ":p"
                         << vmNew->getPid() << endl;
 
+
                 vmNew->cModule::setName(vmName.str().c_str());
                 vmNew->setName(vmName.str().c_str());
                 // vmNew-> t.start
@@ -647,6 +649,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 RunningVM* started_VM = new RunningVM();
                 //    started_VM=null;
                 started_VM->vm = vmNew;
+                cout<<"Started Vm IP:"<<started_VM->vm->getIP()<<endl;
                 started_VM->start_time = now;
                 started_VM->end_time = now + 200000; //clocks per secs
                 started_VM->userID = vmNew->getUid();

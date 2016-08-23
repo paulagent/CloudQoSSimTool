@@ -38,6 +38,7 @@ TCP_New::~TCP_New(){
 void TCP_New::initialize(){
 
     API_OS::initialize();
+
     startDelay = par ("startDelay");
     inputSizeMB  = par ("inputSize");
     outputSizeMB  = par ("outputSize");

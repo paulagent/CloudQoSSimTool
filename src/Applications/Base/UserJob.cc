@@ -15,6 +15,9 @@
 
 #include "UserJob.h"
 
+UserJob::UserJob(){
+
+}
 UserJob::~UserJob() {
     appType = "";
     mPtr = NULL;

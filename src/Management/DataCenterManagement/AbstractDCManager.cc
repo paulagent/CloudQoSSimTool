@@ -352,6 +352,7 @@ void AbstractDCManager::initManager (int totalNodes){
 
                              nodeChecked = check_and_cast<Node*>(nodeMod);
                               nodeChecked->initNode();
+                              cout<<"Node IP:"<<nodeChecked->getIP()<<endl;
 
                               if ((memorization) && (!componentsLoaded)){
                                   componentsLoaded = true;

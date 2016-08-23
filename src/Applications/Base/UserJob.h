@@ -34,6 +34,7 @@ protected:
 
 protected:
 
+        UserJob();
     	/*
     	 * Destructor
     	 */
