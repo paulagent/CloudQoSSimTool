@@ -109,6 +109,7 @@ void StorageManager::processSelfMessage (cMessage *msg){
 
 
 void StorageManager::processRequestMessage (icancloud_Message *sm){
+    cout << "StorageManager::processRequestMessage-->" << sm->getOwner() <<endl;
 
 	int i;
 	unsigned int diskIndex;

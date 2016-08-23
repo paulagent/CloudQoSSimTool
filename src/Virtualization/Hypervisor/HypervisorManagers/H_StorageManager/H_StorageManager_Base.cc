@@ -119,12 +119,13 @@ cGate* H_StorageManager_Base::getOutGate (cMessage *msg){
 
 void H_StorageManager_Base::processSelfMessage (cMessage *msg){
 
-
+cout << "H_StorageManager_Base::processSelfMessag--->" << msg->getArrivalModule()->getFullName()<< endl;
     icancloud_Message* sm;
 
     cancelEvent (msg);
 
     sm = dynamic_cast<icancloud_Message*>(msg);
+
     sendResponseMessage(sm);
 
 

@@ -110,7 +110,7 @@ using std::string;
 /************************* DISKS *************************/
 
 	#define DEBUG_Disk false							// Shows basic debug messages
-	#define DEBUG_DETAILED_Disk false				// Shows detailed debug messages
+	#define DEBUG_DETAILED_Disk true				// Shows detailed debug messages
 	#define DEBUG_MSG_Disk false					// Shows all messages enterely (including all parameters)
 	#define DEBUG_BRANCHES_Disk false				// Shows the block list of each request message
 
@@ -119,7 +119,7 @@ using std::string;
 
 	#define DEBUG_CPU_Scheduler_FIFO false				// Shows basic debug messages
 	#define DEBUG_MSG_CPU_Scheduler_FIFO false			// Shows all messages enterely (including all parameters)
-	#define DEBUG_CPU_Scheduler_RR true				// Shows basic debug messages
+	#define DEBUG_CPU_Scheduler_RR false				// Shows basic debug messages
 	#define DEBUG_MSG_CPU_Scheduler_RR false			// Shows all messages enterely (including all parameters)
 
 /************************* CPU Cores *************************/
@@ -130,12 +130,12 @@ using std::string;
 
 /************************* BASIC FILE SYSTEM *************************/
 
-	#define DEBUG_Basic_FS false							// Shows basic debug messages
+	#define DEBUG_Basic_FS true							// Shows basic debug messages
 	#define DEBUG_DETAILED_Basic_FS false					// Shows detailed debug messages
 	#define DEBUG_PARANOIC_Basic_FS false					// Shows the FS layout after each FS call
 	#define DEBUG_MSG_Basic_FS false						// Shows all messages enterely (including all parameters)
 	#define DEBUG_BRANCHES_Basic_FS false					// Shows the block list of each request message
-	#define DEBUG_FS_Basic_Files false						// Shows the block list of each request message
+	#define DEBUG_FS_Basic_Files true						// Shows the block list of each request message
 
 
 /************************* PARALLEL FILE SYSTEM *************************/

@@ -65,7 +65,7 @@ network Cloud_A
         // ---------------------------------------------------------------
         //   Definition of cloud scheduler
         // ---------------------------------------------------------------
-        manager: CloudSchedulerFCFS {
+        manager: CloudSchedulerRR {
             parameters:
                 numberOfPFSRemoteServers = 2;
                 remote_storage_VMs_per_node = 2;

@@ -61,7 +61,7 @@ void Storage_cell_basic::processSelfMessage (cMessage *msg){
 }
 
 void Storage_cell_basic::processRequestMessage (icancloud_Message *sm){
-
+cout << "Storage_cell_basic::processRequestMessage-->" << sm->getArrivalModule()->getFullName()<< endl;
 		Abstract_Remote_FS* remote_storage_cell;
 		icancloud_Message *subRequest;
 		icancloud_App_IO_Message* sm_io;
@@ -79,7 +79,7 @@ void Storage_cell_basic::processRequestMessage (icancloud_Message *sm){
 		// Configuration message
 		if (sm_net != NULL){
 		    if (sm_net->getOperation() == SM_SET_HBS_TO_REMOTE){
-		        cout << "Storage_cell_basic::processRequestMessage " << endl;
+		        cout << "Storage_cell_basic::processRequestMessage 1" << endl;
 		        setRemoteData(sm_net);
 		    }
 
@@ -176,7 +176,7 @@ void Storage_cell_basic::processResponseMessage (icancloud_Message *sm){
 
       if (sm_net != NULL)
       {
-         cout << "Storage_cell_basic::processResponseMessage " << endl;
+         cout << "Storage_cell_basic::processResponseMessage 2" << endl;
           setRemoteData(sm_net);
       }  else{
             // Parent request

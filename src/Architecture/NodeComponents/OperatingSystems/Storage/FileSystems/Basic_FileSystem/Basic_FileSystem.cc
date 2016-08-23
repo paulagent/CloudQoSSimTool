@@ -72,7 +72,7 @@ void Basic_FileSystem::processSelfMessage (cMessage *msg){
      icancloud_Message *sm;
      sm = check_and_cast<icancloud_Message *>(msg);
 
-    // Cast!
+    // Cast! what this means?
         cancelEvent(sm);
 
         // Send message back!
