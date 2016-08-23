@@ -25,6 +25,7 @@ import inet.networklayer.common.InterfaceTable;
 import inet.networklayer.ipv4.RoutingTable;
 import inet.nodes.inet.NetworkLayer;
 import inet.transport.ITCP;
+import inet.applications.ITCPApp;
 
 
 module NodeVL like INode
@@ -68,6 +69,8 @@ module NodeVL like INode
         int storageSize_GB;									// Total amount of space for each storage system
         string initialState;										// state or the node  NODE_STATE_OFF | NODE_STATE_IDLE | NODE_STATE_RUNNING
         int numFS = default(1);													// Number of File Systems
+
+        int numTcpApps = default(1);  // no of TCP apps. Specify the app types in INI file with tcpApp[0..1].typename="TCPEchoApp" syntax
 
     gates:
         inout pppg[] @labels(PPPFrame-conn);
@@ -146,7 +149,10 @@ module NodeVL like INode
         psu: <psuModuleType> like IPSU {
             @display("p=55,373");
         }
-
+        tcpApp[numTcpApps]: <> like ITCPApp {
+            parameters:
+                @display("p=532,119,row,60");
+        }
         tcp: <tcpType> like ITCP {
             parameters:
                 @display("p=327,204");
@@ -305,6 +311,11 @@ module NodeVL like INode
 
         networkLayer.ifOut++ --> lo0.upperLayerIn;
         lo0.upperLayerOut --> networkLayer.ifIn++;
+
+        for i=0..numTcpApps-1 {
+            tcpApp[i].tcpOut --> tcp.appIn++;
+            tcpApp[i].tcpIn <-- tcp.appOut++;
+        }
 
         // connections to network outside
         for i=0..sizeof(pppg)-1 {
