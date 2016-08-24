@@ -63,6 +63,7 @@ void ServerApplication::startExecution (int pid){
     API_OS::startExecution(pid);
 	// Create SM_WAIT_TO_EXECUTE message for delaying the execution of this application
     // Initialize ..
+    Enter_Method_Silent();
     newIntervalEvent = new cMessage ("intervalEvent");
 	cMessage *waitToExecuteMsg = new cMessage (SM_WAIT_TO_EXECUTE.c_str());
 	scheduleAt (simTime()+startDelay, waitToExecuteMsg);

@@ -65,7 +65,7 @@ network Cloud_A
         // ---------------------------------------------------------------
         //   Definition of cloud scheduler
         // ---------------------------------------------------------------
-        manager: CloudSchedulerRR {
+        manager: CloudSchedulerFCFS {
             parameters:
                 numberOfPFSRemoteServers = 2;
                 remote_storage_VMs_per_node = 2;
@@ -92,13 +92,17 @@ network Cloud_A
         // ---------------------------------------------------------------
         //   Definition of Storage Nodes
         // ---------------------------------------------------------------
-        ns_0_NodeStorage_C: NodeVL;
+        ns_0_NodeStorage_C: NodeVL {
+            @display("p=88,213");
+        }
         //------------------------------------------------------
         // Modules that defines the topology and the set of VMs 
         //------------------------------------------------------
         vmSet: VmSet;
         topology: Topology;
-        rc_0_Rack_A_16[4]: NodeVL;
+        rc_0_Rack_A_16[4]: NodeVL {
+            @display("p=272,25");
+        }
     // ---------------------------------------------------------------
     //   Connections section
     // ---------------------------------------------------------------

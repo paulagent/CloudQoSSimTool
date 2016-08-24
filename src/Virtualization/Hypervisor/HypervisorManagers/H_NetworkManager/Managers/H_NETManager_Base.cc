@@ -542,7 +542,7 @@ void H_NETManager_Base::setVM (cGate* oGate, cGate* iGate, int uId, int pId, str
 
     int idxToVM;
     int idxFromVM;
-
+cout << "H_NETManager_Base::setVM"<< endl;
     // Initialize control structure at node
         vmControl* control;
         control = new vmControl();

@@ -1023,7 +1023,7 @@ void AbstractDCManager::deleteUser (int userId){
 }
 
 void AbstractDCManager::configureMap (MachinesMap* map){
-cout <<"AbstractDCManager::configureMap"<< endl;
+//cout <<"AbstractDCManager::configureMap"<< endl;
     // Define ...
         int size;
         int i,j;
@@ -1039,18 +1039,18 @@ cout <<"AbstractDCManager::configureMap"<< endl;
 
     // To check the network
     if (networkManager != NULL){
-        cout <<"AbstractDCManager::configureMap-----> if (networkManager != NULL)"<< endl;
+    //    cout <<"AbstractDCManager::configureMap-----> if (networkManager != NULL)"<< endl;
 
        for (i = 0; i < size; i++){
 
             nodeSetQuantity = map->getSetQuantity(i);
-            cout <<"AbstractDCManager::configureMap---->nodeSetQuantity -->"<<nodeSetQuantity << endl;
+         //   cout <<"AbstractDCManager::configureMap---->nodeSetQuantity -->"<<nodeSetQuantity << endl;
 
             for (j = 0; j < nodeSetQuantity;j++){
 
                 anode = map->getMachineByIndex(i,j);
-               cout <<"anode name -->"<<anode->getFullName() << endl;
-               cout <<"anode path -->"<<anode->getFullPath() << endl;
+        //       cout <<"anode name -->"<<anode->getFullName() << endl;
+        //       cout <<"anode path -->"<<anode->getFullPath() << endl;
 
                 node = dynamic_cast<Node*>(anode);
 
@@ -1059,7 +1059,7 @@ cout <<"AbstractDCManager::configureMap"<< endl;
                 nodeMod = getParentModule()->getSubmodule(node->getName(), j);
                // nodeMod = getParentModule()->getSubmodule(node->getFullPath().c_str(),j);
                 if (nodeMod != NULL){
-                    cout <<"nodemod---->"<<nodeMod->getFullName()<<endl;
+           //         cout <<"nodemod---->"<<nodeMod->getFullName()<<endl;
 
                     // Obtain the ip parameter
                     nodeip = nodeMod->par("ip").stringValue();

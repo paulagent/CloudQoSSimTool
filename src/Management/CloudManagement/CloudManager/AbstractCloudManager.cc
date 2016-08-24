@@ -186,13 +186,13 @@ void AbstractCloudManager::initManager(int totalNodes) {
                 nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
                 if (nodeMod)
                  {
-             cout<<"nodeMod->getFullName()--->"<<nodeMod->getFullName()<< endl;
-             cout<<"nodeMod->getFullPath()--->"<< nodeMod->getFullPath()<< endl;
-             cout << "if--->just test---->" << nodeName.c_str()<<endl;
+    //         cout<<"nodeMod->getFullName()--->"<<nodeMod->getFullName()<< endl;
+    //         cout<<"nodeMod->getFullPath()--->"<< nodeMod->getFullPath()<< endl;
+    //         cout << "if--->just test---->" << nodeName.c_str()<<endl;
                  }
                  else
                  {
-                     cout << "else --->just test---->" << nodeName.c_str()<<endl;
+          //           cout << "else --->just test---->" << nodeName.c_str()<<endl;
 
                      nodeMod =getParentModule()->getParentModule()->getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
 
@@ -298,7 +298,7 @@ void AbstractCloudManager::initManager(int totalNodes) {
                 }
 
                 machine = check_and_cast<Machine*>(nodeChecked);
-                cout << "MODULE[AbstractCloudManager::initManager]:machine--->"<< machine->getFullName()<<endl;
+         //       cout << "MODULE[AbstractCloudManager::initManager]:machine--->"<< machine->getFullName()<<endl;
                 hetNodeSet->initMachine(machine);
                 totalNodes++;
             }
@@ -337,7 +337,6 @@ void AbstractCloudManager::initManager(int totalNodes) {
                                }*/
 
                 nodeChecked = check_and_cast<Node*>(nodeMod);
-                cout << "nodeChecked"<< nodeChecked->getFullName()<<endl;
 
                 nodeChecked->initNode();
 
@@ -524,11 +523,11 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             //it tries to cast the pointer via dynamic_cast,
             //and if it fails it stops the simulation with an error message
             cModule* vmSet1 = getParentModule()->getSubmodule("vmSet");
-            cout << "vmSet1--->"<<vmSet1->getFullName()<<endl;
+          //  cout << "vmSet1--->"<<vmSet1->getFullName()<<endl;
             vmImage = vmSet1->getSubmodule("vmImage", 0);
             if (vmImage)
             {
-                cout << endl<<"AbstractCloudManager::request_start_vm--->vmImage memory--->" <<vmImage->par("memorySize_MB").longValue()<<endl;
+             //   cout << endl<<"AbstractCloudManager::request_start_vm--->vmImage memory--->" <<vmImage->par("memorySize_MB").longValue()<<endl;
             }
             else
             {
@@ -536,7 +535,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
              //   vmImage = vmSet2->getSubmodule("vmImage", j);
             //    vmImage = vmSet1->getModuleByPath(RR);
              //   cout << endl<<"AbstractCloudManager::request_start_vm--->vmImage memory--->" <<vmImage->par("memorySize_MB").longValue()<<endl;
-            cout << "------------------------------error------------------------------"<<endl;
+          //  cout << "------------------------------error------------------------------"<<endl;
 
             }
             cModule* vmImage2 = getSubmodule("vmImage");
@@ -615,12 +614,12 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 //        "MODULE[AbstractCloudManager::request_start_vm] -----> %s \n",
                 //        req->getSelectionType(0).c_str());
                 // uvic add change vm to vm2
-                cout << "MODULE[AbstractCloudManager:before call create_VM "
-                        << (vm2 != NULL) << endl;
+           //     cout << "MODULE[AbstractCloudManager:before call create_VM "
+           //             << (vm2 != NULL) << endl;
                 vmNew = create_VM(vm2, req->getSelectionType(0).c_str(),
                         nodeVL->getHypervisor());
-                cout << "MODULE[AbstractCloudManager:after call create_VM"
-                        << endl;
+            //    cout << "MODULE[AbstractCloudManager:after call create_VM"
+           //             << endl;
                 vmNew->setUid(req->getUid());
 
                 vmName << req->getSelectionType(0).c_str() << ":u"
@@ -655,12 +654,12 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
 
                 runVM.push_back(started_VM);
 
-                cout
-                        << "---------------------------------AbstractCloudManager::request_start_vm------------------------------------------------------------------------"
-                        << endl;
-                cout
-                        << "---------------------------------AbstractCloudManager::request_start_vm------------------------------------------------------------------------"
-                        << endl;
+            //    cout
+            //            << "---------------------------------AbstractCloudManager::request_start_vm------------------------------------------------------------------------"
+            //            << endl;
+            //    cout
+            //            << "---------------------------------AbstractCloudManager::request_start_vm------------------------------------------------------------------------"
+            //            << endl;
 
               //  cout
                 //        << "Send req to start docker  from start new vm to the end of the queue"
@@ -700,9 +699,9 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
         }
         if (!notEnoughResources) {
             req->eraseSelectionType(i);
-            cout
-                    << "AbstractCloudManager::request_start_vm -->check notEnoughResources is false 1 "
-                    << endl;
+          //  cout
+          //          << "AbstractCloudManager::request_start_vm -->check notEnoughResources is false 1 "
+          //          << endl;
         }
     }
     // Send all attendeed requests
@@ -711,9 +710,9 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
 
         // At least one vm has been allocated
         if (attendedRequest_vms.size() > 0) {
-            cout
-                    << "AbstractCloudManager::request_start_vm -->check notEnoughResources is false 2 "
-                    << endl;
+         //   cout
+         //          << "AbstractCloudManager::request_start_vm -->check notEnoughResources is false 2 "
+         //           << endl;
             attendedRequest->setState(REQUEST_PENDING);
             user = getUserByModuleID(req->getUid());
             // uvic this could be a problem if we pass an RequestVM instance instead of AbstractRequest
@@ -725,9 +724,9 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
     }
     // All the request has been allocated.
     else {
-        cout
-                << "AbstractCloudManager::request_start_vm -->check attendedRequest_vms.size() <= 0------------ All the request has been allocated."
-                << endl;
+    //    cout
+     //           << "AbstractCloudManager::request_start_vm -->check attendedRequest_vms.size() <= 0------------ All the request has been allocated."
+     //           << endl;
         attendedRequest->setState(REQUEST_SUCCESS);
         //  cout << "AbstractCloudManager::request_start_vm -->1"<< endl;
         user = getUserByModuleID(req->getUid());
@@ -798,18 +797,18 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
         int id = vm->getId();
         for (int k = 0; k < (int) runVM.size(); ++k) {
             if (runVM.at(k)->vm->getId() == id) {
-                cout
-                        << "AbstractCloudManager::request_shutdown_vm-----> if vm job finishes before time slice elapse"
-                        << endl;
+             //   cout
+              //          << "AbstractCloudManager::request_shutdown_vm-----> if vm job finishes before time slice elapse"
+              //          << endl;
 
                 runVM.erase(runVM.begin() + k);
             }
         }
         // Delete the first VM and proceed if exists any one.
         req->eraseVM(0);
-        cout
-                << "AbstractCloudManager::request_shutdown_vm-----> Delete the first VM and proceed if exists any one. ---->"
-                << endl;
+       // cout
+       //         << "AbstractCloudManager::request_shutdown_vm-----> Delete the first VM and proceed if exists any one. ---->"
+       //         << endl;
 
         printf(
                 "\n Method[Shutdown_VM]: -------> VM %s has added to pending shutdown queue\n",
@@ -823,6 +822,9 @@ void AbstractCloudManager::linkVM(AbstractNode* node, VM* vm) {
     // link the node place to the base vm
 
     linkVMInternals(node, vm, false);
+    for (int k = 0; k < vm->gateCount(); k++) {
+         cout << "AbstractCloudManager::linkVM---> VM GATES--->"<<  vm->getGateNames().at(k)<<endl;
+       }
 
     vm->changeState(MACHINE_STATE_OFF);
     vm->setPendingOperation(NOT_PENDING_OPS);
@@ -866,34 +868,34 @@ void AbstractCloudManager::closeVMConnections(vector<AbstractNode*> nodes,
             new AbstractCloudManager::PendingConnectionDeletion();
     pendingConnectionUnit->uId = vm->getUid();
     pendingConnectionUnit->pId = vm->getPid();
-    cout
-            << "AbstractCloudManager::closeVMConnections----->pendingConnectionUnit->uId = vm->getUid()-------->"
-            << pendingConnectionUnit->uId << endl;
+  //  cout
+  //          << "AbstractCloudManager::closeVMConnections----->pendingConnectionUnit->uId = vm->getUid()-------->"
+  //          << pendingConnectionUnit->uId << endl;
 
-    cout
-            << "AbstractCloudManager::closeVMConnections----->pendingConnectionUnit->pId = vm->getPid()-------->"
-            << pendingConnectionUnit->pId << endl;
+  //  cout
+  //          << "AbstractCloudManager::closeVMConnections----->pendingConnectionUnit->pId = vm->getPid()-------->"
+  //          << pendingConnectionUnit->pId << endl;
 
     // The remote nodes and the local.
     pendingConnectionUnit->connectionsQuantity = nodes.size();
-    cout
-            << "AbstractCloudManager::closeVMConnections----->pendingConnectionUnit->connectionsQuantity-------->"
-            << pendingConnectionUnit->connectionsQuantity << endl;
+ //   cout
+  //          << "AbstractCloudManager::closeVMConnections----->pendingConnectionUnit->connectionsQuantity-------->"
+  //          << pendingConnectionUnit->connectionsQuantity << endl;
 
     // Insert into the pendingRemoteStorageDeletion vector
 
     connectionsDeletion.push_back(pendingConnectionUnit);
-    cout
-            << "AbstractCloudManager::closeVMConnections-----> Insert into the connectionsDeletion vector"
-            << endl;
+ //   cout
+  //          << "AbstractCloudManager::closeVMConnections-----> Insert into the connectionsDeletion vector"
+   //         << endl;
 
     // The vm has remote storage
 
     if (nodes.size() != 0) {
         for (i = 0; i < nodes.size(); i++) {
-            cout
-                    << "AbstractCloudManager::closeVMConnections-----> The vm has remote storage"
-                    << endl;
+       ///     cout
+       //             << "AbstractCloudManager::closeVMConnections-----> The vm has remote storage"
+        //            << endl;
 
             node = dynamic_cast<NodeVL*>((*(nodes.begin() + i)));
 
@@ -923,17 +925,17 @@ VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
 
     // Here the kind of module is taken to create the module as image..
     vmPath << vmImage->getNedTypeName();
-    printf(
-            "\n AbstractCloudManager::create_VM---->getNedTypeName from create vm ---->%s \n",
-            vmPath.str().c_str());
+  //  printf(
+  //          "\n AbstractCloudManager::create_VM---->getNedTypeName from create vm ---->%s \n",
+  //          vmPath.str().c_str());
 
     //create the vm module
     cModuleType *modVMType = cModuleType::get(vmPath.str().c_str());
 
     //I create the VM out of the module.
     cloneVm = modVMType->create(vmImage->getTypeName().c_str(), parent);
-    cout << "AbstractCloudManager::create_VM vmImage->getTypeName().c_str()"
-            << vmImage->getTypeName().c_str() << endl;
+ //   cout << "AbstractCloudManager::create_VM vmImage->getTypeName().c_str()"
+ //           << vmImage->getTypeName().c_str() << endl;
     //configure the main parameters
     numParameters = vmImage->getNumParams();
 
@@ -958,10 +960,10 @@ VM* AbstractCloudManager::create_VM(VM* vmImage, string vmName,
 
     vm->callInitialize();
     vm->setFreeMemory(cloneVm->par("memorySize_MB").doubleValue());
-    cout << "AbstractCloudManager::create_VM----vm meme" << vm->getFreeMemory()
-            << endl;
-    cout << "AbstractCloudManager::create_VM----vm cores" << vm->getNumCores()
-            << endl;
+   // cout << "AbstractCloudManager::create_VM----vm meme" << vm->getFreeMemory()
+  //          << endl;
+  //  cout << "AbstractCloudManager::create_VM----vm cores" << vm->getNumCores()
+  //          << endl;
 
     return vm;
 }
