@@ -25,7 +25,16 @@ void NetworkService::initialize(){
 	    fromNetManagerGate = gate ("fromNetManager");
 	    fromNetTCPGate = gate ("fromNetTCP");
 	    toNetManagerGate = gate ("toNetManager");
-	    toNetTCPGate = gate ("toNetTCP");	    
+	    toNetTCPGate = gate ("toNetTCP");
+
+	    // Init the id from the node at position 0
+	   /* nodeGate = 0;
+	    toNetTCPGM = new cGateManager(this);
+	    fromNetTCPGM = new cGateManager(this);
+	    toVMTCP = gate("toVMTCP");
+	    fromVMTCP = gate("fromVMTCP");
+	    toNetTCPGM->linkGate("toVMTCP", nodeGate);
+	    fromNetTCPGM->linkGate("fromVMTCP",nodeGate);*/
 	    
 	    // Service objects
 	    clientTCP_Services = new TCP_ClientSideService (localIP, toNetTCPGate, this);

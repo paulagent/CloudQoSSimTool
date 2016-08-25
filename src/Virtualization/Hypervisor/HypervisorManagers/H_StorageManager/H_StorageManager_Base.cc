@@ -432,7 +432,7 @@ int H_StorageManager_Base::getCellGate(int uId, int pId){
 
 void H_StorageManager_Base::setVM (cGate* oGate, cGate* iGate, int uId, int pId, int requestedStorageGB){
 
-
+cout <<"H_StorageManager_Base::setVM" <<endl;
     cModule* cell;
 
     cell = createStorageCell(uId, pId, requestedStorageGB);

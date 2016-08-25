@@ -59,10 +59,15 @@ module VM like IVM
         // network 
         input fromNodeNet@loose;
         output toNodeNet@loose;
+        // vm network connect to hyprvisor netManager or network service component.
+         input fromNetTCP@loose;
+        output toNeTCPt@loose;
         
         // to docker
         input fromDaemon@loose;
         output toDaemon@loose;
          
  	connections allowunconnected:
+ 	    
+ 	    
 }

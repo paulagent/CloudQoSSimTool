@@ -23,7 +23,7 @@ int cGateManager::isGateEmpty(int index){
 
 void cGateManager::linkGate(string gateName, int index){
 
-
+std::cout << "cGateManager::linkGate gateName--->" <<gateName <<  endl;
         // If the index requested to link is 2 positions less than size
         if ((int)gates.size() < index)
             throw cRuntimeError("gateData::linkGate->gate position %i is greater than the gates size\n", index);

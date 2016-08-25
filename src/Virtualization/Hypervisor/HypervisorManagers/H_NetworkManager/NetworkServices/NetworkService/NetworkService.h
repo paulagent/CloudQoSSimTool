@@ -29,7 +29,7 @@ class NetworkService : public HWEnergyInterface{
 
 
 	protected:	
-		
+    int nodeGate;
 		/** Local IP address */
 		string localIP;
 										
@@ -51,8 +51,15 @@ class NetworkService : public HWEnergyInterface{
 	    /** Output gate to Network (TCP) */
 	    cGate* toNetTCPGate;	
 	    
+	    cGate* fromVMTCP;
+
+	    cGate* toVMTCP;
+
 	    /** Node state */
 	    string nodeState;
+
+	    cGateManager* toNetTCPGM;
+	    cGateManager* fromNetTCPGM;
 
         vector <icancloud_Message*> sm_vector;
         int lastOp;
