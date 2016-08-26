@@ -82,7 +82,7 @@ void NodeVL::linkVM (cGate** iGateCPU,cGate** oGateCPU,
         int numCores, string virtualIP,  int vmMemory, int vmStorage, int uId, int pId){
 
     VMID* vmIdentifier;
-
+cout << "NodeVL::linkVM"<< endl;
     vmIdentifier = new VMID();
     vmIdentifier->initialize(uId,pId);
     instancedVMs.insert(instancedVMs.end(), vmIdentifier);

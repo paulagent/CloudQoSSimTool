@@ -8,7 +8,7 @@ CPUcore::~CPUcore(){
 }
 
 void CPUcore::initialize(int stage){
-cout <<"CPUcore::initialize" <<endl;
+//cout <<"CPUcore::initialize" <<endl;
     if (stage != 2)
         ICore::initialize(stage);
     else
