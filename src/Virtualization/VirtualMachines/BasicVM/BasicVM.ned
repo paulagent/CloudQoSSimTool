@@ -29,10 +29,10 @@ module BasicVM extends VM like IVM
         @loose;
         int numTcpApps = default(1);  // no of TCP apps. Specify the app types in INI file with tcpApp[0..1].typename="TCPEchoApp" syntax
     submodules:
-         tcpApp[numTcpApps]: <> like ITCPApp {
-            parameters:
-                @display("p=256,110,row,60");
-        }
+//        tcpApp[numTcpApps]: <> like ITCPApp {
+//            parameters:
+//                @display("p=283,99,row,60");
+//        }
         osModule: <osModuleType> like IOperatingSystem {
             parameters:
                 numCPUs = numCores;
@@ -64,10 +64,10 @@ module BasicVM extends VM like IVM
     connections allowunconnected:
 
  		// Connections between CPU and Operating System
- for i=0..numTcpApps-1 {
-            tcpApp[i].tcpOut --> osModule.fromNet_TCP; ///Wrong
-            tcpApp[i].tcpIn <--   osModule.toNet_TCP;
-        }
+//        for i=0..numTcpApps-1 {
+//            tcpApp[i].tcpOut --> osModule.fromNet_TCP; ///Wrong
+//            tcpApp[i].tcpIn <-- osModule.toNet_TCP;
+//        }
 
         for i=0..numCores-1 {
             fromNodeCPU[i] --> osModule.fromCPU[i];

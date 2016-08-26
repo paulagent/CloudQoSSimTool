@@ -43,7 +43,7 @@ module NodeVL like INode
         int numExtInterfaces = default(0);														// Number of external interfaces
         int numNetworkInterfaces = default(1);													// As default, 1 network interface
         string tcpType = default(firstAvailable("TCP", "TCP_lwIP", "TCP_NSC", "TCP_None"));   	// Type of TCP protocol     
-        bool IPForward = default(false);														// IP Forward        
+        bool IPForward = default(true);														// IP Forward        
         string ip = default("");															// Node's IP
         string routingFile = default("");														// Routing File
         int namid = default(-1);																// Nam ID

@@ -15,6 +15,8 @@
 
 package icancloud.simulations.TCP_NodeVL;
 import icancloud.src.Architecture.Aggregation.Rack;
+import inet.nodes.inet.Router;
+import inet.world.httptools.HttpController;
 import ned.DatarateChannel;
 import inet.nodes.ethernet.EtherSwitch;
 import icancloud.src.Architecture.Node.NodeVL.NodeVL;
@@ -67,10 +69,10 @@ network TCP_NodeVL
         // ---------------------------------------------------------------
         configurator: IPv4NetworkConfigurator {
             parameters:
-                config = xml("<config><interface hosts='rc_0_Rack_A_16*' address='192.168.0.x' netmask='255.255.255.252'/><interface hosts='rc_0_Rack_B_16*' address='192.168.1.x' netmask='255.255.255.252'/><interface hosts='*' address='10.x.x.x' netmask='255.x.x.0'/></config>");
+                config = xml("<config><interface hosts='*' address='192.168.3.x' netmask='255.255.x.x'/></config>");
                 @display("p=689,48");
         }
-
+        //<interface hosts='rc_0_Rack_A_16*' address='192.168.0.x' netmask='255.255.255.252'/><interface hosts='rc_0_Rack_B_16*' address='192.168.1.x' netmask='255.255.255.252'/>
         // ---------------------------------------------------------------
         //    Network Manager
         // ---------------------------------------------------------------
@@ -100,23 +102,23 @@ network TCP_NodeVL
         // ---------------------------------------------------------------
         //   Definition of switches
         // ---------------------------------------------------------------
-        switch_0: EtherSwitch {
-            @display("p=177,253");
-        }
-        rackSwitch_0: EtherSwitch {
-            @display("p=291,164");
-        }
-        rackSwitch_1: EtherSwitch {
-            @display("p=129,170");
-        }
-        // ---------------------------------------------------------------
+        //        switch_0: EtherSwitch {
+        //            @display("p=198,329");
+        //        }
+        //        rackSwitch_0: EtherSwitch {
+        //            @display("p=97,144");
+        //        }
+        //        rackSwitch_1: EtherSwitch {
+        //            @display("p=294,144");
+        //        }
+        //        // ---------------------------------------------------------------
         //   Definition of Computing Nodes
         // ---------------------------------------------------------------
         // ---------------------------------------------------------------
         //   Definition of Storage Nodes
         // ---------------------------------------------------------------
         ns_0_NodeStorage_C: NodeVL {
-            @display("p=59,330");
+            @display("p=188,363");
         }
         //------------------------------------------------------
         // Modules that defines the topology and the set of VMs 
@@ -127,11 +129,20 @@ network TCP_NodeVL
         topology: Topology {
             @display("p=513,363");
         }
-        rc_0_Rack_A_16[2]: NodeVL {
-            @display("p=120,48");
+        rc_0_Rack_A_16[1]: NodeVL {
+            @display("p=75,48");
         }
-        rc_0_Rack_B_16[2]: NodeVL {
-            @display("p=322,50");
+        rc_1_Rack_B_16[1]: NodeVL {
+            @display("p=335,48");
+        }
+        router: Router {
+            @display("p=113,171");
+        }
+        router1: Router {
+            @display("p=249,175");
+        }
+        router2: Router {
+            @display("p=188,261");
         }
     // ---------------------------------------------------------------
     //   Connections section
@@ -139,13 +150,16 @@ network TCP_NodeVL
     connections allowunconnected:
 
         // Connections for rack rc_0_Rack_A_16
-        for i=0..1 {
-            rc_0_Rack_A_16[i].ethg++ <--> RackChannel_0_TCP_NodeVL <--> rackSwitch_1.ethg++;
-        }
-        for i=0..1 {
-            rc_0_Rack_B_16[i].ethg++ <--> RackChannel_0_TCP_NodeVL <--> rackSwitch_0.ethg++;
-        }
-        rackSwitch_0.ethg++ <--> Channel_0_TCP_NodeVL <--> switch_0.ethg++;
-        ns_0_NodeStorage_C.ethg++ <--> Channel_1_TCP_NodeVL <--> switch_0.ethg++;
-        rackSwitch_1.ethg++ <--> Channel_1_TCP_NodeVL <--> switch_0.ethg++;
+        
+            rc_0_Rack_A_16[0].pppg++ <--> RackChannel_0_TCP_NodeVL <--> router.pppg++;
+        
+        
+            rc_1_Rack_B_16[0].pppg++ <--> RackChannel_0_TCP_NodeVL <--> router1.pppg++;
+        
+
+        router.pppg++ <--> Channel_0_TCP_NodeVL <--> router2.pppg++;
+        router2.pppg++ <--> Channel_0_TCP_NodeVL <--> ns_0_NodeStorage_C.pppg++;
+  
+        router1.pppg++ <--> Channel_1_TCP_NodeVL <--> router2.pppg++;
+        router2.pppg++ <--> Channel_1_TCP_NodeVL <--> ns_0_NodeStorage_C.pppg++;
 }
