@@ -7,51 +7,51 @@
 #define HPC_CHECKPOINT_WRITTING 2
 #define HPC_CHECKPOINT_WRITE_PARTS 3
 
-Define_Module(ApplicationCheckpoint);
+//Define_Module(ApplicationCheckpoint);
 
 ApplicationCheckpoint::~ApplicationCheckpoint(){
 }
 
 void ApplicationCheckpoint::initialize(){
 
-	std::ostringstream osStream;	
-	
-		// Init number of worker processes per master process
-		workersSet = 0;
-
-		// Init the super-class
-		MPI_Base::initialize();	
-		
-		// Set the moduleIdName
-		osStream << "ApplicationCheckpoint." << getId();
-		moduleIdName = osStream.str();
-		
-		// Get parameters from module
-		numIterations = par ("numIterations");
-		dataToWrite_KB = par ("dataToWrite_KB");
-		sliceCPU = par ("sliceCPU");
-		currentIteration = 1;
-		currentOffset = 0;
-		workersSet = 0;
-		
-		totalIO = ioStart = ioEnd = 0.0;
-		totalCPU = cpuStart = cpuEnd = 0.0;
-
-		sprintf (outFileName, "%s_%d.dat", APP_HPC_RESULTS_FILENAME, myRank);
-
-		// Init state
-		currentState = HPC_CHECKPOINT_INIT;
-				
-		// Show info?		
-		showStartedModule (" %s ", mpiCommunicationsToString().c_str());
-
-		// Assign names to the results
-		jobResults->newJobResultSet("moduleIdName");
-		jobResults->newJobResultSet("Rank");
-		jobResults->newJobResultSet("totalIO");
-		jobResults->newJobResultSet("totalCPU");
-		jobResults->newJobResultSet("Real run-time");
-		jobResults->newJobResultSet("Simulation time");
+//	std::ostringstream osStream;
+//
+//		// Init number of worker processes per master process
+//		workersSet = 0;
+//
+//		// Init the super-class
+//		MPI_Base::initialize();
+//
+//		// Set the moduleIdName
+//	//	osStream << "ApplicationCheckpoint." << getId();
+//		moduleIdName = osStream.str();
+//
+//		// Get parameters from module
+//		numIterations = par ("numIterations");
+//		dataToWrite_KB = par ("dataToWrite_KB");
+//		sliceCPU = par ("sliceCPU");
+//		currentIteration = 1;
+//		currentOffset = 0;
+//		workersSet = 0;
+//
+//		totalIO = ioStart = ioEnd = 0.0;
+//		totalCPU = cpuStart = cpuEnd = 0.0;
+//
+//		sprintf (outFileName, "%s_%d.dat", APP_HPC_RESULTS_FILENAME, myRank);
+//
+//		// Init state
+//		currentState = HPC_CHECKPOINT_INIT;
+//
+//		// Show info?
+//		showStartedModule (" %s ", mpiCommunicationsToString().c_str());
+//
+//		// Assign names to the results
+//		jobResults->newJobResultSet("moduleIdName");
+//		jobResults->newJobResultSet("Rank");
+//		jobResults->newJobResultSet("totalIO");
+//		jobResults->newJobResultSet("totalCPU");
+//		jobResults->newJobResultSet("Real run-time");
+//		jobResults->newJobResultSet("Simulation time");
 }
 
 void ApplicationCheckpoint::finish(){
@@ -66,7 +66,7 @@ void ApplicationCheckpoint::processSelfMessage (cMessage *msg){
            if (!strcmp (msg->getName(), SM_WAIT_TO_EXECUTE.c_str())){
 
                    // Delete msg!
-                   cancelAndDelete (msg);
+               //    cancelAndDelete (msg);
 
                    // Starting time...
                    simStartTime = simTime();
@@ -80,7 +80,7 @@ void ApplicationCheckpoint::processSelfMessage (cMessage *msg){
            else if (!strcmp (msg->getName(), SM_WAIT_TO_CONNECT.c_str())){
 
                    // Delete message
-                   cancelAndDelete (msg);
+               //    cancelAndDelete (msg);
 
                    // Establish all connections...
                    establishAllConnections();
@@ -442,7 +442,7 @@ void ApplicationCheckpoint::showResults (){
 
 	// Create SM_WAIT_TO_SCHEDULER message for delaying the execution of this application
 		timeoutEvent = new cMessage (SM_WAIT_TO_SCHEDULER.c_str());
-		scheduleAt (simTime(), timeoutEvent);
+		//scheduleAt (simTime(), timeoutEvent);
 
 }
 

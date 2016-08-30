@@ -107,7 +107,7 @@ void AbstractCloudManager::initialize() {
 
 void AbstractCloudManager::initManager(int totalNodes) {
 
-    cout << "AbstractCloudManager::initManager(int totalNodes)"<< endl;
+
     migrationActive = false;
 
     // Define.
@@ -126,8 +126,7 @@ void AbstractCloudManager::initManager(int totalNodes) {
     HeterogeneousSet* hetNodeSet;
 
     // Define auxiliar variables to link the module to the object
-  //  cModule* nodeMod1;
-  //  cModule* nodeMod2;
+
     cModule* nodeMod;
     string nodeName;
     Node* nodeChecked;
@@ -137,7 +136,7 @@ void AbstractCloudManager::initManager(int totalNodes) {
 
     if (!isCfgLoaded()) {
             printf(
-                 "\n MODULE[AbstractCloudManager::initManager]: cfg is not loaded ");
+                 "\n MODULE[AbstractCloudManager::initManager]: cfg is not loaded \n ");
 
         // Initialize structures and parameters
         nodesMap = new MachinesMap();
@@ -200,6 +199,7 @@ void AbstractCloudManager::initManager(int totalNodes) {
                 nodeChecked = check_and_cast<Node*>(nodeMod);
 
                 nodeChecked->initNode();
+
 
                 if ((memorization) && (!componentsLoaded)) {
                     componentsLoaded = true;
@@ -627,6 +627,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 cout << "NEW VM  ------->  :u" << req->getUid() << ":p"
                         << vmNew->getPid() << endl;
 
+
                 vmNew->cModule::setName(vmName.str().c_str());
                 vmNew->setName(vmName.str().c_str());
                 // vmNew-> t.start
@@ -649,6 +650,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 RunningVM* started_VM = new RunningVM();
                 //    started_VM=null;
                 started_VM->vm = vmNew;
+                cout<<"Started Vm IP:"<<started_VM->vm->getIP()<<endl;
                 started_VM->start_time = now;
                 started_VM->end_time = now + 200000; //clocks per secs
                 started_VM->userID = vmNew->getUid();

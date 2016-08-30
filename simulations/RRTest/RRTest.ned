@@ -14,15 +14,19 @@
 // 
 
 package icancloud.simulations.RRTest;
+import icancloud.src.Management.NetworkManager.NetworkManager;
 import icancloud.src.Architecture.Aggregation.Rack;
 import icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_NetworkManager.NetworkServices.NetworkService.NetworkService;
 import icancloud.src.Virtualization.VirtualMachines.SetDefinition.DockerSet;
 import icancloud.src.Virtualization.VirtualMachines.VMRequestManager.VMRequestManager;
+
+import inet.transport.tcp.TCP;
+
 import ned.DatarateChannel;
 import inet.nodes.ethernet.EtherSwitch;
 import icancloud.src.Architecture.Node.NodeVL.NodeVL;
 import icancloud.src.Management.CloudManagement.ResourcesProvisioning.**.*;
-import icancloud.src.Management.NetworkManager.NetworkManager;
+
 import icancloud.src.Management.Topology.Topology;
 
 import icancloud.src.Users.UserGenerator.UserGenerator;
