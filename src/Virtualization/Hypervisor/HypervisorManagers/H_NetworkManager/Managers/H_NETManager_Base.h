@@ -29,6 +29,7 @@ protected:
 
 		cGateManager* fromVMNet;
 		cGateManager* toVMNet;
+		//added by bing try to connect from app to tcp
 		cGateManager* fromVMTCP;
 		cGateManager* toVMTCP;
 

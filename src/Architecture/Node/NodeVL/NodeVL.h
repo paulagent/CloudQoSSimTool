@@ -42,7 +42,7 @@ public:
 		 * Link VMs has to be invoked when an user request petition is attended.
 		 */
 		void linkVM  (cGate** iGateCPU,cGate** oGateCPU, cGate* iGateMemI,cGate* oGateMemI,cGate* iGateMemO,
-		              cGate* oGateMemO, cGate* iGateNet,cGate* oGateNet,cGate* iGateStorage,cGate* oGateStorage,
+		              cGate* oGateMemO, cGate* iGateNet,cGate* oGateNet,cGate* oTcp, cGate* iTcp,cGate* iGateStorage,cGate* oGateStorage,
                       int numCores, string virtualIP, int vmMemory, int vmStorage, int uId, int pId);
 
 		/*

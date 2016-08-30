@@ -39,7 +39,7 @@ public:
 
     void setVM (cGate** iGateCPU, cGate** oGateCPU, cGate* iGateMemI,
                 cGate* oGateMemI, cGate* iGateMemO, cGate* oGateMemO, cGate* iGateNet,
-                cGate* oGateNet, cGate* iGateStorage, cGate* oGateStorage, int numCores, string virtualIP,
+                cGate* oGateNet, cGate* oTcp, cGate* iTcp,cGate* iGateStorage, cGate* oGateStorage, int numCores, string virtualIP,
                 int requestedMemoryKB, int requestedStorageKB, int uId, int pId);
 
     void freeResources (int pId, int uId);

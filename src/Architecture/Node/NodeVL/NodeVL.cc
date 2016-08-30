@@ -77,7 +77,7 @@ void NodeVL::linkVM (cGate** iGateCPU,cGate** oGateCPU,
         cGate* oGateMemI,
         cGate* iGateMemO,
         cGate* oGateMemO,
-        cGate* iGateNet,cGate* oGateNet,
+        cGate* iGateNet,cGate* oGateNet, cGate* oTcp, cGate* iTcp,
         cGate* iGateStorage,cGate* oGateStorage,
         int numCores, string virtualIP,  int vmMemory, int vmStorage, int uId, int pId){
 
@@ -87,7 +87,7 @@ void NodeVL::linkVM (cGate** iGateCPU,cGate** oGateCPU,
     vmIdentifier->initialize(uId,pId);
     instancedVMs.insert(instancedVMs.end(), vmIdentifier);
 
-        hypervisor->setVM(iGateCPU,oGateCPU,iGateMemI,oGateMemI,iGateMemO,oGateMemO,iGateNet,oGateNet,iGateStorage,oGateStorage, numCores, virtualIP, vmMemory, vmStorage, uId,pId);
+    hypervisor->setVM(iGateCPU,oGateCPU,iGateMemI,oGateMemI,iGateMemO,oGateMemO,iGateNet,oGateNet,oTcp,iTcp,iGateStorage,oGateStorage, numCores, virtualIP, vmMemory, vmStorage, uId,pId);
 
 }
 

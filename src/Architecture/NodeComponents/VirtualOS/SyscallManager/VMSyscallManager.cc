@@ -46,8 +46,9 @@ void VMSyscallManager::processRequestMessage (icancloud_Message *sm){
             for (cModule::SubmoduleIterator i(getParentModule()); !i.end() && !found; i++)
                  {
                      cModule* currentApp = i();
+                     // if submod() is in the same vector as this module
+                     if (strcmp(currentApp->getFullName(), "app" ) == 0)
 
-                     if (strcmp(currentApp->getFullName(), "app" ) == 0) // if submod() is in the same vector as this module
                      {
 
                          if (currentApp->hasPar("myRank")){
@@ -81,7 +82,7 @@ void VMSyscallManager::processRequestMessage (icancloud_Message *sm){
 		sendRequestMessage (sm, toAppGates->getGate(sm->getNextModuleIndex()));
 	}	
 	
-	// Msg cames from applications
+	// Msg came from applications
 	else{
 		
 		// I/O operation?
@@ -157,7 +158,7 @@ void VMSyscallManager::processRequestMessage (icancloud_Message *sm){
 		// Net operation?		
 		else if ((operation == SM_CREATE_CONNECTION) || (operation == SM_LISTEN_CONNECTION) ||
 				(operation == SM_SEND_DATA_NET)){
-
+		    cout <<"VMSyscallManager::processRequestMessage--->"  << sm->getFullName()<<endl;
 			sendRequestMessage (sm, toNetGate);			
 		}			
 
