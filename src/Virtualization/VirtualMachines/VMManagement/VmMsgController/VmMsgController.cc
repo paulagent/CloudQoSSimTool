@@ -86,7 +86,7 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
     cout << "UiD----->"<< Uid << endl;
 
 
-    if (Pid==-1  )
+    if (Pid==-1)
 
     {
         delete (msg);

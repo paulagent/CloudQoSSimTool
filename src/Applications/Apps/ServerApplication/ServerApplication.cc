@@ -63,6 +63,7 @@ void ServerApplication::startExecution (int pid){
     API_OS::startExecution(pid);
 	// Create SM_WAIT_TO_EXECUTE message for delaying the execution of this application
     // Initialize ..
+    Enter_Method_Silent();
     newIntervalEvent = new cMessage ("intervalEvent");
 	cMessage *waitToExecuteMsg = new cMessage (SM_WAIT_TO_EXECUTE.c_str());
 	scheduleAt (simTime()+startDelay, waitToExecuteMsg);
@@ -111,7 +112,7 @@ void ServerApplication::processSelfMessage (cMessage *msg){
 }
 
 void ServerApplication::processRequestMessage (icancloud_Message *sm){
-
+cout << "ServerApplication::processRequestMessage" <<endl;
 }
 
 void ServerApplication::processResponseMessage (icancloud_Message *sm){
@@ -146,7 +147,8 @@ void ServerApplication::processResponseMessage (icancloud_Message *sm){
 
 				// File not found!
 				else if (sm_io->getResult() == icancloud_FILE_NOT_FOUND){
-					osStream << "File not found!";					isError = true;
+					osStream << "File not found!";
+					isError = true;
 				}
 
 				// File not found!
@@ -217,7 +219,7 @@ void ServerApplication::processResponseMessage (icancloud_Message *sm){
 			else if (executeCPU){
 
 				// Execute CPU!
-				executeCPUrequest ();
+				executeCPUrequest();
 			}
 
 			// IO?

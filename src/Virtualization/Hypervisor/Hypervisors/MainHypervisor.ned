@@ -76,6 +76,8 @@ module MainHypervisor like IHypervisor
         input fromNodeNet;			// Input gate from Network (Ethernet TCP)
         output toNodeNet;			// Output gate to Network (Ethernet TCP)
 
+		input fromVMTCP[];
+		output toVMTCP[];
 
     submodules:
 
@@ -178,9 +180,6 @@ module MainHypervisor like IHypervisor
         	storageManager.toVMStorageServers++ --> toVMStorageServers++;
         }
         
-        netManager.fromVMNet++ <-- fromVMNet++;
-        netManager.toVMNet++ --> toVMNet++;
-        
 		// Connections between VM Memory and Node Memory
         memoryManager.fromNodeMemoryI <-- fromNodeMemoryI;
         memoryManager.fromNodeMemoryO <-- fromNodeMemoryO;
@@ -201,6 +200,10 @@ module MainHypervisor like IHypervisor
         // Connections between VM Network and Network Service
         netManager.fromNodeNet <-- networkService.toNetManager;
         netManager.toNodeNet --> networkService.fromNetManager;
+        
+        
+         netManager.fromVMNet++ <-- fromVMNet++;
+        netManager.toVMNet++ --> toVMNet++;
 
         // Connections between Network Service and Networks
         networkService.fromNetTCP <-- fromNodeNet;

@@ -55,13 +55,13 @@ void Hypervisor::handleMessage(cMessage* msg) {
 
 void Hypervisor::setVM(cGate** iGateCPU, cGate** oGateCPU, cGate* iGateMemI,
         cGate* oGateMemI, cGate* iGateMemO, cGate* oGateMemO, cGate* iGateNet,
-        cGate* oGateNet, cGate* iGateStorage, cGate* oGateStorage, int numCores,
+        cGate* oGateNet,cGate* oTcp, cGate* iTcp, cGate* iGateStorage, cGate* oGateStorage, int numCores,
         string virtualIP, int requestedMemoryKB, int requestedStorageKB,
         int uId, int pId) {
 
     cpuM->setVM(oGateCPU, iGateCPU, numCores, uId, pId);
-
-    netM->setVM(oGateNet, iGateNet, uId, pId, virtualIP, 1);
+//cGate* oTcp, cGate* iTcp
+    netM->setVM(oGateNet, iGateNet,oTcp,iTcp, uId, pId, virtualIP, 1);
 
     storageM->setVM(oGateStorage, iGateStorage, uId, pId, requestedStorageKB);
 

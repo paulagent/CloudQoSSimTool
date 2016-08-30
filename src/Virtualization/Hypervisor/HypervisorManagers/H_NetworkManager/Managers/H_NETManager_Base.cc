@@ -26,7 +26,7 @@ H_NETManager_Base::~H_NETManager_Base() {
 }
 
 void H_NETManager_Base::initialize() {
-
+cout << "H_NETManager_Base::initialize -->" <<endl;
 	icancloud_Base::initialize();
 
 	std::ostringstream osStream;
@@ -41,6 +41,9 @@ void H_NETManager_Base::initialize() {
 
     toNodeNet = NULL;
     fromNodeNet = NULL;
+    //addd by bing
+    fromVMTCP = NULL;
+        toVMTCP = NULL;
 
     fromHStorageManager = NULL;
     toHStorageManager = NULL;
@@ -58,6 +61,9 @@ void H_NETManager_Base::initialize() {
 		toVMNet = new cGateManager(this);
         fromVMNet = new cGateManager(this);
 
+        toVMTCP = new cGateManager(this);
+            fromVMTCP = new cGateManager(this);
+
         // Init the id from the node at position 0
         nodeGate = 0;
         toVMNet->linkGate("toVMNet", nodeGate);
@@ -67,6 +73,8 @@ void H_NETManager_Base::initialize() {
 
 		toNodeNet = gate ("toNodeNet");
 		fromNodeNet = gate ("fromNodeNet");
+
+
 
 		fromHStorageManager = gate ("fromHStorageManager");
 		toHStorageManager = gate ("toHStorageManager");
@@ -537,7 +545,8 @@ void H_NETManager_Base::checkPendingMessages(){
 
 }
 
-void H_NETManager_Base::setVM (cGate* oGate, cGate* iGate, int uId, int pId, string virtualIP, int requiredNetIf){
+void H_NETManager_Base::setVM (cGate* oGate, cGate* iGate,cGate* oTcp, cGate* iTcp,  int uId, int pId, string virtualIP, int requiredNetIf){
+    cout << "H_NETManager_Base::setVM :---> " <<endl;
 
 
     int idxToVM;
@@ -546,6 +555,7 @@ void H_NETManager_Base::setVM (cGate* oGate, cGate* iGate, int uId, int pId, str
     // Initialize control structure at node
         vmControl* control;
         control = new vmControl();
+
         control->gate = -1;
         control->uId = uId;
         control->pId = pId;
@@ -553,13 +563,30 @@ void H_NETManager_Base::setVM (cGate* oGate, cGate* iGate, int uId, int pId, str
 
     // Connect to output gates
         idxToVM = toVMNet->newGate("toVMNet");
+        // fromNodeNet
         toVMNet->connectOut(iGate,idxToVM);
         control->gate = idxToVM;
 
     // Connect to input gates
         idxFromVM = fromVMNet->newGate("fromVMNet");
+        //toNodeNet
         fromVMNet->connectIn(oGate,idxFromVM);
         control->gate = idxFromVM;
+// connect to networkservice added by bing try to connect to VMs dynamically
+
+        // Connect to output gates
+               idxToVM = toVMTCP->newGate("toVMTCP");
+               // fromNodeNet
+               toVMTCP->connectOut(iTcp,idxToVM);
+
+
+           // Connect to input gates
+               idxFromVM = fromVMTCP->newGate("fromVMTCP");
+               //toNodeNet
+               fromVMNet->connectIn(oTcp,idxFromVM);
+
+
+
 
         vms.push_back(control);
 

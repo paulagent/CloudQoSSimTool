@@ -63,8 +63,8 @@ module VmOperatingSystemModule like IOperatingSystem
             parameters:
                 @display("p=74,147");
             gates:
-                fromApps[50];
-                toApps[50];
+                fromApps[];
+                toApps[];
         }
 
         cpuScheduler: <cpuSchedulerType> like ICPU_Scheduler {
@@ -112,6 +112,7 @@ module VmOperatingSystemModule like IOperatingSystem
                 toOSApps[];
                 fromApps[];
                 toApps[];
+                
         }
 
         dockerDaemon: DockerDaemon {

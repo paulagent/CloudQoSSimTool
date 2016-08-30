@@ -8,8 +8,9 @@
 package icancloud.src.Applications.Apps.ServerApplication;
 
 import icancloud.src.Applications.Apps.IAPP;
+import inet.transport.TCP_None;
 
-simple ServerApplication like IAPP
+simple ServerApplication extends TCP_None like IAPP
 
 {
     parameters:

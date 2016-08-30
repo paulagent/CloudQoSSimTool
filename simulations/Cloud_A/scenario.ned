@@ -98,14 +98,14 @@ network Cloud_A
         //------------------------------------------------------
         vmSet: VmSet;
         topology: Topology;
-        rc_0_Rack_A_16[16]: NodeVL;
+        rc_0_Rack_A_16[6]: NodeVL;
     // ---------------------------------------------------------------
     //   Connections section
     // ---------------------------------------------------------------
     connections allowunconnected:
 
         // Connections for rack rc_0_Rack_A_16
-        for i=0..15 {
+        for i=0..5 {
             rc_0_Rack_A_16[i].ethg++ <--> RackChannel_0_Cloud_A <--> rackSwitch_0.ethg++;
         }
 

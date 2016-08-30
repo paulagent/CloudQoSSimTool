@@ -240,10 +240,11 @@ int H_MemoryManager_Base::setVM (cGate* oGateI, cGate* oGateO, cGate* iGateI, cG
     int idxToVMo;
     int idxFromVMi;
     int idxFromVMo;
-
+cout << "H_MemoryManager_Base::setVM" <<endl;
     // Initialize control structure at node
         vmControl* control;
         control = new vmControl();
+
         control->gate = -1;
         control->uId = uId;
         control->pId = pId;

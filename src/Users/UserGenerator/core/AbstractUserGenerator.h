@@ -65,7 +65,7 @@ protected:
         // Structures of jobs of user
             vector <jobSelection*> userJobSet;
 
-            // vm selected by user
+            // container selected by user
                struct containerSelection{
                    string appName;                         // Application Name
                    UserJob* job;                          // Job definition

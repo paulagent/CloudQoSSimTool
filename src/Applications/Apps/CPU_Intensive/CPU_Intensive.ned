@@ -11,8 +11,9 @@
 package icancloud.src.Applications.Apps.CPU_Intensive;
 
 import icancloud.src.Applications.Apps.IAPP;
+import inet.transport.TCP_None;
 
-simple CPU_Intensive like IAPP
+simple CPU_Intensive  like IAPP
 
 {
     parameters:
@@ -26,6 +27,9 @@ simple CPU_Intensive like IAPP
     gates:
         input fromOS @loose;			// Input gate from OS (Operating System)
         output toOS @loose;				// Output gate to OS (Operating System)
+       	
+      
+        
 }
 
 

@@ -29,6 +29,10 @@ protected:
 
 		cGateManager* fromVMNet;
 		cGateManager* toVMNet;
+		//added by bing try to connect from app to tcp
+		cGateManager* fromVMTCP;
+		cGateManager* toVMTCP;
+
 		cGate* fromNodeNet;
 		cGate* toNodeNet;
 
@@ -83,7 +87,7 @@ public:
         /*
          * This method sets the input and output gates from vm to the network manager
          */
-        void setVM(cGate* oGate, cGate* iGate, int uId, int pId, string virtualIP, int requiredNetIf);
+        void setVM(cGate* oGate, cGate* iGate,cGate* oTcp, cGate* iTcp, int uId, int pId, string virtualIP, int requiredNetIf);
 
         /*
          * This method delete the gates connected to the VM with id given as parameter

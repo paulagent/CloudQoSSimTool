@@ -984,6 +984,12 @@ void AbstractCloudManager::linkVMInternals(AbstractNode* node, VM* vm,
     cGate* fromNodeNet;
     cGate* fromNodeStorageSystem;
     cGate* toNodeStorageSystem;
+
+    //add by bing
+    cGate* toNetTCP;
+    cGate* fromNetTCP;
+
+
     NodeVL* nodeVL;
 
     // Init ..
@@ -1033,6 +1039,10 @@ void AbstractCloudManager::linkVMInternals(AbstractNode* node, VM* vm,
     fromNodeNet = NULL;
     fromNodeStorageSystem = NULL;
     toNodeStorageSystem = NULL;
+
+
+    toNetTCP = NULL;
+    fromNetTCP = NULL;
     toNodeCPU = new cGate*[vm->getNumCores()];
     fromNodeCPU = new cGate*[vm->getNumCores()];
     // Get VM the gates..
@@ -1051,6 +1061,11 @@ void AbstractCloudManager::linkVMInternals(AbstractNode* node, VM* vm,
     // Net
     fromNodeNet = vm->gate("fromNodeNet");
     toNodeNet = vm->gate("toNodeNet");
+    // add by bing how to get the gate from vm
+    //Todo
+    //toNetTCP = NULL;
+    //fromNetTCP = NULL;
+
 
     // Storage
     fromNodeStorageSystem = vm->gate("fromNodeStorageSystem", 0);
@@ -1058,7 +1073,7 @@ void AbstractCloudManager::linkVMInternals(AbstractNode* node, VM* vm,
 
     nodeVL->NodeVL::linkVM(fromNodeCPU, toNodeCPU, fromNodeMemoryI,
             toNodeMemoryI, fromNodeMemoryO, toNodeMemoryO, fromNodeNet,
-            toNodeNet, fromNodeStorageSystem, toNodeStorageSystem,
+            toNodeNet,fromNetTCP,fromNetTCP, fromNodeStorageSystem, toNodeStorageSystem,
             vm->getNumCores(), vm->getIP(), vm->getMemoryCapacity(),
             vm->getStorageCapacity(), vm->getUid(), vm->getPid());
 
