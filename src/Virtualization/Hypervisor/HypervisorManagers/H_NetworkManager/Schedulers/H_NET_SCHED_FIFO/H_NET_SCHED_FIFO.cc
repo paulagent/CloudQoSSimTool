@@ -62,6 +62,7 @@ void H_NET_SCHED_FIFO::schedulingNET(icancloud_Message *sm){
             userID = sm->getUid();
             vmID = sm->getPid();
             operation = sm->getOperation();
+            cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->  operation" << operation << endl;
 
             sm_close.clear();
 
@@ -97,11 +98,14 @@ void H_NET_SCHED_FIFO::schedulingNET(icancloud_Message *sm){
 
             if (operation == SM_LISTEN_CONNECTION) {
 
+                cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->   SM_LISTEN_CONNECTION" << endl;
+
                 localNetManager->manage_listen(sm);
                 sendRequestMessage(sm, toNodeNet);
 
             }
             else if (operation == SM_CREATE_CONNECTION){
+                cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->   SM_CREATE_CONNECTION" << endl;
 
                 decision = localNetManager->manage_createConnection(sm);
 

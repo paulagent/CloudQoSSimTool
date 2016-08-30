@@ -63,13 +63,13 @@ module VM like IVM
         // network 
         input fromNodeNet @loose;
         output toNodeNet @loose;
-
+		
+	//	input fromVMNet @loose;
+   //     output toVMNet @loose;
+      
         // to docker
         input fromDaemon @loose;
         output toDaemon @loose;
 
-    submodules:
-
-       
-    connections allowunconnected:
+    
 }

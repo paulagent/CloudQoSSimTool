@@ -140,7 +140,7 @@ void PortAddressTranslation::pat_createVM(int userID, int vmID, string vmIP) {
 
     // Search the user into the structure
     user = searchUser(userID);
-    //cout << "PortAddressTranslation::pat_createVM ---> userID--->" <<userID <<endl;
+    cout << "PortAddressTranslation::pat_createVM ---> userID--->" <<userID <<endl;
 
     // If the user does not exists, create it ..
     if (user == NULL) {

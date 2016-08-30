@@ -638,8 +638,10 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 //cout << "check LinkVM "<< endl;
 
                 linkVM(nodeVL, vmNew);
-
                 //uvic add
+
+
+
                 clock_t now = clock();
                 // simtime_t start_time;
                 // start_time=clock();
@@ -822,9 +824,9 @@ void AbstractCloudManager::linkVM(AbstractNode* node, VM* vm) {
     // link the node place to the base vm
 
     linkVMInternals(node, vm, false);
-    for (int k = 0; k < vm->gateCount(); k++) {
-         cout << "AbstractCloudManager::linkVM---> VM GATES--->"<<  vm->getGateNames().at(k)<<endl;
-       }
+  //  for (int k = 0; k < vm->gateCount(); k++) {
+   //      cout << "AbstractCloudManager::linkVM---> VM GATES--->"<<  vm->getGateNames().at(k)<<endl;
+   //    }
 
     vm->changeState(MACHINE_STATE_OFF);
     vm->setPendingOperation(NOT_PENDING_OPS);
@@ -985,6 +987,8 @@ void AbstractCloudManager::linkVMInternals(AbstractNode* node, VM* vm,
     cGate* toNodeMemoryO;
     cGate* toNodeNet;
     cGate* fromNodeNet;
+  //  cGate* toVMNet;
+  //  cGate* fromVMNet;
     cGate* fromNodeStorageSystem;
     cGate* toNodeStorageSystem;
     NodeVL* nodeVL;
@@ -999,7 +1003,7 @@ void AbstractCloudManager::linkVMInternals(AbstractNode* node, VM* vm,
 
     //link the VM to the networkManager
     ipNode = nodeVL->par("ip").stringValue();
-
+    cout << "link the VM to the networkManager--->ipNode of NodeVL--->" <<ipNode<<endl;
     // Build the vmName
 
     if (!migration) {
@@ -1007,7 +1011,7 @@ void AbstractCloudManager::linkVMInternals(AbstractNode* node, VM* vm,
         if (!ipNode.empty()) {
 
             virtualIPAux = vm->par("ip").stdstringValue();
-
+            cout << "virtualIPAux of vm--->" <<virtualIPAux<<endl;
             if (virtualIPAux.empty()) {
                 virtualIP = networkManager->allocateVirtualIP(ipNode,
                         vm->getUid(), vm->getPid());
@@ -1019,6 +1023,7 @@ void AbstractCloudManager::linkVMInternals(AbstractNode* node, VM* vm,
             vm->par("ip").setStringValue(virtualIP.c_str());
         }
         vm->setIP(virtualIP);
+        cout << "virtualIP of vm--->" <<virtualIP<<endl;
 
     } else {
         virtualIP = vm->par("virtualIP").stringValue();
@@ -1034,6 +1039,8 @@ void AbstractCloudManager::linkVMInternals(AbstractNode* node, VM* vm,
     toNodeMemoryO = NULL;
     toNodeNet = NULL;
     fromNodeNet = NULL;
+  //  toVMNet = NULL;
+  //  fromVMNet = NULL;
     fromNodeStorageSystem = NULL;
     toNodeStorageSystem = NULL;
     toNodeCPU = new cGate*[vm->getNumCores()];
@@ -1054,21 +1061,24 @@ void AbstractCloudManager::linkVMInternals(AbstractNode* node, VM* vm,
     // Net
     fromNodeNet = vm->gate("fromNodeNet");
     toNodeNet = vm->gate("toNodeNet");
-
+  //  fromVMNet = vm->gate("fromVMNet");
+ //   toVMNet = vm->gate("toVMNet");
     // Storage
     fromNodeStorageSystem = vm->gate("fromNodeStorageSystem", 0);
     toNodeStorageSystem = vm->gate("toNodeStorageSystem", 0);
 
     nodeVL->NodeVL::linkVM(fromNodeCPU, toNodeCPU, fromNodeMemoryI,
             toNodeMemoryI, fromNodeMemoryO, toNodeMemoryO, fromNodeNet,
-            toNodeNet, fromNodeStorageSystem, toNodeStorageSystem,
+            toNodeNet,
+         //   fromVMNet,            toVMNet,
+            fromNodeStorageSystem, toNodeStorageSystem,
             vm->getNumCores(), vm->getIP(), vm->getMemoryCapacity(),
             vm->getStorageCapacity(), vm->getUid(), vm->getPid());
 
     // link the node place to the base vm
     vm->setNodeName(node->getIndex());
     vm->setNodeSetName(node->getName());
-
+cout << "vm->getFullName()---->"<<vm->getFullName()<< endl;
     nodeVL->setVMInstance(vm);
 
 }
@@ -1602,9 +1612,7 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req) {
                             cout << "uid:  " << vm->getUid() << "----- PiD:  "
                                     << vm->getPid() << endl;
 
-                            cout
-                                    << "------------------------------------------AbstractCloudManager::request_unfreez_vm---------------------------------------------------------------"
-                                    << endl;
+
                             cout
                                     << "------------------------------------------AbstractCloudManager::request_unfreez_vm---------------------------------------------------------------"
                                     << endl;

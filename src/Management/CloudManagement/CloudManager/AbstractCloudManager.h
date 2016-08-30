@@ -10,10 +10,15 @@
 #include "RequestVM.h"
 
 #include "time.h"
+#include "API_OS.h"
+
+
 
 class CfgCloud;
 class RequestVM;
 class RunningVM;
+
+
 
 class AbstractCloudManager : virtual public AllocationManagement{
 

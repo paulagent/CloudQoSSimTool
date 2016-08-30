@@ -21,12 +21,12 @@ class LocalNetManager : public icancloud_Base {
 
 protected:
 
-	PortAddressTranslation* pat;
+
 	string ip_LocalNode;
 
 	NetworkManager* netManagerPtr;
 public:
-
+	PortAddressTranslation* pat;
 	virtual ~LocalNetManager();
 
 	void initialize();

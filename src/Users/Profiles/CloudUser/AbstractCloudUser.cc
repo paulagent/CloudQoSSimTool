@@ -218,7 +218,7 @@ int AbstractCloudUser::allocateJob(jobBase* job){
     // Initialize..
         jobC = check_and_cast<UserJob*>(job);
         vm = jobC->getMachine();
-
+        cout << "AbstractCloudUser::allocateJob----->jobC->getFullName()--->"<< jobC->getFullName()<<endl;
         if (vm == NULL) throw cRuntimeError ("User profile has allocate the VM at the job before call createFS.\n");
 
     // Begin ..
@@ -228,8 +228,8 @@ int AbstractCloudUser::allocateJob(jobBase* job){
            syscallManager = osModule->getSubmodule("syscallManager");
 
            osCore = check_and_cast <VMSyscallManager*> (syscallManager);
-           cout << "AbstractCloudUser::allocateJob --create process:  "<<endl;
            commId =  osCore->createProcess(jobC, this->getId());
+           cout << "AbstractCloudUser::allocateJob --create process:  "<< commId<<endl;
 
 
         return commId;

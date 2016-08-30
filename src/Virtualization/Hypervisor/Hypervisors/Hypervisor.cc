@@ -60,7 +60,7 @@ void Hypervisor::setVM(cGate** iGateCPU, cGate** oGateCPU, cGate* iGateMemI,
         int uId, int pId) {
 cout << "Hypervisor::setVM-------------------------------------------------------"<< endl;
     cpuM->setVM(oGateCPU, iGateCPU, numCores, uId, pId);
-
+cout <<"Hypervisor::setVM--->virtualIP--->"<<virtualIP<<endl;
     netM->setVM(oGateNet, iGateNet, uId, pId, virtualIP, 1);
 
     storageM->setVM(oGateStorage, iGateStorage, uId, pId, requestedStorageKB);
