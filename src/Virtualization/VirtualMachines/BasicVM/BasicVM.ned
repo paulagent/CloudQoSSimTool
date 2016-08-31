@@ -19,16 +19,26 @@ import icancloud.src.Virtualization.VirtualMachines.IVM;
 import icancloud.src.Virtualization.VirtualMachines.VMRequestManager.VMRequestManager;
 import inet.applications.ITCPApp;
 import inet.applications.tcpapp.TCPSessionApp;
-
+import inet.transport.ITCP;
 
 module BasicVM extends VM like IVM
 {
     parameters:
         @labels(vm,ethernet-vm);
-        @display("i=old/telnet;bgb=418,362");
+        @display("i=old/telnet;bgb=548,331");
         @loose;
-
+        int numTcpApps = default(1);  // no of TCP apps. Specify the app types in INI file with tcpApp[0..1].typename="TCPEchoApp" syntax
     submodules:
+
+//        tcpApp[numTcpApps]: <> like ITCPApp {
+//            parameters:
+//                @display("p=283,99,row,60");
+//        }
+
+         //tcpApp[numTcpApps]: <> like ITCPApp {
+        //    parameters:
+       //         @display("p=256,110,row,60");
+      //  }
 
         osModule: <osModuleType> like IOperatingSystem {
             parameters:
@@ -62,6 +72,17 @@ module BasicVM extends VM like IVM
 
  		// Connections between CPU and Operating System
 
+//        for i=0..numTcpApps-1 {
+//            tcpApp[i].tcpOut --> osModule.fromNet_TCP; ///Wrong
+//            tcpApp[i].tcpIn <-- osModule.toNet_TCP;
+//        }
+
+ //for i=0..numTcpApps-1 {
+ ////           tcpApp[i].tcpOut --> osModule.fromNet_TCP; ///Wrong
+ //           tcpApp[i].tcpIn <--   osModule.toNet_TCP;
+  //      }
+
+
         for i=0..numCores-1 {
             fromNodeCPU[i] --> osModule.fromCPU[i];
             toNodeCPU[i] <-- osModule.toCPU[i];
@@ -85,5 +106,7 @@ module BasicVM extends VM like IVM
 
         osModule.fromNet_TCP <-- fromNodeNet;
         osModule.toNet_TCP --> toNodeNet;
+
+
 
 }

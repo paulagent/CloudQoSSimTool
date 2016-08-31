@@ -20,17 +20,20 @@ import icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_NetworkManag
 import icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_NetworkManager.NetworkServices.INetworkService;
 import icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_StorageManager.H_StorageManager.H_StorageManagerModule;
 import icancloud.src.Virtualization.Hypervisor.IHypervisor;
+import inet.transport.ITCP;
+import inet.applications.ITCPApp;
+
 
 module MainHypervisor like IHypervisor
 {
     parameters:
         @class("Hypervisor");
-        @display("i=energy/Hypervisor_40;p=208,236");
-        
+        @display("i=energy/Hypervisor_40;p=208,236;bgb=641,450");
+
         int numStorageServers; 									// Number of physical Storage Servers	
         int numCPUs; 	 										// Number of physical CPUs         
         double memorySize_MB;        							// Amount of physical memory (MiB)
-		double blockSize_KB;									// size of blocks (Kb)		
+        double blockSize_KB;									// size of blocks (Kb)		
         int storageSize_GB;										// Amount of physical storage size (GiB)       
         int numNetworkInterfaces;								// Number of physical network interfaces 
         string ip;												// Node's IP
@@ -43,7 +46,7 @@ module MainHypervisor like IHypervisor
 
         //Parallel file system parameters
         int strideSize_KB = default(1024);						// Stride Size (in KB)
-		
+
     gates:
         //Storage server
         input fromVMStorageServers[];
@@ -78,13 +81,16 @@ module MainHypervisor like IHypervisor
 
 
     submodules:
-
+        tcpApp: <> like ITCPApp {
+            parameters:
+                @display("p=290,221,row,60");
+        }
         memoryManager: <memScheduler> like IH_MemoryManager {
             parameters:
-				blockSize_KB = blockSize_KB;
-				memorySize_MB = memorySize_MB;
-				memoryOverhead_MB = memoryOverhead_MB;
-                @display("i=icons/Redirector;p=365,72");
+                blockSize_KB = blockSize_KB;
+                memorySize_MB = memorySize_MB;
+                memoryOverhead_MB = memoryOverhead_MB;
+                @display("i=icons/Redirector;p=477,72");
             gates:
                 fromVMMemoryI[];
                 fromVMMemoryO[];
@@ -97,7 +103,7 @@ module MainHypervisor like IHypervisor
                 toNodeMemoryO;
         }
 
-        storageManager:  H_StorageManagerModule { 
+        storageManager: H_StorageManagerModule {
             parameters:
                 numStorageServers = numStorageServers;
                 // Storage remote parameters                        
@@ -119,7 +125,7 @@ module MainHypervisor like IHypervisor
             parameters:
                 numCPUs = numCPUs;
                 computingOverhead = computingOverhead;
-                @display("i=icons/Redirector;p=365,182");
+                @display("i=icons/Redirector;p=533,346");
             gates:
                 fromVMCPU[numCPUs];
                 toVMCPU[numCPUs];
@@ -132,6 +138,14 @@ module MainHypervisor like IHypervisor
             parameters:
                 localIP = ip;
                 @display("i=icons/Redirector;p=214,72");
+            gates:
+                fromNetManager;				// Input gate from Service Redirector
+                fromNetTCP;	
+                fromTCPapp;				// Input gate from Network (TCP)
+
+                toNetManager;				// Output gate to Service Redirector
+                toNetTCP;
+                toTCPapp;
         }
 
         netManager: H_NETManager {
@@ -165,22 +179,24 @@ module MainHypervisor like IHypervisor
     //       cpuManager.fromVMCPU[i] <-- fromVMCPU[i];
      //      cpuManager.toVMCPU[i] --> toVMCPU[i];
      //   }
-        
+
          // Connection between node OS and hypervisor
-        
+
         memoryManager.toVMMemoryI++ --> toVMMemoryI++;
         memoryManager.fromVMMemoryI++ <-- fromVMMemoryI++;
         memoryManager.fromVMMemoryO++ <-- fromVMMemoryO++;
         memoryManager.toVMMemoryO++ --> toVMMemoryO++;
-        
+
         for i=0..numStorageServers-1 {
-        	storageManager.fromVMStorageServers++ <-- fromVMStorageServers++;
-        	storageManager.toVMStorageServers++ --> toVMStorageServers++;
+            storageManager.fromVMStorageServers++ <-- fromVMStorageServers++;
+            storageManager.toVMStorageServers++ --> toVMStorageServers++;
         }
-        
+
         netManager.fromVMNet++ <-- fromVMNet++;
         netManager.toVMNet++ --> toVMNet++;
-        
+     //  networkService.toNetTCP --> fromVMNet++;
+     //  netManager.toVMNet++ --> fromVMNet++;
+
 		// Connections between VM Memory and Node Memory
         memoryManager.fromNodeMemoryI <-- fromNodeMemoryI;
         memoryManager.fromNodeMemoryO <-- fromNodeMemoryO;
@@ -202,8 +218,14 @@ module MainHypervisor like IHypervisor
         netManager.fromNodeNet <-- networkService.toNetManager;
         netManager.toNodeNet --> networkService.fromNetManager;
 
+
+
         // Connections between Network Service and Networks
         networkService.fromNetTCP <-- fromNodeNet;
         networkService.toNetTCP --> toNodeNet;
+         networkService.fromTCPapp <-- tcpApp.tcpOut;
+         networkService.toTCPapp --> tcpApp.tcpIn;
+        
+        
 
 }

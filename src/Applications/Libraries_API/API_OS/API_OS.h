@@ -19,7 +19,7 @@
  */
 class API_OS: virtual public icancloud_Base{
 
-	protected:
+	public:
 
 		//**  Timeout between each iteration of the aplication */
 		simtime_t timeout;

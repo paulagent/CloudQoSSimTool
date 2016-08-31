@@ -257,7 +257,7 @@ void SyscallManager::notifyManager (icancloud_Message* sms){
 void SyscallManager::removeProcess(int pid){
 
     icancloud_Base* job = deleteJobFromStructures(pid);
-
+cout << "SyscallManager::removeProcess" << endl;
     if (job != NULL){
         int gateIdx = job->gate("fromOS")->getPreviousGate()->getId();
         int position = toAppGates->searchGate(gateIdx);

@@ -81,7 +81,7 @@ void UserGeneratorDay::processSelfMessage(cMessage *msg) {
 
         } else {
               // printf("\n Method[UserGeneratorDay]: -------> Prepare to user arrivals\n");
-              printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
+          //    printf("\n Method[UserGeneratorDay]: time_intervals_H %d-------> \n", time_intervals_H);
             //  printf("\n Method[UserGeneratorDay]: total_users %d-------> \n", total_users);
 
             // Prepare to user arrival .. !!
@@ -154,14 +154,14 @@ void UserGeneratorDay::processSelfMessage(cMessage *msg) {
 
                 // there are not users at this interval
                 if (j == 0) {
-                    printf("\n Method[UserGeneratorDay]: newHourEvent 2-------> \n");
+                //    printf("\n Method[UserGeneratorDay]: newHourEvent 2-------> \n");
                     scheduleAt(simTime() + 3600, newHourEvent);
 
                     // There are only one user. So only it is needed to create a user
                 } else if (j == 1) {
-                    printf("\n Method[UserGeneratorDay]: newHourEvent 3-------> \n");
+                 //   printf("\n Method[UserGeneratorDay]: newHourEvent 3-------> \n");
                     scheduleAt(simTime() + 3600, newHourEvent);
-                    printf("\n Method[UserGeneratorDay]: newIntervalEvent 3-------> \n");
+                 //   printf("\n Method[UserGeneratorDay]: newIntervalEvent 3-------> \n");
                     scheduleAt(simTime(), newIntervalEvent);
 
                     // There are a group of users to distribute along the subintervals created by granularity..
@@ -176,9 +176,9 @@ void UserGeneratorDay::processSelfMessage(cMessage *msg) {
                         nextEvent += k;
                         subinterval_per_granularity.push_back(nextEvent);
                     }
-                    printf("\n Method[UserGeneratorDay]: newHourEvent 4-------> \n");
+               //     printf("\n Method[UserGeneratorDay]: newHourEvent 4-------> \n");
                     scheduleAt(simTime() + 3600, newHourEvent);
-                    printf("\n Method[UserGeneratorDay]: newIntervalEvent 3-------> \n");
+                //    printf("\n Method[UserGeneratorDay]: newIntervalEvent 3-------> \n");
                     scheduleAt(simTime(), newIntervalEvent);
                 }
 
@@ -186,7 +186,7 @@ void UserGeneratorDay::processSelfMessage(cMessage *msg) {
 
                 // Schedule the next event, for no distribution when all the time intervals (in hours 60 * 60 = 3600) has passed.
             } else {
-                printf("\n Method[UserGeneratorDay]: newHourEvent 5-------> \n");
+              //  printf("\n Method[UserGeneratorDay]: newHourEvent 5-------> \n");
                 scheduleAt(simTime() + (3600 * time_intervals_H), newHourEvent);
             }
         } else {
@@ -229,8 +229,8 @@ void UserGeneratorDay::userCreateGroups(int intervals, int nusers) {
     if (true) {
 
         for (int i = 0; i < intervals; ++i) {
-            printf("%i - %i\n: [%i]", i, i + 1,
-                    (*(users_grouped_by_dist.begin() + i)));
+         //   printf("%i - %i\n: [%i]", i, i + 1,
+         //           (*(users_grouped_by_dist.begin() + i)));
         }
     }
 }

@@ -58,6 +58,9 @@ void VmMsgController::initialize() {
     fromApps = new cGateManager(this);
     toApps = new cGateManager(this);
 
+
+
+
 }
 
 void VmMsgController::finish() {
@@ -343,7 +346,8 @@ void VmMsgController::linkNewApplication(cModule* jobAppModule, cGate* scToApp,
         cGate* scFromApp) {
 
     // Connections to App
-    cout << "VmMsgController::linkNewApplication" << endl;
+    cout << "VmMsgController::linkNewApplication--->jobAppModule--->"<<jobAppModule->getFullName() << endl;
+
     int idxToApps = toApps->newGate("toApps");
     toApps->connectOut(jobAppModule->gate("fromOS"), idxToApps);
 
@@ -357,6 +361,7 @@ void VmMsgController::linkNewApplication(cModule* jobAppModule, cGate* scToApp,
 
     int idxFromOS = fromOSApps->newGate("fromOSApps");
     fromOSApps->connectIn(scToApp, idxFromOS);
+
 
 }
 

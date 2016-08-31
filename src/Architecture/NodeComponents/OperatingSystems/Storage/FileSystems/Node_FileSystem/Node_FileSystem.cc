@@ -595,7 +595,9 @@ void Node_FileSystem::translateIORequests (icancloud_BlockList_Message* sm_fsTra
 
             sm_fsTranslated->setIsResponse (true);
             sm_fsTranslated->setResult (icancloud_FILE_NOT_FOUND);
-            throw cRuntimeError("Error! File not found!!!");
+           // throw cRuntimeError("Error! File not found!!!");
+            cout << "throw cRuntimeError(Error! File not found!!!)"<<endl;
+
         }
 
         else{

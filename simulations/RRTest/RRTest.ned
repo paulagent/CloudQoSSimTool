@@ -14,15 +14,19 @@
 // 
 
 package icancloud.simulations.RRTest;
+import icancloud.src.Management.NetworkManager.NetworkManager;
 import icancloud.src.Architecture.Aggregation.Rack;
 import icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_NetworkManager.NetworkServices.NetworkService.NetworkService;
 import icancloud.src.Virtualization.VirtualMachines.SetDefinition.DockerSet;
 import icancloud.src.Virtualization.VirtualMachines.VMRequestManager.VMRequestManager;
+
+import inet.transport.tcp.TCP;
+
 import ned.DatarateChannel;
 import inet.nodes.ethernet.EtherSwitch;
 import icancloud.src.Architecture.Node.NodeVL.NodeVL;
 import icancloud.src.Management.CloudManagement.ResourcesProvisioning.**.*;
-import icancloud.src.Management.NetworkManager.NetworkManager;
+
 import icancloud.src.Management.Topology.Topology;
 
 import icancloud.src.Users.UserGenerator.UserGenerator;
@@ -82,7 +86,7 @@ network RRTest
         // ---------------------------------------------------------------
         networkManager: NetworkManager {
 
-            @display("p=870,45");
+            @display("p=699,156");
         }
         // ---------------------------------------------------------------
         //   Definition of cloud scheduler
@@ -93,7 +97,7 @@ network RRTest
                 remote_storage_VMs_per_node = 2;
                 minimum_percent_storageNode_free = 0.15;
                 virtualIPsBasis = "10.0.0.1";
-               // timeToStart = 1.0;
+                // timeToStart = 1.0;
                 @display("p=445,156");
         }
 

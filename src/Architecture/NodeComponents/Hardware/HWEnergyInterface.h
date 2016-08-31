@@ -28,11 +28,12 @@
 #include <string>
 #include "EnergyMeterStates.h"
 #include "icancloud_Base.h"
+
 using std::string;
 using std::pair;
 using std::vector;
 
-class HWEnergyInterface : public icancloud_Base{
+class HWEnergyInterface : public icancloud_Base {
 
     /** Vector with the states and the times of execution to calculate the energy*/
     vector<EnergyMeterStates*> meterStates;

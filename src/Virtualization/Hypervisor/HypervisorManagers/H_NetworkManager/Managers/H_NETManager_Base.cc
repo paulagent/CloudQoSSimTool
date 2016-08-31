@@ -76,8 +76,8 @@ void H_NETManager_Base::initialize() {
 		overheadStructure.clear();
         net_overhead = par("networkOverhead");
 
-        cMessage *initScheduler = new cMessage (SM_WAIT_TO_SCHEDULER.c_str());
-        scheduleAt (simTime(), initScheduler);
+  //      cMessage *initScheduler = new cMessage (SM_WAIT_TO_SCHEDULER.c_str());
+  //      scheduleAt (simTime(), initScheduler);
 }
 
 void H_NETManager_Base::finish(){
@@ -90,17 +90,24 @@ cGate* H_NETManager_Base::getOutGate (cMessage *msg){
 
 		// If msg arrive from VM
 		if (msg->arrivedOn("fromVMNet"))
+		{
+		    cout << "msg arrive from fromVMNet"<< endl;
             return (gate("toVMNet", msg->getArrivalGate()->getIndex()));
-
+		}
 		// If msg arrive from NODE
 		else if (msg->arrivedOn("fromNodeNet"))
+		{
+		    cout << "msg arrive from fromNodeNet"<< endl;
 		    gateResult = (gate("toNodeNet"));
 
-
+		}
 		// If msg arrive from Block server Manager
 		else if (msg->arrivedOn("fromHStorageManager"))
-		    gateResult =  (gate("toHStorageManager"));
+		{
+            cout << "msg arrive from Block server Manager   fromHStorageManager"<< endl;
 
+		    gateResult =  (gate("toHStorageManager"));
+		}
 
 		return gateResult;
 }
@@ -152,7 +159,7 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 	int vm_gate;
 	int operation;
 	int decision;
-
+	cModule* mod;
 	string virtual_destinationIP, virtual_localIP;
 	string destinationIP, localIP;
 	string ipNode;
@@ -163,7 +170,7 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 	icancloud_App_IO_Message *sm_io;
 
 	vector<icancloud_App_NET_Message*> sm_close;
-   // cout << "H_NETManager_Base::processRequestMessage  ----->ArrivalModule-----> "<< sm->getArrivalModule() << endl;
+    cout << "H_NETManager_Base::processRequestMessage  ----->ArrivalModule-----> "<< sm->getArrivalModule() << endl;
 
 	// Init ..
 		sm_net = dynamic_cast <icancloud_App_NET_Message*> (sm);
@@ -171,12 +178,12 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 
 		userID = sm->getUid();
 
-	//	cout << "H_NETManager_Base::processRequestMessage ---> userid ---->"   <<  userID <<endl;
+		cout << "H_NETManager_Base::processRequestMessage ---> userid ---->"   <<  userID <<endl;
 		vmID = sm->getPid();
-     //   cout << "H_NETManager_Base::processRequestMessage ---> vmID ---->"   <<  vmID <<endl;
+        cout << "H_NETManager_Base::processRequestMessage ---> vmID ---->"   <<  vmID <<endl;
 
 		operation = sm->getOperation();
-       // cout << "H_NETManager_Base::processRequestMessage ---> operation ---->"   <<  operation  <<endl;
+        cout << "H_NETManager_Base::processRequestMessage ---> operation ---->"   <<  operation  <<endl;
 
 		sm_close.clear();
 
@@ -214,17 +221,29 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 	}
 	// The message came from the disk, a remote storage operation ..
 	else if (sm->arrivedOn("fromHStorageManager")){
-       // cout << "H_NETManager_Base::processRequestMessage ---> The message came from the disk, a remote storage operation .."<< endl;
+        cout << "H_NETManager_Base::processRequestMessage ---> The message came from the disk, a remote storage operation .."<< endl;
 
 	    sendRequestMessage(sm, toNodeNet);
 	}
 
 	// The message came from a vm application ..
 	else if (sm->arrivedOn("fromVMNet")){
-      //  cout << "H_NETManager_Base::processRequestMessage ---> The message came from a vm application .."<< endl;
+        cout << "H_NETManager_Base::processRequestMessage ---> The message came from a vm application .."<< endl;
 
 		if(operation == SM_SET_IOR){
-	        cout << "H_NETManager_Base::processRequestMessage ---> create vm"<< endl;
+	        cout << "H_NETManager_Base::processRequestMessage ---> SM_SET_IOR---> calling create vm"<< endl;
+
+	        if (localNetManager == NULL)
+
+	            {
+	            //throw cRuntimeError("Can not cast the local net manager\n");
+	                    cout << "localNetManager == NULL" << endl;
+	                    mod = getParentModule()->getSubmodule ("localNetManager");
+	                    localNetManager = dynamic_cast <LocalNetManager*>  (mod);
+	            }
+	        if (localNetManager == NULL)
+	            throw cRuntimeError("Can not cast the local net manager\n");
+	        localNetManager->initializePAT(ipNode);
 
 			localNetManager->createVM(sm);
 			delete (sm);
@@ -308,7 +327,7 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 
 		}
 		else if (operation == SM_CLOSE_VM_CONNECTIONS){
-         //   cout << "H_NETManager_Base::processRequestMessage ---> SM_CLOSE_VM_CONNECTIONS"<< endl;
+            cout << "H_NETManager_Base::processRequestMessage ---> SM_CLOSE_VM_CONNECTIONS"<< endl;
 
 		    sm_close = localNetManager->manage_close_connections(sm->getUid(), sm->getPid());
 
@@ -336,7 +355,7 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
                 (operation  == MPI_GATHER)){
 
 
-	      //  cout << "H_NETManager_Base::processRequestMessage ---> before overhead .."<< endl;
+	        cout << "H_NETManager_Base::processRequestMessage ---> before overhead .."<< endl;
 
 		    //////////////
            // Overhead //
@@ -542,22 +561,33 @@ void H_NETManager_Base::setVM (cGate* oGate, cGate* iGate, int uId, int pId, str
 
     int idxToVM;
     int idxFromVM;
+    cout << "H_NETManager_Base::setVM"<< endl;
+    cout << "oGate->getName()"  << oGate->getName()<< endl;
+    cout << "iGate->getName()"<< iGate->getName()<< endl;
+  //  cout << "uID--->" << uId << endl;
+  //  cout << "pID--->"<< pId<< endl;
+
 
     // Initialize control structure at node
         vmControl* control;
         control = new vmControl();
+
         control->gate = -1;
+
         control->uId = uId;
         control->pId = pId;
         control->virtualIP = virtualIP;
 
     // Connect to output gates
         idxToVM = toVMNet->newGate("toVMNet");
+        cout <<"idxToVM"<<idxToVM<< endl;
         toVMNet->connectOut(iGate,idxToVM);
-        control->gate = idxToVM;
+      //  control->gate = idxToVM;
 
     // Connect to input gates
         idxFromVM = fromVMNet->newGate("fromVMNet");
+        cout <<"idxFromVM"<<idxFromVM<< endl;
+
         fromVMNet->connectIn(oGate,idxFromVM);
         control->gate = idxFromVM;
 
@@ -568,6 +598,7 @@ void H_NETManager_Base::setVM (cGate* oGate, cGate* iGate, int uId, int pId, str
 void H_NETManager_Base::freeVM (int uId, int pId){
 
     bool found = false;
+    cout << " H_NETManager_Base::freeVM (int uId, int pId)--->"<<uId<< ":"<<pId<< endl;
     for (int i = 0; (i < (int)vms.size()) && (!found); i++){
         if (((*(vms.begin() + i))->uId == uId) && ((*(vms.begin() + i))->pId == pId)){
 

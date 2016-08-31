@@ -70,7 +70,9 @@ void VM::initialize() {
     string vmTypeName;
     Machine::initialize();
 cout <<"VM::initialize()" << endl;
-    // Init ..
+//cout<<"IP"<<(this->getIP())<<endl;
+
+        // Init ..
     states_log.clear();
     pending_operation = NOT_PENDING_OPS;
     userID = -1;

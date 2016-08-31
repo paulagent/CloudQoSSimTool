@@ -17,6 +17,7 @@ import icancloud.src.Architecture.NodeComponents.OperatingSystems.OperatingSyste
 import icancloud.src.EnergySystem.EnergyMeter.EnergyMeter;
 import icancloud.src.EnergySystem.PSU.IPSU;
 import icancloud.src.Virtualization.Hypervisor.IHypervisor;
+import inet.applications.tcpapp.TCPBasicClientApp;
 import inet.base.NotificationBoard;
 import inet.linklayer.IExternalNic;
 import inet.linklayer.IWiredNic;
@@ -25,6 +26,7 @@ import inet.networklayer.common.InterfaceTable;
 import inet.networklayer.ipv4.RoutingTable;
 import inet.nodes.inet.NetworkLayer;
 import inet.transport.ITCP;
+import inet.applications.ITCPApp;
 
 
 module NodeVL like INode
@@ -41,7 +43,7 @@ module NodeVL like INode
         int numExtInterfaces = default(0);														// Number of external interfaces
         int numNetworkInterfaces = default(1);													// As default, 1 network interface
         string tcpType = default(firstAvailable("TCP", "TCP_lwIP", "TCP_NSC", "TCP_None"));   	// Type of TCP protocol     
-        bool IPForward = default(false);														// IP Forward        
+        bool IPForward = default(true);														// IP Forward        
         string ip = default("");															// Node's IP
         string routingFile = default("");														// Routing File
         int namid = default(-1);																// Nam ID
@@ -69,6 +71,8 @@ module NodeVL like INode
         string initialState;										// state or the node  NODE_STATE_OFF | NODE_STATE_IDLE | NODE_STATE_RUNNING
         int numFS = default(1);													// Number of File Systems
 
+        int numTcpApps = default(1);  // no of TCP apps. Specify the app types in INI file with tcpApp[0..1].typename="TCPEchoApp" syntax
+
     gates:
         inout pppg[] @labels(PPPFrame-conn);
         inout ethg[] @labels(EtherFrame-conn);
@@ -88,8 +92,8 @@ module NodeVL like INode
         output toVMMemoryO[];
 
         // Hypervisor net
-        input fromVMNet[];
-        output toVMNet[];
+     //   input fromVMNet[];
+      //  output toVMNet[];
 
 
     submodules:
@@ -146,7 +150,6 @@ module NodeVL like INode
         psu: <psuModuleType> like IPSU {
             @display("p=55,373");
         }
-
         tcp: <tcpType> like ITCP {
             parameters:
                 @display("p=327,204");
@@ -235,6 +238,9 @@ module NodeVL like INode
                 fromVMMemoryO[];
                 toVMMemoryI[];
                 toVMMemoryO[];
+
+                fromVMNet[];
+                toVMNet[];
 
 				//Hypervisor to HW connections                
                 fromNodeCPU[numCores];

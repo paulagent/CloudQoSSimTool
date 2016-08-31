@@ -119,7 +119,7 @@ using std::string;
 
 	#define DEBUG_CPU_Scheduler_FIFO false				// Shows basic debug messages
 	#define DEBUG_MSG_CPU_Scheduler_FIFO false			// Shows all messages enterely (including all parameters)
-	#define DEBUG_CPU_Scheduler_RR true				// Shows basic debug messages
+	#define DEBUG_CPU_Scheduler_RR false				// Shows basic debug messages
 	#define DEBUG_MSG_CPU_Scheduler_RR false			// Shows all messages enterely (including all parameters)
 
 /************************* CPU Cores *************************/
@@ -209,7 +209,7 @@ using std::string;
 	
 /************************* CLOUD SCHEDULER *************************/
 
-	#define DEBUG_CLOUD_SCHED true
+	#define DEBUG_CLOUD_SCHED false
 
 /************************* HYPERVISOR SCHEDULER *************************/
 

@@ -13,28 +13,29 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package icancloud.src.Applications.Apps.TCP_test;
+package icancloud.src.Applications.Apps.TCP_New;
 
 import icancloud.src.Applications.Apps.IAPP;
 
-simple TCP_test like IAPP
-
+simple TCP_New like IAPP
 {
     parameters:
-        string application_netType = default ("INET");		// Network type (INET or BASIC) 
-        string localIP;       
+        string application_netType = default ("INET");
+      //  string localIP;
         double startDelay;									// Starting delay time!        
         int inputSize;										// Input size of data
         int outputSize;										// Output size of data
         int MIs;											// Number of MIs to execute
         int iterations = default (0);						// Number of iterations
         @display("i=msg/job");
-    gates:
-        input fromOS @loose;			// Input gate from OS (Operating System)
-        output toOS @loose;				// Output gate to OS (Operating System)
-        input fromNetManager;
-        output toNetManager;
-        input fromNetTCP;
-        output toNetTCP;
+        
+        gates:
+        input fromNetManager @loose;	
+        input fromNetTCP @loose;	
+        input fromOS @loose;	
+        
+        output toNetManager @loose;	
+        output toNetTCP @loose;	 
+        output toOS @loose;	
+        
 }
-

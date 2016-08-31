@@ -5,7 +5,7 @@ import ned.DatarateChannel;
 import inet.nodes.ethernet.EtherSwitch;
 import icancloud.src.Architecture.Node.NodeVL.NodeVL;
 import icancloud.src.Management.CloudManagement.ResourcesProvisioning.**.*;
-import icancloud.src.Management.NetworkManager.NetworkManager;
+
 import icancloud.src.Management.Topology.Topology;
 import icancloud.src.Management.NetworkManager.NetworkManager;
 import icancloud.src.Users.UserGenerator.UserGenerator;
@@ -92,20 +92,24 @@ network Cloud_A
         // ---------------------------------------------------------------
         //   Definition of Storage Nodes
         // ---------------------------------------------------------------
-        ns_0_NodeStorage_C: NodeVL;
+        ns_0_NodeStorage_C: NodeVL {
+            @display("p=88,213");
+        }
         //------------------------------------------------------
         // Modules that defines the topology and the set of VMs 
         //------------------------------------------------------
         vmSet: VmSet;
         topology: Topology;
-        rc_0_Rack_A_16[16]: NodeVL;
+        rc_0_Rack_A_16[4]: NodeVL {
+            @display("p=272,25");
+        }
     // ---------------------------------------------------------------
     //   Connections section
     // ---------------------------------------------------------------
     connections allowunconnected:
 
         // Connections for rack rc_0_Rack_A_16
-        for i=0..15 {
+        for i=0..3 {
             rc_0_Rack_A_16[i].ethg++ <--> RackChannel_0_Cloud_A <--> rackSwitch_0.ethg++;
         }
 

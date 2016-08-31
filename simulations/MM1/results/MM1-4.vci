@@ -1,0 +1,27 @@
+file 682 1466017519                                             
+version 2
+run MM1-4-20160615-12:05:10-16331
+attr configname MM1
+attr datetime 20160615-12:05:10
+attr experiment MM1
+attr inifile omnetpp.ini
+attr iterationvars $mean=1.25
+attr iterationvars2 "$mean=1.25, $repetition=0"
+attr mean 1.25
+attr measurement $mean=1.25
+attr network MM1
+attr processid 16331
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 4
+attr seedset 4
+vector 1  MM1.queue  queueLength:vector  ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+1	674 8 0 0 0 0 1 0 0 0 0
+vector 0  MM1.sink  lifeTime:vector  ETV
+attr interpolationmode none
+attr title "lifetime of arrived jobs, vector"
+attr unit s
+0	640 34 4 4 5.849942369566 5.849942369566 1 1.584751970586 1.584751970586 1.584751970586 2.5114388082762

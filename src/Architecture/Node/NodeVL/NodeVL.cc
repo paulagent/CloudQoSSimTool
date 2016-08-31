@@ -55,15 +55,15 @@ bool NodeVL::testLinkVM (int vmCPUs, int vmMemory, int vmStorage, int vmNetIF, s
          // The maximum number of processes that allow running at node (vms maybe?)
          if  (getNumProcessesRunning() < 1000){
              ok = true;
-             cout << " NodeVL::testLinkVM -----> before mem and stg decrease" << endl;
-             cout << "NodeVL::testLinkVM ---> Free Mem ---->" << os->getFreeMemory() <<endl;
-             cout << "NodeVL::testLinkVM ---> Free stg ---->" << os->getFreeStorage() <<endl;
+          //   cout << " NodeVL::testLinkVM -----> before mem and stg decrease" << endl;
+          //   cout << "NodeVL::testLinkVM ---> Free Mem ---->" << os->getFreeMemory() <<endl;
+          //   cout << "NodeVL::testLinkVM ---> Free stg ---->" << os->getFreeStorage() <<endl;
 
              os->memDecrease(vmMemory);
              os->storageDecrease(vmStorage);
-             cout << "NodeVL::testLinkVM -----> after mem and stg decrease" << endl;
-            cout << "NodeVL::testLinkVM ---> Free Mem ---->" << os->getFreeMemory() <<endl;
-             cout << "NodeVL::testLinkVM ---> Free stg ---->" << os->getFreeStorage() <<endl;
+          //   cout << "NodeVL::testLinkVM -----> after mem and stg decrease" << endl;
+         //   cout << "NodeVL::testLinkVM ---> Free Mem ---->" << os->getFreeMemory() <<endl;
+          //   cout << "NodeVL::testLinkVM ---> Free stg ---->" << os->getFreeStorage() <<endl;
 
 
 
@@ -78,16 +78,17 @@ void NodeVL::linkVM (cGate** iGateCPU,cGate** oGateCPU,
         cGate* iGateMemO,
         cGate* oGateMemO,
         cGate* iGateNet,cGate* oGateNet,
+    //    cGate* iGateVMNet,cGate* oGateVMNet,
         cGate* iGateStorage,cGate* oGateStorage,
         int numCores, string virtualIP,  int vmMemory, int vmStorage, int uId, int pId){
 
     VMID* vmIdentifier;
-
+    cout << "NodeVL::linkVM"<< endl;
     vmIdentifier = new VMID();
     vmIdentifier->initialize(uId,pId);
     instancedVMs.insert(instancedVMs.end(), vmIdentifier);
 
-        hypervisor->setVM(iGateCPU,oGateCPU,iGateMemI,oGateMemI,iGateMemO,oGateMemO,iGateNet,oGateNet,iGateStorage,oGateStorage, numCores, virtualIP, vmMemory, vmStorage, uId,pId);
+    hypervisor->setVM(iGateCPU,oGateCPU,iGateMemI,oGateMemI,iGateMemO,oGateMemO,iGateNet,oGateNet,iGateStorage,oGateStorage, numCores, virtualIP, vmMemory, vmStorage, uId,pId);
 
 }
 

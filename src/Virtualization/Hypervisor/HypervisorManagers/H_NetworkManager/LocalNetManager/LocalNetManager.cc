@@ -48,7 +48,8 @@ void LocalNetManager::processResponseMessage (icancloud_Message *sm){
 }
 
 void LocalNetManager::initializePAT (string nodeIP){
-	ip_LocalNode = nodeIP;
+	cout <<"LocalNetManager::initializePAT--->nodeIP--->"<<nodeIP<<endl;
+    ip_LocalNode = nodeIP;
 	pat->pat_initialize(nodeIP);
 
 	cModule* networkmanager_mod1;
@@ -85,6 +86,7 @@ void LocalNetManager::createVM(icancloud_Message* sm){
 	// Init ..
 		sm_net = check_and_cast <icancloud_App_NET_Message*> (sm);
         cout << "LocalNetManager::createVM ---> id----> "<<sm->getUid() << "----pid----->"<<sm->getPid()<<endl;
+        cout << "LocalNetManager::createVM ---> sm_net->getLocalIP()----> "<<sm_net->getLocalIP() <<endl;
 
 	// create the user into the structure
 		pat->pat_createVM(sm->getUid(), sm->getPid(), sm_net->getLocalIP());
@@ -96,7 +98,7 @@ void LocalNetManager::manage_listen(icancloud_Message* sm){
 	int realPort;
 	int virtualPort;
 	sm_net = dynamic_cast <icancloud_App_NET_Message*> (sm);
-
+    cout << "LocalNetManager::manage_listen" << endl;
 	virtualPort = sm_net->getLocalPort();
 	realPort = pat->pat_createListen(sm->getUid(), sm->getPid(), virtualPort);
 
@@ -163,7 +165,7 @@ int LocalNetManager::manage_createConnection(icancloud_Message* sm){
 	int realDestinationPort;
 	int virtualDestinationPort;
 	int decision;
-
+cout << " LocalNetManager::manage_createConnection  --- > SM_CREATE_CONNECTION" << endl;
 	sm_net = dynamic_cast <icancloud_App_NET_Message*> (sm);
 
 	// Get the destinationIP (vm) and the local ip (vm)
