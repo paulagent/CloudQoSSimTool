@@ -652,7 +652,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 started_VM->vm = vmNew;
                 cout<<"Started Vm IP:"<<started_VM->vm->getIP()<<endl;
                 started_VM->start_time = now;
-                started_VM->end_time = now + 200000; //clocks per secs
+                started_VM->end_time = now + 2000; //clocks per secs
                 started_VM->userID = vmNew->getUid();
                 started_VM->hostNodeVL = nodeVL;
 
@@ -989,8 +989,8 @@ void AbstractCloudManager::linkVMInternals(AbstractNode* node, VM* vm,
     cGate* toNodeMemoryO;
     cGate* toNodeNet;
     cGate* fromNodeNet;
-  //  cGate* toVMNet;
-  //  cGate* fromVMNet;
+    cGate* toNetTCP;
+    cGate* fromNetTCP;
     cGate* fromNodeStorageSystem;
     cGate* toNodeStorageSystem;
     NodeVL* nodeVL;
@@ -1041,8 +1041,8 @@ void AbstractCloudManager::linkVMInternals(AbstractNode* node, VM* vm,
     toNodeMemoryO = NULL;
     toNodeNet = NULL;
     fromNodeNet = NULL;
-  //  toVMNet = NULL;
-  //  fromVMNet = NULL;
+    toNetTCP = NULL;
+    fromNetTCP = NULL;
     fromNodeStorageSystem = NULL;
     toNodeStorageSystem = NULL;
     toNodeCPU = new cGate*[vm->getNumCores()];
@@ -1527,10 +1527,10 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req) {
         vmMemory = vm->getMemoryCapacity();
         vmCPU = vm->getNumCores();
 
-        cout << "vmMemory" << vmMemory << endl;
-        cout << "vmCPU" << vmCPU << endl;
-        cout << "node->getFreeMemory()----->" << node->getFreeMemory() << endl;
-        cout << "node->getNumCores()------" << node->getNumCores() << endl;
+      //  cout << "vmMemory" << vmMemory << endl;
+     //   cout << "vmCPU" << vmCPU << endl;
+     //   cout << "node->getFreeMemory()----->" << node->getFreeMemory() << endl;
+     //   cout << "node->getNumCores()------" << node->getNumCores() << endl;
         // link the vm to the node
         if (nodeVL->testLinkVM(vm->getNumCores(), vm->getMemoryCapacity(),
                 vm->getStorageCapacity(), vm->getNumNetworkIF(),
@@ -1543,22 +1543,25 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req) {
         } else   // if there is not enough resources we check vms of that node
         {
             int j = 0;
-            printf(
-                    "\n\n\n\n Method[AbstractCloudManager::request_unfreez_vm]: -------> Before our loop\n");
+         //   printf(
+        //            "\n\n\n\n Method[AbstractCloudManager::request_unfreez_vm]: -------> Before our loop\n");
             // uvic add
-            cout
-                    << "Method[AbstractCloudManager::request_unfreez_vm]: while loop--->"
-                    << runVM.size() << endl;
+          //  cout
+          //          << "Method[AbstractCloudManager::request_unfreez_vm]: while loop---runVM.size-->"
+          //          << runVM.size() << endl;
             while (j < int(runVM.size()) && runVM.size() != 0) {
                 clock_t t = clock(); // we are not sure about current time
 
-                //printf(
-                //        "\n Method[AbstractCloudManager::request_unfreez_vm]:NO_Runiing_VM -------> %ld \n",
-                //        runVM.size());
-                //cout << "------------------j  :" << j << endl;
+            //    printf(
+            //            "\n Method[AbstractCloudManager::request_unfreez_vm]:NO_Runiing_VM -------> %ld \n",
+            //           runVM.size());
+            //    cout << "------------------j  :" << j << endl;
                 RunningVM* vmr;
                 vmr = runVM.at(j);
+             //   cout << "vmr--->"<< vmr->userID<< endl;
                 if (vmr->hostNodeVL->getFullName() == nodeVL->getFullName()) {
+             //       cout << "time----->"<<t<< endl;
+             //       cout << "vmr->end_time----->"<<vmr->end_time<< endl;
                     if (t >= vmr->end_time)   // we need to freeze vm
                             {
 
@@ -1606,7 +1609,7 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req) {
 
                             started_VM->vm = vm;
                             started_VM->start_time = now;
-                            started_VM->end_time = now + 200000; //clocks per secs
+                            started_VM->end_time = now + 2000; //clocks per secs
                             started_VM->userID = vm->getUid();
                             started_VM->hostNodeVL = nodeVL;
 

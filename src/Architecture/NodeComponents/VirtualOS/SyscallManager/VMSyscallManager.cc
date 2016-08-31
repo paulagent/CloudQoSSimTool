@@ -206,7 +206,7 @@ int VMSyscallManager::createProcess(icancloud_Base* j, int uid){
 void VMSyscallManager::removeProcess(int pId){
 
         icancloud_Base* job = deleteJobFromStructures(pId);
-
+cout << "VMSyscallManager::removeProcess"<< endl;
         if (job != NULL){
             int position = mControllerPtr->unlinkApplication(job);
             fromAppGates->freeGate(position);

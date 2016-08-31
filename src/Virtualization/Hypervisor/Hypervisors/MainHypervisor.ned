@@ -20,6 +20,9 @@ import icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_NetworkManag
 import icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_NetworkManager.NetworkServices.INetworkService;
 import icancloud.src.Virtualization.Hypervisor.HypervisorManagers.H_StorageManager.H_StorageManager.H_StorageManagerModule;
 import icancloud.src.Virtualization.Hypervisor.IHypervisor;
+import inet.transport.ITCP;
+import inet.applications.ITCPApp;
+
 
 module MainHypervisor like IHypervisor
 {
@@ -78,7 +81,10 @@ module MainHypervisor like IHypervisor
 
 
     submodules:
-
+        tcpApp: <> like ITCPApp {
+            parameters:
+                @display("p=290,221,row,60");
+        }
         memoryManager: <memScheduler> like IH_MemoryManager {
             parameters:
                 blockSize_KB = blockSize_KB;
@@ -132,6 +138,14 @@ module MainHypervisor like IHypervisor
             parameters:
                 localIP = ip;
                 @display("i=icons/Redirector;p=214,72");
+            gates:
+                fromNetManager;				// Input gate from Service Redirector
+                fromNetTCP;	
+                fromTCPapp;				// Input gate from Network (TCP)
+
+                toNetManager;				// Output gate to Service Redirector
+                toNetTCP;
+                toTCPapp;
         }
 
         netManager: H_NETManager {
@@ -180,6 +194,8 @@ module MainHypervisor like IHypervisor
 
         netManager.fromVMNet++ <-- fromVMNet++;
         netManager.toVMNet++ --> toVMNet++;
+     //  networkService.toNetTCP --> fromVMNet++;
+     //  netManager.toVMNet++ --> fromVMNet++;
 
 		// Connections between VM Memory and Node Memory
         memoryManager.fromNodeMemoryI <-- fromNodeMemoryI;
@@ -203,9 +219,13 @@ module MainHypervisor like IHypervisor
         netManager.toNodeNet --> networkService.fromNetManager;
 
 
-	
+
         // Connections between Network Service and Networks
         networkService.fromNetTCP <-- fromNodeNet;
         networkService.toNetTCP --> toNodeNet;
+         networkService.fromTCPapp <-- tcpApp.tcpOut;
+         networkService.toTCPapp --> tcpApp.tcpIn;
+        
+        
 
 }

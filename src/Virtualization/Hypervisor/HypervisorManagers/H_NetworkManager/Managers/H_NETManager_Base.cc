@@ -564,8 +564,8 @@ void H_NETManager_Base::setVM (cGate* oGate, cGate* iGate, int uId, int pId, str
     cout << "H_NETManager_Base::setVM"<< endl;
     cout << "oGate->getName()"  << oGate->getName()<< endl;
     cout << "iGate->getName()"<< iGate->getName()<< endl;
-    cout << "uID--->" << uId << endl;
-    cout << "pID--->"<< pId<< endl;
+  //  cout << "uID--->" << uId << endl;
+  //  cout << "pID--->"<< pId<< endl;
 
 
     // Initialize control structure at node
@@ -598,6 +598,7 @@ void H_NETManager_Base::setVM (cGate* oGate, cGate* iGate, int uId, int pId, str
 void H_NETManager_Base::freeVM (int uId, int pId){
 
     bool found = false;
+    cout << " H_NETManager_Base::freeVM (int uId, int pId)--->"<<uId<< ":"<<pId<< endl;
     for (int i = 0; (i < (int)vms.size()) && (!found); i++){
         if (((*(vms.begin() + i))->uId == uId) && ((*(vms.begin() + i))->pId == pId)){
 
