@@ -58,7 +58,11 @@ void NetworkService::handleMessage(cMessage *msg){
 			processSelfMessage (msg);
 
 		// Not a self message...
-		else{			
+		else{
+
+		    if(!strcmp (msg->getName(), "ActiveOPEN")) {
+		        receivedEstablishedConnection (msg);
+		    }
 			
 			// Established connection message...
 			if (!strcmp (msg->getName(), "ESTABLISHED")){
@@ -77,7 +81,7 @@ void NetworkService::handleMessage(cMessage *msg){
 
 			// Not an ESTABLISHED message message...
 			else{
-										
+			cout <<	"NetworkService::handleMessage--msg->getName() --> "<< msg->getName() <<endl;
 				// Cast!
 				sm = check_and_cast<icancloud_Message *>(msg);
 
@@ -318,7 +322,7 @@ void NetworkService::processResponseMessage (icancloud_Message *sm){
 void NetworkService::receivedEstablishedConnection (cMessage *msg){
 	
 	TCPSocket *socket;
-	
+	cout <<"NetworkService::receivedEstablishedConnection" <<endl;
 		socket = clientTCP_Services->getInvolvedSocket (msg);
 			
 		// Establishing connection... (client)
