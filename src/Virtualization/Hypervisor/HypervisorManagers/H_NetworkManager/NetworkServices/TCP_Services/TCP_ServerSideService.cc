@@ -92,10 +92,12 @@ void TCP_ServerSideService::arrivesIncommingConnection (cMessage *msg){
 													socket->getConnectionId());
 													            
             // Process current operation!
+            cout <<"TCP_ServerSideService::arrivesIncommingConnection"<<endl;
         	socket->processMessage(msg);           
         }
-        else
+        else {
         	networkService->showErrorMessage ("[TCP_ServerSideService::arrivesIncommingConnection] Connection already exists. ConnId =  %d", socket->getConnectionId());
+}
 }
 
 
