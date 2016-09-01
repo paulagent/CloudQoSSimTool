@@ -51,6 +51,9 @@ class NetworkService : public HWEnergyInterface{
 	    /** Output gate to Network (TCP) */
 	    cGate* toNetTCPGate;	
 	    
+	    cGate* fromTCPappGate;
+        cGate* toTCPappGate;
+
 	    /** Node state */
 	    string nodeState;
 

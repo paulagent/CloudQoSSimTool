@@ -26,6 +26,8 @@ void NetworkService::initialize(){
 	    fromNetTCPGate = gate ("fromNetTCP");
 	    toNetManagerGate = gate ("toNetManager");
 	    toNetTCPGate = gate ("toNetTCP");	    
+	    fromTCPappGate=gate("fromTCPapp");
+	    toTCPappGate=gate("toTCPapp");
 	    
 	    // Service objects
 	    clientTCP_Services = new TCP_ClientSideService (localIP, toNetTCPGate, this);
@@ -52,7 +54,19 @@ void NetworkService::finish(){
 void NetworkService::handleMessage(cMessage *msg){
 
 	icancloud_Message *sm;
-
+cout << "NetworkService::handleMessage"<< endl;
+cout << msg->getName()<< endl;
+cout << msg->getArrivalGate()->getFullName()<<endl;
+if (msg->getArrivalGate()==fromTCPappGate)
+{
+    send(msg,toNetTCPGate);
+}
+else
+    if (msg->getArrivalGate()==fromNetTCPGate)
+    {
+       send(msg,toTCPappGate);
+    }
+    else{
 		// If msg is a Self Message...
 		if (msg->isSelfMessage())
 			processSelfMessage (msg);
@@ -70,6 +84,17 @@ void NetworkService::handleMessage(cMessage *msg){
 			else if (!strcmp (msg->getName(), "PEER_CLOSED")){
 				serverTCP_Services->closeConnectionReceived(msg);
 			}
+		/*	else if (!strcmp (msg->getName(), "ActiveOPEN")){
+			        cout<< "ActiveOPEN" << endl;
+
+			}
+			else if (!strcmp (msg->getName(), "PassiveOPEN")){
+			                    cout<< "PassiveOPEN" << endl;
+
+
+			}*/
+
+
 			// Finished connection message ..
 			else if (!strcmp (msg->getName(), "CLOSED")){
 				delete(msg);
@@ -79,6 +104,7 @@ void NetworkService::handleMessage(cMessage *msg){
 			else{
 										
 				// Cast!
+			    cout << "Not an ESTABLISHED message message..."<< endl;
 				sm = check_and_cast<icancloud_Message *>(msg);
 
 				// Request!
@@ -98,7 +124,8 @@ void NetworkService::handleMessage(cMessage *msg){
 				else
 					processResponseMessage (sm);
 			}
-		}	
+		}
+}
 }
 
 
@@ -170,6 +197,7 @@ void NetworkService::processRequestMessage (icancloud_Message *sm){
 			
 			// Create a new connection... client-side
 			operation = sm->getOperation();
+			cout <<"operation----->"<< operation<< endl;
 			if (operation == SM_CREATE_CONNECTION){
 
 				clientTCP_Services->createConnection (sm);
@@ -266,6 +294,12 @@ void NetworkService::processRequestMessage (icancloud_Message *sm){
 			// No socket found!
 			else				
 				showErrorMessage ("[processRequestMessage] No socket found!. %s",sm->contentsToString(true).c_str());							
+		}
+		else if (sm->getArrivalGate() == fromTCPappGate)
+		{
+		    if (DEBUG_Network_Service)
+		                    showDebugMessage ("[processRequestMessage] from TCP APP. %s", sm->contentsToString(DEBUG_MSG_Network_Service).c_str());
+
 		}
 }
 
