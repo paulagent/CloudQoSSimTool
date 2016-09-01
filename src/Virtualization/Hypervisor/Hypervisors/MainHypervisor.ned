@@ -30,6 +30,7 @@ module MainHypervisor like IHypervisor
         @class("Hypervisor");
         @display("i=energy/Hypervisor_40;p=208,236;bgb=641,450");
 
+		int numTcpApps = default(0);
         int numStorageServers; 									// Number of physical Storage Servers	
         int numCPUs; 	 										// Number of physical CPUs         
         double memorySize_MB;        							// Amount of physical memory (MiB)
@@ -81,7 +82,7 @@ module MainHypervisor like IHypervisor
 
 
     submodules:
-        tcpApp: <> like ITCPApp {
+       tcpApp[numTcpApps]: <> like ITCPApp {
             parameters:
                 @display("p=290,221,row,60");
         }
@@ -141,11 +142,11 @@ module MainHypervisor like IHypervisor
             gates:
                 fromNetManager;				// Input gate from Service Redirector
                 fromNetTCP;	
-                fromTCPapp;				// Input gate from Network (TCP)
+                fromTCPapp[];				// Input gate from Network (TCP)
 
                 toNetManager;				// Output gate to Service Redirector
                 toNetTCP;
-                toTCPapp;
+                toTCPapp[];
         }
 
         netManager: H_NETManager {
@@ -223,8 +224,14 @@ module MainHypervisor like IHypervisor
         // Connections between Network Service and Networks
         networkService.fromNetTCP <-- fromNodeNet;
         networkService.toNetTCP --> toNodeNet;
-         networkService.fromTCPapp <-- tcpApp.tcpOut;
-         networkService.toTCPapp --> tcpApp.tcpIn;
+         for i=0..numTcpApps-1 {
+                       
+            networkService.fromTCPapp++ <-- tcpApp[i].tcpOut;
+         	networkService.toTCPapp++ --> tcpApp[i].tcpIn;
+            
+            
+        }
+         
         
         
 

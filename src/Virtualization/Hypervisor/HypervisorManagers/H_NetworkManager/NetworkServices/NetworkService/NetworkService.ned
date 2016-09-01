@@ -17,10 +17,10 @@ simple NetworkService like INetworkService
     gates:
         input fromNetManager;								// Input gate from Service Redirector
         input fromNetTCP;	
-        input 	fromTCPapp;								// Input gate from Network (TCP)
+        input 	fromTCPapp[];								// Input gate from Network (TCP)
 
         output toNetManager;								// Output gate to Service Redirector
         output toNetTCP;	
-        output toTCPapp;									// Output gate to Network (TCP)
+        output toTCPapp[];									// Output gate to Network (TCP)
 
 }

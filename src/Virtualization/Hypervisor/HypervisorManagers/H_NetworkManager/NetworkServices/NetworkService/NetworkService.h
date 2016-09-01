@@ -32,7 +32,7 @@ class NetworkService : public HWEnergyInterface{
 		
 		/** Local IP address */
 		string localIP;
-										
+		unsigned int numTcpApps;
 		/** TCP Client-side Services */
 		TCP_ClientSideService *clientTCP_Services;
 		
@@ -51,8 +51,8 @@ class NetworkService : public HWEnergyInterface{
 	    /** Output gate to Network (TCP) */
 	    cGate* toNetTCPGate;	
 	    
-	    cGate* fromTCPappGate;
-        cGate* toTCPappGate;
+	    cGate** fromTCPappGate;
+        cGate** toTCPappGate;
 
 	    /** Node state */
 	    string nodeState;

@@ -20,15 +20,21 @@ void NetworkService::initialize(){
 
 	    // Module parameters
 	    localIP = (const char*) par ("localIP");
-	    
+	    numTcpApps=1;
 	    // Module gates
 	    fromNetManagerGate = gate ("fromNetManager");
 	    fromNetTCPGate = gate ("fromNetTCP");
 	    toNetManagerGate = gate ("toNetManager");
 	    toNetTCPGate = gate ("toNetTCP");	    
-	    fromTCPappGate=gate("fromTCPapp");
-	    toTCPappGate=gate("toTCPapp");
 	    
+	    fromTCPappGate= new cGate *[numTcpApps];
+	    toTCPappGate= new cGate *[numTcpApps];
+	    int i;
+	    for (i=0; i<numTcpApps; i++){
+	        fromTCPappGate[i]=gate("fromTCPapp",i);
+	        toTCPappGate[i]=gate("toTCPapp",i);
+
+	            }
 	    // Service objects
 	    clientTCP_Services = new TCP_ClientSideService (localIP, toNetTCPGate, this);
 	    serverTCP_Services = new TCP_ServerSideService (localIP, toNetTCPGate, toNetManagerGate, this);
@@ -57,14 +63,15 @@ void NetworkService::handleMessage(cMessage *msg){
 cout << "NetworkService::handleMessage"<< endl;
 cout << msg->getName()<< endl;
 cout << msg->getArrivalGate()->getFullName()<<endl;
-if (msg->getArrivalGate()==fromTCPappGate)
+if (msg->getArrivalGate()==fromTCPappGate[0])
 {
     send(msg,toNetTCPGate);
 }
 else
     if (msg->getArrivalGate()==fromNetTCPGate)
     {
-       send(msg,toTCPappGate);
+       // cout << msg->get <<endl;
+       send(msg,toTCPappGate[0]);
     }
     else{
 		// If msg is a Self Message...
@@ -295,12 +302,12 @@ void NetworkService::processRequestMessage (icancloud_Message *sm){
 			else				
 				showErrorMessage ("[processRequestMessage] No socket found!. %s",sm->contentsToString(true).c_str());							
 		}
-		else if (sm->getArrivalGate() == fromTCPappGate)
+	/*	else if (sm->getArrivalGate() == fromTCPappGate)
 		{
 		    if (DEBUG_Network_Service)
 		                    showDebugMessage ("[processRequestMessage] from TCP APP. %s", sm->contentsToString(DEBUG_MSG_Network_Service).c_str());
 
-		}
+		}*/
 }
 
 
