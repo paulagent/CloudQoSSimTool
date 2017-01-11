@@ -82,19 +82,28 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
     int operation;
     cout << "VmMsgController::processRequestMessage:    " <<msg->getFullName()<< endl;
     int Pid, Uid;
+    bool flag = false;
     Pid=msg->getPid();
     Uid = msg->getUid();
     cout << "PiD----->"<< Pid << endl;
 
     cout << "UiD----->"<< Uid << endl;
 
+    for(typename std::vector<RunningVM>::iterator it = runVM.begin(); it != runVM.end(); ++it ) {
+        /* std::cout << *it; ... */
+  //      if (Pid == it.getPid())
+   //     {flag =true; }
+        cout<< "ssss" <<endl;
+    }
 
     if (Pid==-1  )
 
     {
         delete (msg);
+
+
     }
-    else
+    else if (flag)  // this part to check if Pid is in running VM queue,if not, we just ingore the msg
     {
     sm_net = dynamic_cast<icancloud_App_NET_Message *>(msg);
 

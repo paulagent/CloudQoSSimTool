@@ -29,8 +29,8 @@ void NetworkService::initialize(){
 	    
 	    fromTCPappGate= new cGate *[numTcpApps];
 	    toTCPappGate= new cGate *[numTcpApps];
-	    int i;
-	    for (i=0; i<numTcpApps; i++){
+	   // int i;
+	    for (unsigned int i=0; i< numTcpApps; i++){
 	        fromTCPappGate[i]=gate("fromTCPapp",i);
 	        toTCPappGate[i]=gate("toTCPapp",i);
 

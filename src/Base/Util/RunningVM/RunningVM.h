@@ -14,6 +14,7 @@ class NodeVL;
 class RunningVM{
 public:
     int userID;
+    int processID;
     VM* vm;
     NodeVL* hostNodeVL;
   //  vector<VM*> vmID;
@@ -22,6 +23,7 @@ public:
     void initialize();
     RunningVM();
     ~RunningVM();
+    int getPid () {return processID; };
        /**
         * This method classifies an incoming message and invokes the corresponding method
         * to process it.

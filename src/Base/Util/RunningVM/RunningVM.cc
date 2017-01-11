@@ -2,6 +2,7 @@
 
 void RunningVM::initialize(){
     userID =0;
+    processID = 0;
            vm = NULL;
         //   vmID.clear();
            start_time=0;
@@ -9,6 +10,7 @@ void RunningVM::initialize(){
 }
 RunningVM::RunningVM(){
     userID =0;
+    processID = 0;
            vm = NULL;
         //   vmID.clear();
            start_time=0;

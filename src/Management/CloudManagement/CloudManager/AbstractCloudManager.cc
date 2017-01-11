@@ -654,6 +654,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 started_VM->start_time = now;
                 started_VM->end_time = now + 2000; //clocks per secs
                 started_VM->userID = vmNew->getUid();
+                started_VM->processID = vmNew->getPid();
                 started_VM->hostNodeVL = nodeVL;
 
                 runVM.push_back(started_VM);
