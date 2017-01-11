@@ -78,7 +78,7 @@ network RRTest
         configurator: IPv4NetworkConfigurator {
             parameters:
                 config = xml("<config><interface hosts='**' address='192.168.x.x' netmask='255.x.x.x'/></config>");
-                @display("p=495,67");
+                @display("p=445,43");
         }
 
         // ---------------------------------------------------------------
@@ -86,7 +86,7 @@ network RRTest
         // ---------------------------------------------------------------
         networkManager: NetworkManager {
 
-            @display("p=699,156");
+            @display("p=661,50");
         }
         // ---------------------------------------------------------------
         //   Definition of cloud scheduler
@@ -98,7 +98,7 @@ network RRTest
                 minimum_percent_storageNode_free = 0.15;
                 virtualIPsBasis = "10.0.0.1";
                 // timeToStart = 1.0;
-                @display("p=445,156");
+                @display("p=335,50");
         }
 
         // ---------------------------------------------------------------
@@ -117,7 +117,7 @@ network RRTest
             @display("p=146,203");
         }
         rackSwitch_0: EtherSwitch {
-            @display("p=241,117");
+            @display("p=203,107");
         }
 
         // ---------------------------------------------------------------
@@ -127,22 +127,22 @@ network RRTest
         //   Definition of Storage Nodes
         // ---------------------------------------------------------------
         ns_0_NodeStorage_C: NodeVL {
-            @display("p=160,318");
+            @display("p=78,318");
         }
         ns_1_NodeStorage_C: NodeVL {
-            @display("p=330,230");
+            @display("p=184,327");
         }
         //------------------------------------------------------
         // Modules that defines the topology and the set of VMs 
         //------------------------------------------------------
         vmSet: VmSet {
-            @display("p=651,75");
+            @display("p=562,50");
         }
         topology: Topology {
-            @display("p=545,204");
+            @display("p=562,131");
         }
         dockerSet: DockerSet {
-            @display("p=712,243");
+            @display("p=661,131");
         }
         // ---------------------------------------------------------------
         //   Definition of Racks
@@ -154,10 +154,10 @@ network RRTest
 
 
         rack1: Rack {
-            @display("p=78,54;is=l");
+            @display("p=226,243;is=l");
         }
         rack2: Rack {
-            @display("p=330,44;is=l");
+            @display("p=335,234;is=l");
         }
     // ---------------------------------------------------------------
     //   Connections section
