@@ -62,8 +62,10 @@ void CPU_Intensive::finish(){
 
 void CPU_Intensive::startExecution (int pid){
     Pid = pid;
+    cout << "CPU_Intensive::startExecution" <<endl;
+
     API_OS::startExecution(Pid);
-  //  cout << " CPU_Intensive::startExecution()---simulation start>"<<endl;
+    cout << " CPU_Intensive::startExecution()---simulation start>"<<endl;
 
     Enter_Method_Silent();
     // Create SM_WAIT_TO_EXECUTE message for delaying the execution of this application
@@ -303,13 +305,14 @@ void CPU_Intensive::executeIOrequest(bool executeRead, bool executeWrite){
 
 
 void CPU_Intensive::executeCPUrequest(){
-//cout << "CPU_Intensive::executeCPUrequest()" <<endl;
+cout << "CPU_Intensive::executeCPUrequest()" <<endl;
 	// Debug?
 	if (DEBUG_Application)
 		showDebugMessage ("[%d/%d] Executing (CPU) MIs:%d", currentIteration, iterations, MIs);
 
 	// Reset timer!	
 	startServiceCPU = simTime ();
+	cout << "startServiceCPU = simTime ();"<<startServiceCPU<<endl;
 	icancloud_request_cpu (MIs);
 }
 

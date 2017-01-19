@@ -6287,22 +6287,6 @@ $O/src/Virtualization/VirtualMachines/SetDefinition/DockerImage.o: src/Virtualiz
 $O/src/Virtualization/VirtualMachines/SetDefinition/VmImage.o: src/Virtualization/VirtualMachines/SetDefinition/VmImage.cc \
 	src/Virtualization/VirtualMachines/SetDefinition/VmImage.h
 $O/src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.o: src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.cc \
-	src/Applications/Base/Management/JobQueue.h \
-	src/Applications/Base/Management/JobResults.h \
-	src/Applications/Base/Management/JobResultsSet.h \
-	src/Applications/Base/UserJob.h \
-	src/Applications/Base/jobBase.h \
-	src/Applications/Libraries_API/API_OS/API_OS.h \
-	src/Architecture/Machine/Machine.h \
-	src/Architecture/Node/AbstractNode.h \
-	src/Architecture/Node/Node/Node.h \
-	src/Architecture/Node/NodeVL/NodeVL.h \
-	src/Architecture/NodeComponents/Hardware/HWEnergyInterface.h \
-	src/Architecture/NodeComponents/OperatingSystems/SyscallManager/AbstractSyscallManager.h \
-	src/Architecture/NodeComponents/OperatingSystems/SyscallManager/NodeSyscallManager/SyscallManager.h \
-	src/Architecture/NodeComponents/OperatingSystems/SystemApps/RemoteStorageApp/RemoteStorageApp.h \
-	src/Architecture/NodeComponents/OperatingSystems/SystemApps/StatesApplication/StatesApplication.h \
-	src/Architecture/NodeComponents/VirtualOS/SyscallManager/VMSyscallManager.h \
 	src/Base/Messages/icancloud_App_CPU_Message.h \
 	src/Base/Messages/icancloud_App_CPU_Message_m.h \
 	src/Base/Messages/icancloud_App_IO_Message.h \
@@ -6320,73 +6304,20 @@ $O/src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgControll
 	src/Base/Messages/icancloud_Message_m.h \
 	src/Base/Messages/icancloud_Migration_Message.h \
 	src/Base/Messages/icancloud_Migration_Message_m.h \
-	src/Base/Parser/cfgCloud.h \
-	src/Base/Parser/cfgDataCenter.h \
-	src/Base/Parser/cfgMPI.h \
-	src/Base/Request/Request.h \
-	src/Base/Request/RequestVM/RequestVM.h \
 	src/Base/Util/Log/ICCLog.h \
-	src/Base/Util/RunningContainer/RunningContainer.h \
-	src/Base/Util/RunningVM/RunningVM.h \
-	src/Base/VMID/VMID.h \
 	src/Base/cGateManager.h \
 	src/Base/icancloud_Base.h \
 	src/Base/include/Constants.h \
 	src/Base/include/icancloud_debug.h \
 	src/Base/include/icancloud_types.h \
-	src/EnergySystem/EnergyMeter/EnergyMeterController/EnergyMeterController.h \
-	src/EnergySystem/EnergyMeter/EnergyMeterUnit/AbstractMeterUnit.h \
 	src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/Memoization_uthash.h \
 	src/EnergySystem/EnergyMeter/EnergyMeterUnit/Memorization/uthash.h \
-	src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/EnergyMeterStates.h \
-	src/EnergySystem/EnergyMeter/EnergyMeterUnit/States/EnergyState.h \
-	src/EnergySystem/PSU/AbstractPSU.h \
-	src/Management/CloudManagement/Base/AllocationManagement.h \
-	src/Management/CloudManagement/CloudManager/AbstractCloudManager.h \
-	src/Management/DataCenterManagement/AbstractDCManager.h \
-	src/Management/DataCenterManagement/Base/DataCenterAPI.h \
-	src/Management/DataCenterManagement/Base/RequestsManagement.h \
-	src/Management/DataCenterManagement/Base/StorageManagement.h \
-	src/Management/DataCenterManagement/Base/UserManagement.h \
-	src/Management/MachinesStructure/ElementType.h \
-	src/Management/MachinesStructure/HeterogeneousSet.h \
-	src/Management/MachinesStructure/MachinesMap.h \
-	src/Management/NetworkManager/NetworkManager.h \
-	src/Management/NetworkManager/PortTable.h \
-	src/Management/NetworkManager/VirtualIPCell.h \
-	src/Management/NetworkManager/VirtualIPs.h \
-	src/Users/AbstractUser.h \
-	src/Users/Base/queuesManager.h \
-	src/Users/Base/userBase.h \
-	src/Users/Base/userStorage.h \
-	src/Users/Profiles/CloudUser/AbstractCloudUser.h \
-	src/Users/UserGenerator/core/AbstractUserGenerator.h \
-	src/Virtualization/Hypervisor/HypervisorManagers/H_CPUManager/H_CPUManager_Base.h \
-	src/Virtualization/Hypervisor/HypervisorManagers/H_MemoryManager/H_MemoryManager_Base.h \
-	src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/LocalNetManager/LocalNetManager.h \
-	src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/LocalNetManager/PAT/PortAddressTranslation.h \
-	src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/LocalNetManager/PAT/User_VirtualPort_Cell.h \
-	src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/LocalNetManager/PAT/Vm_VirtualPort_Cell.h \
-	src/Virtualization/Hypervisor/HypervisorManagers/H_NetworkManager/Managers/H_NETManager_Base.h \
-	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/HW_Cells/AbstractStorageCell.h \
-	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/H_StorageManager_Base.h \
-	src/Virtualization/Hypervisor/HypervisorManagers/H_StorageManager/RemoteFS/Abstract_Remote_FS.h \
-	src/Virtualization/Hypervisor/Hypervisors/Hypervisor.h \
-	src/Virtualization/VirtualMachines/Docker/DockerContainer.h \
-	src/Virtualization/VirtualMachines/Docker/DockerDaemon.h \
-	src/Virtualization/VirtualMachines/VM.h \
 	src/Virtualization/VirtualMachines/VMManagement/VmMsgController/VmMsgController.h \
-	src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.h \
 	$(INET_PROJ)/src/base/Compat.h \
-	$(INET_PROJ)/src/base/ILifecycle.h \
 	$(INET_PROJ)/src/base/INETDefs.h \
-	$(INET_PROJ)/src/base/INotifiable.h \
 	$(INET_PROJ)/src/networklayer/contract/IPv4Address.h \
 	$(INET_PROJ)/src/networklayer/contract/IPv6Address.h \
 	$(INET_PROJ)/src/networklayer/contract/IPvXAddress.h \
-	$(INET_PROJ)/src/networklayer/ipv4/IPv4Route.h \
-	$(INET_PROJ)/src/networklayer/ipv4/IRoutingTable.h \
-	$(INET_PROJ)/src/networklayer/ipv4/RoutingTable.h \
 	$(INET_PROJ)/src/transport/contract/TCPCommand_m.h \
 	$(INET_PROJ)/src/transport/contract/TCPSocket.h
 $O/src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.o: src/Virtualization/VirtualMachines/VMRequestManager/VMRequestManager.cc \

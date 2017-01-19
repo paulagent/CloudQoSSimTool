@@ -209,7 +209,7 @@ void icancloud_Base::sendRequestMessage (icancloud_Message *sm, cGate* gate){
 void icancloud_Base::sendResponseMessage (icancloud_Message *sm){
 
     int gateId;
-  //  cout << "icancloud_Base::sendResponseMessage ----->ArrivalModule-----> "<< sm->getArrivalModule() << endl;
+   cout << "icancloud_Base::sendResponseMessage ----->ArrivalModule-----> "<< sm->getArrivalModule() << endl;
 
 
 		// Get the gateId to send back the message
@@ -960,8 +960,8 @@ void icancloud_Base::processCurrentRequestMessage (){
 				sm = check_and_cast<icancloud_Message *>(unqueuedMessage);
 
 				// Process
-			//	cout<<"icancloud_Base::processCurrentRequestMessage ----------------> sm operation---------->"<< sm->getOperation() <<endl;
-            //    cout<<"icancloud_Base::processCurrentRequestMessage ----------------> processRequestMessage ---------->" <<endl;
+				cout<<"icancloud_Base::processCurrentRequestMessage ----------------> sm operation---------->"<< sm->getOperation() <<endl;
+                cout<<"icancloud_Base::processCurrentRequestMessage ----------------> processRequestMessage ---------->" <<endl;
 
 				processRequestMessage (sm);
 			}

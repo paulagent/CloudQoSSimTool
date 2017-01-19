@@ -38,7 +38,10 @@ private:
 	cGateManager* toApps;                           // Output gate from this class to an application
 
 	int uId;                                        // The user identification value
-	int pId;                                        // The process (VM) identification value
+	int pId;
+
+//    vector <RunningVM*> runVM1;
+	// The process (VM) identification value
 
 	/*
 	 * Data structures to control the communication identificators

@@ -525,7 +525,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             cModule* vmSet1 = getParentModule()->getSubmodule("vmSet");
           //  cout << "vmSet1--->"<<vmSet1->getFullName()<<endl;
             vmImage = vmSet1->getSubmodule("vmImage", 0);
-            if (vmImage)
+        /*   if (vmImage)
             {
              //   cout << endl<<"AbstractCloudManager::request_start_vm--->vmImage memory--->" <<vmImage->par("memorySize_MB").longValue()<<endl;
             }
@@ -537,7 +537,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
              //   cout << endl<<"AbstractCloudManager::request_start_vm--->vmImage memory--->" <<vmImage->par("memorySize_MB").longValue()<<endl;
           //  cout << "------------------------------error------------------------------"<<endl;
 
-            }
+            }*/
             cModule* vmImage2 = getSubmodule("vmImage");
             vm2 = dynamic_cast<VM*>(vmImage2);
             // uvic add end
@@ -754,19 +754,18 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
 
     // Init ..
     nodes.clear();
-    // printf(
-    //        "METHOD[AbstractCloudManager::request_shutdown_vm]: VMQuantity ---------------> %d ",
-    //        req->getVMQuantity());
+     printf(
+            "METHOD[AbstractCloudManager::request_shutdown_vm]: VMQuantity ---------------> %d ",
+            req->getVMQuantity());
     // Get the first VM
     while (req->getVMQuantity() != 0) {
 
         vm = req->getVM(0);
-        //   cout << "AbstractCloudManager::request_shutdown_vm-----> vm to be shutdown---->" << vm->getId() <<endl;
+           cout << "AbstractCloudManager::request_shutdown_vm-----> vm to be shutdown---->" << vm->getId() <<endl;
 
         // Dup the request to storage in the queue waiting for format FS and close connections
 
         req_copy = req->dup();
-
         //erase the rest of vms less the actual
         if (req_copy->getVMQuantity() > 1) {
             while (req_copy->getVMQuantity() != 1)
@@ -798,7 +797,7 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
         // connection control
         closeVMConnections(nodes, vm);
 // uvic add
-        // if vm job finishes before time slice elapse
+        //we should also remove it from running vm
         int id = vm->getId();
         for (int k = 0; k < (int) runVM.size(); ++k) {
             if (runVM.at(k)->vm->getId() == id) {
@@ -809,7 +808,15 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
                 runVM.erase(runVM.begin() + k);
             }
         }
-        // Delete the first VM and proceed if exists any one.
+
+       if (req_copy->is_freezed)
+       {
+           cout<< "************************VM wants to be freezed*****************************************"<<endl;
+           base->setOperation(REQUEST_UNFREEZE_VM);
+           RequestsManagement::userSendRequest(base);
+
+       }
+       // Delete the first VM and proceed if exists any one.
         req->eraseVM(0);
        // cout
        //         << "AbstractCloudManager::request_shutdown_vm-----> Delete the first VM and proceed if exists any one. ---->"
@@ -1480,7 +1487,7 @@ void AbstractCloudManager::notifyVMConnectionsClosed(int uId, int pId,
 
     }
 }
-vector<RunningVM*> AbstractCloudManager::getRunVM() {
+vector <RunningVM*> AbstractCloudManager::getRunVM() {
     return runVM;
 }
 
@@ -1503,6 +1510,7 @@ bool AbstractCloudManager::request_start_docker_container(RequestVM* req) {
         return true;
     }
 }
+// added by zahra and Bing - UVIC
 bool AbstractCloudManager::request_unfreez_vm(RequestVM* req) {
     AbstractNode* node;
     VM* vm;
@@ -1539,6 +1547,8 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req) {
             //cout << "check LinkVM "<< endl;
 
             linkVM(nodeVL, vm);
+            cout << "unfreeze vm -> vm->turnon after link vm" << endl;
+            //vm->turnOn();
             return false;
 
         } else   // if there is not enough resources we check vms of that node
@@ -1581,18 +1591,21 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req) {
                         new_req_vm->setFreezedVM(vmr->vm);
                         new_req_vm->set_is_freezed(true);
                         vmr->vm->is_freezed = true;
-                        new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
-                        new_req->setOperation(REQUEST_UNFREEZE_VM);
-                        RequestsManagement::userSendRequest(new_req);
+                        vmr->vm->setPendingOperation(PENDING_UNFREEZ); //
 
+                        new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
+                   //     new_req->setOperation(REQUEST_UNFREEZE_VM);
+                        new_req->setOperation(REQUEST_FREE_RESOURCES);
+                        RequestsManagement::userSendRequest(new_req);
+                      //  vmr->vm->turnOff();
                         //  cout << "hostNode----->"<< vmr->hostNodeVL->getFullName()<<endl;;
 
-                        unlinkVM(vmr->hostNodeVL, vmr->vm, false);
+                        //unlinkVM(vmr->hostNodeVL, vmr->vm, false);
 
-                        runVM.erase(runVM.begin() + j);
-                        cout << "After Free Resources" << endl;
+                        //runVM.erase(runVM.begin() + j);
+                        //cout << "After Free Resources" << endl;
 
-                        printf(
+/*                      printf(
                                 "\n Method[SCHEDULER_ROUNDROBIN]: Free Memory: ------>%f \n",
                                 vmr->hostNodeVL->getFreeMemory());
 
@@ -1604,6 +1617,8 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req) {
                             cout << "check LinkVM " << endl;
 
                             linkVM(nodeVL, vm);
+                        //    cout << "unfreeze vm -> vm->turnon after link vm" << endl;
+                          //  vm->turnOn();
                             clock_t now = clock();
 
                             RunningVM* started_VM = new RunningVM();
@@ -1613,6 +1628,7 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req) {
                             started_VM->end_time = now + 2000; //clocks per secs
                             started_VM->userID = vm->getUid();
                             started_VM->hostNodeVL = nodeVL;
+                            started_VM->vm ->setPendingOperation(NOT_PENDING_OPS);
 
                             runVM.push_back(started_VM);
                             cout << "uid:  " << vm->getUid() << "----- PiD:  "
@@ -1645,7 +1661,7 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req) {
 
                             return false;
 
-                        }
+                        }*/
                     } else {
                         ++j;
                     }

@@ -167,11 +167,11 @@ void VM::sleep(string containerID){
 
         dockerDaemon->unPauseDockerContainer(containerID);
     }
-   void VM::send_tcp_msg(string msg, string dest_ip)
+   void send_tcp_msg(string msg, string dest_ip)
    {
 
    }
-   void VM::receive_tcp_msg()
+   void receive_tcp_msg()
    {
 
    }

@@ -492,7 +492,8 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
      printf("\n\n\n\n Method[CLOUD_SCHEDULER_RR::scheduleRR()]: -------> Before our loop\n");
                       // uvic add
                       cout << "Method[CLOUD_SCHEDULER_RR::scheduleRR()]: while loop" << AbstractCloudManager::runVM.size()<<endl;
-                      while (j < int(AbstractCloudManager::runVM.size()) && AbstractCloudManager::runVM.size() !=0 ) {
+                      int runVMsize=AbstractCloudManager::runVM.size();
+                      while (j < runVMsize ) {
                           clock_t t = clock(); // we are not sure about current time
 
                             printf("\n Method[CLOUD_SCHEDULER_RR::scheduleRR()]:NO_Runiing_VM -------> %ld \n", runVM.size());
@@ -517,16 +518,23 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                               new_req_vm->setFreezedVM(vm->vm);
                               new_req_vm->set_is_freezed(true);
                               vm->vm->is_freezed=true;
-                              // add new request to temp queue
+                              vm->vm->setPendingOperation(PENDING_UNFREEZ); //
 
+                              // add new request to temp queue
+                              //vm->vm->cancelAndDelete()
+                             // vm->vm->turnOff();
                               new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
-                              new_req->setOperation(REQUEST_UNFREEZE_VM);
+                            //  new_req->setOperation(REQUEST_UNFREEZE_VM);
+                              printf("\n Method[CLOUD_SCHEDULER_RR ::scheduleRR()]: ------->"
+                                      "sendingREQUEST_FREE_RESOURCES     \n");
+
+                              new_req->setOperation(REQUEST_FREE_RESOURCES);
 
                               RequestsManagement::userSendRequest(new_req);
 
                               // Freezing VM by unlink all resources
 
-                              AbstractNode* node;
+                         /*     AbstractNode* node;
                               node=vm->hostNodeVL;
                               cout << "hostNode----->" << vm->hostNodeVL->getFullName() << endl;;
 
@@ -537,6 +545,8 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
 
 
                               return node;
+                              */
+                              ++j;
                           } else {
                               ++j;
 

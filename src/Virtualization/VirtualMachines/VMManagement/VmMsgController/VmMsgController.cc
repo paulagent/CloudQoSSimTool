@@ -14,7 +14,6 @@
 // 
 
 #include "VmMsgController.h"
-#include "AbstractCloudManager.h"
 
 Define_Module(VmMsgController);
 
@@ -61,6 +60,7 @@ void VmMsgController::initialize() {
 
 
 
+
 }
 
 void VmMsgController::finish() {
@@ -86,16 +86,20 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
     Pid=msg->getPid();
     Uid = msg->getUid();
     cout << "PiD----->"<< Pid << endl;
-
     cout << "UiD----->"<< Uid << endl;
+    cout << "VmMsgController::processRequestMessage:msg->getFullPath()    " <<msg->getFullPath()<< endl;
+    cout << "parent: "<<         getParentModule()->getParentModule() << endl;
+ //   VM* myVM=getParentModule()->getParentModule();
 
-    for(typename std::vector<RunningVM>::iterator it = runVM.begin(); it != runVM.end(); ++it ) {
+//    vector <RunningVM*> runVM1;
+
+   /* runVM1=AbstractCloudManager::getRunVM();
+    for(typename std::vector<RunningVM*>::iterator it = runVM1.begin(); it != runVM1.end(); ++it ) {
         /* std::cout << *it; ... */
   //      if (Pid == it.getPid())
    //     {flag =true; }
-        cout<< "ssss" <<endl;
-    }
-
+//        cout<< "ssss" <<endl;
+  //  }
     if (Pid==-1  )
 
     {
@@ -103,14 +107,25 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
 
 
     }
-    else if (flag)  // this part to check if Pid is in running VM queue,if not, we just ingore the msg
+ /*   else if (getParentModule()->getParentModule()->is_freezed)  // this part to check if Pid is in running VM queue,if not, we just ingore the msg
     {
+        delete(msg);
+    } */
+    else{
+
     sm_net = dynamic_cast<icancloud_App_NET_Message *>(msg);
 
     operation = msg->getOperation();
 
     cout << "operation-->" << operation << endl;
+    // added by Zahra - uvic
 
+    if (migrateActive)
+    {
+        delete (msg);
+    }
+    //
+    else{
     if (operation == SM_STOP_AND_DOWN_VM) {
 
         if (!migrateActive) {
@@ -186,7 +201,7 @@ cout << "VmMsgController::processRequestMessage--->fromApps--getIndex " <<msg->g
 
         }
     }
-
+    }
 
     }
 }
@@ -211,6 +226,7 @@ void VmMsgController::processResponseMessage(icancloud_Message *sm) {
         if (sm_net != NULL) {
             updateCommId(sm_net);
         }
+        cout << "VmMsgController::processResponseMessage:        sendResponseMessage(sm);" << endl;
 
         sendResponseMessage(sm);
     }
