@@ -198,7 +198,7 @@ AbstractRequest* GeneralUser::selectResourcesJob(jobBase* job) {
     found = false;
     selectedVMs.clear();
     reqVM = new RequestVM();
-    cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  selectResourcesJob   &&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
+  //  cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  selectResourcesJob   &&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
 
     // The behavior of the selection of VMs is to get the first VM in free state.
     for (i = 0; i < machinesMap->size() && (!found); i++) {
@@ -206,14 +206,14 @@ AbstractRequest* GeneralUser::selectResourcesJob(jobBase* job) {
         for (j = 0;
                 (j < (unsigned int) machinesMap->getSetQuantity(i)) && (!found);
                 j++) {
-  cout<< "in loop:  "<< j <<"found="<<found <<endl;
+  //cout<< "in loop:  "<< j <<"found="<<found <<endl;
             machine = machinesMap->getMachineByIndex(i, j);
             vm = dynamic_cast<VM*>(machine);
-            cout<< "vm->getPendingOperation()--->"<<vm->getPendingOperation()<<endl;
+      //      cout<< "vm->getPendingOperation()--->"<<vm->getPendingOperation()<<endl;
             if (vm->getPendingOperation() == NOT_PENDING_OPS) {
                 if (!vm->is_freezed){
                     if (vm->getState() == MACHINE_STATE_IDLE) {
-                        cout<<"(vm->getVmState() == MACHINE_STATE_IDLE) and NOT_PENDING_OPS"<<endl;
+                     //   cout<<"(vm->getVmState() == MACHINE_STATE_IDLE) and NOT_PENDING_OPS"<<endl;
 
                         //if ((vm->getVmState() == MACHINE_STATE_IDLE) || (vm->getVmState() == MACHINE_STATE_RUNNING)) {
                         selectedVMs.insert(selectedVMs.begin(), vm);
@@ -229,9 +229,9 @@ AbstractRequest* GeneralUser::selectResourcesJob(jobBase* job) {
 //		machine = machinesMap->getMachineByIndex(0,0);
 //		vm = dynamic_cast<VM*>(machine);
 //		selectedVMs.insert(selectedVMs.begin(), vm);
-    cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&& END OF LOOPS   &&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
-    cout<< "in loop:  "<< j <<"found="<<found <<endl;
-    cout<< "selected vms number:  "<< selectedVMs.size() << endl;
+  //  cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&& END OF LOOPS   &&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
+   // cout<< "in loop:  "<< j <<"found="<<found <<endl;
+   // cout<< "selected vms number:  "<< selectedVMs.size() << endl;
 
     reqVM->setVectorVM(selectedVMs);
     aReq = dynamic_cast<AbstractRequest*>(reqVM);
