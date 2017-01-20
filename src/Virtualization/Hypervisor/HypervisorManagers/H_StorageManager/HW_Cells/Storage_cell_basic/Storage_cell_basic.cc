@@ -79,7 +79,7 @@ void Storage_cell_basic::processRequestMessage (icancloud_Message *sm){
 		// Configuration message
 		if (sm_net != NULL){
 		    if (sm_net->getOperation() == SM_SET_HBS_TO_REMOTE){
-		        cout << "Storage_cell_basic::processRequestMessage " << endl;
+		        cout << "Storage_cell_basic::processRequestMessage---->SM_SET_HBS_TO_REMOTE " << endl;
 		        setRemoteData(sm_net);
 		    }
 
@@ -90,7 +90,7 @@ void Storage_cell_basic::processRequestMessage (icancloud_Message *sm){
             // Set the size in the message for the remote system
             sm_io = check_and_cast <icancloud_App_IO_Message*> (sm);
             sm_io->setNfs_requestSize_KB(sm_io->getSize());
-cout <<"Storage_cell_basic::processRequestMessage sm_net is null" << sm_io->getFullPath() <<endl;
+cout <<"Storage_cell_basic::processRequestMessage sm_net is null----->full path---->" << sm_io->getFullPath() <<endl;
             remote_storage_cell = getRemoteStorage_byPosition(0);
 
             if (remote_storage_cell == NULL){
@@ -98,7 +98,7 @@ cout <<"Storage_cell_basic::processRequestMessage sm_net is null" << sm_io->getF
                 showErrorMessage ("BS_cell_basic::processRequestMessage->Remote storage cell not initialized!");
 
             } else if (!remote_storage_cell->isActive()){
-
+                cout <<"!remote_storage_cell->isActive()" <<endl;
                 remote_storage_cell->enqueueRequest(sm_io);
 
             } else {

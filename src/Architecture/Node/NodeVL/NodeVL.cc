@@ -23,7 +23,7 @@ NodeVL::~NodeVL() {
 }
 
 void NodeVL::initialize(){
-    cout << "NodeVL::freeResources :initial " <<endl;
+   // cout << "NodeVL::freeResources :initial " <<endl;
         instancedVMs.clear();
         Node::initialize();
 
@@ -35,8 +35,8 @@ void NodeVL::finish(){
 }
 
 void NodeVL::freeResources (int pId, int uId){
-    cout << "NodeVL::freeResources :pid --ui ---> " << this->getFullName() <<endl;
-    cout << "NodeVL::freeResources :pid --ui ---> " << pId  <<":" <<uId <<endl;
+  //  cout << "NodeVL::freeResources :pid --ui ---> " << this->getFullName() <<endl;
+    //cout << "NodeVL::freeResources :pid --ui ---> " << pId  <<":" <<uId <<endl;
     hypervisor->freeResources(pId,uId);
     if (getNumOfLinkedVMs() == 0) AbstractNode::freeResources();
 }
@@ -83,7 +83,7 @@ void NodeVL::linkVM (cGate** iGateCPU,cGate** oGateCPU,
         int numCores, string virtualIP,  int vmMemory, int vmStorage, int uId, int pId){
 
     VMID* vmIdentifier;
-    cout << "NodeVL::linkVM"<< endl;
+   // cout << "NodeVL::linkVM"<< endl;
     vmIdentifier = new VMID();
     vmIdentifier->initialize(uId,pId);
     instancedVMs.insert(instancedVMs.end(), vmIdentifier);

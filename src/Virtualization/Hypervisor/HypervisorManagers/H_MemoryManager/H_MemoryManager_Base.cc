@@ -240,7 +240,7 @@ int H_MemoryManager_Base::setVM (cGate* oGateI, cGate* oGateO, cGate* iGateI, cG
     int idxToVMo;
     int idxFromVMi;
     int idxFromVMo;
-cout << "H_MemoryManager_Base::setVM" <<endl;
+
     // Initialize control structure at node
         vmControl* control;
         control = new vmControl();
@@ -273,7 +273,7 @@ void H_MemoryManager_Base::freeVM (int uId, int pId){
 
     bool found = false;
     vmControl* control;
-    cout << "H_MemoryManager_Base::freeVM----> vms size" << vms.size() << endl;
+  //  cout << "H_MemoryManager_Base::freeVM----> vms size" << vms.size() << endl;
 
     for (int i = 0; (i < (int)vms.size()) && (!found); i++){
 

@@ -22,6 +22,8 @@ void API_OS::finish(){
 
 void API_OS::startExecution(int pid){
 cout << "API_OS::startExecution()---simulation start Pid---->"<< pid<<endl;
+cout << "API_OS::startExecution()---simulation start gethostid---->"<< gethostid()<<endl;
+
 Pid = pid;
     fromOSGate = gate ("fromOS");
     toOSGate = gate ("toOS");

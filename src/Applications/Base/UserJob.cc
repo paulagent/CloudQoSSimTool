@@ -61,7 +61,7 @@ UserJob* UserJob::cloneJob(cModule* userMod) {
 
     // Init ..
     appPath << this->getNedTypeName();
-cout << "UserJob::cloneJob --->" <<appPath.str() <<endl;
+//cout << "UserJob::cloneJob --->" <<appPath.str() <<endl;
     // Create the app module
     modType = cModuleType::get(appPath.str().c_str());
 
@@ -81,10 +81,10 @@ cout << "UserJob::cloneJob --->" <<appPath.str() <<endl;
     cloneApp->buildInside();
 
     // Call initiialize
-    cout << "UserJob::cloneJob->callInitialize() before call init;" << endl;
+  //  cout << "UserJob::cloneJob->callInitialize() before call init;" << endl;
     //uvic whic initialize method will call
     cloneApp->callInitialize();
-    cout << "UserJob::cloneJob->callInitialize() after call init;" << endl;
+   // cout << "UserJob::cloneJob->callInitialize() after call init;" << endl;
     newJob = check_and_cast<UserJob*>(cloneApp);
     newJob->setOriginalName(this->getOriginalName().c_str());
     newJob->setAppType(this->getAppType());

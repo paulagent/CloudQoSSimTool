@@ -126,7 +126,7 @@ void H_CPUManager_Base::processRequestMessage (icancloud_Message *sm){
 		}
 		// If operation is aimed to perform a computing block from a VM
 		else {
-		    cout <<"H_CPUManager_Base :processRequestMessage"<<endl;
+
 			schedulingCPU(sm_cpu);
 		}
 
@@ -199,7 +199,7 @@ void H_CPUManager_Base::processResponseMessage (icancloud_Message *sm){
 }
 
 void H_CPUManager_Base::setVM (cGate** oGates, cGate** iGates, int numCores, int uId, int pId){
-    cout << "H_CPUManager_Base::setVM :---> " <<endl;
+
 
     int idxToVM;
     int idxFromVM;
@@ -221,7 +221,7 @@ void H_CPUManager_Base::setVM (cGate** oGates, cGate** iGates, int numCores, int
     }
 
     // Connect to input gates
-    cout << "H_CPUManager_Base::setVM :---> end" <<endl;
+
     for (int i = 0; i < (int)numCores; i++){
         idxFromVM = fromVMCPU->newGate("fromVMCPU");
         fromVMCPU->connectIn(oGates[i],idxFromVM);
@@ -237,8 +237,8 @@ void H_CPUManager_Base::freeVM (int uId, int pId){
     vmControl* control;
     int gateIdx;
     int gatesSize;
-    cout << "H_CPUManager_Base::freeVM :pid --ui ---> " << pId  <<":" <<uId <<endl;
-    cout << "H_CPUManager_Base::freeVM----> vms size" << vms.size() << endl;
+    //cout << "H_CPUManager_Base::freeVM :pid --ui ---> " << pId  <<":" <<uId <<endl;
+  //  cout << "H_CPUManager_Base::freeVM----> vms size" << vms.size() << endl;
     for (int i = 0; (i < (int)vms.size()) && (!found); i++){
         control = (*(vms.begin() + i));
         if ((control->pId == pId) && (control->uId == uId)){
@@ -257,10 +257,10 @@ void H_CPUManager_Base::freeVM (int uId, int pId){
         }
     }
     /*/uvic
-                cout << "numcpu:  "<< numCPUs <<endl;
+
                 for (int i=0; i<numCPUs; i++){
 
-               cout << toNodeCPU [i]->getFullName()<<endl;
+
                toNodeCPU[i]->disconnect();
                fromNodeCPU[i]->disconnect();
                 } //uvic*/

@@ -62,8 +62,10 @@ void CPU_Intensive::finish(){
 
 void CPU_Intensive::startExecution (int pid){
     Pid = pid;
+    //cout << "CPU_Intensive::startExecution" <<endl;
+
     API_OS::startExecution(Pid);
-  //  cout << " CPU_Intensive::startExecution()---simulation start>"<<endl;
+   //cout << " CPU_Intensive::startExecution()---simulation start>"<<endl;
 
     Enter_Method_Silent();
     // Create SM_WAIT_TO_EXECUTE message for delaying the execution of this application
@@ -100,7 +102,7 @@ void CPU_Intensive::processRequestMessage (icancloud_Message *sm){
 
 
 void CPU_Intensive::processResponseMessage (icancloud_Message *sm){
-cout << "CPU_Intensive::processResponseMessage" <<endl;
+//cout << "CPU_Intensive::processResponseMessage" <<endl;
 
 
 
@@ -237,7 +239,7 @@ cout << "CPU_Intensive::processResponseMessage" <<endl;
 			else if (executeCPU){
 					
 				// Execute CPU!
-			    cout << "executeCPU 1" <<endl;
+			  //  cout << "executeCPU 1" <<endl;
 				executeCPUrequest ();								
 			}
 			
@@ -246,7 +248,7 @@ cout << "CPU_Intensive::processResponseMessage" <<endl;
 
 				if ((executeRead) && (currentIteration > iterations))
 				{
-				    cout << "CPU_Intensive::processResponseMessage" <<endl;
+				  //  cout << "CPU_Intensive::processResponseMessage" <<endl;
 					printResults();
 				}
 				else
@@ -268,7 +270,7 @@ void CPU_Intensive::changeState(string newState){
 
 void CPU_Intensive::executeIOrequest(bool executeRead, bool executeWrite){
 
-    cout << "CPU_Intensive::executeIOrequest" <<endl;
+   // cout << "CPU_Intensive::executeIOrequest" <<endl;
 	// Reset timer!
 	startServiceIO = simTime();
 
@@ -310,6 +312,7 @@ void CPU_Intensive::executeCPUrequest(){
 
 	// Reset timer!	
 	startServiceCPU = simTime ();
+	//cout << "startServiceCPU = simTime ();"<<startServiceCPU<<endl;
 	icancloud_request_cpu (MIs);
 }
 
@@ -341,7 +344,7 @@ void CPU_Intensive::printResults (){
         addResults(jobResults);
 
     //Send results list to the cloudManager
-        cout << "CPU_Intensive::printResults --before call notify_UserJobHasFinished" << endl;
+        //cout << "CPU_Intensive::printResults --before call notify_UserJobHasFinished" << endl;
         userPtr->notify_UserJobHasFinished(this);
 }
 

@@ -63,7 +63,7 @@ int CfgCloud::getMemorySize (int index){
     vector <vmStructure*>::iterator vmIt;
 
     vmIt = vms.begin() + index;
-     std::cout << "CfgCloud::getMemorySize " << (*vmIt)->memorySize_MB << endl;
+    // std::cout << "CfgCloud::getMemorySize " << (*vmIt)->memorySize_MB << endl;
     return (*vmIt)->memorySize_MB;
 
 }

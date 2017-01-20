@@ -58,7 +58,7 @@ void Hypervisor::setVM(cGate** iGateCPU, cGate** oGateCPU, cGate* iGateMemI,
         cGate* oGateNet, cGate* iGateStorage, cGate* oGateStorage, int numCores,
         string virtualIP, int requestedMemoryKB, int requestedStorageKB,
         int uId, int pId) {
-cout << "Hypervisor::setVM-------------------------------------------------------"<< endl;
+
     cpuM->setVM(oGateCPU, iGateCPU, numCores, uId, pId);
 cout <<"Hypervisor::setVM--->virtualIP--->"<<virtualIP<<endl;
     netM->setVM(oGateNet, iGateNet, uId, pId, virtualIP, 1);
@@ -71,7 +71,7 @@ cout <<"Hypervisor::setVM--->virtualIP--->"<<virtualIP<<endl;
 }
 
 void Hypervisor::freeResources(int pId, int uId) {
-    //cout << "Hypervisor::freeResources :pid --ui ---> " << pId  <<":" <<uId <<endl;
+
 
     cpuM->freeVM(uId, pId);
     memM->freeVM(uId, pId);

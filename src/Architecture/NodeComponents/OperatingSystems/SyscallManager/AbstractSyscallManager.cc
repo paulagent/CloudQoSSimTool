@@ -89,7 +89,7 @@ void AbstractSyscallManager::processSelfMessage(cMessage* msg){
 
             for (int i = 0; (i < (int)pendingJobs.size()) && (!found); i++){
                 if ((*(pendingJobs.begin() +i))->messageId == hmsg->getId()){
-               cout << " AbstractSyscallManager::processSelfMessage --> create process" <<endl;
+            //   cout << " AbstractSyscallManager::processSelfMessage --> create process" <<endl;
                     found = true;
                     createProcess((*(pendingJobs.begin() + i))->job, hmsg->getUid());
                     pendingJobs.erase(pendingJobs.begin() + i);

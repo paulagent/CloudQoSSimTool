@@ -45,6 +45,7 @@
 #define PENDING_STORAGE                          1
 #define PENDING_SHUTDOWN                         2
 #define PENDING_STARTUP                          3
+#define PENDING_UNFREEZ                          4
 
 
 //--------------------------DEBUG STATES --------------

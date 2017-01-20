@@ -69,7 +69,7 @@ void VM::initialize() {
     cModule* osMod;
     string vmTypeName;
     Machine::initialize();
-cout <<"VM::initialize()" << endl;
+
 //cout<<"IP"<<(this->getIP())<<endl;
 
         // Init ..
@@ -156,7 +156,7 @@ void VM::setManager(icancloud_Base* manager) {
 }
 void VM::sleep(string containerID){
     //call pause container function
-    cout << "VM::sleep containerID    " << containerID <<endl;
+  //  cout << "VM::sleep containerID    " << containerID <<endl;
    dockerDaemon-> pauseDockerContainer(containerID);
 
 
@@ -167,11 +167,11 @@ void VM::sleep(string containerID){
 
         dockerDaemon->unPauseDockerContainer(containerID);
     }
-   void VM::send_tcp_msg(string msg, string dest_ip)
+   void send_tcp_msg(string msg, string dest_ip)
    {
 
    }
-   void VM::receive_tcp_msg()
+   void receive_tcp_msg()
    {
 
    }

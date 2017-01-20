@@ -86,7 +86,7 @@ cGate* cGateManager::getGate(int index){
     } else {
 
         gate = (*(gates.begin() + index))->gate;
-        std::cout << "cGateManager::getGate--->" <<gate->getFullName() << "--->" <<gate->getFullPath() <<endl;
+       // std::cout << "cGateManager::getGate--->" <<gate->getFullName() << "--->" <<gate->getFullPath() <<endl;
     }
     return gate;
 }

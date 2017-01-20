@@ -170,7 +170,7 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 	icancloud_App_IO_Message *sm_io;
 
 	vector<icancloud_App_NET_Message*> sm_close;
-    cout << "H_NETManager_Base::processRequestMessage  ----->ArrivalModule-----> "<< sm->getArrivalModule() << endl;
+   // cout << "H_NETManager_Base::processRequestMessage  ----->ArrivalModule-----> "<< sm->getArrivalModule() << endl;
 
 	// Init ..
 		sm_net = dynamic_cast <icancloud_App_NET_Message*> (sm);
@@ -178,12 +178,12 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 
 		userID = sm->getUid();
 
-		cout << "H_NETManager_Base::processRequestMessage ---> userid ---->"   <<  userID <<endl;
+		//cout << "H_NETManager_Base::processRequestMessage ---> userid ---->"   <<  userID <<endl;
 		vmID = sm->getPid();
-        cout << "H_NETManager_Base::processRequestMessage ---> vmID ---->"   <<  vmID <<endl;
+       // cout << "H_NETManager_Base::processRequestMessage ---> vmID ---->"   <<  vmID <<endl;
 
 		operation = sm->getOperation();
-        cout << "H_NETManager_Base::processRequestMessage ---> operation ---->"   <<  operation  <<endl;
+      //  cout << "H_NETManager_Base::processRequestMessage ---> operation ---->"   <<  operation  <<endl;
 
 		sm_close.clear();
 
@@ -228,16 +228,16 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 
 	// The message came from a vm application ..
 	else if (sm->arrivedOn("fromVMNet")){
-        cout << "H_NETManager_Base::processRequestMessage ---> The message came from a vm application .."<< endl;
+      //  cout << "H_NETManager_Base::processRequestMessage ---> The message came from a vm application .."<< endl;
 
 		if(operation == SM_SET_IOR){
-	        cout << "H_NETManager_Base::processRequestMessage ---> SM_SET_IOR---> calling create vm"<< endl;
+	    //    cout << "H_NETManager_Base::processRequestMessage ---> SM_SET_IOR---> calling create vm"<< endl;
 
 	        if (localNetManager == NULL)
 
 	            {
 	            //throw cRuntimeError("Can not cast the local net manager\n");
-	                    cout << "localNetManager == NULL" << endl;
+	                   // cout << "localNetManager == NULL" << endl;
 	                    mod = getParentModule()->getSubmodule ("localNetManager");
 	                    localNetManager = dynamic_cast <LocalNetManager*>  (mod);
 	            }
@@ -327,7 +327,7 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
 
 		}
 		else if (operation == SM_CLOSE_VM_CONNECTIONS){
-            cout << "H_NETManager_Base::processRequestMessage ---> SM_CLOSE_VM_CONNECTIONS"<< endl;
+         //   cout << "H_NETManager_Base::processRequestMessage ---> SM_CLOSE_VM_CONNECTIONS"<< endl;
 
 		    sm_close = localNetManager->manage_close_connections(sm->getUid(), sm->getPid());
 
@@ -355,9 +355,9 @@ void H_NETManager_Base::processRequestMessage (icancloud_Message *sm){
                 (operation  == MPI_GATHER)){
 
 
-	        cout << "H_NETManager_Base::processRequestMessage ---> before overhead .."<< endl;
+	      //  cout << "H_NETManager_Base::processRequestMessage ---> before overhead .."<< endl;
 
-		    //////////////
+
            // Overhead //
 
            if (   (net_overhead != 0.0) &&

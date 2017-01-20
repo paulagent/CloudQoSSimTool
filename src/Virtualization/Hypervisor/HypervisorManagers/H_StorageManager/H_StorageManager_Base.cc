@@ -454,7 +454,7 @@ void H_StorageManager_Base::freeVM (int uId, int pId){
     // disconnect the main gates between vm and storage manager
     bool found = false;
     int gateIdx = -1;
-    cout << " H_StorageManager_Base::freeVM (int uId, int pId)--->"<<uId<< ":"<<pId<< endl;
+   // cout << " H_StorageManager_Base::freeVM (int uId, int pId)--->"<<uId<< ":"<<pId<< endl;
 
     for (int i = 0; (i < (int)vmIDs.size()) && (!found); i++){
         if ( ((*(vmIDs.begin() + i))->uId == uId) && ((*(vmIDs.begin() + i))->pId == pId)){

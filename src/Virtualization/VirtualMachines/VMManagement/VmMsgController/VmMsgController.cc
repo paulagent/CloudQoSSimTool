@@ -14,7 +14,9 @@
 // 
 
 #include "VmMsgController.h"
+
 //#include "AbstractCloudManager.h"
+
 
 Define_Module(VmMsgController);
 
@@ -61,6 +63,7 @@ void VmMsgController::initialize() {
 
 
 
+
 }
 
 void VmMsgController::finish() {
@@ -80,24 +83,30 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
 
     icancloud_App_NET_Message *sm_net;
     int operation;
-    cout << "VmMsgController::processRequestMessage:    " <<msg->getFullName()<< endl;
+  //  cout << "VmMsgController::processRequestMessage:    " <<msg->getFullName()<< endl;
     int Pid, Uid;
-    bool flag = true;
+    //bool flag = true;
     Pid=msg->getPid();
     Uid = msg->getUid();
     string s = msg->getSenderModule()->getFullName();
-    cout << "msg->getSenderModule()->getFullName() " << s << endl;
+  //  cout << "msg->getSenderModule()->getFullName() " << s << endl;
     cout << "PiD----->"<< Pid << endl;
-
     cout << "UiD----->"<< Uid << endl;
-   // std::vector<RunningVM*>::iterator it;
-   // for(it = AbstractCloudManager::runVM.begin(); it != AbstractCloudManager::runVM.end(); ++it ) {
-        /* std::cout << *it; ... */
+
+ //   cout << "VmMsgController::processRequestMessage:msg->getFullPath()    " <<msg->getFullPath()<< endl;
+    cout << "parent: "<<         getParentModule()->getParentModule() << endl;
+ //   VM* myVM=getParentModule()->getParentModule();
+
+//    vector <RunningVM*> runVM1;
+
+   /* runVM1=AbstractCloudManager::getRunVM();
+    for(typename std::vector<RunningVM*>::iterator it = runVM1.begin(); it != runVM1.end(); ++it ) {
+
   //      if (Pid == it.getPid())
    //     {flag =true; }
-   //     cout<< "ssss" <<endl;
-   // }
-
+//        cout<< "ssss" <<endl;
+  //  }
+*/
     if (Pid==-1  )
 
     {
@@ -105,14 +114,25 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
 
 
     }
-    else if (flag)  // this part to check if Pid is in running VM queue,if not, we just ingore the msg
+ /*   else if (getParentModule()->getParentModule()->is_freezed)  // this part to check if Pid is in running VM queue,if not, we just ingore the msg
     {
+        delete(msg);
+    } */
+    else{
+
     sm_net = dynamic_cast<icancloud_App_NET_Message *>(msg);
 
     operation = msg->getOperation();
 
     cout << "operation-->" << operation << endl;
+    // added by Zahra - uvic
 
+    if (migrateActive)
+    {
+        delete (msg);
+    }
+    //
+    else{
     if (operation == SM_STOP_AND_DOWN_VM) {
 
         if (!migrateActive) {
@@ -144,7 +164,7 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
 
         // Set as application id the arrival gate id (unique per job).
         if ((sm_net != NULL) && (sm_net->getCommId() != -1)) {
-            cout << "run this part" <<endl;
+          //  cout << "run this part" <<endl;
             insertCommId(uId, pId, msg->getCommId(), msg->getId());
        //     cout << "VmMsgController::processRequestMessage:  insertCommId   " << endl;
         }
@@ -163,7 +183,7 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
             else if (msg->arrivedOn("fromApps")) {
 
                 updateCounters(msg, 1);
-cout << "VmMsgController::processRequestMessage--->fromApps--getIndex " <<msg->getArrivalGate()->getIndex() <<endl;
+//cout << "VmMsgController::processRequestMessage--->fromApps--getIndex " <<msg->getArrivalGate()->getIndex() <<endl;
 
                 msg->setCommId(msg->getArrivalGate()->getIndex());
 
@@ -179,7 +199,7 @@ cout << "VmMsgController::processRequestMessage--->fromApps--getIndex " <<msg->g
                     sm_net->setVirtual_localIP(sm_net->getLocalIP());
                     sm_net->setVirtual_localPort(sm_net->getLocalPort());
                 }
-                cout << "msg->arrivedOn(\"fromApps\") -->gate id  is "<< msg->getCommId() << endl;
+            //    cout << "msg->arrivedOn(\"fromApps\") -->gate id  is "<< msg->getCommId() << endl;
                // cout << "msg->arrivedOn(\"fromApps\") -->gate nameis "
               //          << toOSApps->getGate(msg->getCommId())->getFullName()
               //          << endl;
@@ -188,7 +208,7 @@ cout << "VmMsgController::processRequestMessage--->fromApps--getIndex " <<msg->g
 
         }
     }
-
+    }
 
     }
 }
@@ -198,7 +218,7 @@ void VmMsgController::processResponseMessage(icancloud_Message *sm) {
     // If msg arrive from OS
 
     updateCounters(sm, -1);
-    cout << "VmMsgController::processResponseMessage" << endl;
+  //  cout << "VmMsgController::processResponseMessage" << endl;
 
     if (migrateActive) {
         pushMessage(sm);
@@ -213,6 +233,7 @@ void VmMsgController::processResponseMessage(icancloud_Message *sm) {
         if (sm_net != NULL) {
             updateCommId(sm_net);
         }
+      //  cout << "VmMsgController::processResponseMessage:        sendResponseMessage(sm);" << endl;
 
         sendResponseMessage(sm);
     }
@@ -285,7 +306,7 @@ icancloud_Message* VmMsgController::popMessage() {
 
 void VmMsgController::sendPendingMessage(icancloud_Message* msg) {
     int smIndex;
-    cout << "VmMsgController::sendPendingMessage" << endl;
+    //cout << "VmMsgController::sendPendingMessage" << endl;
 
     // The message is a Response message
     if (msg->getIsResponse()) {
@@ -301,7 +322,7 @@ void VmMsgController::sendPendingMessage(icancloud_Message* msg) {
 
         else if (msg->arrivedOn("fromApps")) {
             updateCounters(msg, 1);
-            cout << "msg-111111>arrivedOn(\"fromApps\")" << endl;
+          //  cout << "msg-111111>arrivedOn(\"fromApps\")" << endl;
             sendRequestMessage(msg, toOSApps->getGate(smIndex));
         }
 
@@ -315,7 +336,7 @@ void VmMsgController::flushPendingMessages() {
 
     // Extract all the messages and send to the destinations
 
-    cout << "VmMsgController::flushPendingMessages()" << endl;
+  //  cout << "VmMsgController::flushPendingMessages()" << endl;
 
     while (!pendingMessages.empty()) {
         msgIt = pendingMessages.begin();
@@ -335,7 +356,7 @@ void VmMsgController::updateCounters(icancloud_Message* msg, int quantity) {
     icancloud_App_IO_Message* ioMsg;
     icancloud_App_MEM_Message* memMsg;
     icancloud_App_NET_Message* netMsg;
-    cout << "VmMsgController::updateCounters" << endl;
+    //cout << "VmMsgController::updateCounters" << endl;
 
     cpuMsg = dynamic_cast<icancloud_App_CPU_Message*>(msg);
     ioMsg = dynamic_cast<icancloud_App_IO_Message*>(msg);

@@ -37,7 +37,7 @@ void RemoteStorageApp::processSelfMessage (cMessage *msg){
 void RemoteStorageApp::processRequestMessage (icancloud_Message *sm){
 
 	sm->setNextModuleIndex(-1);
-	cout <<"RemoteStorageApp::processRequestMessage"<<endl;
+	//cout <<"RemoteStorageApp::processRequestMessage"<<endl;
 	sendRequestMessage (sm, toOSGate);
 }
 
@@ -233,7 +233,7 @@ void RemoteStorageApp::processIOCallResponse (icancloud_App_IO_Message *sm_io){
 
 void RemoteStorageApp::closeConnection (int uId, int pId){
 
-    cout << "RemoteStorageApp::closeConnection"<<endl;
+   // cout << "RemoteStorageApp::closeConnection"<<endl;
 
 
 	Enter_Method_Silent();

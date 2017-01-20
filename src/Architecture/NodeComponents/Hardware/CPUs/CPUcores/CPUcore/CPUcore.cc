@@ -192,7 +192,7 @@ void CPUcore::processRequestMessage (icancloud_Message *sm){
 	        // TODO: The cpu scheduler should increase the speed of the cpu depending on the calculated load..
 			else{
 				cpuTime = tick_s.dbl() * sm_cpu->getQuantum();
-				 cout << "CPUcore::processRequestMessage call executeMIs" <<endl;
+				// cout << "CPUcore::processRequestMessage call executeMIs" <<endl;
 				sm_cpu->executeTime (cpuTime);				
 			}
 		}
@@ -204,7 +204,7 @@ void CPUcore::processRequestMessage (icancloud_Message *sm){
 			if ((sm_cpu->getQuantum() == INFINITE_QUANTUM) || (sm_cpu->getQuantum() >= ceil (sm_cpu->getRemainingMIs()/ipt))){
 
 			    if (!executingMessage){
-			        cout << "CPUcore::processRequestMessage call executeMIs" <<endl;
+			     //   cout << "CPUcore::processRequestMessage call executeMIs" <<endl;
 			        currentTime = getTimeToExecuteCompletely (sm_cpu->getRemainingMIs());
 			        sm_cpu->executeMIs (sm_cpu->getRemainingMIs());
 			    }

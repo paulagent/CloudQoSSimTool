@@ -148,7 +148,7 @@ void ServerApplication::processResponseMessage (icancloud_Message *sm){
 
 				// File not found!
 				else if (sm_io->getResult() == icancloud_FILE_NOT_FOUND){
-				    cout << "ServerApplication::processResponseMessage----> File not found!" << endl;
+				    //cout << "ServerApplication::processResponseMessage----> File not found!" << endl;
 				//	osStream << "File not found!";
 				//	isError = true;
 				}

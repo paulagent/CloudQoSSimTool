@@ -173,7 +173,7 @@ void VMSyscallManager::processRequestMessage (icancloud_Message *sm){
 }
 
 int VMSyscallManager::createProcess(icancloud_Base* j, int uid){
-    cout << "VMSyscallManager::createProcess --->before call linkNewApplication : " <<endl;
+   // cout << "VMSyscallManager::createProcess --->before call linkNewApplication : " <<endl;
     cModule* jobAppModule;
     UserJob* job;
 
