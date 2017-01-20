@@ -64,6 +64,7 @@ class API_OS: virtual public icancloud_Base{
 		bool   flagFinalize;
 
 		int Pid ;
+		int Uid ;
 	   /**
 		* Destructor
 		*/

@@ -104,6 +104,7 @@ void API_OS::icancloud_request_read (const char* fileName, unsigned int offset, 
 		sm_io->setOffset (offset);
 		sm_io->setSize (size);
 		sm_io->setPid(Pid);
+		sm_io->setUid(Uid);
 		
 		// Update message length
 		sm_io->updateLength ();

@@ -46,7 +46,7 @@ protected:
      string nodeSetName;										// To identify the set.
      string ip;                                                 // IP address of the VM
 
-     vector <vmStatesLog_t*> states_log;    // To log the states of the vms (composed by the code of the state and when a change is perfomed (in minutes).
+     vector <vmStatesLog_t*> states_log;    // To log the states of the vms (composed by the code of the state and when a change is performed (in minutes).
 
      vector<DockerContainer*>  dockerset;                                       // all containers exist in vm
 
@@ -132,7 +132,7 @@ public:
     void wakeup(string containerID);
 
     //TCP
-    void send_tcp_msg(string* msg, string* dest_ip);
+    void send_tcp_msg(string msg, string dest_ip);
     void receive_tcp_msg();
 
 

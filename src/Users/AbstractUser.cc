@@ -242,7 +242,7 @@ void AbstractUser::notify_UserRequestAttendeed  (AbstractRequest* req){
     throw cRuntimeError ("void AbstractUser::notify_UserRequestAttendeed ->to be implemented\n");
     cout << "AbstractUser::notify_UserRequestAttendeed getOperation() == REQUEST_RESOURCES " <<endl;
     // Define ..
-		vector<AbstractRequest*>::iterator reqIt;
+	//	vector<AbstractRequest*>::iterator reqIt;
 //		int i;
 //		int storageConnectionSize;
 //		StorageRequest* strReq;

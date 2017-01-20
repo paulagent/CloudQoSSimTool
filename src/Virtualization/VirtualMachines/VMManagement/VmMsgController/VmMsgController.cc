@@ -14,7 +14,7 @@
 // 
 
 #include "VmMsgController.h"
-#include "AbstractCloudManager.h"
+//#include "AbstractCloudManager.h"
 
 Define_Module(VmMsgController);
 
@@ -82,19 +82,21 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
     int operation;
     cout << "VmMsgController::processRequestMessage:    " <<msg->getFullName()<< endl;
     int Pid, Uid;
-    bool flag = false;
+    bool flag = true;
     Pid=msg->getPid();
     Uid = msg->getUid();
+    string s = msg->getSenderModule()->getFullName();
+    cout << "msg->getSenderModule()->getFullName() " << s << endl;
     cout << "PiD----->"<< Pid << endl;
 
     cout << "UiD----->"<< Uid << endl;
-
-    for(typename std::vector<RunningVM>::iterator it = runVM.begin(); it != runVM.end(); ++it ) {
+   // std::vector<RunningVM*>::iterator it;
+   // for(it = AbstractCloudManager::runVM.begin(); it != AbstractCloudManager::runVM.end(); ++it ) {
         /* std::cout << *it; ... */
   //      if (Pid == it.getPid())
    //     {flag =true; }
-        cout<< "ssss" <<endl;
-    }
+   //     cout<< "ssss" <<endl;
+   // }
 
     if (Pid==-1  )
 
@@ -136,7 +138,7 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
 
     else {
 
-        // Set the id of the message (the vm id)
+        // Set the id of the message (the vm id) why they set id in here ??
         msg->setPid(pId);
         msg->setUid(uId);
 

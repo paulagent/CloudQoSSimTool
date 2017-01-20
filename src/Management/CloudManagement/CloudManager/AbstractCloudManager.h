@@ -25,7 +25,7 @@ class AbstractCloudManager : virtual public AllocationManagement{
 
 
 protected:
-
+    vector <RunningVM*> runVM;
     /*
      * Migration attributes
      */
@@ -46,7 +46,7 @@ protected:
     bool migrationActive;
 
     vector <RequestVM*> reqPendingToDelete;
-    vector <RunningVM*> runVM;
+
 protected:
 
 
