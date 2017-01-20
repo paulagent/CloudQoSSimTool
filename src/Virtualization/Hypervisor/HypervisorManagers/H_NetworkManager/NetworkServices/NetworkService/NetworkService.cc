@@ -60,9 +60,9 @@ void NetworkService::finish(){
 void NetworkService::handleMessage(cMessage *msg){
 
 	icancloud_Message *sm;
-cout << "NetworkService::handleMessage"<< endl;
-cout << msg->getName()<< endl;
-cout << msg->getArrivalGate()->getFullName()<<endl;
+//cout << "NetworkService::handleMessage"<< endl;
+//cout << msg->getName()<< endl;
+//cout << msg->getArrivalGate()->getFullName()<<endl;
 if (msg->getArrivalGate()==fromTCPappGate[0])
 {
     send(msg,toNetTCPGate);
@@ -113,9 +113,9 @@ else
 
 			// Not an ESTABLISHED message message...
 			else{
-			cout <<	"NetworkService::handleMessage--msg->getName() --> "<< msg->getName() <<endl;
+			//cout <<	"NetworkService::handleMessage--msg->getName() --> "<< msg->getName() <<endl;
 				// Cast!
-			    cout << "Not an ESTABLISHED message message..."<< endl;
+			//    cout << "Not an ESTABLISHED message message..."<< endl;
 				sm = check_and_cast<icancloud_Message *>(msg);
 
 				// Request!
@@ -208,7 +208,7 @@ void NetworkService::processRequestMessage (icancloud_Message *sm){
 			
 			// Create a new connection... client-side
 			operation = sm->getOperation();
-			cout <<"operation----->"<< operation<< endl;
+			//cout <<"operation----->"<< operation<< endl;
 			if (operation == SM_CREATE_CONNECTION){
 
 				clientTCP_Services->createConnection (sm);
@@ -363,7 +363,7 @@ void NetworkService::processResponseMessage (icancloud_Message *sm){
 void NetworkService::receivedEstablishedConnection (cMessage *msg){
 	
 	TCPSocket *socket;
-	cout <<"NetworkService::receivedEstablishedConnection" <<endl;
+	//cout <<"NetworkService::receivedEstablishedConnection" <<endl;
 		socket = clientTCP_Services->getInvolvedSocket (msg);
 			
 		// Establishing connection... (client)

@@ -91,20 +91,20 @@ cGate* H_NETManager_Base::getOutGate (cMessage *msg){
 		// If msg arrive from VM
 		if (msg->arrivedOn("fromVMNet"))
 		{
-		    cout << "msg arrive from fromVMNet"<< endl;
+		 //   cout << "msg arrive from fromVMNet"<< endl;
             return (gate("toVMNet", msg->getArrivalGate()->getIndex()));
 		}
 		// If msg arrive from NODE
 		else if (msg->arrivedOn("fromNodeNet"))
 		{
-		    cout << "msg arrive from fromNodeNet"<< endl;
+		 //   cout << "msg arrive from fromNodeNet"<< endl;
 		    gateResult = (gate("toNodeNet"));
 
 		}
 		// If msg arrive from Block server Manager
 		else if (msg->arrivedOn("fromHStorageManager"))
 		{
-            cout << "msg arrive from Block server Manager   fromHStorageManager"<< endl;
+        //    cout << "msg arrive from Block server Manager   fromHStorageManager"<< endl;
 
 		    gateResult =  (gate("toHStorageManager"));
 		}
@@ -561,9 +561,9 @@ void H_NETManager_Base::setVM (cGate* oGate, cGate* iGate, int uId, int pId, str
 
     int idxToVM;
     int idxFromVM;
-    cout << "H_NETManager_Base::setVM"<< endl;
-    cout << "oGate->getName()"  << oGate->getName()<< endl;
-    cout << "iGate->getName()"<< iGate->getName()<< endl;
+  //  cout << "H_NETManager_Base::setVM"<< endl;
+  //  cout << "oGate->getName()"  << oGate->getName()<< endl;
+  // cout << "iGate->getName()"<< iGate->getName()<< endl;
   //  cout << "uID--->" << uId << endl;
   //  cout << "pID--->"<< pId<< endl;
 
@@ -580,13 +580,13 @@ void H_NETManager_Base::setVM (cGate* oGate, cGate* iGate, int uId, int pId, str
 
     // Connect to output gates
         idxToVM = toVMNet->newGate("toVMNet");
-        cout <<"idxToVM"<<idxToVM<< endl;
+      //  cout <<"idxToVM"<<idxToVM<< endl;
         toVMNet->connectOut(iGate,idxToVM);
       //  control->gate = idxToVM;
 
     // Connect to input gates
         idxFromVM = fromVMNet->newGate("fromVMNet");
-        cout <<"idxFromVM"<<idxFromVM<< endl;
+     //   cout <<"idxFromVM"<<idxFromVM<< endl;
 
         fromVMNet->connectIn(oGate,idxFromVM);
         control->gate = idxFromVM;
@@ -598,7 +598,7 @@ void H_NETManager_Base::setVM (cGate* oGate, cGate* iGate, int uId, int pId, str
 void H_NETManager_Base::freeVM (int uId, int pId){
 
     bool found = false;
-    cout << " H_NETManager_Base::freeVM (int uId, int pId)--->"<<uId<< ":"<<pId<< endl;
+  //  cout << " H_NETManager_Base::freeVM (int uId, int pId)--->"<<uId<< ":"<<pId<< endl;
     for (int i = 0; (i < (int)vms.size()) && (!found); i++){
         if (((*(vms.begin() + i))->uId == uId) && ((*(vms.begin() + i))->pId == pId)){
 

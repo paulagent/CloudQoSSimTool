@@ -92,7 +92,7 @@ void TCP_ServerSideService::arrivesIncommingConnection (cMessage *msg){
 													socket->getConnectionId());
 													            
             // Process current operation!
-            cout <<"TCP_ServerSideService::arrivesIncommingConnection"<<endl;
+        //    cout <<"TCP_ServerSideService::arrivesIncommingConnection"<<endl;
         	socket->processMessage(msg);           
         }
         else {

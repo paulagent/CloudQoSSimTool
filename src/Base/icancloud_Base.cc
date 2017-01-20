@@ -961,7 +961,7 @@ void icancloud_Base::processCurrentRequestMessage (){
 
 				// Process
 				cout<<"icancloud_Base::processCurrentRequestMessage ----------------> sm operation---------->"<< sm->getOperation() <<endl;
-                cout<<"icancloud_Base::processCurrentRequestMessage ----------------> processRequestMessage ---------->" <<endl;
+                //cout<<"icancloud_Base::processCurrentRequestMessage ----------------> processRequestMessage ---------->" <<endl;
 
 				processRequestMessage (sm);
 			}

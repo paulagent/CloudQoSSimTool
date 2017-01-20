@@ -22,7 +22,7 @@ H_NET_SCHED_FIFO::~H_NET_SCHED_FIFO() {
 
 void H_NET_SCHED_FIFO::initialize(){
     H_NETManager_Base::initialize();
-    cout << "H_NET_SCHED_FIFO   -------------->    initialise" << endl;
+    //cout << "H_NET_SCHED_FIFO   -------------->    initialise" << endl;
 
 
 }
@@ -48,7 +48,7 @@ void H_NET_SCHED_FIFO::schedulingNET(icancloud_Message *sm){
         icancloud_App_NET_Message* sm_net;
         icancloud_App_IO_Message *sm_io;
         icancloud_MPI_Message* sm_mpi;
-        cout << "H_NET_SCHED_FIFO::schedulingNET   --------------> begining" << endl;
+       // cout << "H_NET_SCHED_FIFO::schedulingNET   --------------> begining" << endl;
 
         vector<icancloud_App_NET_Message*> sm_close;
 
@@ -56,13 +56,13 @@ void H_NET_SCHED_FIFO::schedulingNET(icancloud_Message *sm){
             sm_net = dynamic_cast <icancloud_App_NET_Message*> (sm);
             sm_io = dynamic_cast<icancloud_App_IO_Message *>(sm);
             sm_mpi = dynamic_cast<icancloud_MPI_Message *>(sm);
-            cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->    after casting" << endl;
+       //     cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->    after casting" << endl;
 
 
             userID = sm->getUid();
             vmID = sm->getPid();
             operation = sm->getOperation();
-            cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->  operation" << operation << endl;
+           // cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->  operation" << operation << endl;
 
             sm_close.clear();
 
@@ -98,14 +98,14 @@ void H_NET_SCHED_FIFO::schedulingNET(icancloud_Message *sm){
 
             if (operation == SM_LISTEN_CONNECTION) {
 
-                cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->   SM_LISTEN_CONNECTION" << endl;
+             //   cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->   SM_LISTEN_CONNECTION" << endl;
 
                 localNetManager->manage_listen(sm);
                 sendRequestMessage(sm, toNodeNet);
 
             }
             else if (operation == SM_CREATE_CONNECTION){
-                cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->   SM_CREATE_CONNECTION" << endl;
+             //   cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->   SM_CREATE_CONNECTION" << endl;
 
                 decision = localNetManager->manage_createConnection(sm);
 
@@ -121,7 +121,7 @@ void H_NET_SCHED_FIFO::schedulingNET(icancloud_Message *sm){
 
             else if (operation == SM_CLOSE_VM_CONNECTIONS){
 
-                cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->    operation == SM_CLOSE_VM_CONNECTIONS" << endl;
+              //  cout << "H_NET_SCHED_FIFO::schedulingNET   -------------->    operation == SM_CLOSE_VM_CONNECTIONS" << endl;
 
                 sm_close = localNetManager->manage_close_connections(vmID, userID);
 
@@ -192,7 +192,7 @@ void H_NET_SCHED_FIFO::schedulingNET(icancloud_Message *sm){
 }
 
 void H_NET_SCHED_FIFO::processResponseMessage(icancloud_Message *msg){
-    cout << "H_NET_SCHED_FIFO::processResponseMessage" << endl;
+   // cout << "H_NET_SCHED_FIFO::processResponseMessage" << endl;
 
     H_NETManager_Base::processResponseMessage(msg);
 }

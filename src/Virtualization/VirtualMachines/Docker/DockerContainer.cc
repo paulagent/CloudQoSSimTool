@@ -21,7 +21,7 @@ DockerContainer::~DockerContainer() {
 }
 void DockerContainer::initialize(string image, string name,string id,int siz, string fullName)
 {
-    cout << "DockerContainer::initialize"<< endl;
+   // cout << "DockerContainer::initialize"<< endl;
     this->image=image;
     this->name=name;
     this->id=id;
