@@ -90,8 +90,8 @@ void CloudSchedulerRR::schedule() {
             //uvic
               printf("\n Method[CLOUD_SCHEDULER_RR]: ------->numPendingRequests------> %d \n", numPendingRequests());
               printf("\n Method[CLOUD_SCHEDULER_RR]: ------->userid------> %d \n", req->getUid());
-              printf("\n Method[CLOUD_SCHEDULER_RR]: ------->REQUEST TYPE: %d \n", req->getOperation());
-              printf("\n Method[CLOUD_SCHEDULER_RR]: -------> inside request loop\n");
+       //       printf("\n Method[CLOUD_SCHEDULER_RR]: ------->REQUEST TYPE: %d \n", req->getOperation());
+         //     printf("\n Method[CLOUD_SCHEDULER_RR]: -------> inside request loop\n");
 
             req_st = dynamic_cast<StorageRequest*>(req);
             req_vm = dynamic_cast<RequestVM*>(req);
@@ -116,7 +116,7 @@ void CloudSchedulerRR::schedule() {
                 //uvic
 
             } else if (req_vm != NULL) {
-                cout << "Method[CLOUD_SCHEDULER_RR]: -------> req_vm is not NULL!" << endl;
+           //     cout << "Method[CLOUD_SCHEDULER_RR]: -------> req_vm is not NULL!" << endl;
                 if (req->getOperation() == REQUEST_START_VM) {
                      printf("\n Method[CLOUD_SCHEDULER_RR]: -------> REQUEST_START_VM\n");
                     notEnoughResources = request_start_vm(req_vm);
@@ -244,12 +244,12 @@ AbstractNode* CloudSchedulerRR::selectNode(AbstractRequest* req) {
           printf("\n Method[CloudSchedulerRR::selectNode]: Node Name: ------>%s \n", node->getFullName());
           printf("\n Method[CloudSchedulerRR::selectNode]: Node Free Memory: ------>%f \n", node->getFreeMemory());
           printf("\n Method[CloudSchedulerRR::selectNode]: vmMemory: ------>%d \n", vmMemory);
-          printf("\n Method[CloudSchedulerRR::selectNode]: Node Number of Cores: ------>%d \n", node->getNumCores());
-          printf("\n Method[CloudSchedulerRR::selectNode]: vmCPU: ------>%d \n", vmCPU);
+        //  printf("\n Method[CloudSchedulerRR::selectNode]: Node Number of Cores: ------>%d \n", node->getNumCores());
+        //  printf("\n Method[CloudSchedulerRR::selectNode]: vmCPU: ------>%d \n", vmCPU);
 
         if ((node->getFreeMemory() >= vmMemory)
                 && (node->getNumCores() >= vmCPU)) {
-            printf("\n Method[CloudSchedulerRR::selectNode]: INSIDE IF PART ");
+            printf("\n Method[CloudSchedulerRR::selectNode]: INSIDE IF PART --> NODE HAS SPACE ");
 
             NodeVL* node_vl = check_and_cast<NodeVL*>(node);
             numProcesses = node_vl->getNumOfLinkedVMs();
@@ -497,7 +497,7 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                           clock_t t = clock(); // we are not sure about current time
 
                             printf("\n Method[CLOUD_SCHEDULER_RR::scheduleRR()]:NO_Runiing_VM -------> %ld \n", runVM.size());
-
+                          cout<<"j:"<<j;
                           RunningVM* vm;
                           vm = AbstractCloudManager::runVM.at(j);
                           if (t >= vm->end_time)   // we need to shutdown vm
@@ -526,11 +526,12 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                               new_req = dynamic_cast<AbstractRequest*>(new_req_vm);
                             //  new_req->setOperation(REQUEST_UNFREEZE_VM);
                               printf("\n Method[CLOUD_SCHEDULER_RR ::scheduleRR()]: ------->"
-                                      "sendingREQUEST_FREE_RESOURCES     \n");
+                                      "sending   REQUEST_FREE_RESOURCES     \n");
 
                               new_req->setOperation(REQUEST_FREE_RESOURCES);
 
                               RequestsManagement::userSendRequest(new_req);
+                              runVM.erase(runVM.begin()+j);
 
                               // Freezing VM by unlink all resources
 
@@ -546,7 +547,7 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
 
                               return node;
                               */
-                              ++j;
+                             // ++j;
                           } else {
                               ++j;
 

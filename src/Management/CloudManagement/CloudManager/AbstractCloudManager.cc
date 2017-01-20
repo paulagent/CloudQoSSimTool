@@ -523,7 +523,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             //it tries to cast the pointer via dynamic_cast,
             //and if it fails it stops the simulation with an error message
             cModule* vmSet1 = getParentModule()->getSubmodule("vmSet");
-          //  cout << "vmSet1--->"<<vmSet1->getFullName()<<endl;
+            cout << "vmSet1--->"<<vmSet1->getFullName()<<endl;
             vmImage = vmSet1->getSubmodule("vmImage", 0);
         /*   if (vmImage)
             {
@@ -565,7 +565,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             //erase the rest of vms less the actual
 
             selectedNode = selectNode(reqA);
-            //  cout << "AbstractCloudManager::request_start_vm----->" << selectedNode->getFullName()<< endl;
+              cout << "AbstractCloudManager::request_start_vm----->" << selectedNode->getFullName()<< endl;
             delete (reqSch);
 
             operation = req->getOperation();
@@ -592,7 +592,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 //          selectedNode->getFullName());
                 // vm->initialize();
                 //  vm2 = new VM(el);
-                // vm2->callInitialize();
+                 vm2->initialize();
 
                 if (vm == NULL)
                     printf(
@@ -602,7 +602,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
 
                 // Start the node (if it is off)
                 if (!(selectedNode->isON())) {
-                    //   cout << "AbstractCloudManager::request_start_vm -----> NODE WAS OFF" << endl;
+                    cout << "AbstractCloudManager::request_start_vm -----> NODE WAS OFF" << endl;
                     selectedNode->turnOn();
                 }
 
@@ -636,7 +636,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                         vmNew->getMemoryCapacity(), vmNew->getStorageCapacity(),
                         vmNew->getNumNetworkIF(), vmNew->getTypeName(),
                         vmNew->getUid(), vmNew->getPid());
-                //cout << "check LinkVM "<< endl;
+                cout << "check LinkVM "<< endl;
 
                 linkVM(nodeVL, vmNew);
                 //uvic add
@@ -811,7 +811,7 @@ void AbstractCloudManager::request_shutdown_vm(RequestVM* req) {
 
        if (req_copy->is_freezed)
        {
-           cout<< "************************VM wants to be freezed*****************************************"<<endl;
+           cout<< "************************VM is freezed---> We should unfreez it*****************************************"<<endl;
            base->setOperation(REQUEST_UNFREEZE_VM);
            RequestsManagement::userSendRequest(base);
 
@@ -1597,6 +1597,7 @@ bool AbstractCloudManager::request_unfreez_vm(RequestVM* req) {
                    //     new_req->setOperation(REQUEST_UNFREEZE_VM);
                         new_req->setOperation(REQUEST_FREE_RESOURCES);
                         RequestsManagement::userSendRequest(new_req);
+                        runVM.erase(runVM.begin()+j);
                       //  vmr->vm->turnOff();
                         //  cout << "hostNode----->"<< vmr->hostNodeVL->getFullName()<<endl;;
 

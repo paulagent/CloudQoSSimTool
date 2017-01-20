@@ -247,7 +247,7 @@ bool Storage_cell_basic::setRemoteData (icancloud_App_NET_Message* sm_net){
 		std::ostringstream fs_type_modified;
 		int position;
         replica_t* replica;
-
+cout << "Storage_cell_basic::setRemoteData"<<endl;
 	// Initialize ..
 		remote_cell = NULL;
 		fs_type = fsType;
@@ -257,11 +257,13 @@ bool Storage_cell_basic::setRemoteData (icancloud_App_NET_Message* sm_net){
         position = getRemoteCellPosition (pId);
 
         if (strcmp (fsType.c_str(), FS_NFS) == 0){
+            cout << "Storage_cell_basic::setRemoteData-->fsType.c_str()==FS_NFS-->"<<fsType.c_str()<<endl;
 
             // NFS Exists.. a second app from a VM is trying to open the same connection
             if (position != -1){
-                cout << "Storage_cell_basic::setRemoteData1 " <<endl;
+                cout << "Storage_cell_basic::setRemoteData1 --->NFS Exists.. a second app from a VM is trying to open the same connection" <<endl;
                 remote_cell = getRemoteStorage_byPosition(position);
+                cout <<"remote_cell_id"<< remote_cell->getCellID() <<endl;
                 if (!remote_cell->existsConnection(destAddress, destPort)){
                     active_remote_storage(sm_net->getPid(), sm_net->getDestinationIP(), sm_net->getDestinationPort(), sm_net->getConnectionId(), "INET");
                 }
@@ -272,6 +274,7 @@ bool Storage_cell_basic::setRemoteData (icancloud_App_NET_Message* sm_net){
             // Nueva VM con NFS
             }else{
                 remote_cell = new NFS_Storage_Cell();
+                cout << "Storage_cell_basic::setRemoteData---> new vm with NFS"<<endl;
 
                 remote_cell->setNumServersForFS(numTargetNode);
                 remote_cell->setCellID(pId);
@@ -315,6 +318,7 @@ bool Storage_cell_basic::setRemoteData (icancloud_App_NET_Message* sm_net){
                     }
                     // Creates the new sentry
                     if (!found){
+                        cout << "Storage_cell_basic::setRemoteData---> Creates the new sentry"<<endl;
 
                         replica = new replica_t();
                         replica->commId = sm_net->getCommId();

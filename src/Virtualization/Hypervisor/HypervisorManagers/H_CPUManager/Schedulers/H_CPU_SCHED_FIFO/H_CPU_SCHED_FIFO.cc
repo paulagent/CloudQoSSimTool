@@ -23,7 +23,7 @@ H_CPU_SCHED_FIFO::~H_CPU_SCHED_FIFO() {
 
 void H_CPU_SCHED_FIFO::initialize(){
 
-    cout<< "H_CPU_SCHED_FIFO::initialize()"<<endl;
+   // cout<< "H_CPU_SCHED_FIFO::initialize()"<<endl;
     H_CPUManager_Base::initialize();
 
     for (int i = 0; i < (int)numCPUs; i++){

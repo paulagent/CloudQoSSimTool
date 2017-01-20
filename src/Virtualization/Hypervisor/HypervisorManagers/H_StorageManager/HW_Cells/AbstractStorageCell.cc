@@ -229,7 +229,10 @@ Abstract_Remote_FS* AbstractStorageCell::getRemoteStorage_byPosition (unsigned i
 cout << "AbstractStorageCell::getRemoteStorage_byPosition remote_storage_cells size-- "<< remote_storage_cells.size() <<endl;
 
 //		cout << "AbstractStorageCell::getRemoteStorage_byPosition---> position--->"<< position << endl;
-		if (remote_storage_cells.size()>0){
+
+
+// if is added by Zahra@uvic
+    if (remote_storage_cells.size()>0){
 		    cell = (*(remote_storage_cells.begin() + position));
 		    cout<< "AbstractStorageCell::getRemoteStorage_byPosition-> dest addr"<<cell->getNetType()<<endl;
 		}
