@@ -270,6 +270,7 @@ bool Storage_cell_basic::setRemoteData (icancloud_App_NET_Message* sm_net){
                     sendResponseMessage(sm_net);
 
             // Nueva VM con NFS
+            //New VM with NFS
             }else{
                 remote_cell = new NFS_Storage_Cell();
 
