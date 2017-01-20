@@ -95,8 +95,8 @@ cout <<"Storage_cell_basic::processRequestMessage sm_net is null----->full path-
 
             if (remote_storage_cell == NULL){
 
-                showErrorMessage ("BS_cell_basic::processRequestMessage->Remote storage cell not initialized!");
-
+               // showErrorMessage ("BS_cell_basic::processRequestMessage->Remote storage cell not initialized!");
+cout<<"BS_cell_basic::processRequestMessage->Remote storage cell not initialized!"<<endl;
             } else if (!remote_storage_cell->isActive()){
                 cout <<"!remote_storage_cell->isActive()" <<endl;
                 remote_storage_cell->enqueueRequest(sm_io);
