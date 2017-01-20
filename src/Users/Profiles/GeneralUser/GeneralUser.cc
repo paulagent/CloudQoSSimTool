@@ -361,9 +361,9 @@ void GeneralUser::schedule() {
     //Enter_Method_Silent();
     Enter_Method("request()");
     // Define ..
-   cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&   schedule  &&&&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
-   cout<< "GeneralUser::schedule()"<< endl;
-   cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
+   //cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&   schedule  &&&&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
+   //cout<< "GeneralUser::schedule()"<< endl;
+   //cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
 
     UserJob* job;
     jobBase* jobB;

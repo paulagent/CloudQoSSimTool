@@ -51,19 +51,19 @@ bool NodeVL::testLinkVM (int vmCPUs, int vmMemory, int vmStorage, int vmNetIF, s
 
     // Begin ..
 
-     if ((getFreeMemory() > vmMemory) && (getFreeStorage() > vmStorage) && (!getIP().empty())) {
+     if ((getFreeMemory() >= vmMemory) && (getFreeStorage() >= vmStorage) && (!getIP().empty())) {
          // The maximum number of processes that allow running at node (vms maybe?)
          if  (getNumProcessesRunning() < 1000){
              ok = true;
-          //   cout << " NodeVL::testLinkVM -----> before mem and stg decrease" << endl;
-          //   cout << "NodeVL::testLinkVM ---> Free Mem ---->" << os->getFreeMemory() <<endl;
-          //   cout << "NodeVL::testLinkVM ---> Free stg ---->" << os->getFreeStorage() <<endl;
+             cout << " NodeVL::testLinkVM -----> before mem and stg decrease" << endl;
+             cout << "NodeVL::testLinkVM ---> Free Mem ---->" << os->getFreeMemory() <<endl;
+             cout << "NodeVL::testLinkVM ---> Free stg ---->" << os->getFreeStorage() <<endl;
 
              os->memDecrease(vmMemory);
              os->storageDecrease(vmStorage);
-          //   cout << "NodeVL::testLinkVM -----> after mem and stg decrease" << endl;
-         //   cout << "NodeVL::testLinkVM ---> Free Mem ---->" << os->getFreeMemory() <<endl;
-          //   cout << "NodeVL::testLinkVM ---> Free stg ---->" << os->getFreeStorage() <<endl;
+             cout << "NodeVL::testLinkVM -----> after mem and stg decrease" << endl;
+            cout << "NodeVL::testLinkVM ---> Free Mem ---->" << os->getFreeMemory() <<endl;
+             cout << "NodeVL::testLinkVM ---> Free stg ---->" << os->getFreeStorage() <<endl;
 
 
 

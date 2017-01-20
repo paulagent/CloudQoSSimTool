@@ -960,7 +960,7 @@ void icancloud_Base::processCurrentRequestMessage (){
 				sm = check_and_cast<icancloud_Message *>(unqueuedMessage);
 
 				// Process
-				cout<<"icancloud_Base::processCurrentRequestMessage ----------------> sm operation---------->"<< sm->getOperation() <<endl;
+				//cout<<"icancloud_Base::processCurrentRequestMessage ----------------> sm operation---------->"<< sm->getOperation() <<endl;
                 //cout<<"icancloud_Base::processCurrentRequestMessage ----------------> processRequestMessage ---------->" <<endl;
 
 				processRequestMessage (sm);
