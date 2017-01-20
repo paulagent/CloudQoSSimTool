@@ -109,10 +109,10 @@ using std::string;
 		
 /************************* DISKS *************************/
 
-	#define DEBUG_Disk false							// Shows basic debug messages
-	#define DEBUG_DETAILED_Disk false				// Shows detailed debug messages
-	#define DEBUG_MSG_Disk false					// Shows all messages enterely (including all parameters)
-	#define DEBUG_BRANCHES_Disk false				// Shows the block list of each request message
+	#define DEBUG_Disk true							// Shows basic debug messages
+	#define DEBUG_DETAILED_Disk true				// Shows detailed debug messages
+	#define DEBUG_MSG_Disk true					// Shows all messages enterely (including all parameters)
+	#define DEBUG_BRANCHES_Disk true				// Shows the block list of each request message
 
 
 /************************* CPU SCHEDULERS *************************/
@@ -130,12 +130,12 @@ using std::string;
 
 /************************* BASIC FILE SYSTEM *************************/
 
-	#define DEBUG_Basic_FS false							// Shows basic debug messages
-	#define DEBUG_DETAILED_Basic_FS false					// Shows detailed debug messages
-	#define DEBUG_PARANOIC_Basic_FS false					// Shows the FS layout after each FS call
-	#define DEBUG_MSG_Basic_FS false						// Shows all messages enterely (including all parameters)
-	#define DEBUG_BRANCHES_Basic_FS false					// Shows the block list of each request message
-	#define DEBUG_FS_Basic_Files false						// Shows the block list of each request message
+	#define DEBUG_Basic_FS true							// Shows basic debug messages
+	#define DEBUG_DETAILED_Basic_FS true					// Shows detailed debug messages
+	#define DEBUG_PARANOIC_Basic_FS true					// Shows the FS layout after each FS call
+	#define DEBUG_MSG_Basic_FS true						// Shows all messages enterely (including all parameters)
+	#define DEBUG_BRANCHES_Basic_FS true					// Shows the block list of each request message
+	#define DEBUG_FS_Basic_Files true						// Shows the block list of each request message
 
 
 /************************* PARALLEL FILE SYSTEM *************************/
@@ -182,12 +182,12 @@ using std::string;
 
 /************************* NETWORK SERVICES *************************/
 
-	#define DEBUG_Network_Service true				// Shows basic debug messages
-	#define DEBUG_MSG_Network_Service true			// Shows all messages enterely (including all parameters)
-	#define DEBUG_TCP_Service_Client true			// Shows basic debug messages
-	#define DEBUG_TCP_Service_MSG_Client true		// Shows all messages enterely (including all parameters)
-	#define DEBUG_TCP_Service_Server true			// Shows basic debug messages
-	#define DEBUG_TCP_Service_MSG_Server true		// Shows all messages enterely (including all parameters)
+	#define DEBUG_Network_Service false				// Shows basic debug messages
+	#define DEBUG_MSG_Network_Service false			// Shows all messages enterely (including all parameters)
+	#define DEBUG_TCP_Service_Client false			// Shows basic debug messages
+	#define DEBUG_TCP_Service_MSG_Client false		// Shows all messages enterely (including all parameters)
+	#define DEBUG_TCP_Service_Server false			// Shows basic debug messages
+	#define DEBUG_TCP_Service_MSG_Server false		// Shows all messages enterely (including all parameters)
 
 
 /************************* STORAGE MANAGERS *************************/
