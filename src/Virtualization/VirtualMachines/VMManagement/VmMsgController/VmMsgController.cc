@@ -90,11 +90,11 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
     Uid = msg->getUid();
     string s = msg->getSenderModule()->getFullName();
   //  cout << "msg->getSenderModule()->getFullName() " << s << endl;
-    cout << "PiD----->"<< Pid << endl;
-    cout << "UiD----->"<< Uid << endl;
+   // cout << "PiD----->"<< Pid << endl;
+  //  cout << "UiD----->"<< Uid << endl;
 
  //   cout << "VmMsgController::processRequestMessage:msg->getFullPath()    " <<msg->getFullPath()<< endl;
-    cout << "parent: "<<         getParentModule()->getParentModule() << endl;
+  //  cout << "parent: "<<         getParentModule()->getParentModule() << endl;
  //   VM* myVM=getParentModule()->getParentModule();
 
 //    vector <RunningVM*> runVM1;
@@ -124,7 +124,7 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
 
     operation = msg->getOperation();
 
-    cout << "operation-->" << operation << endl;
+   // cout << "operation-->" << operation << endl;
     // added by Zahra - uvic
 
     if (migrateActive)
@@ -183,7 +183,7 @@ void VmMsgController::processRequestMessage(icancloud_Message *msg) {
             else if (msg->arrivedOn("fromApps")) {
 
                 updateCounters(msg, 1);
-//cout << "VmMsgController::processRequestMessage--->fromApps--getIndex " <<msg->getArrivalGate()->getIndex() <<endl;
+cout << "VmMsgController::processRequestMessage--->fromApps--getIndex " <<msg->getArrivalGate()->getIndex() <<endl;
 
                 msg->setCommId(msg->getArrivalGate()->getIndex());
 

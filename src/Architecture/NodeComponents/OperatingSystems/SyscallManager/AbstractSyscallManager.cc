@@ -131,6 +131,7 @@ int AbstractSyscallManager::searchUserId(int jobId){
 
 void AbstractSyscallManager::removeAllProcesses(){
 
+    cout<<"AbstractSyscallManager::removeAllProcesses"<<endl;
         for (int i = 0; i < (int)processesRunning.size(); i++)
             removeProcess((*(processesRunning.begin() + i))->process->getId());
 }

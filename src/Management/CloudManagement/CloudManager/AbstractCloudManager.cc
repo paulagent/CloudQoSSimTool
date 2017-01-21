@@ -135,8 +135,8 @@ void AbstractCloudManager::initManager(int totalNodes) {
     // Create the cfgCloud object!
 
     if (!isCfgLoaded()) {
-            printf(
-                 "\n MODULE[AbstractCloudManager::initManager]: cfg is not loaded \n ");
+       //     printf(
+     //           "\n MODULE[AbstractCloudManager::initManager]: cfg is not loaded \n ");
 
         // Initialize structures and parameters
         nodesMap = new MachinesMap();
@@ -178,9 +178,9 @@ void AbstractCloudManager::initManager(int totalNodes) {
             for (i = 0; i < (int) nodeNames.size(); i++) {
 
                 nodeName = (*(nodeNames.begin() + i));
-                 printf(
-                        "\n MODULE[AbstractCloudManager::initManager]: nodeName:------->%s \n",
-                        nodeName.c_str());
+          //       printf(
+          //              "\n MODULE[AbstractCloudManager::initManager]: nodeName:------->%s \n",
+         //               nodeName.c_str());
 
                 nodeMod = getParentModule()->getParentModule()->getModuleByPath(nodeName.c_str());
                 if (nodeMod)
@@ -565,7 +565,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
             //erase the rest of vms less the actual
 
             selectedNode = selectNode(reqA);
-              cout << "AbstractCloudManager::request_start_vm----->" << selectedNode->getFullName()<< endl;
+            //  cout << "AbstractCloudManager::request_start_vm----->" << selectedNode->getFullName()<< endl;
             delete (reqSch);
 
             operation = req->getOperation();
@@ -587,9 +587,9 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
 
             } // everything is ok.
             else {
-                //    printf(
-                //         "MODULE[AbstractCloudManager::request_start_vm] select node %s\n",
-                //          selectedNode->getFullName());
+                    printf(
+                         "MODULE[AbstractCloudManager::request_start_vm] select node %s\n",
+                          selectedNode->getFullName());
                 // vm->initialize();
                 //  vm2 = new VM(el);
                  vm2->initialize();
@@ -644,7 +644,7 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
 
 
                 clock_t now = clock();
-                // simtime_t start_time;
+                //simtime_t start_time;
                 // start_time=clock();
 
                 RunningVM* started_VM = new RunningVM();

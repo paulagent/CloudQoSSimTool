@@ -236,6 +236,7 @@ int AbstractCloudUser::allocateJob(jobBase* job){
 }
 
 void AbstractCloudUser::deleteJobVM (VM* vm, UserJob* job){
+    cout<<"AbstractCloudUser::deleteJobVM---> call vm->removeprocess"<<endl;
     vm->removeProcess(job->getId());
 }
 
@@ -363,7 +364,7 @@ void AbstractCloudUser::notify_UserJobHasFinished (jobBase* job){
     string jobID;
     int wqs = getWQ_size();
     // Begin ..
-
+cout<<"AbstractCloudUser::notify_UserJobHasFinished"<<endl;
     UserJob* jobC = check_and_cast<UserJob*>(job);
 
         /* Record the instant of job's finalization */

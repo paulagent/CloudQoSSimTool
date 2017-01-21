@@ -212,7 +212,7 @@ void AbstractUser::notify_UserJobHasFinished (jobBase* job){
     string jobID;
 
     // Begin ..
-
+    cout <<"  AbstractUser::notify_UserJobHasFinished " << endl;
         /* Record the instant of job's finalization */
         job->setJob_endTime();
 

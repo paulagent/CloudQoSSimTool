@@ -55,7 +55,8 @@ void Machine::finish(){
 
 void Machine::removeProcess (int pId){
     int numProcesses;
-
+cout << " Machine::removeProcess"<<endl;
+cout<<"calling-->os->removeprocess"<<endl;
     os->removeProcess(pId);
     numProcesses = os->getNumProcessesRunning();
 
