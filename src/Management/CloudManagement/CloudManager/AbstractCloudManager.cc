@@ -644,7 +644,10 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
 
 
                 clock_t now = clock();
-                //simtime_t start_time;
+                simtime_t start_time;
+                start_time=simTime();
+                cout<<"simtime------>"<<start_time<<endl;;
+                cout<<"clock    now---->"<<now<< endl;
                 // start_time=clock();
 
                 RunningVM* started_VM = new RunningVM();
@@ -653,6 +656,8 @@ bool AbstractCloudManager::request_start_vm(RequestVM* req) {
                 cout<<"Started Vm IP:"<<started_VM->vm->getIP()<<endl;
                 started_VM->start_time = now;
                 started_VM->end_time = now + 2000; //clocks per secs
+                started_VM->start_vm=start_time;
+                started_VM->end_vm=start_time+4;
                 started_VM->userID = vmNew->getUid();
                 started_VM->processID = vmNew->getPid();
                 started_VM->hostNodeVL = nodeVL;

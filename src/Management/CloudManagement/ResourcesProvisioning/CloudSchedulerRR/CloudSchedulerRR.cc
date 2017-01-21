@@ -496,13 +496,16 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                       int runVMsize=AbstractCloudManager::runVM.size();
                       //CHECK AGAIN> IT SHOULD BE >0
                       while (runVMsize >1 ) {
-                          clock_t t = clock(); // we are not sure about current time
-
+                       //   clock_t t = clock(); // we are not sure about current time
+                          simtime_t t2;
+                          t2=simTime();
+                          cout<< "time:--->"<<t2<<endl;
                           printf("\n Method[CLOUD_SCHEDULER_RR::scheduleRR()]:NO_Runiing_VM -------> %ld \n", runVM.size());
                           cout<<"j:"<<j;
                           RunningVM* vm;
                           vm = AbstractCloudManager::runVM.at(j);
-                          if (t >= vm->end_time)   // we need to shutdown vm
+                          cout<<"end time"<<vm->end_vm<<endl;
+                          if (t2 >= vm->end_vm)   // we need to shutdown vm
                                   {
 
                      //         printf("\n Method[CLOUD_SCHEDULER_RR ::scheduleRR()]: -------> t is greater than  vm end_time, we need to shut down vm\n");
@@ -555,7 +558,7 @@ AbstractNode* CloudSchedulerRR:: scheduleRR(){
                               */
                              // ++j;
                           } else {
-                              ++j;
+                              --runVMsize;
 
                           }
                       }

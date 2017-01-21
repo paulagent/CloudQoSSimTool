@@ -20,6 +20,8 @@ public:
   //  vector<VM*> vmID;
     clock_t start_time;
     clock_t end_time;
+    simtime_t start_vm;
+    simtime_t end_vm;
     void initialize();
     RunningVM();
     ~RunningVM();
