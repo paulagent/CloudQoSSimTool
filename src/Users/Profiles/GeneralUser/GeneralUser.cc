@@ -134,7 +134,7 @@ AbstractRequest* GeneralUser::selectVMs_ToStartUp() {
     int size;
     RequestVM* req;
 
-   // cout <<"-------------GeneralUser::selectVMs_ToStartUp()--------------------"<< endl;
+    cout <<"-------------GeneralUser::selectVMs_ToStartUp()--------------------"<< endl;
     //Initialize...
     size = 0;
     maxNumVMsToRequest = getWQ_size();
@@ -198,25 +198,24 @@ AbstractRequest* GeneralUser::selectResourcesJob(jobBase* job) {
     found = false;
     selectedVMs.clear();
     reqVM = new RequestVM();
-  //  cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  selectResourcesJob   &&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
+    cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&  selectResourcesJob   &&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
 
     // The behavior of the selection of VMs is to get the first VM in free state.
     for (i = 0; i < machinesMap->size() && (!found); i++) {
-
-        for (j = 0;
-                (j < (unsigned int) machinesMap->getSetQuantity(i)) && (!found);
-                j++) {
-  //cout<< "in loop:  "<< j <<"found="<<found <<endl;
+        cout<<"machinesMap->size()--->"<<machinesMap->size()<<endl;
+        for (j = 0; (j < (unsigned int) machinesMap->getSetQuantity(i)) && (!found);  j++) {
+            cout<< "in loop:  "<< j <<"found="<<found <<endl;
             machine = machinesMap->getMachineByIndex(i, j);
             vm = dynamic_cast<VM*>(machine);
-      //      cout<< "vm->getPendingOperation()--->"<<vm->getPendingOperation()<<endl;
+            cout<< "vm->getPendingOperation()--->"<<vm->getPendingOperation()<<endl;
             if (vm->getPendingOperation() == NOT_PENDING_OPS) {
                 if (!vm->is_freezed){
                     if (vm->getState() == MACHINE_STATE_IDLE) {
-                     //   cout<<"(vm->getVmState() == MACHINE_STATE_IDLE) and NOT_PENDING_OPS"<<endl;
+                        cout<<"(vm->getVmState() == MACHINE_STATE_IDLE) and NOT_PENDING_OPS"<<endl;
 
                         //if ((vm->getVmState() == MACHINE_STATE_IDLE) || (vm->getVmState() == MACHINE_STATE_RUNNING)) {
                         selectedVMs.insert(selectedVMs.begin(), vm);
+                        cout<<"vselected vm-->"<<vm->getUid()<<":"<<vm->getPid()<<endl;
                         //selectedVMs.insert(selectedVMs.begin(), vm);
                         found = true;
 
@@ -226,12 +225,12 @@ AbstractRequest* GeneralUser::selectResourcesJob(jobBase* job) {
         }
     }
 
-//		machine = machinesMap->getMachineByIndex(0,0);
-//		vm = dynamic_cast<VM*>(machine);
-//		selectedVMs.insert(selectedVMs.begin(), vm);
-  //  cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&& END OF LOOPS   &&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
-   // cout<< "in loop:  "<< j <<"found="<<found <<endl;
-   // cout<< "selected vms number:  "<< selectedVMs.size() << endl;
+	//	machine = machinesMap->getMachineByIndex(0,0);
+	//	vm = dynamic_cast<VM*>(machine);
+	//	selectedVMs.insert(selectedVMs.begin(), vm);
+    cout<< "in loop:  "<< j <<"found="<<found <<endl;
+    cout<< "selected vms number:  "<< selectedVMs.size() << endl;
+    cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&& END OF LOOPS   &&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
 
     reqVM->setVectorVM(selectedVMs);
     aReq = dynamic_cast<AbstractRequest*>(reqVM);
@@ -309,20 +308,23 @@ UserJob* GeneralUser::selectJob() {
 
     // Init ..
     job = NULL;
-
+cout <<" GeneralUser::selectJob()"<<endl;
     //get the job from the cloudManager
 
     if (!isEmpty_WQ()) {
 
         job = getJob_WQ_index(0);
+        cout <<" GeneralUser::selectJob()--->job="<<job->getFullName()<<endl;
+        jobC = dynamic_cast<UserJob*>(job);
+
 
     } else {
+        cout <<" GeneralUser::selectJob()--->job=null"<<endl;
 
-        job = NULL;
+        jobC = NULL;
 
     }
 
-    jobC = dynamic_cast<UserJob*>(job);
 
     return jobC;
 }
@@ -331,6 +333,7 @@ void GeneralUser::jobHasFinished(jobBase* job) {
 
     UserJob* jobC;
     Machine* m;
+    cout <<" GeneralUser::jobHasFinished()"<<endl;
 
     jobC = dynamic_cast<UserJob*>(job);
     m = jobC->getMachine();
@@ -361,9 +364,9 @@ void GeneralUser::schedule() {
     //Enter_Method_Silent();
     Enter_Method("request()");
     // Define ..
-   //cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&   schedule  &&&&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
-   //cout<< "GeneralUser::schedule()"<< endl;
-   //cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
+   cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&  GeneralUser  schedule  &&&&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
+  // cout<< "GeneralUser::schedule()"<< endl;
+ //  cout<<"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&7"<<endl;
 
     UserJob* job;
     jobBase* jobB;
@@ -389,15 +392,16 @@ void GeneralUser::schedule() {
 //cout <<"GeneralUser::schedule() ---call from abstract user class" <<endl;
     // Begin the behavior of the user.
     job = selectJob();
-
+cout<<"job---->"<<job<<endl;
     while ((job != NULL) && (!breakScheduling)) {
+        cout<<"  while ((job != NULL) && (!breakScheduling))"<<endl;
         cout <<"calling selectResourcesJob from schedule()" <<endl;
 
         reqB = selectResourcesJob(job);
 
         reqVM = dynamic_cast<RequestVM*>(reqB);
 
-       // cout<<"reqVM->getVMQuantity()--->"<<reqVM->getVMQuantity()<<endl;
+        cout<<"reqVM->getVMQuantity()--->"<<reqVM->getVMQuantity()<<endl;
 
 
         if (reqVM->getVMQuantity() != 0) {
@@ -405,13 +409,13 @@ void GeneralUser::schedule() {
             // Allocate the set of machines where the job is going to execute into the own job
 
             vm = dynamic_cast<VM*>(reqVM->getVM(0));
-
+cout<<"vm--->"<<vm->getUid()<<":"<<vm->getPid()<<endl;
             job->setMachine(vm);
             jobB = dynamic_cast<jobBase*>(job);
 
             if ((vm == NULL) || (jobB == NULL)) {
-                throw cRuntimeError(
-                        "GeneralUser::schedule() -> vm or job == NULL\n");
+               // throw cRuntimeError(
+                printf("GeneralUser::schedule() -> vm or job == NULL\n");
             }
 
             createFSforJob(job, job->getMachine()->getIP(),
@@ -442,10 +446,13 @@ void GeneralUser::schedule() {
         }
 
         job = selectJob();
-        cout<< job->getFullName()<<job->getFullName()<<endl;
+        cout<< "GeneralUser::schedule() ->job->getFullName()-->"<<job->getFullName()<<endl;
+        cout<<"--------------------end while -----------------"<<endl;
     }
 
     if ((job == NULL)) {
+        cout<< "GeneralUser::schedule() ->    if ((job == NULL))"<<endl;
+
         for (i = 0; i < (unsigned int) machinesMap->getMapQuantity(); i++) {
             for (int j = 0; j < (int) machinesMap->getSetQuantity(i); j++) {
 

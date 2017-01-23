@@ -260,7 +260,7 @@ void AbstractCloudUser::start_up_job_execution (VM* vmToExecute, UserJob* job, J
     // Initialize...
 
         jobId = job->getId();
-
+cout<<"AbstractCloudUser::start_up_job_execution"<<endl;
     //move from the qSrc to the scheduler queue of running jobs
 
         if (qSrc == NULL){
@@ -326,20 +326,24 @@ void AbstractCloudUser::executePendingJobs(){
             VM* vm;
             int i,j;
             bool found = false;
-
+            cout<<" AbstractCloudUser::executePendingJobs"<<endl;
         // Init ..
             i = 0;
         // Begin ..
+            if (waiting_for_remote_storage_Queue){
             while (i < waiting_for_remote_storage_Queue->get_queue_size()){
-
+                cout<<" waiting_for_remote_storage_Queue->get_queue_size()"<< waiting_for_remote_storage_Queue->get_queue_size()<<endl;
+                cout<<"i="<<i<<endl;
                 jobB = waiting_for_remote_storage_Queue->getJob(i);
 
                 j = 0;
                 found = false;
 
                 jobC = dynamic_cast<UserJob*>(jobB);
-                if (jobC == NULL) throw cRuntimeError("AbstractCloudUser::executePendingJobs->jobB cannot be casted to CloudJob\n");
+                if (jobC == NULL)         printf("AbstractCloudUser::executePendingJobs->jobB cannot be casted to CloudJob\n");
 
+                    //throw cRuntimeError("AbstractCloudUser::executePendingJobs->jobB cannot be casted to CloudJob\n");
+                else{
                 vm = check_and_cast<VM*>(jobC->getMachine());
 
                 if (vmHasStorageRequests(vm)){
@@ -356,6 +360,8 @@ void AbstractCloudUser::executePendingJobs(){
                 else {
                     i++;
                 }
+                }
+            }
             }
 }
 
